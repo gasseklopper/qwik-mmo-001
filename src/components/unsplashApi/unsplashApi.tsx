@@ -11,7 +11,7 @@ export default component$(() => {
 			<br />
 			Go ahead, search for images such as "apple", it uses the{' '}
 			<a href="https://api.unsplash.com/search/photos">unsplash API</a>
-			<AutoApiComplete></AutoApiComplete>
+			<UnsplashApiComplete></UnsplashApiComplete>
 		</div>
 	);
 });
@@ -22,7 +22,7 @@ interface IState {
 	selectedValue: string;
 }
 
-export const AutoApiComplete  = component$(() => {
+export const UnsplashApiComplete  = component$(() => {
 	const state = useStore<IState>({
 		searchInput: '',
 		searchResults: [],
