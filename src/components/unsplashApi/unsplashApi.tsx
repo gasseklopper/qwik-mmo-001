@@ -63,7 +63,7 @@ export const ImageListComponent = (props: { state: any }) => {
 	console.log('searchResults',searchResults)
 	return searchResults?.length ? (
 		<ul>
-			{searchResults.map((items) => {
+			{searchResults.map((items: any) => {
 
 				return (
 					<>
