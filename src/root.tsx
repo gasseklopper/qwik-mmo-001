@@ -13,7 +13,7 @@ export default component$(() => {
    */
   return (
     <QwikCity>
-      <head>
+      <head lang="en">
         <meta charSet="utf-8" />
         <RouterHead />
       </head>
