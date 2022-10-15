@@ -13,6 +13,8 @@ export default component$(() => {
       <article>
         <Slot />
       </article>
+		<h1 data-scroll>Hey</h1>
+		<p data-scroll>👋</p>
       <OnThisPage />
     </div>
   );

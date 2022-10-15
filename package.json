@@ -22,6 +22,7 @@
     "qwik": "qwik"
   },
   "devDependencies": {
+    "@builder.io/partytown": "^0.7.0",
     "@builder.io/qwik": "0.11.0",
     "@builder.io/qwik-city": "0.0.112",
     "@netlify/vite-plugin-netlify-edge": "1.1.0",
@@ -36,5 +37,8 @@
     "typescript": "4.8.4",
     "vite": "3.1.7",
     "vite-tsconfig-paths": "3.5.0"
+  },
+  "dependencies": {
+    "locomotive-scroll": "^4.1.4"
   }
 }
