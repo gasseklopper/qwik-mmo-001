@@ -10,14 +10,14 @@ export default component$(() => {
 
   return (
     <header>
-      <a class="logo" href="/">
+      <a class="logo" href="/" aria-label="Logo">
         <QwikLogo />
       </a>
       <nav>
-        <a href="/docs" class={{ active: pathname.startsWith('/docs') }}>
+        <a href="/docs" class={{ active: pathname.startsWith('/docs') }} aria-label="Docs">
           Docs
         </a>
-        <a href="/about-us" class={{ active: pathname.startsWith('/about-us') }}>
+        <a href="/about-us" class={{ active: pathname.startsWith('/about-us') }} aria-label="About Us">
           About Us
         </a>
       </nav>
