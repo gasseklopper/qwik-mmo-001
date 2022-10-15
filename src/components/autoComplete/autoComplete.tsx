@@ -47,10 +47,12 @@ export const AutoApiComplete  = component$(() => {
 
 	return (
 		<div>
-			<input
-				type="text"
-				onInput$={(ev) => (state.searchInput = (ev.target as HTMLInputElement).value)}
-			/>
+			<label>The force of the api -->
+				<input
+					type="text"
+					onInput$={(ev) => (state.searchInput = (ev.target as HTMLInputElement).value)}
+				/>
+			</label>
 			<SuggestionsListComponent state={state}></SuggestionsListComponent>
 		</div>
 	);
