@@ -4,6 +4,7 @@ import Clock from '~/components/clock/clock';
 import Counter from '~/components/counter/counter';
 import AutoComplete from '~/components/autoComplete/autoComplete';
 import Debounced from '~/components/debounced/debounced';
+import UnsplashApi from '~/components/unsplashApi/unsplashApi';
 import Header from '~/components/header/header';
 
 export default component$(() => {
@@ -16,6 +17,7 @@ export default component$(() => {
 		<Clock />
 		<AutoComplete />
 		<Debounced />
+		<UnsplashApi />
       </main>
       <Footer />
     </>
