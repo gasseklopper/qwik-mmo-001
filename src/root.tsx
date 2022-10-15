@@ -14,7 +14,7 @@ export default component$(() => {
   return (
     <QwikCity>
       <head>
-        <meta charSet="utf-8" name="qwik" content="qwik - meta head discription"/>
+        <meta charSet="utf-8" name="description" content="Halten Sie bei Ihren Meta Descriptions die Länge von 140 bis 160 Zeichen ein, damit Google sie vollständig anzeigt. Verwenden Sie auch Ihr Keyword!"/>
         <RouterHead />
       </head>
       <body lang="en">
