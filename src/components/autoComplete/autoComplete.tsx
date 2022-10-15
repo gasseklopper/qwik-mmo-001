@@ -47,7 +47,7 @@ export const AutoApiComplete  = component$(() => {
 
 	return (
 		<div>
-			<label>The force of the api -->
+			<label>The force of the api____
 				<input
 					type="text"
 					onInput$={(ev) => (state.searchInput = (ev.target as HTMLInputElement).value)}
