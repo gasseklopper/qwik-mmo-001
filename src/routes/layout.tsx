@@ -1,13 +1,5 @@
 import { component$, Slot } from '@builder.io/qwik';
 import Footer from '~/components/footer/footer';
-import Clock from '~/components/clock/clock';
-import Counter from '~/components/counter/counter';
-import AutoComplete from '~/components/autoComplete/autoComplete';
-import Debounced from '~/components/debounced/debounced';
-import UnsplashApi from '~/components/unsplashApi/unsplashApi';
-import UseReference from '~/components/useReference/useReference';
-import UsingContext from '~/components/usingContext/usingContext';
-import UseStyles from '~/components/useStyles/useStyles';
 import Header from '~/components/header/header';
 
 export default component$(() => {
@@ -16,14 +8,6 @@ export default component$(() => {
       <Header />
       <main>
         <Slot />
-		<Counter />
-		<Clock />
-		<AutoComplete />
-		<Debounced />
-		<UnsplashApi />
-		<UsingContext />
-		<UseReference />
-		<UseStyles />
       </main>
       <Footer />
     </>
