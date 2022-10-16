@@ -1,100 +1,122 @@
-import { component$, useStore, useWatch$ } from '@builder.io/qwik';
-
+import { component$, useStore, useWatch$ } from '@builder.io/qwik'
 
 export default component$(() => {
 	return (
 		<div>
-			This example features an auto-complete component with a debounce of 150 ms.
+			This example features an auto-complete component with a debounce of
+			150 ms.
 			<br />
-			The function `debouncedGetPeople` needs to be exported because it is used in `useWatch$`.
+			The function `debouncedGetPeople` needs to be exported because it is
+			used in `useWatch$`.
 			<br />
 			<br />
-			Go ahead, search for Star Wars characters such as "Luke Skywalker", it uses the{' '}
-			<a href="https://swapi.dev/">Star Wars API</a>
+			Go ahead, search for Star Wars characters such as "Luke Skywalker",
+			it uses the <a href="https://swapi.dev/">Star Wars API</a>
 			<AutoApiComplete></AutoApiComplete>
 		</div>
-	);
-});
+	)
+})
 
 interface IState {
-	searchInput: string;
-	searchResults: string[];
-	selectedValue: string;
+	searchInput: string
+	searchResults: string[]
+	selectedValue: string
 }
 
-export const AutoApiComplete  = component$(() => {
+export const AutoApiComplete = component$(() => {
 	const state = useStore<IState>({
 		searchInput: '',
 		searchResults: [],
 		selectedValue: '',
-	});
+	})
 
 	useWatch$(async ({ track }) => {
-		const searchInput = track(() => state.searchInput);
+		const searchInput = track(() => state.searchInput)
 
 		if (!searchInput) {
-		state.searchResults = [];
-		return;
+			state.searchResults = []
+			return
 		}
 
-		const controller = new AbortController();
-		state.searchResults = await debouncedGetPeople(state.searchInput, controller);
+		const controller = new AbortController()
+		state.searchResults = await debouncedGetPeople(
+			state.searchInput,
+			controller
+		)
 
 		return () => {
-			controller.abort();
-		};
-	});
+			controller.abort()
+		}
+	})
 
 	return (
 		<div>
-			<label>The force of the api____
+			<label>
+				The force of the api____
 				<input
 					type="text"
-					onInput$={(ev) => (state.searchInput = (ev.target as HTMLInputElement).value)}
+					onInput$={(ev) =>
+						(state.searchInput = (
+							ev.target as HTMLInputElement
+						).value)
+					}
 				/>
 			</label>
 			<SuggestionsListComponent state={state}></SuggestionsListComponent>
 		</div>
-	);
-});
+	)
+})
 
 export const SuggestionsListComponent = (props: { state: IState }) => {
-	const searchResults = props.state.searchResults;
+	const searchResults = props.state.searchResults
 	return searchResults?.length ? (
 		<ul>
 			{searchResults.map((suggestion) => {
-			return <li onClick$={() => (props.state.selectedValue = suggestion)}>{suggestion}</li>;
+				return (
+					<li
+						onClick$={() =>
+							(props.state.selectedValue = suggestion)
+						}
+					>
+						{suggestion}
+					</li>
+				)
 			})}
 		</ul>
 	) : (
 		<div class="no-results">
 			<em>No suggestions, you re on your own!</em>
 		</div>
-	);
-};
+	)
+}
 
-const getPeople = (searchInput: string, controller?: AbortController): Promise<string[]> =>
+const getPeople = (
+	searchInput: string,
+	controller?: AbortController
+): Promise<string[]> =>
 	fetch(`https://swapi.dev/api/people/?search=${searchInput}`, {
 		signal: controller?.signal,
 	})
-	.then((response) => {
-		return response.json();
-	})
-	.then((parsedResponse) => {
-		return parsedResponse.results.map((people: { name: string }) => people.name);
-});
+		.then((response) => {
+			return response.json()
+		})
+		.then((parsedResponse) => {
+			return parsedResponse.results.map(
+				(people: { name: string }) => people.name
+			)
+		})
 
 function debounce<F extends (...args: any[]) => any>(fn: F, delay = 500) {
-	let timeoutId: ReturnType<typeof setTimeout>;
+	let timeoutId: ReturnType<typeof setTimeout>
 
 	return (...args: Parameters<F>): Promise<ReturnType<F>> => {
 		return new Promise((resolve) => {
-			if (timeoutId) clearTimeout(timeoutId);
+			if (timeoutId) clearTimeout(timeoutId)
 			timeoutId = setTimeout(() => {
-				resolve(fn(...args));
-			}, delay);
-		});
-	};
+				resolve(fn(...args))
+			}, delay)
+		})
+	}
 }
 
-export const debouncedGetPeople = debounce(getPeople, 150);
+export const debouncedGetPeople = debounce(getPeople, 150)

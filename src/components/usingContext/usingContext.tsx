@@ -4,13 +4,13 @@ import {
 	useContextProvider,
 	useContext,
 	useStore,
-  } from '@builder.io/qwik';
+} from '@builder.io/qwik'
 
 interface TodosStore {
-	items: string[];
+	items: string[]
 }
 
-export const TodosContext = createContext<TodosStore>('Todos');
+export const TodosContext = createContext<TodosStore>('Todos')
 
 export default component$(() => {
 	useContextProvider(
@@ -18,18 +18,18 @@ export default component$(() => {
 		useStore<TodosStore>({
 			items: ['Learn Qwik', 'Build Qwik app', 'Profit'],
 		})
-	);
+	)
 
-	return <Items />;
-});
+	return <Items />
+})
 
 export const Items = component$(() => {
-	const todos = useContext(TodosContext);
+	const todos = useContext(TodosContext)
 	return (
 		<ul>
-		{todos.items.map((item) => (
-			<li>{item}</li>
-		))}
+			{todos.items.map((item) => (
+				<li>{item}</li>
+			))}
 		</ul>
-	);
-});
+	)
+})

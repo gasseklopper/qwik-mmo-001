@@ -1,9 +1,8 @@
-import { component$, useStyles$, useStore } from '@builder.io/qwik';
-
+import { component$, useStyles$, useStore } from '@builder.io/qwik'
 
 export default component$(() => {
-	useStyles$(AppCSS);
-	const store = useStore({ open: false, siblings: [0] }, { recursive: true });
+	useStyles$(AppCSS)
+	const store = useStore({ open: false, siblings: [0] }, { recursive: true })
 
 	return (
 		<div class="parent">
@@ -14,48 +13,48 @@ export default component$(() => {
 				<Sibling />
 			))}
 		</div>
-	);
-});
+	)
+})
 
 export const Child = component$(() => {
-	useStyles$(ChildCSS);
+	useStyles$(ChildCSS)
 	return (
 		<div class="child">
 			<div>Child</div>
 		</div>
-	);
-  });
+	)
+})
 
 export const Sibling = component$(() => {
-	useStyles$(SiblingCSS);
+	useStyles$(SiblingCSS)
 
 	return (
 		<div class="sibling">
 			<div>Sibling</div>
 		</div>
-	);
-  });
+	)
+})
 
-  //TODO: These should be import as: import AppCSS from './app.css';
-  // however the playground does not yet support such imports.
-  export const AppCSS = `
+//TODO: These should be import as: import AppCSS from './app.css';
+// however the playground does not yet support such imports.
+export const AppCSS = `
   .parent {
 	border: 1px solid black;
 	padding: 1em;
   }
-  `;
-  export const ChildCSS = `
+  `
+export const ChildCSS = `
   .child {
 	margin-top: 1em;
 	border: 1px solid red;
 	padding: 1em;
 	display: block;
   }
-  `;
-  export const SiblingCSS = `.sibling {
+  `
+export const SiblingCSS = `.sibling {
 	margin-top: 1em;
 	border: 1px solid green;
 	padding: 1em;
 	display: block;
   }
-  `;
+  `

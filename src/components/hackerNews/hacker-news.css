@@ -1,34 +1,35 @@
+/** @format */
 
-  .view {
+.view {
 	max-width: 800px;
 	margin: 0 auto;
 	position: relative;
-  }
-  @media (max-width: 860px) {
+}
+@media (max-width: 860px) {
 	.header .inner {
-	  padding: 15px 30px;
+		padding: 15px 30px;
 	}
-  }
-  @media (max-width: 600px) {
+}
+@media (max-width: 600px) {
 	.header .inner {
-	  padding: 15px;
+		padding: 15px;
 	}
 	.header a {
-	  margin-right: 1em;
+		margin-right: 1em;
 	}
 	.header .github {
-	  display: none;
+		display: none;
 	}
-  }
-  .news-view {
+}
+.news-view {
 	padding-top: 45px;
-  }
-  .news-list,
-  .news-list-nav {
+}
+.news-list,
+.news-list-nav {
 	background-color: #fff;
 	border-radius: 2px;
-  }
-  .news-list-nav {
+}
+.news-list-nav {
 	padding: 15px 30px;
 	position: fixed;
 	text-align: center;
@@ -37,36 +38,36 @@
 	right: 0;
 	z-index: 998;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  .news-list-nav .page-link {
+}
+.news-list-nav .page-link {
 	margin: 0 1em;
-  }
-  .news-list-nav .disabled {
+}
+.news-list-nav .disabled {
 	color: #aaa;
-  }
-  .news-list {
+}
+.news-list {
 	position: absolute;
 	margin: 30px 0;
 	width: 100%;
-  }
-  .news-list ul {
+}
+.news-list ul {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
-  }
-  @media (max-width: 600px) {
+}
+@media (max-width: 600px) {
 	.news-list {
-	  margin: 10px 0;
+		margin: 10px 0;
 	}
-  }
-  .news-item {
+}
+.news-item {
 	background-color: #fff;
 	padding: 20px 30px 20px 80px;
 	border-bottom: 1px solid #eee;
 	position: relative;
 	line-height: 20px;
-  }
-  .news-item .score {
+}
+.news-item .score {
 	color: #335d92;
 	font-size: 1.1em;
 	font-weight: 700;
@@ -76,128 +77,128 @@
 	width: 80px;
 	text-align: center;
 	margin-top: -10px;
-  }
-  .news-item .host,
-  .news-item .meta {
+}
+.news-item .host,
+.news-item .meta {
 	font-size: 0.85em;
 	color: #626262;
-  }
-  .news-item .host a,
-  .news-item .meta a {
+}
+.news-item .host a,
+.news-item .meta a {
 	color: #626262;
 	text-decoration: underline;
-  }
-  .news-item .host a:hover,
-  .news-item .meta a:hover {
+}
+.news-item .host a:hover,
+.news-item .meta a:hover {
 	color: #335d92;
-  }
-  .item-view-header {
+}
+.item-view-header {
 	background-color: #fff;
 	padding: 1.8em 2em 1em;
 	box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
-  }
-  .item-view-header h1 {
+}
+.item-view-header h1 {
 	display: inline;
 	font-size: 1.5em;
 	margin: 0;
 	margin-right: 0.5em;
-  }
-  .item-view-header .host,
-  .item-view-header .meta,
-  .item-view-header .meta a {
+}
+.item-view-header .host,
+.item-view-header .meta,
+.item-view-header .meta a {
 	color: #626262;
-  }
-  .item-view-header .meta a {
+}
+.item-view-header .meta a {
 	text-decoration: underline;
-  }
-  .item-view-comments {
+}
+.item-view-comments {
 	background-color: #fff;
 	margin-top: 10px;
 	padding: 0 2em 0.5em;
-  }
-  .item-view-comments-header {
+}
+.item-view-comments-header {
 	margin: 0;
 	font-size: 1.1em;
 	padding: 1em 0;
 	position: relative;
-  }
-  .item-view-comments-header .spinner {
+}
+.item-view-comments-header .spinner {
 	display: inline-block;
 	margin: -15px 0;
-  }
-  .comment-children {
+}
+.comment-children {
 	list-style-type: none;
 	padding: 0;
 	margin: 0;
-  }
-  @media (max-width: 600px) {
+}
+@media (max-width: 600px) {
 	.item-view-header h1 {
-	  font-size: 1.25em;
+		font-size: 1.25em;
 	}
-  }
-  .comment-children .comment-children {
+}
+.comment-children .comment-children {
 	margin-left: 1.5em;
-  }
-  .comment {
+}
+.comment {
 	border-top: 1px solid #eee;
 	position: relative;
-  }
-  .comment .by,
-  .comment .text,
-  .comment .toggle {
+}
+.comment .by,
+.comment .text,
+.comment .toggle {
 	font-size: 0.9em;
 	margin: 1em 0;
-  }
-  .comment .by {
+}
+.comment .by {
 	color: #626262;
-  }
-  .comment .by a {
+}
+.comment .by a {
 	color: #626262;
 	text-decoration: underline;
-  }
-  .comment .text {
+}
+.comment .text {
 	overflow-wrap: break-word;
-  }
-  .comment .text a:hover {
+}
+.comment .text a:hover {
 	color: #335d92;
-  }
-  .comment .text pre {
+}
+.comment .text pre {
 	white-space: pre-wrap;
-  }
-  .comment .toggle {
+}
+.comment .toggle {
 	background-color: #fffbf2;
 	padding: 0.3em 0.5em;
 	border-radius: 4px;
-  }
-  .comment .toggle a {
+}
+.comment .toggle a {
 	color: #626262;
 	cursor: pointer;
-  }
-  .comment .toggle.open {
+}
+.comment .toggle.open {
 	padding: 0;
 	background-color: transparent;
 	margin-bottom: -0.5em;
-  }
-  .user-view {
+}
+.user-view {
 	background-color: #fff;
 	box-sizing: border-box;
 	padding: 2em 3em;
-  }
-  .user-view h1 {
+}
+.user-view h1 {
 	margin: 0;
 	font-size: 1.5em;
-  }
-  .user-view .meta {
+}
+.user-view .meta {
 	list-style-type: none;
 	padding: 0;
-  }
-  .user-view .label {
+}
+.user-view .label {
 	display: inline-block;
 	min-width: 4em;
-  }
-  .user-view .about {
+}
+.user-view .about {
 	margin: 1em 0;
-  }
-  .user-view .links a {
+}
+.user-view .links a {
 	text-decoration: underline;
-  }
+}
