@@ -3,7 +3,7 @@ import {
 } from '@builder.io/qwik';
 
 
-export const FirstName = component$(({firstName}) => {
+export const FirstName = component$(({firstName}:string) => {
 	console.log("FirstName rerenders")
 	return (
 		<>

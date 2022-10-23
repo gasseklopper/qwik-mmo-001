@@ -9,18 +9,18 @@ export const UserForm = component$(() => {
 	return (
 		<>
 			<div>
-				<label htmlFor="">
+				<label>
 					First name --&gt;
 					<input
-						onInput$={(e) => user.first = e.target.value}
+						onInput$={(e) => user.first = (e.target as HTMLInputElement).value}
 					/>
 				</label>
 			</div>
 			<div>
-				<label htmlFor="">
+				<label>
 					Last name --&gt;
 					<input
-						onInput$={(e) => user.last = e.target.value}
+						onInput$={(e) => user.last = (e.target as HTMLInputElement).value}
 					/>
 				</label>
 			</div>
