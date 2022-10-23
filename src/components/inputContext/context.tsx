@@ -15,8 +15,8 @@ export const UserContext = createContext<UserStore>('User')
 
 export const Stores = component$(() => {
 	const userData = useStore({
-		first:"test",
-		last:"test",
+		first:"first",
+		last:"last",
 	});
 
 	useContextProvider(UserContext, userData);
