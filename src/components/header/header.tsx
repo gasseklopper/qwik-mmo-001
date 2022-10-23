@@ -29,6 +29,13 @@ export default component$(() => {
 					About Us
 				</a>
 				<a
+					href="/input-context"
+					class={{ active: pathname.startsWith('/input-context') }}
+					aria-label="input-context"
+				>
+					input-context
+				</a>
+				<a
 					href="/clock"
 					class={{ active: pathname.startsWith('/clock') }}
 					aria-label="Clock"
