@@ -23,25 +23,10 @@ export default component$(() => {
 					name="description"
 					content="Halten Sie bei Ihren Meta Descriptions die Länge von 140 bis 160 Zeichen ein, damit Google sie vollständig anzeigt. Verwenden Sie auch Ihr Keyword!"
 				/>
-				<QwikPartytown />
-				<script
-					type="text/javascript"
-					async=""
-					src="https://j.6sc.co/6si.min.js"
-				></script>
 				<script
 					type="module"
-					async=""
+					async
 					src="./src/index.js"
-				></script>
-				<script
-					type="text/partytown"
-					async=""
-					src="https://j.6sc.co/6si.min.js"
-				></script>
-				<script
-					type="text/partytown"
-					src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js"
 				></script>
 				<RouterHead />
 			</head>
