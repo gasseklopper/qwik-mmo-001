@@ -1,0 +1,91 @@
+@use "sass:math";
+
+@mixin rowClasses($name) {
+	&.stretch-on-#{ $name } {
+		align-items: stretch;
+	}
+	&.top-on-#{ $name } {
+		align-items: flex-start;
+	}
+	&.middle-on-#{ $name } {
+		align-items: center;
+	}
+	&.bottom-on-#{ $name } {
+		align-items: flex-end;
+	}
+
+	&.left-on-#{ $name } {
+		justify-content: flex-start;
+	}
+	&.center-on-#{ $name } {
+		justify-content: center;
+	}
+	&.right-on-#{ $name } {
+		justify-content: flex-end;
+	}
+	&.around-on-#{ $name } {
+		justify-content: space-around;
+	}
+	&.between-on-#{ $name } {
+		justify-content: space-between;
+	}
+
+	&.ltr-on-#{ $name } {
+		flex-direction: row;
+	}
+	&.rtl-on-#{ $name } {
+		flex-direction: row-reverse;
+	}
+
+	&.hide-on-#{ $name } {
+		display: none;
+	}
+	&.show-on-#{ $name } {
+		display: flex;
+	}
+}
+
+@mixin columnClasses($name) {
+	&.#{ $name }-auto {
+		// Must be 0px instead of 0 to work in IE11
+		flex: 1 1 0px;
+	}
+
+	@for $i from 1 through $basicGrid__columns {
+		&.#{ $name }-#{ $i } {
+			flex: 0 1 auto;
+			width: percentage(math.div(1, $basicGrid--columns)) * $i;
+		}
+
+		&.#{ $name }-offset-#{ $i } {
+			margin-left: percentage(math.div(1, $basicGrid--columns)) * $i;
+		}
+
+		&.#{ $name }-pull-#{ $i } {
+			left: auto;
+			right: percentage(math.div(1, $basicGrid--columns)) * $i;
+		}
+
+		&.#{ $name }-push-#{ $i } {
+			right: auto;
+			left: percentage(math.div(1, $basicGrid--columns)) * $i;
+		}
+	}
+
+	&.first-on-#{ $name } {
+		order: -1;
+	}
+	&.last-on-#{ $name } {
+		order: 1;
+	}
+	&.origin-on-#{ $name } {
+		order: 0;
+	}
+
+	&.hide-on-#{ $name } {
+		display: none;
+	}
+	&.show-on-#{ $name } {
+		display: block;
+	}
+}

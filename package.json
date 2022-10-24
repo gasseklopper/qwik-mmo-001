@@ -34,6 +34,7 @@
     "eslint-plugin-qwik": "0.11.0",
     "node-fetch": "3.2.10",
     "prettier": "2.7.1",
+    "sass": "^1.55.0",
     "typescript": "4.8.4",
     "vite": "3.1.7",
     "vite-tsconfig-paths": "3.5.0"

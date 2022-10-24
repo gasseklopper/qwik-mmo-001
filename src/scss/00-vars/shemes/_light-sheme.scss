@@ -1,0 +1,39 @@
+@mixin light-sheme-definition {
+	/* light */
+	--brand-core-light:    hsl(
+		var(22)
+		calc(var(--brand-saturation))
+		calc(var(--brand-lightness))
+	);
+	--brand-light: hsl(var(--brand-hue) var(--brand-saturation) var(--brand-lightness));
+	--text1-light: hsl(var(--brand-hue) var(--brand-saturation) 10%);
+	--text2-light: hsl(var(--brand-hue) 30% 30%);
+	--primary-light:hsl(var(--primary-hue) 20% 25%);
+	--secondary-light:hsl(var(--secondary-hue) 7% 36%);
+	--tertiary-light:hsl(var(--tertiary-hue) 18% 52%);
+	--quaternary-light:hsl(var(--quaternary-hue) 8% 58%);
+	--surface1-light: hsl(var(--brand-hue) 25% 90%);
+	--surface2-light: hsl(var(--brand-hue) 20% 99%);
+	--surface3-light: hsl(var(--brand-hue) 20% 92%);
+	--surface4-light: hsl(var(--brand-hue) 20% 85%);
+	--surface-shadow-light: var(--brand-hue) 10% 20%;
+	--shadow-strength-light: .02;
+  }
+
+@mixin light-sheme {
+/* set defaults */
+--brand: var(--brand-light);
+--brand-core: var(--brand-core-light);
+--text1: var(--text1-light);
+--text2: var(--text2-light);
+--primary: var(--primary-light);
+--secondary: var(--secondary-light);
+--tertiary: var(--tertiary-light) ;
+--quaternary: var(--quaternary-light);
+--surface1: var(--surface1-light);
+--surface2: var(--surface2-light);
+--surface3: var(--surface3-light);
+--surface4: var(--surface4-light);
+--surface-shadow: var(--surface-shadow-light);
+--shadow-strength: var(--shadow-strength-light);
+  }

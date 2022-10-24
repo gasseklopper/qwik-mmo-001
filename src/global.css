@@ -16,6 +16,7 @@
 	color-scheme: light;
 	--theme-accent: #006ce9;
 	--theme-text: #181818;
+	--theme-bg: white;
 }
 
 @media (min-width: 50em) {

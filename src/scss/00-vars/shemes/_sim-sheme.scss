@@ -1,0 +1,46 @@
+@mixin sim-sheme-definition {
+	--brand-sim-h: 322;
+	--brand-sim-s: 100%;
+	--brand-sim-l: 20%;
+	--brand-sim: hsl(var(--brand-sim-h) var(--brand-sim-s) var(--brand-sim-l));
+	--text1-sim: hsl(var(--brand-sim-h) 115% 100%);
+	--text2-sim: hsl(var(--brand-sim-h) 10% 61%);
+	--text3-sim: hsl(var(--brand-sim-h) 115% 40%);
+	--text4-sim: hsl(var(--brand-sim-h) 10% 10%);
+	--surface1-sim: hsl(var(--brand-sim-h) 90% 30%);
+	--surface2-sim: hsl(var(--brand-sim-h) 80% 28%);
+	--surface3-sim: hsl(var(--brand-sim-h) 60% 25%);
+	--surface4-sim: hsl(var(--brand-sim-h) 105% 105%);
+	--surface5-sim: hsl(var(--brand-sim-h) 110% 120%);
+	--surface6-sim: hsl(var(--brand-sim-h) 110% 125%);
+	--surface7-sim: hsl(var(--brand-sim-h) 105% 100%);
+	--surface8-sim: hsl(var(--brand-sim-h) 105% 105%);
+	--surface-shadow-sim: var(--brand-sim-h) 130% 113%;
+	--shadow-strength-sim: 0.2;
+	--primary-light: hsl(var(--primary-hue) 20% 25%);
+	--secondary-light: hsl(var(--secondary-hue) 7% 36%);
+	--tertiary-light: hsl(var(--tertiary-hue) 18% 52%);
+	--quaternary-light: hsl(var(--quaternary-hue) 8% 58%);
+}
+
+@mixin sim-sheme {
+	--brand: var(--brand-sim);
+	--text1: var(--text1-sim);
+	--text2: var(--text2-sim);
+	--text3: var(--text3-sim);
+	--text4: var(--text4-sim);
+	--surface1: var(--surface1-sim);
+	--surface2: var(--surface2-sim);
+	--surface3: var(--surface3-sim);
+	--surface4: var(--surface4-sim);
+	--surface5: var(--surface5-sim);
+	--surface6: var(--surface6-sim);
+	--surface7: var(--surface7-sim);
+	--surface8: var(--surface8-sim);
+	--surface-shadow: var(--surface-shadow-sim);
+	--shadow-strength: var(--shadow-strength-sim);
+	--primary: var(--primary-sim);
+	--secondary: var(--secondary-sim);
+	--tertiary: var(--tertiary-sim);
+	--quaternary: var(--quaternary-sim);
+}

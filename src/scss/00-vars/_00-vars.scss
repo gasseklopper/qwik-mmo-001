@@ -1,0 +1,235 @@
+/** @format */
+
+// Core variables ----------------------------------------------------------------------------- //
+//  _________                        ____   ____            .__      ___.   .__
+//  \_   ___ \  ___________   ____   \   \ /   /____ _______|__|____ \_ |__ |  |   ____   ______
+//  /    \  \/ /  _ \_  __ \_/ __ \   \   Y   /\__  \\_  __ \  \__  \ | __ \|  | _/ __ \ /  ___/
+//  \     \___(  <_> )  | \/\  ___/    \     /  / __ \|  | \/  |/ __ \| \_\ \  |_\  ___/ \___ \
+//   \______  /\____/|__|    \___  >    \___/  (____  /__|  |__(____  /___  /____/\___  >____  >
+//          \/                   \/                 \/              \/    \/          \/     \/
+$version: '0.0.1';
+// Colors ------------------------------------------------------------------------------------ //
+
+// Core colors
+$primary: #6cff6c !default;
+$primary-dark: darken($primary, 3%) !default;
+$primary-light: lighten($primary, 13%) !default;
+$secondary: #3c83a0 !default;
+$secondary-dark: darken($secondary, 3%) !default;
+$secondary-light: #63a5bf !default;
+$tertiary: #dfec24 !default;
+$tertiary-dark: darken($tertiary, 30%) !default;
+$tertiary-light: lighten($tertiary, 30%) !default;
+$quaternary: #ee1a41 !default;
+$quaternary-dark: darken($quaternary, 30%) !default;
+$quaternary-light: lighten($quaternary, 30%) !default;
+
+// Gray colors
+$dark-color: #28292e !default;
+$light-color: #fff !default;
+$gray-color: #575f61 !default;
+$gray-color-dark: darken($gray-color, 25%) !default;
+$gray-color-light: #87969a !default;
+
+// Border colors
+$border-color: #e6b74d !default;
+$border-color-dark: darken($border-color, 10%) !default;
+
+// Background colors
+$bg-color: #fff !default;
+$bg-color-dark: darken($bg-color, 3%) !default;
+$bg-color-light: $light-color !default;
+
+// Control colors
+$success-color: #32b643 !default;
+$warning-color: #ffb700 !default;
+$error-color: #e85600 !default;
+
+// Link Colors
+$link-color: $primary !default;
+$link-color-dark: darken($link-color, 10%) !default;
+$link-color-light: lighten($link-color, 10%) !default;
+
+// Other colors
+$code-color: #d73e48 !default;
+$highlight-color: #ffe9b3 !default;
+$body-bg: $bg-color-light !default;
+$body-font-color: #002a32 !default;
+
+$colors: (
+	'primary': $primary,
+	'primary-dark': $primary-dark,
+	'primary-light': $primary-light,
+	'secondary': $secondary,
+	'secondary-dark': $secondary-dark,
+	'secondary-light': $secondary-light,
+	'tertiary': $tertiary,
+	'tertiary-dark': $tertiary-dark,
+	'tertiary-light': $tertiary-light,
+	'quaternary': $quaternary,
+	'quaternary-dark': $quaternary-dark,
+	'quaternary-light': $quaternary-light,
+	'dark-color': $dark-color,
+	'light-color': $light-color,
+	'gray-color': $gray-color,
+	'gray-color-dark': $gray-color-dark,
+	'gray-color-light': $gray-color-light,
+	'border-color': $border-color,
+	'border-color-dark': $border-color-dark,
+	'bg-color': $bg-color,
+	'bg-color-dark': $bg-color-dark,
+	'bg-color-light': $bg-color-light,
+	'success-color': $success-color,
+	'warning-color': $warning-color,
+	'error-color': $error-color,
+	'link-color': $link-color,
+	'link-color-dark': $link-color-dark,
+	'link-color-light': $link-color-light,
+	'code-color': $code-color,
+	'highlight-color': $highlight-color,
+	'body-bg': $body-bg,
+	'body-font-color': $body-font-color,
+);
+
+// Sizes ------------------------------------------------------------------------------------ //
+//
+//    _________.__
+//   /   _____/|__|_______ ____   ______
+//   \_____  \ |  \___   // __ \ /  ___/
+//   /        \|  |/    /\  ___/ \___ \
+//  /_______  /|__/_____ \\___  >____  >
+//          \/          \/    \/     \/
+$gutter_30: 1.875rem; // 30px
+$gutter: 1.8rem; // 28.8px
+$maxWidth: 1440px;
+$headerHeight: 80px;
+$headerHeightMobile: 15em;
+$sectionPadding: $gutter * 4;
+$radiusSmall: 4px;
+$radiusBig: 6px;
+$iconSize: 90px;
+$gridMinWidth: 820px;
+
+// Shadows ----------------------------------------------------- //
+//
+//    _________.__                .___
+//   /   _____/|  |__ _____     __| _/______  _  ________
+//   \_____  \ |  |  \\__  \   / __ |/  _ \ \/ \/ /  ___/
+//   /        \|   Y  \/ __ \_/ /_/ (  <_> )     /\___ \
+//  /_______  /|___|  (____  /\____ |\____/ \/\_//____  >
+//          \/      \/     \/      \/                 \/
+
+$shadowBig: 0 6px 12px rgba(0, 0, 0, 0.15);
+$shadowSmall: 0 2px 4px rgba(0, 0, 0, 0.15);
+
+// Breakpoints ------------------------------------------------------------------------------------ //
+//
+//  __________                        __                  .__        __
+//  \______   \_______   ____ _____  |  | ________   ____ |__| _____/  |_  ______
+//   |    |  _/\_  __ \_/ __ \\__  \ |  |/ /\____ \ /  _ \|  |/    \   __\/  ___/
+//   |    |   \ |  | \/\  ___/ / __ \|    < |  |_> >  <_> )  |   |  \  |  \___ \
+//   |______  / |__|    \___  >____  /__|_ \|   __/ \____/|__|___|  /__| /____  >
+//          \/              \/     \/     \/|__|                  \/          \/
+
+$bpXXS: 480px;
+$bpXS: 640px;
+$bpS: 960px;
+$bpM: 1024px;
+$bpL: 1280px;
+$bpXL: 1366px;
+$bpXXL: 1920px;
+
+// Animations  ------------------------------------------------------------------------------------ //
+//
+//     _____         .__                __  .__
+//    /  _  \   ____ |__| _____ _____ _/  |_|__| ____   ____
+//   /  /_\  \ /    \|  |/     \\__  \\   __\  |/  _ \ /    \
+//  /    |    \   |  \  |  Y Y  \/ __ \|  | |  (  <_> )   |  \
+//  \____|__  /___|  /__|__|_|  (____  /__| |__|\____/|___|  /
+//          \/     \/         \/     \/                    \/
+
+$duration: 0.3s;
+$timing: cubic-bezier(0.51, 0.92, 0.24, 1);
+
+// Typography -------------------------------------------------------- //
+//
+//  ___________                                               .__
+//  \__    ___/__.__.______   ____   ________________  ______ |  |__ ___.__
+//    |    | <   |  |\____ \ /  _ \ / ___\_  __ \__  \ \____ \|  |  <   |  |
+//    |    |  \___  ||  |_> >  <_> ) /_/  >  | \// __ \|  |_> >   Y  \___  |
+//    |____|  / ____||   __/ \____/\___  /|__|  (____  /   __/|___|  / ____|
+//            \/     |__|         /_____/            \/|__|        \/\/
+
+$familyOpenSans: 'Open Sans', sans-serif;
+$familyNotoMono: 'Noto Mono', monospace;
+
+// Font -------------------------------------------------------- //
+//$fontStack: normal 400 100%/1.6 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$fontStack: normal 400 100%/1.6 Arial, sans-serif;
+$fontStack: normal 400 112.5%/1.7 $familyOpenSans;
+
+// Typography Matter -------------------------------------------------- //
+$fontStackMatterRegular: normal 400 100%/1.4 'Matter regular', Helvetica, Arial,
+	sans-serif;
+$fontStackMatterSemiBold: normal 400 100%/1.4 'Matter semibold', Helvetica,
+	Arial, sans-serif;
+$fontStackMatterMedium: normal 400 100%/1.4 'Matter medium', Helvetica, Arial,
+	sans-serif;
+
+// Typography Barlow -------------------------------------------------- //
+$fontStackBarlowBold: normal 700 100%/1.4 'Barlow bold', Helvetica, Arial,
+	sans-serif;
+$fontStackBarlowMedium: normal 500 100%/1.4 'Barlow medium', Helvetica, Arial,
+	sans-serif;
+$fontStackBarlowLight: normal 300 100%/1.4 'Barlow light', Helvetica, Arial,
+	sans-serif;
+$fontStackBarlowSemibold: normal 600 100%/1.4 'Barlow semibold', Helvetica,
+	Arial, sans-serif;
+// Typography Syne -------------------------------------------------- //
+$fontStackSyneBold: normal 700 100%/1.4 'Syne bold', Helvetica, Arial,
+	sans-serif;
+$fontStackSyneMedium: normal 500 100%/1.4 'Syne medium', Helvetica, Arial,
+	sans-serif;
+$fontStackSyneExtrabold: normal 800 100%/1.4 'Syne extrabold', Helvetica, Arial,
+	sans-serif;
+$fontStackSyneSemibold: normal 600 100%/1.4 'Syne semibold', Helvetica, Arial,
+	sans-serif;
+$fontStackSyneRegular: normal 400 100%/1.4 'Syne regular', Helvetica, Arial,
+	sans-serif;
+// Typography berlingo -------------------------------------------------- //
+$fontStackBerlingoRegular: normal 500 100%/1.4 'berlingo regular', Helvetica,
+	Arial, sans-serif;
+$fontStackBerlingoBold: normal 600 100%/1.4 'berlingo regular', Helvetica, Arial,
+	sans-serif;
+
+// basicGrid --------------------------------------------------- //
+//
+//  __________               .__         ________      .__    .___
+//  \______   \_____    _____|__| ____  /  _____/______|__| __| _/
+//   |    |  _/\__  \  /  ___/  |/ ___\/   \  __\_  __ \  |/ __ |
+//   |    |   \ / __ \_\___ \|  \  \___\    \_\  \  | \/  / /_/ |
+//   |______  /(____  /____  >__|\___  >\______  /__|  |__\____ |
+//          \/      \/     \/        \/        \/              \/
+
+$basicGrid__width: $maxWidth;
+$basicGrid__gutter: $gutter;
+$basicGrid__sizes: (
+	'small': 0,
+	'medium': $bpXS,
+	'large': $bpM,
+	'huge': $bpL,
+);
+@import 'colors-shemes';
+
+.circle {
+	width: 500px;
+	height: 500px;
+	border-radius: 100%;
+	background-color: red;
+}
+
+.square {
+	width: 500px;
+	height: 500px;
+	background-color: orange;
+}

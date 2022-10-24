@@ -1,0 +1,219 @@
+/** @format */
+
+@import 'shemes/dark-sheme';
+@import 'shemes/light-sheme';
+@import 'shemes/dim-sheme';
+@import 'shemes/sim-sheme';
+@import 'shemes/lights2-sheme';
+
+
+* {
+	/* brand foundation */
+	--brand-hue: 342;
+	// --brand-hue: 272;
+	--brand-saturation: 80%;
+	--brand-lightness: 50%;
+	--surface12: red;
+
+	--primary-hue: 238;
+	--secondary-hue: 270;
+	--tertiary-hue: 13;
+	--quaternary-hue: 356;
+
+	@include dark-sheme-definition;
+	@include light-sheme-definition;
+	@include dim-sheme-definition;
+	@include sim-sheme-definition;
+	@include lights2-sheme-definition;
+}
+
+:root {
+	color-scheme: light;
+	@include light-sheme;
+}
+
+@media (prefers-color-scheme: dark) {
+	:root {
+		color-scheme: dark;
+		@include dark-sheme;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		color-scheme: light;
+		@include light-sheme;
+	}
+}
+
+[color-scheme='sim'] {
+	color-scheme: sim;
+	@include sim-sheme;
+}
+
+[color-scheme='default'] {
+	color-scheme: light;
+	@include light-sheme;
+}
+
+[color-scheme='dark'] {
+	color-scheme: dark;
+	@include dark-sheme;
+}
+
+[color-scheme='dim'] {
+	color-scheme: dim;
+	@include dim-sheme;
+}
+
+[color-scheme='lights2'] {
+	color-scheme: lights2;
+	@include lights2-sheme;
+}
+
+
+// custom test styling for color shemes templates css
+
+.image-background {
+	&::after {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		content: '';
+		background-color: var(--text2);
+		mix-blend-mode: multiply;
+	}
+}
+
+.brand {
+	color: var(--brand);
+	background-color: var(--brand);
+}
+
+.brand-core {
+	color: var(--brand-core);
+	// background-color: var(--brand-core);
+}
+
+.brand-inverted {
+	color: var(--brand-inverted);
+	background-color: var(--brand-inverted);
+}
+
+.primary {
+	background-color: var(--primary);
+}
+
+.secondary {
+	background-color: var(--secondary);
+}
+
+.tertiary {
+	background-color: var(--tertiary);
+}
+
+
+.quaternary {
+	background-color: var(--quaternary);
+}
+
+@mixin text-contrast($n) {
+	color: color-contrast($n vs var(--text1), var(--text2), var(--text3), var(--text4));
+}
+
+.surface1 {
+	background-color: var(--surface1);
+	@include text-contrast(var(--surface1));
+}
+
+.surface2 {
+	background-color: var(--surface2);
+	@include text-contrast(var(--surface2));
+}
+
+.surface3 {
+	background-color: var(--surface3);
+	@include text-contrast(var(--surface3));
+}
+
+.surface4 {
+	background-color: var(--surface4);
+	@include text-contrast(var(--surface4));
+}
+
+.surface5 {
+	background-color: var(--surface5);
+	@include text-contrast(var(--surface5));
+}
+
+.surface6 {
+	background-color: var(--surface6);
+	@include text-contrast(var(--surface6));
+}
+
+.surface7 {
+	background-color: var(--surface7);
+	@include text-contrast(var(--surface7));
+}
+
+.surface8 {
+	background-color: var(--surface8);
+	@include text-contrast(var(--surface8));
+}
+
+.brand-inverted-highlight1 {
+	background-color: var(--brand-inverted-highlight1);
+	color: var(--text1);
+}
+.brand-inverted-highlight2 {
+	background-color: var(--brand-inverted-highlight2);
+	color: var(--text1);
+}
+
+.textBrand {
+	color: var(--brand);
+}
+
+.text1 {
+	color: var(--text1);
+}
+
+.text2 {
+	color: var(--text2);
+}
+
+.swatch {
+	display: inline-block;
+	flex-shrink: 0;
+	inline-size: 1.5ch;
+	block-size: 1.5ch;
+	border-radius: 50%;
+
+	&.text1 {
+		background-color: var(--text1);
+	}
+	&.text2 {
+		background-color: var(--text2);
+	}
+	&.brand-core {
+		background-color: var(--brand-core);
+	}
+}
+
+.rad-shadow {
+	border: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
+	box-shadow: 0 1rem 0.5rem -0.5rem;
+	box-shadow: 0 2.8px 2.2px
+			hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
+		0 6.7px 5.3px
+			hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.01)),
+		0 12.5px 10px
+			hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.02)),
+		0 22.3px 17.9px
+			hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.02)),
+		0 41.8px 33.4px
+			hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
+		0 100px 80px hsl(var(--surface-shadow) / var(--shadow-strength));
+}
