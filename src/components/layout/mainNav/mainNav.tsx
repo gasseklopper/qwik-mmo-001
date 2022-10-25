@@ -2,7 +2,8 @@ import {
 	component$,
 	useStyles$,
 } from '@builder.io/qwik'
-import styles from './main-nav.css?inline'
+import { useLocation } from '@builder.io/qwik-city'
+import styles from './main-nav.scss?inline'
 
 export default component$(() => {
 	useStyles$(styles)
@@ -71,52 +72,119 @@ export const ColorRadio = component$(() => {
 });
 
 export const HeaderItems = component$(() => {
+	const { pathname } = useLocation()
 	return (
 		<nav class="header__items">
-			<a
-				href="https://www.mmmmm.com/themen"
-				title="Unsere Fokusthemen"
-				class="header__item"
-				data-header-menu-id="0"
-				data-btattached="true"
-			>
-				Themen
-			</a>
-			<a
-				href="https://www.mmmmm.com/services"
-				title="Aus unserem Serviceportfolio"
-				class="header__item"
-				data-header-menu-id="1"
-				data-btattached="true"
-			>
-				Services
-			</a>
-			<a
-				href="https://www.mmmmm.com/trainings"
-				title="ITSM und PM Schulungen"
-				class="header__item"
-				data-header-menu-id="2"
-				data-btattached="true"
-			>
-				Trainings
-			</a>
-			<a
-				href="https://www.mmmmm.com/webinare"
-				title="Webinare zu Themen im Service Management"
-				class="header__item"
-				data-btattached="true"
-			>
-				Webinare
-			</a>
-			<a
-				href="https://www.mmmmm.com/unternehmen"
-				title="Die iTSM Group kennenlernen"
-				class="header__item"
-				data-header-menu-id="4"
-				data-btattached="true"
-			>
-				Über uns
-			</a>
+					<a
+						href="/docs"
+						class={{ active: pathname.startsWith('/docs'),header__item: true }}
+						aria-label="Docs"
+						// class="header__item"
+						data-header-menu-id="0"
+						data-btattached="true"
+					>
+						Docs
+					</a>
+					<a
+						href="/about-us"
+						class={{ active: pathname.startsWith('/about-us') }}
+						aria-label="About Us"
+						class="header__item"
+						data-header-menu-id="0"
+						data-btattached="true"
+					>
+						About Us
+					</a>
+					<a
+						href="/input-context"
+						class={{ active: pathname.startsWith('/input-context') }}
+						aria-label="input-context"
+						class="header__item"
+						data-header-menu-id="0"
+						data-btattached="true"
+					>
+						input-context
+					</a>
+					<a
+						href="/clock"
+						class={{ active: pathname.startsWith('/clock') }}
+						aria-label="Clock"
+						class="header__item"
+						data-header-menu-id="0"
+						data-btattached="true"
+					>
+						Clock
+					</a>
+					<a
+						href="/use-styles"
+						class={{ active: pathname.startsWith('/use-styles') }}
+						aria-label="use-styles"
+						class="header__item"
+						data-header-menu-id="0"
+						data-btattached="true"
+					>
+						Use Styles
+					</a>
+					<a
+						href="/use-reference"
+						class={{ active: pathname.startsWith('/use-reference') }}
+						aria-label="use-reference"
+						class="header__item"
+						data-header-menu-id="0"
+						data-btattached="true"
+					>
+						Use Reference
+					</a>
+					<a
+						href="/use-context"
+						class={{ active: pathname.startsWith('/use-context') }}
+						aria-label="use-context"
+						class="header__item"
+						data-header-menu-id="0"
+						data-btattached="true"
+					>
+						Use Context
+					</a>
+					<a
+						href="/unsplash-api"
+						class={{ active: pathname.startsWith('/unsplash-api') }}
+						aria-label="use-context"
+						class="header__item"
+						data-header-menu-id="0"
+						data-btattached="true"
+					>
+						Unsplash Api
+					</a>
+					<a
+						href="/counter"
+						class={{ active: pathname.startsWith('/counter') }}
+						aria-label="Counter"
+						class="header__item"
+						data-header-menu-id="0"
+						data-btattached="true"
+					>
+						Counter
+					</a>
+					<a
+						href="/star-wars-api"
+						class={{ active: pathname.startsWith('/star-wars-api') }}
+						aria-label="Star Wars"
+						class="header__item"
+						data-header-menu-id="0"
+						data-btattached="true"
+					>
+						Star Wars
+					</a>
+					<a
+						href="/hacker-news"
+						class={{ active: pathname.startsWith('/hacker-news') }}
+						aria-label="Star Wars"
+						class="header__item"
+						data-header-menu-id="0"
+						data-btattached="true"
+					>
+						Hacker News
+					</a>
 		</nav>
 	);
 });
