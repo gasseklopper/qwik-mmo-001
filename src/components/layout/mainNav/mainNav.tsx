@@ -81,7 +81,6 @@ export const HeaderItems = component$(() => {
 						aria-label="Docs"
 						data-header-menu-id="0"
 						data-btattached="true"
-						active={pathname.startsWith('/docs')}
 					>
 						Docs
 					</a>
