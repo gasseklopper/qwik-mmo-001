@@ -77,19 +77,18 @@ export const HeaderItems = component$(() => {
 		<nav class="header__items">
 					<a
 						href="/docs"
-						class={{ active: pathname.startsWith('/docs'),header__item: true }}
+						class={{ header__item: true, active: pathname.startsWith('/docs')}}
 						aria-label="Docs"
-						// class="header__item"
 						data-header-menu-id="0"
 						data-btattached="true"
+						active={pathname.startsWith('/docs')}
 					>
 						Docs
 					</a>
 					<a
 						href="/about-us"
-						class={{ active: pathname.startsWith('/about-us') }}
+						class={{ header__item: true, active: pathname.startsWith('/about-us')}}
 						aria-label="About Us"
-						// class="header__item"
 						data-header-menu-id="0"
 						data-btattached="true"
 					>
@@ -97,9 +96,8 @@ export const HeaderItems = component$(() => {
 					</a>
 					<a
 						href="/input-context"
-						class={{ active: pathname.startsWith('/input-context') }}
+						class={{ header__item: true, active: pathname.startsWith('/input-context')}}
 						aria-label="input-context"
-						// class="header__item"
 						data-header-menu-id="0"
 						data-btattached="true"
 					>
@@ -107,9 +105,8 @@ export const HeaderItems = component$(() => {
 					</a>
 					<a
 						href="/clock"
-						class={{ active: pathname.startsWith('/clock') }}
+						class={{ header__item: true, active: pathname.startsWith('/clock') }}
 						aria-label="Clock"
-						// class="header__item"
 						data-header-menu-id="0"
 						data-btattached="true"
 					>
@@ -117,9 +114,8 @@ export const HeaderItems = component$(() => {
 					</a>
 					<a
 						href="/use-styles"
-						class={{ active: pathname.startsWith('/use-styles') }}
+						class={{ header__item: true, active: pathname.startsWith('/use-styles') }}
 						aria-label="use-styles"
-						// class="header__item"
 						data-header-menu-id="0"
 						data-btattached="true"
 					>
@@ -127,9 +123,8 @@ export const HeaderItems = component$(() => {
 					</a>
 					<a
 						href="/use-reference"
-						class={{ active: pathname.startsWith('/use-reference') }}
+						class={{ header__item: true, active: pathname.startsWith('/use-reference') }}
 						aria-label="use-reference"
-						// class="header__item"
 						data-header-menu-id="0"
 						data-btattached="true"
 					>
@@ -137,9 +132,8 @@ export const HeaderItems = component$(() => {
 					</a>
 					<a
 						href="/use-context"
-						class={{ active: pathname.startsWith('/use-context') }}
+						class={{ header__item: true, active: pathname.startsWith('/use-context') }}
 						aria-label="use-context"
-						// class="header__item"
 						data-header-menu-id="0"
 						data-btattached="true"
 					>
@@ -147,9 +141,8 @@ export const HeaderItems = component$(() => {
 					</a>
 					<a
 						href="/unsplash-api"
-						class={{ active: pathname.startsWith('/unsplash-api') }}
+						class={{ header__item: true, active: pathname.startsWith('/unsplash-api') }}
 						aria-label="use-context"
-						// class="header__item"
 						data-header-menu-id="0"
 						data-btattached="true"
 					>
@@ -157,9 +150,8 @@ export const HeaderItems = component$(() => {
 					</a>
 					<a
 						href="/counter"
-						class={{ active: pathname.startsWith('/counter') }}
+						class={{ header__item: true, active: pathname.startsWith('/counter') }}
 						aria-label="Counter"
-						// class="header__item"
 						data-header-menu-id="0"
 						data-btattached="true"
 					>
@@ -167,9 +159,8 @@ export const HeaderItems = component$(() => {
 					</a>
 					<a
 						href="/star-wars-api"
-						class={{ active: pathname.startsWith('/star-wars-api') }}
+						class={{ header__item: true, active: pathname.startsWith('/star-wars-api') }}
 						aria-label="Star Wars"
-						// class="header__item"
 						data-header-menu-id="0"
 						data-btattached="true"
 					>
@@ -177,9 +168,8 @@ export const HeaderItems = component$(() => {
 					</a>
 					<a
 						href="/hacker-news"
-						class={{ active: pathname.startsWith('/hacker-news') }}
+						class={{ header__item: true, active: pathname.startsWith('/hacker-news') }}
 						aria-label="Star Wars"
-						// class="header__item"
 						data-header-menu-id="0"
 						data-btattached="true"
 					>
