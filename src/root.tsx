@@ -24,8 +24,7 @@ export default component$(() => {
 				/>
 				<script
 					type="module"
-					async
-					src="./src/index.js"
+					src="/main.js"
 				></script>
 				<RouterHead />
 			</head>
