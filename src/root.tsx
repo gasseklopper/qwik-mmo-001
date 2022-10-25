@@ -24,7 +24,7 @@ export default component$(() => {
 				/>
 				<script
 					type="module"
-					src="/main.js"
+					src="/src/main.js"
 				></script>
 				<RouterHead />
 			</head>
