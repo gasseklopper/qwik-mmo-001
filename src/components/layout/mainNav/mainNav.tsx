@@ -3,6 +3,7 @@ import {
 	useStyles$,
 } from '@builder.io/qwik'
 import { useLocation } from '@builder.io/qwik-city'
+// import { QwikLogo } from '../../icons/qwik'
 import styles from './main-nav.scss?inline'
 
 export default component$(() => {
@@ -12,7 +13,10 @@ export default component$(() => {
 		<>
 			<div class="navigation">
 				<header class="header">
-					<ColorRadio/>
+					<>
+						<ColorRadio/>
+						<Logo />
+					</>
 					<div class="header__main">
 						<div class="row">
 							<div class="column">
@@ -39,7 +43,18 @@ export const ButtonBurger = component$(() => {
 	);
 });
 
+export const Logo = component$(() => {
+	return (
+		<a class="logo" href="/" aria-label="Logo">
+			{/* <QwikLogo /> */}
+			LOGO
+		</a>
+	);
+});
+
 export const ColorRadio = component$(() => {
+
+
 	return (
 		<div class="header__form">
 			<div class="row">

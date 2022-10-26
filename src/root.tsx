@@ -1,4 +1,4 @@
-import { component$ } from '@builder.io/qwik'
+import { component$, useStore, useWatch$ } from '@builder.io/qwik'
 import {
 	QwikCity,
 	RouterOutlet,
@@ -14,6 +14,8 @@ export default component$(() => {
 	 *
 	 * Dont remove the `<head>` and `<body>` elements.
 	 */
+	const theme = useStore({ variant: "dark" })
+
 	return (
 		<QwikCity>
 			<head>
@@ -26,9 +28,16 @@ export default component$(() => {
 					type="module"
 					src="/src/main.js"
 				></script>
+				<script>
+
+				</script>
 				<RouterHead />
 			</head>
-			<body lang="en">
+			<body lang="en"
+				data-theme={theme.variant}
+				document:onLoad$={() => {
+					theme.variant = "light"
+				}}>
 				<RouterOutlet />
 				<ServiceWorkerRegister />
 			</body>
