@@ -1,6 +1,9 @@
 import {
 	component$,
 	useStyles$,
+	useWatch$,
+	useStore,
+	$,
 } from '@builder.io/qwik'
 import { useLocation } from '@builder.io/qwik-city'
 // import { QwikLogo } from '../../icons/qwik'
@@ -12,7 +15,9 @@ export default component$(() => {
 	return (
 		<>
 			<div class="navigation">
-				<header class="header">
+				{/* <header class="header"> */}
+				<header class={{ header: true}}>
+
 					<>
 						<ColorRadio/>
 						<Logo />
@@ -88,16 +93,55 @@ export const ColorRadio = component$(() => {
 
 export const HeaderItems = component$(() => {
 	const { pathname } = useLocation()
+	const store = useStore({
+		itemHover: false,
+	})
+
+
+	useWatch$(({ track }) => {
+		// track changes in store.count
+		track(() => store.itemHover)
+		console.log(store.itemHover)
+		console.log('store changed')
+		if (store.itemHover) {
+			console.log("hello hover")
+		} else {
+			console.log("bybye hover")
+		}
+
+		return store.itemHover
+	})
+
+	// if (store.itemHover) {
+	// 	// const test1 = store.itemHover ? 'active' : ''
+	// 	console.log("test1")
+	// }
+	// const test = `header__item ${test1}`
+	// const test = `header__item`
+	// const className = ['bordered accent', store.itemHover ? 'selected' : ""].join(' ')
+	const handleOnMouseHoverTrue = $(() => store.itemHover = true)
+	const handleOnMouseHoverfalse = $(() => store.itemHover = false)
+
 	return (
 		<nav class="header__items">
 					<a
 						href="/docs"
-						class={{ header__item: true, active: pathname.startsWith('/docs')}}
+						// className={bordered accent}
+						// className={`header__item `}
+						// className={`header__item ${test()}`}
+						// class={`${test}`}
+						// class={{ header__item: true, active: store.itemHover }}
 						aria-label="Docs"
 						data-header-menu-id="0"
 						data-btattached="true"
+						onMouseOver$={
+							handleOnMouseHoverTrue
+						}
+						onMouseOut$={
+							handleOnMouseHoverfalse
+						}
 					>
-						Docs
+						Docs{store.itemHover}
 					</a>
 					<a
 						href="/about-us"
