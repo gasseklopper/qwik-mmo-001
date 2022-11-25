@@ -17,5 +17,8 @@ export default defineConfig(() => {
 			netlifyEdge({ functionName: 'entry.netlify-edge' }),
 			partytownVite({ dest: join(__dirname, 'public', '~partytown') }),
 		],
+		esbuild: {
+			include : ['**/*.js']
+		}
 	}
 })

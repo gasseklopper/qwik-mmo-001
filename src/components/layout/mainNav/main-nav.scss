@@ -4,11 +4,6 @@
 	color: color-contrast($n vs var(--text1), var(--text2), var(--text3), var(--text4));
 }
 
-.main-nav {
-	background-color: red;
-
-}
-
 .navigation {
 
 
@@ -251,17 +246,17 @@
 				justify-content: flex-end;
 				width: 100%;
 				// background-color: blue;
-				@media (max-width: 720px) {
-					display: none;
-				}
+				// @media (max-width: 720px) {
+				// 	display: none;
+				// }
 			}
 
 			&__item {
 				position: relative;
 				display: block;
-				padding: 20px;
+				padding: 15px;
 				@include text-contrast(var(--surface2));
-				font-size: 1.4em;
+				font-size: 1.14em;
 				text-decoration: none;
 				opacity: 1;
 				transition: opacity $duration $timing;
