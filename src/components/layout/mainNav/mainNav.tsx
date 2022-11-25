@@ -1,7 +1,6 @@
 import {
 	component$,
 	useStyles$,
-	useWatch$,
 	useStore,
 	$,
 } from '@builder.io/qwik'
@@ -98,19 +97,19 @@ export const HeaderItems = component$(() => {
 	})
 
 
-	useWatch$(({ track }) => {
-		// track changes in store.count
-		track(() => store.itemHover)
-		console.log(store.itemHover)
-		console.log('store changed')
-		if (store.itemHover) {
-			console.log("hello hover")
-		} else {
-			console.log("bybye hover")
-		}
+	// useWatch$(({ track }) => {
+	// 	// track changes in store.count
+	// 	track(() => store.itemHover)
+	// 	console.log(store.itemHover)
+	// 	console.log('store changed')
+	// 	if (store.itemHover) {
+	// 		console.log("hello hover")
+	// 	} else {
+	// 		console.log("bybye hover")
+	// 	}
 
-		return store.itemHover
-	})
+	// 	return store.itemHover
+	// })
 
 	// if (store.itemHover) {
 	// 	// const test1 = store.itemHover ? 'active' : ''
