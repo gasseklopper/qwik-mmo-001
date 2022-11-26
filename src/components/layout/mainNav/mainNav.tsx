@@ -92,7 +92,7 @@ export const HeaderItems = component$(() => {
 					<a
 						href="/start"
 						class={{ header__item: true, active: pathname.startsWith('/start')}}
-						aria-label="Docs"
+						aria-label="start"
 						data-header-menu-id="0"
 						data-btattached="true"
 					>
