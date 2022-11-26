@@ -40,11 +40,8 @@
 			width: 100%;
 			z-index: 33;
 			background-color: var(--surface2);
-			height: 160px;
 
-
-			// checkbox ------------------------------------------------ //
-
+			// __checkbox ------------------------------------------------ //
 			&__checkbox_wrapper {
 				background-color: var(--surface2);
 				display: grid;
@@ -270,7 +267,7 @@
 					opacity: 0.2;
 				}
 
-				&.active_url {
+				&.active {
 					background-color: var(--surface3);
 					@include text-contrast(var(--surface3));
 					opacity: .6;

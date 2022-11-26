@@ -40,9 +40,10 @@ body {
 
 main {
 	padding: 10px 20px;
-	padding-top: 220px;
+	padding-top: 120px;
 	max-width: 960px;
 	margin: 0 auto;
+	/* background-color: var(--surface1); */
 }
 
 a {
