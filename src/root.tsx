@@ -1,4 +1,4 @@
-import { component$, useStore } from '@builder.io/qwik'
+import { component$ } from '@builder.io/qwik'
 import {
 	QwikCity,
 	RouterOutlet,
@@ -14,7 +14,6 @@ export default component$(() => {
 	 *
 	 * Dont remove the `<head>` and `<body>` elements.
 	 */
-	const theme = useStore({ variant: "dark" })
 
 	return (
 		<QwikCity>
@@ -24,20 +23,12 @@ export default component$(() => {
 					name="description"
 					content="Halten Sie bei Ihren Meta Descriptions die Länge von 140 bis 160 Zeichen ein, damit Google sie vollständig anzeigt. Verwenden Sie auch Ihr Keyword!"
 				/>
-				<script
-					type="module"
-					src="/src/main.js"
-				></script>
 				<script>
 
 				</script>
 				<RouterHead />
 			</head>
-			<body lang="en"
-				data-theme={theme.variant}
-				document:onLoad$={() => {
-					theme.variant = "light"
-				}}>
+			<body lang="en">
 				<RouterOutlet />
 				<ServiceWorkerRegister />
 			</body>
