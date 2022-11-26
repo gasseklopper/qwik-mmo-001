@@ -9,27 +9,21 @@ import styles from './color-sheme-toggle.css?inline'
 export default component$(() => {
 	useStyles$(styles)
 
-	// document.firstElementChild!
-    //         .setAttribute('data-theme',
-    //             'dark' ??
-    //             (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
-    //         )
-
 	const store = useStore({
 		theme: 'dark'
 	})
 
 	const toggleTheme = $(() => {
 		if (store.theme === 'dark') {
-			store.theme = 'light'
+			store.theme = 'lights2'
 			document.firstElementChild!
-					.setAttribute('data-theme',
+					.setAttribute('color-scheme',
 					store.theme
 			)
 		} else {
 			store.theme = 'dark'
 			document.firstElementChild!
-				.setAttribute('data-theme',
+				.setAttribute('color-scheme',
 				store.theme
 				)
 		}}
@@ -37,9 +31,9 @@ export default component$(() => {
 	 const initialTheme = $((e: any) => {
 		console.log('initial theme', e)
 		document.firstElementChild!
-		.setAttribute('data-theme',
+		.setAttribute('color-scheme',
 			'dark' ??
-			(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+			(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'lights2')
 		)}
 	 );
 	return (
