@@ -243,9 +243,7 @@
 				justify-content: flex-end;
 				width: 100%;
 				// background-color: blue;
-				// @media (max-width: 720px) {
-				// 	display: none;
-				// }
+
 			}
 
 			&__item {
@@ -257,6 +255,9 @@
 				text-decoration: none;
 				opacity: 1;
 				transition: opacity $duration $timing;
+				@media (max-width: 1024px) {
+					font-size: 0.814em;
+				}
 
 				&:last-child {
 					// margin-right: 0;
