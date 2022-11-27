@@ -10,21 +10,19 @@ export default component$(() => {
 	useStyles$(styles)
 
 	const store = useStore({
-		theme: 'dark'
+		theme: 'lights2'
 	})
 
 	const toggleTheme = $(() => {
 		if (store.theme === 'dark') {
-			store.theme = 'lights2'
 			document.firstElementChild!
 					.setAttribute('color-scheme',
-					store.theme
+					store.theme = 'lights2'
 			)
 		} else {
-			store.theme = 'dark'
 			document.firstElementChild!
 				.setAttribute('color-scheme',
-				store.theme
+				store.theme = 'dark'
 				)
 		}}
 	 );
@@ -32,13 +30,13 @@ export default component$(() => {
 		console.log('initial theme', e)
 		document.firstElementChild!
 		.setAttribute('color-scheme',
-			'dark' ??
+			store.theme ??
 			(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'lights2')
 		)}
 	 );
 	return (
-		<div class="theme-toggle-container">
-			<button onClick$={toggleTheme} document:onLoad$={initialTheme}>
+		<div class="theme-toggle-container" document:onLoad$={initialTheme}>
+			<button onClick$={toggleTheme} >
 				{store.theme}
 			</button>
 		</div>

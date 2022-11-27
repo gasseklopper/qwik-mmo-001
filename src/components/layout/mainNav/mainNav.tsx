@@ -96,7 +96,7 @@ export const HeaderItems = component$(() => {
 						data-header-menu-id="0"
 						data-btattached="true"
 					>
-						Start
+						Home
 					</a>
 					<a
 						href="/docs"
