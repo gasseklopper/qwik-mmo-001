@@ -1,15 +1,8 @@
 /** @format */
 
-import {
-	component$,
-	useServerMount$,
-	useStore,
-	useStyles$,
-} from '@builder.io/qwik'
-import HackerNewsCSS from './hacker-news.css'
+import { component$, useServerMount$, useStore } from '@builder.io/qwik'
 
 export default component$(() => {
-	useStyles$(HackerNewsCSS)
 	const store = useStore({ data: null })
 
 	useServerMount$(async () => {
