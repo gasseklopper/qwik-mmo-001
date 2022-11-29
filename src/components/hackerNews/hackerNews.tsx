@@ -38,7 +38,7 @@ export const Stories = component$((props: { data: any }) => {
 
 export const StoryPreview = component$((props: { story: IStory }) => {
 	return (
-		<li class="news-item" style="padding-bottom:26px;">
+		<li class="news-item" style="padding-bottom:36px;">
 			<div class="score">{props.story.points}</div>
 			<div class="title">
 				{props.story.url && !props.story.url.startsWith('item?id=') ? (
@@ -56,7 +56,6 @@ export const StoryPreview = component$((props: { story: IStory }) => {
 					<a href={`/item/${props.story.id}`}>{props.story.title}</a>
 				)}
 			</div>
-			<br />
 			<span class="meta">
 				{props.story.type !== 'job' ? (
 					<>
