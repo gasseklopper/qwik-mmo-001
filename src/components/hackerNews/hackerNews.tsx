@@ -20,26 +20,9 @@ export default component$(() => {
 })
 
 export const Stories = component$((props: { data: any }) => {
-	const page = 1
-	const type = 'list'
 	const stories = props.data
 	return (
 		<div class="news-view">
-			<div class="news-list-nav">
-				{stories && stories.length >= 29 ? (
-					<a
-						class="page-link"
-						href={`/?type=${type}&page=${page + 1}`}
-						aria-label="Next Page"
-					>
-						more {'>'}
-					</a>
-				) : (
-					<span class="page-link disabled" aria-disabled="true">
-						more {'>'}
-					</span>
-				)}
-			</div>
 			<main class="news-list">
 				{stories.length && (
 					<ul>
@@ -56,8 +39,8 @@ export const Stories = component$((props: { data: any }) => {
 export const StoryPreview = component$((props: { story: IStory }) => {
 	return (
 		<li class="news-item">
-			<span class="score">{props.story.points}</span>
-			<span class="title">
+			<div class="score">{props.story.points}</div>
+			<div class="title">
 				{props.story.url && !props.story.url.startsWith('item?id=') ? (
 					<>
 						<a
@@ -72,7 +55,7 @@ export const StoryPreview = component$((props: { story: IStory }) => {
 				) : (
 					<a href={`/item/${props.story.id}`}>{props.story.title}</a>
 				)}
-			</span>
+			</div>
 			<br />
 			<span class="meta">
 				{props.story.type !== 'job' ? (
@@ -98,6 +81,7 @@ export const StoryPreview = component$((props: { story: IStory }) => {
 				<>
 					{' '}
 					<span class="label">{props.story.type}</span>
+					<br />
 				</>
 			)}
 		</li>
