@@ -76,12 +76,12 @@ export const StoryPreview = component$((props: { story: IStory }) => {
 						{props.story.time_ago}
 					</a>
 				)}
+				<br />
 			</span>
 			{props.story.type !== 'link' && (
 				<>
 					{' '}
 					<span class="label">{props.story.type}</span>
-					<br />
 				</>
 			)}
 		</li>
