@@ -17,48 +17,12 @@ export default component$(() => {
 			'https://node-hnapi.herokuapp.com/news?page=0'
 		)
 		store.data = (await response.json()) || {}
-		console.log('test', store.data)
 	})
 
 	return (
 		<>
-			<Nav />
 			<Stories data={store.data} />
 		</>
-	)
-})
-
-export const Nav = component$(() => {
-	return (
-		<nav>
-			<header class="header">
-				<nav class="inner">
-					<a href="/">
-						<strong>HN</strong>
-					</a>
-					<a href="/?type=new">
-						<strong>New</strong>
-					</a>
-					<a href="/?type=show">
-						<strong>Show</strong>
-					</a>
-					<a href="/?type=ask">
-						<strong>Ask</strong>
-					</a>
-					<a href="/?type=job">
-						<strong>Jobs</strong>
-					</a>
-					<a
-						class="github"
-						href="http://github.com/builderio/qwik"
-						target="_blank"
-						rel="noreferrer"
-					>
-						Built with Qwik
-					</a>
-				</nav>
-			</header>
-		</nav>
 	)
 })
 
@@ -66,24 +30,9 @@ export const Stories = component$((props: { data: any }) => {
 	const page = 1
 	const type = 'list'
 	const stories = props.data
-	console.log('stories', stories)
 	return (
 		<div class="news-view">
 			<div class="news-list-nav">
-				{page > 1 ? (
-					<a
-						class="page-link"
-						href={`/?type=${type}&page=${page - 1}`}
-						aria-label="Previous Page"
-					>
-						{'<'} prev
-					</a>
-				) : (
-					<span class="page-link disabled" aria-disabled="true">
-						{'<'} prev
-					</span>
-				)}
-				<span>page {page}</span>
 				{stories && stories.length >= 29 ? (
 					<a
 						class="page-link"
