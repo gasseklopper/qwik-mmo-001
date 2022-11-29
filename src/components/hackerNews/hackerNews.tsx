@@ -38,7 +38,7 @@ export const Stories = component$((props: { data: any }) => {
 
 export const StoryPreview = component$((props: { story: IStory }) => {
 	return (
-		<li class="news-item" style="color:blue;font-size:46px;">
+		<li class="news-item" style="padding-bottom:26px;">
 			<div class="score">{props.story.points}</div>
 			<div class="title">
 				{props.story.url && !props.story.url.startsWith('item?id=') ? (
