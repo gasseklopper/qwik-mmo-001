@@ -1,0 +1,111 @@
+.textfield {
+    position: relative;
+	margin-bottom: 30px;
+}
+
+.textfield > input {
+    height: 60px;
+    width: 220px;
+    padding-left: 30px;
+    border: 0;
+    color: rgba(0, 0, 0, 0.9);
+    background: transparent;
+    outline: none;
+}
+
+.textfield > .underline {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transition: 0.4s;
+}
+
+.textfield > label, .textfield > span {
+    position: absolute;
+    color: rgba(0, 0, 0, 0.5);
+    translate: 0 -50%;
+    transition: 0.4s;
+    pointer-events: none;
+}
+
+.textfield > span {
+    top: 50%;
+    left: 0;
+}
+
+.textfield > label {
+    top: 50%;
+    left: 30px;
+    color: black;
+}
+
+.textfield > :is(input:focus) ~ .underline {
+    transform: scaleX(1);
+    background-color: black;
+}
+
+.textfield > :is(input:focus) ~ span {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.textfield > :is(input:focus) ~ label {
+    translate: -40px -40px;
+    scale: 0.8;
+    color: black;
+}
+
+.textfield > :is(input.valid) ~ label {
+    translate: -40px -40px;
+    scale: 0.8;
+    color: black;
+}
+
+.textfield > :is(input.invalid) ~ label {
+    translate: -40px -40px;
+    scale: 0.8;
+    color: black;
+	animation: shake 0.3s ease-in-out ;
+}
+
+.textfield > :is(input.valid) ~ .underline {
+    background-color: green;
+}
+
+.textfield > :is(input.valid) ~ span {
+    color : green;
+}
+
+.textfield > :is(input.valid) ~ label {
+    color: green;
+}
+.textfield > :is(input.invalid) ~ .underline {
+    background-color: red;
+}
+
+.textfield > :is(input.invalid) ~ span {
+    color : red;
+}
+
+.textfield > :is(input.invalid) ~ label {
+    color: red;
+}
+
+.invalid {
+    background-color: red;
+}
+
+@keyframes shake {
+	0%, 100%{
+		margin-left: 0;
+	}
+	20%, 80%{
+		margin-left: -12px;
+	}
+	40%, 60%{
+		margin-left: 12px;
+	}
+
+}
