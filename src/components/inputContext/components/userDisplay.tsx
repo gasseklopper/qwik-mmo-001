@@ -4,6 +4,9 @@ import {
 } from '@builder.io/qwik';
 import { LastName } from "./lastName";
 import { FirstName } from "./firstName";
+import { UserName } from "./UserName";
+import { Password } from "./Password";
+import { Email } from "./Email";
 import { UserContext } from "../context";
 
 export const UserDisplay = component$(() => {
@@ -12,6 +15,9 @@ export const UserDisplay = component$(() => {
 		<>
 			<FirstName firstName={user.first}/>
 			<LastName/>
+			<UserName/>
+			<Email/>
+			<Password/>
 		</>
 	)
 })

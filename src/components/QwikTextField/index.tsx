@@ -1,5 +1,6 @@
-import { component$, useStore } from '@builder.io/qwik';
+import { component$, useStore, useContext } from '@builder.io/qwik';
 // import type { DocumentHead } from '@builder.io/qwik-city';
+import { UserContext } from "~/components/inputContext/context";
 import './style.css';
 // import { UserIcon, EnvelopeIcon, LockIcon, PeopleIcon, ManIcon } from '~/integrations/react/mui';
 // import { Man } from '@mui/icons-material';
@@ -10,11 +11,32 @@ interface TextfieldProps {
 }
 
 export default component$((props: TextfieldProps) => {
+	const user = useContext(UserContext)
 
     const state = useStore({
         value: '',
         isValid: true
     });
+
+	if (props.name === 'Username') {
+		user.username = state.value
+	}
+
+	if (props.name === 'First Name') {
+		user.first = state.value
+	}
+
+	if (props.name === 'Last Name') {
+		user.last = state.value
+	}
+
+	if (props.name === 'Email') {
+		user.email = state.value
+	}
+
+	if (props.name === 'Password') {
+		user.password = state.value
+	}
 
     const passwordReg = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,20}$/;
     // eslint-disable-next-line no-control-regex
