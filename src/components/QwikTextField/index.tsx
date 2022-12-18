@@ -42,27 +42,48 @@ export default component$((props: TextfieldProps) => {
     // eslint-disable-next-line no-control-regex
     const emailReg = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
 
-  return (
-    <div className='textfield' id='textfield'>
-        <input
-			ref={props.reference}
-			onInput$={()=> {
-			// eslint-disable-next-line qwik/valid-lexical-scope
-				state.value = props.reference.current?.value;
-			}}
-			className={
-				props.name === 'Username' || props.name === 'First Name' || props.name === 'Last Name' ?
-					(state.value.length === 0 ? ('') : (state.value.length > 3 ? 'valid' : 'invalid')) :
-					(props.name === 'Email' ? (state.value.length > 0 ? (state.value.match(emailReg) ? 'valid' : 'invalid') : '') : (state.value.length > 0 ? (state.value.match(passwordReg) ? 'valid' : 'invalid') : ('')))
-			}
-		/>
-        <span>
-			{props.name === 'Username' ? (<></>) : (props.name === 'First Name' ? (<></>) :
-			(props.name === 'Last Name' ? (<></>) : props.name === 'Password' || props.name === 'Confirm Password' ? (<></>) :
-			(<></>)))}
-		</span>
-        <label for='textfield'>{`${props.name}`}</label>
-        <div className='underline'></div>
-    </div>
-  );
+	return (
+		<>
+			{/* <div className='textfield' id='textfield'>
+				<input
+					ref={props.reference}
+					onInput$={()=> {
+					// eslint-disable-next-line qwik/valid-lexical-scope
+						state.value = props.reference.current?.value;
+					}}
+					className={
+						props.name === 'Username' || props.name === 'First Name' || props.name === 'Last Name' ?
+							(state.value.length === 0 ? ('') : (state.value.length > 3 ? 'valid' : 'invalid')) :
+							(props.name === 'Email' ? (state.value.length > 0 ? (state.value.match(emailReg) ? 'valid' : 'invalid') : '') : (state.value.length > 0 ? (state.value.match(passwordReg) ? 'valid' : 'invalid') : ('')))
+					}
+				/>
+			</div> */}
+			{props.name === 'Username' || props.name === 'First Name' || props.name === 'Last Name' ?
+				<>
+					<div className='textfield' id='textfield'>
+						<input
+								ref={props.reference}
+								onInput$={()=> {
+								// eslint-disable-next-line qwik/valid-lexical-scope
+									state.value = props.reference.current?.value;
+								}}
+								className={
+									props.name === 'Username' || props.name === 'First Name' || props.name === 'Last Name' ?
+										(state.value.length === 0 ? ('') : (state.value.length > 3 ? 'valid' : 'invalid')) : ('')
+								}
+						/>
+						<span>
+							{props.name === 'Username' ? (<></>) : (props.name === 'First Name' ? (<></>) :
+							(props.name === 'Last Name' ? (<></>) : props.name === 'Password' || props.name === 'Confirm Password' ? (<></>) :
+							(<></>)))}
+						</span>
+						<label for='textfield'>{`${props.name}`}</label>
+						<div className='underline'></div>
+					</div>
+
+				</>:
+				<></>
+				}
+		</>
+	);
 });
