@@ -67,7 +67,13 @@
     translate: -40px -40px;
     scale: 0.8;
     color: black;
-	animation: shake 0.3s ease-in-out ;
+}
+
+.textfield > :is(input.invalid.anim) ~ label {
+    translate: -40px -40px;
+    scale: 0.8;
+    color: black;
+	animation: shake 0.3s ease-in-out;
 }
 
 .textfield > :is(input.valid) ~ .underline {

@@ -15,7 +15,8 @@ export default component$((props: TextfieldProps) => {
 
     const state = useStore({
         value: '',
-        isValid: true
+        isValid: true,
+		animateValid: true
     });
 
 	if (props.name === 'Username') {
@@ -53,11 +54,23 @@ export default component$((props: TextfieldProps) => {
 						<input
 								ref={props.reference}
 								onInput$={()=> {
-								// eslint-disable-next-line qwik/valid-lexical-scope
+									state.animateValid = true;
+									// eslint-disable-next-line qwik/valid-lexical-scope
 									state.value = props.reference.current?.value;
+									// {state.value.length === 0 ? (state.animateValid = false) : (state.value.match(standradReg) ? (state.animateValid = false) : (state.animateValid = true))}
+									setTimeout(() => {
+										state.animateValid = false
+										// state.animateValid = true
+									}, 600);
 								}}
 								className={
-									props.name === 'Email' ? (state.value.length > 0 ? (state.value.match(emailReg) ? 'valid' : 'invalid') : '') : (state.value.length > 0 ? (state.value.match(passwordReg) ? 'valid' : 'invalid') : (''))
+									props.name === 'Email' ?
+									(state.value.length > 0 ? (state.value.match(emailReg) ? 'valid' : (state.animateValid === false ?
+										'invalid' :
+										'invalid anim')) : '') : (state.value.length > 0 ? (state.value.match(passwordReg) ? 'valid' : (state.animateValid === false ?
+										'invalid' :
+										'invalid anim')) :
+									(''))
 								}
 						/>
 						<span className={'icon'}>
@@ -77,11 +90,24 @@ export default component$((props: TextfieldProps) => {
 						<input
 								ref={props.reference}
 								onInput$={()=> {
-								// eslint-disable-next-line qwik/valid-lexical-scope
+									state.animateValid = true;
+									// eslint-disable-next-line qwik/valid-lexical-scope
 									state.value = props.reference.current?.value;
+									// {state.value.length === 0 ? (state.animateValid = false) : (state.value.match(standradReg) ? (state.animateValid = false) : (state.animateValid = true))}
+									setTimeout(() => {
+										state.animateValid = false
+										// state.animateValid = true
+									}, 600);
 								}}
 								className={
-									state.value.length === 0 ? ('') : (state.value.match(standradReg) ? 'valid' : 'invalid')
+									state.value.length === 0 ?
+									('') :
+									(state.value.match(standradReg) ?
+										'valid' :
+										(state.animateValid === false ?
+											'invalid' :
+											'invalid anim')
+									)
 								}
 						/>
 						<span className={'icon'}>
