@@ -1,0 +1,212 @@
+@use "sass:math";
+
+.button {
+	// min-height: 60px;
+	// min-width: 3em;
+	max-width: 100%;
+	// display: inline-block;
+	margin: 0 0 math.div($gutter, 2);
+	padding: 1em 2em;
+	// line-height: 1.8em;
+	text-align: center;
+	text-decoration: none;
+	white-space: wrap;
+	cursor: pointer;
+	user-select: none;
+	overflow-wrap: break-word;
+	transition: background $duration $timing;
+	border: 0;
+	border-radius: 0;
+	border-radius: 2em;
+	background-color: var(--surface4);
+	font-weight: bold;
+	@include text-contrast(var(--surface4));
+
+	&--primary {
+		background-color: var(--surface4);
+		@include text-contrast(var(--surface4));
+	}
+
+	&--large {
+		height: 75px;
+	}
+
+	&--fit {
+		width: 100%;
+	}
+
+	&--small {
+		// height: 15px;
+		min-width: 1em;
+		padding: .7em 2em;
+		// font-weight: normal;
+		font-size: 80%;
+	}
+
+	&--default {
+		background-color: var(--surface1);
+		@include text-contrast(var(--surface1));
+		border: 2px solid var(--surface4);
+		&:hover {
+			background-color: var(--surface4);
+			@include text-contrast(var(--surface4));
+			border: 2px solid transparent;
+		}
+	}
+
+	&:active {
+		transition: none;
+	}
+
+	&:hover {
+		background-color: var(--surface2);
+		@include text-contrast(var(--surface2));
+	}
+
+	label {
+		padding: 0 .8em;
+	}
+
+	&--icon {
+		display: flex;
+		flex-direction: row;
+		padding: 1em 1em;
+	}
+
+	&--icon-right {
+		display: flex;
+		flex-direction: row;
+	}
+
+	&--icon-left {
+		display: flex;
+		flex-direction: row-reverse;
+	}
+
+	&:disabled {
+		background-color: var(--surface2);
+		@include text-contrast(var(--surface2));
+		cursor: not-allowed;
+		opacity: .4;
+		border: 2px solid transparent;
+	}
+
+	&--primary + span:hover {
+		background-color: var(--surface2);
+		@include text-contrast(var(--surface2));
+	}
+}
+
+
+.button-post {
+	cursor: pointer;
+	background: var(--text1);
+	border: none;
+	padding: 1.5rem 3rem;
+	margin: 0;
+	font-family: inherit;
+	font-size: inherit;
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	color: var(--text1);
+	font-family: input-mono-narrow, monospace;
+	font-weight: 500;
+
+	&::before,
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&::before {
+		content: "";
+		background: var(--surface3);
+		width: 100%;
+		height: 100%;
+		transform-origin: 50% 100%;
+		clip-path: polygon(0 -12%, 111% 0, 111% 111%, -5% 110%);
+		transition: clip-path 0.2s;
+		transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+	}
+
+	&:hover > span > span {
+		color: var(--surface3);
+		font-weight: 700;
+		animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+	}
+
+	&:hover::before {
+		transition-duration: 0.3s;
+		clip-path: polygon(0 0, 101% 0, 0 0, 0% 100%);
+	}
+
+	span {
+		display: block;
+		content: "";
+		height: 100%;
+		width: 100%;
+		position: absolute;
+		left: 0;
+		top: 0;
+		padding: 1.5rem 3rem;
+	}
+
+	> span {
+		overflow: hidden;
+	}
+}
+
+.button-tags {
+	background: var(--surface4);
+	color: var(--text1);
+	cursor: pointer;
+	border: none;
+	padding: 0.5rem 1rem;
+	margin: 0.3rem 0 0 0.3rem;
+	font-family: inherit;
+	font-size: inherit;
+	position: relative;
+	display: inline-block;
+	width: auto;
+	text-transform: uppercase;
+	letter-spacing: 0.05rem;
+	font-weight: 700;
+	font-size: 0.85rem;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	span {
+		position: absolute;
+		left: 1rem;
+
+		// mix-blend-mode: difference;
+	}
+
+	&::before,
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	&::before {
+		background: var(--surface2);
+		color: var(--text2);
+		content: "";
+		width: 120%;
+		left: -10%;
+		transform: skew(30deg);
+		transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+	}
+	&:hover {
+		color: var(--text1);
+		&::before {
+			transform: translate3d(100%, 0, 0);
+		}
+	}
+}

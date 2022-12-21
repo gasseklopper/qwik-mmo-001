@@ -1,0 +1,35 @@
+@include fontFace("Barlow bold", "./../public/fonts/Barlow-Bold", normal, 700);
+@include fontFace("Barlow light", "./../public/fonts/Barlow-Light", normal, 300);
+@include fontFace(
+	"Barlow medium",
+	"./../public/fonts/Barlow-Medium",
+	normal,
+	500
+);
+@include fontFace(
+	"Barlow semibold",
+	"./../public/fonts/Barlow-SemiBold",
+	normal,
+	600
+);
+@include fontFace(
+	"Berlingo regular",
+	"./../public/fonts/berlingo-regular",
+	normal,
+	500
+);
+@include fontFace("Syne bold", "./../public/fonts/Syne-Bold", normal, 700);
+@include fontFace(
+	"Syne extrabold",
+	"./../public/fonts/Syne-ExtraBold",
+	normal,
+	800
+);
+@include fontFace(
+	"Syne semibold",
+	"./../public/fonts/Syne-SemiBold",
+	normal,
+	600
+);
+@include fontFace("Syne medium", "./../public/fonts/Syne-Medium", normal, 500);
+@include fontFace("Syne regular", "./../public/fonts/Syne-Regular", normal, 400);

@@ -1,0 +1,33 @@
+@use "sass:math";
+
+table {
+	margin: 0 0 math.div($gutter, 2);
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+
+	tr {
+		cell-padding: 10px 0;
+		border: 2px solid var(--text1);
+		background-color: var(--surface4);
+		color: var(--text1);
+	}
+
+	tr:nth-child(even) {
+		background-color: var(--surface2);
+	}
+
+	tr:first-child {
+		border: 2px solid var(--surface3);
+	}
+
+	th {
+		border: 2px solid var(--surface3);
+	}
+
+	td {
+		height: 25px;
+		padding: 10px;
+		border: 2px solid var(--surface3);
+	}
+}

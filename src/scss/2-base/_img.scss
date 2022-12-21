@@ -1,0 +1,29 @@
+@use "sass:math";
+
+img {
+	display: block;
+	margin-bottom: math.div($gutter, 2);
+	max-width: 100%;
+	height: auto;
+}
+
+.image.left img, .image.right img {
+    width: 10%;
+}
+.image img {
+    border-radius: 1.375em;
+    display: block;
+}
+img {
+	margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+.image.left {
+    float: left;
+    padding: 0 1.5em 1em 0;
+    top: 0.25em;
+}

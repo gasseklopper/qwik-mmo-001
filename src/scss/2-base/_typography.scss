@@ -1,0 +1,110 @@
+@use "sass:math";
+
+// Headlines -------------------------------------------------------------- //
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	margin: 0;
+	// text-rendering: optimizeLegibility;
+
+	&.eyebrow {
+		margin: math.div(-$gutter, 2);
+		max-width: 100%;
+	}
+}
+
+h1,
+.h1 {
+	font: $fontStackBarlowBold;
+	font: $fontStackBerlingoRegular;
+	font-size: 3.5rem;
+	line-height: 3.25rem;
+	margin: 0;
+	margin: math.div($gutter, 1) 0;
+}
+
+h2,
+.h2 {
+	font: $fontStackBarlowBold;
+	font-size: 2rem;
+	line-height: 2.25rem;
+	margin: math.div($gutter, 1.4) 0;
+}
+
+h3,
+.h3 {
+	font-size: 1.775rem;
+	line-height: 2rem;
+	margin: math.div($gutter, .8) 0 math.div($gutter, 2.8) 0;
+}
+
+h4,
+.h4 {
+	font: $fontStackBarlowBold;
+	font-size: 1.225rem;
+	margin: math.div($gutter, 1.4) 0;
+}
+
+h5,
+.h5 {
+	font: $fontStackBarlowBold;
+	font-size: 1rem;
+	letter-spacing: 0.1rem;
+	margin: math.div($gutter, 1.4) 0;
+}
+
+h6,
+.h6 {
+	font: $fontStackBarlowBold;
+	font-size: 0.875rem;
+	margin: math.div($gutter, 1.4) 0;
+}
+
+// Text -------------------------------------------------------------- //
+p,
+address,
+ol,
+ul,
+label,
+blockquote {
+	margin: 0 0 math.div($gutter, 2);
+	font-style: normal;
+	font-size: 1.125rem;
+}
+
+.p-xlarge {
+	font-size: 1.375rem;
+}
+
+.p-large {
+	font-size: 1.125rem;
+}
+
+.p-medium {
+	font-size: 1rem;
+}
+
+.p-small {
+	font-size: 0.875rem;
+}
+
+.p-xsmall {
+	font-size: 0.75rem;
+}
+
+label {
+	margin: 0;
+}
+
+// a {
+// 	text-decoration: none;
+// }

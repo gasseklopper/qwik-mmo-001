@@ -1,0 +1,29 @@
+.rte {
+	blockquote {
+		font-size: 6vmin;
+		font-weight: 300;
+
+		span {
+			font-style: italic;
+			font-weight: 400;
+		}
+
+		cite {
+			font-weight: 300;
+			font-style: italic;
+			font-size: 4.5vmin;
+			display: block;
+			padding: 8px 0;
+		}
+	}
+
+	h2 {
+		font-size: 4.5vmin;
+		font-weight: 700;
+	}
+
+	h3 {
+		font-size: 4.5vmin;
+		font-weight: 700;
+	}
+}
