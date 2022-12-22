@@ -1,13 +1,11 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import Clock from '~/components/clock/clock'
-import CircleAnimation from '~/components/circle-animation/circle-animation'
 
 export default component$(() => {
 	return (
 		<>
 			<Clock />
-			<CircleAnimation />
 			<section>
 				<div class="row">
 					<div class="column surface1">
