@@ -1,11 +1,11 @@
 /** @format */
 
+@use './../1-helpers/0-mixins/color-contrast';
 @import 'shemes/dark-sheme';
 @import 'shemes/light-sheme';
 @import 'shemes/dim-sheme';
 @import 'shemes/sim-sheme';
 @import 'shemes/lights2-sheme';
-
 
 * {
 	/* brand foundation */
@@ -71,7 +71,6 @@
 	@include lights2-sheme;
 }
 
-
 // custom test styling for color shemes templates css
 
 .image-background {
@@ -114,53 +113,48 @@
 	background-color: var(--tertiary);
 }
 
-
 .quaternary {
 	background-color: var(--quaternary);
 }
 
-@mixin text-contrast($n) {
-	color: color-contrast($n vs var(--text1), var(--text2), var(--text3), var(--text4));
-}
-
 .surface1 {
 	background-color: var(--surface1);
-	@include text-contrast(var(--surface1));
+	@include color-contrast.text-contrast(var(--surface1));
 }
 
 .surface2 {
 	background-color: var(--surface2);
-	@include text-contrast(var(--surface2));
+	@include color-contrast.text-contrast(var(--surface2));
 }
 
 .surface3 {
 	background-color: var(--surface3);
-	@include text-contrast(var(--surface3));
+	@include color-contrast.text-contrast(var(--surface3));
 }
 
 .surface4 {
 	background-color: var(--surface4);
-	@include text-contrast(var(--surface4));
+	@include color-contrast.text-contrast(var(--surface4));
 }
 
 .surface5 {
 	background-color: var(--surface5);
-	@include text-contrast(var(--surface5));
+	@include color-contrast.text-contrast(var(--surface5));
 }
 
 .surface6 {
 	background-color: var(--surface6);
-	@include text-contrast(var(--surface6));
+	@include color-contrast.text-contrast(var(--surface6));
 }
 
 .surface7 {
 	background-color: var(--surface7);
-	@include text-contrast(var(--surface7));
+	@include color-contrast.text-contrast(var(--surface7));
 }
 
 .surface8 {
 	background-color: var(--surface8);
-	@include text-contrast(var(--surface8));
+	@include color-contrast.text-contrast(var(--surface8));
 }
 
 .brand-inverted-highlight1 {

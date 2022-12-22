@@ -56,7 +56,7 @@ export default component$((props: TextfieldProps) => {
 			props.name === 'Email' ||
 			props.name === 'Confirm Password' ? (
 				<>
-					<div className="textfield" id="textfield">
+					<div class="textfield" id="textfield">
 						<input
 							ref={props.reference}
 							onInput$={() => {
@@ -69,7 +69,7 @@ export default component$((props: TextfieldProps) => {
 									// state.animateValid = true
 								}, 600)
 							}}
-							className={
+							class={
 								props.name === 'Email'
 									? state.value.length > 0
 										? state.value.match(emailReg)
@@ -88,7 +88,7 @@ export default component$((props: TextfieldProps) => {
 							}
 							autoFocus={state.autoFocus}
 						/>
-						<span className={'icon'}>
+						<span class={'icon'}>
 							{props.name === 'Password' ||
 							props.name === 'Confirm Password' ? (
 								<></>
@@ -97,7 +97,7 @@ export default component$((props: TextfieldProps) => {
 							)}
 						</span>
 						<label for="textfield">{`${props.name}`}</label>
-						<div className="underline"></div>
+						<div class="underline"></div>
 					</div>
 				</>
 			) : null}
@@ -105,7 +105,7 @@ export default component$((props: TextfieldProps) => {
 			props.name === 'First Name' ||
 			props.name === 'Last Name' ? (
 				<>
-					<div className="textfield" id="textfield">
+					<div class="textfield" id="textfield">
 						<input
 							ref={props.reference}
 							onInput$={() => {
@@ -118,7 +118,7 @@ export default component$((props: TextfieldProps) => {
 									// state.animateValid = true
 								}, 600)
 							}}
-							className={
+							class={
 								state.value.length === 0
 									? ''
 									: state.value.match(standradReg)
@@ -129,7 +129,7 @@ export default component$((props: TextfieldProps) => {
 							}
 							autoFocus={state.autoFocus}
 						/>
-						<span className={'icon'}>
+						<span class={'icon'}>
 							{props.name === 'Username' ? (
 								<></>
 							) : props.name === 'First Name' ? (
@@ -141,7 +141,7 @@ export default component$((props: TextfieldProps) => {
 							)}
 						</span>
 						<label for="textfield">{`${props.name}`}</label>
-						<div className="underline"></div>
+						<div class="underline"></div>
 					</div>
 				</>
 			) : null}

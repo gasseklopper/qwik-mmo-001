@@ -1,14 +1,17 @@
+@use './../1-helpers/0-mixins/color-contrast';
+@use './../00-vars/00-vars' as vars;
+
 html {
 	// Fill the whole browser. Necessary when the body is smaller than the browser,
 	// but wants to fill the whole page using min-height.
 	width: 100%;
 	height: 100%;
-	@include text-contrast(var(--surface3));
+	@include color-contrast.text-contrast(var(--surface3));
 	scroll-behavior: smooth;
 	// Set the font-size in the root element as rem is relative to the document root
-	font: $fontStackBarlowLight;
+	// font: $fontStackBarlowLight;
 
-	@media (max-width: $bpXS) {
+	@media (max-width: vars.$bpXS) {
 		// Must have a unit to be usable in calc()
 		--basicGrid-outer: 0px;
 		font-size: 82.5%;

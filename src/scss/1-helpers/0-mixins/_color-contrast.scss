@@ -1,0 +1,8 @@
+@mixin text-contrast($n) {
+	color: color-contrast(
+		$n vs var(--text1),
+		var(--text2),
+		var(--text3),
+		var(--text4)
+	);
+}

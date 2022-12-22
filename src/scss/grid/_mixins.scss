@@ -1,4 +1,5 @@
-@use "sass:math";
+@use 'sass:math';
+@use 'vars';
 
 @mixin rowClasses($name) {
 	&.stretch-on-#{ $name } {
@@ -51,24 +52,24 @@
 		flex: 1 1 0px;
 	}
 
-	@for $i from 1 through $basicGrid__columns {
+	@for $i from 1 through vars.$basicGrid__columns {
 		&.#{ $name }-#{ $i } {
 			flex: 0 1 auto;
-			width: percentage(math.div(1, $basicGrid--columns)) * $i;
+			width: percentage(math.div(1, vars.$basicGrid--columns)) * $i;
 		}
 
 		&.#{ $name }-offset-#{ $i } {
-			margin-left: percentage(math.div(1, $basicGrid--columns)) * $i;
+			margin-left: percentage(math.div(1, vars.$basicGrid--columns)) * $i;
 		}
 
 		&.#{ $name }-pull-#{ $i } {
 			left: auto;
-			right: percentage(math.div(1, $basicGrid--columns)) * $i;
+			right: percentage(math.div(1, vars.$basicGrid--columns)) * $i;
 		}
 
 		&.#{ $name }-push-#{ $i } {
 			right: auto;
-			left: percentage(math.div(1, $basicGrid--columns)) * $i;
+			left: percentage(math.div(1, vars.$basicGrid--columns)) * $i;
 		}
 	}
 

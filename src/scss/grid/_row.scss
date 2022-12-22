@@ -1,33 +1,33 @@
-@use "sass:math";
+@use 'sass:math';
+@use 'vars';
+@use 'mixins';
 
 .row {
 	display: flex;
 	flex-wrap: wrap;
 	box-sizing: border-box;
 	margin: 0 auto;
-	padding: 0 $basicGrid__outer;
-	padding: 0 var(--basicGrid-outer, $basicGrid__outer);
+	padding: 0 vars.$basicGrid__outer;
 	width: 100%;
-	max-width: $basicGrid__width;
-	max-width: var(--basicGrid-width, $basicGrid__width);
+	max-width: vars.$basicGrid__width;
 
 	&--spacing {
-		margin-bottom: -$gutter;
+		margin-bottom: -(vars.$gutter);
 	}
 
 	&--spacing > .column {
-		margin-bottom: $gutter;
+		margin-bottom: vars.$gutter;
 	}
 
-	@each $sizeName, $size in $basicGrid__sizes {
+	@each $sizeName, $size in vars.$basicGrid__sizes {
 		@media (min-width: $size) {
-			@include rowClasses($sizeName);
+			@include mixins.rowClasses($sizeName);
 		}
 	}
 
 	.row {
-		margin: 0 math.div($basicGrid--gutter, -2);
-		margin: 0 calc(var(--basicGrid-gutter, #{$basicGrid__gutter}) / -2);
+		margin: 0 math.div(vars.$basicGrid--gutter, -2);
+		margin: 0 calc(var(--basicGrid-gutter, #{vars.$basicGrid__gutter}) / -2);
 		padding: 0;
 		width: auto;
 		max-width: none;
@@ -36,13 +36,13 @@
 	.column {
 		position: relative;
 		box-sizing: border-box;
-		padding: 0 math.div($basicGrid--gutter, 2);
-		padding: 0 calc(var(--basicGrid-gutter, #{$basicGrid__gutter}) / 2);
+		padding: 0 math.div(vars.$basicGrid--gutter, 2);
+		padding: 0 calc(var(--basicGrid-gutter, #{vars.$basicGrid__gutter}) / 2);
 		width: 100%;
 
-		@each $sizeName, $size in $basicGrid__sizes {
+		@each $sizeName, $size in vars.$basicGrid__sizes {
 			@media (min-width: $size) {
-				@include columnClasses($sizeName);
+				@include mixins.columnClasses($sizeName);
 			}
 		}
 	}
