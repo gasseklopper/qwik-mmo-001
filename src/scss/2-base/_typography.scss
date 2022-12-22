@@ -1,6 +1,5 @@
 @use 'sass:math';
-@use './../1-helpers/0-mixins/color-contrast';
-@use './../00-vars/00-vars' as *;
+@use './../00-vars/00-vars' as vars;
 
 // Headlines -------------------------------------------------------------- //
 h1,
@@ -17,58 +16,53 @@ h6,
 .h6 {
 	margin: 0;
 	// text-rendering: optimizeLegibility;
-
-	&.eyebrow {
-		margin: math.div(-$gutter, 2);
-		max-width: 100%;
-	}
 }
 
 h1,
 .h1 {
-	font: $fontStackBarlowBold;
+	font: vars.$fontStackBarlowBold;
 	font-size: 3.5rem;
 	line-height: 3.25rem;
 	margin: 0;
-	margin: math.div($gutter, 1) 0;
+	margin: math.div(vars.$gutter, 1) 0;
 }
 
 h2,
 .h2 {
-	font: $fontStackBarlowBold;
+	font: vars.$fontStackBarlowBold;
 	font-size: 2rem;
 	line-height: 2.25rem;
-	margin: math.div($gutter, 1.4) 0;
+	margin: math.div(vars.$gutter, 1.4) 0;
 }
 
 h3,
 .h3 {
-	font: $fontStackBerlingoRegular;
+	font: vars.$fontStackBerlingoRegular;
 	font-size: 1.775rem;
 	line-height: 2rem;
-	margin: math.div($gutter, 0.8) 0 math.div($gutter, 2.8) 0;
+	margin: math.div(vars.$gutter, 0.8) 0 math.div(vars.$gutter, 2.8) 0;
 }
 
 h4,
 .h4 {
-	font: $fontStackBarlowBold;
+	font: vars.$fontStackBarlowBold;
 	font-size: 1.225rem;
-	margin: math.div($gutter, 1.4) 0;
+	margin: math.div(vars.$gutter, 1.4) 0;
 }
 
 h5,
 .h5 {
-	font: $fontStackBarlowBold;
+	font: vars.$fontStackBarlowBold;
 	font-size: 1rem;
 	letter-spacing: 0.1rem;
-	margin: math.div($gutter, 1.4) 0;
+	margin: math.div(vars.$gutter, 1.4) 0;
 }
 
 h6,
 .h6 {
-	font: $fontStackBarlowBold;
+	font: vars.$fontStackBarlowBold;
 	font-size: 0.875rem;
-	margin: math.div($gutter, 1.4) 0;
+	margin: math.div(vars.$gutter, 1.4) 0;
 }
 
 // Text -------------------------------------------------------------- //
@@ -78,7 +72,7 @@ ol,
 ul,
 label,
 blockquote {
-	margin: 0 0 math.div($gutter, 2);
+	margin: 0 0 math.div(vars.$gutter, 2);
 	font-style: normal;
 	font-size: 1.125rem;
 }
@@ -108,7 +102,7 @@ label {
 }
 
 a {
-	font: $fontStackBarlowBold;
+	font: vars.$fontStackBarlowBold;
 	text-decoration: none;
 	border-bottom: dotted 1px var(--text2);
 	color: var(--text1);
