@@ -8,7 +8,7 @@ export default component$(() => {
 	return (
 		<>
 			<Header />
-			<main>
+			<main class="test">
 				<Slot />
 			</main>
 			<Footer />
