@@ -1,3 +1,6 @@
+@use '../../scss/00-vars/00-vars' as vars;
+@use '../../scss/00-vars/colors-shemes' as color;
+
 .docs {
 	display: grid;
 	grid-template-columns: 210px auto 190px;
@@ -6,11 +9,13 @@
 }
 
 .docs h1 {
-	margin-top: 0;
+	background-color: var(--surface4);
+	margin-top: vars.$gutter_30;
 }
 
 .docs .menu {
 	grid-area: menu;
+	background-color: var(--surface4);
 }
 
 .docs article {

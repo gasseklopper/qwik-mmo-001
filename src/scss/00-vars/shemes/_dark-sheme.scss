@@ -2,38 +2,36 @@
 	// --brand-hue-base-dark:var(--brand-hue);
 	// --brand-saturation-base-dark:var(--brand-saturation);
 	// --brand-lightness-base-dark:var(--brand-lightness);
-	--brand-hue-base-dark:160;
-	--brand-saturation-base-dark:0%;
-	--brand-lightness-base-dark:0%;
+	--brand-hue-base-dark: 160;
+	--brand-saturation-base-dark: 0%;
+	--brand-lightness-base-dark: 0%;
 	/* dark */
 	--brand-core-dark: hsl(
-		var(--brand-hue-base-dark)
-		calc(var(--brand-saturation-base-dark))
-		calc(var(--brand-lightness-base-dark))
+		var(--brand-hue-base-dark) calc(var(--brand-saturation-base-dark))
+			calc(var(--brand-lightness-base-dark))
 	);
 
 	--brand-dark: hsl(
-		var(--brand-hue-base-dark)
-		calc(var(--brand-saturation-base-dark) / 10)
-		calc(var(--brand-lightness-base-dark) / 12.5)
+		var(--brand-hue-base-dark) calc(var(--brand-saturation-base-dark) / 10)
+			calc(var(--brand-lightness-base-dark) / 12.5)
 	);
 
 	--brand-inverted-dark: hsl(
 		calc(var(--brand-hue-base-dark) - 100)
-		calc(var(--brand-saturation-base-dark))
-		calc(var(--brand-lightness-base-dark))
+			calc(var(--brand-saturation-base-dark))
+			calc(var(--brand-lightness-base-dark))
 	);
 
 	--brand-inverted-highlight1: hsl(
 		calc(var(--brand-hue-base-dark) + 150)
-		calc(var(--brand-saturation-base-dark))
-		calc(var(--brand-lightness-base-dark))
+			calc(var(--brand-saturation-base-dark))
+			calc(var(--brand-lightness-base-dark))
 	);
 
 	--brand-inverted-highlight2: hsl(
 		calc(var(--brand-hue-base-dark) - 150)
-		calc(var(--brand-saturation-base-dark))
-		calc(var(--brand-lightness-base-dark))
+			calc(var(--brand-saturation-base-dark))
+			calc(var(--brand-lightness-base-dark))
 	);
 
 	--primary-dark: hsl(var(--primary-hue) 100% 100%);
