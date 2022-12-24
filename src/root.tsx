@@ -19,6 +19,7 @@ export default component$(() => {
 			const doc = document.firstElementChild
 			const selectetdShema = localStorage.getItem('color-scheme')
 			doc!.setAttribute('color-scheme', selectetdShema!)
+			doc!.setAttribute('lang', 'de')
 			if (!localStorage.getItem('color-scheme')) {
 				console.log('not as ', localStorage.getItem('color-scheme'))
 				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
