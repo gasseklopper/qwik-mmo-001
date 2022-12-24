@@ -16,7 +16,6 @@ export default component$(() => {
 	 */
 	useClientEffect$(
 		() => {
-			console.log('runs in the browser')
 			const doc = document.firstElementChild
 			const selectetdShema = localStorage.getItem('color-scheme')
 			doc!.setAttribute('color-scheme', selectetdShema!)

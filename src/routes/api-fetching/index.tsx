@@ -1,15 +1,17 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
-import UseStyles from '~/components/useStyles/useStyles'
+import UnsplashApi from '~/components/unsplashApi/unsplashApi'
+import AutoComplete from '~/components/autoComplete/autoComplete'
 
 export default component$(() => {
 	return (
 		<>
-			<UseStyles />
+			<AutoComplete />
+			<UnsplashApi />
 		</>
 	)
 })
 
 export const head: DocumentHead = {
-	title: 'Clock',
+	title: 'api-fetching',
 }

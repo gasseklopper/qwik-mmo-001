@@ -11,7 +11,7 @@ export default component$(() => {
 	useStyles$(styles)
 
 	const store = useStore({
-		theme: '',
+		theme: 'idle',
 	})
 
 	const toggleTheme = $(() => {
@@ -31,7 +31,6 @@ export default component$(() => {
 	})
 	useClientEffect$(
 		() => {
-			console.log('runs in the browser')
 			const selectetdShema = localStorage.getItem('color-scheme')
 			store.theme = selectetdShema || ''
 		},

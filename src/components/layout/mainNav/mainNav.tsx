@@ -171,52 +171,28 @@ export const HeaderItems = component$(() => {
 				Clock
 			</a>
 			<a
-				href="/use-styles"
+				href="/use-hooks"
 				class={{
 					header__item: true,
-					active: pathname.startsWith('/use-styles'),
-				}}
-				aria-label="use-styles"
-				data-header-menu-id="0"
-				data-btattached="true"
-			>
-				Use Styles
-			</a>
-			<a
-				href="/use-reference"
-				class={{
-					header__item: true,
-					active: pathname.startsWith('/use-reference'),
-				}}
-				aria-label="use-reference"
-				data-header-menu-id="0"
-				data-btattached="true"
-			>
-				Use Reference
-			</a>
-			<a
-				href="/use-context"
-				class={{
-					header__item: true,
-					active: pathname.startsWith('/use-context'),
+					active: pathname.startsWith('/use-hooks'),
 				}}
 				aria-label="use-context"
 				data-header-menu-id="0"
 				data-btattached="true"
 			>
-				Use Context
+				use-hooks
 			</a>
 			<a
-				href="/unsplash-api"
+				href="/api-fetching"
 				class={{
 					header__item: true,
-					active: pathname.startsWith('/unsplash-api'),
+					active: pathname.startsWith('/api-fetching'),
 				}}
 				aria-label="use-context"
 				data-header-menu-id="0"
 				data-btattached="true"
 			>
-				Unsplash Api
+				api-fetching
 			</a>
 			<a
 				href="/counter"
@@ -229,18 +205,6 @@ export const HeaderItems = component$(() => {
 				data-btattached="true"
 			>
 				Counter
-			</a>
-			<a
-				href="/star-wars-api"
-				class={{
-					header__item: true,
-					active: pathname.startsWith('/star-wars-api'),
-				}}
-				aria-label="Star Wars"
-				data-header-menu-id="0"
-				data-btattached="true"
-			>
-				Star Wars
 			</a>
 			<a
 				href="/hacker-news"
