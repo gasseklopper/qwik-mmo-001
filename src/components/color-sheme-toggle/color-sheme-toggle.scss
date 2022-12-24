@@ -1,8 +1,9 @@
 .theme-toggle-container {
 	padding: 5px;
 	direction: rtl;
-	button {
-		min-width: 200px;
+	button.light,
+	button.dark {
+		min-width: 240px;
 		position: relative;
 		display: inline-block;
 		border: none;

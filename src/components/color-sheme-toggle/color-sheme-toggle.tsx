@@ -52,7 +52,7 @@ export default component$(() => {
 				}
 				onClick$={toggleTheme}
 			>
-				<span>{store.theme}</span>
+				<span>{store.theme} mode</span>
 			</button>
 		</div>
 	)
