@@ -1,0 +1,53 @@
+.theme-toggle-container {
+	padding: 5px;
+	direction: rtl;
+	button {
+		min-width: 200px;
+		position: relative;
+		display: inline-block;
+		border: none;
+		outline: none;
+		border-radius: 0.2rem;
+		font-size: 1.2rem;
+		font-weight: 800;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+		cursor: pointer;
+		overflow: hidden;
+	}
+
+	button.light::before,
+	button.dark::before {
+		content: attr(data-text);
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(
+			144deg,
+			var(--surface1),
+			var(--surface4) 50%,
+			var(--surface8)
+		);
+		color: #fff;
+		display: grid;
+		place-items: center;
+		transform: translateX(-100%);
+		transition: transform 0.5s;
+	}
+
+	button:hover::before {
+		transform: none;
+	}
+
+	button span {
+		display: inline-block;
+		padding: 1.2rem 2.2rem;
+		transition: transform 0.5s;
+	}
+
+	button:hover span {
+		transform: translateX(100%);
+	}
+}

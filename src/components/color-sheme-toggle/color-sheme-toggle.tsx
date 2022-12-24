@@ -5,7 +5,7 @@ import {
 	useClientEffect$,
 	$,
 } from '@builder.io/qwik'
-import styles from './color-sheme-toggle.css?inline'
+import styles from './color-sheme-toggle.scss?inline'
 
 export default component$(() => {
 	useStyles$(styles)
@@ -29,6 +29,7 @@ export default component$(() => {
 			localStorage.setItem('color-scheme', 'dark')
 		}
 	})
+
 	useClientEffect$(
 		() => {
 			const selectetdShema = localStorage.getItem('color-scheme')
@@ -40,8 +41,18 @@ export default component$(() => {
 	)
 	return (
 		<div class="theme-toggle-container">
-			<button class="button" onClick$={toggleTheme}>
-				{store.theme}
+			<button
+				data-text={
+					store.theme === 'lights2'
+						? 'switch to dark mode'
+						: 'switch to light mode'
+				}
+				class={
+					store.theme === 'lights2' ? 'button dark' : 'button light'
+				}
+				onClick$={toggleTheme}
+			>
+				<span>{store.theme}</span>
 			</button>
 		</div>
 	)
