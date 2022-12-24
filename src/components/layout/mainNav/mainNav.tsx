@@ -195,18 +195,6 @@ export const HeaderItems = component$(() => {
 				api-fetching
 			</a>
 			<a
-				href="/counter"
-				class={{
-					header__item: true,
-					active: pathname.startsWith('/counter'),
-				}}
-				aria-label="Counter"
-				data-header-menu-id="0"
-				data-btattached="true"
-			>
-				Counter
-			</a>
-			<a
 				href="/hacker-news"
 				class={{
 					header__item: true,
