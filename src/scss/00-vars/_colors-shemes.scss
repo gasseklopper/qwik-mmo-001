@@ -1,11 +1,11 @@
 /** @format */
 
 @use './../1-helpers/0-mixins/color-contrast';
-@import 'shemes/dark-sheme';
-@import 'shemes/light-sheme';
-@import 'shemes/dim-sheme';
-@import 'shemes/sim-sheme';
-@import 'shemes/lights2-sheme';
+@use 'shemes/dark-sheme';
+@use 'shemes/light-sheme';
+@use 'shemes/dim-sheme';
+@use 'shemes/sim-sheme';
+@use 'shemes/lights2-sheme';
 
 * {
 	/* brand foundation */
@@ -20,55 +20,55 @@
 	--tertiary-hue: 13;
 	--quaternary-hue: 356;
 
-	@include dark-sheme-definition;
-	@include light-sheme-definition;
-	@include dim-sheme-definition;
-	@include sim-sheme-definition;
-	@include lights2-sheme-definition;
+	@include dark-sheme.dark-sheme-definition;
+	@include light-sheme.light-sheme-definition;
+	@include dim-sheme.dim-sheme-definition;
+	@include sim-sheme.sim-sheme-definition;
+	@include lights2-sheme.lights2-sheme-definition;
 }
 
 :root {
 	color-scheme: dark;
-	@include dark-sheme;
+	@include dark-sheme.dark-sheme;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
 		color-scheme: dark;
-		@include dark-sheme;
+		@include dark-sheme.dark-sheme;
 	}
 }
 
 @media (prefers-color-scheme: light) {
 	:root {
 		color-scheme: light;
-		@include light-sheme;
+		@include light-sheme.light-sheme;
 	}
 }
 
 [color-scheme='sim'] {
 	color-scheme: sim;
-	@include sim-sheme;
+	@include sim-sheme.sim-sheme;
 }
 
 [color-scheme='default'] {
 	color-scheme: light;
-	@include light-sheme;
+	@include light-sheme.light-sheme;
 }
 
 [color-scheme='dark'] {
 	color-scheme: dark;
-	@include dark-sheme;
+	@include dark-sheme.dark-sheme;
 }
 
 [color-scheme='dim'] {
 	color-scheme: dim;
-	@include dim-sheme;
+	@include dim-sheme.dim-sheme;
 }
 
 [color-scheme='lights2'] {
 	color-scheme: lights2;
-	@include lights2-sheme;
+	@include lights2-sheme.lights2-sheme;
 }
 
 // custom test styling for color shemes templates css

@@ -1,5 +1,4 @@
-@import '/src/scss/00-vars/00-vars';
-@import '/src/scss/00-vars/colors-shemes';
-@import '/src/scss/grid/main';
-@import '/src/scss/layout/main';
-@import '/src/scss/2-base/2-base';
+@use '/src/scss/grid/main';
+@use '/src/scss/00-vars/colors-shemes';
+@use '/src/scss/layout/layout';
+@use '/src/scss/2-base/2-base' as base;

@@ -5,7 +5,7 @@ import {
 	ServiceWorkerRegister,
 } from '@builder.io/qwik-city'
 import { RouterHead } from './components/router-head/router-head'
-import  './global.css';
+import './global.css'
 
 export default component$(() => {
 	/*
@@ -23,9 +23,11 @@ export default component$(() => {
 					name="description"
 					content="Halten Sie bei Ihren Meta Descriptions die Länge von 140 bis 160 Zeichen ein, damit Google sie vollständig anzeigt. Verwenden Sie auch Ihr Keyword!"
 				/>
-				<script>
-
-				</script>
+				<link
+					href="https://fonts.googleapis.com/css?family=Montserrat"
+					rel="stylesheet"
+				></link>
+				<script></script>
 				<RouterHead />
 			</head>
 			<body lang="en">
