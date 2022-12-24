@@ -50,7 +50,7 @@ export default component$(() => {
 				<link
 					rel="preload"
 					as="style"
-					href="https://fonts.googleapis.com/https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+					href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
 				></link>
 				<link
 					href="https://fonts.googleapis.com/css?family=Montserrat"
