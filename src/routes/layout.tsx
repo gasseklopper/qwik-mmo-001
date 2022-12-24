@@ -5,6 +5,7 @@ import styles from '~/index.scss?inline'
 
 export default component$(() => {
 	useStyles$(styles)
+
 	return (
 		<>
 			<Header />
