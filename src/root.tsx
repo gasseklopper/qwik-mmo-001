@@ -46,6 +46,12 @@ export default component$(() => {
 					name="description"
 					content="Halten Sie bei Ihren Meta Descriptions die Länge von 140 bis 160 Zeichen ein, damit Google sie vollständig anzeigt. Verwenden Sie auch Ihr Keyword!"
 				/>
+				<link rel="preconnect" href="https://fonts.gstatic.com"></link>
+				<link
+					rel="preload"
+					as="style"
+					href="https://fonts.googleapis.com/https://fonts.googleapis.com/css?family=Montserrat&display=swap"
+				></link>
 				<link
 					href="https://fonts.googleapis.com/css?family=Montserrat"
 					rel="stylesheet"
