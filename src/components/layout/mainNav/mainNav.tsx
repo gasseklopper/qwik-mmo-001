@@ -10,11 +10,11 @@ export default component$(() => {
 		<>
 			<div class="navigation">
 				<header class="header">
-					<>
-						{/* <ColorRadio/>
-						<Logo /> */}
+					<div class="header__top-bar">
+						{/* <ColorRadio/> */}
+						<Logo />
 						<ShemeToggle />
-					</>
+					</div>
 					<div class="header__main">
 						<div class="row">
 							<div class="column">

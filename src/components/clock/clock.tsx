@@ -28,23 +28,26 @@ export default component$(() => {
 	})
 
 	return (
-		<div class="clock">
-			<div class="twelve"></div>
-			<div class="three"></div>
-			<div class="six"></div>
-			<div class="nine"></div>
-			<div
-				class="hour"
-				style={{ transform: `rotate(${store.hour}deg)` }}
-			></div>
-			<div
-				class="minute"
-				style={{ transform: `rotate(${store.minute}deg)` }}
-			></div>
-			<div
-				class="second"
-				style={{ transform: `rotate(${store.second}deg)` }}
-			></div>
-		</div>
+		<>
+			<div class="clock">
+				<div class="twelve"></div>
+				<div class="three"></div>
+				<div class="six"></div>
+				<div class="nine"></div>
+				<div
+					class="hour"
+					style={{ transform: `rotate(${store.hour}deg)` }}
+				></div>
+				<div
+					class="minute"
+					style={{ transform: `rotate(${store.minute}deg)` }}
+				></div>
+				<div
+					class="second"
+					style={{ transform: `rotate(${store.second}deg)` }}
+				></div>
+			</div>
+			<img src="../../assets/qwik-logo.svg" alt="" />
+		</>
 	)
 })
