@@ -2,6 +2,12 @@
 @use 'vars';
 @use 'mixins';
 
+.container {
+	margin: 0 auto;
+	width: 100%;
+	max-width: vars.$basicGrid__width;
+}
+
 .row {
 	display: flex;
 	flex-wrap: wrap;

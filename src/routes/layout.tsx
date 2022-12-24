@@ -9,7 +9,9 @@ export default component$(() => {
 		<>
 			<Header />
 			<main class="test">
-				<Slot />
+				<div class="container">
+					<Slot />
+				</div>
 			</main>
 			<Footer />
 		</>

@@ -30,7 +30,7 @@ export default component$(() => {
 				<script></script>
 				<RouterHead />
 			</head>
-			<body lang="en">
+			<body>
 				<RouterOutlet />
 				<ServiceWorkerRegister />
 			</body>
