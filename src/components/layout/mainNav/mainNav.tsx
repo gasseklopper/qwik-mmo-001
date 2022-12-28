@@ -5,7 +5,6 @@ import ShemeToggle from '../../color-sheme-toggle/color-sheme-toggle'
 import styles from './main-nav.scss?inline'
 export default component$(() => {
 	useStyles$(styles)
-
 	return (
 		<>
 			<div class="navigation">
@@ -44,7 +43,6 @@ export const ButtonBurger = component$(() => {
 export const Logo = component$(() => {
 	return (
 		<a class="logo" href="/" aria-label="Logo">
-			{/* <QwikLogo /> */}
 			LOGO
 		</a>
 	)
@@ -200,11 +198,23 @@ export const HeaderItems = component$(() => {
 					header__item: true,
 					active: pathname.startsWith('/hacker-news'),
 				}}
-				aria-label="Star Wars"
+				aria-label="Hacker News"
 				data-header-menu-id="0"
 				data-btattached="true"
 			>
 				Hacker News
+			</a>
+			<a
+				href="/link-list"
+				class={{
+					header__item: true,
+					active: pathname.startsWith('/link-list'),
+				}}
+				aria-label="link-list"
+				data-header-menu-id="0"
+				data-btattached="true"
+			>
+				link-list
 			</a>
 		</nav>
 	)
