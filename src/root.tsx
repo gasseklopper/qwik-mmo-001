@@ -8,7 +8,6 @@ import { RouterHead } from './components/router-head/router-head'
 // import { ColorStuff } from './components/color-stuff/color-stuff'
 import './global.css'
 
-
 export default component$(() => {
 	/*
 	 * The root of a QwikCity site always start with the <QwikCity> component,
@@ -16,15 +15,6 @@ export default component$(() => {
 	 *
 	 * Dont remove the `<head>` and `<body>` elements.
 	 */
-	// useClientEffect$(
-	// 	() => {
-	// 		const theme = localStorage.getItem('color-scheme') || 'lights2'
-	// 		document.body.className = theme
-	// 	},
-	// 	{
-	// 		eagerness: 'load', // 'load' | 'visible' | 'idle'
-	// 	}
-	// )
 	useClientEffect$(
 		() => {
 			const doc = document.firstElementChild
