@@ -54,7 +54,7 @@ export default component$(() => {
 					href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
 				></link>
 				<link
-					href="https://fonts.googleapis.com/css?family=Montserrat"
+					href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
 					rel="stylesheet"
 				></link>
 				<RouterHead />
