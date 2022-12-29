@@ -49,13 +49,16 @@ export default component$(() => {
 
 	useClientEffect$(
 		() => {
-			// eslint-disable-next-line @typescript-eslint/no-unused-vars
-			const scroll = new LocomotiveScroll({
-				el:
-					document.querySelector('[data-scroll-container]') ||
-					undefined,
-				smooth: true,
-			})
+			const scrollContainer = document.querySelector('[data-scroll-container]')
+
+			if (scrollContainer != null) {
+				const el1: Element = scrollContainer
+				// eslint-disable-next-line @typescript-eslint/no-unused-vars
+				const scroll = new LocomotiveScroll({
+					el: el1 as HTMLElement,
+					smooth: true,
+				})
+			}
 		},
 		{
 			eagerness: 'load', // 'load' | 'visible' | 'idle'
