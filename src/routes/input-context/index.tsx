@@ -5,7 +5,7 @@ import './style.css'
 
 export default component$(() => {
 	return (
-		<div className="input-context">
+		<div class="input-context">
 			<InputContext />
 		</div>
 	)

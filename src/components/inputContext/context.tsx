@@ -44,20 +44,20 @@ export const Login = component$(() => {
 	const password = useRef()
 
 	return (
-		<div className="container">
-			<div className="input">
+		<div class="container">
+			<div class="input">
 				<QwikTextField name="Username" reference={username} />
 			</div>
-			<div className="input">
+			<div class="input">
 				<QwikTextField name="First Name" reference={first} />
 			</div>
-			<div className="input">
+			<div class="input">
 				<QwikTextField name="Last Name" reference={last} />
 			</div>
-			<div className="input">
+			<div class="input">
 				<QwikTextField name="Email" reference={email} />
 			</div>
-			<div className="input">
+			<div class="input">
 				<QwikTextField name="Password" reference={password} />
 			</div>
 		</div>
