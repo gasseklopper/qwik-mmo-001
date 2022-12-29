@@ -27,6 +27,7 @@
 		"@builder.io/qwik-city": "0.0.112",
 		"@netlify/vite-plugin-netlify-edge": "1.1.0",
 		"@types/eslint": "8.4.6",
+		"@types/locomotive-scroll": "^4.1.0",
 		"@types/node": "latest",
 		"@typescript-eslint/eslint-plugin": "5.40.0",
 		"@typescript-eslint/parser": "5.40.0",

@@ -57,12 +57,28 @@ export default component$(() => {
 export const Intro = component$((props: { data: ILinkListContent }) => {
 	const content = props.data
 	return (
-		<div class="news-view">
-			<main class="news-list">
-				<h1>{content.headline}</h1>
-				<p>{content.bodytext}</p>
-				<p>{content.bla}</p>
-			</main>
+		<div data-scroll-container>
+			<div class="news-view">
+				<main class="news-list">
+					<div data-scroll-section>
+						<h1 data-scroll>Hey</h1>
+						<p data-scroll>👋</p>
+					</div>
+					<div data-scroll-section>
+						<h2 data-scroll data-scroll-speed="1">
+							What's up?
+						</h2>
+						<p data-scroll data-scroll-speed="2">
+							😬
+						</p>
+					</div>
+					<div data-scroll-section>
+						<h1>{content.headline}</h1>
+						<p>{content.bodytext}</p>
+						<p>{content.bla}</p>
+					</div>
+				</main>
+			</div>
 		</div>
 	)
 })
