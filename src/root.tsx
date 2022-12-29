@@ -5,6 +5,7 @@ import {
 	ServiceWorkerRegister,
 } from '@builder.io/qwik-city'
 import { RouterHead } from './components/router-head/router-head'
+// import { ColorStuff } from './components/color-stuff/color-stuff'
 import './global.css'
 
 export default component$(() => {
@@ -14,6 +15,15 @@ export default component$(() => {
 	 *
 	 * Dont remove the `<head>` and `<body>` elements.
 	 */
+	// useClientEffect$(
+	// 	() => {
+	// 		const theme = localStorage.getItem('color-scheme') || 'lights2'
+	// 		document.body.className = theme
+	// 	},
+	// 	{
+	// 		eagerness: 'load', // 'load' | 'visible' | 'idle'
+	// 	}
+	// )
 	useClientEffect$(
 		() => {
 			const doc = document.firstElementChild
