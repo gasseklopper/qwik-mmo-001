@@ -49,7 +49,9 @@ export default component$(() => {
 
 	useClientEffect$(
 		() => {
-			const scrollContainer = document.querySelector('[data-scroll-container]')
+			const scrollContainer = document.querySelector(
+				'[data-scroll-container]'
+			)
 
 			if (scrollContainer != null) {
 				const el1: Element = scrollContainer
@@ -92,10 +94,10 @@ export default component$(() => {
 									data-scroll=""
 									data-scroll-offset="200"
 								>
-									<h3>
+									<h2>
 										04. <br />
 										Fixed elements
-									</h3>
+									</h2>
 									<div class="c-sections_infos_text u-text">
 										<p>
 											Create slides that stick and untick
