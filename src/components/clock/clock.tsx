@@ -47,7 +47,12 @@ export default component$(() => {
 					style={{ transform: `rotate(${store.second}deg)` }}
 				></div>
 			</div>
-			<img src="../../assets/qwik-logo.svg" alt="" />
+			<img
+				src="../../assets/qwik-logo.svg"
+				width="640"
+				height="360"
+				alt="qwik logo"
+			/>
 		</>
 	)
 })
