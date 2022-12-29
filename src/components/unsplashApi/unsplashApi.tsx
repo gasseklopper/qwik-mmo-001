@@ -1,4 +1,4 @@
-import { component$, useStore, useWatch$ } from '@builder.io/qwik'
+import { component$, useStore, useTask$ } from '@builder.io/qwik'
 
 export default component$(() => {
 	return (
@@ -29,7 +29,7 @@ export const UnsplashApiComplete = component$(() => {
 		selectedValue: '',
 	})
 
-	useWatch$(async ({ track }) => {
+	useTask$(async ({ track }) => {
 		const searchInput = track(() => state.searchInput)
 
 		if (!searchInput) {
@@ -66,21 +66,30 @@ export const UnsplashApiComplete = component$(() => {
 	)
 })
 
-export const ImageListComponent = (props: { state: any }) => {
+export const ImageListComponent = component$((props: { state: any }) => {
 	const searchResults = props.state.searchResults
 	console.log('searchResults', searchResults)
 	return searchResults?.length ? (
 		<ul>
-			{searchResults.map((items: any) => {
+			{searchResults.map((items: any, index: number) => {
 				return (
-					<>
-						<li>
-							<h3>{items.alt_description}</h3>
-							<p>Likes:{items.likes}</p>
-							<p>Description:{items.description}</p>
-							<img src={items.urls.small} />
-						</li>
-					</>
+					<li key={index}>
+						<h3>{items.alt_description}</h3>
+						<p>Likes:{items.likes}</p>
+						<p>Description:{items.description}</p>
+						{index <= 3 ? (
+							<img
+								src={items.urls.small}
+								style="visibility: none;" // hidden, none, collapse
+							/>
+						) : (
+							<img
+								src={items.urls.small}
+								style="visibility: none;"
+								hidden // hidden, none, collapse
+							/>
+						)}
+					</li>
 				)
 			})}
 		</ul>
@@ -89,7 +98,7 @@ export const ImageListComponent = (props: { state: any }) => {
 			<em>No Images, you re on your own!</em>
 		</div>
 	)
-}
+})
 
 const getPictures = (
 	searchInput: string,
