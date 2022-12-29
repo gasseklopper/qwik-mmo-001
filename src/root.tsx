@@ -7,7 +7,7 @@ import {
 import { RouterHead } from './components/router-head/router-head'
 // import { ColorStuff } from './components/color-stuff/color-stuff'
 import './global.css'
-import LocomotiveScroll from 'locomotive-scroll'
+
 
 export default component$(() => {
 	/*
@@ -27,12 +27,6 @@ export default component$(() => {
 	// )
 	useClientEffect$(
 		() => {
-			// const scroll = new LocomotiveScroll()
-			// eslint-disable-next-line @typescript-eslint/no-unused-vars
-			const scroll = new LocomotiveScroll({
-				el: document.querySelector('[data-scroll-container]'),
-				smooth: true,
-			})
 			const doc = document.firstElementChild
 			const selectetdShema = localStorage.getItem('color-scheme')
 			doc!.setAttribute('color-scheme', selectetdShema!)
@@ -52,7 +46,7 @@ export default component$(() => {
 			}
 		},
 		{
-			eagerness: 'visible', // 'load' | 'visible' | 'idle'
+			eagerness: 'load', // 'load' | 'visible' | 'idle'
 		}
 	)
 	return (
