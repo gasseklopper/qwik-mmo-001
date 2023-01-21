@@ -1,7 +1,7 @@
 import { component$, useStore, useContext, useStyles$ } from '@builder.io/qwik'
 // import type { DocumentHead } from '@builder.io/qwik-city';
 import { UserContext } from '~/components/inputContext/context'
-import styles from './style.scss'
+import styles from './style.scss?inline'
 // import { UserIcon, EnvelopeIcon, LockIcon, PeopleIcon, ManIcon } from '~/integrations/react/mui';
 // import { Man } from '@mui/icons-material';
 
