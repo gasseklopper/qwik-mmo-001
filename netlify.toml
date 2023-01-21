@@ -8,3 +8,9 @@ function = "entry.netlify-edge"
 
 [dev]
 framework = "#static"
+
+
+[[headers]]
+  for = "/assets/images/photography/black/*"
+[headers.values]
+  Cache-Control = "public, max-age=60"
