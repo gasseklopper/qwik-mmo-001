@@ -25,8 +25,8 @@ export default defineConfig(() => {
 			partytownVite({ dest: join(__dirname, 'public', '~partytown') }),
 			vanillaExtractPlugin(),
 		],
-		esbuild: {
-			include: ['**/*.js'],
-		},
+		// esbuild: {
+		// 	include: ['**/*.js'],
+		// },
 	}
 })
