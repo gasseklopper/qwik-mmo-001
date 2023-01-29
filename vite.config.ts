@@ -5,6 +5,7 @@ import tsconfigPaths from 'vite-tsconfig-paths'
 import netlifyEdge from '@netlify/vite-plugin-netlify-edge'
 import { partytownVite } from '@builder.io/partytown/utils'
 import { join } from 'path'
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin/'
 
 export default defineConfig(() => {
 	return {
@@ -16,9 +17,10 @@ export default defineConfig(() => {
 			tsconfigPaths(),
 			netlifyEdge({ functionName: 'entry.netlify-edge' }),
 			partytownVite({ dest: join(__dirname, 'public', '~partytown') }),
+			vanillaExtractPlugin(),
 		],
 		esbuild: {
-			include : ['**/*.js']
-		}
+			include: ['**/*.js'],
+		},
 	}
 })
