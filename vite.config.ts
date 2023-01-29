@@ -9,6 +9,12 @@ import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin/'
 
 export default defineConfig(() => {
 	return {
+		optimizeDeps: {
+			exclude: [
+				// I tried pretty much everything here: no way to force vite pre-bundling to ignore it...
+				'styled-vanilla-extract/qwik',
+			],
+		},
 		plugins: [
 			qwikCity(),
 			qwikVite({
