@@ -1,14 +1,14 @@
 import {
 	component$,
 	useStore,
-	useStyles$,
+	// useStyles$,
 	useClientEffect$,
 	$,
 } from '@builder.io/qwik'
-import styles from './color-sheme-toggle.scss?inline'
+// import styles from '../'
 
 export default component$(() => {
-	useStyles$(styles)
+	// useStyles$(styles)
 
 	const store = useStore({
 		theme: 'idle',
