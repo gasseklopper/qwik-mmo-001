@@ -34,6 +34,7 @@
 		"@vanilla-extract/css": "^1.9.3",
 		"@vanilla-extract/dynamic": "2.0.3",
 		"@vanilla-extract/integration": "6.0.1",
+		"@vanilla-extract/vite-plugin": "^3.7.0",
 		"eslint": "8.25.0",
 		"eslint-plugin-qwik": "0.11.0",
 		"gsap": "^3.11.4",
