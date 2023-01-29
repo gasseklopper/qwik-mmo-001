@@ -302,11 +302,13 @@ export default component$(() => {
 	)
 })
 
-export const TestSlider = component$((props) => {
+// export const TestSlider = component$((props) => {
+export const TestSlider = component$(() => {
 	useClientEffect$(() => {
 		gsap.registerPlugin(Observer)
 
-		const setCurrentSlide = (position) => {
+		// const setCurrentSlide = (position) => {
+		const setCurrentSlide = () => {
 			console.log('set current slide')
 			// if (current !== -1) {
 			// 	slidesArr[current].DOM.el.classList.remove('slide--current')
@@ -318,7 +320,8 @@ export const TestSlider = component$((props) => {
 			// )
 		}
 
-		const navigate = (newPosition) => {
+		// const navigate = (newPosition) => {
+		const navigate = () => {
 			// isAnimating = true
 			// // change navigation current class
 			// DOM.navigationItems[current].classList.remove(
@@ -423,14 +426,16 @@ export const TestSlider = component$((props) => {
 
 		const next = () => {
 			// const newPosition = current < totalSlides - 1 ? current + 1 : 0
-			const newPosition = 1
-			navigate(newPosition)
+			// const newPosition = 1
+			// navigate(newPosition)
+			navigate()
 		}
 
 		const prev = () => {
 			//   const newPosition = current > 0 ? current - 1 : totalSlides - 1
-			const newPosition = 2
-			navigate(newPosition)
+			// const newPosition = 2
+			// navigate(newPosition)
+			navigate()
 		}
 
 		const initEvents = () => {
@@ -451,7 +456,8 @@ export const TestSlider = component$((props) => {
 		}
 
 		// Set current slide
-		setCurrentSlide(0)
+		// setCurrentSlide(0)
+		setCurrentSlide()
 
 		// Initialize the events
 		initEvents()
@@ -571,7 +577,7 @@ export const TestSlider = component$((props) => {
 	)
 })
 
-export const TestSlider2 = component$((props) => {
+export const TestSlider2 = component$(() => {
 	const ref = useSignal<HTMLDivElement>()
 	useStyles$(css)
 
