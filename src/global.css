@@ -1,3 +1,9 @@
+.slide--current-test {
+	pointer-events: auto;
+	opacity: 1;
+	border: 15px solid salmon inset;
+}
+
 html.has-scroll-smooth {
 	overflow: hidden;
 }

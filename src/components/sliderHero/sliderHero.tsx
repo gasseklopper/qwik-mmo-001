@@ -1,7 +1,6 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic'
 import { gsap } from 'gsap'
-import { Observer } from 'gsap/Observer.js'
-
+import { Observer } from 'gsap/Observer'
 import {
 	component$,
 	useStore,
@@ -10,10 +9,21 @@ import {
 	useSignal,
 	useClientEffect$,
 } from '@builder.io/qwik'
-import css, { cssAnim, gsapAnim, bg_color, Label } from './sliderHero.css'
+import css, {
+	cssAnim,
+	gsapAnim,
+	bg_color,
+	Label,
+	slides,
+	slide,
+	slideCurrent,
+	slideInner,
+	slideImage,
+	slideImageInner,
+} from './sliderHero.css'
+import { createGlobalTheme } from '@vanilla-extract/css'
 
 export const randomColor = () =>
-	// an excellent optimization by @wmertens
 	assignInlineVars({
 		[bg_color]:
 			'#' +
@@ -21,6 +31,16 @@ export const randomColor = () =>
 	})
 
 export default component$(() => {
+	return (
+		<div>
+			{/* <TestSlider1 /> */}
+			<TestSlider />
+			{/* <AnimatedButtons /> */}
+		</div>
+	)
+})
+
+export const TestSlider1 = component$(() => {
 	useStyles$(css)
 
 	const sliderConfig = useStore({
@@ -280,7 +300,7 @@ export default component$(() => {
 						})}
 					</div>
 					<div
-						className="slider__autoPlay-progressBar"
+						class="slider__autoPlay-progressBar"
 						style={`width: ${sliderConfig.sliderStartWidth}px;`}
 					></div>
 				</div>
@@ -297,13 +317,194 @@ export default component$(() => {
 				</div>
 			</div>
 			<TestSlider />
-			<TestSlider2 />
+			<AnimatedButtons />
 		</div>
 	)
 })
 
 // export const TestSlider = component$((props) => {
 export const TestSlider = component$(() => {
+	useStyles$(css)
+
+	const sliderConfig = useStore({
+		indexId: 0,
+		sliderItems: 19,
+		width: 941,
+		sliderStartWidth: 1,
+	})
+
+	const imageStore = useStore({
+		id: 0,
+	})
+
+	const indexCheckIncrement = $(() => {
+		if (sliderConfig.indexId === sliderConfig.sliderItems) {
+			sliderConfig.indexId = 0
+		} else {
+			sliderConfig.indexId++
+		}
+		imageStore.id = sliderConfig.indexId
+	})
+
+	const indexCheckDecrement = $(() => {
+		if (sliderConfig.indexId === 0) {
+			sliderConfig.indexId = sliderConfig.sliderItems
+		} else {
+			sliderConfig.indexId--
+		}
+		imageStore.id = sliderConfig.indexId
+	})
+
+	const images = [
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_01.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_02.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_03.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_04.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_05.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_06.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_07.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_08.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_09.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_010.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_011.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_012.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_013.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_014.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_015.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_016.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_017.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_018.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_019.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+		{
+			id: 1,
+			imgUrl: '../../assets/images/photography/black/Template_index_020.jpg',
+			imgWidth: 941,
+			imgHeight: 557,
+			imgAlt: 'hero image',
+		},
+	]
+	const ref = useSignal<HTMLDivElement>()
+	const refNext = useSignal<HTMLDivElement>()
+	const refPrev = useSignal<HTMLDivElement>()
+	const refImageInner = useSignal<HTMLDivElement>()
+	const refPrevImageInner = useSignal<HTMLDivElement>()
+	const refNextImageInner = useSignal<HTMLDivElement>()
+	const refNextInner = useSignal<HTMLDivElement>()
+
 	useClientEffect$(() => {
 		gsap.registerPlugin(Observer)
 
@@ -321,15 +522,9 @@ export const TestSlider = component$(() => {
 		}
 
 		// const navigate = (newPosition) => {
-		const navigate = () => {
-			// isAnimating = true
-			// // change navigation current class
-			// DOM.navigationItems[current].classList.remove(
-			// 	'frame__nav-button--current'
-			// )
-			// DOM.navigationItems[newPosition].classList.add(
-			// 	'frame__nav-button--current'
-			// )
+		const navigate = (prev: boolean) => {
+			console.log('prev', prev)
+
 			// // navigation direction
 			// const direction =
 			// 	current < newPosition
@@ -342,100 +537,103 @@ export const TestSlider = component$(() => {
 			// const currentSlide = slidesArr[current]
 			// current = newPosition
 			// const upcomingSlide = slidesArr[current]
-			// gsap.timeline({
-			// 	defaults: {
-			// 		duration: 1.6,
-			// 		ease: 'power3.inOut',
-			// 	},
-			// 	onComplete: () => {
-			// 		currentSlide.DOM.el.classList.remove('slide--current')
-			// 		// Close the current slide if it was open
-			// 		if (currentSlide.isOpen) {
-			// 			hideContent(currentSlide)
-			// 		}
-			// 		isAnimating = false
-			// 	},
-			// })
-			// 	.addLabel('start', 0)
-			// 	.set(
-			// 		[currentSlide.DOM.imgInner, upcomingSlide.DOM.imgInner],
-			// 		{
-			// 			transformOrigin:
-			// 				direction === 'next' ? '50% 0%' : '50% 100%',
-			// 		},
-			// 		'start'
-			// 	)
-			// 	// Place coming slide either above (translate -100%) or below (translate 100%) and the slide__inner to the opposite translate.
-			// 	.set(
-			// 		upcomingSlide.DOM.el,
-			// 		{
-			// 			yPercent: direction === 'next' ? 100 : -100,
-			// 		},
-			// 		'start'
-			// 	)
-			// 	.set(
-			// 		upcomingSlide.DOM.inner,
-			// 		{
-			// 			yPercent: direction === 'next' ? -100 : 100,
-			// 		},
-			// 		'start'
-			// 	)
-			// 	// Add current class
-			// 	.add(() => {
-			// 		upcomingSlide.DOM.el.classList.add('slide--current')
-			// 	}, 'start')
-			// 	// hide the back button and show back the cursor text if the current slide was open
-			// 	.add(() => {
-			// 		if (currentSlide.isOpen) {
-			// 			toggleCursorBackTexts()
-			// 		}
-			// 	}, 'start')
-			// 	// Current slide moves either up or down (translate 100% or -100%)
-			// 	.to(
-			// 		currentSlide.DOM.el,
-			// 		{
-			// 			yPercent: direction === 'next' ? -100 : 100,
-			// 		},
-			// 		'start'
-			// 	)
-			// 	.to(
-			// 		currentSlide.DOM.imgInner,
-			// 		{
-			// 			scaleY: 2,
-			// 		},
-			// 		'start'
-			// 	)
-			// 	// Upcoming slide translates to 0
-			// 	.to(
-			// 		[upcomingSlide.DOM.el, upcomingSlide.DOM.inner],
-			// 		{
-			// 			yPercent: 0,
-			// 		},
-			// 		'start'
-			// 	)
-			// 	.to(
-			// 		upcomingSlide.DOM.imgInner,
-			// 		{
-			// 			ease: 'power2.inOut',
-			// 			startAt: { scaleY: 2 },
-			// 			scaleY: 1,
-			// 		},
-			// 		'start'
-			// 	)
+			gsap.timeline({
+				defaults: {
+					duration: 1.6,
+					ease: 'power3.inOut',
+				},
+				onComplete: () => {
+					refNext.value!.classList.remove('slide--current-test')
+					imageStore.id = sliderConfig.indexId
+				},
+			})
+				.addLabel('start', 0)
+				.set(
+					[refImageInner.value!, refNextImageInner.value!],
+					{
+						transformOrigin: prev ? '50% 0%' : '50% 100%',
+					},
+					'start'
+				)
+				// Place coming slide either above (translate -100%) or below (translate 100%) and the slide__inner to the opposite translate.
+				.set(
+					refNext.value!,
+					{
+						yPercent: !prev ? -100 : 100,
+					},
+					'start'
+				)
+				.set(
+					refNextInner.value!,
+					{
+						yPercent: !prev ? -100 : 100,
+					},
+					'start'
+				)
+				// 	// Add current class
+				.add(() => {
+					// imageStore.id = sliderConfig.indexId
+					refNext.value!.classList.add('slide--current-test')
+				}, 'start')
+				// Current slide moves either up or down (translate 100% or -100%)
+				.to(
+					ref,
+					{
+						yPercent: prev ? -100 : 100,
+					},
+					'start'
+				)
+				.to(
+					refNextImageInner,
+					{
+						scaleY: 2,
+					},
+					'start'
+				)
+				// Upcoming slide translates to 0
+				.to(
+					[refNext.value!, refNextInner.value!],
+					{
+						yPercent: 0,
+					},
+					'start'
+				)
+				.to(
+					refNextImageInner,
+					{
+						ease: 'power2.inOut',
+						startAt: { scaleY: 2 },
+						scaleY: 1,
+					},
+					'start'
+				)
 		}
 
 		const next = () => {
 			// const newPosition = current < totalSlides - 1 ? current + 1 : 0
 			// const newPosition = 1
 			// navigate(newPosition)
-			navigate()
+			if (sliderConfig.indexId === sliderConfig.sliderItems) {
+				sliderConfig.indexId = 0
+			} else {
+				sliderConfig.indexId++
+			}
+			const prev = false
+			navigate(prev)
 		}
 
 		const prev = () => {
 			//   const newPosition = current > 0 ? current - 1 : totalSlides - 1
 			// const newPosition = 2
 			// navigate(newPosition)
-			navigate()
+			if (sliderConfig.indexId === 0) {
+				sliderConfig.indexId = sliderConfig.sliderItems
+			} else {
+				sliderConfig.indexId--
+			}
+			// imageStore.id = sliderConfig.indexId
+			const prev = true
+			navigate(prev)
 		}
 
 		const initEvents = () => {
@@ -462,122 +660,142 @@ export const TestSlider = component$(() => {
 		// Initialize the events
 		initEvents()
 	})
+
+	// useClientEffect$(() => {
+	// 	const tl = gsap.timeline({
+	// 		repeat: -1,
+	// 		yoyo: true,
+	// 	})
+	// 	tl.to(ref.value!, {
+	// 		rotate: 359,
+	// 		scale: 0.5,
+	// 		duration: 2,
+	// 		ease: 'none',
+	// 	})
+
+	// 	return () => {
+	// 		tl?.kill()
+	// 	}
+	// })
+
 	return (
-		<div class="slides">
-			<div class="slide">
-				<div class="slide__inner">
-					<div class="slide__img">
-						<div
-							class="slide__img-inner"
-							style="background-image:url(../../assets/images/photography/black/Template_index_01.jpg)"
-						></div>
-					</div>
-					<div class="slide__content">
-						<div
-							class="slide__content-img"
-							style="background-image:url(../../assets/images/photography/black/Template_index_01.jpg)"
-						></div>
-						<h2>Stronger</h2>
-						<p>
-							You strung me along, I thought I was strong, but now
-							you have pushed me under. I’ve opened my eyes, and
-							counted the lies, now it is clearer to me. You are
-							just a user, and an abuser, and I refuse to take it.
-						</p>
-					</div>
-				</div>
+		<>
+			<div class="slider__next">
+				<button onClick$={indexCheckIncrement}>next</button>
 			</div>
-			<div class="slide">
-				<div class="slide__inner">
-					<div class="slide__content">
-						<div
-							class="slide__content-img"
-							style="background-image:url(../../assets/images/photography/black/Template_index_02.jpg)"
-						></div>
-						<h2>No choice</h2>
-						<p>
-							Fall into line, you will do as you’re told. No
-							choice fatigue, your blood is running cold. We lose
-							control, the world will fall apart.
-						</p>
-					</div>
-					<div class="slide__img">
-						<div
-							class="slide__img-inner"
-							style="background-image:url(../../assets/images/photography/black/Template_index_02.jpg)"
-						></div>
-					</div>
-				</div>
+			<div class="slider__previous">
+				<button onClick$={indexCheckDecrement}>previous</button>
 			</div>
-			<div class="slide">
-				<div class="slide__inner">
-					<div class="slide__content">
-						<div
-							class="slide__content-img"
-							style="background-image:url(img/3.jpg)"
-						></div>
-						<h2>Owned no longer</h2>
-						<p>
-							We need a transmutation. One we all conceive. We
-							need a revolution. So long as we stay free.
-						</p>
-					</div>
-					<div class="slide__img">
-						<div
-							class="slide__img-inner"
-							style="background-image:url(img/3.jpg)"
-						></div>
-					</div>
-				</div>
+			<div class={slides}>
+				{images.map((items: any, itemIndex: number) => {
+					if (itemIndex <= sliderConfig.sliderItems) {
+						return (
+							<>
+								{itemIndex === imageStore.id + 1 && (
+									<div ref={refNext} class={slide}>
+										<div
+											ref={refNextInner}
+											class={slideInner}
+										>
+											<div class="slide__content">
+												<div
+													class="slide__content-img"
+													style={`background-image: url(${items.imgUrl});`}
+												></div>
+												<h2>No choice</h2>
+												<p>
+													Fall into line, you will do
+													as you’re told. No choice
+													fatigue, your blood is
+													running cold. We lose
+													control, the world will fall
+													apart.
+												</p>
+											</div>
+											<div class={slideImage}>
+												<div
+													ref={refNextImageInner}
+													class={slideImageInner}
+													style={`background-image: url(${items.imgUrl});`}
+												></div>
+											</div>
+										</div>
+									</div>
+								)}
+								{itemIndex === imageStore.id - 1 ||
+									(itemIndex === 0 &&
+										itemIndex === imageStore.id - 1 && (
+											<div ref={refPrev} class={slide}>
+												<div class={slideInner}>
+													<div class="slide__content">
+														<div
+															class="slide__content-img"
+															style={`background-image: url(${items.imgUrl});`}
+														></div>
+														<h2>No choice</h2>
+														<p>
+															Fall into line, you
+															will do as you’re
+															told. No choice
+															fatigue, your blood
+															is running cold. We
+															lose control, the
+															world will fall
+															apart.
+														</p>
+													</div>
+													<div class={slideImage}>
+														<div
+															ref={
+																refPrevImageInner
+															}
+															class={
+																slideImageInner
+															}
+															style={`background-image: url(${items.imgUrl});`}
+														></div>
+													</div>
+												</div>
+											</div>
+										))}
+								{itemIndex === imageStore.id && (
+									<div ref={ref} class={slide}>
+										<div class={slideInner}>
+											<div class="slide__content">
+												<div
+													class="slide__content-img"
+													style={`background-image: url(${items.imgUrl});`}
+												></div>
+												<h2>No choice</h2>
+												<p>
+													Fall into line, you will do
+													as you’re told. No choice
+													fatigue, your blood is
+													running cold. We lose
+													control, the world will fall
+													apart.
+												</p>
+											</div>
+											<div class={slideImage}>
+												<div
+													ref={refImageInner}
+													class={slideImageInner}
+													style={`background-image: url(${items.imgUrl});`}
+												></div>
+											</div>
+										</div>
+									</div>
+								)}
+							</>
+						)
+					}
+				})}
 			</div>
-			<div class="slide">
-				<div class="slide__inner">
-					<div class="slide__content">
-						<div
-							class="slide__content-img"
-							style="background-image:url(img/4.jpg)"
-						></div>
-						<h2>Assert control</h2>
-						<p>
-							Cornered, I’m exhausted with fear. Our love and
-							compassion dissolved. And demons, have materialised
-							in me. Can’t fight them, they’re taking control.
-						</p>
-					</div>
-					<div class="slide__img">
-						<div
-							class="slide__img-inner"
-							style="background-image:url(img/4.jpg)"
-						></div>
-					</div>
-				</div>
-			</div>
-			<div class="slide">
-				<div class="slide__inner">
-					<div class="slide__content">
-						<div
-							class="slide__content-img"
-							style="background-image:url(img/5.jpg)"
-						></div>
-						<h2>Cold &amp; detached</h2>
-						<p>
-							Fate has brought us here to face. Our hopes and
-							dreams erased. Either kill or be killed.
-						</p>
-					</div>
-					<div class="slide__img">
-						<div
-							class="slide__img-inner"
-							style="background-image:url(img/5.jpg)"
-						></div>
-					</div>
-				</div>
-			</div>
-		</div>
+		</>
 	)
 })
 
-export const TestSlider2 = component$(() => {
+export const AnimatedButtons = component$(() => {
 	const ref = useSignal<HTMLDivElement>()
 	useStyles$(css)
 
