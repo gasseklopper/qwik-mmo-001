@@ -321,16 +321,16 @@ export const TestSlider = component$(() => {
 			console.log('newPosition', newPosition)
 			sliderConfig.isAnimating = true
 
-			const direction =
-				sliderConfig.current < newPosition
-					? sliderConfig.current === 0 &&
-					  newPosition === totalSlides - 1
-						? 'prev'
-						: 'next'
-					: sliderConfig.current === totalSlides - 1 &&
-					  newPosition === 0
-					? 'next'
-					: 'prev'
+			// const direction =
+			// 	sliderConfig.current < newPosition
+			// 		? sliderConfig.current === 0 &&
+			// 		  newPosition === totalSlides - 1
+			// 			? 'prev'
+			// 			: 'next'
+			// 		: sliderConfig.current === totalSlides - 1 &&
+			// 		  newPosition === 0
+			// 		? 'next'
+			// 		: 'prev'
 
 			const currentSlide = slidesArr[sliderConfig.current]
 			sliderConfig.current = newPosition
