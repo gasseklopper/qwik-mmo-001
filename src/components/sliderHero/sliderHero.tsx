@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import { gsap } from 'gsap/dist/gsap'
 import { Observer } from 'gsap/dist/Observer'
 import {
@@ -26,7 +27,6 @@ export const TestSlider = component$(() => {
 		indexId: 0,
 		sliderItems: 2,
 		width: 941,
-		sliderStartWidth: 1,
 		isAnimating: false,
 		current: -1,
 	})
@@ -202,10 +202,12 @@ export const TestSlider = component$(() => {
 		gsap.registerPlugin(Observer)
 		// total number of slides
 		const totalSlides = refSlides.value!.querySelectorAll('.slide').length
+
 		const slidesArr: Element[] = []
 		refSlides.value!.querySelectorAll('.slide').forEach((slide) => {
 			slidesArr.push(slide)
 		})
+
 		console.log('totalSlides', totalSlides)
 		console.log('slidesArr', slidesArr)
 
