@@ -321,16 +321,16 @@ export const TestSlider = component$(() => {
 			console.log('newPosition', newPosition)
 			sliderConfig.isAnimating = true
 
-			// const direction =
-			// 	sliderConfig.current < newPosition
-			// 		? sliderConfig.current === 0 &&
-			// 		  newPosition === totalSlides - 1
-			// 			? 'prev'
-			// 			: 'next'
-			// 		: sliderConfig.current === totalSlides - 1 &&
-			// 		  newPosition === 0
-			// 		? 'next'
-			// 		: 'prev'
+			const direction =
+				sliderConfig.current < newPosition
+					? sliderConfig.current === 0 &&
+					  newPosition === totalSlides - 1
+						? 'prev'
+						: 'next'
+					: sliderConfig.current === totalSlides - 1 &&
+					  newPosition === 0
+					? 'next'
+					: 'prev'
 
 			const currentSlide = slidesArr[sliderConfig.current]
 			sliderConfig.current = newPosition
@@ -360,7 +360,7 @@ export const TestSlider = component$(() => {
 				// 	},
 				// 	'start'
 				// )
-				// Place coming slide either above (translate -100%) or below (translate 100%) and the slide__inner to the opposite translate.
+				// // Place coming slide either above (translate -100%) or below (translate 100%) and the slide__inner to the opposite translate.
 				// .set(
 				// 	upcomingSlide.querySelector('.slide'),
 				// 	{
@@ -381,7 +381,7 @@ export const TestSlider = component$(() => {
 				}, 'start')
 				// Current slide moves either up or down (translate 100% or -100%)
 				// .to(
-				// 	currentSlide.querySelector('.slide'),
+				// 	currentSlide.querySelector('.slide__inner'),
 				// 	{
 				// 		yPercent: direction === 'next' ? -100 : 100,
 				// 	},
@@ -394,10 +394,10 @@ export const TestSlider = component$(() => {
 				// 	},
 				// 	'start'
 				// )
-				// Upcoming slide translates to 0
+				// // Upcoming slide translates to 0
 				// .to(
 				// 	[
-				// 		upcomingSlide.querySelector('.slide'),
+				// 		upcomingSlide.querySelector('.slide__inner'),
 				// 		upcomingSlide.querySelector('.slide__inner'),
 				// 	],
 				// 	{
@@ -408,7 +408,7 @@ export const TestSlider = component$(() => {
 				.to(
 					upcomingSlide.querySelector('.slide__inner'),
 					{
-						ease: 'power4.inOut',
+						ease: 'power2.inOut',
 						startAt: { yPercent: 100 },
 						yPercent: 0,
 					},
@@ -458,6 +458,26 @@ export const TestSlider = component$(() => {
 			</div>
 			<div class="navigation">
 				{images.map((item: any, itemIndex: number) => {
+					if (sliderConfig.current === 19) {
+						if (itemIndex === 19) {
+							return (
+								<>
+									<div
+										class="navigation__item"
+										key={itemIndex}
+									>
+										<p>{images[19].content.headline}</p>
+									</div>
+									<div
+										class="navigation__item"
+										key={itemIndex}
+									>
+										<p>{images[0].content.headline}</p>
+									</div>
+								</>
+							)
+						}
+					}
 					if (itemIndex === sliderConfig.current - 1) {
 						return (
 							<div class="navigation__item" key={itemIndex}>
@@ -465,14 +485,35 @@ export const TestSlider = component$(() => {
 							</div>
 						)
 					}
-					if (itemIndex === sliderConfig.current + 1) {
+					if (sliderConfig.current === 0) {
+						if (itemIndex === 0) {
+							return (
+								<>
+									<div
+										class="navigation__item"
+										key={itemIndex}
+									>
+										<p>{images[19].content.headline}</p>
+									</div>
+									<div
+										class="navigation__item"
+										key={itemIndex}
+									>
+										<p>{images[0].content.headline}</p>
+									</div>
+								</>
+							)
+						}
+					}
+					if (itemIndex === sliderConfig.current) {
 						return (
 							<div class="navigation__item" key={itemIndex}>
 								<p>{item.content.headline}</p>
 							</div>
 						)
 					}
-					if (itemIndex === sliderConfig.current) {
+
+					if (itemIndex === sliderConfig.current + 1) {
 						return (
 							<div class="navigation__item" key={itemIndex}>
 								<p>{item.content.headline}</p>

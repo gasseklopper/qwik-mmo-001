@@ -73,7 +73,6 @@
 	grid-template-columns: 1fr 1fr;
 	grid-column-gap: 2rem;
 	grid-template-areas: 'img title' 'img text' 'img ...'; */
-	will-change: transform;
 }
 
 .slide__content-img {
