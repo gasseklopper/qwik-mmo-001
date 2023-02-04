@@ -338,7 +338,7 @@ export const TestSlider = component$(() => {
 
 			gsap.timeline({
 				defaults: {
-					duration: 1.1,
+					duration: 1.8,
 				},
 				onComplete: () => {
 					currentSlide.classList.remove('slide--current')
@@ -368,6 +368,13 @@ export const TestSlider = component$(() => {
 				// 	},
 				// 	'start'
 				// )
+				.set(
+					upcomingSlide.querySelector('.slide__inner'),
+					{
+						scaleY: 0.1,
+					},
+					'start'
+				)
 				// .set(
 				// 	upcomingSlide.querySelector('.slide__inner'),
 				// 	{
@@ -387,13 +394,20 @@ export const TestSlider = component$(() => {
 				// 	},
 				// 	'start'
 				// )
-				// .to(
-				// 	currentSlide.querySelector('.slide__inner'),
-				// 	{
-				// 		scaleY: 2,
-				// 	},
-				// 	'start'
-				// )
+				.to(
+					currentSlide.querySelector('.slide__inner'),
+					{
+						scaleY: 2,
+					},
+					'start'
+				)
+				.to(
+					upcomingSlide.querySelector('.slide__inner'),
+					{
+						scaleY: 1,
+					},
+					'start'
+				)
 				// // Upcoming slide translates to 0
 				// .to(
 				// 	[
@@ -406,10 +420,21 @@ export const TestSlider = component$(() => {
 				// 	'start'
 				// )
 				.to(
+					currentSlide.querySelector('.slide__inner'),
+					{
+						ease: 'power2.inOut',
+						duration: 1.8,
+						startAt: { yPercent: 0 },
+						yPercent: -100,
+					},
+					'start'
+				)
+				.to(
 					upcomingSlide.querySelector('.slide__inner'),
 					{
 						ease: 'power2.inOut',
-						startAt: { yPercent: 100 },
+						duration: 1.7,
+						startAt: { yPercent: 200 },
 						yPercent: 0,
 					},
 					'start'
@@ -466,7 +491,9 @@ export const TestSlider = component$(() => {
 										class="navigation__item"
 										key={itemIndex}
 									>
-										<p>{images[19].content.headline}</p>
+										<p class="h1">
+											{images[19].content.headline}
+										</p>
 									</div>
 									<div
 										class="navigation__item"
@@ -499,7 +526,9 @@ export const TestSlider = component$(() => {
 										class="navigation__item"
 										key={itemIndex}
 									>
-										<p>{images[0].content.headline}</p>
+										<p class="h1">
+											{images[0].content.headline}
+										</p>
 									</div>
 								</>
 							)
@@ -508,7 +537,7 @@ export const TestSlider = component$(() => {
 					if (itemIndex === sliderConfig.current) {
 						return (
 							<div class="navigation__item" key={itemIndex}>
-								<p>{item.content.headline}</p>
+								<p class="h1">{item.content.headline}</p>
 							</div>
 						)
 					}

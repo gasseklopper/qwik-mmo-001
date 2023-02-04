@@ -14,7 +14,7 @@
 	/* z-index: 1; */
 	width: 600px;
 	height: 400px;
-	/* overflow: hidden; */
+	overflow: hidden;
 	position: absolute;
 	will-change: transform;
 	/* border: 30px solid yellow; */
@@ -40,7 +40,7 @@
 	grid-template-rows: 100%;
 	grid-template-columns: 100%; */
 	/* position: relative; */
-	/* overflow: hidden; */
+	overflow: hidden;
 	will-change: transform;
 }
 
