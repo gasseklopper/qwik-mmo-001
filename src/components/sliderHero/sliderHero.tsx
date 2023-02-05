@@ -10,7 +10,6 @@ import {
 	useClientEffect$,
 } from '@builder.io/qwik'
 import css from './sliderHero.css?inline'
-import Clock from '../clock/clock'
 
 export default component$(() => {
 	return (
@@ -601,7 +600,6 @@ export const TestSlider = component$(() => {
 									key={itemIndex}
 								>
 									<div class="slide__inner">
-										<Clock />
 										<div class="slide__content">
 											<div
 												class="slide__content-img"
