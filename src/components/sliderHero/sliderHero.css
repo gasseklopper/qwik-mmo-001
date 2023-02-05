@@ -10,6 +10,10 @@ dialog:not([open]) {
 	display: none;
 }
 
+dialog::backdrop {
+	background: rgba(0, 5, 8, 0.991);
+}
+
 .navigation {
 	height: 100%;
 	width: 400px;
@@ -80,28 +84,19 @@ dialog:not([open]) {
 }
 
 .slide__content {
-	/* grid-area: 1 / 1 / -1 / -1;
-	display: grid;
-	align-content: center;
-	justify-content: center;
-	display: grid;
-	padding: 1rem;
-	grid-template-rows: auto auto auto;
-	grid-template-columns: 1fr 1fr;
-	grid-column-gap: 2rem;
-	grid-template-areas: 'img title' 'img text' 'img ...'; */
+	display: none;
+	position: absolute;
+	z-index: 33;
 }
 
 .slide__content-img {
-	height: 300px;
+	height: 100px;
 	background-size: cover;
 	background-position: 50% 50%;
-	grid-area: img;
 	will-change: transform;
 }
 
 .slide__content h2 {
-	grid-area: title;
 	font-weight: 200;
 	font-size: clamp(3rem, 2vw, 3rem);
 	text-transform: none;
@@ -110,7 +105,6 @@ dialog:not([open]) {
 }
 
 .slide__content p {
-	grid-area: text;
 	max-width: 260px;
 	line-height: 1.5;
 	margin: 0;

@@ -262,7 +262,8 @@ export const TestSlider = component$(() => {
 	const modal = useSignal<any>()
 
 	const openModal = $(() => {
-		modal.value.show()
+		// modal.value.show()
+		modal.value.showModal()
 		sliderConfig.isModalOpen = true
 	})
 
@@ -363,7 +364,7 @@ export const TestSlider = component$(() => {
 				// 	'start'
 				// )
 				.set(
-					upcomingSlide.querySelector('.slide__inner'),
+					upcomingSlide.querySelector('.slide__img'),
 					{
 						scaleY: 0.1,
 					},
@@ -389,14 +390,14 @@ export const TestSlider = component$(() => {
 				// 	'start'
 				// )
 				.to(
-					currentSlide.querySelector('.slide__inner'),
+					currentSlide.querySelector('.slide__img'),
 					{
 						scaleY: 1.7,
 					},
 					'start'
 				)
 				.to(
-					upcomingSlide.querySelector('.slide__inner'),
+					upcomingSlide.querySelector('.slide__img'),
 					{
 						scaleY: 1,
 					},
@@ -480,7 +481,7 @@ export const TestSlider = component$(() => {
 			<div class="">
 				<button onClick$={closeModal}>close</button>
 			</div>
-			<dialog ref={modal}>
+			<dialog ref={modal} open>
 				<div class="">
 					<button onClick$={closeModal}>close</button>
 				</div>
@@ -600,14 +601,14 @@ export const TestSlider = component$(() => {
 									key={itemIndex}
 								>
 									<div class="slide__inner">
-										<div class="slide__content">
+										{/* <div class="slide__content">
 											<div
 												class="slide__content-img"
 												style={`background-image: url(${item.imgUrl});`}
 											></div>
 											<h2>{item.content.headline}</h2>
 											<p>{item.content.bodytext}</p>
-										</div>
+										</div> */}
 										<div class="slide__img">
 											<div
 												class="slide__img-inner"
