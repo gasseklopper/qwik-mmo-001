@@ -1,8 +1,25 @@
+.sliderContainer {
+	display: flex;
+	flex-direction: column;
+	flex-direction: row-reverse;
+	justify-content: start;
+	align-items: center;
+}
+
+dialog:not([open]) {
+	display: none;
+}
+
+.navigation {
+	height: 100%;
+	width: 400px;
+	padding-left: 2rem;
+}
+
 .slides {
 	width: 600px;
 	height: 400px;
 	overflow: hidden;
-	/* border: 30px solid black; */
 	position: relative;
 }
 

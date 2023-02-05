@@ -10,6 +10,7 @@ import {
 	useClientEffect$,
 } from '@builder.io/qwik'
 import css from './sliderHero.css?inline'
+import Clock from '../clock/clock'
 
 export default component$(() => {
 	return (
@@ -29,7 +30,7 @@ export const images = [
 		content: {
 			headline: 'headline 001',
 			bodytext:
-				'lorem 1 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 1 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -40,7 +41,7 @@ export const images = [
 		content: {
 			headline: 'headline 002',
 			bodytext:
-				'lorem 2 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 2 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -51,7 +52,7 @@ export const images = [
 		content: {
 			headline: 'headline 003',
 			bodytext:
-				'lorem 3 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 3 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -62,7 +63,7 @@ export const images = [
 		content: {
 			headline: 'headline 004',
 			bodytext:
-				'lorem 4 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 4 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -73,7 +74,7 @@ export const images = [
 		content: {
 			headline: 'headline 005',
 			bodytext:
-				'lorem 5 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 5 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -84,7 +85,7 @@ export const images = [
 		content: {
 			headline: 'headline 006',
 			bodytext:
-				'lorem 6 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 6 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -95,7 +96,7 @@ export const images = [
 		content: {
 			headline: 'headline 007',
 			bodytext:
-				'lorem 7 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 7 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -106,7 +107,7 @@ export const images = [
 		content: {
 			headline: 'headline 008',
 			bodytext:
-				'lorem 8 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 8 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -117,7 +118,7 @@ export const images = [
 		content: {
 			headline: 'headline 009',
 			bodytext:
-				'lorem 9 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 9 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -128,7 +129,7 @@ export const images = [
 		content: {
 			headline: 'headline 010',
 			bodytext:
-				'lorem 10 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 10 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -139,7 +140,7 @@ export const images = [
 		content: {
 			headline: 'headline 011',
 			bodytext:
-				'lorem 11 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 11 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -150,7 +151,7 @@ export const images = [
 		content: {
 			headline: 'headline 012',
 			bodytext:
-				'lorem 12 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 12 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -161,7 +162,7 @@ export const images = [
 		content: {
 			headline: 'headline 013',
 			bodytext:
-				'lorem 13 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 13 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -172,7 +173,7 @@ export const images = [
 		content: {
 			headline: 'headline 014',
 			bodytext:
-				'lorem 14 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 14 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -183,7 +184,7 @@ export const images = [
 		content: {
 			headline: 'headline 015',
 			bodytext:
-				'lorem 15 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 15 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -194,7 +195,7 @@ export const images = [
 		content: {
 			headline: 'headline 016',
 			bodytext:
-				'lorem 16 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 16 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -205,7 +206,7 @@ export const images = [
 		content: {
 			headline: 'headline 017',
 			bodytext:
-				'lorem 17 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 17 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -216,7 +217,7 @@ export const images = [
 		content: {
 			headline: 'headline 018',
 			bodytext:
-				'lorem 18 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 18 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -227,7 +228,7 @@ export const images = [
 		content: {
 			headline: 'headline 019',
 			bodytext:
-				'lorem 19 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 19 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 	{
@@ -238,7 +239,7 @@ export const images = [
 		content: {
 			headline: 'headline 020',
 			bodytext:
-				'lorem 20 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus rem, quas et omnis incidunt harum qui? Corporis et incidunt minima amet animi suscipit sequi ab, mollitia cum necessitatibus, maiores aperiam harum nisi quia quo, totam voluptatibus sed quidem. Id, earum magni.',
+				'lorem 20 ----- Lorem ipsum dolor sit amet consectetur adipisicing elit. Cumque vero quasi minus natus.',
 		},
 	},
 ]
@@ -251,31 +252,25 @@ export const TestSlider = component$(() => {
 		width: 941,
 		isAnimating: false,
 		current: -1,
+		isModalOpen: false,
 	})
 
-	const imageStore = useStore({
-		id: 0,
-	})
-
-	const indexCheckIncrement = $(() => {
-		if (sliderConfig.indexId === sliderConfig.sliderItems) {
-			sliderConfig.indexId = 0
-		} else {
-			sliderConfig.indexId++
-		}
-		imageStore.id = sliderConfig.indexId
-	})
-
-	const indexCheckDecrement = $(() => {
-		if (sliderConfig.indexId === 0) {
-			sliderConfig.indexId = sliderConfig.sliderItems
-		} else {
-			sliderConfig.indexId--
-		}
-		imageStore.id = sliderConfig.indexId
-	})
+	// const imageStore = useStore({
+	// 	id: 0,
+	// })
 
 	const refSlides = useSignal<HTMLDivElement>()
+	const modal = useSignal<any>()
+
+	const openModal = $(() => {
+		modal.value.show()
+		sliderConfig.isModalOpen = true
+	})
+
+	const closeModal = $(() => {
+		modal.value.close()
+		sliderConfig.isModalOpen = false
+	})
 
 	useClientEffect$(() => {
 		gsap.registerPlugin(Observer)
@@ -397,7 +392,7 @@ export const TestSlider = component$(() => {
 				.to(
 					currentSlide.querySelector('.slide__inner'),
 					{
-						scaleY: 2,
+						scaleY: 1.7,
 					},
 					'start'
 				)
@@ -422,7 +417,7 @@ export const TestSlider = component$(() => {
 				.to(
 					currentSlide.querySelector('.slide__inner'),
 					{
-						ease: 'power2.inOut',
+						ease: 'power1.inOut',
 						duration: 1.8,
 						startAt: { yPercent: 0 },
 						yPercent: -100,
@@ -433,8 +428,8 @@ export const TestSlider = component$(() => {
 					upcomingSlide.querySelector('.slide__inner'),
 					{
 						ease: 'power2.inOut',
-						duration: 1.7,
-						startAt: { yPercent: 200 },
+						duration: 1.9,
+						startAt: { yPercent: 90 },
 						yPercent: 0,
 					},
 					'start'
@@ -450,7 +445,10 @@ export const TestSlider = component$(() => {
 						'sliderConfig.isAnimating',
 						sliderConfig.isAnimating
 					)
-					!sliderConfig.isAnimating && prev()
+
+					!sliderConfig.isAnimating &&
+						sliderConfig.isModalOpen &&
+						prev()
 				},
 				onUp: () => {
 					console.log('next')
@@ -458,7 +456,9 @@ export const TestSlider = component$(() => {
 						'sliderConfig.isAnimating',
 						sliderConfig.isAnimating
 					)
-					!sliderConfig.isAnimating && next()
+					!sliderConfig.isAnimating &&
+						sliderConfig.isModalOpen &&
+						next()
 				},
 				// invert the mouse wheel delta
 				wheelSpeed: -1,
@@ -475,113 +475,154 @@ export const TestSlider = component$(() => {
 
 	return (
 		<>
-			<div class="slider__next">
-				<button onClick$={indexCheckIncrement}>next</button>
+			<div class="">
+				<button onClick$={openModal}>open</button>
 			</div>
-			<div class="slider__previous">
-				<button onClick$={indexCheckDecrement}>previous</button>
+			<div class="">
+				<button onClick$={closeModal}>close</button>
 			</div>
-			<div class="navigation">
-				{images.map((item: any, itemIndex: number) => {
-					if (sliderConfig.current === 19) {
-						if (itemIndex === 19) {
-							return (
-								<>
-									<div
-										class="navigation__item"
-										key={itemIndex}
-									>
-										<p class="h1">
-											{images[19].content.headline}
-										</p>
-									</div>
-									<div
-										class="navigation__item"
-										key={itemIndex}
-									>
-										<p>{images[0].content.headline}</p>
-									</div>
-								</>
-							)
-						}
-					}
-					if (itemIndex === sliderConfig.current - 1) {
-						return (
-							<div class="navigation__item" key={itemIndex}>
-								<p>{item.content.headline}</p>
-							</div>
-						)
-					}
-					if (sliderConfig.current === 0) {
-						if (itemIndex === 0) {
-							return (
-								<>
-									<div
-										class="navigation__item"
-										key={itemIndex}
-									>
-										<p>{images[19].content.headline}</p>
-									</div>
-									<div
-										class="navigation__item"
-										key={itemIndex}
-									>
-										<p class="h1">
-											{images[0].content.headline}
-										</p>
-									</div>
-								</>
-							)
-						}
-					}
-					if (itemIndex === sliderConfig.current) {
-						return (
-							<div class="navigation__item" key={itemIndex}>
-								<p class="h1">{item.content.headline}</p>
-							</div>
-						)
-					}
-
-					if (itemIndex === sliderConfig.current + 1) {
-						return (
-							<div class="navigation__item" key={itemIndex}>
-								<p>{item.content.headline}</p>
-							</div>
-						)
-					}
-				})}
-			</div>
-			<div class="slides" ref={refSlides}>
-				{images.map((item: any, itemIndex: number) => {
-					return (
-						<div
-							class={
-								itemIndex !== 0
-									? 'slide'
-									: 'slide slide--current '
+			<dialog ref={modal}>
+				<div class="">
+					<button onClick$={closeModal}>close</button>
+				</div>
+				<div class="sliderContainer">
+					<div class="navigation">
+						{images.map((item: any, itemIndex: number) => {
+							if (sliderConfig.current === 19) {
+								if (itemIndex === 19) {
+									return (
+										<>
+											<div
+												class="navigation__item frame__nav-button"
+												key={itemIndex}
+											>
+												<p class="h1">
+													{
+														images[19].content
+															.headline
+													}
+												</p>
+												<p class="frame__nav-button">
+													{
+														images[19].content
+															.bodytext
+													}
+												</p>
+											</div>
+											<div
+												class="navigation__item"
+												key={itemIndex}
+											>
+												<p>
+													{images[0].content.headline}
+												</p>
+											</div>
+										</>
+									)
+								}
 							}
-							key={itemIndex}
-						>
-							<div class="slide__inner">
-								<div class="slide__content">
+							if (itemIndex === sliderConfig.current - 1) {
+								return (
 									<div
-										class="slide__content-img"
-										style={`background-image: url(${item.imgUrl});`}
-									></div>
-									<h2>{item.content.headline}</h2>
-									<p>{item.content.bodytext}</p>
-								</div>
-								<div class="slide__img">
+										class="navigation__item"
+										key={itemIndex}
+									>
+										<p>{item.content.headline}</p>
+									</div>
+								)
+							}
+							if (sliderConfig.current === 0) {
+								if (itemIndex === 0) {
+									return (
+										<>
+											<div
+												class="navigation__item"
+												key={itemIndex}
+											>
+												<p>
+													{
+														images[19].content
+															.headline
+													}
+												</p>
+											</div>
+											<div
+												class="navigation__item"
+												key={itemIndex}
+											>
+												<p class="h1 frame__nav-button">
+													{images[0].content.headline}
+												</p>
+												<p class="frame__nav-button">
+													{images[0].content.bodytext}
+												</p>
+											</div>
+										</>
+									)
+								}
+							}
+							if (itemIndex === sliderConfig.current) {
+								return (
+									<>
+										<div
+											class="navigation__item"
+											key={itemIndex}
+										></div>
+										<p class="h1 frame__nav-button">
+											{item.content.headline}
+										</p>
+										<p class="frame__nav-button">
+											{item.content.bodytext}
+										</p>
+									</>
+								)
+							}
+							if (itemIndex === sliderConfig.current + 1) {
+								return (
 									<div
-										class="slide__img-inner"
-										style={`background-image: url(${item.imgUrl});`}
-									></div>
+										class="navigation__item"
+										key={itemIndex}
+									>
+										<p>{item.content.headline}</p>
+									</div>
+								)
+							}
+						})}
+					</div>
+					<div class="slides" ref={refSlides}>
+						{images.map((item: any, itemIndex: number) => {
+							return (
+								<div
+									class={
+										itemIndex !== 0
+											? 'slide'
+											: 'slide slide--current '
+									}
+									key={itemIndex}
+								>
+									<div class="slide__inner">
+										<Clock />
+										<div class="slide__content">
+											<div
+												class="slide__content-img"
+												style={`background-image: url(${item.imgUrl});`}
+											></div>
+											<h2>{item.content.headline}</h2>
+											<p>{item.content.bodytext}</p>
+										</div>
+										<div class="slide__img">
+											<div
+												class="slide__img-inner"
+												style={`background-image: url(${item.imgUrl});`}
+											></div>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-					)
-				})}
-			</div>
+							)
+						})}
+					</div>
+				</div>
+			</dialog>
 		</>
 	)
 })
