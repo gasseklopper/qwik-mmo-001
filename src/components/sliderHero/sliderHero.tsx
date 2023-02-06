@@ -254,10 +254,6 @@ export const TestSlider = component$(() => {
 		isModalOpen: false,
 	})
 
-	// const imageStore = useStore({
-	// 	id: 0,
-	// })
-
 	const refSlides = useSignal<HTMLDivElement>()
 	const modal = useSignal<any>()
 
@@ -295,7 +291,7 @@ export const TestSlider = component$(() => {
 		}
 
 		const next = () => {
-			console.log('next sliderConfig.current', sliderConfig.current)
+			console.log('next sliderConfig.current -->', sliderConfig.current)
 			const newPosition =
 				sliderConfig.current < totalSlides - 1
 					? sliderConfig.current + 1
@@ -304,7 +300,7 @@ export const TestSlider = component$(() => {
 		}
 
 		const prev = () => {
-			console.log('sliderConfig.current', sliderConfig.current)
+			console.log('sliderConfig.current -->', sliderConfig.current)
 			const newPosition =
 				sliderConfig.current === 0 || sliderConfig.current === -1
 					? totalSlides - 1
@@ -481,7 +477,7 @@ export const TestSlider = component$(() => {
 			<div class="">
 				<button onClick$={closeModal}>close</button>
 			</div>
-			<dialog ref={modal} open>
+			<dialog ref={modal}>
 				<div class="">
 					<button onClick$={closeModal}>close</button>
 				</div>
