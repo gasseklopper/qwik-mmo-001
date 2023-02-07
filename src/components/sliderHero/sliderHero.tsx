@@ -258,7 +258,6 @@ export const TestSlider = component$(() => {
 	const modal = useSignal<any>()
 
 	const openModal = $(() => {
-		// modal.value.show()
 		modal.value.showModal()
 		sliderConfig.isModalOpen = true
 	})
@@ -312,17 +311,6 @@ export const TestSlider = component$(() => {
 			console.log('newPosition', newPosition)
 			sliderConfig.isAnimating = true
 
-			// const direction =
-			// 	sliderConfig.current < newPosition
-			// 		? sliderConfig.current === 0 &&
-			// 		  newPosition === totalSlides - 1
-			// 			? 'prev'
-			// 			: 'next'
-			// 		: sliderConfig.current === totalSlides - 1 &&
-			// 		  newPosition === 0
-			// 		? 'next'
-			// 		: 'prev'
-
 			const currentSlide = slidesArr[sliderConfig.current]
 			sliderConfig.current = newPosition
 			const upcomingSlide = slidesArr[sliderConfig.current]
@@ -339,26 +327,6 @@ export const TestSlider = component$(() => {
 				},
 			})
 				.addLabel('start', 0)
-
-				// .set(
-				// 	[
-				// 		currentSlide.querySelector('.slide__inner'),
-				// 		upcomingSlide.querySelector('.slide__inner'),
-				// 	],
-				// 	{
-				// 		transformOrigin:
-				// 			direction === 'next' ? '50% 0%' : '50% 100%',
-				// 	},
-				// 	'start'
-				// )
-				// // Place coming slide either above (translate -100%) or below (translate 100%) and the slide__inner to the opposite translate.
-				// .set(
-				// 	upcomingSlide.querySelector('.slide'),
-				// 	{
-				// 		yPercent: direction === 'next' ? 100 : -100,
-				// 	},
-				// 	'start'
-				// )
 				.set(
 					upcomingSlide.querySelector('.slide__img'),
 					{
@@ -366,25 +334,10 @@ export const TestSlider = component$(() => {
 					},
 					'start'
 				)
-				// .set(
-				// 	upcomingSlide.querySelector('.slide__inner'),
-				// 	{
-				// 		yPercent: direction === 'next' ? -100 : 100,
-				// 	},
-				// 	'start'
-				// )
 				// Add current class
 				.add(() => {
 					upcomingSlide.classList.add('slide--next')
 				}, 'start')
-				// Current slide moves either up or down (translate 100% or -100%)
-				// .to(
-				// 	currentSlide.querySelector('.slide__inner'),
-				// 	{
-				// 		yPercent: direction === 'next' ? -100 : 100,
-				// 	},
-				// 	'start'
-				// )
 				.to(
 					currentSlide.querySelector('.slide__img'),
 					{
@@ -399,17 +352,6 @@ export const TestSlider = component$(() => {
 					},
 					'start'
 				)
-				// // Upcoming slide translates to 0
-				// .to(
-				// 	[
-				// 		upcomingSlide.querySelector('.slide__inner'),
-				// 		upcomingSlide.querySelector('.slide__inner'),
-				// 	],
-				// 	{
-				// 		yPercent: 0,
-				// 	},
-				// 	'start'
-				// )
 				.to(
 					currentSlide.querySelector('.slide__inner'),
 					{
@@ -424,8 +366,8 @@ export const TestSlider = component$(() => {
 					upcomingSlide.querySelector('.slide__inner'),
 					{
 						ease: 'power2.inOut',
-						duration: 1.9,
-						startAt: { yPercent: 90 },
+						duration: 1.5,
+						startAt: { yPercent: 65 },
 						yPercent: 0,
 					},
 					'start'
