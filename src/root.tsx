@@ -1,4 +1,10 @@
-import { component$, useClientEffect$ } from '@builder.io/qwik'
+import {
+	component$,
+	useClientEffect$,
+	useContextProvider,
+	useStore,
+	createContext,
+} from '@builder.io/qwik'
 import {
 	QwikCity,
 	RouterOutlet,
@@ -7,14 +13,14 @@ import {
 import { RouterHead } from './components/router-head/router-head'
 // import { ColorStuff } from './components/color-stuff/color-stuff'
 import './global.css'
+import { supabase } from './utils/supabase'
+
+export const UserSessionContext = createContext('user-session')
 
 export default component$(() => {
-	/*
-	 * The root of a QwikCity site always start with the <QwikCity> component,
-	 * immediately followed by the document's <head> and <body>.
-	 *
-	 * Dont remove the `<head>` and `<body>` elements.
-	 */
+	const userSession: any = useStore({ userId: '', isLoggedIn: false })
+
+	// color shema
 	useClientEffect$(
 		() => {
 			const doc = document.firstElementChild
@@ -39,6 +45,61 @@ export default component$(() => {
 			eagerness: 'load', // 'load' | 'visible' | 'idle'
 		}
 	)
+
+	// auth change listener
+	useClientEffect$(
+		async () => {
+			const { data: authListener } = supabase.auth.onAuthStateChange(
+				async (event: string, session: any) => {
+					console.log('its event', event)
+					console.log('its session', session)
+					console.log('its authListener', authListener)
+					if (event === 'SIGNED_IN') {
+						console.log('signed in')
+						// Send cookies to Server
+						// set Auth State for context
+						userSession.userId = session.user.id
+						userSession.isLoggedIn = true
+					}
+					if (event === 'SIGNED_OUT') {
+						console.log('signed OUT')
+						// Sign out User
+						// set Auth State for context
+						userSession.userId = ''
+						userSession.isLoggedIn = false
+					}
+				}
+			)
+
+			// Cleanup Event Listener
+			return () => {
+				authListener?.subscription.unsubscribe()
+			}
+		},
+		{
+			eagerness: 'load', // 'load' | 'visible' | 'idle'
+		}
+	)
+
+	// auth check getUser
+	useClientEffect$(
+		async () => {
+			const { data, error } = await supabase.auth.getUser()
+			if (data.user?.id && !error) {
+				userSession.userId = data.user.id
+				userSession.isLoggedIn = true
+			} else {
+				userSession.userId = ''
+				userSession.isLoggedIn = false
+			}
+		},
+		{
+			eagerness: 'load', // 'load' | 'visible' | 'idle'
+		}
+	)
+
+	// pass state to children via context
+	useContextProvider(UserSessionContext, userSession)
 	return (
 		<QwikCity>
 			<head>

@@ -1,4 +1,3 @@
-/* eslint-disable no-mixed-spaces-and-tabs */
 import { gsap } from 'gsap/dist/gsap'
 import { Observer } from 'gsap/dist/Observer'
 import {
@@ -251,7 +250,7 @@ export const TestSlider = component$(() => {
 		width: 941,
 		isAnimating: false,
 		current: -1,
-		isModalOpen: false,
+		isModalOpen: true,
 	})
 
 	const refSlides = useSignal<HTMLDivElement>()
@@ -416,130 +415,110 @@ export const TestSlider = component$(() => {
 			<div class="">
 				<button onClick$={openModal}>open</button>
 			</div>
-			<div class="">
-				<button onClick$={closeModal}>close</button>
-			</div>
 			<dialog ref={modal}>
 				<div class="">
 					<button onClick$={closeModal}>close</button>
 				</div>
-				<div class="sliderContainer">
-					<div class="navigation">
-						{images.map((item: any, itemIndex: number) => {
-							if (sliderConfig.current === 19) {
-								if (itemIndex === 19) {
-									return (
-										<>
-											<div
-												class="navigation__item frame__nav-button"
-												key={itemIndex}
-											>
-												<p class="h1">
-													{
-														images[19].content
-															.headline
-													}
-												</p>
-												<p class="frame__nav-button">
-													{
-														images[19].content
-															.bodytext
-													}
-												</p>
-											</div>
-											<div
-												class="navigation__item"
-												key={itemIndex}
-											>
-												<p>
-													{images[0].content.headline}
-												</p>
-											</div>
-										</>
-									)
-								}
-							}
-							if (itemIndex === sliderConfig.current - 1) {
+			</dialog>
+
+			<div class="sliderContainer">
+				<div class="navigation">
+					{images.map((item: any, itemIndex: number) => {
+						if (sliderConfig.current === 19) {
+							if (itemIndex === 19) {
 								return (
-									<div
-										class="navigation__item"
-										key={itemIndex}
-									>
-										<p>{item.content.headline}</p>
-									</div>
+									<>
+										<div
+											class="navigation__item frame__nav-button"
+											key={itemIndex}
+										>
+											<p class="h1">
+												{images[19].content.headline}
+											</p>
+											<p class="frame__nav-button">
+												{images[19].content.bodytext}
+											</p>
+										</div>
+										<div
+											class="navigation__item"
+											key={itemIndex}
+										>
+											<p>{images[0].content.headline}</p>
+										</div>
+									</>
 								)
 							}
-							if (sliderConfig.current === 0) {
-								if (itemIndex === 0) {
-									return (
-										<>
-											<div
-												class="navigation__item"
-												key={itemIndex}
-											>
-												<p>
-													{
-														images[19].content
-															.headline
-													}
-												</p>
-											</div>
-											<div
-												class="navigation__item"
-												key={itemIndex}
-											>
-												<p class="h1 frame__nav-button">
-													{images[0].content.headline}
-												</p>
-												<p class="frame__nav-button">
-													{images[0].content.bodytext}
-												</p>
-											</div>
-										</>
-									)
-								}
-							}
-							if (itemIndex === sliderConfig.current) {
+						}
+						if (itemIndex === sliderConfig.current - 1) {
+							return (
+								<div class="navigation__item" key={itemIndex}>
+									<p>{item.content.headline}</p>
+								</div>
+							)
+						}
+						if (sliderConfig.current === 0) {
+							if (itemIndex === 0) {
 								return (
 									<>
 										<div
 											class="navigation__item"
 											key={itemIndex}
-										></div>
-										<p class="h1 frame__nav-button">
-											{item.content.headline}
-										</p>
-										<p class="frame__nav-button">
-											{item.content.bodytext}
-										</p>
+										>
+											<p>{images[19].content.headline}</p>
+										</div>
+										<div
+											class="navigation__item"
+											key={itemIndex}
+										>
+											<p class="h1 frame__nav-button">
+												{images[0].content.headline}
+											</p>
+											<p class="frame__nav-button">
+												{images[0].content.bodytext}
+											</p>
+										</div>
 									</>
 								)
 							}
-							if (itemIndex === sliderConfig.current + 1) {
-								return (
+						}
+						if (itemIndex === sliderConfig.current) {
+							return (
+								<>
 									<div
 										class="navigation__item"
 										key={itemIndex}
-									>
-										<p>{item.content.headline}</p>
-									</div>
-								)
-							}
-						})}
-					</div>
-					<div class="slides" ref={refSlides}>
-						{images.map((item: any, itemIndex: number) => {
+									></div>
+									<p class="h1 frame__nav-button">
+										{item.content.headline}
+									</p>
+									<p class="frame__nav-button">
+										{item.content.bodytext}
+									</p>
+								</>
+							)
+						}
+						if (itemIndex === sliderConfig.current + 1) {
 							return (
-								<div
-									class={
-										itemIndex !== 0
-											? 'slide'
-											: 'slide slide--current '
-									}
-									key={itemIndex}
-								>
-									<div class="slide__inner">
-										{/* <div class="slide__content">
+								<div class="navigation__item" key={itemIndex}>
+									<p>{item.content.headline}</p>
+								</div>
+							)
+						}
+					})}
+				</div>
+				<div class="slides" ref={refSlides}>
+					{images.map((item: any, itemIndex: number) => {
+						return (
+							<div
+								class={
+									itemIndex !== 0
+										? 'slide'
+										: 'slide slide--current '
+								}
+								key={itemIndex}
+							>
+								<div class="slide__inner">
+									{/* <div class="slide__content">
 											<div
 												class="slide__content-img"
 												style={`background-image: url(${item.imgUrl});`}
@@ -547,19 +526,18 @@ export const TestSlider = component$(() => {
 											<h2>{item.content.headline}</h2>
 											<p>{item.content.bodytext}</p>
 										</div> */}
-										<div class="slide__img">
-											<div
-												class="slide__img-inner"
-												style={`background-image: url(${item.imgUrl});`}
-											></div>
-										</div>
+									<div class="slide__img">
+										<div
+											class="slide__img-inner"
+											style={`background-image: url(${item.imgUrl});`}
+										></div>
 									</div>
 								</div>
-							)
-						})}
-					</div>
+							</div>
+						)
+					})}
 				</div>
-			</dialog>
+			</div>
 		</>
 	)
 })
