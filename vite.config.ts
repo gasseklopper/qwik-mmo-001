@@ -25,6 +25,7 @@ export default defineConfig(() => {
 			partytownVite({ dest: join(__dirname, 'public', '~partytown') }),
 			vanillaExtractPlugin(),
 		],
+		test: {}, // this is the config entry we are adding
 		// esbuild: {
 		// 	include: ['**/*.js'],
 		// },

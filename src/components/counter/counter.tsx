@@ -5,10 +5,17 @@ export default component$(() => {
 
 	return (
 		<div>
-			<p>Count: {store.count}</p>
-			<p>
-				<button onClick$={() => store.count++}>Click</button>
-			</p>
+			<div class="count_label">Count-- :</div>
+			<div class="count">{store.count}</div>
+			<button class="increment" onClick$={() => store.count++}>
+				increment
+			</button>
+			<button class="decrement" onClick$={() => store.count--}>
+				decrement
+			</button>
+			<button class="reset" onClick$={() => (store.count = 0)}>
+				reset
+			</button>
 		</div>
 	)
 })
