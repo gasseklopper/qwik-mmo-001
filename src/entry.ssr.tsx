@@ -18,6 +18,10 @@ export default function (opts: RenderToStreamOptions) {
 	return renderToStream(<Root />, {
 		manifest,
 		...opts,
+		containerAttributes: {
+			lang: 'en',
+			...opts.containerAttributes,
+		},
 		prefetchStrategy: {
 			implementation: {
 				linkInsert: null,
