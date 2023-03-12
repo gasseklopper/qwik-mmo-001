@@ -11,40 +11,17 @@ import {
 	ServiceWorkerRegister,
 } from '@builder.io/qwik-city'
 import { RouterHead } from './components/router-head/router-head'
-// import { ColorStuff } from './components/color-stuff/color-stuff'
 import './global.css'
 import { supabase } from './utils/supabase'
+import { GlobalStore, SiteStore } from './context'
 
 export const UserSessionContext = createContext('user-session')
 
 export default component$(() => {
 	const userSession: any = useStore({ userId: '', isLoggedIn: false })
-
-	// color shema
-	useClientEffect$(
-		() => {
-			const doc = document.firstElementChild
-			const selectetdShema = localStorage.getItem('color-scheme')
-			doc!.setAttribute('color-scheme', selectetdShema!)
-			doc!.setAttribute('lang', 'de')
-			if (!localStorage.getItem('color-scheme')) {
-				console.log('not as ', localStorage.getItem('color-scheme'))
-				if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-					doc!.setAttribute('color-scheme', 'dark')
-					localStorage.setItem('color-scheme', 'dark')
-				}
-				if (
-					window.matchMedia('(prefers-color-scheme: light)').matches
-				) {
-					doc!.setAttribute('color-scheme', 'lights2')
-					localStorage.setItem('color-scheme', 'lights2')
-				}
-			}
-		},
-		{
-			eagerness: 'load', // 'load' | 'visible' | 'idle'
-		}
-	)
+	const store = useStore<SiteStore>({
+		theme: 'auto',
+	})
 
 	// auth change listener
 	useClientEffect$(
@@ -99,7 +76,9 @@ export default component$(() => {
 	)
 
 	// pass state to children via context
+	useContextProvider(GlobalStore, store)
 	useContextProvider(UserSessionContext, userSession)
+
 	return (
 		<QwikCity>
 			<head>

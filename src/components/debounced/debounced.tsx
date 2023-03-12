@@ -1,4 +1,4 @@
-import { component$, useWatch$, useStore } from '@builder.io/qwik'
+import { component$, useTask$, useStore } from '@builder.io/qwik'
 
 interface State {
 	count: number
@@ -11,14 +11,13 @@ export default component$(() => {
 		debounced: 0,
 	})
 
-	useWatch$(({ track }) => {
+	useTask$(({ track }) => {
 		// track changes in store.count
 		track(() => store.count)
-		console.log('count changed')
 
 		const timer = setTimeout(() => {
 			store.debounced = store.count
-		}, 2000)
+		}, 3001)
 		return () => {
 			clearTimeout(timer)
 		}
@@ -28,7 +27,7 @@ export default component$(() => {
 	return (
 		<div>
 			<Child state={store} />
-			<button id="add" onClick$={() => store.count++}>
+			<button class="increment" onClick$={() => store.count++}>
 				+
 			</button>
 		</div>
@@ -39,7 +38,8 @@ export const Child = component$((props: { state: State }) => {
 	console.log('<Child> render')
 	return (
 		<div>
-			<div id="child">{props.state.count}</div>
+			<div>Count:</div>
+			<div class="count_child">{props.state.count}</div>
 			<GrandChild state={props.state} />
 		</div>
 	)
@@ -47,5 +47,10 @@ export const Child = component$((props: { state: State }) => {
 
 export const GrandChild = component$((props: { state: State }) => {
 	console.log('<GrandChild> render')
-	return <div id="debounced">Debounced: {props.state.debounced}</div>
+	return (
+		<>
+			<div>Count Debounced:</div>
+			<div class="count_grandChild">{props.state.debounced}</div>
+		</>
+	)
 })

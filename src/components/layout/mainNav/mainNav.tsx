@@ -1,18 +1,39 @@
-import { component$, useStyles$ } from '@builder.io/qwik'
+import {
+	component$,
+	useStyles$,
+	useContext,
+	useClientEffect$,
+} from '@builder.io/qwik'
 import { useLocation } from '@builder.io/qwik-city'
-// import { QwikLogo } from '../../icons/qwik'
-import ShemeToggle from '../../color-sheme-toggle/color-sheme-toggle'
+import {
+	colorSchemeChangeListener,
+	getColorPreference,
+	setPreference,
+	ThemeToggle,
+} from '../../theme-toggle/theme-toggle'
 import styles from './main-nav.scss?inline'
+import { GlobalStore } from '../../../context'
+
 export default component$(() => {
 	useStyles$(styles)
+
+	const globalStore = useContext(GlobalStore)
+
+	useClientEffect$(() => {
+		globalStore.theme = getColorPreference()
+		return colorSchemeChangeListener((isDark) => {
+			globalStore.theme = isDark ? 'dark' : 'lights2'
+			setPreference(globalStore.theme)
+		})
+	})
+
 	return (
 		<>
 			<div class="navigation">
 				<header class="header">
 					<div class="header__top-bar">
-						{/* <ColorRadio/> */}
 						<Logo />
-						<ShemeToggle />
+						<ThemeToggle />
 					</div>
 					<div class="header__main">
 						<div class="row">

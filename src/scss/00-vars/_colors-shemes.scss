@@ -27,46 +27,46 @@
 	@include lights2-sheme.lights2-sheme-definition;
 }
 
-:root {
-	color-scheme: dark;
-	@include dark-sheme.dark-sheme;
-}
+// :root {
+// 	color-scheme: dark;
+// 	@include dark-sheme.dark-sheme;
+// }
 
-@media (prefers-color-scheme: dark) {
-	:root {
-		color-scheme: dark;
-		@include dark-sheme.dark-sheme;
-	}
-}
+// @media (prefers-color-scheme: dark) {
+// 	:root {
+// 		color-scheme: dark;
+// 		@include dark-sheme.dark-sheme;
+// 	}
+// }
 
-@media (prefers-color-scheme: light) {
-	:root {
-		color-scheme: light;
-		@include light-sheme.light-sheme;
-	}
-}
+// @media (prefers-color-scheme: light) {
+// 	:root {
+// 		color-scheme: light;
+// 		@include light-sheme.light-sheme;
+// 	}
+// }
 
-[color-scheme='sim'] {
+[data-theme='sim'] {
 	color-scheme: sim;
 	@include sim-sheme.sim-sheme;
 }
 
-[color-scheme='default'] {
+[data-theme='default'] {
 	color-scheme: light;
 	@include light-sheme.light-sheme;
 }
 
-[color-scheme='dark'] {
+[data-theme='dark'] {
 	color-scheme: dark;
 	@include dark-sheme.dark-sheme;
 }
 
-[color-scheme='dim'] {
+[data-theme='dim'] {
 	color-scheme: dim;
 	@include dim-sheme.dim-sheme;
 }
 
-[color-scheme='lights2'] {
+[data-theme='lights2'] {
 	color-scheme: lights2;
 	@include lights2-sheme.lights2-sheme;
 }
