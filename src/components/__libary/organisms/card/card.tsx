@@ -9,6 +9,7 @@ import Friends from '../../molecules/friends/friends'
 
 export default component$(() => {
 	useStyles$(styles)
+
 	return (
 		<div class="card">
 			<div class="">
@@ -24,6 +25,7 @@ export default component$(() => {
 							label="lorem ipsum"
 							variant="primary-button"
 							size="small"
+							onClick$={() => 1}
 						/>
 					</div>
 					<div class="card__header">
