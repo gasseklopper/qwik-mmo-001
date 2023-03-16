@@ -6,6 +6,7 @@ import BodyText from '../../atoms/bodytext/bodytext'
 import Button from '../../atoms/button/button'
 import Img from '../../atoms/image/image'
 import Friends from '../../molecules/friends/friends'
+import { Counter, Logo } from '@gasseklopper/qwik-components-mmo'
 
 export default component$(() => {
 	useStyles$(styles)
@@ -21,6 +22,8 @@ export default component$(() => {
 							variant=""
 							size=""
 						/>
+						<Counter></Counter>
+						<Logo></Logo>
 						<Button
 							label="lorem ipsum"
 							variant="primary-button"
