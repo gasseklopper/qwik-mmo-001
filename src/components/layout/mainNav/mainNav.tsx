@@ -12,7 +12,7 @@ import {
 	ThemeToggle,
 } from '../../theme-toggle/theme-toggle'
 import styles from './main-nav.scss?inline'
-import { GlobalStore } from '../../../context'
+import { GlobalStore } from '../../../globalContext'
 
 export default component$(() => {
 	useStyles$(styles)

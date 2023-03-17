@@ -13,7 +13,7 @@ import {
 import { RouterHead } from './components/router-head/router-head'
 import './global.css'
 import { supabase } from './utils/supabase'
-import { GlobalStore, SiteStore } from './context'
+import { GlobalStore, SiteStore } from './globalContext'
 
 export const UserSessionContext = createContext('user-session')
 

@@ -1,7 +1,7 @@
 import { $, component$, useContext, useStyles$ } from '@builder.io/qwik'
 import { themeStorageKey } from '../router-head/theme-script'
 import themeToggle from './theme-toggle.css?inline'
-import { GlobalStore } from '../../context'
+import { GlobalStore } from '../../globalContext'
 import Button from '../__libary/atoms/button/button'
 
 export type ThemePreference = 'dark' | 'lights2'
