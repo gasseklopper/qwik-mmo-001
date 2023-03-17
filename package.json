@@ -26,7 +26,7 @@
 	},
 	"devDependencies": {
 		"@builder.io/partytown": "^0.7.0",
-		"@builder.io/qwik": "0.16.1",
+		"@builder.io/qwik": "^0.22.0",
 		"@builder.io/qwik-city": "0.0.112",
 		"@netlify/vite-plugin-netlify-edge": "1.1.0",
 		"@types/eslint": "8.4.6",
@@ -52,7 +52,7 @@
 		"vitest": "^0.29.2"
 	},
 	"dependencies": {
-		"@gasseklopper/qwik-components-mmo": "^0.0.6",
+		"@gasseklopper/qwik-components-mmo": "^0.0.7",
 		"@supabase/supabase-js": "^2.10.0",
 		"dotenv": "^16.0.3",
 		"dotenv-expand": "^10.0.0",
