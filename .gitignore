@@ -9,6 +9,7 @@ node_modules
 
 # Envoirement
 .env
+.npmrc
 
 # Cache
 .cache
