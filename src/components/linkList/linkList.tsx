@@ -36,6 +36,200 @@ export default component$(() => {
 					label: 'gmx.de',
 				},
 			},
+			{
+				id: 3,
+				headline: 'qwik-transition',
+				description:
+					'ightweight (<1kb gzip) and easy-to-use custom Qwik hook for adding smooth animations and effects to your Qwik components. This hook is based on @iamyoki/transition-hook.',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/voluntadpear/qwik-transition',
+					target: '_blank',
+					ariaLabel:
+						'link https://github.com/voluntadpear/qwik-transition',
+					label: 'qwik-transition',
+				},
+			},
+			{
+				id: 4,
+				headline: 'https://component-party.dev/',
+				description:
+					'Web component JS frameworks quick overview by their syntax and features',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://component-party.dev',
+					target: '_blank',
+					ariaLabel: 'https://component-party.dev',
+					label: 'component-party',
+				},
+			},
+			{
+				id: 5,
+				headline: 'Awesome Qwik',
+				description:
+					'A curated list of Qwik repos, examples, starters, tutorials, components, modules, videos, and anything else useful.',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/onwidget/awesome-qwik',
+					target: '_blank',
+					ariaLabel: 'https://github.com/onwidget/awesome-qwik',
+					label: 'Awesome Qwik',
+				},
+			},
+			{
+				id: 6,
+				headline: '@unpic/qwik',
+				description:
+					'Qwik component for responsive, high-performance images.',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/ascorbic/unpic-img/tree/main/packages/qwik',
+					target: '_blank',
+					ariaLabel:
+						'https://github.com/ascorbic/unpic-img/tree/main/packages/qwik',
+					label: '@unpic/qwik',
+				},
+			},
+			{
+				id: 7,
+				headline: 'Papanasi',
+				description:
+					'Papanasi (pronunced pɑpənæʃ or papanash) is a UI library to use cross Frameworks. A set of components to use in Angular, Preact, Qwik, React, Solid, Svelte, Vue and Web Components. Is based on the Mitosis library and documented using Storybook.',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/CKGrafico/papanasi',
+					target: '_blank',
+					ariaLabel: 'https://github.com/CKGrafico/papanasi',
+					label: 'Papanasi',
+				},
+			},
+			{
+				id: 8,
+				headline: 'Qwik UI',
+				description:
+					'This library is still in early stages and once well collect enough feedback from the community well release the first beta version.',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/qwikifiers/qwik-ui',
+					target: '_blank',
+					ariaLabel: 'https://github.com/qwikifiers/qwik-ui',
+					label: 'Qwik UI',
+				},
+			},
+			{
+				id: 9,
+				headline: 'Cypress Qwik plugin',
+				description: 'The cypress component testing plugin for Qwik',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/qwikifiers/cypress-qwik',
+					target: '_blank',
+					ariaLabel: 'https://github.com/qwikifiers/cypress-qwik',
+					label: 'Cypress Qwik plugin',
+				},
+			},
+			{
+				id: 10,
+				headline: 'qwik-select',
+				description: 'A select/autocomplete component for Qwik apps.',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/phongnn/qwik-select',
+					target: '_blank',
+					ariaLabel: 'https://github.com/phongnn/qwik-select',
+					label: 'qwik-select',
+				},
+			},
+			{
+				id: 11,
+				headline: 'Qwik Control Flow Components',
+				description:
+					'Use semantic control flow components in your Qwik app.',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/qwikifiers/qwik-flow',
+					target: '_blank',
+					ariaLabel: 'https://github.com/qwikifiers/qwik-flow',
+					label: 'Qwik Control Flow Components',
+				},
+			},
+			{
+				id: 12,
+				headline: 'Qwik carousel component',
+				description: 'Qwik carousel component',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/gioboa/qwik-carousel',
+					target: '_blank',
+					ariaLabel: 'https://github.com/gioboa/qwik-carousel',
+					label: 'Qwik carousel component',
+				},
+			},
+			{
+				id: 13,
+				headline: 'Qwik Bits',
+				description:
+					'Low level, unstyled, accessible, and fast ui components and other helpers for Qwik',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/gioboa/qwik-carousel',
+					target: '_blank',
+					ariaLabel: 'https://github.com/gioboa/qwik-carousel',
+					label: 'Qwik Bits',
+				},
+			},
+			{
+				id: 14,
+				headline: 'QWIK COMPONENTS PUBLISHER',
+				description:
+					'Low level, unstyled, accessible, and fast ui components and other helpers for Qwik',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/houzyk/qwik-components-publisher',
+					target: '_blank',
+					ariaLabel:
+						'https://github.com/houzyk/qwik-components-publisher',
+					label: 'QWIK COMPONENTS PUBLISHER',
+				},
+			},
+			{
+				id: 15,
+				headline: 'uxaria',
+				description: 'uxaria',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/efflore/uxaria',
+					target: '_blank',
+					ariaLabel: 'https://github.com/efflore/uxaria',
+					label: 'uxaria',
+				},
+			},
+			{
+				id: 16,
+				headline: 'SpiritBomb - A Qwik Component Library',
+				description:
+					'Using the power of open source, lets pool our energy and create an amazing component library for this new and exciting framework!',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/mdatz/SpiritBomb',
+					target: '_blank',
+					ariaLabel: 'https://github.com/mdatz/SpiritBomb',
+					label: 'SpiritBomb - A Qwik Component Library',
+				},
+			},
+			{
+				id: 17,
+				headline: 'accesso',
+				description:
+					'Accesso provides low level, unstyled, accessible, ui components that can be used in React, Vue, Svelte, Qwik and more',
+				tags: ['test', 'test2'],
+				link: {
+					url: 'https://github.com/acoreyj/accesso',
+					target: '_blank',
+					ariaLabel: 'https://github.com/acoreyj/accesso',
+					label: 'accesso',
+				},
+			},
 		],
 	})
 
@@ -213,6 +407,7 @@ export const LinkPreview = component$((props: { item: any }) => {
 					{item.link.label}
 				</a>
 			</div>
+			<div>{item.description}</div>
 		</li>
 	)
 })

@@ -52,8 +52,10 @@
 		"vitest": "^0.29.2"
 	},
 	"dependencies": {
-		"@gasseklopper/qwik-components-mmo": "^0.0.5",
+		"@gasseklopper/qwik-components-mmo": "^0.0.6",
 		"@supabase/supabase-js": "^2.10.0",
+		"dotenv": "^16.0.3",
+		"dotenv-expand": "^10.0.0",
 		"locomotive-scroll": "^4.1.4"
 	}
 }
