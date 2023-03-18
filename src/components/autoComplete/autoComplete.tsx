@@ -1,4 +1,4 @@
-import { component$, useStore, useWatch$ } from '@builder.io/qwik'
+import { component$, useStore, useTask$ } from '@builder.io/qwik'
 
 export default component$(() => {
 	return (
@@ -7,7 +7,7 @@ export default component$(() => {
 			150 ms.
 			<br />
 			The function `debouncedGetPeople` needs to be exported because it is
-			used in `useWatch$`.
+			used in `useTask$`.
 			<br />
 			<br />
 			Go ahead, search for Star Wars characters such as "Luke Skywalker",
@@ -30,7 +30,7 @@ export const AutoApiComplete = component$(() => {
 		selectedValue: '',
 	})
 
-	useWatch$(async ({ track }) => {
+	useTask$(async ({ track }) => {
 		const searchInput = track(() => state.searchInput)
 
 		if (!searchInput) {
@@ -71,9 +71,10 @@ export const SuggestionsListComponent = (props: { state: IState }) => {
 	const searchResults = props.state.searchResults
 	return searchResults?.length ? (
 		<ul>
-			{searchResults.map((suggestion) => {
+			{searchResults.map((suggestion, index) => {
 				return (
 					<li
+						key={index}
 						onClick$={() =>
 							(props.state.selectedValue = suggestion)
 						}

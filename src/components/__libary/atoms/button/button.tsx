@@ -1,4 +1,5 @@
-import { component$, PropFunction, useStyles$ } from '@builder.io/qwik'
+import type { PropFunction } from '@builder.io/qwik'
+import { component$, useStyles$ } from '@builder.io/qwik'
 import styles from './button.scss?inline'
 
 export interface ButtonProps {

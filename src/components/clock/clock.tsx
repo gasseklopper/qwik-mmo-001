@@ -2,7 +2,7 @@ import {
 	component$,
 	useStore,
 	useStyles$,
-	useClientEffect$,
+	useVisibleTask$,
 } from '@builder.io/qwik'
 import styles from './clock.css?inline'
 
@@ -15,7 +15,7 @@ export default component$(() => {
 		second: 30,
 	})
 
-	useClientEffect$(() => {
+	useVisibleTask$(() => {
 		const update = () => {
 			const now = new Date()
 			store.second = now.getSeconds() * (360 / 60)

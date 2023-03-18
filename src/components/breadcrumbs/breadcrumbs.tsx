@@ -1,5 +1,6 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
-import { useContent, useLocation, ContentMenu } from '@builder.io/qwik-city'
+import type { ContentMenu } from '@builder.io/qwik-city'
+import { useContent, useLocation } from '@builder.io/qwik-city'
 import styles from './breadcrumbs.css?inline'
 
 export const Breadcrumbs = component$(() => {
@@ -8,15 +9,17 @@ export const Breadcrumbs = component$(() => {
 	const { menu } = useContent()
 	const loc = useLocation()
 
-	const breadcrumbs = createBreadcrumbs(menu, loc.pathname)
+	const breadcrumbs = createBreadcrumbs(menu, loc.url.pathname)
 	if (breadcrumbs.length === 0) {
 		return null
 	}
 
 	return (
 		<nav class="breadcrumbs">
-			{breadcrumbs.map((b) => (
-				<span>{b.href ? <a href={b.href}>{b.text}</a> : b.text}</span>
+			{breadcrumbs.map((b, index) => (
+				<span key={index}>
+					{b.href ? <a href={b.href}>{b.text}</a> : b.text}
+				</span>
 			))}
 		</nav>
 	)

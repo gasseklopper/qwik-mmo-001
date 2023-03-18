@@ -2,8 +2,8 @@ import {
 	component$,
 	useStore,
 	useContextProvider,
-	createContext,
-	useRef,
+	createContextId,
+	useSignal,
 } from '@builder.io/qwik'
 import QwikTextField from '~/components/QwikTextField/index'
 import { Layout } from './layout'
@@ -16,7 +16,7 @@ interface UserStore {
 	password: string
 }
 
-export const UserContext = createContext<UserStore>('User')
+export const UserContext = createContextId<UserStore>('User')
 
 export const Stores = component$(() => {
 	const userData = useStore({
@@ -37,11 +37,11 @@ export const Stores = component$(() => {
 })
 
 export const Login = component$(() => {
-	const username = useRef()
-	const first = useRef()
-	const last = useRef()
-	const email = useRef()
-	const password = useRef()
+	const username = useSignal()
+	const first = useSignal()
+	const last = useSignal()
+	const email = useSignal()
+	const password = useSignal()
 
 	return (
 		<div class="container">
