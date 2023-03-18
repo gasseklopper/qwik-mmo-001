@@ -17,7 +17,7 @@ import { supabase } from './utils/supabase'
 import type { SiteStore } from './globalContext'
 import { GlobalStore } from './globalContext'
 
-export const UserSessionContext = createContextId('user-session')
+export const UserSessionContext = createContextId<any>('user-session')
 
 export default component$(() => {
 	const userSession: any = useStore({ userId: '', isLoggedIn: false })

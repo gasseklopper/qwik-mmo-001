@@ -4,7 +4,7 @@ import {
 	$,
 	useSignal,
 	useTask$,
-	useClientEffect$,
+	useVisibleTask$,
 	useContext,
 } from '@builder.io/qwik'
 import { validateEmail } from '~/utils/helpers'
@@ -73,7 +73,7 @@ export default component$(() => {
 
 	const userSession: any = useContext(UserSessionContext)
 
-	useClientEffect$(
+	useVisibleTask$(
 		async () => {
 			const { data, error } = await supabase.auth.getUser()
 			console.log('check auth with get user')
