@@ -1,0 +1,43 @@
+body {
+	margin: 0;
+	--color-text: #111;
+	--color-bg: #d8d2cd;
+	--color-link: #b41717;
+	--color-link-hover: #000;
+	--color-bg-alt: #c3bcbc;
+	--color-text-alt: #111;
+	color: var(--color-text);
+	background-color: var(--color-bg);
+	font-family: roc-grotesk, sans-serif;
+	text-transform: uppercase;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	overflow-x: hidden;
+}
+
+.grid {
+	position: relative;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+}
+
+.grid__item {
+	position: relative;
+	will-change: transform;
+	grid-column: var(--c);
+	grid-row: var(--r);
+}
+
+.grid__item-img {
+	position: relative;
+	width: 100%;
+	height: auto;
+	aspect-ratio: 1;
+	background-size: cover;
+	background-position: 50% 50%;
+	will-change: transform, opacity;
+}
+.demo-1 .grid__item-img {
+	filter: contrast(70%);
+}
