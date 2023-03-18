@@ -5,7 +5,7 @@ import {
 	useVisibleTask$,
 } from '@builder.io/qwik'
 import styles from './section_hero_001.css?inline'
-import ScrollTrigger from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { gsap } from 'gsap'
 
 export default component$(() => {
