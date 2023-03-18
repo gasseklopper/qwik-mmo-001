@@ -1,21 +1,23 @@
 import {
 	component$,
-	useClientEffect$,
+	useVisibleTask$,
 	useContextProvider,
 	useStore,
-	createContext,
+	createContextId,
 } from '@builder.io/qwik'
 import {
-	QwikCity,
+	QwikCityProvider,
 	RouterOutlet,
 	ServiceWorkerRegister,
 } from '@builder.io/qwik-city'
+
 import { RouterHead } from './components/router-head/router-head'
 import './global.css'
 import { supabase } from './utils/supabase'
-import { GlobalStore, SiteStore } from './globalContext'
+import type { SiteStore } from './globalContext'
+import { GlobalStore } from './globalContext'
 
-export const UserSessionContext = createContext('user-session')
+export const UserSessionContext = createContextId('user-session')
 
 export default component$(() => {
 	const userSession: any = useStore({ userId: '', isLoggedIn: false })
@@ -24,7 +26,7 @@ export default component$(() => {
 	})
 
 	// auth change listener
-	useClientEffect$(
+	useVisibleTask$(
 		async () => {
 			const { data: authListener } = supabase.auth.onAuthStateChange(
 				async (event: string, session: any) => {
@@ -59,7 +61,7 @@ export default component$(() => {
 	)
 
 	// auth check getUser
-	useClientEffect$(
+	useVisibleTask$(
 		async () => {
 			const { data, error } = await supabase.auth.getUser()
 			if (data.user?.id && !error) {
@@ -80,7 +82,7 @@ export default component$(() => {
 	useContextProvider(UserSessionContext, userSession)
 
 	return (
-		<QwikCity>
+		<QwikCityProvider>
 			<head>
 				<meta
 					charSet="utf-8"
@@ -103,6 +105,6 @@ export default component$(() => {
 				<RouterOutlet />
 				<ServiceWorkerRegister />
 			</body>
-		</QwikCity>
+		</QwikCityProvider>
 	)
 })
