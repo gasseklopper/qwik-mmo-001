@@ -1,4 +1,4 @@
-import { component$, Slot, useStyles$ } from '@builder.io/qwik'
+import { component$, useStyles$ } from '@builder.io/qwik'
 import Footer from '~/components/footer/footer'
 import Header from '~/components/header/header'
 import styles from '~/index.scss?inline'
@@ -10,9 +10,7 @@ export default component$(() => {
 		<>
 			<Header />
 			<main class="test">
-				<div class="container">
-					<Slot />
-				</div>
+				<div class="container">{/* <Slot /> */}</div>
 			</main>
 			<Footer />
 		</>
