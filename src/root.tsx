@@ -14,15 +14,25 @@ import {
 import { RouterHead } from './components/router-head/router-head'
 import './global.css'
 import { supabase } from './utils/supabase'
-import type { SiteStore } from './globalContext'
+import type { MenuStore, SiteStore } from './globalContext'
+import { GlobalMenuStore } from './globalContext'
 import { GlobalStore } from './globalContext'
 
 export const UserSessionContext = createContextId<any>('user-session')
 
 export default component$(() => {
 	const userSession: any = useStore({ userId: '', isLoggedIn: false })
+
 	const store = useStore<SiteStore>({
 		theme: 'auto',
+	})
+
+	const menuStore = useStore<MenuStore>({
+		isHover: false,
+		showOverlay: false,
+		showMenu: false,
+		showMenuInner: false,
+		isHoverId: 0,
 	})
 
 	// auth change listener
@@ -79,6 +89,7 @@ export default component$(() => {
 
 	// pass state to children via context
 	useContextProvider(GlobalStore, store)
+	useContextProvider(GlobalMenuStore, menuStore)
 	useContextProvider(UserSessionContext, userSession)
 
 	return (

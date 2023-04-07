@@ -7,7 +7,7 @@ import {
 import styles from './section_hero_001.css?inline'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { gsap } from 'gsap'
-import Image from '../__libary/atoms/image/image'
+// import Image from '../__libary/atoms/image/image'
 
 export default component$(() => {
 	useStyles$(styles)
@@ -51,10 +51,10 @@ export default component$(() => {
 
 	return (
 		<>
-			<Image
+			{/* <Image
 				src="../../assets/images/photography/black/Template_index_01.jpg"
 				alt=""
-			/>
+			/> */}
 			<div class="content" ref={contentRef}>
 				<div class="grid">
 					<div class="grid__item" style="--r: 1;--c: 4;">
