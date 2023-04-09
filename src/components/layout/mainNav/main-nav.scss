@@ -213,7 +213,6 @@
 		&__main {
 			position: relative;
 			background-color: var(--surface1);
-			background-color: yellow;
 			&::before {
 				content: '';
 				position: absolute;
@@ -241,7 +240,6 @@
 			// justify-content: space-between;
 			// flex-direction: column-reverse;
 			background: var(--surface1);
-			background: green;
 			height: 70px;
 			width: 100%;
 			transition: height $duration $timing;
@@ -405,19 +403,18 @@
 			padding: 24px 48px;
 			pointer-events: none;
 			opacity: 0;
-			// opacity: 1;
 			min-height: 70vh;
+			// max-height: 10vh;
 			transform: translateY(160px);
 			background-color: var(--surface3);
-			// background-color: yellow;
 			transition-property: opacity, transform;
 			transition-duration: $duration;
 			transition-timing-function: $timing;
+			overflow-y: scroll;
 			&.visible {
 				pointer-events: all;
 				opacity: 1;
 				transform: none;
-				// transform: translateY(-10px);
 			}
 		}
 
@@ -425,7 +422,7 @@
 			display: none;
 
 			&.visible {
-				display: block;
+				display: flex;
 			}
 		}
 
