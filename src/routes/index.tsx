@@ -11,5 +11,5 @@ export default component$(() => {
 })
 
 export const head: DocumentHead = {
-	title: 'Welcome to Qwik Docs Starter',
+	title: 'Welcome to Qwik testing',
 }

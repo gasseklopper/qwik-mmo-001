@@ -4,26 +4,6 @@ import type { DocumentHead } from '@builder.io/qwik-city'
 export default component$(() => {
 	return (
 		<>
-			<div class="row">
-				<div class="column large-6">hello</div>
-				<div class="column surface1 large-6">hello</div>
-			</div>
-			<div class="row">
-				<div class="column large-6">hello</div>
-				<div class="column surface1 large-6">hello</div>
-			</div>
-			<div class="row">
-				<div class="column large-6">hello</div>
-				<div class="column surface1 large-6">hello</div>
-			</div>
-			<div class="row">
-				<div class="column large-6">hello</div>
-				<div class="column surface1 large-6">hello</div>
-			</div>
-			<div class="row">
-				<div class="column large-6">hello</div>
-				<div class="column surface1 large-6">hello</div>
-			</div>
 			<h1>Welcome to Qwik Docs Starter</h1>
 
 			<ul>
