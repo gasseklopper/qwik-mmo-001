@@ -1,0 +1,61 @@
+@use '../../scss/00-vars/00-vars' as vars;
+
+.intro {
+	position: relative;
+
+	&__overlay {
+		position: absolute;
+		// z-index: 0;
+		background-color: var(--text1);
+		height: 800px;
+		width: 100%;
+		opacity: 1;
+	}
+
+	&__image_container {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: end;
+		background-color: var(--text1);
+		height: 800px;
+		overflow: hidden;
+	}
+
+	&__image_wrapper {
+		width: 100%;
+		opacity: .3;
+		// background-color: aqua;
+		@media (min-width: vars.$bpL) {
+			width: 70%;
+			opacity: 1;
+		}
+	}
+
+	&__image {
+		height: 1000px;
+		width: auto;
+	}
+
+	&__content {
+		// color: var(--text1);
+		position: absolute;
+		top: 30%;
+		left: 10%;
+	}
+
+	&__surname {
+		font-size: 120px;
+		-webkit-text-stroke: 1px #000;
+		color: transparent
+	}
+
+	&__name {
+		font-size: 120px;
+	}
+
+	&__description {
+		font-size: 30px;
+	}
+}
+
