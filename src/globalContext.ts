@@ -11,6 +11,7 @@ export interface MenuStore {
 	showMenu: boolean
 	showMenuInner: boolean
 	isHoverId: number
+	test: string
 }
 
 export const GlobalMenuStore = createContextId<MenuStore>('menu-store')

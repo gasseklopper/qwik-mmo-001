@@ -60,6 +60,7 @@ export default component$(() => {
 		<>
 			<div class="navigation">
 				<header class="header">
+					<GlobalMenuStoreTest />
 					<div
 						class={{
 							header__overlay: true,
@@ -106,6 +107,19 @@ export const Logo = component$(() => {
 		<a class="logo" href="/" aria-label="Logo">
 			LOGO
 		</a>
+	)
+})
+
+export const GlobalMenuStoreTest = component$(() => {
+	const globalMenuStore = useContext(GlobalMenuStore)
+	return (
+		<div
+			onClick$={() => {
+				globalMenuStore.test = 'wurst'
+			}}
+		>
+			{globalMenuStore.test}
+		</div>
 	)
 })
 

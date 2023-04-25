@@ -91,5 +91,5 @@ export default component$(() => {
 })
 
 export const head: DocumentHead = {
-	title: 'api-fetching',
+	title: 'start',
 }

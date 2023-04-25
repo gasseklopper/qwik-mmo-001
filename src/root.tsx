@@ -33,6 +33,7 @@ export default component$(() => {
 		showMenu: false,
 		showMenuInner: false,
 		isHoverId: 0,
+		test: 'test',
 	})
 
 	// auth change listener
