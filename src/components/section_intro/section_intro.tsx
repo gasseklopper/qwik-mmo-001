@@ -34,7 +34,7 @@ export default component$(() => {
 						<div class="intro__image_wrapper">
 							<img
 								class="intro__image"
-								src="../../assets/images/photography/intro/bg-image-02.jpg"
+								src="../../assets/images/photography/black/Template_index_016.jpg"
 								alt=""
 							/>
 						</div>
