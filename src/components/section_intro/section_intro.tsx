@@ -20,9 +20,9 @@ export default component$(() => {
 				}% 100%`,
 			})
 			.to(overlay, {
-				ease: 'none',
+				ease: 'power1',
 				scaleX: 0,
-				duration: 0.7,
+				duration: 1.2,
 			})
 	})
 	return (
