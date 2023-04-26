@@ -4,9 +4,11 @@ import LinkList from '~/components/linkList/linkList'
 
 export default component$(() => {
 	return (
-		<>
-			<LinkList />
-		</>
+		<div class="row">
+			<div class="column">
+				<LinkList />
+			</div>
+		</div>
 	)
 })
 

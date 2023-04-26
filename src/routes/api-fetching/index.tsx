@@ -5,10 +5,12 @@ import AutoComplete from '~/components/autoComplete/autoComplete'
 
 export default component$(() => {
 	return (
-		<>
-			<AutoComplete />
-			<UnsplashApi />
-		</>
+		<div class="row">
+			<div class="column">
+				<AutoComplete />
+				<UnsplashApi />
+			</div>
+		</div>
 	)
 })
 

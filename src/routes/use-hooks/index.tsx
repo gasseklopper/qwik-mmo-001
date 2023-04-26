@@ -8,13 +8,15 @@ import Debounced from '~/components/debounced/debounced'
 
 export default component$(() => {
 	return (
-		<>
-			<UsingContext />
-			<UseStyles />
-			<UseReference />
-			<Counter />
-			<Debounced />
-		</>
+		<div class="row">
+			<div class="column">
+				<UsingContext />
+				<UseStyles />
+				<UseReference />
+				<Counter />
+				<Debounced />
+			</div>
+		</div>
 	)
 })
 

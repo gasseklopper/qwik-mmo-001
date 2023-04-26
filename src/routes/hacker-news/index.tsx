@@ -4,9 +4,11 @@ import HackerNews from '~/components/hackerNews/hackerNews'
 
 export default component$(() => {
 	return (
-		<>
-			<HackerNews />
-		</>
+		<div class="row">
+			<div class="column">
+				<HackerNews />
+			</div>
+		</div>
 	)
 })
 
