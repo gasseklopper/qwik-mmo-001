@@ -6,6 +6,7 @@ export default component$(() => {
 		<div class="row">
 			<div class="column">
 				<h1>Welcome to Qwik Docs Starter</h1>
+				<h2>Hallo Jessica und hallo Alexandra</h2>
 
 				<ul>
 					<li>This homepage uses a layout without a menu.</li>
