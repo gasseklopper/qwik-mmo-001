@@ -514,14 +514,14 @@ export const HeaderItems = component$(() => {
 				Home
 			</a>
 			<a
-				href="/docs"
+				href="/portfolio"
 				class={{
 					visible: globalMenuStore.isHover,
 					header__item: true,
 					test: globalMenuStore.isHoverId === 2,
 					active: url.pathname.startsWith('/docs'),
 				}}
-				aria-label="Docs"
+				aria-label="Portfolio"
 				data-header-menu-id="0"
 				data-btattached="true"
 				onMouseEnter$={() => (
@@ -529,7 +529,7 @@ export const HeaderItems = component$(() => {
 					(globalMenuStore.isHoverId = 2)
 				)}
 			>
-				Docs
+				Portfolio
 			</a>
 			<a
 				href="/about-us"
