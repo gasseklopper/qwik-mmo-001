@@ -5,6 +5,7 @@ import {
 	useVisibleTask$,
 	useTask$,
 	$,
+	useSignal,
 } from '@builder.io/qwik'
 import { useLocation } from '@builder.io/qwik-city'
 import {
@@ -15,6 +16,11 @@ import {
 } from '../../theme-toggle/theme-toggle'
 import styles from './main-nav.scss?inline'
 import { GlobalStore, GlobalMenuStore } from '../../../globalContext'
+// import {
+// 	disableBodyScroll,
+// 	enableBodyScroll,
+// 	clearAllBodyScrollLocks,
+// } from 'body-scroll-lock'
 
 export default component$(() => {
 	useStyles$(styles)
@@ -38,13 +44,6 @@ export default component$(() => {
 		track(() => globalMenuStore.showMenuInner)
 		track(() => globalMenuStore.isHoverId)
 	})
-
-	// const showMenu$ = $(() => {
-	// 	// if (globalMenuStore.isHover === true) {
-	// 	// 	globalMenuStore.isHover = true
-	// 	// }
-	// 	// globalMenuStore.showMenu = true
-	// })
 
 	const showOverlay$ = $(() => {
 		globalMenuStore.showOverlay = true
@@ -125,14 +124,28 @@ export const GlobalMenuStoreTest = component$(() => {
 
 export const MenuCards = component$(() => {
 	const globalMenuStore = useContext(GlobalMenuStore)
+	const targetRef = useSignal<Element>()
+
+	useVisibleTask$(() => {
+		// if (targetRef.value) {
+		// 	disableBodyScroll(targetRef.value)
+		// }
+		// enableBodyScroll(targetRef)
+	})
+	// const targetElemen = null
 	return (
 		<div
+			ref={targetRef}
+			// style={{ border: '1px solid red', width: '100px' }}
 			class={{
 				header__menu: true,
 				visible: globalMenuStore.showMenu,
 			}}
 			onMouseEnter$={() => (globalMenuStore.isHover = true)}
-			onMouseLeave$={() => (globalMenuStore.isHover = false)}
+			// onMouseLeave$={() => (
+			// 	// (globalMenuStore.isHover = false),
+			// 	// enableBodyScroll(targetRef.value)
+			// )}
 		>
 			<div
 				class={{
