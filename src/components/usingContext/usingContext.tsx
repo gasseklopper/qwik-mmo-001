@@ -1,6 +1,6 @@
 import {
 	component$,
-	createContext,
+	createContextId,
 	useContextProvider,
 	useContext,
 	useStore,
@@ -10,7 +10,7 @@ interface TodosStore {
 	items: string[]
 }
 
-export const TodosContext = createContext<TodosStore>('Todos')
+export const TodosContext = createContextId<TodosStore>('Todos')
 
 export default component$(() => {
 	useContextProvider(
@@ -27,8 +27,8 @@ export const Items = component$(() => {
 	const todos = useContext(TodosContext)
 	return (
 		<ul>
-			{todos.items.map((item) => (
-				<li>{item}</li>
+			{todos.items.map((item, index) => (
+				<li key={index}>{item}</li>
 			))}
 		</ul>
 	)

@@ -1,36 +1,33 @@
 import {
 	component$,
-	useRef,
-	useClientEffect$,
-	useStore,
+	useVisibleTask$,
+	// useStore,
+	useSignal,
 } from '@builder.io/qwik'
 
 export default component$(() => {
-	const store = useStore({
-		width: 0,
-		height: 0,
-	})
-	const outputRef = useRef()
-	useClientEffect$(() => {
-		if (outputRef.current) {
-			const rect = outputRef.current.getBoundingClientRect()
-			store.width = Math.round(rect.width)
-			store.height = Math.round(rect.height)
+	const width = useSignal(12)
+	const height = useSignal(12)
+
+	const outputRef = useSignal<Element>()
+	useVisibleTask$(() => {
+		console.log('test', outputRef.value)
+		if (outputRef.value) {
+			const rect = outputRef.value.getBoundingClientRect()
+			width.value = Math.round(rect.width)
+			height.value = Math.round(rect.height)
 		}
 	})
 
 	return (
-		<div>
-			<div
-				style={{ border: '1px solid red', width: '100px' }}
-				ref={outputRef}
-			>
-				Change text value here to ssssssssstretchd dsdds s the box.
-			</div>
-			<div>
-				The above red box is {store.height} pixels high and{' '}
-				{store.width} pixels wide.
-			</div>
-		</div>
+		<main>
+			<aside style={{ border: '1px solid black', width: '100px' }}>
+				Change text value here to stretch the box.
+			</aside>
+			<p>
+				The above red box is {height.value} pixels high and{' '}
+				{width.value} pixels wide.
+			</p>
+		</main>
 	)
 })

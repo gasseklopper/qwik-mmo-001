@@ -1,6 +1,6 @@
 /** @format */
 
-import { component$, useStore, useClientEffect$ } from '@builder.io/qwik'
+import { component$, useStore, useVisibleTask$ } from '@builder.io/qwik'
 import LocomotiveScroll from 'locomotive-scroll'
 
 export interface ILinkListContent {
@@ -241,7 +241,7 @@ export default component$(() => {
 		bla: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Totam expedita, excepturi vel qui consequatur, fugit quod ea rem accusantium ad eaque eum. Laudantium harum porro aspernatur aliquam. Obcaecati, sed. Harum, aut vitae accusantium aliquam blanditiis qui officia deleniti omnis. Error corrupti adipisci, voluptatum deleniti laborum dolorum maxime consectetur labore iure, quas asperiores porro est nihil harum totam. Deleniti nihil tenetur facere rerum neque quaerat laudantium sint excepturi cupiditate. Ullam, nisi aut blanditiis reprehenderit, corrupti minima aliquid, neque in quo illum ipsum! Dolor, nemo? Dolorem quaerat nesciunt modi beatae qui aspernatur perferendis, quidem cum consequuntur harum expedita, ipsam molestias magnam pariatur. Quas aliquid reprehenderit similique. Suscipit facilis, accusantium qui animi dolore dignissimos, voluptatibus maxime dolores unde, saepe quae eaque recusandae sint architecto impedit!',
 	})
 
-	useClientEffect$(
+	useVisibleTask$(
 		() => {
 			const scrollContainer = document.querySelector(
 				'[data-scroll-container]'
