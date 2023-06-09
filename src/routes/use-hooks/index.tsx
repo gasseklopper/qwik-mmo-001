@@ -5,11 +5,13 @@ import UseStyles from '~/components/useStyles/useStyles'
 import UseReference from '~/components/useReference/useReference'
 import Counter from '~/components/counter/counter'
 import Debounced from '~/components/debounced/debounced'
+import Yatzee from '~/components/dojo/yatzee'
 
 export default component$(() => {
 	return (
 		<div class="row">
 			<div class="column">
+				<Yatzee />
 				<UsingContext />
 				<UseStyles />
 				<UseReference />
