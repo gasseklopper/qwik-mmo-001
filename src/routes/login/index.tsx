@@ -73,25 +73,20 @@ export default component$(() => {
 
 	const userSession: any = useContext(UserSessionContext)
 
-	useVisibleTask$(
-		async () => {
-			const { data, error } = await supabase.auth.getUser()
-			console.log('check auth with get user')
-			if (data.user?.id && !error) {
-				console.log(data)
-				isProtectedOk.value = true
-				userSession.userId = data.user.id
-				userSession.isLoggedIn = true
-			} else {
-				console.log(error)
-				userSession.userId = ''
-				userSession.isLoggedIn = false
-			}
-		},
-		{
-			eagerness: 'load', // 'load' | 'visible' | 'idle'
+	useVisibleTask$(async () => {
+		const { data, error } = await supabase.auth.getUser()
+		console.log('check auth with get user')
+		if (data.user?.id && !error) {
+			console.log(data)
+			isProtectedOk.value = true
+			userSession.userId = data.user.id
+			userSession.isLoggedIn = true
+		} else {
+			console.log(error)
+			userSession.userId = ''
+			userSession.isLoggedIn = false
 		}
-	)
+	})
 	return (
 		<>
 			<h1>Login</h1>

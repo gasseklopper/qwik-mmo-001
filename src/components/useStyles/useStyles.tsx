@@ -2,15 +2,15 @@ import { component$, useStyles$, useStore } from '@builder.io/qwik'
 
 export default component$(() => {
 	useStyles$(AppCSS)
-	const store = useStore({ open: false, siblings: [0] }, { recursive: true })
+	const store = useStore({ open: false, siblings: [0] })
 
 	return (
 		<div class="parent">
 			<button onClick$={() => (store.open = !store.open)}>toggle</button>
 			<button onClick$={() => store.siblings.push(0)}>addSibling</button>
 			{store.open ? <Child key="child" /> : null}
-			{store.siblings.map(() => (
-				<Sibling />
+			{store.siblings.map((index) => (
+				<Sibling key={index} />
 			))}
 		</div>
 	)

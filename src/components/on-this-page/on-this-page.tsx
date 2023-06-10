@@ -9,8 +9,8 @@ export default component$(() => {
 	const contentHeadings =
 		headings?.filter((h) => h.level === 2 || h.level === 3) || []
 
-	const { pathname } = useLocation()
-	const editUrl = `#update-your-edit-url-for-${pathname}`
+	const { url } = useLocation()
+	const editUrl = `#update-your-edit-url-for-${url.pathname}`
 
 	return (
 		<aside class="on-this-page">
@@ -18,8 +18,8 @@ export default component$(() => {
 				<>
 					<h6>On This Page</h6>
 					<ul>
-						{contentHeadings.map((h) => (
-							<li>
+						{contentHeadings.map((h, index) => (
+							<li key={index}>
 								<a
 									href={`#${h.id}`}
 									class={{

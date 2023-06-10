@@ -1,4 +1,4 @@
-import { component$, useClientEffect$, useSignal } from '@builder.io/qwik'
+import { component$, useVisibleTask$, useSignal } from '@builder.io/qwik'
 import { supabase } from '~/utils/supabase'
 import type { DocumentHead } from '@builder.io/qwik-city'
 // import { useNavigate } from '@builder.io/qwik-city'
@@ -30,22 +30,17 @@ export default component$(() => {
 	// 	}
 	// )
 
-	useClientEffect$(
-		async () => {
-			const timeout = setTimeout(async () => {
-				const { data, error } = await supabase.auth.getUser()
-				console.log(data)
-				console.log(error)
-				console.log('useclienteffect working')
-			}, 6500)
-			return () => {
-				clearTimeout(timeout)
-			}
-		},
-		{
-			eagerness: 'load', // 'load' | 'visible' | 'idle'
+	useVisibleTask$(async () => {
+		const timeout = setTimeout(async () => {
+			const { data, error } = await supabase.auth.getUser()
+			console.log(data)
+			console.log(error)
+			console.log('useclienteffect working')
+		}, 6500)
+		return () => {
+			clearTimeout(timeout)
 		}
-	)
+	})
 	return (
 		<>
 			{isProtectedOk.value && (

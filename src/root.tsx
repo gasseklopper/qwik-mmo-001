@@ -37,56 +37,46 @@ export default component$(() => {
 	})
 
 	// auth change listener
-	useVisibleTask$(
-		async () => {
-			const { data: authListener } = supabase.auth.onAuthStateChange(
-				async (event: string, session: any) => {
-					console.log('its event', event)
-					console.log('its session', session)
-					console.log('its authListener', authListener)
-					if (event === 'SIGNED_IN') {
-						console.log('signed in')
-						// Send cookies to Server
-						// set Auth State for context
-						userSession.userId = session.user.id
-						userSession.isLoggedIn = true
-					}
-					if (event === 'SIGNED_OUT') {
-						console.log('signed OUT')
-						// Sign out User
-						// set Auth State for context
-						userSession.userId = ''
-						userSession.isLoggedIn = false
-					}
+	useVisibleTask$(async () => {
+		const { data: authListener } = supabase.auth.onAuthStateChange(
+			async (event: string, session: any) => {
+				console.log('its event', event)
+				console.log('its session', session)
+				console.log('its authListener', authListener)
+				if (event === 'SIGNED_IN') {
+					console.log('signed in')
+					// Send cookies to Server
+					// set Auth State for context
+					userSession.userId = session.user.id
+					userSession.isLoggedIn = true
 				}
-			)
-
-			// Cleanup Event Listener
-			return () => {
-				authListener?.subscription.unsubscribe()
+				if (event === 'SIGNED_OUT') {
+					console.log('signed OUT')
+					// Sign out User
+					// set Auth State for context
+					userSession.userId = ''
+					userSession.isLoggedIn = false
+				}
 			}
-		},
-		{
-			eagerness: 'load', // 'load' | 'visible' | 'idle'
+		)
+
+		// Cleanup Event Listener
+		return () => {
+			authListener?.subscription.unsubscribe()
 		}
-	)
+	})
 
 	// auth check getUser
-	useVisibleTask$(
-		async () => {
-			const { data, error } = await supabase.auth.getUser()
-			if (data.user?.id && !error) {
-				userSession.userId = data.user.id
-				userSession.isLoggedIn = true
-			} else {
-				userSession.userId = ''
-				userSession.isLoggedIn = false
-			}
-		},
-		{
-			eagerness: 'load', // 'load' | 'visible' | 'idle'
+	useVisibleTask$(async () => {
+		const { data, error } = await supabase.auth.getUser()
+		if (data.user?.id && !error) {
+			userSession.userId = data.user.id
+			userSession.isLoggedIn = true
+		} else {
+			userSession.userId = ''
+			userSession.isLoggedIn = false
 		}
-	)
+	})
 
 	// pass state to children via context
 	useContextProvider(GlobalStore, store)

@@ -1,11 +1,11 @@
 /** @format */
 
-import { component$, useServerMount$, useStore } from '@builder.io/qwik'
+import { component$, useTask$, useStore } from '@builder.io/qwik'
 
 export default component$(() => {
 	const store = useStore({ data: null })
 
-	useServerMount$(async () => {
+	useTask$(async () => {
 		const response = await fetch(
 			'https://node-hnapi.herokuapp.com/news?page=0'
 		)

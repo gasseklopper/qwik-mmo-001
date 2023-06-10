@@ -7,13 +7,13 @@ import { ThemeScript } from './theme-script'
  */
 export const RouterHead = component$(() => {
 	const head = useDocumentHead()
-	const loc = useLocation()
+	const { url } = useLocation()
 
 	return (
 		<>
 			<title>{head.title}</title>
 
-			<link rel="canonical" href={loc.href} />
+			<link rel="canonical" href={url.href} />
 			<meta
 				name="viewport"
 				content="width=device-width, initial-scale=1.0"
@@ -31,16 +31,20 @@ export const RouterHead = component$(() => {
 				rel="stylesheet"
 			/>
 
-			{head.meta.map((m) => (
-				<meta {...m} />
+			{head.meta.map((m, index) => (
+				<meta {...m} key={index} />
 			))}
 
-			{head.links.map((l) => (
-				<link {...l} />
+			{head.links.map((l, index) => (
+				<link {...l} key={index} />
 			))}
 
-			{head.styles.map((s) => (
-				<style {...s.props} dangerouslySetInnerHTML={s.style} />
+			{head.styles.map((s, index) => (
+				<style
+					{...s.props}
+					dangerouslySetInnerHTML={s.style}
+					key={index}
+				/>
 			))}
 
 			<ThemeScript />

@@ -7,7 +7,7 @@ export default component$(() => {
 	useStyles$(styles)
 
 	const { menu } = useContent()
-	const loc = useLocation()
+	const { url } = useLocation()
 
 	return (
 		<aside class="menu">
@@ -16,13 +16,13 @@ export default component$(() => {
 						<>
 							<h5>{item.text}</h5>
 							<ul>
-								{item.items?.map((item) => (
-									<li>
+								{item.items?.map((item, index) => (
+									<li key={index}>
 										<Link
 											href={item.href}
 											class={{
 												'is-active':
-													loc.pathname === item.href,
+													url.pathname === item.href,
 											}}
 										>
 											{item.text}
