@@ -1,9 +1,9 @@
-import { component$, useStore, useSignal, useTask$, $ } from '@builder.io/qwik'
+import { component$, useStore, $ } from '@builder.io/qwik'
 
 export default component$(() => {
-	const store: { dice: number[] } = useStore({ dice: [0, 0, 0, 0, 0] })
-	const roll: { count: number } = useStore({ count: 0 })
-	const ruleNumber: { value: string } = useStore({ value: '1' })
+	const store: { dice: number[] } = useStore({ dice: [1, 2, 3, 4, 6] })
+	const roll: { count: number } = useStore({ count: 1 })
+	const ruleNumber: { value: string } = useStore({ value: '9' })
 	const points: { value: number } = useStore({ value: 0 })
 	const keepDice: {
 		value1: boolean
@@ -54,15 +54,8 @@ export default component$(() => {
 	})
 
 	const resetGame = $(() => {
-		ruleNumber.value = '1'
 		points.value = 0
-		roll.count = 0
-		store.dice = [0, 0, 0, 0, 0]
-		keepDice.value1 = false
-		keepDice.value2 = false
-		keepDice.value3 = false
-		keepDice.value4 = false
-		keepDice.value5 = false
+		reset()
 	})
 
 	const setDices = $((a: any) => {
@@ -77,12 +70,26 @@ export default component$(() => {
 		ruleNumber.value = a.target.value
 	})
 
-	// const upps = $(function upps(total: number, num: number) {
-	// 	return total - num
-	// })
-
 	const submit = $(() => {
+		let extractedDiceRollTable = [0, 0, 0, 0, 0, 0]
+
+		const submitDiceRoll = (elem: any) => {
+			elem.forEach((item: number) => {
+				for (let index = 0; index <= store.dice.length; index++) {
+					if (item - 1 == index) {
+						extractedDiceRollTable[item - 1]++
+					}
+				}
+			})
+			return extractedDiceRollTable
+		}
+
+		const equalsCheck = (a: any[], b: string | any[]) =>
+			a.length === b.length && a.every((v, i) => v === b[i])
+
 		if (roll.count >= 1 && roll.count <= 3) {
+			// Rule 1-6
+			// Ones, Twos, Threes, Fours, Fives, Sixes: The player scores the sum of the dice that reads one, two, three, four, five or six, respectively. For example, 1, 1, 2, 4, 4 placed on “fours” gives 8 points.
 			if (ruleNumber.value === '1') {
 				points.value +=
 					store.dice.filter(
@@ -125,7 +132,80 @@ export default component$(() => {
 							rolledDie === (Number(ruleNumber.value) as Number)
 					).length * Number(ruleNumber.value)
 			}
-			// yatzee rule
+			// Pair: The player scores the sum of the two highest matching dice. For example, 3, 3, 3, 4, 4 placed on “pair” gives 8.
+			if (ruleNumber.value === '7') {
+				const test = store.dice.filter(
+					(rolledDie) => rolledDie === store.dice[0]
+				).length
+				if (test === 5) {
+					points.value += 50
+				} else {
+					points.value += 0
+				}
+			}
+			// Two pairs: If there are two pairs of dice with the same number, the player scores the sum of these dice. If not, the player scores 0. For example, 1, 1, 2, 3, 3 placed on “two pairs” gives 8.
+			if (ruleNumber.value === '8') {
+				const test = store.dice.filter(
+					(rolledDie) => rolledDie === store.dice[0]
+				).length
+				if (test === 5) {
+					points.value += 50
+				} else {
+					points.value += 0
+				}
+			}
+			// Three of a kind: If there are three dice with the same number, the player scores the sum of these dice. Otherwise, the player scores 0. For example, 3, 3, 3, 4, 5 places on “three of a kind” gives 9.
+			if (ruleNumber.value === '9') {
+				const wurst = submitDiceRoll(store.dice)
+				let test = 0
+				wurst.filter((elem, index) => {
+					if (elem >= 3) {
+						test = index + 1
+					}
+				})
+				points.value += 3 * test
+			}
+			// Four of a kind: If there are four dice with the same number, the player scores the sum of these dice. Otherwise, the player scores 0. For example, 2, 2, 2, 2, 5 places on “four of a kind” gives 8.
+			if (ruleNumber.value === '10') {
+				const wurst = submitDiceRoll(store.dice)
+				let test = 0
+				wurst.filter((elem, index) => {
+					if (elem >= 4) {
+						test = index + 1
+					}
+				})
+				points.value += 4 * test
+			}
+			// Small straight: If the dice read 1,2,3,4,5, the player scores 15 (the sum of all the dice), otherwise 0.
+			if (ruleNumber.value === '11') {
+				const wurst = submitDiceRoll(store.dice)
+				if (equalsCheck([1, 1, 1, 1, 1, 0], wurst)) {
+					points.value += 15
+				} else {
+					points.value += 0
+				}
+			}
+			// Large straight: If the dice read 2,3,4,5,6, the player scores 20 (the sum of all the dice), otherwise 0.
+			if (ruleNumber.value === '12') {
+				const wurst = submitDiceRoll(store.dice)
+				if (equalsCheck([0, 1, 1, 1, 1, 1], wurst)) {
+					points.value += 20
+				} else {
+					points.value += 0
+				}
+			}
+			// Full house: If the dice are two of a kind and three of a kind, the player scores the sum of all the dice. For example, 1,1,2,2,2 placed on “full house” gives 8. 4,4,4,4,4 is not “full house”.
+			if (ruleNumber.value === '13') {
+				const test = store.dice.filter(
+					(rolledDie) => rolledDie === store.dice[0]
+				).length
+				if (test === 5) {
+					points.value += 50
+				} else {
+					points.value += 0
+				}
+			}
+			// Yahtzee: If all dice are the have the same number, the player scores 50 points, otherwise 0.
 			if (ruleNumber.value === '14') {
 				const test = store.dice.filter(
 					(rolledDie) => rolledDie === store.dice[0]
@@ -136,7 +216,7 @@ export default component$(() => {
 					points.value += 0
 				}
 			}
-			// Chance rule
+			// Chance: The player gets the sum of all dice, no matter what they read.The practitioner can feel free to create new categories as well.
 			if (ruleNumber.value === '15') {
 				points.value += store.dice.reduce(function upps(
 					total: number,
@@ -145,14 +225,8 @@ export default component$(() => {
 					return total + num
 				})
 			}
-			keepDice.value1 = false
-			keepDice.value2 = false
-			keepDice.value3 = false
-			keepDice.value4 = false
-			keepDice.value5 = false
-			roll.count = 0
-			ruleNumber.value = '1'
-			store.dice = [0, 0, 0, 0, 0]
+			extractedDiceRollTable = [0, 0, 0, 0, 0, 0]
+			reset()
 		}
 	})
 
@@ -309,6 +383,7 @@ export default component$(() => {
 						name="drone"
 						value="9"
 						onClick$={(e) => setRuleNumber(e)}
+						checked={ruleNumber.value === '9'}
 					/>
 					<label for="triptychon">triptychon</label>
 					<input
@@ -339,7 +414,7 @@ export default component$(() => {
 						type="radio"
 						id="fullHouse"
 						name="drone"
-						value="12"
+						value="13"
 						onClick$={(e) => setRuleNumber(e)}
 					/>
 					<label for="fullHouse">fullHouse</label>
