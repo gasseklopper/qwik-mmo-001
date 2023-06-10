@@ -1,9 +1,9 @@
 import { component$, useStore, $ } from '@builder.io/qwik'
 
 export default component$(() => {
-	const store: { dice: number[] } = useStore({ dice: [1, 2, 3, 4, 6] })
-	const roll: { count: number } = useStore({ count: 1 })
-	const ruleNumber: { value: string } = useStore({ value: '9' })
+	const store: { dice: number[] } = useStore({ dice: [0, 0, 0, 0, 0] })
+	const roll: { count: number } = useStore({ count: 0 })
+	const ruleNumber: { value: string } = useStore({ value: '1' })
 	const points: { value: number } = useStore({ value: 0 })
 	const keepDice: {
 		value1: boolean
@@ -134,22 +134,43 @@ export default component$(() => {
 			}
 			// Pair: The player scores the sum of the two highest matching dice. For example, 3, 3, 3, 4, 4 placed on “pair” gives 8.
 			if (ruleNumber.value === '7') {
-				const test = store.dice.filter(
-					(rolledDie) => rolledDie === store.dice[0]
-				).length
-				if (test === 5) {
-					points.value += 50
-				} else {
-					points.value += 0
-				}
+				const wurst = submitDiceRoll(store.dice)
+				let test = 0
+				wurst.filter((elem, index) => {
+					if (elem >= 2) {
+						test = index + 1
+					}
+				})
+				points.value += 2 * test
 			}
 			// Two pairs: If there are two pairs of dice with the same number, the player scores the sum of these dice. If not, the player scores 0. For example, 1, 1, 2, 3, 3 placed on “two pairs” gives 8.
 			if (ruleNumber.value === '8') {
-				const test = store.dice.filter(
-					(rolledDie) => rolledDie === store.dice[0]
-				).length
-				if (test === 5) {
-					points.value += 50
+				const wurst = submitDiceRoll(store.dice)
+				const array2 = [3, 2, 0, 0, 0, 0]
+				const array3 = [2, 2, 1, 0, 0, 0]
+				if (
+					wurst.sort().join(',') === array2.sort().join(',') ||
+					wurst.sort().join(',') === array3.sort().join(',')
+				) {
+					const test = store.dice.reduce(function upps(
+						total: number,
+						num: number
+					) {
+						return total + num
+					})
+					let test1 = 0
+					let test2 = 0
+					wurst.filter((elem, index) => {
+						if (elem === 3) {
+							test1 = index + 1
+						}
+					})
+					wurst.filter((elem, index) => {
+						if (elem === 1) {
+							test2 = index + 1
+						}
+					})
+					points.value += test - test1 - test2
 				} else {
 					points.value += 0
 				}
@@ -196,11 +217,15 @@ export default component$(() => {
 			}
 			// Full house: If the dice are two of a kind and three of a kind, the player scores the sum of all the dice. For example, 1,1,2,2,2 placed on “full house” gives 8. 4,4,4,4,4 is not “full house”.
 			if (ruleNumber.value === '13') {
-				const test = store.dice.filter(
-					(rolledDie) => rolledDie === store.dice[0]
-				).length
-				if (test === 5) {
-					points.value += 50
+				const array2 = [3, 2, 0, 0, 0, 0]
+				const wurst = submitDiceRoll(store.dice)
+				if (wurst.sort().join(',') === array2.sort().join(',')) {
+					points.value += store.dice.reduce(function upps(
+						total: number,
+						num: number
+					) {
+						return total + num
+					})
 				} else {
 					points.value += 0
 				}
