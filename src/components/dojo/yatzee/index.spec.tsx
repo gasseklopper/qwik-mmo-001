@@ -1,4 +1,3 @@
-/* eslint-disable qwik/no-use-after-await */
 import { createDOM } from '@builder.io/qwik/testing' // import the createDOM method
 import { describe, expect, it, vi, beforeAll } from 'vitest'
 import Index from '.'

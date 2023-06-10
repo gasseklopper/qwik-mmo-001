@@ -35,7 +35,6 @@ describe('Counter component', function () {
 		expect(countElement?.textContent).toBe('1')
 		expect(countDebouncedElement?.textContent).toBe('1')
 
-		// eslint-disable-next-line qwik/no-use-after-await
 		await userEvent('.increment', 'click')
 
 		// assert the displayed count is now incremented by 2
