@@ -11,7 +11,19 @@ export default component$(() => {
 	return (
 		<div class="row">
 			<div class="column">
-				<Yatzee />
+				<Yatzee
+					dice={[0, 0, 0, 0, 0]}
+					roll={{ count: 1 }}
+					ruleNumber={{ value: '1' }}
+					points={{ value: 0 }}
+					keepDice={{
+						value1: false,
+						value2: false,
+						value3: false,
+						value4: false,
+						value5: false,
+					}}
+				/>
 				<UsingContext />
 				<UseStyles />
 				<UseReference />
