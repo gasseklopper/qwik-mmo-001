@@ -12,9 +12,9 @@ export default component$(() => {
 		<div class="row">
 			<div class="column">
 				<Yatzee
-					dice={[1, 5, 5, 5, 1]}
+					dice={[0, 0, 0, 0, 0]}
 					roll={{ count: 1 }}
-					ruleNumber={{ value: '8' }}
+					ruleNumber={{ value: '1' }}
 					points={{ value: 0 }}
 					keepDice={{
 						value1: false,
