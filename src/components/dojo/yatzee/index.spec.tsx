@@ -1,5 +1,6 @@
 import { createDOM } from '@builder.io/qwik/testing' // import the createDOM method
-import { describe, expect, it, vi, beforeAll } from 'vitest'
+import { describe, expect, it } from 'vitest'
+// import { describe, expect, it, vi, beforeAll } from 'vitest'
 import Yatzee from '.'
 
 // beforeAll(() => {
