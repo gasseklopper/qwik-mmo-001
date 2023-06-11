@@ -81,7 +81,7 @@ export default component$(
 			ruleNumber.value = a.target.value
 		})
 
-		const submit = $(() => {
+		const submit = $(async () => {
 			let extractedDiceRollTable = [0, 0, 0, 0, 0, 0]
 
 			const submitDiceRoll = (elem: any) => {
@@ -96,7 +96,7 @@ export default component$(
 			}
 
 			const equalsCheck = (a: any[], b: string | any[]) =>
-				a.length === b.length && a.every((v, i) => v === b[i])
+				a.every((v, i) => v === b[i])
 
 			if (roll.count >= 1 && roll.count <= 3) {
 				// Rule 1-6
@@ -162,31 +162,40 @@ export default component$(
 				}
 				// Two pairs: If there are two pairs of dice with the same number, the player scores the sum of these dice. If not, the player scores 0. For example, 1, 1, 2, 3, 3 placed on “two pairs” gives 8.
 				if (ruleNumber.value === '8') {
-					const wurst = submitDiceRoll(store.dice)
+					// const wurst = submitDiceRoll(store.dice)
+					const wurst3 = submitDiceRoll(store.dice)
+					const arrayOfOne = Array.from(wurst3)
+
 					const array2 = [3, 2, 0, 0, 0, 0]
 					const array3 = [2, 2, 1, 0, 0, 0]
+					// if (wurst3) {
 					if (
-						wurst.sort().join(',') === array2.sort().join(',') ||
-						wurst.sort().join(',') === array3.sort().join(',')
+						arrayOfOne.sort().join(',') ===
+							array2.sort().join(',') ||
+						arrayOfOne.sort().join(',') === array3.sort().join(',')
 					) {
+						console.log('wurst3 if', wurst3)
 						const test = store.dice.reduce(function upps(
 							total: number,
 							num: number
 						) {
 							return total + num
 						})
+
 						let test1 = 0
 						let test2 = 0
-						wurst.filter((elem, index) => {
-							if (elem === 3) {
+
+						wurst3.filter((elem, index) => {
+							if (elem === 1) {
 								test1 = index + 1
 							}
 						})
-						wurst.filter((elem, index) => {
-							if (elem === 1) {
+						wurst3.filter((elem, index) => {
+							if (elem === 3) {
 								test2 = index + 1
 							}
 						})
+
 						points.value += test - test1 - test2
 					} else {
 						points.value += 0
@@ -268,7 +277,7 @@ export default component$(
 					})
 				}
 				extractedDiceRollTable = [0, 0, 0, 0, 0, 0]
-				reset()
+				await reset()
 			}
 		})
 
@@ -482,7 +491,11 @@ export default component$(
 				<hr />
 
 				<div class="submit_container">
-					<button onClick$={submit} disabled={roll.count === 0}>
+					<button
+						class="submit_button"
+						onClick$={submit}
+						disabled={roll.count === 0}
+					>
 						submit
 					</button>
 				</div>
