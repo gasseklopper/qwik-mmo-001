@@ -64,12 +64,12 @@ export default component$(
 			keepDice.value5 = false
 		})
 
-		const resetGame = $(() => {
+		const resetGame = $(async () => {
 			points.value = 0
-			reset()
+			await reset()
 		})
 
-		const setDices = $((a: any) => {
+		const setDices = $((a: { target: { value: string } }) => {
 			if (a.target.value === '1') keepDice.value1 = !keepDice.value1
 			if (a.target.value === '2') keepDice.value2 = !keepDice.value2
 			if (a.target.value === '3') keepDice.value3 = !keepDice.value3
@@ -276,12 +276,12 @@ export default component$(
 			<div class="yatzee_layout">
 				<div class="layout_top">
 					<h1 class="h1">Yatzee</h1>
-					<div class="count_label">Dice: </div>
-					<div class="count h2">{store.dice}</div>
+					<div class="dice_label">Dice: </div>
+					<div class="dice h2">{store.dice}</div>
 					<div class="countRoll_label">roll.count: </div>
 					<div class="countRoll">{roll.count}</div>
-					<div class="countRoll_label">points.value: </div>
-					<div class="countRoll">{points.value}</div>
+					<div class="pointsValue_label">points.value: </div>
+					<div class="pointsValue">{points.value}</div>
 					<div class="ruleNumber_label">ruleNumber.value: </div>
 					<div class="ruleNumber h3">{ruleNumber.value}</div>
 				</div>
@@ -306,7 +306,7 @@ export default component$(
 							id="1"
 							name="dice_1"
 							value="1"
-							onClick$={(e) => setDices(e)}
+							onClick$={(e: any) => setDices(e)}
 							checked={keepDice.value1}
 						/>
 						<label for="1">1</label>
@@ -315,7 +315,7 @@ export default component$(
 							id="2"
 							name="dice_2"
 							value="2"
-							onClick$={(e) => setDices(e)}
+							onClick$={(e: any) => setDices(e)}
 							checked={keepDice.value2}
 						/>
 						<label for="2">2</label>
@@ -324,7 +324,7 @@ export default component$(
 							id="3"
 							name="dice_3"
 							value="3"
-							onClick$={(e) => setDices(e)}
+							onClick$={(e: any) => setDices(e)}
 							checked={keepDice.value3}
 						/>
 						<label for="3">3</label>
@@ -333,7 +333,7 @@ export default component$(
 							id="4"
 							name="dice_4"
 							value="4"
-							onClick$={(e) => setDices(e)}
+							onClick$={(e: any) => setDices(e)}
 							checked={keepDice.value4}
 						/>
 						<label for="4">4</label>
@@ -342,7 +342,7 @@ export default component$(
 							id="5"
 							name="dice_5"
 							value="5"
-							onClick$={(e) => setDices(e)}
+							onClick$={(e: any) => setDices(e)}
 							checked={keepDice.value5}
 						/>
 						<label for="5">5</label>
@@ -358,7 +358,7 @@ export default component$(
 							id="ones"
 							name="drone"
 							value="1"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 							checked={ruleNumber.value === '1'}
 						/>
 						<label for="ones">ones</label>
@@ -367,7 +367,7 @@ export default component$(
 							id="twos"
 							name="drone"
 							value="2"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 						/>
 						<label for="twos">twos</label>
 						<input
@@ -375,7 +375,7 @@ export default component$(
 							id="threes"
 							name="drone"
 							value="3"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 						/>
 						<label for="threes">threes</label>
 						<input
@@ -383,7 +383,7 @@ export default component$(
 							id="fours"
 							name="drone"
 							value="4"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 						/>
 						<label for="fours">fours</label>
 						<input
@@ -391,7 +391,7 @@ export default component$(
 							id="fives"
 							name="drone"
 							value="5"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 						/>
 						<label for="fives">fives</label>
 						<input
@@ -399,7 +399,7 @@ export default component$(
 							id="sixes"
 							name="drone"
 							value="6"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 						/>
 						<label for="sixes">sixes</label>
 						<hr />
@@ -408,7 +408,7 @@ export default component$(
 							id="pair"
 							name="drone"
 							value="7"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 						/>
 						<label for="pair">pair</label>
 						<input
@@ -416,7 +416,7 @@ export default component$(
 							id="twoPairs"
 							name="drone"
 							value="8"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 						/>
 						<label for="twoPairs">twoPairs</label>
 						<input
@@ -424,7 +424,7 @@ export default component$(
 							id="triptychon"
 							name="drone"
 							value="9"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 							checked={ruleNumber.value === '9'}
 						/>
 						<label for="triptychon">triptychon</label>
@@ -433,7 +433,7 @@ export default component$(
 							id="fourOfAKind"
 							name="drone"
 							value="10"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 						/>
 						<label for="fourOfAKind">fourOfAKind</label>
 						<input
@@ -441,7 +441,7 @@ export default component$(
 							id="smallStraight"
 							name="drone"
 							value="11"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 						/>
 						<label for="smallStraight">smallStraight</label>
 						<input
@@ -449,7 +449,7 @@ export default component$(
 							id="largeStraight"
 							name="drone"
 							value="12"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 						/>
 						<label for="largeStraight">largeStraight</label>
 						<input
@@ -457,7 +457,7 @@ export default component$(
 							id="fullHouse"
 							name="drone"
 							value="13"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 						/>
 						<label for="fullHouse">fullHouse</label>
 						<input
@@ -465,7 +465,7 @@ export default component$(
 							id="yatzee"
 							name="drone"
 							value="14"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 						/>
 						<label for="yatzee">yatzee</label>
 						<input
@@ -473,7 +473,7 @@ export default component$(
 							id="chance"
 							name="drone"
 							value="15"
-							onClick$={(e) => setRuleNumber(e)}
+							onClick$={(e: any) => setRuleNumber(e)}
 						/>
 						<label for="chance">chance</label>
 					</form>

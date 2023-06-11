@@ -19,8 +19,8 @@ import Yatzee from '.'
 // 	})
 // })
 
-describe('sarter', function () {
-	it('should render', async () => {
+describe('UI Test', function () {
+	it('should reset dice roll', async () => {
 		// create the component's DOM and get back the container and a render method
 		const { screen, render, userEvent } = await createDOM()
 
@@ -30,7 +30,7 @@ describe('sarter', function () {
 				dice={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '1' }}
-				points={{ value: 0 }}
+				points={{ value: 55 }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -42,17 +42,23 @@ describe('sarter', function () {
 		)
 
 		// get the div that displays the count from our container
-		const countElement = screen.querySelector('.count')
+		const countElement = screen.querySelector('.dice')
+		const rollCountElement = screen.querySelector('.countRoll')
+		const pointsValueElement = screen.querySelector('.pointsValue')
 
-		// assert the displayed count is "1" which is the test mocked value
+		// expect before interaction of ui
 		expect(countElement?.textContent).toBe('5,5,5,5,5')
+		expect(rollCountElement?.textContent).toBe('1')
+		expect(pointsValueElement?.textContent).toBe('55')
 
 		await userEvent('.reset', 'click')
 
 		// assert the displayed count is now decremented by 1
+		expect(rollCountElement?.textContent).toBe('0')
 		expect(countElement?.textContent).toBe('0,0,0,0,0')
+		expect(pointsValueElement?.textContent).toBe('55')
 	})
-	it('should render', async () => {
+	it('should reset game', async () => {
 		// create the component's DOM and get back the container and a render method
 		const { screen, render, userEvent } = await createDOM()
 
@@ -62,7 +68,7 @@ describe('sarter', function () {
 				dice={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '1' }}
-				points={{ value: 0 }}
+				points={{ value: 55 }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -73,15 +79,22 @@ describe('sarter', function () {
 			/>
 		)
 
-		// get the div that displays the count from our container
-		const countElement = screen.querySelector('.count')
+		// get the div that displays game data
+		const countElement = screen.querySelector('.dice')
+		const rollCountElement = screen.querySelector('.countRoll')
+		const pointsValueElement = screen.querySelector('.pointsValue')
 
-		// assert the displayed count is "1" which is the test mocked value
+		// expect before interaction of ui
 		expect(countElement?.textContent).toBe('5,5,5,5,5')
+		expect(rollCountElement?.textContent).toBe('1')
+		expect(pointsValueElement?.textContent).toBe('55')
 
-		await userEvent('.reset', 'click')
+		// await userEvent('.reset', 'click')
+		await userEvent('.resetgame', 'click')
 
-		// assert the displayed count is now decremented by 1
+		// expect after interaction of ui
+		expect(rollCountElement?.textContent).toBe('0')
 		expect(countElement?.textContent).toBe('0,0,0,0,0')
+		expect(pointsValueElement?.textContent).toBe('0')
 	})
 })
