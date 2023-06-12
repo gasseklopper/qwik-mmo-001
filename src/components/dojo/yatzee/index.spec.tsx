@@ -101,7 +101,7 @@ describe('UI Test', function () {
 })
 
 describe('Yatzee rule test with ui', function () {
-	it('fives: score 4 rule 1', async () => {
+	it('ones: score 4 rule 1', async () => {
 		// create the component's DOM and get back the container and a render method
 		const { screen, render, userEvent } = await createDOM()
 
@@ -139,7 +139,7 @@ describe('Yatzee rule test with ui', function () {
 		expect(countElement?.textContent).toBe('0,0,0,0,0')
 		expect(pointsValueElement?.textContent).toBe('4')
 	})
-	it('fives: score 4 rule 2', async () => {
+	it('twos: score 4 rule 2', async () => {
 		// create the component's DOM and get back the container and a render method
 		const { screen, render, userEvent } = await createDOM()
 
@@ -177,7 +177,7 @@ describe('Yatzee rule test with ui', function () {
 		expect(countElement?.textContent).toBe('0,0,0,0,0')
 		expect(pointsValueElement?.textContent).toBe('4')
 	})
-	it('fives: score 3 rule 3', async () => {
+	it('threes: score 3 rule 3', async () => {
 		// create the component's DOM and get back the container and a render method
 		const { screen, render, userEvent } = await createDOM()
 
@@ -215,7 +215,7 @@ describe('Yatzee rule test with ui', function () {
 		expect(countElement?.textContent).toBe('0,0,0,0,0')
 		expect(pointsValueElement?.textContent).toBe('3')
 	})
-	it('fives: score 4 rule 4', async () => {
+	it('fours: score 4 rule 4', async () => {
 		// create the component's DOM and get back the container and a render method
 		const { screen, render, userEvent } = await createDOM()
 
@@ -329,7 +329,7 @@ describe('Yatzee rule test with ui', function () {
 		expect(countElement?.textContent).toBe('0,0,0,0,0')
 		expect(pointsValueElement?.textContent).toBe('12')
 	})
-	it('Pair: score 16 rule 7', async () => {
+	it('Pair: score 8 rule 7', async () => {
 		// create the component's DOM and get back the container and a render method
 		const { screen, render, userEvent } = await createDOM()
 
@@ -367,7 +367,7 @@ describe('Yatzee rule test with ui', function () {
 		expect(countElement?.textContent).toBe('0,0,0,0,0')
 		expect(pointsValueElement?.textContent).toBe('8')
 	})
-	it('Pair: score 16 rule 7', async () => {
+	it('Pair: score 8 rule 7', async () => {
 		// create the component's DOM and get back the container and a render method
 		const { screen, render, userEvent } = await createDOM()
 

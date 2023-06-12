@@ -13,7 +13,7 @@ export default component$(() => {
 			<div class="column">
 				<Yatzee
 					dice={[0, 0, 0, 0, 0]}
-					roll={{ count: 1 }}
+					roll={{ count: 0 }}
 					ruleNumber={{ value: '1' }}
 					points={{ value: 0 }}
 					keepDice={{
