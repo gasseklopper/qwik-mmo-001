@@ -101,6 +101,234 @@ describe('UI Test', function () {
 })
 
 describe('Yatzee rule test with ui', function () {
+	it('fives: score 4 rule 1', async () => {
+		// create the component's DOM and get back the container and a render method
+		const { screen, render, userEvent } = await createDOM()
+
+		// call the render method with the JSX node of our Counter component as a parameter
+		await render(
+			<Yatzee
+				dice={[1, 1, 1, 1, 6]}
+				roll={{ count: 1 }}
+				ruleNumber={{ value: '1' }}
+				points={{ value: 0 }}
+				keepDice={{
+					value1: false,
+					value2: false,
+					value3: false,
+					value4: false,
+					value5: false,
+				}}
+			/>
+		)
+
+		// get the div that displays game data
+		const countElement = screen.querySelector('.dice')
+		const rollCountElement = screen.querySelector('.countRoll')
+		const pointsValueElement = screen.querySelector('.pointsValue')
+
+		// expect before interaction of ui
+		expect(countElement?.textContent).toBe('1,1,1,1,6')
+		expect(rollCountElement?.textContent).toBe('1')
+		expect(pointsValueElement?.textContent).toBe('0')
+
+		await userEvent('.submit_button', 'click')
+
+		// // expect after interaction of ui
+		expect(rollCountElement?.textContent).toBe('0')
+		expect(countElement?.textContent).toBe('0,0,0,0,0')
+		expect(pointsValueElement?.textContent).toBe('4')
+	})
+	it('fives: score 4 rule 2', async () => {
+		// create the component's DOM and get back the container and a render method
+		const { screen, render, userEvent } = await createDOM()
+
+		// call the render method with the JSX node of our Counter component as a parameter
+		await render(
+			<Yatzee
+				dice={[2, 4, 5, 5, 2]}
+				roll={{ count: 1 }}
+				ruleNumber={{ value: '2' }}
+				points={{ value: 0 }}
+				keepDice={{
+					value1: false,
+					value2: false,
+					value3: false,
+					value4: false,
+					value5: false,
+				}}
+			/>
+		)
+
+		// get the div that displays game data
+		const countElement = screen.querySelector('.dice')
+		const rollCountElement = screen.querySelector('.countRoll')
+		const pointsValueElement = screen.querySelector('.pointsValue')
+
+		// expect before interaction of ui
+		expect(countElement?.textContent).toBe('2,4,5,5,2')
+		expect(rollCountElement?.textContent).toBe('1')
+		expect(pointsValueElement?.textContent).toBe('0')
+
+		await userEvent('.submit_button', 'click')
+
+		// // expect after interaction of ui
+		expect(rollCountElement?.textContent).toBe('0')
+		expect(countElement?.textContent).toBe('0,0,0,0,0')
+		expect(pointsValueElement?.textContent).toBe('4')
+	})
+	it('fives: score 3 rule 3', async () => {
+		// create the component's DOM and get back the container and a render method
+		const { screen, render, userEvent } = await createDOM()
+
+		// call the render method with the JSX node of our Counter component as a parameter
+		await render(
+			<Yatzee
+				dice={[3, 4, 5, 5, 6]}
+				roll={{ count: 1 }}
+				ruleNumber={{ value: '3' }}
+				points={{ value: 0 }}
+				keepDice={{
+					value1: false,
+					value2: false,
+					value3: false,
+					value4: false,
+					value5: false,
+				}}
+			/>
+		)
+
+		// get the div that displays game data
+		const countElement = screen.querySelector('.dice')
+		const rollCountElement = screen.querySelector('.countRoll')
+		const pointsValueElement = screen.querySelector('.pointsValue')
+
+		// expect before interaction of ui
+		expect(countElement?.textContent).toBe('3,4,5,5,6')
+		expect(rollCountElement?.textContent).toBe('1')
+		expect(pointsValueElement?.textContent).toBe('0')
+
+		await userEvent('.submit_button', 'click')
+
+		// // expect after interaction of ui
+		expect(rollCountElement?.textContent).toBe('0')
+		expect(countElement?.textContent).toBe('0,0,0,0,0')
+		expect(pointsValueElement?.textContent).toBe('3')
+	})
+	it('fives: score 4 rule 4', async () => {
+		// create the component's DOM and get back the container and a render method
+		const { screen, render, userEvent } = await createDOM()
+
+		// call the render method with the JSX node of our Counter component as a parameter
+		await render(
+			<Yatzee
+				dice={[3, 4, 5, 5, 6]}
+				roll={{ count: 1 }}
+				ruleNumber={{ value: '4' }}
+				points={{ value: 0 }}
+				keepDice={{
+					value1: false,
+					value2: false,
+					value3: false,
+					value4: false,
+					value5: false,
+				}}
+			/>
+		)
+
+		// get the div that displays game data
+		const countElement = screen.querySelector('.dice')
+		const rollCountElement = screen.querySelector('.countRoll')
+		const pointsValueElement = screen.querySelector('.pointsValue')
+
+		// expect before interaction of ui
+		expect(countElement?.textContent).toBe('3,4,5,5,6')
+		expect(rollCountElement?.textContent).toBe('1')
+		expect(pointsValueElement?.textContent).toBe('0')
+
+		await userEvent('.submit_button', 'click')
+
+		// // expect after interaction of ui
+		expect(rollCountElement?.textContent).toBe('0')
+		expect(countElement?.textContent).toBe('0,0,0,0,0')
+		expect(pointsValueElement?.textContent).toBe('4')
+	})
+	it('fives: score 15 rule 5', async () => {
+		// create the component's DOM and get back the container and a render method
+		const { screen, render, userEvent } = await createDOM()
+
+		// call the render method with the JSX node of our Counter component as a parameter
+		await render(
+			<Yatzee
+				dice={[3, 5, 5, 5, 6]}
+				roll={{ count: 1 }}
+				ruleNumber={{ value: '5' }}
+				points={{ value: 0 }}
+				keepDice={{
+					value1: false,
+					value2: false,
+					value3: false,
+					value4: false,
+					value5: false,
+				}}
+			/>
+		)
+
+		// get the div that displays game data
+		const countElement = screen.querySelector('.dice')
+		const rollCountElement = screen.querySelector('.countRoll')
+		const pointsValueElement = screen.querySelector('.pointsValue')
+
+		// expect before interaction of ui
+		expect(countElement?.textContent).toBe('3,5,5,5,6')
+		expect(rollCountElement?.textContent).toBe('1')
+		expect(pointsValueElement?.textContent).toBe('0')
+
+		await userEvent('.submit_button', 'click')
+
+		// // expect after interaction of ui
+		expect(rollCountElement?.textContent).toBe('0')
+		expect(countElement?.textContent).toBe('0,0,0,0,0')
+		expect(pointsValueElement?.textContent).toBe('15')
+	})
+	it('sixes: score 6 rule 6', async () => {
+		// create the component's DOM and get back the container and a render method
+		const { screen, render, userEvent } = await createDOM()
+
+		// call the render method with the JSX node of our Counter component as a parameter
+		await render(
+			<Yatzee
+				dice={[3, 3, 6, 4, 6]}
+				roll={{ count: 1 }}
+				ruleNumber={{ value: '6' }}
+				points={{ value: 0 }}
+				keepDice={{
+					value1: false,
+					value2: false,
+					value3: false,
+					value4: false,
+					value5: false,
+				}}
+			/>
+		)
+
+		// get the div that displays game data
+		const countElement = screen.querySelector('.dice')
+		const rollCountElement = screen.querySelector('.countRoll')
+		const pointsValueElement = screen.querySelector('.pointsValue')
+
+		// expect before interaction of ui
+		expect(countElement?.textContent).toBe('3,3,6,4,6')
+		expect(rollCountElement?.textContent).toBe('1')
+		expect(pointsValueElement?.textContent).toBe('0')
+
+		await userEvent('.submit_button', 'click')
+
+		// // expect after interaction of ui
+		expect(rollCountElement?.textContent).toBe('0')
+		expect(countElement?.textContent).toBe('0,0,0,0,0')
+		expect(pointsValueElement?.textContent).toBe('12')
+	})
 	it('Pair: score 16 rule 7', async () => {
 		// create the component's DOM and get back the container and a render method
 		const { screen, render, userEvent } = await createDOM()
