@@ -1,8 +1,11 @@
 import { component$, useStore, $ } from '@builder.io/qwik'
 
+type Dice = 0 | 1 | 2 | 3 | 4 | 5 | 6
+type DiceRoll = [Dice, Dice, Dice, Dice, Dice]
+
 export default component$(
 	(props: {
-		dice: [number, number, number, number, number]
+		diceRoll: DiceRoll
 		roll: { count: number }
 		ruleNumber: { value: string }
 		points: { value: number }
@@ -14,7 +17,7 @@ export default component$(
 			value5: boolean
 		}
 	}) => {
-		const store: { dice: number[] } = useStore({ dice: props.dice })
+		const store: { dice: Dice[] } = useStore({ dice: props.diceRoll })
 		const roll: { count: number } = useStore({ count: props.roll.count })
 		const ruleNumber: { value: string } = useStore({
 			value: props.ruleNumber.value,
@@ -32,7 +35,7 @@ export default component$(
 
 		const rollDice = $(() => {
 			if (roll.count < 3) {
-				const internalRoll: number[] = []
+				const internalRoll: Dice[] = []
 				for (let index = 0; index < store.dice.length; index++) {
 					if (keepDice.value1 && index === 0) {
 						internalRoll[index] = store.dice[0]
@@ -45,7 +48,8 @@ export default component$(
 					} else if (keepDice.value5 && index === 4) {
 						internalRoll[index] = store.dice[4]
 					} else {
-						internalRoll[index] = Math.floor(Math.random() * 6) + 1
+						internalRoll[index] = (Math.floor(Math.random() * 6) +
+							1) as Dice
 					}
 				}
 				roll.count++
@@ -179,7 +183,7 @@ export default component$(
 							total: number,
 							num: number
 						) {
-							return total + num
+							return (total + num) as Dice
 						})
 
 						let test1 = 0
@@ -250,7 +254,7 @@ export default component$(
 							total: number,
 							num: number
 						) {
-							return total + num
+							return (total + num) as Dice
 						})
 					} else {
 						points.value += 0
@@ -273,7 +277,7 @@ export default component$(
 						total: number,
 						num: number
 					) {
-						return total + num
+						return (total + num) as Dice
 					})
 				}
 				extractedDiceRollTable = [0, 0, 0, 0, 0, 0]
