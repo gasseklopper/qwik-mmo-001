@@ -1,15 +1,18 @@
 /** @format */
 
 import { component$, useTask$, useStore } from '@builder.io/qwik'
+import { isServer } from '@builder.io/qwik/build'
 
 export default component$(() => {
 	const store = useStore({ data: null })
 
 	useTask$(async () => {
-		const response = await fetch(
-			'https://node-hnapi.herokuapp.com/news?page=0'
-		)
-		store.data = (await response.json()) || {}
+		if (isServer) {
+			const response = await fetch(
+				'https://node-hnapi.herokuapp.com/news?page=0'
+			)
+			store.data = await response.json()
+		}
 	})
 
 	return (
@@ -26,8 +29,8 @@ export const Stories = component$((props: { data: any }) => {
 			<main class="news-list">
 				{stories.length && (
 					<ul>
-						{stories.map((story: IStory) => (
-							<StoryPreview story={story} />
+						{stories.map((story: IStory, index: number) => (
+							<StoryPreview story={story} key={index} />
 						))}
 					</ul>
 				)}
