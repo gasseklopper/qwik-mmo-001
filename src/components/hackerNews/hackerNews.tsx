@@ -12,6 +12,7 @@ export default component$(() => {
 				'https://node-hnapi.herokuapp.com/news?page=0'
 			)
 			store.data = await response.json()
+			console.log('superTest000000-', store.data)
 		}
 	})
 
@@ -23,6 +24,7 @@ export default component$(() => {
 })
 
 export const Stories = component$((props: { data: any }) => {
+	console.log('superTest', props.data)
 	const stories = props.data
 	return (
 		<div class="news-view">
