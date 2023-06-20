@@ -36,22 +36,38 @@ export default component$(
 		const rollDice = $(() => {
 			if (roll.count < 3) {
 				const internalRoll: Dice[] = []
-				for (let index = 0; index < store.dice.length; index++) {
+				store.dice.map((element, index) => {
 					if (keepDice.value1 && index === 0) {
-						internalRoll[index] = store.dice[0]
+						internalRoll[index] = element
 					} else if (keepDice.value2 && index === 1) {
-						internalRoll[index] = store.dice[1]
+						internalRoll[index] = element
 					} else if (keepDice.value3 && index === 2) {
-						internalRoll[index] = store.dice[2]
+						internalRoll[index] = element
 					} else if (keepDice.value4 && index === 3) {
-						internalRoll[index] = store.dice[3]
+						internalRoll[index] = element
 					} else if (keepDice.value5 && index === 4) {
-						internalRoll[index] = store.dice[4]
+						internalRoll[index] = element
 					} else {
 						internalRoll[index] = (Math.floor(Math.random() * 6) +
 							1) as Dice
 					}
-				}
+				})
+				// for (let index = 0; index < store.dice.length; index++) {
+				// 	if (keepDice.value1 && index === 0) {
+				// 		internalRoll[index] = store.dice[0]
+				// 	} else if (keepDice.value2 && index === 1) {
+				// 		internalRoll[index] = store.dice[1]
+				// 	} else if (keepDice.value3 && index === 2) {
+				// 		internalRoll[index] = store.dice[2]
+				// 	} else if (keepDice.value4 && index === 3) {
+				// 		internalRoll[index] = store.dice[3]
+				// 	} else if (keepDice.value5 && index === 4) {
+				// 		internalRoll[index] = store.dice[4]
+				// 	} else {
+				// 		internalRoll[index] = (Math.floor(Math.random() * 6) +
+				// 			1) as Dice
+				// 	}
+				// }
 				roll.count++
 				return (store.dice = internalRoll)
 			}
