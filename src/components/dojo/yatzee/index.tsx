@@ -194,7 +194,6 @@ export default component$(
 							array2.sort().join(',') ||
 						arrayOfOne.sort().join(',') === array3.sort().join(',')
 					) {
-						console.log('wurst3 if', wurst3)
 						const test = store.dice.reduce(function upps(
 							total: number,
 							num: number
