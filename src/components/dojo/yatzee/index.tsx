@@ -106,6 +106,11 @@ export default component$(
 
 			const submitDiceRoll = (elem: any) => {
 				elem.forEach((item: number) => {
+					console.log('item', item)
+					console.log(
+						'extractedDiceRollTable',
+						extractedDiceRollTable
+					)
 					for (let index = 0; index <= store.dice.length; index++) {
 						if (item - 1 == index) {
 							extractedDiceRollTable[item - 1]++
