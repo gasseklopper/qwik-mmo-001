@@ -1,4 +1,5 @@
-import {
+
+import ImgTemplateIndex016 from '~/media/assets/images/photography/black/Template_index_016.jpg?jsx';import {
 	component$,
 	useStyles$,
 	useSignal,
@@ -32,9 +33,8 @@ export default component$(() => {
 					<div class="intro__overlay"></div>
 					<div class="intro__image_container">
 						<div class="intro__image_wrapper">
-							<img
+							<ImgTemplateIndex016
 								class="intro__image"
-								src="../../assets/images/photography/black/Template_index_016.jpg"
 								alt=""
 							/>
 						</div>
