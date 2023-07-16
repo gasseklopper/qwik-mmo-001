@@ -52,6 +52,7 @@ export default component$(
 							1) as Dice
 					}
 				})
+
 				// for (let index = 0; index < store.dice.length; index++) {
 				// 	if (keepDice.value1 && index === 0) {
 				// 		internalRoll[index] = store.dice[0]
@@ -106,11 +107,6 @@ export default component$(
 
 			const submitDiceRoll = (elem: any) => {
 				elem.forEach((item: number) => {
-					console.log('item', item)
-					console.log(
-						'extractedDiceRollTable',
-						extractedDiceRollTable
-					)
 					for (let index = 0; index <= store.dice.length; index++) {
 						if (item - 1 == index) {
 							extractedDiceRollTable[item - 1]++
