@@ -8,9 +8,7 @@ export default component$(() => {
 
 	useTask$(async () => {
 		if (isServer) {
-			const response = await fetch(
-				'https://node-hnapi.herokuapp.com/news?page=0'
-			)
+			const response = await fetch('https://node-hnapi.herokuapp.com/news?page=0')
 			store.data = await response.json()
 			console.log('superTest000000-', store.data)
 		}
@@ -48,11 +46,7 @@ export const StoryPreview = component$((props: { story: IStory }) => {
 			<div class="title">
 				{props.story.url && !props.story.url.startsWith('item?id=') ? (
 					<>
-						<a
-							href={props.story.url}
-							target="_blank"
-							rel="noreferrer"
-						>
+						<a href={props.story.url} target="_blank" rel="noreferrer">
 							{props.story.title}
 						</a>
 						<span class="host"> ({props.story.domain})</span>
@@ -64,21 +58,11 @@ export const StoryPreview = component$((props: { story: IStory }) => {
 			<span class="meta">
 				{props.story.type !== 'job' ? (
 					<>
-						by{' '}
-						<a href={`/users/${props.story.user}`}>
-							{props.story.user}
-						</a>{' '}
-						{props.story.time_ago} |{' '}
-						<a href={`/stories/${props.story.id}`}>
-							{props.story.comments_count
-								? `${props.story.comments_count} comments`
-								: 'discuss'}
-						</a>
+						by <a href={`/users/${props.story.user}`}>{props.story.user}</a> {props.story.time_ago} |{' '}
+						<a href={`/stories/${props.story.id}`}>{props.story.comments_count ? `${props.story.comments_count} comments` : 'discuss'}</a>
 					</>
 				) : (
-					<a href={`/stories/${props.story.id}`}>
-						{props.story.time_ago}
-					</a>
+					<a href={`/stories/${props.story.id}`}>{props.story.time_ago}</a>
 				)}
 			</span>
 			{props.story.type !== 'link' && (

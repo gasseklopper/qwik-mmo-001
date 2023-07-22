@@ -1,0 +1,27 @@
+[
+	{
+		"id": 1,
+		"links": [
+			{
+				"label": "Agile IT Service Management",
+				"url": "test1",
+				"text": "11111111Mit unseren Leistungen im Bereich AgileIT Service Management unterstützen wir unsere Kunden bei der optimalen Ausrichtung der Aufbau- und Ablauforganisation und digitalisieren und automatisieren gängige Aufgaben im Service Management - nach klassischen, agilen oder hybriden Methoden."
+			},
+			{
+				"label": "Agile IT Service Management",
+				"url": "test1",
+				"text": "2222222Mit unseren Leistungen im Bereich AgileIT Service Management unterstützen wir unsere Kunden bei der optimalen Ausrichtung der Aufbau- und Ablauforganisation und digitalisieren und automatisieren gängige Aufgaben im Service Management - nach klassischen, agilen oder hybriden Methoden."
+			}
+		]
+	},
+	{
+		"id": 2,
+		"links": [
+			{
+				"label": "Agile IT Service Management",
+				"url": "test1",
+				"text": "Mit unseren Leistungen im Bereich AgileIT Service Management unterstützen wir unsere Kunden bei der optimalen Ausrichtung der Aufbau- und Ablauforganisation und digitalisieren und automatisieren gängige Aufgaben im Service Management - nach klassischen, agilen oder hybriden Methoden."
+			}
+		]
+	}
+]

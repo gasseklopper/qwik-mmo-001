@@ -48,8 +48,7 @@ export default component$(
 					} else if (keepDice.value5 && index === 4) {
 						internalRoll[index] = element
 					} else {
-						internalRoll[index] = (Math.floor(Math.random() * 6) +
-							1) as Dice
+						internalRoll[index] = (Math.floor(Math.random() * 6) + 1) as Dice
 					}
 				})
 
@@ -116,59 +115,34 @@ export default component$(
 				return extractedDiceRollTable
 			}
 
-			const equalsCheck = (a: any[], b: string | any[]) =>
-				a.every((v, i) => v === b[i])
+			const equalsCheck = (a: any[], b: string | any[]) => a.every((v, i) => v === b[i])
 
 			if (roll.count >= 1 && roll.count <= 3) {
 				// Rule 1-6
 				// Ones, Twos, Threes, Fours, Fives, Sixes: The player scores the sum of the dice that reads one, two, three, four, five or six, respectively. For example, 1, 1, 2, 4, 4 placed on “fours” gives 8 points.
 				if (ruleNumber.value === '1') {
 					points.value +=
-						store.dice.filter(
-							(rolledDie) =>
-								rolledDie ===
-								(Number(ruleNumber.value) as Number)
-						).length * Number(ruleNumber.value)
+						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '2') {
 					points.value +=
-						store.dice.filter(
-							(rolledDie) =>
-								rolledDie ===
-								(Number(ruleNumber.value) as Number)
-						).length * Number(ruleNumber.value)
+						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '3') {
 					points.value +=
-						store.dice.filter(
-							(rolledDie) =>
-								rolledDie ===
-								(Number(ruleNumber.value) as Number)
-						).length * Number(ruleNumber.value)
+						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '4') {
 					points.value +=
-						store.dice.filter(
-							(rolledDie) =>
-								rolledDie ===
-								(Number(ruleNumber.value) as Number)
-						).length * Number(ruleNumber.value)
+						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '5') {
 					points.value +=
-						store.dice.filter(
-							(rolledDie) =>
-								rolledDie ===
-								(Number(ruleNumber.value) as Number)
-						).length * Number(ruleNumber.value)
+						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '6') {
 					points.value +=
-						store.dice.filter(
-							(rolledDie) =>
-								rolledDie ===
-								(Number(ruleNumber.value) as Number)
-						).length * Number(ruleNumber.value)
+						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
 				}
 				// Pair: The player scores the sum of the two highest matching dice. For example, 3, 3, 3, 4, 4 placed on “pair” gives 8.
 				if (ruleNumber.value === '7') {
@@ -190,15 +164,8 @@ export default component$(
 					const array2 = [3, 2, 0, 0, 0, 0]
 					const array3 = [2, 2, 1, 0, 0, 0]
 					// if (wurst3) {
-					if (
-						arrayOfOne.sort().join(',') ===
-							array2.sort().join(',') ||
-						arrayOfOne.sort().join(',') === array3.sort().join(',')
-					) {
-						const test = store.dice.reduce(function upps(
-							total: number,
-							num: number
-						) {
+					if (arrayOfOne.sort().join(',') === array2.sort().join(',') || arrayOfOne.sort().join(',') === array3.sort().join(',')) {
+						const test = store.dice.reduce(function upps(total: number, num: number) {
 							return (total + num) as Dice
 						})
 
@@ -266,10 +233,7 @@ export default component$(
 					const array2 = [3, 2, 0, 0, 0, 0]
 					const wurst = submitDiceRoll(store.dice)
 					if (wurst.sort().join(',') === array2.sort().join(',')) {
-						points.value += store.dice.reduce(function upps(
-							total: number,
-							num: number
-						) {
+						points.value += store.dice.reduce(function upps(total: number, num: number) {
 							return (total + num) as Dice
 						})
 					} else {
@@ -278,9 +242,7 @@ export default component$(
 				}
 				// Yahtzee: If all dice are the have the same number, the player scores 50 points, otherwise 0.
 				if (ruleNumber.value === '14') {
-					const test = store.dice.filter(
-						(rolledDie) => rolledDie === store.dice[0]
-					).length
+					const test = store.dice.filter((rolledDie) => rolledDie === store.dice[0]).length
 					if (test === 5) {
 						points.value += 50
 					} else {
@@ -289,10 +251,7 @@ export default component$(
 				}
 				// Chance: The player gets the sum of all dice, no matter what they read.The practitioner can feel free to create new categories as well.
 				if (ruleNumber.value === '15') {
-					points.value += store.dice.reduce(function upps(
-						total: number,
-						num: number
-					) {
+					points.value += store.dice.reduce(function upps(total: number, num: number) {
 						return (total + num) as Dice
 					})
 				}
@@ -315,65 +274,23 @@ export default component$(
 					<div class="ruleNumber h3">{ruleNumber.value}</div>
 				</div>
 
-				<button
-					class="rollDice"
-					onClick$={rollDice}
-					disabled={roll.count >= 3}
-				>
+				<button class="rollDice" onClick$={rollDice} disabled={roll.count >= 3}>
 					roll Dice
 				</button>
 
 				<hr />
 
-				<fieldset
-					class="keep_dice"
-					disabled={roll.count === 0 || roll.count === 3}
-				>
+				<fieldset class="keep_dice" disabled={roll.count === 0 || roll.count === 3}>
 					<form class="submitForm">
-						<input
-							type="checkbox"
-							id="1"
-							name="dice_1"
-							value="1"
-							onClick$={(e: any) => setDices(e)}
-							checked={keepDice.value1}
-						/>
+						<input type="checkbox" id="1" name="dice_1" value="1" onClick$={(e: any) => setDices(e)} checked={keepDice.value1} />
 						<label for="1">1</label>
-						<input
-							type="checkbox"
-							id="2"
-							name="dice_2"
-							value="2"
-							onClick$={(e: any) => setDices(e)}
-							checked={keepDice.value2}
-						/>
+						<input type="checkbox" id="2" name="dice_2" value="2" onClick$={(e: any) => setDices(e)} checked={keepDice.value2} />
 						<label for="2">2</label>
-						<input
-							type="checkbox"
-							id="3"
-							name="dice_3"
-							value="3"
-							onClick$={(e: any) => setDices(e)}
-							checked={keepDice.value3}
-						/>
+						<input type="checkbox" id="3" name="dice_3" value="3" onClick$={(e: any) => setDices(e)} checked={keepDice.value3} />
 						<label for="3">3</label>
-						<input
-							type="checkbox"
-							id="4"
-							name="dice_4"
-							value="4"
-							onClick$={(e: any) => setDices(e)}
-							checked={keepDice.value4}
-						/>
+						<input type="checkbox" id="4" name="dice_4" value="4" onClick$={(e: any) => setDices(e)} checked={keepDice.value4} />
 						<label for="4">4</label>
-						<input
-							type="checkbox"
-							id="5"
-							name="dice_5"
-							value="5"
-							onClick$={(e: any) => setDices(e)}
-							checked={keepDice.value5}
-						/>
+						<input type="checkbox" id="5" name="dice_5" value="5" onClick$={(e: any) => setDices(e)} checked={keepDice.value5} />
 						<label for="5">5</label>
 					</form>
 				</fieldset>
@@ -391,62 +308,20 @@ export default component$(
 							checked={ruleNumber.value === '1'}
 						/>
 						<label for="ones">ones</label>
-						<input
-							type="radio"
-							id="twos"
-							name="drone"
-							value="2"
-							onClick$={(e: any) => setRuleNumber(e)}
-						/>
+						<input type="radio" id="twos" name="drone" value="2" onClick$={(e: any) => setRuleNumber(e)} />
 						<label for="twos">twos</label>
-						<input
-							type="radio"
-							id="threes"
-							name="drone"
-							value="3"
-							onClick$={(e: any) => setRuleNumber(e)}
-						/>
+						<input type="radio" id="threes" name="drone" value="3" onClick$={(e: any) => setRuleNumber(e)} />
 						<label for="threes">threes</label>
-						<input
-							type="radio"
-							id="fours"
-							name="drone"
-							value="4"
-							onClick$={(e: any) => setRuleNumber(e)}
-						/>
+						<input type="radio" id="fours" name="drone" value="4" onClick$={(e: any) => setRuleNumber(e)} />
 						<label for="fours">fours</label>
-						<input
-							type="radio"
-							id="fives"
-							name="drone"
-							value="5"
-							onClick$={(e: any) => setRuleNumber(e)}
-						/>
+						<input type="radio" id="fives" name="drone" value="5" onClick$={(e: any) => setRuleNumber(e)} />
 						<label for="fives">fives</label>
-						<input
-							type="radio"
-							id="sixes"
-							name="drone"
-							value="6"
-							onClick$={(e: any) => setRuleNumber(e)}
-						/>
+						<input type="radio" id="sixes" name="drone" value="6" onClick$={(e: any) => setRuleNumber(e)} />
 						<label for="sixes">sixes</label>
 						<hr />
-						<input
-							type="radio"
-							id="pair"
-							name="drone"
-							value="7"
-							onClick$={(e: any) => setRuleNumber(e)}
-						/>
+						<input type="radio" id="pair" name="drone" value="7" onClick$={(e: any) => setRuleNumber(e)} />
 						<label for="pair">pair</label>
-						<input
-							type="radio"
-							id="twoPairs"
-							name="drone"
-							value="8"
-							onClick$={(e: any) => setRuleNumber(e)}
-						/>
+						<input type="radio" id="twoPairs" name="drone" value="8" onClick$={(e: any) => setRuleNumber(e)} />
 						<label for="twoPairs">twoPairs</label>
 						<input
 							type="radio"
@@ -457,53 +332,17 @@ export default component$(
 							checked={ruleNumber.value === '9'}
 						/>
 						<label for="triptychon">triptychon</label>
-						<input
-							type="radio"
-							id="fourOfAKind"
-							name="drone"
-							value="10"
-							onClick$={(e: any) => setRuleNumber(e)}
-						/>
+						<input type="radio" id="fourOfAKind" name="drone" value="10" onClick$={(e: any) => setRuleNumber(e)} />
 						<label for="fourOfAKind">fourOfAKind</label>
-						<input
-							type="radio"
-							id="smallStraight"
-							name="drone"
-							value="11"
-							onClick$={(e: any) => setRuleNumber(e)}
-						/>
+						<input type="radio" id="smallStraight" name="drone" value="11" onClick$={(e: any) => setRuleNumber(e)} />
 						<label for="smallStraight">smallStraight</label>
-						<input
-							type="radio"
-							id="largeStraight"
-							name="drone"
-							value="12"
-							onClick$={(e: any) => setRuleNumber(e)}
-						/>
+						<input type="radio" id="largeStraight" name="drone" value="12" onClick$={(e: any) => setRuleNumber(e)} />
 						<label for="largeStraight">largeStraight</label>
-						<input
-							type="radio"
-							id="fullHouse"
-							name="drone"
-							value="13"
-							onClick$={(e: any) => setRuleNumber(e)}
-						/>
+						<input type="radio" id="fullHouse" name="drone" value="13" onClick$={(e: any) => setRuleNumber(e)} />
 						<label for="fullHouse">fullHouse</label>
-						<input
-							type="radio"
-							id="yatzee"
-							name="drone"
-							value="14"
-							onClick$={(e: any) => setRuleNumber(e)}
-						/>
+						<input type="radio" id="yatzee" name="drone" value="14" onClick$={(e: any) => setRuleNumber(e)} />
 						<label for="yatzee">yatzee</label>
-						<input
-							type="radio"
-							id="chance"
-							name="drone"
-							value="15"
-							onClick$={(e: any) => setRuleNumber(e)}
-						/>
+						<input type="radio" id="chance" name="drone" value="15" onClick$={(e: any) => setRuleNumber(e)} />
 						<label for="chance">chance</label>
 					</form>
 				</fieldset>
@@ -511,11 +350,7 @@ export default component$(
 				<hr />
 
 				<div class="submit_container">
-					<button
-						class="submit_button"
-						onClick$={submit}
-						disabled={roll.count === 0}
-					>
+					<button class="submit_button" onClick$={submit} disabled={roll.count === 0}>
 						submit
 					</button>
 				</div>

@@ -1,0 +1,26 @@
+[
+	{ "href": "/start", "label": "Home", "id": 1, "showMenu": true },
+	{ "href": "/portfolio", "label": "Portfolio", "id": 2, "showMenu": true },
+	{ "href": "/about-us", "label": "About Us", "id": 3, "showMenu": true },
+	{
+		"href": "/input-context",
+		"label": "input-context",
+		"id": 4,
+		"showMenu": false
+	},
+	{ "href": "/clock", "label": "Clock", "id": 5, "showMenu": false },
+	{ "href": "/use-hooks", "label": "use-hooks", "id": 6, "showMenu": false },
+	{
+		"href": "/api-fetching",
+		"label": "api-fetching",
+		"id": 7,
+		"showMenu": false
+	},
+	{
+		"href": "/hacker-news",
+		"label": "hacker-news",
+		"id": 8,
+		"showMenu": false
+	},
+	{ "href": "/link-list", "label": "link-list", "id": 9, "showMenu": false }
+]

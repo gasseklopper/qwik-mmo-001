@@ -1,20 +1,10 @@
-import {
-	component$,
-	useVisibleTask$,
-	useContextProvider,
-	useStore,
-	createContextId,
-} from '@builder.io/qwik'
-import {
-	QwikCityProvider,
-	RouterOutlet,
-	ServiceWorkerRegister,
-} from '@builder.io/qwik-city'
+import { component$, useVisibleTask$, useContextProvider, useStore, createContextId } from '@builder.io/qwik'
+import { QwikCityProvider, RouterOutlet, ServiceWorkerRegister } from '@builder.io/qwik-city'
 
 import { RouterHead } from './components/router-head/router-head'
 import './global.css'
 import { supabase } from './utils/supabase'
-import type { MenuStore, SiteStore } from './globalContext'
+import type { SiteStore } from './globalContext'
 import { GlobalMenuStore } from './globalContext'
 import { GlobalStore } from './globalContext'
 
@@ -27,7 +17,7 @@ export default component$(() => {
 		theme: 'auto',
 	})
 
-	const menuStore = useStore<MenuStore>({
+	const menuStore = useStore({
 		isHover: false,
 		showOverlay: false,
 		showMenu: false,
@@ -38,27 +28,25 @@ export default component$(() => {
 
 	// auth change listener
 	useVisibleTask$(async () => {
-		const { data: authListener } = supabase.auth.onAuthStateChange(
-			async (event: string, session: any) => {
-				console.log('its event', event)
-				console.log('its session', session)
-				console.log('its authListener', authListener)
-				if (event === 'SIGNED_IN') {
-					console.log('signed in')
-					// Send cookies to Server
-					// set Auth State for context
-					userSession.userId = session.user.id
-					userSession.isLoggedIn = true
-				}
-				if (event === 'SIGNED_OUT') {
-					console.log('signed OUT')
-					// Sign out User
-					// set Auth State for context
-					userSession.userId = ''
-					userSession.isLoggedIn = false
-				}
+		const { data: authListener } = supabase.auth.onAuthStateChange(async (event: string, session: any) => {
+			console.log('its event', event)
+			console.log('its session', session)
+			console.log('its authListener', authListener)
+			if (event === 'SIGNED_IN') {
+				console.log('signed in')
+				// Send cookies to Server
+				// set Auth State for context
+				userSession.userId = session.user.id
+				userSession.isLoggedIn = true
 			}
-		)
+			if (event === 'SIGNED_OUT') {
+				console.log('signed OUT')
+				// Sign out User
+				// set Auth State for context
+				userSession.userId = ''
+				userSession.isLoggedIn = false
+			}
+		})
 
 		// Cleanup Event Listener
 		return () => {
@@ -92,15 +80,8 @@ export default component$(() => {
 					content="Halten Sie bei Ihren Meta Descriptions die Länge von 140 bis 160 Zeichen ein, damit Google sie vollständig anzeigt. Verwenden Sie auch Ihr Keyword!"
 				/>
 				<link rel="preconnect" href="https://fonts.gstatic.com"></link>
-				<link
-					rel="preload"
-					as="style"
-					href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
-				></link>
-				<link
-					href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
-					rel="stylesheet"
-				></link>
+				<link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"></link>
+				<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet"></link>
 				<RouterHead />
 			</head>
 			<body>
