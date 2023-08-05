@@ -25,44 +25,6 @@ Inside your project, you'll see the following directory structure:
         └── ...
 ```
 
-
-database password prod
-FC3mPGibkz5jFpFY
-
-
-database password
-k4uJJXac6CDsnPHg
-
-Project API keys
-Your API is secured behind an API gateway which requires an API Key for every request.
-You can use the keys below to use Supabase client libraries.
-
-anonpublic
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbmVyYmdwdXZ2cWtmd2dncnp1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE2Nzc3NjEyMzIsImV4cCI6MTk5MzMzNzIzMn0.29NBSA4WTOrcEW4-WQ_-32MWrrmxy6112PHwKmRXTxM
-
-Copy
-This key is safe to use in a browser if you have enabled Row Level Security for your tables and configured policies.
-
-service_rolesecret
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImltbmVyYmdwdXZ2cWtmd2dncnp1Iiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTY3Nzc2MTIzMiwiZXhwIjoxOTkzMzM3MjMyfQ.AFWm0gO2XKIh7lquLAqikmkmwFnISawObYo8lVyVEWM
-
-Copy
-This key has the ability to bypass Row Level Security. Never share it publicly.
-Project Configuration
-URL
-https://imnerbgpuvvqkfwggrzu.supabase.co
-
-Copy
-A RESTful endpoint for querying and managing your database.
-
-JWT Secret
-WHkrKXy6L1+PCw/tLMYJY+rwf9N9shl4UOFGlbKYWuTdG/p7KO0nAQWhaIspP1ucq6ZUv3T91D81GDfEu5IUVQ==
-
-Reveal
-Used to decode your JWTs. You can also use this to mint your own JWTs.
-
-- `src/routes`: Provides the directory based routing, which can include a hierarchy of `layout.tsx` layout files, and an `index.tsx` file as the page. Additionally, `index.ts` files are endpoints. Please see the [routing docs](https://qwik.builder.io/qwikcity/routing/overview/) for more info.
-
 - `src/components`: Recommended directory for components.
 
 - `public`: Any static assets, like images, can be placed in the public directory. Please see the [Vite public directory](https://vitejs.dev/guide/assets.html#the-public-directory) for more info.

@@ -6,7 +6,6 @@ import BodyText from '../../atoms/bodytext/bodytext'
 import Button from '../../atoms/button/button'
 import Img from '../../atoms/image/image'
 import Friends from '../../molecules/friends/friends'
-import { Counter, Logo } from '@gasseklopper/qwik-components-mmo'
 
 export default component$(() => {
 	useStyles$(styles)
@@ -22,8 +21,6 @@ export default component$(() => {
 							variant=""
 							size=""
 						/>
-						<Counter></Counter>
-						<Logo></Logo>
 						<Button
 							label="lorem ipsum"
 							variant="primary-button"
@@ -33,29 +30,17 @@ export default component$(() => {
 					</div>
 					<div class="card__header">
 						<Headline tag="h4" text="lorem ipsum" size="h2" />
-						<Button
-							label="lorem ipsum"
-							variant="primary-button"
-							size="small"
-						/>
+						<Button label="lorem ipsum" variant="primary-button" size="small" />
 					</div>
 					<div class="card__content">
 						<Friends />
 					</div>
 					<div class="card__footer">
 						<div class="">
-							<BodyText
-								tag="p"
-								text="Current Bid: 0.91"
-								size=""
-							/>
+							<BodyText tag="p" text="Current Bid: 0.91" size="" />
 							<BodyText tag="span" text="ETH" size="" />
 						</div>
-						<Button
-							label="Place Bid"
-							variant="primary-button"
-							size="small"
-						/>
+						<Button label="Place Bid" variant="primary-button" size="small" />
 					</div>
 				</div>
 			</div>
