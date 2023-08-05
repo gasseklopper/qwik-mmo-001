@@ -1,9 +1,19 @@
 @mixin text-contrast($n) {
-	color: color-contrast($n vs var(--text1), var(--text2), var(--text3), var(--text4));
+	color: color-contrast(
+		$n vs var(--text1),
+		var(--text2),
+		var(--text3),
+		var(--text4)
+	);
 }
 
 @mixin background-contrast($n) {
-	background-color: color-contrast($n vs var(--text1), var(--text2), var(--text3), var(--text4));
+	background-color: color-contrast(
+		$n vs var(--text1),
+		var(--text2),
+		var(--text3),
+		var(--text4)
+	);
 }
 
 .textfield {
@@ -57,9 +67,18 @@
 		--s: 1.15em;
 		transform: scaleX(1);
 		@include background-contrast(var(--surface4));
-		background: conic-gradient(from 135deg at top, var(--c) 90deg, var(--surface1) 0) left 0 bottom var(--s) / calc(2 * var(--s)) var(--s)
-				repeat-x,
-			conic-gradient(from -45deg at bottom, var(--c) 90deg, var(--surface1) 0) bottom 0 left var(--s) / calc(2 * var(--s)) var(--s) repeat-x;
+		background: conic-gradient(
+					from 135deg at top,
+					var(--c) 90deg,
+					var(--surface1) 0
+				)
+				left 0 bottom var(--s) / calc(2 * var(--s)) var(--s) repeat-x,
+			conic-gradient(
+					from -45deg at bottom,
+					var(--c) 90deg,
+					var(--surface1) 0
+				)
+				bottom 0 left var(--s) / calc(2 * var(--s)) var(--s) repeat-x;
 	}
 
 	> :is(input:focus) ~ span {
