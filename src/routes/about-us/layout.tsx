@@ -7,7 +7,7 @@ export default component$(() => {
 		console.log('menu', menu!.items[1])
 	})
 	return (
-		<nav class="menu">
+		<div class="menu">
 			{menu!
 				? menu.items?.map((item, index) => (
 						<>
@@ -29,6 +29,6 @@ export default component$(() => {
 						</>
 				  ))
 				: null}
-		</nav>
+		</div>
 	)
 })
