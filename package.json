@@ -28,6 +28,7 @@
 		"@builder.io/partytown": "^0.8.0",
 		"@builder.io/qwik": "1.2.6",
 		"@builder.io/qwik-city": "1.2.6",
+		"@gasseklopper/qwik-components-mmo": "^0.0.8",
 		"@netlify/vite-plugin-netlify-edge": "1.1.2",
 		"@supabase/supabase-js": "^2.11.0",
 		"@types/body-scroll-lock": "^3.1.0",

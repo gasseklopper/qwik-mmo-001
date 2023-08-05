@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
-import Venedig from '~/components/_portfolio/venedig/venedig'
+import Venedig from '~/components/venedig/venedig'
 
 export default component$(() => {
 	return (
