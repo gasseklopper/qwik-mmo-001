@@ -1,5 +1,5 @@
-
-import ImgTemplateIndex016 from '~/media/assets/images/photography/black/Template_index_016.jpg?jsx';import {
+import ImgTemplateIndex016 from '~/media/assets/images/photography/black/Template_index_016.jpg?jsx'
+import {
 	component$,
 	useStyles$,
 	useSignal,
@@ -14,11 +14,10 @@ export default component$(() => {
 	useVisibleTask$(() => {
 		const overlay = introRef.value!.querySelector('.intro__overlay')
 
-		gsap.timeline({})
+		gsap
+			.timeline({})
 			.set(overlay, {
-				transformOrigin: `${
-					gsap.utils.random(0, 1) > 0.5 ? 0 : 100
-				}% 100%`,
+				transformOrigin: `${gsap.utils.random(0, 1) > 0.5 ? 0 : 100}% 100%`,
 			})
 			.to(overlay, {
 				ease: 'power1',
@@ -33,10 +32,7 @@ export default component$(() => {
 					<div class="intro__overlay"></div>
 					<div class="intro__image_container">
 						<div class="intro__image_wrapper">
-							<ImgTemplateIndex016
-								class="intro__image"
-								alt=""
-							/>
+							<ImgTemplateIndex016 class="intro__image" alt="" />
 						</div>
 					</div>
 					<div class="intro__content">
