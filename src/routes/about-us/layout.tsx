@@ -4,7 +4,7 @@ export default component$(() => {
 	const { menu } = useContent()
 	const { url } = useLocation()
 	useVisibleTask$(() => {
-		console.log('menu', menu?.items[1])
+		console.log('menu', menu!.items[1])
 	})
 	return (
 		<nav class="menu">
