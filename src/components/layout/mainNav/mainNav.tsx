@@ -1,6 +1,19 @@
-import { component$, useStyles$, useContext, useVisibleTask$, useStore, $, useSignal } from '@builder.io/qwik'
+import {
+	component$,
+	useStyles$,
+	useContext,
+	useVisibleTask$,
+	useStore,
+	$,
+	useSignal,
+} from '@builder.io/qwik'
 import { useLocation } from '@builder.io/qwik-city'
-import { colorSchemeChangeListener, getColorPreference, setPreference, ThemeToggle } from '../../theme-toggle/theme-toggle'
+import {
+	colorSchemeChangeListener,
+	getColorPreference,
+	setPreference,
+	ThemeToggle,
+} from '../../theme-toggle/theme-toggle'
 import styles from './main-nav.scss?inline'
 import { GlobalStore, GlobalMenuStore } from '../../../globalContext'
 import Logo from './components/logo'
@@ -49,7 +62,11 @@ export const MenuMain = component$(() => {
 		globalMenuStore.isHoverId = 1
 	})
 	return (
-		<div class="header__main" onMouseEnter$={showOverlay$} onMouseLeave$={hideMenu$}>
+		<div
+			class="header__main"
+			onMouseEnter$={showOverlay$}
+			onMouseLeave$={hideMenu$}
+		>
 			<div class="row">
 				<div class="column">
 					<div class="main-nav">
@@ -76,7 +93,15 @@ export const MenuTopBar = component$(() => {
 
 export const MenuOverlay = component$(() => {
 	const globalMenuStore = useContext(GlobalMenuStore)
-	return <div class={['header__overlay', globalMenuStore.showOverlay ? 'visible' : '', { objectSyntax: true }]}></div>
+	return (
+		<div
+			class={[
+				'header__overlay',
+				globalMenuStore.showOverlay ? 'visible' : '',
+				{ objectSyntax: true },
+			]}
+		></div>
+	)
 })
 
 export const GlobalMenuStoreTest = component$(() => {
@@ -95,7 +120,9 @@ export const GlobalMenuStoreTest = component$(() => {
 export const MenuCards = component$(() => {
 	const globalMenuStore = useContext(GlobalMenuStore)
 	const targetRef = useSignal<Element>()
-	const store: { activeItemCard: any } = useStore({ activeItemCard: 0 })
+	const store: {
+		activeItemCard: any
+	} = useStore({ activeItemCard: 0 })
 
 	console.log('STORE', store)
 	useVisibleTask$(() => {
@@ -188,7 +215,9 @@ export const HeaderItems = component$(() => {
 	const { url } = useLocation()
 
 	const globalMenuStore = useContext(GlobalMenuStore)
-	const store: { activeItemCard: any } = useStore({
+	const store: {
+		activeItemCard: any
+	} = useStore({
 		activeItemCard: 0,
 	})
 
@@ -204,13 +233,16 @@ export const HeaderItems = component$(() => {
 								header__item: true,
 								visible: globalMenuStore.showMenu,
 								active: url.pathname.startsWith(item.href),
-								hover: store.activeItemCard == item.id && globalMenuStore.showMenu,
+								hover:
+									store.activeItemCard == item.id && globalMenuStore.showMenu,
 							}}
 							aria-label={item.label}
 							data-header-menu-id={item.id}
 							data-btattached="true"
 							onMouseEnter$={() => (
-								(store.activeItemCard = item.id), (globalMenuStore.showMenu = item.showMenu), (globalMenuStore.isHoverId = item.id)
+								(store.activeItemCard = item.id),
+								(globalMenuStore.showMenu = item.showMenu),
+								(globalMenuStore.isHoverId = item.id)
 							)}
 						>
 							{item.label}
