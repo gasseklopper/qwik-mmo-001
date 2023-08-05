@@ -8,10 +8,10 @@ export default component$(() => {
 	})
 	return (
 		<nav class="menu">
-			{menu
+			{menu!
 				? menu.items?.map((item, index) => (
 						<>
-							<h5>{item.text}</h5>
+							<h5>{item.text}</hS5>
 							<ul>
 								{item.items?.map((item) => (
 									<li key={index}>
