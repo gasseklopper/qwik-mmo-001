@@ -1,7 +1,6 @@
 [build]
 publish = "dist"
-command = "npm run test"
-command = "npm run build"
+command = "npm run test build"
 
 [[edge_functions]]
 path = "/*"
