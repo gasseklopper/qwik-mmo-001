@@ -1,5 +1,6 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
 import styles from './venedig.scss?inline'
+import Gallery3Col from '../components/Gallery3Col'
 
 export default component$(() => {
 	useStyles$(styles)
@@ -11,7 +12,7 @@ export default component$(() => {
 				<div class="column large-6">large 6</div>
 				<div class="column large-6">large 6</div>
 			</div>
-			<Gallery />
+			<Gallery3Col />
 			<Column1Text />
 			<Column3 />
 			<GalleryStatic />
@@ -142,49 +143,5 @@ export const Column1Text = component$(() => {
 				</p>
 			</div>
 		</div>
-	)
-})
-
-export const Gallery = component$(() => {
-	return (
-		<section class={['test', 'gallery']}>
-			<div class="row">
-				<div class="column large-12">
-					<div class={['superstroke']}></div>
-				</div>
-				<div class="column large-3">
-					<div
-						class="gallery__firstImage"
-						style="background-image:url(../../assets/images/photography/blacker/photography_blackerthandays_001.jpg);"
-					></div>
-				</div>
-				<div class="column large-7">
-					<div class={['test', 'gallery__slider']}>
-						<div class="gallery__controls-wrapper">
-							<div class="gallery__controls-slider">
-								<div class="back">back</div>
-								<div class="forward">forward</div>
-							</div>
-						</div>
-						<div
-							class="gallery__slider"
-							style="background-image:url(../../assets/images/photography/blacker/photography_blackerthandays_001.jpg);"
-						></div>
-					</div>
-				</div>
-				<div class="column large-2">
-					<div class={['', 'gallery__rowsImage']}>
-						<div
-							class="gallery__item-img"
-							style="background-image:url(../../assets/images/photography/blacker/photography_blackerthandays_003.jpg);"
-						></div>
-						<div
-							class="gallery__item-img"
-							style="background-image:url(../../assets/images/photography/blacker/photography_blackerthandays_005.jpg);"
-						></div>
-					</div>
-				</div>
-			</div>
-		</section>
 	)
 })
