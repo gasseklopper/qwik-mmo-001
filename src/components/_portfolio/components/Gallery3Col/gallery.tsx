@@ -251,8 +251,8 @@ export const images = [
 
 export default component$(() => {
 	useStyles$(styles)
-	const outputRef = useSignal<Element>()
-	const imageContainerRef = useSignal<Element>()
+	const outputRef = useSignal()
+	const imageContainerRef = useSignal()
 	const store = useStore({
 		width: 0,
 		height: 0,
@@ -267,8 +267,8 @@ export default component$(() => {
 		} else {
 			store.currentImage++
 		}
-		const images = outputRef.value.querySelectorAll('.gallery__images-slider')
-		const imageContainer = imageContainerRef.value
+		const images = outputRef.value!.querySelectorAll('.gallery__images-slider')
+		const imageContainer = imageContainerRef.value!
 		if (store.currentImage) {
 			imageContainer.style.setProperty(
 				'--demo-transformStart',
@@ -296,8 +296,8 @@ export default component$(() => {
 		} else {
 			store.currentImage--
 		}
-		const images = outputRef.value.querySelectorAll('.gallery__images-slider')
-		const imageContainer = imageContainerRef.value
+		const images = outputRef.value!.querySelectorAll('.gallery__images-slider')
+		const imageContainer = imageContainerRef.value!
 		if (store.currentImage) {
 			imageContainer.style.setProperty(
 				'--demo-transformStart',
