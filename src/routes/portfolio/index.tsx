@@ -1,10 +1,6 @@
 import { component$ } from '@builder.io/qwik'
-import {
-	Link,
-	useNavigate,
-	DocumentHead,
-	routeLoader$,
-} from '@builder.io/qwik-city'
+import type { DocumentHead } from '@builder.io/qwik-city'
+import { Link, useNavigate, routeLoader$ } from '@builder.io/qwik-city'
 
 export const useServerTime = routeLoader$(() => {
 	// This will re-execute in the server when the page refreshes.
