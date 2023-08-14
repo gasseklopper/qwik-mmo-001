@@ -5,7 +5,6 @@ import {
 	createContextId,
 	useContext,
 } from '@builder.io/qwik'
-import QwikTextField from '~/components/QwikTextField/index'
 import Gallery from './gallery'
 
 // interface GalleryStore {

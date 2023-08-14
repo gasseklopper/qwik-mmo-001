@@ -7,7 +7,6 @@ import {
 	$,
 } from '@builder.io/qwik'
 import styles from './gallery-3-Col.scss?inline'
-import Controls from './controls'
 
 /**
  *
