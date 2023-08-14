@@ -251,8 +251,8 @@ export const images = [
 
 export default component$(() => {
 	useStyles$(styles)
-	const outputRef = useSignal()
-	const imageContainerRef = useSignal()
+	const outputRef = useSignal<any>()
+	const imageContainerRef = useSignal<any>()
 	const store = useStore({
 		width: 0,
 		height: 0,
@@ -281,7 +281,7 @@ export default component$(() => {
 		}
 		// console.log('imageContainer', imageContainer)
 		// console.log('images', images)
-		images.forEach((element) => {
+		images.forEach((element: any) => {
 			console.log('element', element)
 			const color = 'green'
 			element.style.setProperty('--demo-color-change', color)
@@ -308,7 +308,7 @@ export default component$(() => {
 				`${(store.currentImage - 0) * -800}px`
 			)
 		}
-		images.forEach((element) => {
+		images.forEach((element: any) => {
 			console.log('element', element)
 			const color = 'blue'
 			element.style.setProperty('--demo-color-change', color)
@@ -377,7 +377,7 @@ export default component$(() => {
 								{ objectSyntax: true },
 							]}
 						>
-							<div className="gallery__images-container" ref={outputRef}>
+							<div class="gallery__images-container" ref={outputRef}>
 								<img
 									class="gallery__images-slider"
 									src="../../../assets/images/photography/blacker/photography_blackerthandays_001.jpg"

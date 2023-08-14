@@ -4,7 +4,6 @@ import {
 	useContextProvider,
 	createContextId,
 	useContext,
-	useSignal,
 } from '@builder.io/qwik'
 import QwikTextField from '~/components/QwikTextField/index'
 import Gallery from './gallery'
@@ -17,7 +16,7 @@ import Gallery from './gallery'
 // 	password: string
 // }
 
-export const GalleryContext = createContextId<Signal<string>>('gallery')
+export const GalleryContext = createContextId<any>('gallery')
 
 export const Stores = component$(() => {
 	const gallery = useStore({
