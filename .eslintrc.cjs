@@ -32,7 +32,7 @@ module.exports = {
 		'@typescript-eslint/no-this-alias': 'off',
 		'@typescript-eslint/ban-types': 'off',
 		'@typescript-eslint/ban-ts-comment': 'off',
-		"no-mixed-spaces-and-tabs": "off"
+		'no-mixed-spaces-and-tabs': 'off',
 		'prefer-spread': 'off',
 		'no-case-declarations': 'off',
 		'no-console': 'off',
