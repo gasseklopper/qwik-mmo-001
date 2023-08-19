@@ -1,4 +1,4 @@
-import { component$, $ } from '@builder.io/qwik'
+import { component$ } from '@builder.io/qwik'
 import { type DocumentHead } from '@builder.io/qwik-city'
 import { email, minLength, required, useForm } from '@modular-forms/qwik'
 import { FormHeader, TextInput, FormFooter } from './components'

@@ -5,7 +5,11 @@ module.exports = {
 		es2021: true,
 		node: true,
 	},
-	extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended', 'plugin:qwik/recommended'],
+	extends: [
+		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
+		'plugin:qwik/recommended',
+	],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
 		tsconfigRootDir: __dirname,
@@ -28,6 +32,7 @@ module.exports = {
 		'@typescript-eslint/no-this-alias': 'off',
 		'@typescript-eslint/ban-types': 'off',
 		'@typescript-eslint/ban-ts-comment': 'off',
+		"no-mixed-spaces-and-tabs": "off"
 		'prefer-spread': 'off',
 		'no-case-declarations': 'off',
 		'no-console': 'off',
