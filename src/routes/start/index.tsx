@@ -1,9 +1,13 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
+import MultiStepForm from '~/components/multiStepForm'
 
 export default component$(() => {
 	return (
 		<div class="row">
+			<div class="column">
+				<MultiStepForm />
+			</div>
 			<div class="column">
 				<h1>Welcome to Qwik Docs Starter</h1>
 				<h2>Hallo Jessica und hallo Alexandra</h2>
@@ -15,13 +19,12 @@ export default component$(() => {
 						<a href="/docs">Documentation</a>
 						<span>
 							{' '}
-							pages use multiple nested layouts, one of them
-							providing a left menu.
+							pages use multiple nested layouts, one of them providing a left
+							menu.
 						</span>
 					</li>
 					<li>
-						Check out the <code>src/routes</code> directory to get
-						started.
+						Check out the <code>src/routes</code> directory to get started.
 					</li>
 					<li>
 						Add integrations with <code>npm run qwik add</code>.
@@ -57,19 +60,13 @@ export default component$(() => {
 					</li>
 					<li>
 						<span>Open issues and contribute on </span>
-						<a
-							href="https://github.com/BuilderIO/qwik"
-							target="_blank"
-						>
+						<a href="https://github.com/BuilderIO/qwik" target="_blank">
 							Github
 						</a>
 					</li>
 					<li>
 						<span>Watch </span>
-						<a
-							href="https://qwik.builder.io/media/"
-							target="_blank"
-						>
+						<a href="https://qwik.builder.io/media/" target="_blank">
 							Presentations, Podcasts, Videos, etc.
 						</a>
 					</li>
