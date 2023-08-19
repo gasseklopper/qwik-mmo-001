@@ -1,14 +1,6 @@
 import { component$, $ } from '@builder.io/qwik'
-import { routeLoader$, type DocumentHead } from '@builder.io/qwik-city'
-import {
-	email,
-	type InitialValues,
-	minLength,
-	required,
-	useForm,
-	FieldEvent,
-	valiField$,
-} from '@modular-forms/qwik'
+import { type DocumentHead } from '@builder.io/qwik-city'
+import { email, minLength, required, useForm } from '@modular-forms/qwik'
 import { FormHeader, TextInput, FormFooter } from './components'
 
 type LoginForm = {
@@ -20,10 +12,6 @@ export default component$(() => {
 	const [loginForm, { Form, Field }] = useForm<LoginForm>({
 		loader: { value: { email: '', password: '' } },
 		validateOn: 'change',
-	})
-
-	const handleSubmit = $((values: any, event: any) => {
-		console.log('onBlur')
 	})
 
 	return (

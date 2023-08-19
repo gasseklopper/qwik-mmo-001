@@ -33,9 +33,9 @@ export const Tabs = component$((props: TabsProps) => {
 		// Update indicator style to active element or reset it to undefined
 		indicatorStyle.value = activeElement
 			? {
-					left: `${activeElement.offsetLeft || 0}px`,
-					width: `${activeElement.offsetWidth || 0}px`,
-			  }
+				left: `${activeElement.offsetLeft || 0}px`,
+				width: `${activeElement.offsetWidth || 0}px`,
+			}
 			: undefined
 	})
 
@@ -61,13 +61,6 @@ export const Tabs = component$((props: TabsProps) => {
 										: 'hover:text-slate-900 dark:hover:text-slate-200'
 								)}
 								href={`..${href}`}
-								// TODO: Enable once issue #3223 is fixed
-								// onClick$={(_, element) =>
-								//   element.scrollIntoView({
-								//     block: "nearest",
-								//     inline: "center",
-								//   })
-								// }
 							>
 								{item}
 							</Link>
@@ -75,7 +68,7 @@ export const Tabs = component$((props: TabsProps) => {
 					})}
 				</nav>
 				<div
-					window:onResize$={updateIndicatorStyle}
+					window: onResize$={updateIndicatorStyle}
 					class="absolute -bottom-0.5 m-0 h-0.5 rounded bg-sky-600 duration-200 dark:bg-sky-400"
 					style={indicatorStyle.value}
 				/>
