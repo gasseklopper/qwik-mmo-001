@@ -1,18 +1,16 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
-import styles from './venedig.scss?inline'
-import Gallery3Col from '../components/Gallery3Col'
+import styles from './blacker.scss?inline'
 
 export default component$(() => {
 	useStyles$(styles)
 
 	return (
 		<section class={['test', 'venedig']}>
-			{/* <div class="row">
+			<div class="row">
 				<div class="column large-12">large 12</div>
 				<div class="column large-6">large 6</div>
 				<div class="column large-6">large 6</div>
-			</div> */}
-			{/* <Gallery3Col /> */}
+			</div>
 			<Column1Text />
 			<Column3 />
 			<GalleryStatic />
@@ -33,49 +31,25 @@ export const GalleryStatic = component$(() => {
 		<div class="row">
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_2063.jpg"
+					src="../../assets/images/photography/blacker/photography_blackerthandays_001.jpg"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1905.jpg"
+					src="../../assets/images/photography/blacker/photography_blackerthandays_009.jpg"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1903.jpg"
+					src="../../assets/images/photography/blacker/photography_blackerthandays_002.jpg"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1869.jpg"
-					alt=""
-				/>
-			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_2039.jpg"
-					alt=""
-				/>
-			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_1939.jpg"
-					alt=""
-				/>
-			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_1523.jpg"
-					alt=""
-				/>
-			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_2094.jpg"
+					src="../../assets/images/photography/blacker/photography_blackerthandays_005.jpg"
 					alt=""
 				/>
 			</div>
@@ -88,7 +62,7 @@ export const Column3 = component$(() => {
 		<div class="row">
 			<div class="column large-12">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1857.jpg"
+					src="../../assets/images/photography/blacker/photography_blackerthandays_016.jpg"
 					alt=""
 				/>
 			</div>
@@ -127,7 +101,7 @@ export const Column3 = component$(() => {
 			</div>
 			<div class="column large-4">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1840.jpg"
+					src="../../assets/images/photography/blacker/photography_blackerthandays_001.jpg"
 					alt=""
 				/>
 			</div>

@@ -22,6 +22,18 @@ export default component$(() => {
 							<a href="../portfolio/venedig">Venedig</a>
 						</li>
 						<li>
+							<a href="../portfolio/blacker">blacker</a>
+						</li>
+						<li>
+							<a href="../portfolio/rippel">rippel</a>
+						</li>
+						<li>
+							<a href="../portfolio/portrait">portrait</a>
+						</li>
+						<li>
+							<a href="../portfolio/paris">paris</a>
+						</li>
+						<li>
 							<Link href="../portfolio/venedig">Venedig (prefered)</Link>
 							<button onClick$={() => nav('../portfolio/venedig')}>
 								About

@@ -1,12 +1,12 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
-import styles from './venedig.scss?inline'
+import styles from './portrait.scss?inline'
 import Gallery3Col from '../components/Gallery3Col'
 
 export default component$(() => {
 	useStyles$(styles)
 
 	return (
-		<section class={['test', 'venedig']}>
+		<section class={['test', 'portrait']}>
 			{/* <div class="row">
 				<div class="column large-12">large 12</div>
 				<div class="column large-6">large 6</div>
@@ -33,49 +33,49 @@ export const GalleryStatic = component$(() => {
 		<div class="row">
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_2063.jpg"
+					src="../../assets/images/photography/portrait/Portrait_001.jpg"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1905.jpg"
+					src="../../assets/images/photography/portrait/Portrait_002.jpg"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1903.jpg"
+					src="../../assets/images/photography/portrait/Portrait_003.jpg"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1869.jpg"
+					src="../../assets/images/photography/portrait/Portrait_004.jpg"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_2039.jpg"
+					src="../../assets/images/photography/portrait/Portrait_005.jpg"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1939.jpg"
+					src="../../assets/images/photography/portrait/Portrait_006.jpg"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1523.jpg"
+					src="../../assets/images/photography/portrait/Portrait_019.jpg"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_2094.jpg"
+					src="../../assets/images/photography/portrait/Portrait_020.jpg"
 					alt=""
 				/>
 			</div>
@@ -88,7 +88,7 @@ export const Column3 = component$(() => {
 		<div class="row">
 			<div class="column large-12">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1857.jpg"
+					src="../../assets/images/photography/portrait/Portrait_011.jpg"
 					alt=""
 				/>
 			</div>
@@ -127,7 +127,7 @@ export const Column3 = component$(() => {
 			</div>
 			<div class="column large-4">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1840.jpg"
+					src="../../assets/images/photography/portrait/Portrait_021.jpg"
 					alt=""
 				/>
 			</div>

@@ -1,0 +1,8 @@
+@use './../1-helpers/0-mixins/color-contrast';
+@use './../00-vars/00-vars' as vars;
+
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}

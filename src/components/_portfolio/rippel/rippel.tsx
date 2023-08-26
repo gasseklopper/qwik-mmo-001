@@ -1,12 +1,12 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
-import styles from './venedig.scss?inline'
+import styles from './rippel.scss?inline'
 import Gallery3Col from '../components/Gallery3Col'
 
 export default component$(() => {
 	useStyles$(styles)
 
 	return (
-		<section class={['test', 'venedig']}>
+		<section class={['test', 'rippel']}>
 			{/* <div class="row">
 				<div class="column large-12">large 12</div>
 				<div class="column large-6">large 6</div>
@@ -33,49 +33,37 @@ export const GalleryStatic = component$(() => {
 		<div class="row">
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_2063.jpg"
+					src="../../assets/images/photography/rippel/ripel_001.gif"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1905.jpg"
+					src="../../assets/images/photography/rippel/ripel_002.gif"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1903.jpg"
+					src="../../assets/images/photography/rippel/ripel_003.gif"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1869.jpg"
+					src="../../assets/images/photography/rippel/ripel_004.gif"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_2039.jpg"
+					src="../../assets/images/photography/rippel/ripel_005.gif"
 					alt=""
 				/>
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1939.jpg"
-					alt=""
-				/>
-			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_1523.jpg"
-					alt=""
-				/>
-			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_2094.jpg"
+					src="../../assets/images/photography/rippel/ripel_006.gif"
 					alt=""
 				/>
 			</div>
@@ -88,7 +76,7 @@ export const Column3 = component$(() => {
 		<div class="row">
 			<div class="column large-12">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1857.jpg"
+					src="../../assets/images/photography/rippel/ripel_003.gif"
 					alt=""
 				/>
 			</div>
@@ -127,7 +115,7 @@ export const Column3 = component$(() => {
 			</div>
 			<div class="column large-4">
 				<img
-					src="../../assets/images/photography/venedig/IMG_1840.jpg"
+					src="../../assets/images/photography/rippel/ripel_002.gif"
 					alt=""
 				/>
 			</div>

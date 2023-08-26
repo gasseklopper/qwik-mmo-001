@@ -1,12 +1,12 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
-import styles from './venedig.scss?inline'
+import styles from './paris.scss?inline'
 import Gallery3Col from '../components/Gallery3Col'
 
 export default component$(() => {
 	useStyles$(styles)
 
 	return (
-		<section class={['test', 'venedig']}>
+		<section class={['test', 'paris']}>
 			{/* <div class="row">
 				<div class="column large-12">large 12</div>
 				<div class="column large-6">large 6</div>
@@ -31,53 +31,68 @@ export const ButtonBurger = component$(() => {
 export const GalleryStatic = component$(() => {
 	return (
 		<div class="row">
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_2063.jpg"
-					alt=""
-				/>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6685.jpg" alt="" />
 			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_1905.jpg"
-					alt=""
-				/>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6687.jpg" alt="" />
 			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_1903.jpg"
-					alt=""
-				/>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6697.jpg" alt="" />
 			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_1869.jpg"
-					alt=""
-				/>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6699.jpg" alt="" />
 			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_2039.jpg"
-					alt=""
-				/>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6702.jpg" alt="" />
 			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_1939.jpg"
-					alt=""
-				/>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6704.jpg" alt="" />
 			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_1523.jpg"
-					alt=""
-				/>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6705.jpg" alt="" />
 			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/venedig/IMG_2094.jpg"
-					alt=""
-				/>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6707.jpg" alt="" />
+			</div>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6711.jpg" alt="" />
+			</div>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6714.jpg" alt="" />
+			</div>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6717.jpg" alt="" />
+			</div>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6722.jpg" alt="" />
+			</div>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6730.jpg" alt="" />
+			</div>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6756.jpg" alt="" />
+			</div>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6757.jpg" alt="" />
+			</div>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6759.jpg" alt="" />
+			</div>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6771.jpg" alt="" />
+			</div>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6772.jpg" alt="" />
+			</div>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6778.jpg" alt="" />
+			</div>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6779.jpg" alt="" />
+			</div>
+			<div class="column large-6">
+				<img src="../../assets/images/photography/paris/IMG_6781.jpg" alt="" />
 			</div>
 		</div>
 	)
@@ -87,10 +102,7 @@ export const Column3 = component$(() => {
 	return (
 		<div class="row">
 			<div class="column large-12">
-				<img
-					src="../../assets/images/photography/venedig/IMG_1857.jpg"
-					alt=""
-				/>
+				<img src="../../assets/images/photography/paris/IMG_6733.jpg" alt="" />
 			</div>
 			<div class="column large-4">
 				<p>
@@ -126,10 +138,7 @@ export const Column3 = component$(() => {
 				</p>
 			</div>
 			<div class="column large-4">
-				<img
-					src="../../assets/images/photography/venedig/IMG_1840.jpg"
-					alt=""
-				/>
+				<img src="../../assets/images/photography/paris/IMG_6763.jpg" alt="" />
 			</div>
 		</div>
 	)
