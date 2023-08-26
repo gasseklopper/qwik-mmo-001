@@ -47,3 +47,7 @@ lerna-debug.log*
 /netlify
 
 # Netlify
+netlify/edge-functions/entry.netlify-edge/@qwik-city-plan.js
+netlify/edge-functions/entry.netlify-edge/@qwik-city-static-paths.js
+netlify/edge-functions/entry.netlify-edge/entry.netlify-edge.js
+netlify/edge-functions/entry.netlify-edge/entry.ssr.js
