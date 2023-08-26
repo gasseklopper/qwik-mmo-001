@@ -11,7 +11,7 @@ type LoginForm = {
 export default component$(() => {
 	const [loginForm, { Form, Field }] = useForm<LoginForm>({
 		loader: { value: { email: '', password: '' } },
-		validateOn: 'change',
+		validateOn: 'touched',
 	})
 
 	return (
