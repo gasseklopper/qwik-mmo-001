@@ -1,6 +1,5 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
 import styles from './portrait.scss?inline'
-import Gallery3Col from '../components/Gallery3Col'
 
 export default component$(() => {
 	useStyles$(styles)

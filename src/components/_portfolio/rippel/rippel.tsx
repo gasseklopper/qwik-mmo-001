@@ -1,18 +1,11 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
 import styles from './rippel.scss?inline'
-import Gallery3Col from '../components/Gallery3Col'
 
 export default component$(() => {
 	useStyles$(styles)
 
 	return (
 		<section class={['test', 'rippel']}>
-			{/* <div class="row">
-				<div class="column large-12">large 12</div>
-				<div class="column large-6">large 6</div>
-				<div class="column large-6">large 6</div>
-			</div> */}
-			{/* <Gallery3Col /> */}
 			<Column1Text />
 			<Column3 />
 			<GalleryStatic />
