@@ -52,8 +52,7 @@ export default component$(() => {
 	)
 })
 
-export const AboutExibitions = component$((props: { item: any }) => {
-	const item = props.item
+export const AboutExibitions = component$(() => {
 	return (
 		<div class="row">
 			<div class="column large-12">
@@ -141,8 +140,7 @@ export const AboutExibitions = component$((props: { item: any }) => {
 	)
 })
 
-export const AboutEducation = component$((props: { item: any }) => {
-	const item = props.item
+export const AboutEducation = component$(() => {
 	return (
 		<div class="row">
 			<div class="column large-12">
@@ -174,8 +172,7 @@ export const AboutEducation = component$((props: { item: any }) => {
 	)
 })
 
-export const AboutResume = component$((props: { item: any }) => {
-	const item = props.item
+export const AboutResume = component$(() => {
 	return (
 		<div class="row">
 			<div class="column large-12">
@@ -305,8 +302,7 @@ export const AboutResume = component$((props: { item: any }) => {
 	)
 })
 
-export const AboutToolStack = component$((props: { item: any }) => {
-	const item = props.item
+export const AboutToolStack = component$(() => {
 	return (
 		<div class="row">
 			<div class="column large-12">
@@ -533,8 +529,7 @@ export const AboutToolStack = component$((props: { item: any }) => {
 	)
 })
 
-export const AboutQuote = component$((props: { item: any }) => {
-	const item = props.item
+export const AboutQuote = component$(() => {
 	return (
 		<div class="row">
 			<div class="column large-12">
@@ -556,8 +551,7 @@ export const AboutQuote = component$((props: { item: any }) => {
 	)
 })
 
-export const AboutIntro = component$((props: { item: any }) => {
-	const item = props.item
+export const AboutIntro = component$(() => {
 	return (
 		<div class="row">
 			<div class="column large-4">
