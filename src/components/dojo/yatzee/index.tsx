@@ -8,10 +8,13 @@ export default component$(
 		diceRoll: DiceRoll
 		roll: { count: number }
 		ruleNumber: { value: string }
+		game: { index: number,
+		round: number }
 		sumPoints: { value: number }
 		topPoints: { value: number }  
 		bottomPoints: { value: number }
 		topBonus: { value: boolean }
+		player: { index: number }
 		keepDice: {
 			value1: boolean
 			value2: boolean
@@ -22,6 +25,9 @@ export default component$(
 	}) => {
 		const store: { dice: Dice[] } = useStore({ dice: props.diceRoll })
 		const roll: { count: number } = useStore({ count: props.roll.count })
+		const player: { index: number } = useStore({ index: props.player.index })
+		const { index, round } = props.game
+		const game: { index: number, round: number } = useStore({ index, round })
 
 		const ruleNumber: { value: string } = useStore({
 			value: props.ruleNumber.value,
@@ -255,6 +261,12 @@ export default component$(
 					<h1 class="h1">Yatzee</h1>
 					<div class="dice_label">Dice: </div>
 					<div class="dice h2">{store.dice}</div>
+					<div class="game_label">game.index: </div>
+					<div class="game h2">{game.index}</div>
+					<div class="gameRound_label">game.round: </div>
+					<div class="gameRound h2">{game.round}</div>
+					<div class="player_label">player.index: </div>
+					<div class="player h2">{player.index}</div>
 					<div class="countRoll_label">roll.count: </div>
 					<div class="countRoll">{roll.count}</div>
 					<div class="pointsValue_label">points.value: </div>

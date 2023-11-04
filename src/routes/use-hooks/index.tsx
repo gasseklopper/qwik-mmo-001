@@ -15,7 +15,12 @@ export default component$(() => {
 					diceRoll={[0, 0, 0, 0, 0]}
 					roll={{ count: 0 }}
 					ruleNumber={{ value: '1' }}
+					game={{ index: 1, round: 1 }}
+					player={{ index: 1 }}
 					sumPoints={{ value: 0 }}
+					bottomPoints={{ value: 55 }}
+					topPoints={{ value: 55 }}
+					topBonus={{ value: false }}
 					keepDice={{
 						value1: false,
 						value2: false,
