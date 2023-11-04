@@ -8,7 +8,10 @@ export default component$(
 		diceRoll: DiceRoll
 		roll: { count: number }
 		ruleNumber: { value: string }
-		points: { value: number }
+		sumPoints: { value: number }
+		topPoints: { value: number }  
+		bottomPoints: { value: number }
+		topBonus: { value: boolean }
 		keepDice: {
 			value1: boolean
 			value2: boolean
@@ -19,12 +22,15 @@ export default component$(
 	}) => {
 		const store: { dice: Dice[] } = useStore({ dice: props.diceRoll })
 		const roll: { count: number } = useStore({ count: props.roll.count })
+
 		const ruleNumber: { value: string } = useStore({
 			value: props.ruleNumber.value,
 		})
-		const points: { value: number } = useStore({
-			value: props.points.value,
+
+		const sumPoints: { value: number } = useStore({
+			value: props.sumPoints.value,
 		})
+
 		const keepDice: {
 			value1: boolean
 			value2: boolean
@@ -51,23 +57,6 @@ export default component$(
 						internalRoll[index] = (Math.floor(Math.random() * 6) + 1) as Dice
 					}
 				})
-
-				// for (let index = 0; index < store.dice.length; index++) {
-				// 	if (keepDice.value1 && index === 0) {
-				// 		internalRoll[index] = store.dice[0]
-				// 	} else if (keepDice.value2 && index === 1) {
-				// 		internalRoll[index] = store.dice[1]
-				// 	} else if (keepDice.value3 && index === 2) {
-				// 		internalRoll[index] = store.dice[2]
-				// 	} else if (keepDice.value4 && index === 3) {
-				// 		internalRoll[index] = store.dice[3]
-				// 	} else if (keepDice.value5 && index === 4) {
-				// 		internalRoll[index] = store.dice[4]
-				// 	} else {
-				// 		internalRoll[index] = (Math.floor(Math.random() * 6) +
-				// 			1) as Dice
-				// 	}
-				// }
 				roll.count++
 				return (store.dice = internalRoll)
 			}
@@ -85,7 +74,7 @@ export default component$(
 		})
 
 		const resetGame = $(async () => {
-			points.value = 0
+			sumPoints.value = 0
 			await reset()
 		})
 
@@ -121,27 +110,27 @@ export default component$(
 				// Rule 1-6
 				// Ones, Twos, Threes, Fours, Fives, Sixes: The player scores the sum of the dice that reads one, two, three, four, five or six, respectively. For example, 1, 1, 2, 4, 4 placed on “fours” gives 8 points.
 				if (ruleNumber.value === '1') {
-					points.value +=
+					sumPoints.value +=
 						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '2') {
-					points.value +=
+					sumPoints.value +=
 						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '3') {
-					points.value +=
+					sumPoints.value +=
 						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '4') {
-					points.value +=
+					sumPoints.value +=
 						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '5') {
-					points.value +=
+					sumPoints.value +=
 						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '6') {
-					points.value +=
+					sumPoints.value +=
 						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
 				}
 				// Pair: The player scores the sum of the two highest matching dice. For example, 3, 3, 3, 4, 4 placed on “pair” gives 8.
@@ -153,7 +142,7 @@ export default component$(
 							test = index + 1
 						}
 					})
-					points.value += 2 * test
+					sumPoints.value += 2 * test
 				}
 				// Two pairs: If there are two pairs of dice with the same number, the player scores the sum of these dice. If not, the player scores 0. For example, 1, 1, 2, 3, 3 placed on “two pairs” gives 8.
 				if (ruleNumber.value === '8') {
@@ -183,9 +172,9 @@ export default component$(
 							}
 						})
 
-						points.value += test - test1 - test2
+						sumPoints.value += test - test1 - test2
 					} else {
-						points.value += 0
+						sumPoints.value += 0
 					}
 				}
 				// Three of a kind: If there are three dice with the same number, the player scores the sum of these dice. Otherwise, the player scores 0. For example, 3, 3, 3, 4, 5 places on “three of a kind” gives 9.
@@ -197,7 +186,7 @@ export default component$(
 							test = index + 1
 						}
 					})
-					points.value += 3 * test
+					sumPoints.value += 3 * test
 				}
 				// Four of a kind: If there are four dice with the same number, the player scores the sum of these dice. Otherwise, the player scores 0. For example, 2, 2, 2, 2, 5 places on “four of a kind” gives 8.
 				if (ruleNumber.value === '10') {
@@ -208,24 +197,24 @@ export default component$(
 							test = index + 1
 						}
 					})
-					points.value += 4 * test
+					sumPoints.value += 4 * test
 				}
 				// Small straight: If the dice read 1,2,3,4,5, the player scores 15 (the sum of all the dice), otherwise 0.
 				if (ruleNumber.value === '11') {
 					const wurst = submitDiceRoll(store.dice)
 					if (equalsCheck([1, 1, 1, 1, 1, 0], wurst)) {
-						points.value += 15
+						sumPoints.value += 15
 					} else {
-						points.value += 0
+						sumPoints.value += 0
 					}
 				}
 				// Large straight: If the dice read 2,3,4,5,6, the player scores 20 (the sum of all the dice), otherwise 0.
 				if (ruleNumber.value === '12') {
 					const wurst = submitDiceRoll(store.dice)
 					if (equalsCheck([0, 1, 1, 1, 1, 1], wurst)) {
-						points.value += 20
+						sumPoints.value += 20
 					} else {
-						points.value += 0
+						sumPoints.value += 0
 					}
 				}
 				// Full house: If the dice are two of a kind and three of a kind, the player scores the sum of all the dice. For example, 1,1,2,2,2 placed on “full house” gives 8. 4,4,4,4,4 is not “full house”.
@@ -233,25 +222,25 @@ export default component$(
 					const array2 = [3, 2, 0, 0, 0, 0]
 					const wurst = submitDiceRoll(store.dice)
 					if (wurst.sort().join(',') === array2.sort().join(',')) {
-						points.value += store.dice.reduce(function upps(total: number, num: number) {
+						sumPoints.value += store.dice.reduce(function upps(total: number, num: number) {
 							return (total + num) as Dice
 						})
 					} else {
-						points.value += 0
+						sumPoints.value += 0
 					}
 				}
 				// Yahtzee: If all dice are the have the same number, the player scores 50 points, otherwise 0.
 				if (ruleNumber.value === '14') {
 					const test = store.dice.filter((rolledDie) => rolledDie === store.dice[0]).length
 					if (test === 5) {
-						points.value += 50
+						sumPoints.value += 50
 					} else {
-						points.value += 0
+						sumPoints.value += 0
 					}
 				}
 				// Chance: The player gets the sum of all dice, no matter what they read.The practitioner can feel free to create new categories as well.
 				if (ruleNumber.value === '15') {
-					points.value += store.dice.reduce(function upps(total: number, num: number) {
+					sumPoints.value += store.dice.reduce(function upps(total: number, num: number) {
 						return (total + num) as Dice
 					})
 				}
@@ -269,7 +258,7 @@ export default component$(
 					<div class="countRoll_label">roll.count: </div>
 					<div class="countRoll">{roll.count}</div>
 					<div class="pointsValue_label">points.value: </div>
-					<div class="pointsValue">{points.value}</div>
+					<div class="pointsValue">{sumPoints.value}</div>
 					<div class="ruleNumber_label">ruleNumber.value: </div>
 					<div class="ruleNumber h3">{ruleNumber.value}</div>
 				</div>

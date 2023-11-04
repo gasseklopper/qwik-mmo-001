@@ -31,7 +31,10 @@ describe('UI Test', function () {
 				diceRoll={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '1' }}
-				points={{ value: 55 }}
+				sumPoints={{ value: 55 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -69,7 +72,10 @@ describe('UI Test', function () {
 				diceRoll={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '1' }}
-				points={{ value: 55 }}
+				sumPoints={{ value: 55 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -108,7 +114,10 @@ describe('UI Test', function () {
 				diceRoll={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '1' }}
-				points={{ value: 55 }}
+				sumPoints={{ value: 55 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: true,
 					value2: true,
@@ -158,7 +167,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[1, 1, 1, 1, 6]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '1' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -196,7 +208,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[2, 4, 5, 5, 2]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '2' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -234,7 +249,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[3, 4, 5, 5, 6]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '3' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -272,7 +290,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[3, 4, 5, 5, 6]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '4' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -310,7 +331,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[3, 5, 5, 5, 6]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '5' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -348,7 +372,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[3, 3, 6, 4, 6]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '6' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -386,7 +413,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[3, 3, 4, 4, 4]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '7' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -424,7 +454,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[3, 3, 4, 4, 5]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '7' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -462,7 +495,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[1, 1, 5, 5, 1]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '8' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -500,7 +536,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[3, 3, 5, 5, 5]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '8' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -538,7 +577,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[3, 3, 4, 4, 5]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '8' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -576,7 +618,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[4, 4, 4, 4, 4]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '9' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -614,7 +659,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[4, 4, 4, 4, 4]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '10' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -652,7 +700,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[1, 3, 4, 5, 2]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '11' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -690,7 +741,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[2, 3, 4, 5, 6]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '12' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -728,7 +782,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[2, 5, 5, 2, 5]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '13' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -766,7 +823,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '14' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
@@ -804,7 +864,10 @@ describe('Yatzee rule test with ui', function () {
 				diceRoll={[1, 2, 3, 4, 5]}
 				roll={{ count: 1 }}
 				ruleNumber={{ value: '15' }}
-				points={{ value: 0 }}
+				sumPoints={{ value: 0 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
 				keepDice={{
 					value1: false,
 					value2: false,
