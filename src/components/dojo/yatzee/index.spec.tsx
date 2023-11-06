@@ -21,7 +21,7 @@ import Yatzee from '.'
 // })
 
 describe('UI Test', function () {
-	it('should increment add points"3" at 14 round submit but not increment round', async () => {
+	it('should show rule options choosed in UI', async () => {
 		// create the component's DOM and get back the container and a render method
 		const { screen, render, userEvent } = await createDOM()
 
@@ -30,6 +30,115 @@ describe('UI Test', function () {
 			<Yatzee
 				diceRoll={[1, 1, 1, 5, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
+				ruleNumber={{ value: '1' }}
+				game={{
+					index: 1,
+					round: 15
+				}}
+				player={{ index: 1 }}
+				sumPoints={{ value: 55 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
+				keepDice={{
+					value1: false,
+					value2: false,
+					value3: false,
+					value4: false,
+					value5: false,
+				}}
+			/>
+		)
+
+		// get the div that displays the count from our container
+		const gameRound = screen.querySelector('.gameRound')
+		const countElement = screen.querySelector('.dice')
+		const rollCountElement = screen.querySelector('.countRoll')
+		const pointsValueElement = screen.querySelector('.pointsValue')
+		const rulesOptionsChossed = screen.querySelector('.ruleOptionsChoosed')
+
+		// expect before interaction of ui
+		expect(countElement?.textContent).toBe('1,1,1,5,5')
+		expect(gameRound?.textContent).toBe('15')
+		expect(rollCountElement?.textContent).toBe('1')
+		expect(pointsValueElement?.textContent).toBe('55')
+		expect(rulesOptionsChossed?.textContent).toBe('0')
+
+		await userEvent('.submit_button', 'click')
+
+		// assert the displayed count is now decremented by 1
+		expect(gameRound?.textContent).toBe('15')
+		expect(rollCountElement?.textContent).toBe('0')
+		expect(countElement?.textContent).toBe('0,0,0,0,0')
+		expect(pointsValueElement?.textContent).toBe('58')
+		expect(rulesOptionsChossed?.textContent).toBe('0,1')
+
+	})
+	it('should increment add points "3" at 15 round submit but not increment round', async () => {
+		// create the component's DOM and get back the container and a render method
+		const { screen, render, userEvent } = await createDOM()
+
+		// call the render method with the JSX node of our Counter component as a parameter
+		await render(
+			<Yatzee
+				diceRoll={[1, 1, 1, 5, 5]}
+				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
+				ruleNumber={{ value: '1' }}
+				game={{
+					index: 1,
+					round: 15
+				}}
+				player={{ index: 1 }}
+				sumPoints={{ value: 55 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
+				keepDice={{
+					value1: false,
+					value2: false,
+					value3: false,
+					value4: false,
+					value5: false,
+				}}
+			/>
+		)
+
+		// get the div that displays the count from our container
+		const gameRound = screen.querySelector('.gameRound')
+		const countElement = screen.querySelector('.dice')
+		const rollCountElement = screen.querySelector('.countRoll')
+		const pointsValueElement = screen.querySelector('.pointsValue')
+		const rulesOptionsChossed = screen.querySelector('.ruleOptionsChoosed')
+
+		// expect before interaction of ui
+		expect(countElement?.textContent).toBe('1,1,1,5,5')
+		expect(gameRound?.textContent).toBe('15')
+		expect(rollCountElement?.textContent).toBe('1')
+		expect(pointsValueElement?.textContent).toBe('55')
+		expect(rulesOptionsChossed?.textContent).toBe('0')
+
+		await userEvent('.submit_button', 'click')
+
+		// assert the displayed count is now decremented by 1
+		expect(gameRound?.textContent).toBe('15')
+		expect(rollCountElement?.textContent).toBe('0')
+		expect(countElement?.textContent).toBe('0,0,0,0,0')
+		expect(pointsValueElement?.textContent).toBe('58')
+		expect(rulesOptionsChossed?.textContent).toBe('0,1')
+
+	})
+	it('should increment add points "4" at 14 round submit and increment round to 15', async () => {
+		// create the component's DOM and get back the container and a render method
+		const { screen, render, userEvent } = await createDOM()
+
+		// call the render method with the JSX node of our Counter component as a parameter
+		await render(
+			<Yatzee
+				diceRoll={[1, 1, 1, 1, 5]}
+				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '1' }}
 				game={{
 					index: 1,
@@ -57,7 +166,7 @@ describe('UI Test', function () {
 		const pointsValueElement = screen.querySelector('.pointsValue')
 
 		// expect before interaction of ui
-		expect(countElement?.textContent).toBe('1,1,1,5,5')
+		expect(countElement?.textContent).toBe('1,1,1,1,5')
 		expect(gameRound?.textContent).toBe('14')
 		expect(rollCountElement?.textContent).toBe('1')
 		expect(pointsValueElement?.textContent).toBe('55')
@@ -65,10 +174,10 @@ describe('UI Test', function () {
 		await userEvent('.submit_button', 'click')
 
 		// assert the displayed count is now decremented by 1
-		expect(gameRound?.textContent).toBe('14')
+		expect(gameRound?.textContent).toBe('15')
 		expect(rollCountElement?.textContent).toBe('0')
 		expect(countElement?.textContent).toBe('0,0,0,0,0')
-		expect(pointsValueElement?.textContent).toBe('58')
+		expect(pointsValueElement?.textContent).toBe('59')
 	})
 	it('should increment game.round by one', async () => {
 		// create the component's DOM and get back the container and a render method
@@ -79,6 +188,7 @@ describe('UI Test', function () {
 			<Yatzee
 				diceRoll={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '1' }}
 				game={{
 					index: 1,
@@ -128,6 +238,7 @@ describe('UI Test', function () {
 			<Yatzee
 				diceRoll={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '1' }}
 				game={{
 					index: 1,
@@ -177,6 +288,7 @@ describe('UI Test', function () {
 			<Yatzee
 				diceRoll={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '1' }}
 				game={{
 					index: 1,
@@ -226,6 +338,7 @@ describe('UI Test', function () {
 			<Yatzee
 				diceRoll={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '1' }}
 				game={{
 					index: 1,
@@ -275,6 +388,7 @@ describe('UI Test', function () {
 			<Yatzee
 				diceRoll={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '1' }}
 				game={{
 					index: 1,
@@ -324,6 +438,7 @@ describe('UI Test', function () {
 			<Yatzee
 				diceRoll={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '1' }}
 				game={{
 					index: 1,
@@ -362,7 +477,7 @@ describe('UI Test', function () {
 		expect(countElement?.textContent).toBe('0,0,0,0,0')
 		expect(pointsValueElement?.textContent).toBe('0')
 	})
-	it('should not reroll dices', async () => {
+	it('should keep dices', async () => {
 		// create the component's DOM and get back the container and a render method
 		const { screen, render, userEvent } = await createDOM()
 
@@ -371,6 +486,7 @@ describe('UI Test', function () {
 			<Yatzee
 				diceRoll={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '1' }}
 				game={{
 					index: 1,
@@ -429,6 +545,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[1, 1, 1, 1, 6]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '1' }}
 				game={{
 					index: 1,
@@ -478,6 +595,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[2, 4, 5, 5, 2]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '2' }}
 				game={{
 					index: 1,
@@ -524,6 +642,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[3, 4, 5, 5, 6]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '3' }}
 				game={{
 					index: 1,
@@ -570,6 +689,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[3, 4, 5, 5, 6]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '4' }}
 				game={{
 					index: 1,
@@ -616,6 +736,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[3, 5, 5, 5, 6]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '5' }}
 				game={{
 					index: 1,
@@ -662,6 +783,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[3, 3, 6, 4, 6]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '6' }}
 				game={{
 					index: 1,
@@ -708,6 +830,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[3, 3, 4, 4, 4]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '7' }}
 				game={{
 					index: 1,
@@ -754,6 +877,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[3, 3, 4, 4, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '7' }}
 				game={{
 					index: 1,
@@ -800,6 +924,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[1, 1, 5, 5, 1]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '8' }}
 				game={{
 					index: 1,
@@ -846,6 +971,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[3, 3, 5, 5, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '8' }}
 				game={{
 					index: 1,
@@ -892,6 +1018,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[3, 3, 4, 4, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '8' }}
 				game={{
 					index: 1,
@@ -938,6 +1065,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[4, 4, 4, 4, 4]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '9' }}
 				game={{
 					index: 1,
@@ -984,6 +1112,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[4, 4, 4, 4, 4]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '10' }}
 				game={{
 					index: 1,
@@ -1030,6 +1159,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[1, 3, 4, 5, 2]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '11' }}
 				game={{
 					index: 1,
@@ -1076,6 +1206,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[2, 3, 4, 5, 6]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '12' }}
 				game={{
 					index: 1,
@@ -1122,6 +1253,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[2, 5, 5, 2, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '13' }}
 				game={{
 					index: 1,
@@ -1168,6 +1300,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[5, 5, 5, 5, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '14' }}
 				game={{
 					index: 1,
@@ -1214,6 +1347,7 @@ describe('Yatzee rule test with ui', function () {
 			<Yatzee
 				diceRoll={[1, 2, 3, 4, 5]}
 				roll={{ count: 1 }}
+				ruleOptionsChoosed={["0"]}
 				ruleNumber={{ value: '15' }}
 				game={{
 					index: 1,

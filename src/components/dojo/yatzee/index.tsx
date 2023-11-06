@@ -1,13 +1,17 @@
-import { component$, useStore, $ } from '@builder.io/qwik'
+import { component$, useStore, $, useSignal, useComputed$ } from '@builder.io/qwik'
+import { CLIENT_RENEG_LIMIT } from 'tls'
 
 type Dice = 0 | 1 | 2 | 3 | 4 | 5 | 6
+type RuleOption = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13" | "14" | "15" | undefined
+type RuleOptionsChoosed = [RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, ]
 type DiceRoll = [Dice, Dice, Dice, Dice, Dice]
 
 export default component$(
 	(props: {
 		diceRoll: DiceRoll
+		ruleOptionsChoosed: RuleOptionsChoosed
 		roll: { count: number }
-		ruleNumber: { value: string }
+		ruleNumber: { value: RuleOption}
 		game: {
 			index: number,
 			round: number
@@ -25,12 +29,13 @@ export default component$(
 			value5: boolean
 		}
 	}) => {
-		const store: { dice: Dice[] } = useStore({ dice: props.diceRoll })
+		const store: { dice: Dice[]} = useStore({ dice: props.diceRoll })
 		const roll: { count: number } = useStore({ ...props.roll})
 		const player: { index: number } = useStore({ ...props.player })
 		const game: { index: number, round: number } = useStore({ ...props.game })
+		let ruleOptionsChoosed: { ruleOptionsChoosed:RuleOptionsChoosed } = useStore({ ruleOptionsChoosed: props.ruleOptionsChoosed })
 
-		const ruleNumber: { value: string } = useStore({
+		const ruleNumber: { value:RuleOption } = useStore({
 			value: props.ruleNumber.value,
 		})
 
@@ -70,7 +75,7 @@ export default component$(
 		})
 
 		const reset = $(() => {
-			ruleNumber.value = '1'
+			ruleNumber.value = '0'
 			roll.count = 0
 			store.dice = [0, 0, 0, 0, 0]
 			keepDice.value1 = false
@@ -82,6 +87,8 @@ export default component$(
 
 		const resetGame = $(async () => {
 			sumPoints.value = 0
+			game.round = 0
+			ruleOptionsChoosed.ruleOptionsChoosed = ['0']
 			await reset()
 		})
 
@@ -93,11 +100,15 @@ export default component$(
 			if (a.target.value === '5') keepDice.value5 = !keepDice.value5
 		})
 
-		const setRuleNumber = $((a: any) => {
+		const setRuleNumber = $((a: { target: { value:RuleOption } }) => {
 			ruleNumber.value = a.target.value
 		})
 
 		const submit = $(async () => {
+			if (ruleOptionsChoosed.ruleOptionsChoosed.includes(ruleNumber.value)) {
+				return
+			}
+
 			let extractedDiceRollTable = [0, 0, 0, 0, 0, 0]
 
 			const submitDiceRoll = (elem: any) => {
@@ -110,41 +121,44 @@ export default component$(
 				})
 				return extractedDiceRollTable
 			}
-
+			
 			const equalsCheck = (a: any[], b: string | any[]) => a.every((v, i) => v === b[i])
 
 			if (roll.count >= 1 && roll.count <= 3) {
 				// Increment Round
-				if (game.round > 14) {
+				if (game.round > 15) {
 					return
-				} else if (game.round < 14) {
+				} else if (game.round < 15) {
 					game.round += 1
 				}
+	
+				ruleOptionsChoosed.ruleOptionsChoosed.push(ruleNumber.value);
+			
 				// Rule 1-6
 				// Ones, Twos, Threes, Fours, Fives, Sixes: The player scores the sum of the dice that reads one, two, three, four, five or six, respectively. For example, 1, 1, 2, 4, 4 placed on “fours” gives 8 points.
 				if (ruleNumber.value === '1') {
 					sumPoints.value +=
-						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
+						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value))).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '2') {
 					sumPoints.value +=
-						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
+						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value))).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '3') {
 					sumPoints.value +=
-						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
+						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value))).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '4') {
 					sumPoints.value +=
-						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
+						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value))).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '5') {
 					sumPoints.value +=
-						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
+						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value))).length * Number(ruleNumber.value)
 				}
 				if (ruleNumber.value === '6') {
 					sumPoints.value +=
-						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value) as Number)).length * Number(ruleNumber.value)
+						store.dice.filter((rolledDie) => rolledDie === (Number(ruleNumber.value))).length * Number(ruleNumber.value)
 				}
 				// Pair: The player scores the sum of the two highest matching dice. For example, 3, 3, 3, 4, 4 placed on “pair” gives 8.
 				if (ruleNumber.value === '7') {
@@ -273,6 +287,8 @@ export default component$(
 					<div class="game h2">{game.index}</div>
 					<div class="gameRound_label">game.round: </div>
 					<div class="gameRound h2">{game.round}</div>
+					<div class="ruleOptionsChoosed_label">ruleOptionsChoosed.ruleOptionsChoosed: </div>
+					<div class="ruleOptionsChoosed h2">{ruleOptionsChoosed.ruleOptionsChoosed}</div>
 					<div class="player_label">player.index: </div>
 					<div class="player h2">{player.index}</div>
 					<div class="countRoll_label">roll.count: </div>
@@ -315,23 +331,40 @@ export default component$(
 							value="1"
 							onClick$={(e: any) => setRuleNumber(e)}
 							checked={ruleNumber.value === '1'}
+							disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("1")}
 						/>
-						<label for="ones">ones</label>
-						<input type="radio" id="twos" name="drone" value="2" onClick$={(e: any) => setRuleNumber(e)} />
-						<label for="twos">twos</label>
-						<input type="radio" id="threes" name="drone" value="3" onClick$={(e: any) => setRuleNumber(e)} />
-						<label for="threes">threes</label>
-						<input type="radio" id="fours" name="drone" value="4" onClick$={(e: any) => setRuleNumber(e)} />
-						<label for="fours">fours</label>
-						<input type="radio" id="fives" name="drone" value="5" onClick$={(e: any) => setRuleNumber(e)} />
-						<label for="fives">fives</label>
-						<input type="radio" id="sixes" name="drone" value="6" onClick$={(e: any) => setRuleNumber(e)} />
-						<label for="sixes">sixes</label>
+						<label for="ones" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("1") ? 'line-through' : 'none',
+						}}>ones</label>
+						<input type="radio" id="twos" name="drone" value="2" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("2")} checked={ruleNumber.value === '2'} />
+						<label for="twos" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("2") ? 'line-through' : 'none',
+						}}>twos</label>
+						<input type="radio" id="threes" name="drone" value="3" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("3")} checked={ruleNumber.value === '3'}/>
+						<label for="threes" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("3") ? 'line-through' : 'none',
+						}}>threes</label>
+						<input type="radio" id="fours" name="drone" value="4" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("4")} checked={ruleNumber.value === '4'}/>
+						<label for="fours" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("4") ? 'line-through' : 'none',
+						}}>fours</label>
+						<input type="radio" id="fives" name="drone" value="5" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("5")} checked={ruleNumber.value === '5'}/>
+						<label for="fives" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("5") ? 'line-through' : 'none',
+						}}>fives</label>
+						<input type="radio" id="sixes" name="drone" value="6" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("6")} checked={ruleNumber.value === '6'}/>
+						<label for="sixes" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("6") ? 'line-through' : 'none',
+						}}>sixes</label>
 						<hr />
-						<input type="radio" id="pair" name="drone" value="7" onClick$={(e: any) => setRuleNumber(e)} />
-						<label for="pair">pair</label>
-						<input type="radio" id="twoPairs" name="drone" value="8" onClick$={(e: any) => setRuleNumber(e)} />
-						<label for="twoPairs">twoPairs</label>
+						<input type="radio" id="pair" name="drone" value="7" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("7")} checked={ruleNumber.value === '7'}/>
+						<label for="pair" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("7") ? 'line-through' : 'none',
+						}}>pair</label>
+						<input type="radio" id="twoPairs" name="drone" value="8" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("8")} checked={ruleNumber.value === '8'}/>
+						<label for="twoPairs" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("8") ? 'line-through' : 'none',
+						}}>twoPairs</label>
 						<input
 							type="radio"
 							id="triptychon"
@@ -339,27 +372,42 @@ export default component$(
 							value="9"
 							onClick$={(e: any) => setRuleNumber(e)}
 							checked={ruleNumber.value === '9'}
+							disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("9")}
 						/>
-						<label for="triptychon">triptychon</label>
-						<input type="radio" id="fourOfAKind" name="drone" value="10" onClick$={(e: any) => setRuleNumber(e)} />
-						<label for="fourOfAKind">fourOfAKind</label>
-						<input type="radio" id="smallStraight" name="drone" value="11" onClick$={(e: any) => setRuleNumber(e)} />
-						<label for="smallStraight">smallStraight</label>
-						<input type="radio" id="largeStraight" name="drone" value="12" onClick$={(e: any) => setRuleNumber(e)} />
-						<label for="largeStraight">largeStraight</label>
-						<input type="radio" id="fullHouse" name="drone" value="13" onClick$={(e: any) => setRuleNumber(e)} />
-						<label for="fullHouse">fullHouse</label>
-						<input type="radio" id="yatzee" name="drone" value="14" onClick$={(e: any) => setRuleNumber(e)} />
-						<label for="yatzee">yatzee</label>
-						<input type="radio" id="chance" name="drone" value="15" onClick$={(e: any) => setRuleNumber(e)} />
-						<label for="chance">chance</label>
+						<label for="triptychon" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("9") ? 'line-through' : 'none',
+						}}>triptychon</label>
+						<input type="radio" id="fourOfAKind" name="drone" value="10" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("10")} checked={ruleNumber.value === '10'}/>
+						<label for="fourOfAKind" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("10") ? 'line-through' : 'none',
+						}}>fourOfAKind</label>
+						<input type="radio" id="smallStraight" name="drone" value="11" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("11")} checked={ruleNumber.value === '11'}/>
+						<label for="smallStraight" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("11") ? 'line-through' : 'none',
+						}}>smallStraight</label>
+						<input type="radio" id="largeStraight" name="drone" value="12" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("12")} checked={ruleNumber.value === '12'}/>
+						<label for="largeStraight" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("12") ? 'line-through' : 'none',
+						}}>largeStraight</label>
+						<input type="radio" id="fullHouse" name="drone" value="13" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("13")} checked={ruleNumber.value === '13'}/>
+						<label for="fullHouse" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("13") ? 'line-through' : 'none',
+						}}>fullHouse</label>
+						<input type="radio" id="yatzee" name="drone" value="14" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("14")} checked={ruleNumber.value === '14'}/>
+						<label for="yatzee" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("14") ? 'line-through' : 'none',
+						}}>yatzee</label>
+						<input type="radio" id="chance" name="drone" value="15" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("15")} checked={ruleNumber.value === '15'}/>
+						<label for="chance" style={{
+							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("15") ? 'line-through' : 'none',
+						}}>chance</label>
 					</form>
 				</fieldset>
 
 				<hr />
 
 				<div class="submit_container">
-					<button class="submit_button" onClick$={submit} disabled={roll.count === 0}>
+					<button class="submit_button" onClick$={submit} disabled={roll.count === 0 || ruleNumber.value === '0'}>
 						submit
 					</button>
 				</div>

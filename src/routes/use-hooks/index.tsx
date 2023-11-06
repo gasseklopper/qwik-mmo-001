@@ -13,9 +13,10 @@ export default component$(() => {
 			<div class="column">
 				<Yatzee
 					diceRoll={[0, 0, 0, 0, 0]}
+					ruleOptionsChoosed={["1","2"]}
 					roll={{ count: 0 }}
-					ruleNumber={{ value: '1' }}
-					game={{ index: 1, round: 1 }}
+					ruleNumber={{ value: '0' }}
+					game={{ index: 1, round: 3 }}
 					player={{ index: 1 }}
 					sumPoints={{ value: 0 }}
 					bottomPoints={{ value: 55 }}
