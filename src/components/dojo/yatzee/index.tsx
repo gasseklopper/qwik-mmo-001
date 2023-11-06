@@ -8,10 +8,12 @@ export default component$(
 		diceRoll: DiceRoll
 		roll: { count: number }
 		ruleNumber: { value: string }
-		game: { index: number,
-		round: number }
+		game: {
+			index: number,
+			round: number
+		}
 		sumPoints: { value: number }
-		topPoints: { value: number }  
+		topPoints: { value: number }
 		bottomPoints: { value: number }
 		topBonus: { value: boolean }
 		player: { index: number }
@@ -24,10 +26,9 @@ export default component$(
 		}
 	}) => {
 		const store: { dice: Dice[] } = useStore({ dice: props.diceRoll })
-		const roll: { count: number } = useStore({ count: props.roll.count })
-		const player: { index: number } = useStore({ index: props.player.index })
-		const { index, round } = props.game
-		const game: { index: number, round: number } = useStore({ index, round })
+		const roll: { count: number } = useStore({ ...props.roll})
+		const player: { index: number } = useStore({ ...props.player })
+		const game: { index: number, round: number } = useStore({ ...props.game })
 
 		const ruleNumber: { value: string } = useStore({
 			value: props.ruleNumber.value,
@@ -113,6 +114,12 @@ export default component$(
 			const equalsCheck = (a: any[], b: string | any[]) => a.every((v, i) => v === b[i])
 
 			if (roll.count >= 1 && roll.count <= 3) {
+				// Increment Round
+				if (game.round > 14) {
+					return
+				} else if (game.round < 14) {
+					game.round += 1
+				}
 				// Rule 1-6
 				// Ones, Twos, Threes, Fours, Fives, Sixes: The player scores the sum of the dice that reads one, two, three, four, five or six, respectively. For example, 1, 1, 2, 4, 4 placed on “fours” gives 8 points.
 				if (ruleNumber.value === '1') {
@@ -253,6 +260,7 @@ export default component$(
 				extractedDiceRollTable = [0, 0, 0, 0, 0, 0]
 				await reset()
 			}
+
 		})
 
 		return (

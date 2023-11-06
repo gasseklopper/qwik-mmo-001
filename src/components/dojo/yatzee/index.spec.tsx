@@ -21,6 +21,104 @@ import Yatzee from '.'
 // })
 
 describe('UI Test', function () {
+	it('should increment add points"3" at 14 round submit but not increment round', async () => {
+		// create the component's DOM and get back the container and a render method
+		const { screen, render, userEvent } = await createDOM()
+
+		// call the render method with the JSX node of our Counter component as a parameter
+		await render(
+			<Yatzee
+				diceRoll={[1, 1, 1, 5, 5]}
+				roll={{ count: 1 }}
+				ruleNumber={{ value: '1' }}
+				game={{
+					index: 1,
+					round: 14
+				}}
+				player={{ index: 1 }}
+				sumPoints={{ value: 55 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
+				keepDice={{
+					value1: false,
+					value2: false,
+					value3: false,
+					value4: false,
+					value5: false,
+				}}
+			/>
+		)
+
+		// get the div that displays the count from our container
+		const gameRound = screen.querySelector('.gameRound')
+		const countElement = screen.querySelector('.dice')
+		const rollCountElement = screen.querySelector('.countRoll')
+		const pointsValueElement = screen.querySelector('.pointsValue')
+
+		// expect before interaction of ui
+		expect(countElement?.textContent).toBe('1,1,1,5,5')
+		expect(gameRound?.textContent).toBe('14')
+		expect(rollCountElement?.textContent).toBe('1')
+		expect(pointsValueElement?.textContent).toBe('55')
+
+		await userEvent('.submit_button', 'click')
+
+		// assert the displayed count is now decremented by 1
+		expect(gameRound?.textContent).toBe('14')
+		expect(rollCountElement?.textContent).toBe('0')
+		expect(countElement?.textContent).toBe('0,0,0,0,0')
+		expect(pointsValueElement?.textContent).toBe('58')
+	})
+	it('should increment game.round by one', async () => {
+		// create the component's DOM and get back the container and a render method
+		const { screen, render, userEvent } = await createDOM()
+
+		// call the render method with the JSX node of our Counter component as a parameter
+		await render(
+			<Yatzee
+				diceRoll={[5, 5, 5, 5, 5]}
+				roll={{ count: 1 }}
+				ruleNumber={{ value: '1' }}
+				game={{
+					index: 1,
+					round: 1
+				}}
+				player={{ index: 1 }}
+				sumPoints={{ value: 55 }}
+				bottomPoints={{ value: 55 }}
+				topPoints={{ value: 55 }}
+				topBonus={{ value: false }}
+				keepDice={{
+					value1: false,
+					value2: false,
+					value3: false,
+					value4: false,
+					value5: false,
+				}}
+			/>
+		)
+
+		// get the div that displays the count from our container
+		const gameRound = screen.querySelector('.gameRound')
+		const countElement = screen.querySelector('.dice')
+		const rollCountElement = screen.querySelector('.countRoll')
+		const pointsValueElement = screen.querySelector('.pointsValue')
+
+		// expect before interaction of ui
+		expect(countElement?.textContent).toBe('5,5,5,5,5')
+		expect(gameRound?.textContent).toBe('1')
+		expect(rollCountElement?.textContent).toBe('1')
+		expect(pointsValueElement?.textContent).toBe('55')
+
+		await userEvent('.submit_button', 'click')
+
+		// assert the displayed count is now decremented by 1
+		expect(gameRound?.textContent).toBe('2')
+		expect(rollCountElement?.textContent).toBe('0')
+		expect(countElement?.textContent).toBe('0,0,0,0,0')
+		expect(pointsValueElement?.textContent).toBe('55')
+	})
 	it('should reset dice roll and show Round "1"', async () => {
 		// create the component's DOM and get back the container and a render method
 		const { screen, render, userEvent } = await createDOM()
