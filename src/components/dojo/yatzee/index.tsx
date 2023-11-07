@@ -3,7 +3,7 @@ import { CLIENT_RENEG_LIMIT } from 'tls'
 
 type Dice = 0 | 1 | 2 | 3 | 4 | 5 | 6
 type RuleOption = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13" | "14" | "15" | undefined
-type RuleOptionsChoosed = [RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, ]
+type RuleOptionsChoosed = [RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption?, RuleOption? ]
 type DiceRoll = [Dice, Dice, Dice, Dice, Dice]
 
 export default component$(
@@ -329,6 +329,7 @@ export default component$(
 							id="ones"
 							name="drone"
 							value="1"
+							class="test-rule-1"
 							onClick$={(e: any) => setRuleNumber(e)}
 							checked={ruleNumber.value === '1'}
 							disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("1")}
@@ -336,37 +337,38 @@ export default component$(
 						<label for="ones" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("1") ? 'line-through' : 'none',
 						}}>ones</label>
-						<input type="radio" id="twos" name="drone" value="2" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("2")} checked={ruleNumber.value === '2'} />
+						<input type="radio" class="test-rule-2" id="twos" name="drone" value="2" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("2")} checked={ruleNumber.value === '2'} />
 						<label for="twos" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("2") ? 'line-through' : 'none',
 						}}>twos</label>
-						<input type="radio" id="threes" name="drone" value="3" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("3")} checked={ruleNumber.value === '3'}/>
+						<input type="radio" class="test-rule-3" id="threes" name="drone" value="3" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("3")} checked={ruleNumber.value === '3'}/>
 						<label for="threes" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("3") ? 'line-through' : 'none',
 						}}>threes</label>
-						<input type="radio" id="fours" name="drone" value="4" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("4")} checked={ruleNumber.value === '4'}/>
+						<input type="radio" class="test-rule-4" id="fours" name="drone" value="4" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("4")} checked={ruleNumber.value === '4'}/>
 						<label for="fours" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("4") ? 'line-through' : 'none',
 						}}>fours</label>
-						<input type="radio" id="fives" name="drone" value="5" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("5")} checked={ruleNumber.value === '5'}/>
+						<input type="radio" class="test-rule-5" id="fives" name="drone" value="5" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("5")} checked={ruleNumber.value === '5'}/>
 						<label for="fives" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("5") ? 'line-through' : 'none',
 						}}>fives</label>
-						<input type="radio" id="sixes" name="drone" value="6" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("6")} checked={ruleNumber.value === '6'}/>
+						<input type="radio" class="test-rule-6" id="sixes" name="drone" value="6" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("6")} checked={ruleNumber.value === '6'}/>
 						<label for="sixes" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("6") ? 'line-through' : 'none',
 						}}>sixes</label>
 						<hr />
-						<input type="radio" id="pair" name="drone" value="7" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("7")} checked={ruleNumber.value === '7'}/>
+						<input type="radio" class="test-rule-7" id="pair" name="drone" value="7" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("7")} checked={ruleNumber.value === '7'}/>
 						<label for="pair" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("7") ? 'line-through' : 'none',
 						}}>pair</label>
-						<input type="radio" id="twoPairs" name="drone" value="8" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("8")} checked={ruleNumber.value === '8'}/>
+						<input type="radio" class="test-rule-8" id="twoPairs" name="drone" value="8" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("8")} checked={ruleNumber.value === '8'}/>
 						<label for="twoPairs" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("8") ? 'line-through' : 'none',
 						}}>twoPairs</label>
 						<input
 							type="radio"
+							class="test-rule-9"
 							id="triptychon"
 							name="drone"
 							value="9"
@@ -377,27 +379,27 @@ export default component$(
 						<label for="triptychon" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("9") ? 'line-through' : 'none',
 						}}>triptychon</label>
-						<input type="radio" id="fourOfAKind" name="drone" value="10" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("10")} checked={ruleNumber.value === '10'}/>
+						<input type="radio" class="test-rule-10" id="fourOfAKind" name="drone" value="10" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("10")} checked={ruleNumber.value === '10'}/>
 						<label for="fourOfAKind" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("10") ? 'line-through' : 'none',
 						}}>fourOfAKind</label>
-						<input type="radio" id="smallStraight" name="drone" value="11" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("11")} checked={ruleNumber.value === '11'}/>
+						<input type="radio" class="test-rule-11" id="smallStraight" name="drone" value="11" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("11")} checked={ruleNumber.value === '11'}/>
 						<label for="smallStraight" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("11") ? 'line-through' : 'none',
 						}}>smallStraight</label>
-						<input type="radio" id="largeStraight" name="drone" value="12" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("12")} checked={ruleNumber.value === '12'}/>
+						<input type="radio" class="test-rule-12" id="largeStraight" name="drone" value="12" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("12")} checked={ruleNumber.value === '12'}/>
 						<label for="largeStraight" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("12") ? 'line-through' : 'none',
 						}}>largeStraight</label>
-						<input type="radio" id="fullHouse" name="drone" value="13" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("13")} checked={ruleNumber.value === '13'}/>
+						<input type="radio" class="test-rule-13" id="fullHouse" name="drone" value="13" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("13")} checked={ruleNumber.value === '13'}/>
 						<label for="fullHouse" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("13") ? 'line-through' : 'none',
 						}}>fullHouse</label>
-						<input type="radio" id="yatzee" name="drone" value="14" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("14")} checked={ruleNumber.value === '14'}/>
+						<input type="radio" class="test-rule-14" id="yatzee" name="drone" value="14" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("14")} checked={ruleNumber.value === '14'}/>
 						<label for="yatzee" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("14") ? 'line-through' : 'none',
 						}}>yatzee</label>
-						<input type="radio" id="chance" name="drone" value="15" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("15")} checked={ruleNumber.value === '15'}/>
+						<input type="radio" class="test-rule-15" id="chance" name="drone" value="15" onClick$={(e: any) => setRuleNumber(e)} disabled={ruleOptionsChoosed.ruleOptionsChoosed.includes("15")} checked={ruleNumber.value === '15'}/>
 						<label for="chance" style={{
 							textDecoration: ruleOptionsChoosed.ruleOptionsChoosed.includes("15") ? 'line-through' : 'none',
 						}}>chance</label>
