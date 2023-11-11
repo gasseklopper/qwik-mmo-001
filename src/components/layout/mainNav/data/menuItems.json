@@ -22,5 +22,6 @@
 		"id": 8,
 		"showMenu": false
 	},
-	{ "href": "/link-list", "label": "link-list", "id": 9, "showMenu": false }
+	{ "href": "/link-list", "label": "link-list", "id": 9, "showMenu": false },
+	{ "href": "/theLiesOfChatGPT", "label": "theLiesOfChatGPT", "id": 10, "showMenu": false }
 ]

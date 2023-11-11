@@ -1,0 +1,509 @@
+@use '../../scss/00-vars/00-vars' as vars;
+
+
+
+.progress {
+	height: 311px;
+	width: 0%;
+	background-color: #fff;
+	position: fixed;
+	top: 0;
+	left: 0;
+	overflow: visible;
+	animation: progress 1s linear;
+}
+
+@keyframes progress {
+	to {
+		background-color: rgb(20, 255, 226);
+		width: 100%;
+	}
+}
+
+:root * {
+	/* Pause the animation */
+	animation-play-state: paused;
+	/* Bind the animation to scroll */
+	animation-delay: calc(var(--scroll) * -1s);
+	/* These last 2 properites clean up overshoot weirdness */
+	animation-iteration-count: 1;
+	animation-fill-mode: both;
+}
+
+#dot {
+	width: 200px;
+	height: 20px;
+	background-color: blue;
+	border-radius: 50%;
+	position: absolute;
+}
+
+.trail {
+	width: 20px;
+	height: 20px;
+	background-color: green;
+	border-radius: 50%;
+	position: absolute;
+	opacity: 0.5;
+}
+
+#rectangle {
+	width: 200px;
+	height: 20px;
+	background-color: #3498db;
+	position: absolute;
+	transform-origin: top left;
+	transition: transform 0.1s ease-out;
+}
+
+.rectangle {
+	width: 200px;
+	height: 20px;
+	background-color: #3498db;
+	position: absolute;
+	transform-origin: top left;
+	transition: transform 0.1s ease-out;
+}
+
+$abs: absolute;
+$rel: relative;
+$global-body: rgba(255, 193, 146, 1);
+$global-hair: rgba(2, 2, 2, 1);
+$global-outline: rgba(188, 140, 103, .9);
+
+@mixin vendorize($property, $value) {
+	#{$property}: $value;
+}
+
+%p-el {
+
+	&::before,
+	&::after {
+		content: "";
+		display: block;
+		position: $abs;
+	}
+}
+
+.wrap {
+	width: 600px;
+	height: 474px;
+	margin: 20px;
+	position: $rel;
+}
+
+.head {
+	width: 218px;
+	height: 215px;
+	background: $global-body;
+	position: $abs;
+	top: 22%;
+	left: 28.3%;
+	border-radius: 50% 10% /30% 15%;
+	@include vendorize(transform, rotate(13deg));
+}
+
+.nose {
+	width: 90px;
+	height: 48px;
+	background: linear-gradient(to bottom, rgba(239, 170, 143, 1) 0%, rgba(234, 139, 96, 1) 100%);
+	position: $abs;
+	box-shadow: -4px 0 12px rgba(231, 104, 110, .28);
+	top: 61.5%;
+	left: 53%;
+	z-index: 4000;
+	opacity: 1;
+	transform-origin: center left;
+	// @include vendorize(transform, rotate(-13deg));
+	border-radius: 25% 48% 60%;
+	animation: nose-grow 1s ease-out forwards;
+}
+
+@keyframes nose-grow {
+	to {
+		border-radius: 5% 15% 10% 20% / 30% 45% 55%;
+	}
+}
+
+%eyes {
+	position: $abs;
+	border-radius: 50%;
+	background: #f0f7f7;
+	z-index: 2000;
+	box-shadow: 0 -2px 4px rgba(0, 0, 0, .2);
+}
+
+.l-eye {
+	@extend %eyes;
+	width: 52px;
+	height: 113px;
+	top: 34%;
+	left: 45%;
+	@include vendorize(transform, rotate(-16deg));
+	@extend %p-el;
+
+	&::before {
+		width: 32px;
+		height: 44px;
+		background: #9fc1d0;
+		border-radius: 50% / 50% 40% 60%;
+		bottom: -1%;
+		right: 12%;
+		@include vendorize(transform, rotate(15deg));
+	}
+
+	&::after {
+		width: 20px;
+		height: 30px;
+		background: #05151b;
+		border-radius: 50% / 50% 40% 60%;
+		bottom: 0;
+		right: 18%;
+		@include vendorize(transform, rotate(20deg));
+	}
+
+}
+
+.r-eye {
+	@extend %eyes;
+	right: 3%;
+	top: 27%;
+	width: 32px;
+	height: 105px;
+	@include vendorize(transform, rotate(-3deg));
+	@extend %p-el;
+
+	&::before {
+		width: 26px;
+		height: 40px;
+		background: #9fc1d0;
+		border-radius: 50% / 50%;
+		bottom: -1%;
+		right: 10%;
+		@include vendorize(transform, rotate(5deg));
+	}
+
+	&::after {
+		width: 19px;
+		height: 28px;
+		background: #05151b;
+		border-radius: 50% 40% 50% / 50% 40% 50%;
+		bottom: -1%;
+		right: 21.5%;
+		@include vendorize(transform, rotate(-2deg));
+	}
+
+}
+
+%browse {
+	border-top: solid 4px $global-outline;
+	position: $abs;
+	width: 45px;
+	height: 50px;
+	top: -35%;
+	@extend %p-el;
+}
+
+.l-browse {
+	@extend %browse;
+	left: 5%;
+	border-radius: 60% 60% / 30% 70% 60%;
+	@include vendorize(transform, rotate(-40deg));
+
+	&::before {
+		top: -30%;
+		left: 35%;
+		width: 32px;
+		height: 35px;
+		border-top: solid 3px $global-outline;
+		@include vendorize(transform, rotate(10deg));
+		border-radius: 60% 60% / 30% 70% 60%;
+	}
+}
+
+.r-browse {
+	@extend %browse;
+	width: 40px;
+	right: -146%;
+	border-radius: 60% 60% / 50%;
+	@include vendorize(transform, rotate(22deg));
+}
+
+.mouth {
+	width: 32px;
+	height: 29px;
+	position: absolute;
+	top: 119%;
+	right: 14%;
+	z-index: 3000;
+	background: #2c0b05;
+	border-radius: 40% 50% 30% 60% / 40% 60%;
+	@include vendorize(transform, rotate(100deg));
+	@extend %p-el;
+
+	&::before {
+		width: 50px;
+		height: 27px;
+		background: inherit;
+		top: 0%;
+		left: -60%;
+		border-radius: 50% / 45% 60%;
+		@include vendorize(transform, rotate(20deg));
+	}
+
+	&::after {
+		width: 25px;
+		height: 18px;
+		left: 29.7%;
+		top: 25%;
+		background: #cc3e11;
+		border-radius: 50% 50% 30% / 48% 50%;
+		@include vendorize(transform, rotate(83deg));
+	}
+}
+
+.ear {
+	width: 58px;
+	height: 87px;
+	position: $abs;
+	bottom: -4%;
+	left: -14%;
+	background: $global-body;
+
+	border-radius: 50% 60% 60% / 60% 60% 50%;
+	@include vendorize(transform, rotate(-35deg));
+	border-bottom: none;
+	border-right: none;
+	box-shadow: 0 -2px 4px rgba(0, 0, 0, .2);
+	@extend %p-el;
+
+	&::before {
+		width: 46px;
+		height: 35px;
+		border-top: 3px solid $global-outline;
+		top: 14%;
+		left: -10%;
+		border-radius: 50% 60% / 50% 20%;
+		@include vendorize(transform, rotate(60deg));
+	}
+}
+
+.hat {
+	width: 320px;
+	height: 295px;
+	background: -webkit-radial-gradient(260px 210px, circle cover, rgba(210, 85, 3, 1) 0%, rgba(210, 85, 3, 1) 68%, rgba(34, 34, 34, 1) 68%, rgba(34, 34, 34, 1) 69%, rgba(59, 88, 106, 1) 69%, rgba(59, 88, 106, 1) 75%, rgba(34, 34, 34, 1) 75%, rgba(34, 34, 34, 1) 75.5%, rgba(210, 85, 3, 1) 75.5%, rgba(210, 85, 3, 1) 100%);
+	position: $rel;
+	top: 10px;
+	left: 12%;
+	border-radius: 35% 30% / 50% 30% 80%;
+	border-bottom: solid 70px $global-body;
+	box-sizing: border-box;
+	@include vendorize(transform, rotate(-8deg));
+	@extend %p-el;
+
+	&::before {
+		width: 286px;
+		height: 185px;
+		top: 49%;
+		left: -6%;
+		z-index: 100;
+		border-radius: 60% / 80% 50%;
+		border-left: solid 55px;
+		border-top: solid 30px;
+		border-color: #a64405;
+		@include vendorize(transform, rotate(-5deg));
+	}
+}
+
+.chin {
+	width: 108px;
+	height: 153px;
+	background: $global-body;
+	position: $abs;
+	bottom: -42%;
+	right: -5%;
+	border-radius: 85% 40% / 80% 50%;
+	@include vendorize(transform, rotate(20deg));
+	@extend %p-el;
+
+	&::before {
+		width: 162px;
+		height: 80px;
+		left: -99%;
+		bottom: 5%;
+		border-radius: 48%;
+		background: $global-body;
+		@include vendorize(transform, rotate(21deg));
+	}
+
+	&::after {
+		width: 74px;
+		height: 25px;
+		left: -30%;
+		top: 55%;
+		border-radius: 50%;
+		filter: blur(26px);
+		background: #e7686e;
+	}
+}
+
+.hair {
+	width: 300px;
+	position: $abs;
+	z-index: 3000;
+	top: 3%;
+	right: 24%;
+	width: 105px;
+	height: 90px;
+	border: 20px solid rgba(2, 2, 2, 1);
+	background: $global-hair;
+	border-radius: 50% 60% 5% 70%;
+	@include vendorize(transform, rotate(2deg));
+	@extend %p-el;
+
+	&::before,
+	&::after {
+		width: 90px;
+		height: 45px;
+		top: -14%;
+		right: -4%;
+		border-radius: 60% 60%;
+		z-index: 1000;
+		border-top: 5px solid rgba(255, 255, 255, .2);
+		@include vendorize(transform, rotate(12deg));
+	}
+
+	&::after {
+		border-color: $global-hair;
+		right: -24%;
+		top: -19%;
+		width: 110px;
+		height: 80px;
+		z-index: 100;
+		border-width: 10px;
+		@include vendorize(transform, rotate(20deg));
+	}
+
+}
+
+.l-hair {
+	position: $abs;
+	top: 6%;
+	left: -23%;
+	width: 135px;
+	height: 210px;
+	border-left: solid 52px $global-hair;
+	border-radius: 50% 40% / 50% 45%;
+	@include vendorize(transform, rotate(0deg));
+	@extend %p-el;
+
+	&::before {
+		width: 200px;
+		height: 170px;
+		top: -55.5%;
+		left: -12%;
+		border-top: solid 106px $global-hair;
+		border-radius: 78% 70% / 80% 0%;
+		@include vendorize(transform, rotate(9deg));
+	}
+
+	&::after {
+		width: 80px;
+		height: 90px;
+		bottom: 0;
+		left: -27.5%;
+		border-radius: 4% 45% / 48% 50%;
+		// border-left: solid 55px;
+		@include vendorize(transform, rotate(-26deg));
+	}
+}
+
+.feather {
+	position: $abs;
+	z-index: -1;
+	width: 110px;
+	height: 40px;
+	top: 3%;
+	left: 7%;
+	@extend %p-el;
+
+	&::before {
+		right: -3%;
+		width: 40px;
+		height: 25px;
+		border: 15px solid rgba(210, 67, 73, 1);
+		background: rgba(210, 67, 73, 1);
+		border-radius: 25px 60px 0 60px;
+		@include vendorize(transform, rotate(165deg));
+	}
+
+	&::after {
+		width: 50px;
+		height: 10px;
+		border-radius: 50%;
+		border-top: solid 3px #be3d43;
+		left: 44%;
+		top: 52%;
+		@include vendorize(transform, rotate(25deg));
+	}
+}
+
+.intro {
+	position: relative;
+
+	&__overlay {
+		position: absolute;
+		// z-index: 0;
+		background-color: var(--text1);
+		height: 800px;
+		width: 100%;
+		opacity: 1;
+	}
+
+	&__image_container {
+		width: 100%;
+		display: flex;
+		flex-direction: row;
+		justify-content: end;
+		background-color: var(--text1);
+		height: 800px;
+		overflow: hidden;
+	}
+
+	&__image_wrapper {
+		width: 100%;
+		opacity: .3;
+
+		// background-color: aqua;
+		@media (min-width: vars.$bpL) {
+			width: 70%;
+			opacity: 1;
+		}
+	}
+
+	&__image {
+		height: 1000px;
+		width: auto;
+	}
+
+	&__content {
+		color: var(--surface1);
+		position: absolute;
+		top: 30%;
+		left: 10%;
+	}
+
+	&__surname {
+		font-size: 120px;
+		-webkit-text-stroke: 1px var(--surface1);
+		color: transparent
+	}
+
+	&__name {
+		font-size: 120px;
+	}
+
+	&__description {
+		font-size: 30px;
+	}
+}
