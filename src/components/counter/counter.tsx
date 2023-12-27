@@ -1,15 +1,23 @@
 import { component$, useStore, $ } from '@builder.io/qwik'
 import Button from '../__libary/atoms/button/button'
+import ProductCard from '../__libary/atoms/productCard/productCard'
+import ProductImage from '../__libary/atoms/productCard/productImage'
+import ProductInfo from '../__libary/atoms/productCard/productInfo'
+import ProductButton from '../__libary/atoms/productCard/productButton'
+import ProductRating from '../__libary/atoms/productCard/productRating'
+import ProductPrice from '../__libary/atoms/productCard/productPrice'
+import ProductCategory from '../__libary/atoms/productCard/productCategory'
+import ProductTitle from '../__libary/atoms/productCard/productTitle'
+import ProductLabel from '../__libary/atoms/productCard/ProductLabel'
 
 const TestButtonDataMock = {
 	label: 'testtesttesttesttesttesttest',
 	variant: 'primary',
 	size: 'medium',
-	class: 'increment',
+	class: 'test',
 	onClick: $(() => {
 		console.log('test')
 	}),
-	number: 12331,
 }
 
 const IncrementButton = {
@@ -36,9 +44,22 @@ const ResetButton = {
 	number: 12331,
 }
 
+const ProductCardDataMock = {
+	title: 'title--testtesttesttesttesttesttest',
+	image: 'https://picsum.photos/seed/picsum/200/300',
+	stars: 333,
+	size: 'size--medium',
+	price: 'price--test',
+	label: 'label--test',
+	category: 'category--test',
+	buttonLabel: 'add to cart',
+	onClick: $(() => {
+		console.log('add to cart')
+	}),
+}
+
 export default component$(() => {
 	const store = useStore({ count: 0 })
-
 	const increment = $(() => {
 		store.count++
 	})
@@ -51,8 +72,27 @@ export default component$(() => {
 
 	return (
 		<div>
+			<ProductCard
+				image={<ProductImage src={ProductCardDataMock.image} />}
+				info={
+					<ProductInfo>
+						{<ProductRating rating={ProductCardDataMock.stars}></ProductRating>}
+						{<ProductPrice amount={ProductCardDataMock.price}></ProductPrice>}
+						{<ProductCategory>{ProductCardDataMock.category}</ProductCategory>}
+						{<ProductTitle>{ProductCardDataMock.title}</ProductTitle>}
+						{<ProductLabel>{ProductCardDataMock.label}</ProductLabel>}
+					</ProductInfo>
+				}
+				action={
+					<ProductButton onClick$={ProductCardDataMock.onClick}>
+						{ProductCardDataMock.buttonLabel}
+					</ProductButton>
+				}
+			>
+				<a href="">TEST</a>
+			</ProductCard>
 			<Button
-				size={TestButtonDataMock.number}
+				size={TestButtonDataMock.size}
 				class={TestButtonDataMock.class}
 				label={TestButtonDataMock.label}
 				onClick$={TestButtonDataMock.onClick}
