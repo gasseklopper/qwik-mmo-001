@@ -1,23 +1,27 @@
 import type { QwikIntrinsicElements } from '@builder.io/qwik'
-import { Slot, component$, useStyles$ } from '@builder.io/qwik'
+import {
+	Slot,
+	component$,
+	useSignal,
+	useStyles$,
+	useTask$,
+} from '@builder.io/qwik'
 import styles from './product-card.scss?inline'
-
-interface ProductRatingProps {
-	rating?: number
-}
+import { useProductCardContext } from './productCardContext'
 
 type ExtendedDivlement = QwikIntrinsicElements['div'] & {
 	'aria-label'?: string
 }
 
-export type ExtendedProductInfoProps = ExtendedDivlement & ProductRatingProps
+export type ExtendedProductRatingProps = ExtendedDivlement
 
-export default component$(({ ...props }: ExtendedProductInfoProps) => {
+export default component$(({ ...props }: ExtendedProductRatingProps) => {
 	useStyles$(styles)
+	const product = useProductCardContext()
 
 	return (
 		<div class="product-card__rating" {...props}>
-			{props.rating}
+			{product.stars}
 			<Slot />
 		</div>
 	)

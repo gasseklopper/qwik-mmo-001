@@ -1,25 +1,21 @@
-import type {
-	QwikIntrinsicElements,
-} from '@builder.io/qwik'
+import type { QwikIntrinsicElements } from '@builder.io/qwik'
 import { Slot, component$, useStyles$ } from '@builder.io/qwik'
 import styles from './product-card.scss?inline'
-
-interface ProductPriceProps {
-	amount: string
-}
+import { useProductCardContext } from './productCardContext'
 
 type ExtendedDivlement = QwikIntrinsicElements['div'] & {
 	'aria-label'?: string
 }
 
-export type ExtendedProductInfoProps = ExtendedDivlement & ProductPriceProps
+export type ExtendedProductPriceProps = ExtendedDivlement
 
-export default component$(({ ...props }: ExtendedProductInfoProps) => {
+export default component$(({ ...props }: ExtendedProductPriceProps) => {
 	useStyles$(styles)
+	const product = useProductCardContext()
 
 	return (
 		<div class="product-card__price" {...props}>
-			{props.amount}
+			{product.price}
 			<Slot />
 		</div>
 	)

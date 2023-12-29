@@ -45,21 +45,20 @@ const ResetButton = {
 }
 
 const ProductCardDataMock = {
+	id: 123,
 	title: 'title--testtesttesttesttesttesttest',
 	image: 'https://picsum.photos/seed/picsum/200/300',
-	stars: 333,
+	stars: 5,
 	size: 'size--medium',
 	price: 'price--test',
 	label: 'label--test',
 	category: 'category--test',
 	buttonLabel: 'add to cart',
-	onClick: $(() => {
-		console.log('add to cart')
-	}),
 }
 
 export default component$(() => {
 	const store = useStore({ count: 0 })
+
 	const increment = $(() => {
 		store.count++
 	})
@@ -70,26 +69,27 @@ export default component$(() => {
 		store.count = 0
 	})
 
+	const handleProductCardClick = $((label: string) => {
+		store.count = 777
+		console.log('test click', label)
+	})
+
 	return (
 		<div>
 			<ProductCard
-				image={<ProductImage src={ProductCardDataMock.image} />}
+				product={ProductCardDataMock}
+				image={<ProductImage />}
 				info={
 					<ProductInfo>
-						{<ProductRating rating={ProductCardDataMock.stars}></ProductRating>}
-						{<ProductPrice amount={ProductCardDataMock.price}></ProductPrice>}
-						{<ProductCategory>{ProductCardDataMock.category}</ProductCategory>}
-						{<ProductTitle>{ProductCardDataMock.title}</ProductTitle>}
-						{<ProductLabel>{ProductCardDataMock.label}</ProductLabel>}
+						{<ProductRating />}
+						{<ProductPrice />}
+						{<ProductCategory />}
+						{<ProductTitle />}
+						{<ProductLabel />}
 					</ProductInfo>
 				}
-				action={
-					<ProductButton onClick$={ProductCardDataMock.onClick}>
-						{ProductCardDataMock.buttonLabel}
-					</ProductButton>
-				}
+				action={<ProductButton onClick$={() => handleProductCardClick(ProductCardDataMock.label)} />}
 			>
-				<a href="">TEST</a>
 			</ProductCard>
 			<Button
 				size={TestButtonDataMock.size}
