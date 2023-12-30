@@ -32,7 +32,7 @@ export default component$(() => {
 	useVisibleTask$(() => {
 		globalStore.theme = getColorPreference()
 		return colorSchemeChangeListener((isDark) => {
-			globalStore.theme = isDark ? 'dark' : 'lights2'
+			globalStore.theme = isDark ? 'dark' : 'miami'
 			setPreference(globalStore.theme)
 		})
 	})
