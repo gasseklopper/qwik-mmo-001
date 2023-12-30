@@ -50,9 +50,10 @@ const ProductCardDataMock = {
 	image: 'https://picsum.photos/seed/picsum/200/300',
 	stars: 5,
 	size: 'size--medium',
-	price: 'price--test',
+	price: 22234,
+	currency: "AUD",
 	label: 'label--test',
-	category: 'category--test',
+	category: ['category--test1','category--test2','category--test3'],
 	buttonLabel: 'add to cart',
 }
 
@@ -76,21 +77,31 @@ export default component$(() => {
 
 	return (
 		<div>
+			<div>testtesttesttesttesttesttest</div>
+			<div>testtesttesttesttesttesttest</div>
+			<div>testtesttesttesttesttesttest</div>
+			<div>testtesttesttesttesttesttest</div>
+			<div>testtesttesttesttesttesttest</div>
+			<div>testtesttesttesttesttesttest</div>
+
 			<ProductCard
 				product={ProductCardDataMock}
 				image={<ProductImage />}
 				info={
 					<ProductInfo>
 						{<ProductRating />}
-						{<ProductPrice />}
+						{<ProductPrice currency={ProductCardDataMock.currency} />}
 						{<ProductCategory />}
 						{<ProductTitle />}
 						{<ProductLabel />}
 					</ProductInfo>
 				}
-				action={<ProductButton onClick$={() => handleProductCardClick(ProductCardDataMock.label)} />}
-			>
-			</ProductCard>
+				action={
+					<ProductButton
+						onClick$={() => handleProductCardClick(ProductCardDataMock.label)}
+					/>
+				}
+			></ProductCard>
 			<Button
 				size={TestButtonDataMock.size}
 				class={TestButtonDataMock.class}

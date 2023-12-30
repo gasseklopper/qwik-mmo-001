@@ -5,21 +5,10 @@
 @use 'shemes/light-sheme';
 @use 'shemes/dim-sheme';
 @use 'shemes/sim-sheme';
+@use 'shemes/miami-sheme';
 @use 'shemes/lights2-sheme';
 
 * {
-	/* brand foundation */
-	--brand-hue: 342;
-	// --brand-hue: 272;
-	--brand-saturation: 80%;
-	--brand-lightness: 50%;
-	--surface12: red;
-
-	--primary-hue: 238;
-	--secondary-hue: 270;
-	--tertiary-hue: 13;
-	--quaternary-hue: 356;
-
 	@include dark-sheme.dark-sheme-definition;
 	@include light-sheme.light-sheme-definition;
 	@include dim-sheme.dim-sheme-definition;
@@ -49,6 +38,11 @@
 [data-theme='sim'] {
 	color-scheme: sim;
 	@include sim-sheme.sim-sheme;
+}
+
+[data-theme='miami'] {
+	color-scheme: miami;
+	@include miami-sheme.miami-sheme;
 }
 
 [data-theme='default'] {

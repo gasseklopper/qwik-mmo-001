@@ -4,9 +4,9 @@ export type TProduct = {
 	id: number
 	image: string
 	title: string
-	category: string
+	category: String[]
 	stars: number
-	price: string
+	price: number
 	size: string
 	label: string
 	buttonLabel: string

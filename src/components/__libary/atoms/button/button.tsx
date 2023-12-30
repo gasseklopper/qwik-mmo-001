@@ -2,9 +2,9 @@ import type { QRL, QwikIntrinsicElements } from '@builder.io/qwik'
 import { Slot, component$, useStyles$ } from '@builder.io/qwik'
 import styles from './button.scss?inline'
 
-export interface ButtonProps {
+interface ButtonProps {
 	label?: string
-	size?: number
+	size?: string
 	variant?: string
 }
 
@@ -13,13 +13,15 @@ type ExtendedButtonElement = QwikIntrinsicElements['button'] & {
 	'onClick$'?: QRL<() => void> 
 }
 
-type ExtendedButtonProps = ExtendedButtonElement & ButtonProps
+export type ExtendedButtonProps = ExtendedButtonElement & ButtonProps
 
 export default component$(
 	({ ...props }: ExtendedButtonProps) => {
 		useStyles$(styles)
+
 		return (
-			<button {...props}>
+			<button {...props} class={`${props.size} ${props.variant}`}>
+				{props.label}
 				<Slot />
 			</button>
 		)

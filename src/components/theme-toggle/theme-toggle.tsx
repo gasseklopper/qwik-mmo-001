@@ -4,7 +4,7 @@ import themeToggle from './theme-toggle.css?inline'
 import { GlobalStore } from '../../globalContext'
 import Button from '../__libary/atoms/button/button'
 
-export type ThemePreference = 'dark' | 'lights2'
+export type ThemePreference = 'dark' | 'miami'
 
 export const colorSchemeChangeListener = (
 	onColorSchemeChange: (isDark: boolean) => void
@@ -37,7 +37,7 @@ export const getColorPreference = (): ThemePreference => {
 	} else {
 		return window.matchMedia('(prefers-color-scheme: dark)').matches
 			? 'dark'
-			: 'lights2'
+			: 'miami'
 	}
 }
 
@@ -46,17 +46,18 @@ export const ThemeToggle = component$(() => {
 	const state = useContext(GlobalStore)
 
 	const onClick$ = $(() => {
-		state.theme = state.theme === 'lights2' ? 'dark' : 'lights2'
+		state.theme = state.theme === 'miami' ? 'dark' : 'miami'
 		setPreference(state.theme)
 	})
 
 	return (
 		<div class="theme-toggle-container">
 			<Button
-				label={`${state.theme === 'lights2' ? 'Dark' : 'Light'} mode`}
+				label={`${state.theme === 'miami' ? 'Dark' : 'Miami'} mode`}
 				variant={state.theme}
 				size="small"
 				onClick$={onClick$}
+				aria-label='test'
 			/>
 		</div>
 	)

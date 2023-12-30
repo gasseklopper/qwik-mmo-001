@@ -13,7 +13,6 @@ import {
 import styles from './product-card.scss?inline'
 import ProductCardContext from './productCardContext'
 import type { TProduct } from './productCardTypes'
-import productImage from './productImage'
 
 type ProductCardProps = {
 	product: TProduct

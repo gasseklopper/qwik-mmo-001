@@ -21,7 +21,7 @@ export default component$(({ ...props }: ExtendedProductRatingProps) => {
 
 	return (
 		<div class="product-card__rating" {...props}>
-			{product.stars}
+			{product.stars > 0 && product.stars < 6 ? '*'.repeat(product.stars): <>0</>}
 			<Slot />
 		</div>
 	)

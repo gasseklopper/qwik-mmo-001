@@ -14,9 +14,17 @@ export default component$(({ ...props }: ExtendedProductCategoryProps) => {
 	const product = useProductCardContext()
 
 	return (
-		<div class="product-card__category" {...props}>
-			{product.category}
-			<Slot />
-		</div>
+		<>
+			<div class="product-card__category" {...props}>
+				{product.category.length && (
+					<ul>
+						{product.category.map((item: any, index: number) => (
+							<li key={index}>{item}</li>
+						))}
+					</ul>
+				)}
+				<Slot />
+			</div>
+		</>
 	)
 })

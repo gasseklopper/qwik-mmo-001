@@ -1,4 +1,22 @@
 .product-card {
-    background-color: var(--surface4);
-    color: var(--text1);
+	background-color: var(--surface4);
+	color: var(--text1);
+
+	&__category {
+        li {
+            padding: 5px 10px;
+            margin: 5px;
+            border-radius: 8px;
+            display: inline-block;
+            background-color: var(--text2);
+            color: var(--surface1);
+            font-weight: 700;
+            
+            &:hover {
+                background-color: var(--text1);
+            }
+        }
+
+		
+	}
 }
