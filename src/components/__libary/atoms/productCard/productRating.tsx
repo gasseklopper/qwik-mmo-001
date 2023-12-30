@@ -2,9 +2,7 @@ import type { QwikIntrinsicElements } from '@builder.io/qwik'
 import {
 	Slot,
 	component$,
-	useSignal,
 	useStyles$,
-	useTask$,
 } from '@builder.io/qwik'
 import styles from './product-card.scss?inline'
 import { useProductCardContext } from './productCardContext'

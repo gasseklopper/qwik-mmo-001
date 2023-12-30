@@ -1,5 +1,3 @@
-import { QRL } from "@builder.io/qwik"
-
 export type TProduct = {
 	id: number
 	image: string
