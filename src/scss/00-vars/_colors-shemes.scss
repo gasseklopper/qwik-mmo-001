@@ -14,26 +14,8 @@
 	@include dim-sheme.dim-sheme-definition;
 	@include sim-sheme.sim-sheme-definition;
 	@include lights2-sheme.lights2-sheme-definition;
+	@include miami-sheme.miami-sheme-definition;
 }
-
-// :root {
-// 	color-scheme: dark;
-// 	@include dark-sheme.dark-sheme;
-// }
-
-// @media (prefers-color-scheme: dark) {
-// 	:root {
-// 		color-scheme: dark;
-// 		@include dark-sheme.dark-sheme;
-// 	}
-// }
-
-// @media (prefers-color-scheme: light) {
-// 	:root {
-// 		color-scheme: light;
-// 		@include light-sheme.light-sheme;
-// 	}
-// }
 
 [data-theme='sim'] {
 	color-scheme: sim;
@@ -97,18 +79,24 @@
 
 .primary {
 	background-color: var(--primary);
+	@include color-contrast.text-contrast(var(--primary));
 }
 
 .secondary {
 	background-color: var(--secondary);
+	@include color-contrast.text-contrast(var(--secondary));
 }
 
 .tertiary {
 	background-color: var(--tertiary);
+	@include color-contrast.text-contrast(var(--tertiary));
+
 }
 
 .quaternary {
 	background-color: var(--quaternary);
+	@include color-contrast.text-contrast(var(--quaternary));
+
 }
 
 .surface1 {

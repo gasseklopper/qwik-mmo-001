@@ -1,8 +1,8 @@
 * {
-	// brand foundation 
-	--brand-hue: 53;
-	--brand-saturation: 55%;
-	--brand-lightness: 86%;
+	// brand foundation
+	--brand-hue: 21;
+	--brand-saturation: 100%;
+	--brand-lightness: 85%;
 
 	--primary-hue: 238;
 	--secondary-hue: 270;
@@ -19,18 +19,34 @@
 	--text2-light: hsl(var(--brand-hue) var(--brand-saturation) 20%);
 	--text3-light: hsl(var(--brand-hue) 100% 50%);
 	--text4-light: hsl(var(--brand-hue) 100% 89%);
-	--primary-light: hsl(var(--primary-hue) 20% 25%);
-	--secondary-light: hsl(var(--secondary-hue) 7% 36%);
-	--tertiary-light: hsl(var(--tertiary-hue) 18% 52%);
-	--quaternary-light: hsl(var(--quaternary-hue) 8% 58%);
-	--surface1-light: hsl(var(--brand-hue) 100% 50%);
-	--surface2-light: hsl(var(--brand-hue) 100% 45%);
-	--surface3-light: hsl(var(--brand-hue) 100% 40%);
-	--surface4-light: hsl(var(--brand-hue) 100% 35%);
-	--surface5-light: hsl(var(--brand-hue) 80% 25%);
-	--surface6-light: hsl(var(--brand-hue) 80% 22%);
-	--surface7-light: hsl(var(--brand-hue) 100% 20%);
-	--surface8-light: hsl(calc(var(--brand-hue) - 55) 40% 15%);
+	--primary-light: hsl(263.08, 5.88%, 43.33%);
+	--secondary-light: hsl(182.14, 82.35%, 93.33%);
+	--tertiary-light: hsl(184.12, 67.88%, 62.16%);
+	--quaternary-light: hsl(202.02, 56.48%, 37.84%);
+	--surface1-light: hsl(
+		var(--brand-hue) 100% calc(var(--brand-lightness) - 5%)
+	);
+	--surface2-light: hsl(
+		var(--brand-hue) 100% calc(var(--brand-lightness) - 10%)
+	);
+	--surface3-light: hsl(
+		var(--brand-hue) 100% calc(var(--brand-lightness) - 15%)
+	);
+	--surface4-light: hsl(
+		var(--brand-hue) 100% calc(var(--brand-lightness) - 20%)
+	);
+	--surface5-light: hsl(
+		var(--brand-hue) 100% calc(var(--brand-lightness) - 26%)
+	);
+	--surface6-light:  hsl(
+		var(--brand-hue) 100% calc(var(--brand-lightness) - 60%)
+	);
+	--surface7-light:  hsl(
+		var(--brand-hue) 100% calc(var(--brand-lightness) - 70%)
+	);
+	--surface8-light:  hsl(
+		var(--brand-hue) 100% calc(var(--brand-lightness) - 75%)
+	);
 	--surface-shadow-light: var(--brand-hue) 10% 20%;
 	--shadow-strength-light: 0.02;
 }
