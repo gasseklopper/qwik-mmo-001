@@ -1,4 +1,3 @@
-import ImgTemplateIndex016 from '~/media/assets/images/photography/black/Template_index_016.jpg?jsx'
 import {
 	component$,
 	useStyles$,
@@ -90,7 +89,7 @@ function useMousePositionForRotate() {
 			mousePosition.rotation = angle * (180 / Math.PI);
 
 			// Adjust the size of the rectangle based on the distance
-			const maxSize = Math.sqrt(window.innerWidth * window.innerWidth + window.innerHeight * window.innerHeight);
+			// const maxSize = Math.sqrt(window.innerWidth * window.innerWidth + window.innerHeight * window.innerHeight);
 			mousePosition.sizeFactorW = (distance / 100) * 100; // Adjust this factor based on your preference
 		})
 	);

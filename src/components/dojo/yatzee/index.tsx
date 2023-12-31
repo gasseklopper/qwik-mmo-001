@@ -1,5 +1,4 @@
-import { component$, useStore, $, useSignal, useComputed$ } from '@builder.io/qwik'
-import { CLIENT_RENEG_LIMIT } from 'tls'
+import { component$, useStore, $} from '@builder.io/qwik'
 
 type Dice = 0 | 1 | 2 | 3 | 4 | 5 | 6
 type RuleOption = "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "10" | "11" | "12" | "13" | "14" | "15" | undefined
@@ -33,6 +32,7 @@ export default component$(
 		const roll: { count: number } = useStore({ ...props.roll})
 		const player: { index: number } = useStore({ ...props.player })
 		const game: { index: number, round: number } = useStore({ ...props.game })
+		// eslint-disable-next-line prefer-const
 		let ruleOptionsChoosed: { ruleOptionsChoosed:RuleOptionsChoosed } = useStore({ ruleOptionsChoosed: props.ruleOptionsChoosed })
 
 		const ruleNumber: { value:RuleOption } = useStore({
