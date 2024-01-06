@@ -1,0 +1,9 @@
+@use './../00-vars/00-vars' as vars;
+
+// Definition -------------------------------------------------------------- //
+dl dt {
+    // background-color: aqua;
+    display: block;
+    font: vars.$fontStackBarlowBold;
+    margin: 0px 0px 1rem;
+}

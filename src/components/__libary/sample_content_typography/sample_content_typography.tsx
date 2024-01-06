@@ -1,92 +1,238 @@
 import { component$ } from '@builder.io/qwik'
+import Headlines from '../atoms/headlines/headlines'
+import Bodytext from '../atoms/bodytext/bodytext'
 
 export default component$(() => {
 	return (
 		<section>
+			{/* Typography */}
 			<div class="row">
-				<div class="column huge-12 primary ">
-					<p>
+				{/* ELEMENTS REFERENCE */}
+				<div class="column huge-12 surface2 ">
+					<Headlines componentTag={'h1'} class={'h1'} weight="bold">
+						ELEMENTS REFERENCE
+					</Headlines>
+					<hr />
+				</div>
+				{/* BODYTEXT */}
+				<div class="column huge-12 surface2 ">
+					<Headlines componentTag={'h2'} class={'h2'}>
+						BODYTEXT
+					</Headlines>
+					<Bodytext size="large">
 						This is <b>bold</b> and this is <strong>strong</strong>. This is
 						<i>italic</i> and this is <em>emphasized</em>. This is
 						<sup>superscript</sup> text and this is <sub>subscript</sub> text.
-						This is <u>underlined</u> and this is code:{' '}
-						<code>for (;;) (id)</code>. Finally, this is a <a href="#">link</a>.
-					</p>
+						This is <u>underlined</u> and this is code:
+						<code>for (;;) for (;;) </code>. Finally, this is a{' '}
+						<a href="#">link</a>.
+					</Bodytext>
 					<hr />
 				</div>
-				<div class="column huge-12 primary ">
-					<h1>Heading Level l</h1>
-					<h2>Heading Level 2</h2>
-					<h3>Heading Level 3</h3>
-					<h4>Heading Level 4</h4>
-					<h5>Heading Level 5</h5>
-					<h6>Heading Level 6</h6>
+				{/* Heading regular */}
+				<div class="column large-6 surface2 ">
+					<Headlines componentTag={'h2'} class={'h2 surface8'}>
+						font-weight: regular
+					</Headlines>
+					<Headlines componentTag={'h2'} class={'h1'}>
+						Heading Level l
+					</Headlines>
+					<Headlines componentTag={'h2'} class={'h2'}>
+						Heading Level 2
+					</Headlines>
+					<Headlines componentTag={'h3'} class={'h3'}>
+						Heading Level 3
+					</Headlines>
+					<Headlines componentTag={'h4'} class={'h4'}>
+						Heading Level 4
+					</Headlines>
+					<Headlines componentTag={'h5'} class={'h5'}>
+						Heading Level 5
+					</Headlines>
+					<Headlines componentTag={'h6'} class={'h6'}>
+						Heading Level 6
+					</Headlines>
+				</div>
+				{/* Heading bold */}
+				<div class="column large-6 surface8 ">
+					<Headlines componentTag={'h2'} class={'h2 surface2'} weight="bold">
+						font-weight: bold
+					</Headlines>
+					<Headlines componentTag={'h2'} class={'h1'} weight="bold">
+						Heading Level l
+					</Headlines>
+					<Headlines componentTag={'h2'} class={'h2'} weight="bold">
+						Heading Level 2
+					</Headlines>
+					<Headlines componentTag={'h3'} class={'h3'} weight="bold">
+						Heading Level 3
+					</Headlines>
+					<Headlines componentTag={'h4'} class={'h4'} weight="bold">
+						Heading Level 4
+					</Headlines>
+					<Headlines componentTag={'h5'} class={'h5'} weight="bold">
+						Heading Level 5
+					</Headlines>
+					<Headlines componentTag={'h6'} class={'h6'} weight="bold">
+						Heading Level 6
+					</Headlines>
+				</div>
+				{/* header molecule */}
+				<div class="column huge-12 surface8 ">
+					<div class="row">
+						<div class="column large-6 surface8 ">
+							{/* // TODO:: Create header molecule */}
+							<header>
+								<Bodytext
+									class={'quaternary text-secondary'}
+									size="medium"
+									variant="eyebrow"
+								>
+									Lorem ipsum dolor sit amet nullam id egestas urna aliquam
+								</Bodytext>
+								<Headlines
+									componentTag={'h2'}
+									class={'h1 surface4'}
+									variant="browLine"
+								>
+									Heading with a Subtitle h1
+								</Headlines>
+								<Bodytext size="xlarge" variant="subline">
+									<b>
+										Lorem ipsum dolor sit amet nullam id egestas urna aliquam
+									</b>
+								</Bodytext>
+							</header>
+							<Bodytext size="large">
+								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
+								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
+								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor
+								sit amet nullam id egestas urna aliquam
+							</Bodytext>
+						</div>
+						<div class="column large-6 surface2 ">
+							{/* // TODO:: Create header molecule */}
+							<header>
+								<Bodytext size="small" variant="eyebrow">
+									Heading with a Eyebrow h1
+								</Bodytext>
+								<Headlines variant="browLine">
+									Heading with a Subtitle & Eyebrow h2
+								</Headlines>
+								<Bodytext size="xlarge" variant="subline">
+									Lorem ipsum dolor sit amet nullam id egestas urna aliquam
+								</Bodytext>
+							</header>
+							<Bodytext size="medium">
+								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
+								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
+								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor
+								sit amet nullam id egestas urna aliquam
+							</Bodytext>
+						</div>
+						<div class="column large-6 surface4 ">
+							{/* // TODO:: Create header molecule */}
+							<header>
+								<Bodytext
+									size="small"
+									variant="eyebrow"
+									class={'secondary text-quaternary'}
+								>
+									<b>
+										Lorem ipsum dolor sit amet nullam id egestas urna aliquam
+									</b>
+								</Bodytext>
+								<Headlines
+									componentTag={'h3'}
+									class={'h3'}
+									weight="bold"
+									variant="browLine"
+								>
+									Heading with a Subtitle h3
+								</Headlines>
+								<Bodytext size="large" variant="subline">
+									<b>
+										Lorem ipsum dolor sit amet nullam id egestas urna aliquam
+									</b>
+								</Bodytext>
+							</header>
+							<Bodytext size="medium">
+								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
+								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
+								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor
+								sit amet nullam id egestas urna aliquam
+							</Bodytext>
+						</div>
+						<div class="column large-6 surface6 ">
+							{/* // TODO:: Create header molecule */}
+							<header>
+								<Headlines componentTag={'h4'} variant="subline">
+									Heading with a Subtitle h4
+								</Headlines>
+								<Bodytext size="large" variant="subline">
+									Lorem ipsum dolor sit amet nullam id egestas urna aliquam
+								</Bodytext>
+							</header>
+							<Bodytext size="small">
+								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
+								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
+								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor
+								sit amet nullam id egestas urna aliquam
+							</Bodytext>
+							<hr />
+						</div>
+					</div>
+				</div>
+				{/* BODYTEXT */}
+				<div class="column huge-12 surface8 ">
+					<Bodytext size="large">
+						Lorem ipsum dolor sit amet nullam id egestas urna aliquam
+					</Bodytext>
 					<hr />
 				</div>
-				<div class="column huge-12 primary ">
-					<header>
-						<h1>Heading with a Subtitle h1</h1>
-						<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-					</header>
-				</div>
-				<div class="column huge-12 primary ">
-					<header>
-						<h2>Heading with a Subtitle h2</h2>
-						<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-					</header>
-				</div>
-				<div class="column huge-12 primary ">
-					<header>
-						<h3>Heading with a Subtitle h3</h3>
-						<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-					</header>
-				</div>
-				<div class="column huge-12 primary ">
-					<header>
-						<h4>Heading with a Subtitle h4</h4>
-						<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-					</header>
-					<hr />
-				</div>
-				<div class="column huge-12 primary ">
-					<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-					<hr />
-				</div>
-				<div class="column huge-12 primary ">
+			</div>
+			{/* Definition */}
+			<div class="row">
+				<div class="column huge-12 surface2 ">
 					<h3>Definition</h3>
 					<dl>
 						<dt>Item 1</dt>
 						<dd>
-							<p>
-								Lorem ipsum dolor vestibulum ante ipsum primis in faucibus
-								vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
-								adipiscing accumsan eu faucibus. Integer ac pellentesque
-								praesent.
-							</p>
+							<Bodytext size="medium">
+								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
+								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
+								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor
+								sit amet nullam id egestas urna aliquam
+							</Bodytext>
 						</dd>
 						<dt>Item 2</dt>
 						<dd>
-							<p>
-								Lorem ipsum dolor vestibulum ante ipsum primis in faucibus
-								vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
-								adipiscing accumsan eu faucibus. Integer ac pellentesque
-								praesent.
-							</p>
+							<Bodytext size="medium">
+								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
+								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
+								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor
+								sit amet nullam id egestas urna aliquam
+							</Bodytext>
 						</dd>
 						<dt>Item 3</dt>
 						<dd>
-							<p>
-								Lorem ipsum dolor vestibulum ante ipsum primis in faucibus
-								vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
-								adipiscing accumsan eu faucibus. Integer ac pellentesque
-								praesent.
-							</p>
+							<Bodytext size="medium">
+								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
+								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
+								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor
+								sit amet nullam id egestas urna aliquam
+							</Bodytext>
 						</dd>
 					</dl>
 					<hr />
 				</div>
-				<div class="column huge-12 primary ">
+			</div>
+			{/* Lists */}
+			<div class="row">
+				<div class="column huge-12 surface8">
 					<h2>Lists</h2>
+				</div>
+				<div class="column large-6 surface6 text1">
 					<h3>Unordered</h3>
 					<ul>
 						<li>Dolor pulvinar etiam.</li>
@@ -94,7 +240,8 @@ export default component$(() => {
 						<li>Felis feugiat dolore viverra.</li>
 						<li>Dolor pulvinar etiam.</li>
 					</ul>
-
+				</div>
+				<div class="column large-6 surface5">
 					<h3>Alternate</h3>
 					<ul class="alt">
 						<li>Dolor pulvinar etiam etiam.</li>
@@ -103,7 +250,7 @@ export default component$(() => {
 						<li>Dolor pulvinar etiam etiam.</li>
 					</ul>
 				</div>
-				<div class="column huge-12 primary ">
+				<div class="column large-6 surface4">
 					<h3>Ordered</h3>
 					<ol>
 						<li>Dolor pulvinar etiam.</li>
@@ -112,8 +259,10 @@ export default component$(() => {
 						<li>Etiam vel felis nullam.</li>
 						<li>Felis enim et tempus.</li>
 					</ol>
-
+				</div>
+				<div class="column large-6 surface3">
 					<h3>Icons</h3>
+					{/* TODO: CREATE ICON COMPONENTE */}
 					<ul class="icons">
 						<li>
 							<a href="#" class="icon brands fa-twitter">
@@ -169,6 +318,9 @@ export default component$(() => {
 						</li>
 					</ul>
 				</div>
+			</div>
+			{/* Actions */}
+			<div class="row">
 				<div class="column huge-12 primary ">
 					<h3>Actions</h3>
 					<h4>Combo</h4>
@@ -183,7 +335,10 @@ export default component$(() => {
 					<button>default small</button>
 					<hr />
 				</div>
-				<div class="column huge-12 primary ">
+			</div>
+			{/* BLOCKQUOTE */}
+			<div class="row">
+				<div class="column large-6 surface1 ">
 					<h3>BLOCKQUOTE</h3>
 					<blockquote>
 						Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
@@ -192,8 +347,43 @@ export default component$(() => {
 						adipiscing accumsan faucibus. Vestibulum ante ipsum primis in
 						faucibus vestibulum. Blandit adipiscing eu felis.
 					</blockquote>
-					<hr />
 				</div>
+				{/* BLOCKQUOTE */}
+				<div class="column large-6 surface4 ">
+					<h3>BLOCKQUOTE</h3>
+					<blockquote>
+						Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
+						sagittis eget tempus euismod. Vestibulum ante ipsum primis in
+						faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
+						adipiscing accumsan faucibus. Vestibulum ante ipsum primis in
+						faucibus vestibulum. Blandit adipiscing eu felis.
+					</blockquote>
+				</div>
+				{/* BLOCKQUOTE */}
+				<div class="column large-6 surface6 ">
+					<h3>BLOCKQUOTE</h3>
+					<blockquote>
+						Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
+						sagittis eget tempus euismod. Vestibulum ante ipsum primis in
+						faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
+						adipiscing accumsan faucibus. Vestibulum ante ipsum primis in
+						faucibus vestibulum. Blandit adipiscing eu felis.
+					</blockquote>
+				</div>
+				{/* BLOCKQUOTE */}
+				<div class="column large-6 surface8 ">
+					<h3>BLOCKQUOTE</h3>
+					<blockquote>
+						Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
+						sagittis eget tempus euismod. Vestibulum ante ipsum primis in
+						faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
+						adipiscing accumsan faucibus. Vestibulum ante ipsum primis in
+						faucibus vestibulum. Blandit adipiscing eu felis.
+					</blockquote>
+				</div>
+			</div>
+
+			<div class="row">
 				<div class="column huge-12 primary ">
 					<h3>TABLE</h3>
 					<h4>DEFAULT</h4>

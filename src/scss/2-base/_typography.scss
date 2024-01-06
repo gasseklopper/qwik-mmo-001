@@ -15,12 +15,35 @@ h6,
 .h5,
 .h6 {
 	margin: 0;
+	font: vars.$fontStackBerlingoRegular;
+
+	&.subline {
+		margin: math.div(vars.$gutter, 0.8) 0 math.div(vars.$gutter, 6.8) 0;
+	}
+
+	&.eyebrow {
+		margin: math.div(vars.$gutter, 6.8) 0 math.div(vars.$gutter, 0.8) 0;
+	}
+
+	&.browLine {
+		margin: math.div(vars.$gutter, 6.8) 0 math.div(vars.$gutter, 6.8) 0;
+	}
 	// text-rendering: optimizeLegibility;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+	&--bold {
+		font: vars.$fontStackBarlowBold;
+	}
 }
 
 h1,
 .h1 {
-	font: vars.$fontStackBarlowBold;
 	font-size: 3.5rem;
 	line-height: 3.25rem;
 	margin: 0;
@@ -29,7 +52,6 @@ h1,
 
 h2,
 .h2 {
-	font: vars.$fontStackBarlowBold;
 	font-size: 2rem;
 	line-height: 2.25rem;
 	margin: math.div(vars.$gutter, 1.4) 0;
@@ -37,7 +59,6 @@ h2,
 
 h3,
 .h3 {
-	font: vars.$fontStackBerlingoRegular;
 	font-size: 1.775rem;
 	line-height: 2rem;
 	margin: math.div(vars.$gutter, 0.8) 0 math.div(vars.$gutter, 2.8) 0;
@@ -45,14 +66,12 @@ h3,
 
 h4,
 .h4 {
-	font: vars.$fontStackBarlowBold;
 	font-size: 1.225rem;
 	margin: math.div(vars.$gutter, 1.4) 0;
 }
 
 h5,
 .h5 {
-	font: vars.$fontStackBarlowBold;
 	font-size: 1rem;
 	letter-spacing: 0.1rem;
 	margin: math.div(vars.$gutter, 1.4) 0;
@@ -60,12 +79,12 @@ h5,
 
 h6,
 .h6 {
-	font: vars.$fontStackBarlowBold;
 	font-size: 0.875rem;
 	margin: math.div(vars.$gutter, 1.4) 0;
 }
 
 // Text -------------------------------------------------------------- //
+b,
 p,
 address,
 ol,
@@ -77,6 +96,24 @@ blockquote {
 	font-style: normal;
 	font-size: 1.125rem;
 	font-display: swap;
+}
+
+b {
+	font-weight: 700;
+}
+
+blockquote {
+	border-left: 4px solid;
+	font-style: italic;
+	margin: 0px 0px 2rem;
+	padding: 0.5rem 0px 0.5rem 2rem;
+}
+
+p {
+	line-height: 2.385rem;
+	&.eyebrow {
+		margin: math.div(vars.$gutter, 0.6) 0 math.div(vars.$gutter, 6);
+	}
 }
 
 .p-xlarge {

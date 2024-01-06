@@ -1,0 +1,17 @@
+@use 'sass:math';
+@use './../00-vars/00-vars' as vars;
+
+.icons {
+	display: flex;
+	& li {
+		padding: 0 math.div(vars.$gutter, 0.8) 0 math.div(vars.$gutter, 6.8);
+	}
+
+    & a.icon {
+        text-decoration: none;
+        border-bottom: none;
+
+    }
+}
+
+

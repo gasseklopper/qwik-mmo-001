@@ -6,3 +6,12 @@
 		var(--text4)
 	);
 }
+
+@mixin border-contrast($n) {
+	border-left-color: color-contrast(
+		$n vs var(--text1),
+		var(--text2),
+		var(--text3),
+		var(--text4)
+	);
+}

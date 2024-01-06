@@ -1,20 +1,36 @@
-import { component$, useStyles$ } from '@builder.io/qwik'
+import {
+	QwikIntrinsicElements,
+	Slot,
+	component$,
+	useStyles$,
+} from '@builder.io/qwik'
 import styles from './bodytext.scss?inline'
 
 export interface BodyTextProps {
-	tag: any
-	text: string
-	size: string
-	variant?: string
+	size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
+	variant?: 'bodytext' | 'subline' | 'eyebrow'
+	class?: string
 }
 
-export default component$((props: BodyTextProps) => {
+type ExtendedDivlement = QwikIntrinsicElements['p'] & {
+	'aria-label'?: string
+}
+
+export type ExtendedProductCategoryProps = ExtendedDivlement & BodyTextProps
+
+const mainClass = 'bodytext'
+
+export default component$((props: ExtendedProductCategoryProps) => {
+	const componentSize = props.size || 'medium'
+	const componentVariant = props.variant || 'bodytext'
+	const componentClass = props.class || ''
 	useStyles$(styles)
-	const Component = props.tag
 
 	return (
-		<Component class={`${props.size} ${props.variant}`}>
-			{props.text}
-		</Component>
+		<p
+			class={`${mainClass} ${componentClass} p-${componentSize} ${componentVariant}`}
+		>
+			<Slot />
+		</p>
 	)
 })
