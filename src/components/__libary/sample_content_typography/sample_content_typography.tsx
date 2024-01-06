@@ -349,17 +349,6 @@ export default component$(() => {
 					</blockquote>
 				</div>
 				{/* BLOCKQUOTE */}
-				<div class="column large-6 surface4 ">
-					<h3>BLOCKQUOTE</h3>
-					<blockquote>
-						Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
-						sagittis eget tempus euismod. Vestibulum ante ipsum primis in
-						faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
-						adipiscing accumsan faucibus. Vestibulum ante ipsum primis in
-						faucibus vestibulum. Blandit adipiscing eu felis.
-					</blockquote>
-				</div>
-				{/* BLOCKQUOTE */}
 				<div class="column large-6 surface6 ">
 					<h3>BLOCKQUOTE</h3>
 					<blockquote>
@@ -370,10 +359,22 @@ export default component$(() => {
 						faucibus vestibulum. Blandit adipiscing eu felis.
 					</blockquote>
 				</div>
+
 				{/* BLOCKQUOTE */}
 				<div class="column large-6 surface8 ">
 					<h3>BLOCKQUOTE</h3>
-					<blockquote>
+					<blockquote class="surface7 ">
+						Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
+						sagittis eget tempus euismod. Vestibulum ante ipsum primis in
+						faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac
+						adipiscing accumsan faucibus. Vestibulum ante ipsum primis in
+						faucibus vestibulum. Blandit adipiscing eu felis.
+					</blockquote>
+				</div>
+				{/* BLOCKQUOTE */}
+				<div class="column large-6 surface4 ">
+					<h3>BLOCKQUOTE</h3>
+					<blockquote class="surface3">
 						Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis
 						sagittis eget tempus euismod. Vestibulum ante ipsum primis in
 						faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac

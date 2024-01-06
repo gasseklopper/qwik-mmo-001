@@ -105,8 +105,19 @@ b {
 blockquote {
 	border-left: 4px solid;
 	font-style: italic;
-	margin: 0px 0px 2rem;
-	padding: 0.5rem 0px 0.5rem 2rem;
+	margin: 0px 0px vars.$gutter 0;
+	padding: math.div(vars.$gutter, .6) math.div(vars.$gutter, 2) math.div(vars.$gutter, 2) vars.$gutter;
+	position: relative;
+
+	&::after {
+		content: " # ";
+		color: inherit;
+		// add dynamic values
+		font-size: 80px;
+		position: absolute;
+		right: 20px;
+		top: -50px;
+	}
 }
 
 p {

@@ -80,21 +80,37 @@
 .primary {
 	background-color: var(--primary);
 	@include color-contrast.text-contrast(var(--primary));
+
+	& blockquote {
+		@include color-contrast.border-contrast(var(--primary));
+	}
 }
 
 .secondary {
 	background-color: var(--secondary);
 	@include color-contrast.text-contrast(var(--secondary));
+
+	& blockquote {
+		@include color-contrast.border-contrast(var(--secondary));
+	}
 }
 
 .tertiary {
 	background-color: var(--tertiary);
 	@include color-contrast.text-contrast(var(--tertiary));
+
+	& blockquote {
+		@include color-contrast.border-contrast(var(--tertiary));
+	}
 }
 
 .quaternary {
 	background-color: var(--quaternary);
 	@include color-contrast.text-contrast(var(--quaternary));
+
+	& blockquote {
+		@include color-contrast.border-contrast(var(--quaternary));
+	}
 }
 
 .surface1 {
@@ -173,6 +189,7 @@
 	background-color: var(--brand-inverted-highlight1);
 	color: var(--text1);
 }
+
 .brand-inverted-highlight2 {
 	background-color: var(--brand-inverted-highlight2);
 	color: var(--text1);
