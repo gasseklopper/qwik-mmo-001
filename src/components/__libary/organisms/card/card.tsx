@@ -36,8 +36,8 @@ export default component$(() => {
 					</div>
 					<div class="card__footer">
 						<div class="">
-							<BodyText tag="p" text="Current Bid: 0.91" size="" />
-							<BodyText tag="span" text="ETH" size="" />
+							<BodyText>Current Bid: 0.91</BodyText>
+							<BodyText>ETH</BodyText>
 						</div>
 						{/* <Button label="Place Bid" variant="primary-button" size="small" /> */}
 					</div>
