@@ -15,3 +15,12 @@
 		var(--text4)
 	);
 }
+
+@mixin background-as-text-contrast($n) {
+	background-color: color-contrast(
+		$n vs var(--text1),
+		var(--text2),
+		var(--text3),
+		var(--text4)
+	);
+}

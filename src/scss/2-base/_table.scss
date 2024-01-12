@@ -1,0 +1,52 @@
+@use 'sass:math';
+@use './../00-vars/00-vars' as vars;
+
+.table-wrapper {
+	overflow-x: auto;
+}
+
+table {
+	margin: 0px 0px 2rem;
+	width: 100%;
+	border-collapse: collapse;
+	border-spacing: 0px;
+
+	thead {
+		border-bottom: 4px solid;
+		border-color: rgba(128, 128, 128, 0.9);
+	}
+
+	td {
+		font-size: 1.18rem;
+		font: vars.$fontStackBerlingoRegular;
+		padding: math.div(vars.$gutter, 2.8) math.div(vars.$gutter, 1.8);
+	}
+
+	tbody tr {
+		border-width: 5px 0px;
+		border-top-style: solid;
+		border-bottom-style: solid;
+		border-color: rgba(128, 128, 128, 0.3);
+	}
+
+	tbody tr:nth-child(2n + 1) {
+		/* Adjust the last value (0.5) for the desired transparency */
+		background: linear-gradient(
+			to bottom,
+			rgba(128, 128, 128, 0.5),
+			rgba(128, 128, 128, 0)
+		);
+		background: rgba(128, 128, 128, 0.4);
+	}
+
+	th {
+		font: vars.$fontStackBarlowBold;
+		font-size: 1.08rem;
+		font-weight: 700;
+		letter-spacing: 0.075em;
+		line-height: 1.5;
+		padding: math.div(vars.$gutter, 1.8);
+		text-align: left;
+		text-transform: uppercase;
+	}
+}

@@ -5,8 +5,8 @@
 @use 'definition';
 @use 'icons';
 // @import 'img';
-// @import 'table';
-// @import 'hr';
+@use 'table';
+@use 'hr';
 // @import 'spacing';
 // @import 'align';
 // @import 'sameHeight';
@@ -14,7 +14,7 @@
 // @import 'tooltip';
 // // @import 'fonts';
 // // @import 'font';
-// @import 'button';
+@use 'button';
 // @import 'hidden';
 // @import 'href';
 // @import 'rte';

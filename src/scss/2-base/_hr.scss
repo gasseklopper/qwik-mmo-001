@@ -1,0 +1,48 @@
+@use './../1-helpers/0-mixins/color-contrast';
+@use './../00-vars/00-vars' as vars;
+
+hr {
+    height: 4px;
+    border: none;
+}
+
+.surface1 {
+	hr {
+		@include color-contrast.background-as-text-contrast(var(--surface1));
+	}
+}
+.surface2 {
+	hr {
+		@include color-contrast.background-as-text-contrast(var(--surface2));
+	}
+}
+.surface3 {
+	hr {
+		@include color-contrast.background-as-text-contrast(var(--surface3));
+	}
+}
+.surface4 {
+	hr {
+		@include color-contrast.background-as-text-contrast(var(--surface4));
+	}
+}
+.surface5 {
+	hr {
+		@include color-contrast.background-as-text-contrast(var(--surface5));
+	}
+}
+.surface6 {
+	hr {
+		@include color-contrast.background-as-text-contrast(var(--surface6));
+	}
+}
+.surface7 {
+	hr {
+		@include color-contrast.background-as-text-contrast(var(--surface7));
+	}
+}
+.surface8 {
+	hr {
+		@include color-contrast.background-as-text-contrast(var(--surface8));
+	}
+}

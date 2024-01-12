@@ -1,6 +1,7 @@
 import { component$ } from '@builder.io/qwik'
 import Headlines from '../atoms/headlines/headlines'
 import Bodytext from '../atoms/bodytext/bodytext'
+import Button from '../atoms/button/button'
 
 export default component$(() => {
 	return (
@@ -232,7 +233,7 @@ export default component$(() => {
 				<div class="column huge-12 surface8">
 					<h2>Lists</h2>
 				</div>
-				<div class="column large-6 surface6 text1">
+				<div class="column large-6 surface6">
 					<h3>Unordered</h3>
 					<ul>
 						<li>Dolor pulvinar etiam.</li>
@@ -320,6 +321,7 @@ export default component$(() => {
 				</div>
 			</div>
 			{/* Actions */}
+			{/* TODO: CREATE Actions COMPONENTE */}
 			<div class="row">
 				<div class="column huge-12 primary ">
 					<h3>Actions</h3>
@@ -337,6 +339,7 @@ export default component$(() => {
 				</div>
 			</div>
 			{/* BLOCKQUOTE */}
+			{/* TODO: CREATE BLOCKQUOTE COMPONENTE */}
 			<div class="row">
 				<div class="column large-6 surface1 ">
 					<h3>BLOCKQUOTE</h3>
@@ -383,9 +386,10 @@ export default component$(() => {
 					</blockquote>
 				</div>
 			</div>
-
+			{/* TABLE */}
+			{/* TODO: CREATE TABLE COMPONENTE */}
 			<div class="row">
-				<div class="column huge-12 primary ">
+				<div class="column huge-12 surface3">
 					<h3>TABLE</h3>
 					<h4>DEFAULT</h4>
 					<div class="table-wrapper">
@@ -432,17 +436,17 @@ export default component$(() => {
 							</tfoot>
 						</table>
 					</div>
-					<h4>DEFAULT</h4>
+					<h4>alternative</h4>
 					<div class="table-wrapper">
 						<table class="alt">
 							<thead>
-								<tr>
+								<tr class="surface7">
 									<th>Name</th>
 									<th>Description</th>
 									<th>Price</th>
 								</tr>
 							</thead>
-							<tbody>
+							<tbody class="surface7">
 								<tr>
 									<td>Item 1</td>
 									<td>Ante turpis integer aliquet porttitor.</td>
@@ -479,27 +483,51 @@ export default component$(() => {
 					</div>
 					<hr />
 				</div>
+			</div>
+			{/* BUTTONS */}
+			{/* TODO: CREATE BUTTONS COMPONENTE */}
+			<div class="row">
 				<div class="column huge-12 primary ">
 					<h3>BUTTONS</h3>
-					<h4>single</h4>
-					<button>primary</button>
-					<button>secondary</button>
-					<button>primary large</button>
-					<button>secondary default</button>
-					<button>secondary small</button>
-					<h4>single</h4>
-					<button>primary fit</button>
-					<button>secondary fit</button>
-					<button>primary small fit</button>
-					<button>secondary small fit</button>
+					<h4>combo</h4>
+					<Button aria-label="primary button" class={"test"}>primary</Button>
+					<Button aria-label="secondary button">secondary</Button>
+					<Button aria-label="primary large button">primary large</Button>
+					<Button aria-label="primary small button">primary small</Button>
+					<Button aria-label="secondary large button">secondary large</Button>
+					<Button aria-label="secondary small button">secondary small</Button>
+				</div>
+				<div class="column huge-12 primary ">
+					<Button aria-label="primary button fit" class='surface6'>primary fit</Button>
+					<Button aria-label="secondary button fit " class='surface8'>secondary fit</Button>
+					<Button aria-label="primary large button fit">primary large fit</Button>
+					<Button aria-label="primary small button fit">primary small fit</Button>
+					<Button aria-label="secondary large button fit">secondary large fit</Button>
+					<Button aria-label="secondary small button fit">secondary small fit</Button>
+				</div>
+				<div class="column huge-12 primary ">
+
 					<h4>with Icon</h4>
-					<button>primary icon</button>
-					<button>secondary icon</button>
+					<Button aria-label="primary button icon">secondary icon</Button>
+					<Button aria-label="secondary button icon">secondary icon</Button>
+					<Button aria-label="primary large button icon">primary large icon</Button>
+					<Button aria-label="primary small button icon">primary small icon</Button>
+					<Button aria-label="secondary large button icon">secondary large icon</Button>
+					<Button aria-label="secondary small button icon">secondary small icon</Button>
+				</div>
+				<div class="column huge-12 primary ">
+
+				</div>
+				<div class="column huge-12 primary ">
 					<h4>Disabled</h4>
-					<button>primary disabled</button>
-					<button>secondary disabled</button>
+					<Button aria-label="primary button disabled" disabled>secondary disabled</Button>
+					<Button aria-label="secondary button disabled" disabled>secondary disabled</Button>
 					<hr />
 				</div>
+			</div>
+			{/* FORM */}
+			{/* TODO: CREATE FORM COMPONENTE */}
+			<div class="row">
 				<div class="column huge-12 primary ">
 					<h3>FORM</h3>
 					<input
@@ -561,6 +589,10 @@ export default component$(() => {
 					<input type="reset" value="Reset"></input>
 					<hr />
 				</div>
+			</div>
+			{/* IMAGE */}
+			{/* TODO: CREATE IMAGE COMPONENTE */}
+			<div class="row">
 				<div class="column huge-12 primary ">
 					<h3>IMAGE</h3>
 					<span class="image fit">
@@ -643,6 +675,10 @@ export default component$(() => {
 					</span>
 					<hr />
 				</div>
+			</div>
+			{/* IMAGE & TEXT */}
+			{/* TODO: CREATE IMAGE & TEXT COMPONENTE */}
+			<div class="row">
 				<div class="column huge-4 primary ">
 					<h3>Left &amp; Right</h3>
 					<p>
@@ -683,6 +719,10 @@ export default component$(() => {
 					</p>
 					<hr />
 				</div>
+			</div>
+			{/* BOX */}
+			{/* TODO: CREATE BOX COMPONENTE */}
+			<div class="row">
 				<div class="column huge-4 primary ">
 					<h3>Box</h3>
 					<div class="box">
@@ -709,6 +749,10 @@ export default component$(() => {
 					</div>
 					<hr />
 				</div>
+			</div>
+			{/* PREFORMATTED */}
+			{/* TODO: CREATE PREFORMATTED COMPONENTE */}
+			<div class="row">
 				<div class="column huge-4 primary ">
 					<h3>PREFORMATTED</h3>
 					<pre>
