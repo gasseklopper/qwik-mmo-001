@@ -490,8 +490,8 @@ export default component$(() => {
 				<div class="column huge-12 primary ">
 					<h3>BUTTONS</h3>
 					<h4>combo</h4>
-					<Button aria-label="primary button" class={"test"}>primary</Button>
-					<Button aria-label="secondary button">secondary</Button>
+					<Button >primary</Button>
+					<Button aria-label="secondar button" class='tret'>secondary</Button>
 					<Button aria-label="primary large button">primary large</Button>
 					<Button aria-label="primary small button">primary small</Button>
 					<Button aria-label="secondary large button">secondary large</Button>
@@ -520,7 +520,7 @@ export default component$(() => {
 				</div>
 				<div class="column huge-12 primary ">
 					<h4>Disabled</h4>
-					<Button aria-label="primary button disabled" disabled>secondary disabled</Button>
+					<Button aria-label="primary button disabled" test="dds" disabled>secondary disabled</Button>
 					<Button aria-label="secondary button disabled" disabled>secondary disabled</Button>
 					<hr />
 				</div>
