@@ -486,42 +486,107 @@ export default component$(() => {
 			</div>
 			{/* BUTTONS */}
 			{/* TODO: CREATE BUTTONS COMPONENTE */}
+			{/* TODO: CREATE BUTTONS COMBO COMPONENTE */}
 			<div class="row">
 				<div class="column huge-12 primary ">
 					<h3>BUTTONS</h3>
-					<h4>combo</h4>
-					<Button >primary</Button>
-					<Button aria-label="secondar button" class='tret'>secondary</Button>
-					<Button aria-label="primary large button">primary large</Button>
-					<Button aria-label="primary small button">primary small</Button>
-					<Button aria-label="secondary large button">secondary large</Button>
-					<Button aria-label="secondary small button">secondary small</Button>
 				</div>
 				<div class="column huge-12 primary ">
-					<Button aria-label="primary button fit" class='surface6'>primary fit</Button>
-					<Button aria-label="secondary button fit " class='surface8'>secondary fit</Button>
-					<Button aria-label="primary large button fit">primary large fit</Button>
-					<Button aria-label="primary small button fit">primary small fit</Button>
-					<Button aria-label="secondary large button fit">secondary large fit</Button>
-					<Button aria-label="secondary small button fit">secondary small fit</Button>
+					<Button button$_variant="primary" button$_size="default">
+						primary
+					</Button>
+					<Button
+						aria-label="secondar button"
+						button$_variant="secondary"
+						button$_size="default"
+					>
+						secondary
+					</Button>
+				</div>
+				<div class="column huge-12 primary ">
+					<Button button$_variant="primary" button$_size="large">
+						primary
+					</Button>
+					<Button
+						aria-label="secondar button"
+						button$_variant="secondary"
+						button$_size="default"
+					>
+						secondary
+					</Button>
+					<Button
+						aria-label="secondar button"
+						button$_variant="secondary"
+						button$_size="small"
+					>
+						secondary
+					</Button>
+				</div>
+				<div class="column large-6 primary ">
+					<Button
+						aria-label="secondary button fit"
+						button$_size="large"
+						button$_variant="primary"
+						button$_fit
+					>
+						fit
+					</Button>
+					<Button
+						aria-label="primary button fit"
+						button$_size="small"
+						button$_variant="primary"
+						button$_fit
+					>
+						fit + small
+					</Button>
+				</div>
+				<div class="column large-6 primary ">
+					<Button
+						aria-label="secondary button fit"
+						button$_size="large"
+						button$_variant="secondary"
+						button$_fit
+					>
+						fit
+					</Button>
+					<Button
+						aria-label="primary button fit"
+						button$_size="small"
+						button$_variant="secondary"
+						button$_fit
+					>
+						fit + small
+					</Button>
 				</div>
 				<div class="column huge-12 primary ">
 
+				</div>
+				<div class="column huge-12 primary ">
 					<h4>with Icon</h4>
 					<Button aria-label="primary button icon">secondary icon</Button>
 					<Button aria-label="secondary button icon">secondary icon</Button>
-					<Button aria-label="primary large button icon">primary large icon</Button>
-					<Button aria-label="primary small button icon">primary small icon</Button>
-					<Button aria-label="secondary large button icon">secondary large icon</Button>
-					<Button aria-label="secondary small button icon">secondary small icon</Button>
+					<Button aria-label="primary large button icon">
+						primary large icon
+					</Button>
+					<Button aria-label="primary small button icon">
+						primary small icon
+					</Button>
+					<Button aria-label="secondary large button icon">
+						secondary large icon
+					</Button>
+					<Button aria-label="secondary small button icon">
+						secondary small icon
+					</Button>
 				</div>
-				<div class="column huge-12 primary ">
-
-				</div>
+				<div class="column huge-12 primary "></div>
 				<div class="column huge-12 primary ">
 					<h4>Disabled</h4>
-					<Button aria-label="primary button disabled" test="dds" disabled>secondary disabled</Button>
-					<Button aria-label="secondary button disabled" disabled>secondary disabled</Button>
+					<Button aria-label="primary button disabled" test="dds" disabled>
+						secondary disabled
+					</Button>
+					<Button aria-label="secondary button disabled" disabled>
+						secondary disabled
+					</Button>
 					<hr />
 				</div>
 			</div>

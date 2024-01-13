@@ -9,12 +9,11 @@ type ExtendedDivlement = QwikIntrinsicElements['div'] & {
 
 export default component$(({ ...props }: ExtendedDivlement) => {
 	useStyles$(styles)
-    const product = useProductCardContext()
-    
+	const product = useProductCardContext()
 
 	return (
 		<div class="product-card__title" {...props}>
-            {product.title}
+			{product.title}
 			<Slot />
 		</div>
 	)
