@@ -23,16 +23,25 @@
     }
 }
 
+.button--position {
+
+    padding: 1.5rem 3rem;
+}
+
 .button--default {
     padding: 1.5rem 3rem;
 }
+
 .button--small {
     padding: 1.0rem 2rem;
 }
+
 .button--large {
+    height: 100%;
     padding: 2.2rem 6rem;
     font-size: large;
 }
+
 .button--fit {
     padding: 1.0rem 2rem;
     width:100%;

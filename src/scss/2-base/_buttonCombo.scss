@@ -1,0 +1,55 @@
+@use 'sass:math';
+@use './../00-vars/00-vars' as vars;
+
+.buttonCombo {
+	ul {
+		all: unset;
+		display: flex;
+		flex-direction: row;
+        align-items: flex-start;
+		margin: 0;
+        column-gap: vars.$gutter;
+	}
+    
+	li {
+        list-style: none;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+	}
+}
+
+.buttonCombo--stack {
+	ul {
+		all: unset;
+		display: flex;
+		flex-direction: column;
+        row-gap: math.div(vars.$gutter, 1.8);
+	}
+
+	li {
+		list-style: none;
+		margin: 0;
+	}
+}
+
+.buttonCombo--center {
+	li {
+        display: flex;
+        justify-content: center;
+	}
+}
+
+.buttonCombo--left {
+	li {
+        display: flex;
+        justify-content: left;
+	}
+}
+
+.buttonCombo--right {
+	li {
+        display: flex;
+        justify-content: right;
+	}
+}

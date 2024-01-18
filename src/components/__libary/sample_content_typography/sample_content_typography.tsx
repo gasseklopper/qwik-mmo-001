@@ -2,6 +2,7 @@ import { component$ } from '@builder.io/qwik'
 import Headlines from '../atoms/headlines/headlines'
 import Bodytext from '../atoms/bodytext/bodytext'
 import Button from '../atoms/button/button'
+import ButtonCombo from '../atoms/buttonCombo/buttonCombo'
 
 export default component$(() => {
 	return (
@@ -492,74 +493,201 @@ export default component$(() => {
 					<h3>BUTTONS</h3>
 				</div>
 				<div class="column huge-12 primary ">
-					<Button button$_variant="primary" button$_size="default">
-						primary
-					</Button>
-					<Button
-						aria-label="secondar button"
-						button$_variant="secondary"
-						button$_size="default"
-					>
-						secondary
-					</Button>
+					<ButtonCombo>
+						<ul>
+							<li>
+								<Button
+									button$_variant="primary"
+									button$_size="default"
+									button$_fit
+								>
+									primary
+								</Button>
+							</li>
+							<li>
+								<Button
+									aria-label="secondar button"
+									button$_variant="secondary"
+									button$_size="default"
+								>
+									secondary
+								</Button>
+							</li>
+						</ul>
+					</ButtonCombo>
 				</div>
 				<div class="column huge-12 primary ">
-					<Button button$_variant="primary" button$_size="large">
-						primary
+					<Button button$_variant="primary" button$_size="small">
+						small
 					</Button>
-					<Button
-						aria-label="secondar button"
-						button$_variant="secondary"
-						button$_size="default"
-					>
-						secondary
-					</Button>
-					<Button
-						aria-label="secondar button"
-						button$_variant="secondary"
-						button$_size="small"
-					>
-						secondary
-					</Button>
-				</div>
-				<div class="column large-6 primary ">
-					<Button
-						aria-label="secondary button fit"
-						button$_size="large"
-						button$_variant="primary"
-						button$_fit
-					>
-						fit
-					</Button>
-					<Button
-						aria-label="primary button fit"
-						button$_size="small"
-						button$_variant="primary"
-						button$_fit
-					>
-						fit + small
-					</Button>
-				</div>
-				<div class="column large-6 primary ">
-					<Button
-						aria-label="secondary button fit"
-						button$_size="large"
-						button$_variant="secondary"
-						button$_fit
-					>
-						fit
-					</Button>
-					<Button
-						aria-label="primary button fit"
-						button$_size="small"
-						button$_variant="secondary"
-						button$_fit
-					>
-						fit + small
-					</Button>
-				</div>
-				<div class="column huge-12 primary ">
 
+					<Button
+						aria-label="secondar button"
+						button$_variant="secondary"
+						button$_size="small"
+					>
+						small
+					</Button>
+				</div>
+				<div class="column large-6 primary ">
+					<ButtonCombo>
+						<ul>
+							<li>
+								<Button
+									button$_variant="primary"
+									button$_size="large"
+									button$_fit
+								>
+									small + fit
+								</Button>
+							</li>
+						</ul>
+					</ButtonCombo>
+				</div>
+				<div class="column large-6 primary ">
+					<ButtonCombo>
+						<ul>
+							<li>
+								<Button
+									button$_variant="secondary"
+									button$_size="small"
+									button$_fit
+								>
+									small + fit
+								</Button>
+							</li>
+						</ul>
+					</ButtonCombo>
+				</div>
+				<div class="column huge-12 primary ">
+					<ButtonCombo>
+						<ul>
+							<li>
+								<Button button$_variant="primary" button$_size="large">
+									small
+								</Button>
+							</li>
+							<li>
+								<Button
+									aria-label="secondar button"
+									button$_variant="secondary"
+									button$_size="default"
+								>
+									small
+								</Button>
+							</li>
+							<li>
+								<Button
+									aria-label="secondar button"
+									button$_variant="secondary"
+									button$_size="small"
+								>
+									small
+								</Button>
+							</li>
+						</ul>
+					</ButtonCombo>
+				</div>
+				<div class="column huge-12 primary ">
+					<ButtonCombo buttonCombo$_stack>
+						<ul>
+							<li>
+								<Button
+									aria-label="primary button fit"
+									button$_size="small"
+									button$_variant="secondary"
+									button$_fit
+								>
+									fit + small
+								</Button>
+							</li>
+							<li>
+								<Button
+									aria-label="primary button fit"
+									button$_size="small"
+									button$_variant="secondary"
+									button$_fit
+								>
+									fit + smallssss
+								</Button>
+							</li>
+						</ul>
+					</ButtonCombo>
+				</div>
+				<div class="column huge-12 primary ">
+					<ButtonCombo buttonCombo$_stack buttonCombo$_position="left">
+						<ul>
+							<li>
+								<Button
+									aria-label="primary button fit"
+									button$_size="small"
+									button$_variant="secondary"
+								>
+									left
+								</Button>
+							</li>
+							<li>
+								<Button
+									aria-label="primary button fit"
+									button$_size="small"
+									button$_variant="secondary"
+									button$_fit
+								>
+									left
+								</Button>
+							</li>
+						</ul>
+					</ButtonCombo>
+				</div>
+				<div class="column huge-12 primary ">
+					<ButtonCombo buttonCombo$_stack buttonCombo$_position="center">
+						<ul>
+							<li>
+								<Button
+									aria-label="primary button fit"
+									button$_size="small"
+									button$_variant="secondary"
+								>
+									center
+								</Button>
+							</li>
+							<li>
+								<Button
+									aria-label="primary button fit"
+									button$_size="small"
+									button$_variant="secondary"
+									button$_fit
+								>
+									center
+								</Button>
+							</li>
+						</ul>
+					</ButtonCombo>
+				</div>
+				<div class="column huge-12 primary ">
+					<ButtonCombo buttonCombo$_stack buttonCombo$_position="right">
+						<ul>
+							<li>
+								<Button
+									aria-label="primary button fit"
+									button$_size="small"
+									button$_variant="secondary"
+								>
+									right
+								</Button>
+							</li>
+							<li>
+								<Button
+									aria-label="primary button fit"
+									button$_size="small"
+									button$_variant="secondary"
+									button$_fit
+								>
+									right
+								</Button>
+							</li>
+						</ul>
+					</ButtonCombo>
 				</div>
 				<div class="column huge-12 primary ">
 					<h4>with Icon</h4>
