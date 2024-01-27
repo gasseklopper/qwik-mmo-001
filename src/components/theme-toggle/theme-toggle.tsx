@@ -53,9 +53,9 @@ export const ThemeToggle = component$(() => {
 	return (
 		<div class="theme-toggle-container">
 			<Button
-				label={`${state.theme === 'miami' ? 'Dark' : 'Miami'} mode`}
-				variant={state.theme}
-				size="small"
+				buttonLabel={`${state.theme === 'miami' ? 'Dark' : 'Miami'} mode`}
+				buttonVariant="primary"
+				buttonSize="small"
 				onClick$={onClick$}
 				aria-label='test'
 			/>
