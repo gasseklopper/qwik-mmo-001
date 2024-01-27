@@ -3,7 +3,7 @@ import { Slot, component$, useStyles$ } from '@builder.io/qwik'
 import styles from './button.scss?inline'
 
 // Gloabl Types (design system?)
-type Size = 'large' | 'default' | 'small'
+type Size = 'large' | 'default' | 'small' | undefined
 type Variant = 'primary' | 'secondary'
 
 // ButtonProps type

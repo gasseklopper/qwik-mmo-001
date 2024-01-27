@@ -13,7 +13,7 @@ import ProductLabel from '../__libary/atoms/productCard/ProductLabel'
 const TestButtonDataMock = {
 	label: 'testtesttesttesttesttesttest',
 	variant: 'primary',
-	size: 'medium',
+	size: 'default',
 	class: 'test',
 	onClick: $(() => {
 		console.log('test')
@@ -23,7 +23,7 @@ const TestButtonDataMock = {
 const IncrementButton = {
 	label: 'Increment',
 	variant: 'primary',
-	size: 'medium',
+	size: 'default',
 	class: 'increment',
 	number: 12331,
 }
@@ -31,7 +31,7 @@ const IncrementButton = {
 const DecremntButton = {
 	label: 'decrement',
 	variant: 'primary',
-	size: 'medium',
+	size: 'default',
 	class: 'decrement',
 	number: 12331,
 }
@@ -39,7 +39,7 @@ const DecremntButton = {
 const ResetButton = {
 	label: 'reset',
 	variant: 'primary',
-	size: 'medium',
+	size: 'default',
 	class: 'reset',
 	number: 12331,
 }
@@ -49,7 +49,7 @@ const ProductCardDataMock = {
 	title: 'title--testtesttesttesttesttesttest',
 	image: 'https://picsum.photos/seed/picsum/200/300',
 	stars: 5,
-	size: 'size--medium',
+	size: 'default',
 	price: 22234,
 	currency: "AUD",
 	label: 'label--test',
@@ -102,19 +102,19 @@ export default component$(() => {
 					/>
 				}
 			></ProductCard>
-			{/* <Button
-				size={TestButtonDataMock.size}
-				class={TestButtonDataMock.class}
-				label={TestButtonDataMock.label}
+			<Button
+				buttonSize='default'
+				buttonBaseClass={TestButtonDataMock.class}
+				buttonLabel={TestButtonDataMock.label}
 				onClick$={TestButtonDataMock.onClick}
 				aria-label={TestButtonDataMock.label}
 			>
 				{TestButtonDataMock.label}
-			</Button> */}
+			</Button>
 			<div class="count_label">Count-- :</div>
 			<div class="count">{store.count}</div>
 			<hr />
-			{/* <Button
+			<Button
 				class={IncrementButton.class}
 				onClick$={increment}
 				aria-label={IncrementButton.label}
@@ -134,7 +134,7 @@ export default component$(() => {
 				aria-label={ResetButton.label}
 			>
 				{ResetButton.label}
-			</Button> */}
+			</Button>
 		</div>
 	)
 })
