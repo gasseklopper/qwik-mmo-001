@@ -102,7 +102,7 @@ export default component$(() => {
 					/>
 				}
 			></ProductCard>
-			<Button
+			{/* <Button
 				size={TestButtonDataMock.size}
 				class={TestButtonDataMock.class}
 				label={TestButtonDataMock.label}
@@ -110,11 +110,11 @@ export default component$(() => {
 				aria-label={TestButtonDataMock.label}
 			>
 				{TestButtonDataMock.label}
-			</Button>
+			</Button> */}
 			<div class="count_label">Count-- :</div>
 			<div class="count">{store.count}</div>
 			<hr />
-			<Button
+			{/* <Button
 				class={IncrementButton.class}
 				onClick$={increment}
 				aria-label={IncrementButton.label}
@@ -134,7 +134,7 @@ export default component$(() => {
 				aria-label={ResetButton.label}
 			>
 				{ResetButton.label}
-			</Button>
+			</Button> */}
 		</div>
 	)
 })
