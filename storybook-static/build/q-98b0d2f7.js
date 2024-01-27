@@ -1,1 +1,0 @@
-import{S as r}from"./q-7f34c19c.js";import{S as s,j as n}from"./q-73c53bab.js";import"./q-ff6eb6cb.js";const u=l=>(console.log("superTest",l.data),s("div",null,{class:"news-view"},s("main",null,{class:"news-list"},l.data.length&&s("ul",null,null,l.data.map((t,a)=>n(r,{story:t},3,a)),1,"xd_2"),1,null),1,"xd_3"));export{u as s_2rS66qZHRPo};

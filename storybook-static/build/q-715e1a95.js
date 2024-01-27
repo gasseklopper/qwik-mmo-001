@@ -1,1 +1,0 @@
-import{j as e,S as l,a as n,b as t}from"./q-73c53bab.js";import"./q-ff6eb6cb.js";const i=r=>(console.log("FirstName rerenders"),e(t,{children:l("p",null,null,["First name --> ",n(s=>s.firstName,[r])],3,null)},3,"TL_0"));export{i as s_PZLr0u17Ixk};

@@ -1,5 +1,0 @@
-import{S as n,a,q as t,R as o}from"./q-73c53bab.js";import{u as r,a as i}from"./q-787c0e56.js";import"./q-ff6eb6cb.js";const d=()=>{const e=r(),u=i();return n("head",null,null,[n("title",null,null,`${e.title} | Modular Forms`,1,null),n("meta",null,{charSet:"utf-8"},null,3,null),n("meta",null,{content:"width=device-width, initial-scale=1.0",name:"viewport"},null,3,null),n("link",null,{href:"/manifest.json",rel:"manifest"},null,3,null),n("link",null,{href:a(l=>l.url.href,[u]),rel:"canonical"},null,3,null),n("link",null,{href:"/favicon.ico",rel:"icon"},null,3,null),e.meta.map(l=>t("meta",{...l},null,0,"0R_0")),e.links.map(l=>t("link",{...l},null,0,"0R_1")),e.styles.map(l=>t("style",{...l.props,dangerouslySetInnerHTML:o(l,"style")},null,0,"0R_2")),n("script",null,{dangerouslySetInnerHTML:`
-          if (!window.matchMedia('(prefers-color-scheme: light)').matches) {
-            document.documentElement.classList.add('dark');
-          }
-        `},null,3,null)],1,"0R_3")};export{d as s_lV9t090Nf9c};

@@ -1,1 +1,0 @@
-import{c}from"./q-73c53bab.js";import{f}from"./q-73c53bab.js";import{c as m}from"./q-65498059.js";import"./q-ff6eb6cb.js";const a=r=>{const[o]=c(),{x:t,y:s}=r;o.x=t-10,o.y=s-10,m(o.x,o.y)};export{f as _hW,a as s_3nScejnCz7A};

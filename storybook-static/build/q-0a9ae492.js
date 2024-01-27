@@ -1,1 +1,0 @@
-import{U as s}from"./q-47456c4d.js";import{X as o,j as n,S as t,a,b as l}from"./q-73c53bab.js";import"./q-ff6eb6cb.js";const c=()=>{const r=o(s);return console.log("UserName rerenders"),n(l,{children:t("p",null,null,["Username --> ",a(e=>e.username,[r])],3,null)},3,"Eo_0")};export{c as s_xD2tou5y8eE};

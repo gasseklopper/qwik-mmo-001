@@ -1,1 +1,0 @@
-import{T as o,I as t}from"./q-57fe1ca5.js";import{Z as r,G as s,j as i}from"./q-73c53bab.js";import"./q-ff6eb6cb.js";const p=()=>(r(o,s({items:["Learn Qwik","Build Qwik app","Profit"]})),i(t,null,3,"47_0"));export{p as s_N2w3gxTZcFo};

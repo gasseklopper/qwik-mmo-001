@@ -1,1 +1,0 @@
-import{c as t}from"./q-73c53bab.js";import{f as l}from"./q-73c53bab.js";import"./q-ff6eb6cb.js";const s=()=>{const[o]=t();o.x=window.scrollY,o.y=window.scrollX,document.body.style.setProperty("--scroll",(window.scrollY/(document.body.offsetHeight-window.innerHeight)).toString())};export{l as _hW,s as s_E4aCJVvLqnw};

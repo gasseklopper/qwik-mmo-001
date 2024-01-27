@@ -1,1 +1,0 @@
-import{U as o}from"./q-47456c4d.js";import{X as a,j as t,S as e,a as n,b as l}from"./q-73c53bab.js";import"./q-ff6eb6cb.js";const c=()=>{const r=a(o);return console.log("lastname rerenders"),t(l,{children:e("p",null,null,["Password --> ",n(s=>s.password,[r])],3,null)},3,"aD_0")};export{c as s_HgjrmDaLTF4};

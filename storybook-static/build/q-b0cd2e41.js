@@ -1,1 +1,0 @@
-import{S as r}from"./q-73c53bab.js";import"./q-ff6eb6cb.js";const e=()=>r("div",null,{"aria-label":"Loading",class:"h-5 w-5 animate-spin rounded-full border-t-2 border-r-2 border-t-current border-r-transparent md:h-[22px] md:w-[22px] md:border-t-[2.5px] md:border-r-[2.5px] lg:h-6 lg:w-6"},null,3,"dx_0");export{e as s_ZmfN4NQoZ7w};
