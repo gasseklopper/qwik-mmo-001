@@ -1,5 +1,5 @@
 import { component$, useStore, $ } from '@builder.io/qwik'
-import Button from '../__libary/atoms/button/button'
+import Button from '../__libary/01_Atoms/button/button'
 import ProductCard from '../__libary/atoms/productCard/productCard'
 import ProductImage from '../__libary/atoms/productCard/productImage'
 import ProductInfo from '../__libary/atoms/productCard/productInfo'

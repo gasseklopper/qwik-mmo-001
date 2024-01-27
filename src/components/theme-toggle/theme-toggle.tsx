@@ -2,7 +2,7 @@ import { $, component$, useContext, useStyles$ } from '@builder.io/qwik'
 import { themeStorageKey } from '../router-head/theme-script'
 import themeToggle from './theme-toggle.css?inline'
 import { GlobalStore } from '../../globalContext'
-import Button from '../__libary/atoms/button/button'
+import Button from '../__libary/01_Atoms/button/button'
 
 export type ThemePreference = 'dark' | 'miami'
 
