@@ -4,7 +4,15 @@
       "path": "/*",
       "function": "entry.netlify-edge",
       "cache": "manual",
-      "excludedPath": ""
+      "excludedPath": [
+        "/build/*",
+        "/favicon.ico",
+        "/robots.txt",
+        "/mainifest.json",
+        "/~partytown/*",
+        "/service-worker.js",
+        "/sitemap.xml"
+      ]
     }
   ],
   "version": 1

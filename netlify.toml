@@ -1,5 +1,5 @@
 [build]
-publish = "dist"
+publish = "storybook-static"
 command = "npm run build-storybook"
 
 [[edge_functions]]
