@@ -12,7 +12,8 @@ import {
 } from '@builder.io/qwik-city'
 
 import { RouterHead } from './components/router-head/router-head'
-import './global.css'
+import './global.scss'
+// import './index.scss'
 import { supabase } from './utils/supabase'
 import type { SiteStore } from './globalContext'
 import { GlobalMenuStore } from './globalContext'

@@ -3,9 +3,9 @@ import Img from '../../atoms/image/image'
 import styles from './friends.scss?inline'
 
 export interface HeadlineProps {
-	tag: any
-	text: string
-	size: string
+	tag?: any
+	text?: string
+	size?: string
 	variant?: string
 }
 

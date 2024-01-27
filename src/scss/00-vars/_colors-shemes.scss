@@ -28,8 +28,8 @@
 }
 
 [data-theme='default'] {
-	color-scheme: light;
-	@include light-sheme.light-sheme;
+	color-scheme: miami;
+	@include miami-sheme.miami-sheme;
 }
 
 [data-theme='dark'] {

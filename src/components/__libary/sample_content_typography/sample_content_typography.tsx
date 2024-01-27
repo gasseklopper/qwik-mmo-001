@@ -497,9 +497,9 @@ export default component$(() => {
 						<ul>
 							<li>
 								<Button
-									button$_variant="primary"
-									button$_size="default"
-									button$_fit
+									buttonVariant="primary"
+									buttonSize="default"
+									buttonFit
 								>
 									primary
 								</Button>
@@ -507,8 +507,8 @@ export default component$(() => {
 							<li>
 								<Button
 									aria-label="secondar button"
-									button$_variant="secondary"
-									button$_size="default"
+									buttonVariant="secondary"
+									buttonSize="default"
 								>
 									secondary
 								</Button>
@@ -517,14 +517,14 @@ export default component$(() => {
 					</ButtonCombo>
 				</div>
 				<div class="column huge-12 primary ">
-					<Button button$_variant="primary" button$_size="small">
+					<Button buttonVariant="primary" buttonSize="small">
 						small
 					</Button>
 
 					<Button
 						aria-label="secondar button"
-						button$_variant="secondary"
-						button$_size="small"
+						buttonVariant="secondary"
+						buttonSize="small"
 					>
 						small
 					</Button>
@@ -534,9 +534,9 @@ export default component$(() => {
 						<ul>
 							<li>
 								<Button
-									button$_variant="primary"
-									button$_size="large"
-									button$_fit
+									buttonVariant="primary"
+									buttonSize="large"
+									buttonFit
 								>
 									small + fit
 								</Button>
@@ -549,9 +549,9 @@ export default component$(() => {
 						<ul>
 							<li>
 								<Button
-									button$_variant="secondary"
-									button$_size="small"
-									button$_fit
+									buttonVariant="secondary"
+									buttonSize="small"
+									buttonFit
 								>
 									small + fit
 								</Button>
@@ -563,15 +563,15 @@ export default component$(() => {
 					<ButtonCombo>
 						<ul>
 							<li>
-								<Button button$_variant="primary" button$_size="large">
+								<Button buttonVariant="primary" buttonSize="large">
 									small
 								</Button>
 							</li>
 							<li>
 								<Button
 									aria-label="secondar button"
-									button$_variant="secondary"
-									button$_size="default"
+									buttonVariant="secondary"
+									buttonSize="default"
 								>
 									small
 								</Button>
@@ -579,8 +579,8 @@ export default component$(() => {
 							<li>
 								<Button
 									aria-label="secondar button"
-									button$_variant="secondary"
-									button$_size="small"
+									buttonVariant="secondary"
+									buttonSize="small"
 								>
 									small
 								</Button>
@@ -594,9 +594,9 @@ export default component$(() => {
 							<li>
 								<Button
 									aria-label="primary button fit"
-									button$_size="small"
-									button$_variant="secondary"
-									button$_fit
+									buttonSize="small"
+									buttonVariant="secondary"
+									buttonFit
 								>
 									fit + small
 								</Button>
@@ -604,9 +604,9 @@ export default component$(() => {
 							<li>
 								<Button
 									aria-label="primary button fit"
-									button$_size="small"
-									button$_variant="secondary"
-									button$_fit
+									buttonSize="small"
+									buttonVariant="secondary"
+									buttonFit
 								>
 									fit + smallssss
 								</Button>
@@ -620,8 +620,8 @@ export default component$(() => {
 							<li>
 								<Button
 									aria-label="primary button fit"
-									button$_size="small"
-									button$_variant="secondary"
+									buttonSize="small"
+									buttonVariant="secondary"
 								>
 									left
 								</Button>
@@ -629,9 +629,9 @@ export default component$(() => {
 							<li>
 								<Button
 									aria-label="primary button fit"
-									button$_size="small"
-									button$_variant="secondary"
-									button$_fit
+									buttonSize="small"
+									buttonVariant="secondary"
+									buttonFit
 								>
 									left
 								</Button>
@@ -645,8 +645,8 @@ export default component$(() => {
 							<li>
 								<Button
 									aria-label="primary button fit"
-									button$_size="small"
-									button$_variant="secondary"
+									buttonSize="small"
+									buttonVariant="secondary"
 								>
 									center
 								</Button>
@@ -654,9 +654,9 @@ export default component$(() => {
 							<li>
 								<Button
 									aria-label="primary button fit"
-									button$_size="small"
-									button$_variant="secondary"
-									button$_fit
+									buttonSize="small"
+									buttonVariant="secondary"
+									buttonFit
 								>
 									center
 								</Button>
@@ -670,8 +670,8 @@ export default component$(() => {
 							<li>
 								<Button
 									aria-label="primary button fit"
-									button$_size="small"
-									button$_variant="secondary"
+									buttonSize="small"
+									buttonVariant="secondary"
 								>
 									right
 								</Button>
@@ -679,9 +679,9 @@ export default component$(() => {
 							<li>
 								<Button
 									aria-label="primary button fit"
-									button$_size="small"
-									button$_variant="secondary"
-									button$_fit
+									buttonSize="small"
+									buttonVariant="secondary"
+									buttonFit
 								>
 									right
 								</Button>
@@ -709,7 +709,7 @@ export default component$(() => {
 				<div class="column huge-12 primary "></div>
 				<div class="column huge-12 primary ">
 					<h4>Disabled</h4>
-					<Button aria-label="primary button disabled" test="dds" disabled>
+					<Button aria-label="primary button disabled" disabled>
 						secondary disabled
 					</Button>
 					<Button aria-label="secondary button disabled" disabled>

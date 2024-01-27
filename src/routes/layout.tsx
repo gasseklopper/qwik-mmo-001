@@ -1,7 +1,6 @@
 import { component$, Slot, useStyles$, useSignal, useVisibleTask$, useContext } from '@builder.io/qwik'
 import Footer from '~/components/footer/footer'
 import Header from '~/components/header/header'
-import styles from '~/index.scss?inline'
 // import {
 // 	disableBodyScroll,
 // 	enableBodyScroll,
@@ -10,7 +9,7 @@ import styles from '~/index.scss?inline'
 import { GlobalMenuStore } from '~/globalContext'
 
 export default component$(() => {
-	useStyles$(styles)
+	// useStyles$(styles)
 	const globalMenuStore = useContext(GlobalMenuStore)
 	// auth check getUser
 	const outputRef = useSignal<Element>()

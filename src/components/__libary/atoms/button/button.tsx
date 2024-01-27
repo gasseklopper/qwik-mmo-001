@@ -8,11 +8,11 @@ type Variant = 'primary' | 'secondary'
 
 // ButtonProps type
 type ButtonProps = {
-	button$_baseClass?: string
-	button$_label?: string
-	button$_size?: Size
-	button$_variant?: Variant
-	button$_fit?: boolean
+	buttonBaseClass?: string
+	buttonLabel?: string
+	buttonSize?: Size
+	buttonVariant?: Variant
+	buttonFit?: boolean
 }
 
 // holds available attributes of both
@@ -31,11 +31,11 @@ const baseClassDefault = 'button'
 export default component$(({ ...props }: ExtendedButtonProps) => {
 	useStyles$(styles)
 
-	const componentVariant = `${baseClassDefault}--${props.button$_variant}` || ''
-	const componentSize = `${baseClassDefault}--${props.button$_size}` || ''
-	const componentBaseClass = props.button$_baseClass || baseClassDefault
+	const componentVariant = `${baseClassDefault}--${props.buttonVariant}` || ''
+	const componentSize = `${baseClassDefault}--${props.buttonSize}` || ''
+	const componentBaseClass = props.buttonBaseClass || baseClassDefault
 	const componentClass = props.class || ''
-	const componentFit = props.button$_fit ? `${baseClassDefault}--fit` : ''
+	const componentFit = props.buttonFit ? `${baseClassDefault}--fit` : ''
 
 	return (
 		<button
@@ -44,7 +44,7 @@ export default component$(({ ...props }: ExtendedButtonProps) => {
 		>
 			<span>
 				<span>
-					{props.button$_label}
+					{props.buttonLabel}
 					<Slot />
 				</span>
 			</span>
