@@ -1,6 +1,6 @@
 [build]
 publish = "dist"
-command = "npm run build-storybook -s public -o dist/storybook && npm run build"
+command = "npm run build-storybook -- -o dist/storybook && npm run build"
 
 [[edge_functions]]
 path = "/*"
