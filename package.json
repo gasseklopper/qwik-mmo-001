@@ -7,7 +7,7 @@
   "private": true,
   "scripts": {
     "build": "qwik build",
-    "build-storybook": "npm run build-storybook -- -o dist/storybook",
+    "build-storybook": "storybook build",
     "build.client": "vite build",
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/netlify-edge/vite.config.ts",
