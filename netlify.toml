@@ -2,6 +2,9 @@
 publish = "dist"
 command = "npm run build"
 
+publish = "dist/storybook-static"
+command = "build-storybook"
+
 [[edge_functions]]
 path = "/*"
 function = "entry.netlify-edge"

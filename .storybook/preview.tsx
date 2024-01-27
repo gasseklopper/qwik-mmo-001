@@ -12,7 +12,7 @@ export const parameters: Parameters = {
     },
   },
   options: {
-    // showRoots: true,
+    showRoots: true,
   },
   docs: {
     iframeHeight: "200px",

@@ -1,0 +1,1 @@
+import{U as o}from"./q-47456c4d.js";import{X as e,j as t,S as a,a as l,b as n}from"./q-73c53bab.js";import"./q-ff6eb6cb.js";const u=()=>{const r=e(o);return console.log("email rerenders"),t(n,{children:a("p",null,null,["Password --> ",l(s=>s.email,[r])],3,null)},3,"0G_0")};export{u as s_ZLqQajxXNtY};

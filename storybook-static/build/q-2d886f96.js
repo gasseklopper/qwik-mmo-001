@@ -1,0 +1,1 @@
+import{G as t}from"./q-696f705a.js";import{X as e,S as a,a as l}from"./q-73c53bab.js";import"./q-ff6eb6cb.js";const u=()=>{const o=e(t);return a("div",null,{class:l(r=>["header__overlay",r.showOverlay?"visible":"",{objectSyntax:!0}],[o])},null,3,"i4_12")};export{u as s_E9p80qWP5xE};

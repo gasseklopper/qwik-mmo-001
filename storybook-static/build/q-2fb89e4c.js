@@ -1,0 +1,1 @@
+import{T as s}from"./q-57fe1ca5.js";import{X as n,S as o}from"./q-73c53bab.js";import"./q-ff6eb6cb.js";const p=()=>{const t=n(s);return o("ul",null,null,t.items.map((l,r)=>o("li",null,null,l,1,r)),1,"47_1")};export{p as s_VDYPP0xVTTw};

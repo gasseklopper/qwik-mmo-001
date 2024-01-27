@@ -1,0 +1,1 @@
+import{_ as t}from"./q-ff6eb6cb.js";var o={docs:{renderer:async()=>{let{DocsRenderer:r}=await t(()=>import("./q-c17355dd.js").then(e=>e.D),["./q-c17355dd.js","./q-ff6eb6cb.js","./q-725317a4.js","./q-11d98b33.js","./q-62adf0b4.js","./q-356e4a49.js"],import.meta.url);return new r}}};export{o as parameters};

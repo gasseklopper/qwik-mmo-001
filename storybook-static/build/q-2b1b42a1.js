@@ -1,0 +1,1 @@
+import{S as s,j as r,E as a}from"./q-73c53bab.js";import{c as p}from"./q-1229b3e0.js";import"./q-ff6eb6cb.js";const i=l=>s("div",{class:p("flex flex-wrap gap-6 px-8 lg:gap-8 lg:px-10",l.class)},null,r(a,null,3,"Zb_0"),1,"Zb_1");export{i as s_S04QrCiHPl4};

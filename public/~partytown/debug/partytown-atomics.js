@@ -1,4 +1,4 @@
-/* Partytown 0.8.0 - MIT builder.io */
+/* Partytown 0.8.1 - MIT builder.io */
 (window => {
     const isPromise = v => "object" == typeof v && v && v.then;
     const noop = () => {};
@@ -433,8 +433,8 @@
         })(docImpl, interfaceName))).filter((elm => elm)).map((elm => [ elm ]));
         return readImplementations(elms, []);
     };
-    const cstrs = new Set([ "Object" ]);
     const readImplementations = (impls, interfaces) => {
+        const cstrs = new Set([ "Object" ]);
         const cstrImpls = impls.filter((implData => implData[0])).map((implData => {
             const impl = implData[0];
             const interfaceType = implData[1];
@@ -476,7 +476,7 @@
                     (String(value).includes("[native") || Object.getPrototypeOf(implementation)[memberName]) && interfaceMembers.push([ memberName, 5 ]);
                 } else if ("object" === memberType && null != value) {
                     cstrName = getConstructorName(value);
-                    "Object" !== cstrName && self[cstrName] && interfaceMembers.push([ memberName, value.nodeType || cstrName ]);
+                    "Object" !== cstrName && "Function" !== cstrName && self[cstrName] && interfaceMembers.push([ memberName, value.nodeType || cstrName ]);
                 } else {
                     "symbol" !== memberType && (memberName.toUpperCase() === memberName ? interfaceMembers.push([ memberName, 6, value ]) : interfaceMembers.push([ memberName, 6 ]));
                 }
@@ -557,14 +557,14 @@
         };
     })(((accessReq, responseCallback) => mainAccessHandler(worker, accessReq).then(responseCallback))).then((onMessageHandler => {
         if (onMessageHandler) {
-            worker = new Worker(libPath + "partytown-ww-atomics.js?v=0.8.0", {
+            worker = new Worker(libPath + "partytown-ww-atomics.js?v=0.8.1", {
                 name: "Partytown 🎉"
             });
             worker.onmessage = ev => {
                 const msg = ev.data;
                 12 === msg[0] ? mainAccessHandler(worker, msg[1]) : onMessageHandler(worker, msg);
             };
-            logMain("Created Partytown web worker (0.8.0)");
+            logMain("Created Partytown web worker (0.8.1)");
             worker.onerror = ev => console.error("Web Worker Error", ev);
             mainWindow.addEventListener("pt1", (ev => registerWindow(worker, getAndSetInstanceId(ev.detail.frameElement), ev.detail)));
         }

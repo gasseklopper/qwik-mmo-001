@@ -1,0 +1,1 @@
+import{q as r,S as l}from"./q-73c53bab.js";import"./q-ff6eb6cb.js";const i=o=>r("svg",{...o,children:l("path",null,{d:"m4.1 17 13.92 13.96L31.78 17"},null,3,null)},{"aria-label":"Angle down icon",fill:"none",role:"img",stroke:"currentColor","stroke-linecap":"round","stroke-linejoin":"round","stroke-width":4,viewBox:"0 0 36 48"},0,"TF_0");export{i as s_LEoyIfQgkOg};

@@ -1,0 +1,1 @@
+import{a as r}from"./q-158bd2f5.js";import{S as l,j as s}from"./q-73c53bab.js";import"./q-ff6eb6cb.js";const t=()=>l("div",null,{class:"row"},l("div",null,{class:"column"},s(r,null,3,"P1_0"),1,null),1,"P1_1");export{t as s_MkH3l8q0qzM};
