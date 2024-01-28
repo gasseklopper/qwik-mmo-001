@@ -68,6 +68,7 @@
   },
   "dependencies": {
     "@modular-forms/qwik": "^0.20.0",
+    "@qwikest/icons": "^0.0.13",
     "clsx": "^1.2.1",
     "storybook-addon-data-theme-switcher": "^0.1.7"
   }

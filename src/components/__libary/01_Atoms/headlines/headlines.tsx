@@ -31,10 +31,11 @@ export default component$((props: HeadlineProps) => {
 	const ComponentTag = props.componentTag || 'h2'
 	const componentVariant = props.variant || 'bodytext'
 	const componentWeight = props.weight || 'regular'
-	const componentClass = props.class || 'h2'
+	const componentClass = props.class || props.componentTag || 'h2'
 
 	return (
 		<ComponentTag
+			{...props}
 			class={`${mainClass} ${componentClass} ${componentClass}--${componentWeight} ${componentVariant}`}
 		>
 			<Slot />
