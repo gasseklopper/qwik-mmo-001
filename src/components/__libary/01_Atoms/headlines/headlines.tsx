@@ -39,7 +39,7 @@ export default component$(({headlineClass, ...rest}: ExtendedProductCategoryProp
 	return (
 		<ComponentTag
 			{...rest}
-			class={`${mainClass} ${componentClass} ${componentClass}--${componentWeight} ${componentVariant}`}
+			class={`${mainClass} ${rest.class} ${componentClass} ${componentClass}--${componentWeight} ${componentVariant}`}
 		>
 			<Slot />
 		</ComponentTag>
