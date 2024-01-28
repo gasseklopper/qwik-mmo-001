@@ -1,5 +1,5 @@
 import { component$ } from '@builder.io/qwik'
-import Headlines from '../atoms/headlines/headlines'
+import Headlines from '../01_Atoms/headlines/headlines'
 import Bodytext from '../atoms/bodytext/bodytext'
 import Button from '../01_Atoms/button/button'
 import ButtonCombo from '../atoms/buttonCombo/buttonCombo'
