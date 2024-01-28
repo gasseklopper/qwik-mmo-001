@@ -26,20 +26,20 @@ export type ExtendedProductCategoryProps = ExtendedDivlement & HeadlineProps
 
 const mainClass = 'headlines'
 
-export default component$(({headlineClass, ...rest}: ExtendedProductCategoryProps) => {
+export default component$(({class: className, ...rest }: ExtendedProductCategoryProps) => {
 	useStyles$(styles)
 
 	const ComponentTag = rest.headlineTag || 'h2'
 	const componentVariant = rest.variant || 'bodytext'
 	const componentWeight = rest.weight || 'regular'
-	const componentClass =  headlineClass || rest.headlineTag || 'h2'
+	const componentClass = className || ''
+	const componentBaseClass = rest.headlineClass || rest.headlineTag || 'h2'
 
 	console.log(componentClass)
-
 	return (
 		<ComponentTag
 			{...rest}
-			class={`${mainClass} ${rest.class} ${componentClass} ${componentClass}--${componentWeight} ${componentVariant}`}
+			class={`${mainClass} ${componentBaseClass} ${componentBaseClass}--${componentWeight} ${componentVariant} ${componentClass}`}
 		>
 			<Slot />
 		</ComponentTag>

@@ -28,23 +28,23 @@ export type ExtendedButtonProps = ExtendedButtonElement & ButtonProps
 // Define baseClassDefault value for button component 
 const baseClassDefault = 'button'
 
-export default component$(({ ...props }: ExtendedButtonProps) => {
+export default component$(({class: className, ...rest }: ExtendedButtonProps) => {
 	useStyles$(styles)
 
-	const componentVariant = `${baseClassDefault}--${props.buttonVariant}` || ''
-	const componentSize = `${baseClassDefault}--${props.buttonSize}` || ''
-	const componentBaseClass = props.buttonBaseClass || baseClassDefault
-	const componentClass = props.class || ''
-	const componentFit = props.buttonFit ? `${baseClassDefault}--fit` : ''
+	const componentVariant = `${baseClassDefault}--${rest.buttonVariant}` || ''
+	const componentSize = `${baseClassDefault}--${rest.buttonSize}` || ''
+	const componentBaseClass = rest.buttonBaseClass || baseClassDefault
+	const componentClass = className || ''
+	const componentFit = rest.buttonFit ? `${baseClassDefault}--fit` : ''
 
 	return (
 		<button
-			{...props}
+			{...rest}
 			class={`${componentBaseClass} ${componentSize} ${componentFit} ${componentVariant} ${componentClass}`}
 		>
 			<span>
 				<span>
-					{props.buttonLabel}
+					{rest.buttonLabel}
 					<Slot />
 				</span>
 			</span>

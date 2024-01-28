@@ -3,7 +3,8 @@ import HeadlineComponent, { ExtendedProductCategoryProps } from './headlines'
 
 const primaryButtonProps: ExtendedProductCategoryProps = {
 	headlineTag: 'h1',
-	headlineClass: 'h4'
+	headlineClass: 'h4',
+	class: 'test'
 }
 
 const meta: Meta<ExtendedProductCategoryProps> = {

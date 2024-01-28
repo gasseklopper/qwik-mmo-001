@@ -7,6 +7,7 @@ const primaryButtonProps: ExtendedButtonProps = {
 	buttonFit: false,
 	buttonLabel: 'Primary Button',
 	buttonBaseClass: 'button',
+	class: 'test'
 }
 
 const meta: Meta<ExtendedButtonProps> = {
