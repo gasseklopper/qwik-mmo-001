@@ -28,17 +28,17 @@ const mainClass = 'headlines'
 
 export default component$((props: HeadlineProps) => {
 	useStyles$(styles)
-	const ComponentTag = props.componentTag || 'h2'
+	const componentTag = props.componentTag || 'h2'
 	const componentVariant = props.variant || 'bodytext'
 	const componentWeight = props.weight || 'regular'
 	const componentClass = props.class || props.componentTag || 'h2'
 
 	return (
-		<ComponentTag
+		<componentTag
 			{...props}
 			class={`${mainClass} ${componentClass} ${componentClass}--${componentWeight} ${componentVariant}`}
 		>
 			<Slot />
-		</ComponentTag>
+		</componentTag>
 	)
 })
