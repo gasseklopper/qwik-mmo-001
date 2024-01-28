@@ -11,14 +11,14 @@ export default component$(() => {
 			<div class="row">
 				{/* ELEMENTS REFERENCE */}
 				<div class="column huge-12 surface2 ">
-					<Headlines componentTag={'h1'} class={'h1'} weight="bold">
+					<Headlines headlineTag={'h1'} class={'h1'} weight="bold">
 						ELEMENTS REFERENCE
 					</Headlines>
 					<hr />
 				</div>
 				{/* BODYTEXT */}
 				<div class="column huge-12 surface2 ">
-					<Headlines componentTag={'h2'} class={'h2'}>
+					<Headlines headlineTag={'h2'} class={'h2'}>
 						BODYTEXT
 					</Headlines>
 					<Bodytext size="large">
@@ -33,49 +33,49 @@ export default component$(() => {
 				</div>
 				{/* Heading regular */}
 				<div class="column large-6 surface2 ">
-					<Headlines componentTag={'h2'} class={'h2 surface8'}>
+					<Headlines headlineTag={'h2'} class={'h2 surface8'}>
 						font-weight: regular
 					</Headlines>
-					<Headlines componentTag={'h2'} class={'h1'}>
+					<Headlines headlineTag={'h2'} class={'h1'}>
 						Heading Level l
 					</Headlines>
-					<Headlines componentTag={'h2'} class={'h2'}>
+					<Headlines headlineTag={'h2'} class={'h2'}>
 						Heading Level 2
 					</Headlines>
-					<Headlines componentTag={'h3'} class={'h3'}>
+					<Headlines headlineTag={'h3'} class={'h3'}>
 						Heading Level 3
 					</Headlines>
-					<Headlines componentTag={'h4'} class={'h4'}>
+					<Headlines headlineTag={'h4'} class={'h4'}>
 						Heading Level 4
 					</Headlines>
-					<Headlines componentTag={'h5'} class={'h5'}>
+					<Headlines headlineTag={'h5'} class={'h5'}>
 						Heading Level 5
 					</Headlines>
-					<Headlines componentTag={'h6'} class={'h6'}>
+					<Headlines headlineTag={'h6'} class={'h6'}>
 						Heading Level 6
 					</Headlines>
 				</div>
 				{/* Heading bold */}
 				<div class="column large-6 surface8 ">
-					<Headlines componentTag={'h2'} class={'h2 surface2'} weight="bold">
+					<Headlines headlineTag={'h2'} class={'h2 surface2'} weight="bold">
 						font-weight: bold
 					</Headlines>
-					<Headlines componentTag={'h2'} class={'h1'} weight="bold">
+					<Headlines headlineTag={'h2'} class={'h1'} weight="bold">
 						Heading Level l
 					</Headlines>
-					<Headlines componentTag={'h2'} class={'h2'} weight="bold">
+					<Headlines headlineTag={'h2'} class={'h2'} weight="bold">
 						Heading Level 2
 					</Headlines>
-					<Headlines componentTag={'h3'} class={'h3'} weight="bold">
+					<Headlines headlineTag={'h3'} class={'h3'} weight="bold">
 						Heading Level 3
 					</Headlines>
-					<Headlines componentTag={'h4'} class={'h4'} weight="bold">
+					<Headlines headlineTag={'h4'} class={'h4'} weight="bold">
 						Heading Level 4
 					</Headlines>
-					<Headlines componentTag={'h5'} class={'h5'} weight="bold">
+					<Headlines headlineTag={'h5'} class={'h5'} weight="bold">
 						Heading Level 5
 					</Headlines>
-					<Headlines componentTag={'h6'} class={'h6'} weight="bold">
+					<Headlines headlineTag={'h6'} class={'h6'} weight="bold">
 						Heading Level 6
 					</Headlines>
 				</div>
@@ -93,7 +93,7 @@ export default component$(() => {
 									Lorem ipsum dolor sit amet nullam id egestas urna aliquam
 								</Bodytext>
 								<Headlines
-									componentTag={'h2'}
+									headlineTag={'h2'}
 									class={'h1 surface4'}
 									variant="browLine"
 								>
@@ -145,7 +145,7 @@ export default component$(() => {
 									</b>
 								</Bodytext>
 								<Headlines
-									componentTag={'h3'}
+									headlineTag={'h3'}
 									class={'h3'}
 									weight="bold"
 									variant="browLine"
@@ -168,7 +168,7 @@ export default component$(() => {
 						<div class="column large-6 surface6 ">
 							{/* // TODO:: Create header molecule */}
 							<header>
-								<Headlines componentTag={'h4'} variant="subline">
+								<Headlines headlineTag={'h4'} variant="subline">
 									Heading with a Subtitle h4
 								</Headlines>
 								<Bodytext size="large" variant="subline">

@@ -7,8 +7,8 @@ import {
 import styles from './headlines.scss?inline'
 
 export interface HeadlineProps {
-	componentTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
-	class?: string
+	headlineTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+	headlineClass?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 	weight?: 'regular' | 'bold'
 	variant?: 'bodytext' | 'subline' | 'eyebrow' | 'browLine'
 }
@@ -26,19 +26,22 @@ export type ExtendedProductCategoryProps = ExtendedDivlement & HeadlineProps
 
 const mainClass = 'headlines'
 
-export default component$((props: HeadlineProps) => {
+export default component$(({headlineClass, ...rest}: ExtendedProductCategoryProps) => {
 	useStyles$(styles)
-	const componentTag = props.componentTag || 'h2'
-	const componentVariant = props.variant || 'bodytext'
-	const componentWeight = props.weight || 'regular'
-	const componentClass = props.class || props.componentTag || 'h2'
+
+	const ComponentTag = rest.headlineTag || 'h2'
+	const componentVariant = rest.variant || 'bodytext'
+	const componentWeight = rest.weight || 'regular'
+	const componentClass =  headlineClass || rest.headlineTag || 'h2'
+
+	console.log(componentClass)
 
 	return (
-		<componentTag
-			{...props}
+		<ComponentTag
+			{...rest}
 			class={`${mainClass} ${componentClass} ${componentClass}--${componentWeight} ${componentVariant}`}
 		>
 			<Slot />
-		</componentTag>
+		</ComponentTag>
 	)
 })

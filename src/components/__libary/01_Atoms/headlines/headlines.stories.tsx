@@ -2,7 +2,8 @@ import type { Meta, StoryObj } from 'storybook-framework-qwik'
 import HeadlineComponent, { ExtendedProductCategoryProps } from './headlines'
 
 const primaryButtonProps: ExtendedProductCategoryProps = {
-	componentTag: 'h1',
+	headlineTag: 'h1',
+	headlineClass: 'h4'
 }
 
 const meta: Meta<ExtendedProductCategoryProps> = {
@@ -14,8 +15,6 @@ const meta: Meta<ExtendedProductCategoryProps> = {
 type Story = StoryObj<ExtendedProductCategoryProps>
 
 export default meta
-
-const componentTag: string = primaryButtonProps.componentTag || 'h2'
 
 export const HeadlineDefault: Story = {
 	args: primaryButtonProps,
