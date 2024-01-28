@@ -7,7 +7,7 @@ import {
 import styles from './headlines.scss?inline'
 
 export interface HeadlineProps {
-	componentTag?: any
+	componentTag?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
 	class?: string
 	weight?: 'regular' | 'bold'
 	variant?: 'bodytext' | 'subline' | 'eyebrow' | 'browLine'
