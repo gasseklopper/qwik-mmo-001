@@ -3,7 +3,7 @@ import { component$, useStyles$ } from '@builder.io/qwik'
 import styles from './card.scss?inline'
 import Headline from '../../atoms/headline/headline'
 import BodyText from '../../atoms/bodytext/bodytext'
-import Img from '../../atoms/image/image'
+import Img from '../../01_Atoms/image/image'
 import Friends from '../../molecules/friends/friends'
 
 export default component$(() => {

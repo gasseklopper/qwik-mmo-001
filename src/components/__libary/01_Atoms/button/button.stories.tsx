@@ -1,18 +1,44 @@
-import type { Meta, StoryObj } from "storybook-framework-qwik";
-import  Button,{ ExtendedButtonProps } from "./button";
+import type { Meta, StoryObj } from 'storybook-framework-qwik'
+import Button, { ExtendedButtonProps } from './button'
+
+const primaryButtonProps: ExtendedButtonProps = {
+	buttonSize: 'default',
+	buttonVariant: 'primary',
+	buttonFit: false,
+	buttonLabel: 'Primary Button',
+	buttonBaseClass: 'button',
+}
 
 const meta: Meta<ExtendedButtonProps> = {
-  component: Button,
-};
+	title: 'Atoms/Button',
+	component: Button,
+	tags: ['autodocs'],
+}
 
-type Story = StoryObj<ExtendedButtonProps>;
+type Story = StoryObj<ExtendedButtonProps>
 
-export default meta;
+export default meta
 
-export const Primary: Story = {
-  args: {
-    buttonSize: "default",
-    buttonVariant: "primary"
-  },
-  render: (props) => <Button {...props}>Some button</Button>,
-};
+export const PrimaryButton: Story = {
+	args: primaryButtonProps,
+	render: (args) => <Button {...args} />,
+}
+
+export const SecondaryButton: Story = {
+	args: primaryButtonProps,
+	render: (args) => <Button {...{ ...args, buttonVariant: 'secondary' }} />,
+}
+
+export const PrimaryButtonSmall: Story = {
+	args: primaryButtonProps,
+	render: (args) => <Button {...{ ...args, buttonSize: 'small' }} />,
+}
+
+export const PrimaryButtonLarge: Story = {
+	args: primaryButtonProps,
+	render: (args) => (
+		<Button buttonSize="large" buttonVariant="primary">
+			Button Primary Large
+		</Button>
+	),
+}

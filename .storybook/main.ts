@@ -17,6 +17,11 @@ const config: StorybookConfig = {
 		'../src/components/**/*.stories.mdx',
 		'../src/components/**/*.stories.@(js|jsx|ts|tsx)',
 	],
+	docs: {
+		//👇 See the table below for the list of supported options
+		autodocs: 'tag',
+		defaultName: 'Documentation',
+	},
 
 	viteFinal: async (config: any) => {
 		return config
