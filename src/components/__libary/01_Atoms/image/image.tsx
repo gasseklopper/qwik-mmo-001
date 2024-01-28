@@ -13,14 +13,15 @@ type ExtendedImageElement = QwikIntrinsicElements['img'] & {
 
 export type ExtendedImageProps = ExtendedImageElement & ImageProps
 
-const baseClassDefault = 'image'
+const mainClass = 'image'
 
-export default component$((props: ExtendedImageProps) => {
+export default component$(({class: className,...props}: ExtendedImageProps) => {
 	useStyles$(styles)
 
-	const componentBaseClass = props.imageBaseClass || baseClassDefault
+	const componentClass = className || ''
+	const componentBaseClass = props.imageBaseClass || ''
 
 	return (
-		<img {...props} class={`${componentBaseClass} ${props.imageVariant}`} />
+		<img {...props} class={`${mainClass} ${componentClass} ${componentBaseClass} ${props.imageVariant}`} />
 	)
 })

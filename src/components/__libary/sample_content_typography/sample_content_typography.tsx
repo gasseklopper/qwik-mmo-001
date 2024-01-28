@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik'
 import Headlines from '../01_Atoms/headlines/headlines'
-import Bodytext from '../atoms/bodytext/bodytext'
+import Bodytext from '../01_Atoms/bodytext/bodytext'
 import Button from '../01_Atoms/button/button'
 import ButtonCombo from '../atoms/buttonCombo/buttonCombo'
 
@@ -21,7 +21,7 @@ export default component$(() => {
 					<Headlines headlineTag={'h2'} class={'h2'}>
 						BODYTEXT
 					</Headlines>
-					<Bodytext size="large">
+					<Bodytext bodytextSize="large">
 						This is <b>bold</b> and this is <strong>strong</strong>. This is
 						<i>italic</i> and this is <em>emphasized</em>. This is
 						<sup>superscript</sup> text and this is <sub>subscript</sub> text.
@@ -87,8 +87,8 @@ export default component$(() => {
 							<header>
 								<Bodytext
 									class={'quaternary text-secondary'}
-									size="medium"
-									variant="eyebrow"
+									bodytextSize="medium"
+									bodytextVariant="eyebrow"
 								>
 									Lorem ipsum dolor sit amet nullam id egestas urna aliquam
 								</Bodytext>
@@ -99,13 +99,13 @@ export default component$(() => {
 								>
 									Heading with a Subtitle h1
 								</Headlines>
-								<Bodytext size="xlarge" variant="subline">
+								<Bodytext bodytextSize="xlarge" bodytextVariant="subline">
 									<b>
 										Lorem ipsum dolor sit amet nullam id egestas urna aliquam
 									</b>
 								</Bodytext>
 							</header>
-							<Bodytext size="large">
+							<Bodytext bodytextSize="large">
 								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
 								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
 								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor
@@ -115,17 +115,17 @@ export default component$(() => {
 						<div class="column large-6 surface2 ">
 							{/* // TODO:: Create header molecule */}
 							<header>
-								<Bodytext size="small" variant="eyebrow">
+								<Bodytext bodytextSize="small" bodytextVariant="eyebrow">
 									Heading with a Eyebrow h1
 								</Bodytext>
 								<Headlines variant="browLine">
 									Heading with a Subtitle & Eyebrow h2
 								</Headlines>
-								<Bodytext size="xlarge" variant="subline">
+								<Bodytext bodytextSize="xlarge" bodytextVariant="subline">
 									Lorem ipsum dolor sit amet nullam id egestas urna aliquam
 								</Bodytext>
 							</header>
-							<Bodytext size="medium">
+							<Bodytext bodytextSize="medium">
 								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
 								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
 								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor
@@ -136,8 +136,8 @@ export default component$(() => {
 							{/* // TODO:: Create header molecule */}
 							<header>
 								<Bodytext
-									size="small"
-									variant="eyebrow"
+									bodytextSize="small"
+									bodytextVariant="eyebrow"
 									class={'secondary text-quaternary'}
 								>
 									<b>
@@ -152,13 +152,13 @@ export default component$(() => {
 								>
 									Heading with a Subtitle h3
 								</Headlines>
-								<Bodytext size="large" variant="subline">
+								<Bodytext bodytextSize="large" bodytextVariant="subline">
 									<b>
 										Lorem ipsum dolor sit amet nullam id egestas urna aliquam
 									</b>
 								</Bodytext>
 							</header>
-							<Bodytext size="medium">
+							<Bodytext bodytextSize="medium">
 								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
 								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
 								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor
@@ -171,11 +171,11 @@ export default component$(() => {
 								<Headlines headlineTag={'h4'} variant="subline">
 									Heading with a Subtitle h4
 								</Headlines>
-								<Bodytext size="large" variant="subline">
+								<Bodytext bodytextSize="large" bodytextVariant="subline">
 									Lorem ipsum dolor sit amet nullam id egestas urna aliquam
 								</Bodytext>
 							</header>
-							<Bodytext size="small">
+							<Bodytext bodytextSize="small">
 								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
 								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
 								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor
@@ -187,7 +187,7 @@ export default component$(() => {
 				</div>
 				{/* BODYTEXT */}
 				<div class="column huge-12 surface8 ">
-					<Bodytext size="large">
+					<Bodytext bodytextSize="large">
 						Lorem ipsum dolor sit amet nullam id egestas urna aliquam
 					</Bodytext>
 					<hr />
@@ -200,7 +200,7 @@ export default component$(() => {
 					<dl>
 						<dt>Item 1</dt>
 						<dd>
-							<Bodytext size="medium">
+							<Bodytext bodytextSize="medium">
 								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
 								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
 								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor
@@ -209,7 +209,7 @@ export default component$(() => {
 						</dd>
 						<dt>Item 2</dt>
 						<dd>
-							<Bodytext size="medium">
+							<Bodytext bodytextSize="medium">
 								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
 								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
 								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor
@@ -218,7 +218,7 @@ export default component$(() => {
 						</dd>
 						<dt>Item 3</dt>
 						<dd>
-							<Bodytext size="medium">
+							<Bodytext bodytextSize="medium">
 								Lorem ipsum dolor sit amet nullam id egestas urna aliquam Lorem
 								ipsum dolor sit amet nullam id egestas urna aliquam Lorem ipsum
 								dolor sit amet nullam id egestas urna aliquam Lorem ipsum dolor

@@ -7,27 +7,26 @@ import {
 import styles from './bodytext.scss?inline'
 
 export interface BodyTextProps {
-	size?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
-	variant?: 'bodytext' | 'subline' | 'eyebrow'
-	class?: string
+	bodytextSize?: 'xsmall' | 'small' | 'medium' | 'large' | 'xlarge'
+	bodytextVariant?: 'bodytext' | 'subline' | 'eyebrow'
 }
 
 type ExtendedDivlement = QwikIntrinsicElements['p'] & {
 	'aria-label'?: string
 }
 
-export type ExtendedProductCategoryProps = ExtendedDivlement & BodyTextProps
+export type ExtendedBodytextProps = ExtendedDivlement & BodyTextProps
 
 const mainClass = 'bodytext'
 
-export default component$((props: ExtendedProductCategoryProps) => {
-	const componentSize = props.size || 'medium'
-	const componentVariant = props.variant || 'bodytext'
+export default component$((props: ExtendedBodytextProps) => {
+	const componentSize = props.bodytextSize || 'medium'
+	const componentVariant = props.bodytextVariant || 'bodytext'
 	const componentClass = props.class || ''
 	useStyles$(styles)
 
 	return (
-		<p
+		<p {...props}
 			class={`${mainClass} ${componentClass} p-${componentSize} ${componentVariant}`}
 		>
 			<Slot />

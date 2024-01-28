@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from 'storybook-framework-qwik'
 import Button, { ExtendedButtonProps } from './button'
 import Icon from '../icon/icon'
-import { iconProps } from '../icon/icon.stories'
+import { ExtendedIconProps } from '../icon/icon'
 
 const primaryButtonProps: ExtendedButtonProps = {
 	buttonSize: 'default',
@@ -16,6 +16,14 @@ const meta: Meta<ExtendedButtonProps> = {
 	title: 'Atoms/Button',
 	component: Button,
 	tags: ['autodocs'],
+}
+
+const iconProps: ExtendedIconProps = {
+	iconName: 'LuActivitySquare',
+	width: 100,
+	height: 100,
+	color: 'var(--surface4)',
+	class: 'testClassName'
 }
 
 type Story = StoryObj<ExtendedButtonProps>
