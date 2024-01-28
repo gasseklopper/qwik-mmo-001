@@ -19,11 +19,13 @@ type ExtendedIconElement = IntrinsicSVGElements['svg'] & {
 // Combine QwikIntrinsicElements and IconProps type
 export type ExtendedIconProps = ExtendedIconElement & IconProps
 
-export default component$(({ ...props }: ExtendedIconProps) => {
+const mainClass = 'icon'
+
+export default component$(({class: className, ...rest}: ExtendedIconProps) => {
 	useStyles$(styles)
 
-	// Dynamically select Lucide icon based on the propName prop
-	const IconComponent = LucideIcons[props.iconName]
+	const componentClass = className || ''
+	const IconComponent = LucideIcons[rest.iconName]
 
-	return <IconComponent {...props}/>
+	return <IconComponent {...rest} class={`${mainClass} ${componentClass}`}/>
 })

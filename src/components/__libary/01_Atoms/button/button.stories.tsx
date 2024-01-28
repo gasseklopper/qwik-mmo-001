@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from 'storybook-framework-qwik'
 import Button, { ExtendedButtonProps } from './button'
+import Icon from '../icon/icon'
+import { iconProps } from '../icon/icon.stories'
 
 const primaryButtonProps: ExtendedButtonProps = {
 	buttonSize: 'default',
@@ -7,7 +9,7 @@ const primaryButtonProps: ExtendedButtonProps = {
 	buttonFit: false,
 	buttonLabel: 'Primary Button',
 	buttonBaseClass: 'button',
-	class: 'test'
+	class: 'testClassName'
 }
 
 const meta: Meta<ExtendedButtonProps> = {
@@ -40,6 +42,15 @@ export const PrimaryButtonLarge: Story = {
 	render: () => (
 		<Button buttonSize="large" buttonVariant="primary">
 			Button Primary Large
+		</Button>
+	),
+}
+
+export const PrimaryButtonLargeWithIcon: Story = {
+	args: primaryButtonProps,
+	render: () => (
+		<Button buttonSize="large" buttonVariant="primary">
+			<Icon {...iconProps} width={32} height={32} color='var(--text1)'/>Button Primary Large
 		</Button>
 	),
 }

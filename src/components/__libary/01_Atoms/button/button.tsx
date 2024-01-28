@@ -26,24 +26,24 @@ type ExtendedButtonElement = QwikIntrinsicElements['button'] & {
 export type ExtendedButtonProps = ExtendedButtonElement & ButtonProps
 
 // Define baseClassDefault value for button component 
-const baseClassDefault = 'button'
+const mainClass = 'button'
 
 export default component$(({class: className, ...rest }: ExtendedButtonProps) => {
 	useStyles$(styles)
 
-	const componentVariant = `${baseClassDefault}--${rest.buttonVariant}` || ''
-	const componentSize = `${baseClassDefault}--${rest.buttonSize}` || ''
-	const componentBaseClass = rest.buttonBaseClass || baseClassDefault
+	const componentVariant = `${mainClass}--${rest.buttonVariant}` || ''
+	const componentSize = `${mainClass}--${rest.buttonSize}` || ''
+	const componentBaseClass = rest.buttonBaseClass || mainClass
 	const componentClass = className || ''
-	const componentFit = rest.buttonFit ? `${baseClassDefault}--fit` : ''
+	const componentFit = rest.buttonFit ? `${mainClass}--fit` : ''
 
 	return (
 		<button
 			{...rest}
 			class={`${componentBaseClass} ${componentSize} ${componentFit} ${componentVariant} ${componentClass}`}
 		>
-			<span>
-				<span>
+			<span class='button__content-wrapper'>
+				<span >
 					{rest.buttonLabel}
 					<Slot />
 				</span>

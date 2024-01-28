@@ -1,3 +1,5 @@
+@use './../00-vars/00-vars' as vars;
+
 .button {
 	pointer-events: auto;
 	cursor: pointer;
@@ -7,83 +9,89 @@
 	position: relative;
 	display: inline-block;
 
-    &::before,
-    &::after {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
+	&::before,
+	&::after {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
 
-    &:focus {
-        color: var(--text1);
-        background-color: var(--text1);
-        mix-blend-mode: difference;
+	&:focus {
+		color: var(--text1);
+		background-color: var(--text1);
+		mix-blend-mode: difference;
+	}
+
+    &__content-wrapper {
+        span{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: vars.$gutter / 2;
+        }
     }
 }
 
 .button--position {
-
-    padding: 1.5rem 3rem;
+	padding: 1.5rem 3rem;
 }
 
 .button--default {
-    padding: 1.5rem 3rem;
+	padding: 1.5rem 3rem;
 }
 
 .button--small {
-    padding: 1.0rem 2rem;
+	padding: 1rem 2rem;
 }
 
 .button--large {
-    height: 100%;
-    padding: 2.2rem 6rem;
-    font-size: large;
+	height: 100%;
+	padding: 2.2rem 6rem;
+	font-size: large;
 }
 
 .button--fit {
-    padding: 1.0rem 2rem;
-    width:100%;
+	padding: 1rem 2rem;
+	width: 100%;
 }
 
 .button--primary {
-    overflow: hidden;
-    color: var(--text1);
-    font-weight: 500;
-    span {
-        display: block;
-        position: relative;
-    }
+	overflow: hidden;
+	color: var(--text1);
+	font-weight: 500;
+	// span {
+	// 	display: block;
+	// 	position: relative;
+	// }
 
-    > span {
-        overflow: hidden;
-        mix-blend-mode: difference;
-    }
+	> span {
+		overflow: hidden;
+		mix-blend-mode: difference;
+	}
 
+	&:hover > span > span {
+		animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+	}
 
+	&::before {
+		content: '';
+		background: var(--surface2);
+		width: 100%;
+		height: 100%;
+		transform-origin: 50% 100%;
+		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+		transition: clip-path 0.2s, -webkit-clip-path 0.2s;
+		transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
+	}
 
-    &:hover > span > span {
-        animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
-    }
-
-    &::before {
-        content: '';
-        background: var(--surface2);
-        width: 100%;
-        height: 100%;
-        transform-origin: 50% 100%;
-        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-        transition: clip-path 0.2s, -webkit-clip-path 0.2s;
-        transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
-    }
-
-    &:hover::before {
-        transition-duration: 0.3s;
-        -webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
-        clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
-    }
+	&:hover::before {
+		transition-duration: 0.3s;
+		-webkit-clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+		clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+	}
 }
 
 .button--secondary {
@@ -91,62 +99,61 @@
 	overflow: hidden;
 	color: var(--text1);
 
-    span {
-        display: block;
-        position: relative;
-    }
+	span {
+		display: block;
+		position: relative;
+	}
 
-    > span {
-        overflow: hidden;
-    }
+	> span {
+		overflow: hidden;
+	}
 
-    > span > span {
-        overflow: hidden;
-        mix-blend-mode: difference;
-    }
+	> span > span {
+		overflow: hidden;
+		mix-blend-mode: difference;
+	}
 
-    &:hover > span > span {
-        animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
-    }
+	&:hover > span > span {
+		animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+	}
 
-    &::before {
-        content: '';
-        background: var(--text1);
-        transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
-        transform-origin: 100% 50%;
-    }
+	&::before {
+		content: '';
+		background: var(--text1);
+		transition: transform 0.3s cubic-bezier(0.7, 0, 0.2, 1);
+		transform-origin: 100% 50%;
+	}
 
-    &:hover::before {
-        transform: scale3d(0,1,1);
-        transform-origin: 0% 50%;
-    }
+	&:hover::before {
+		transform: scale3d(0, 1, 1);
+		transform-origin: 0% 50%;
+	}
 }
-
 
 @keyframes MoveUpInitial {
 	to {
-		transform: translate3d(0,-105%,0);
+		transform: translate3d(0, -105%, 0);
 	}
 }
 
 @keyframes MoveUpEnd {
 	from {
-		transform: translate3d(0,100%,0);
+		transform: translate3d(0, 100%, 0);
 	}
 	to {
-		transform: translate3d(0,0,0);
+		transform: translate3d(0, 0, 0);
 	}
 }
 
 html[data-theme='miami'] {
-    .button {
-        background-color: var(--text4);
-    }
+	.button {
+		background-color: var(--text4);
+	}
 
-    .button--primary {
-        color: var(--surface5);
-        &::before {
-            background: var(--surface2);
-        }
-    }
+	.button--primary {
+		color: var(--surface5);
+		&::before {
+			background: var(--surface2);
+		}
+	}
 }

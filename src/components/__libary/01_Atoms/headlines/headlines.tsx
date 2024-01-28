@@ -35,7 +35,6 @@ export default component$(({class: className, ...rest }: ExtendedProductCategory
 	const componentClass = className || ''
 	const componentBaseClass = rest.headlineClass || rest.headlineTag || 'h2'
 
-	console.log(componentClass)
 	return (
 		<ComponentTag
 			{...rest}
