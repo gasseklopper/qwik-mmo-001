@@ -17,8 +17,6 @@ export default component$(() => {
 						<Img
 							src="https://horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app/static/media/Nft3.3b3e6a4b3ada7618de6c.png"
 							alt="alt text"
-							variant=""
-							size=""
 						/>
 						{/* <Button
 							label="lorem ipsum"
