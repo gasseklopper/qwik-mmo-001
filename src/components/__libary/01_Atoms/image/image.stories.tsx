@@ -4,7 +4,7 @@ import Image, { ExtendedImageProps } from './image'
 const image = "https://horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app/static/media/avatar1.eeef2af6dfcd3ff23cb8.png"
 
 const imageProps: ExtendedImageProps = {
-	src: 'https://horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app/static/media/avatar1.eeef2af6dfcd3ff23cb8.png',
+	src: image,
 	alt: 'example image',
 	imageVariant: 'default image variant',
 	height: 400,

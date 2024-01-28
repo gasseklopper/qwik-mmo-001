@@ -36,7 +36,7 @@ export const PrimaryButtonSmall: Story = {
 
 export const PrimaryButtonLarge: Story = {
 	args: primaryButtonProps,
-	render: (args) => (
+	render: () => (
 		<Button buttonSize="large" buttonVariant="primary">
 			Button Primary Large
 		</Button>
