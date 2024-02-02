@@ -5,7 +5,7 @@ const iconProps: ExtendedIconProps = {
 	iconName: 'LuActivitySquare',
 	width: 100,
 	height: 100,
-	color: 'var(--surface4)',
+	color: 'var(--surface6)',
 	class: 'testClassName'
 }
 
