@@ -1,3 +1,4 @@
+@use 'sass:math';
 @use './../00-vars/00-vars' as vars;
 
 .button {
@@ -29,7 +30,7 @@
             display: flex;
             flex-direction: row;
             align-items: center;
-            gap: vars.$gutter / 2;
+            gap: math.div(vars.$gutter, 2);
         }
     }
 }

@@ -102,6 +102,11 @@ export default component$(() => {
 					href="https://fonts.googleapis.com/css?family=Montserrat&display=swap"
 					rel="stylesheet"
 				></link>
+				<script
+					type="module"
+					async
+					src="../src/main.js"
+				></script>
 				<RouterHead />
 			</head>
 			<body>
