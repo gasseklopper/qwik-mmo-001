@@ -34,7 +34,7 @@ export default component$(() => {
 			ScrollTrigger.scrollerProxy('.smooth-scroll', {
 				scrollTop(value) {
 					const scrollValue = (locoScroll as any).scroll.instance.scroll.y
-					
+
 					return arguments.length
 						? locoScroll.scrollTo(value!, options)
 						: scrollValue
@@ -56,7 +56,7 @@ export default component$(() => {
 
 			requestAnimationFrame(scrollFn)
 
-			const vw = (coef: number) => window.innerWidth * (coef / 100)
+			// const vw = (coef: number) => window.innerWidth * (coef / 100)
 			const vh = (coef: number) => window.innerHeight * (coef / 100)
 
 			const heroScroller = gsap.timeline({
