@@ -7,7 +7,6 @@ export default component$(() => {
 
 	return (
 		<>
-			<header></header>
 			<MainNav />
 		</>
 	)

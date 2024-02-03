@@ -1,0 +1,23 @@
+.grid {
+	position: relative;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(8, 1fr);
+
+	&__item {
+		position: relative;
+		will-change: transform;
+		grid-column: var(--c);
+		grid-row: var(--r);
+	}
+
+	&__item-img {
+		position: relative;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 1;
+		background-size: cover;
+		background-position: 50% 50%;
+		will-change: transform, opacity;
+	}
+}

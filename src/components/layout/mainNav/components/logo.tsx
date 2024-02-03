@@ -6,8 +6,8 @@ export default component$(() => {
 
 	return (
 		<>
-			<a class="logo" href="/" aria-label="Logo">
-				LOGO
+			<a class="logo h4" href="/" aria-label="Logo">
+				Markus Morley
 			</a>
 		</>
 	)
