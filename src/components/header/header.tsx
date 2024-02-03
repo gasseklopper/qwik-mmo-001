@@ -1,6 +1,6 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
 import MainNav from '../layout/mainNav/mainNav'
-import styles from './header.css?inline'
+import styles from './header.scss?inline'
 
 export default component$(() => {
 	useStyles$(styles)
