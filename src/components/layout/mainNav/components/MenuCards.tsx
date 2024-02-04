@@ -7,6 +7,9 @@ import {
 } from '@builder.io/qwik'
 import { GlobalMenuStore } from '../../../../globalContext'
 import menuItemsCardsJson from '../data/menuItemsCards.json'
+import { baseClassMainMenu } from '~/components/header/header'
+import Headlines from '~/components/__libary/01_Atoms/headlines/headlines'
+import Image from '~/components/__libary/01_Atoms/image/image'
 
 export const MenuCards = component$(() => {
 	const globalMenuStore = useContext(GlobalMenuStore)
@@ -15,19 +18,14 @@ export const MenuCards = component$(() => {
 		activeItemCard: any
 	} = useStore({ activeItemCard: 0 })
 
-	console.log('STORE', store)
 	useVisibleTask$(() => {
-		// if (targetRef.value) {
-		// 	disableBodyScroll(targetRef.value)
-		// }
-		// enableBodyScroll(targetRef)
+		// TODO BODYSCROLLLOCK
 	})
-	// const targetElemen = null
+
 	// menuItemsCards
 	return (
 		<div
 			ref={targetRef}
-			// style={{ border: '1px solid red', width: '100px' }}
 			class={{
 				header__menu: true,
 				visible: globalMenuStore.showMenu,
@@ -53,6 +51,10 @@ export const MenuCards = component$(() => {
 							data-header-menu-id="ui-page"
 						>
 							<div class="row">
+								<div class="column small-12">
+									<Headlines>{item.headline}</Headlines>
+								</div>
+
 								<div class="column small-5">
 									{item.links.map((item: any, index: number) => (
 										<a
@@ -60,7 +62,7 @@ export const MenuCards = component$(() => {
 											href={item.url}
 											title={item.label}
 											class={[
-												'header__subitem',
+												`${baseClassMainMenu}__subitem`,
 												{
 													initial: store.activeItemCard == index,
 												},
@@ -70,27 +72,44 @@ export const MenuCards = component$(() => {
 											onMouseOver$={() => (store.activeItemCard = index)}
 											onMouseOut$={() => (store.activeItemCard = index)}
 										>
-											<span class="header__arrow">›</span>
+											<span class={`${baseClassMainMenu}__arrow`}>›</span>
 											<span>{item.label}</span>
 										</a>
 									))}
 								</div>
-								<div class="column small-1"></div>
 								<div class="column small-5">
 									{item.links.map((item: any, index: number) => (
-										<div
-											key={index}
-											class={[
-												{
-													header__description: true,
-													rte: true,
-												},
-												store.activeItemCard == index ? 'visible' : '',
-											]}
-											data-header-description-id={index}
-										>
-											<p>{item.text}</p>
-										</div>
+										<>
+											{store.activeItemCard === index ? (
+												<Image
+													class={[
+														{
+															header__descriptionImage: true,
+															rte: true,
+														},
+													]}
+													src={item.image.src}
+													height={500}
+													width={500}
+												/>
+											) : (
+												null
+											)}
+
+											<div
+												key={index}
+												class={[
+													{
+														header__description: true,
+														rte: true,
+													},
+													store.activeItemCard == index ? 'visible' : '',
+												]}
+												data-header-description-id={index}
+											>
+												<p>{item.text}</p>
+											</div>
+										</>
 									))}
 								</div>
 							</div>

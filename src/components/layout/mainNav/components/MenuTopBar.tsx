@@ -1,10 +1,11 @@
 import { component$ } from '@builder.io/qwik'
 import { ThemeToggle } from '~/components/theme-toggle/theme-toggle'
 import Logo from './logo'
+import { baseClassMainMenu } from '~/components/header/header'
 
 export const MenuTopBar = component$(() => {
 	return (
-		<div class="header__top-bar">
+		<div class={`${baseClassMainMenu}__top-bar`}>
 			<div class="row">
 				<div class="column large-10">
 					<Logo />

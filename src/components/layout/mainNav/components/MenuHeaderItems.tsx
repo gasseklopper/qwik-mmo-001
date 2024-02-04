@@ -1,12 +1,9 @@
-import {
-	component$,
-	useContext,
-	useStore,
-} from '@builder.io/qwik'
+import { component$, useContext, useStore } from '@builder.io/qwik'
 import { GlobalMenuStore } from '../../../../globalContext'
 import { useLocation } from '@builder.io/qwik-city'
 import type { MenuDataItem } from '../menuTypes'
 import menuDataJson from '../data/menuItems.json'
+import { baseClassMainMenu } from '~/components/header/header'
 
 export const MenuHeaderItems = component$(() => {
 	const { url } = useLocation()
@@ -19,7 +16,7 @@ export const MenuHeaderItems = component$(() => {
 	})
 
 	return (
-		<nav class="header__items">
+		<nav class={`${baseClassMainMenu}__items`}>
 			{menuDataJson.length && (
 				<>
 					{menuDataJson.map((item: MenuDataItem) => (

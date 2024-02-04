@@ -1,25 +1,150 @@
 [
 	{
 		"id": 1,
+		"headline": "Home",
 		"links": [
 			{
-				"label": "Agile IT Service Management",
-				"url": "test1",
-				"text": "11111111Mit unseren Leistungen im Bereich AgileIT Service Management unterstützen wir unsere Kunden bei der optimalen Ausrichtung der Aufbau- und Ablauforganisation und digitalisieren und automatisieren gängige Aufgaben im Service Management - nach klassischen, agilen oder hybriden Methoden."
+				"label": "Welcome To My Home",
+				"url": "/start",
+				"image": {
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_001.jpg",
+					"height": "",
+					"width": ""
+				},
+				"text": "Welcome to my digital sanctuary, where creative code snippets weave intricate tales of atomic design, crafting immersive user interfaces. Journey through the visual tapestry of my photography and paintings, where every image tells a story, and every line of code is a brushstroke in the canvas of digital art. Explore the dynamic fusion of pixels and pigments, a synthesis of creativity captured in captivating collages. Welcome to a realm where code meets canvas, and the intersection of design and expression knows no bounds."
 			},
 			{
-				"label": "Agile IT Service Management",
+				"label": "Latest Thoughts And Projects",
 				"url": "test1",
-				"text": "2222222Mit unseren Leistungen im Bereich AgileIT Service Management unterstützen wir unsere Kunden bei der optimalen Ausrichtung der Aufbau- und Ablauforganisation und digitalisieren und automatisieren gängige Aufgaben im Service Management - nach klassischen, agilen oder hybriden Methoden."
+				"image": {
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_002.jpg",
+					"height": "",
+					"width": ""
+				},
+				"text": "Dive into my latest musings, projects, and beyond, where the creative heartbeat of my digital universe comes to life. Explore the evolving landscape of my thoughts, unraveling the intricate threads of inspiration that fuel my projects. From innovative code experiments to visual journeys captured through my lens, this space is a dynamic canvas of exploration. Join me on a quest through the realms of curiosity, creativity, and continuous discovery. Welcome to a corner of my mind, where the latest thoughts and projects converge, inviting you to wander and wonder."
 			}
 		]
 	},
 	{
 		"id": 2,
+		"headline": "Portfolio",
+		"links": [
+			{
+				"label": "Eccentric Canvas: A Tapestry of Code, Color, and Captured Moments",
+				"url": "test1",
+				"image": {
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_003.jpg",
+					"height": "",
+					"width": ""
+				},
+				"text": "Embark on a sensory odyssey within my portfolio, a curated convergence of paintings, code snippets, and captivating photography. Immerse yourself in the visual symphony of my painted expressions, where brushstrokes dance with emotions. Traverse the digital realm through meticulously crafted code snippets, each line telling a unique story in the language of technology. Witness moments frozen in time through the lens of my camera, as photography unfolds narratives that transcend pixels. This portfolio is a kaleidoscopic fusion of the tangible and the virtual, inviting you to explore the boundless horizons where artistry meets innovation."
+			},
+			{
+				"label": "Unleashing the Unseen in Photographic Alchemy",
+				"url": "test1",
+				"image": {
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_008.jpg",
+					"height": "",
+					"width": ""
+				},
+				"text": "Dive into the evocative world of my photography, where neorealism and brutal honesty collide, drawing inspiration from the iconic style of Jeff Wall. Explore the timeless elegance of black and white compositions, each frame telling a story in shades of chiaroscuro. Immerse yourself in a symphony of color composition, meticulously crafted to evoke emotions and create visual resonance. Witness the artistic fusion of atomic design principles, where every detail extrudes with purpose, creating a visual language that transcends the ordinary. Welcome to a realm where each photograph is a canvas, and visual storytelling is an art form elevated to its highest expression."
+			}
+		]
+	},
+	{
+		"id": 3,
+		"headline": "Byte-sized Bio: Unveiling the Eccentric Enigma Behind the Code, Canvas, and Candid Captures",
+		"links": [
+			{
+				"label": "About",
+				"url": "test1",			
+				"image": {
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_004.jpg",
+					"height": "",
+					"width": ""
+				},
+				"text": "In the realm where creativity meets technology, I am Markus Morley—an avid explorer of digital landscapes, weaving narratives through code, paintings, and the lens of my camera. Join me in this multifaceted journey, where passion for design, code, and visual storytelling converges into a harmonious symphony of expression. Welcome to my about section, a glimpse into the fusion of art and technology that defines my digital identity."
+			}
+		]
+	},
+	{
+		"id": 4,
+		"headline": "Qwik Experiements",
+		"links": [
+			{
+				"label": "Design System",
+				"url": "/clock",			
+				"image": {
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_004.jpg",
+					"height": "",
+					"width": ""
+				},
+				"text": "Design System In the realm where creativity meets technology, I am Markus Morley—an avid explorer of digital landscapes, weaving narratives through code, paintings, and the lens of my camera. Join me in this multifaceted journey, where passion for design, code, and visual storytelling converges into a harmonious symphony of expression. Welcome to my about section, a glimpse into the fusion of art and technology that defines my digital identity."
+			},
+			{
+				"label": "Api Fetching",
+				"url": "/api-fetching",			
+				"image": {
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_014.jpg",
+					"height": "",
+					"width": ""
+				},
+				"text": "api-fetching Design System In the realm where creativity meets technology, I am Markus Morley—an avid explorer of digital landscapes, weaving narratives through code, paintings, and the lens of my camera. Join me in this multifaceted journey, where passion for design, code, and visual storytelling converges into a harmonious symphony of expression. Welcome to my about section, a glimpse into the fusion of art and technology that defines my digital identity."
+			},
+			{
+				"label": "Link List Locomotive",
+				"url": "/link-list",			
+				"image": {
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_014.jpg",
+					"height": "",
+					"width": ""
+				},
+				"text": "/link-list Design System In the realm where creativity meets technology, I am Markus Morley—an avid explorer of digital landscapes, weaving narratives through code, paintings, and the lens of my camera. Join me in this multifaceted journey, where passion for design, code, and visual storytelling converges into a harmonious symphony of expression. Welcome to my about section, a glimpse into the fusion of art and technology that defines my digital identity."
+			},
+			{
+				"label": "The Lies of ChatGPT",
+				"url": "/theLiesOfChatGPT",			
+				"image": {
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_014.jpg",
+					"height": "",
+					"width": ""
+				},
+				"text": "/theLiesOfChatGPT Design System In the realm where creativity meets technology, I am Markus Morley—an avid explorer of digital landscapes, weaving narratives through code, paintings, and the lens of my camera. Join me in this multifaceted journey, where passion for design, code, and visual storytelling converges into a harmonious symphony of expression. Welcome to my about section, a glimpse into the fusion of art and technology that defines my digital identity."
+			},
+			{
+				"label": "Hacker News Api Fetching",
+				"url": "/hacker-news",			
+				"image": {
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_015.jpg",
+					"height": "",
+					"width": ""
+				},
+				"text": "hacker-news Design System In the realm where creativity meets technology, I am Markus Morley—an avid explorer of digital landscapes, weaving narratives through code, paintings, and the lens of my camera. Join me in this multifaceted journey, where passion for design, code, and visual storytelling converges into a harmonious symphony of expression. Welcome to my about section, a glimpse into the fusion of art and technology that defines my digital identity."
+			},
+			{
+				"label": "Use Hooks",
+				"url": "/use-hooks",			
+				"image": {
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_012.jpg",
+					"height": "",
+					"width": ""
+				},
+				"text": "Use Hooks In the realm where creativity meets technology, I am Markus Morley—an avid explorer of digital landscapes, weaving narratives through code, paintings, and the lens of my camera. Join me in this multifaceted journey, where passion for design, code, and visual storytelling converges into a harmonious symphony of expression. Welcome to my about section, a glimpse into the fusion of art and technology that defines my digital identity."
+			}
+		]
+	},
+	{
+		"id": 10,
+		"headline": "The Lies Of ChatGPT",
 		"links": [
 			{
 				"label": "Agile IT Service Management",
 				"url": "test1",
+				"image": {
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_005.jpg",
+					"height": "",
+					"width": ""
+				},
 				"text": "Mit unseren Leistungen im Bereich AgileIT Service Management unterstützen wir unsere Kunden bei der optimalen Ausrichtung der Aufbau- und Ablauforganisation und digitalisieren und automatisieren gängige Aufgaben im Service Management - nach klassischen, agilen oder hybriden Methoden."
 			}
 		]

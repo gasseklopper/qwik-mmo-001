@@ -7,6 +7,7 @@ import { GlobalMenuStore } from '../../../../globalContext'
 import ButtonBurger from './buttonBurger'
 import { MenuCards } from './MenuCards'
 import { MenuHeaderItems } from './MenuHeaderItems'
+import { baseClassMainMenu } from '~/components/header/header'
 
 export const MenuMain = component$(() => {
 	const globalMenuStore = useContext(GlobalMenuStore)
@@ -24,14 +25,14 @@ export const MenuMain = component$(() => {
 	
 	return (
 		<div
-			class="header__main"
+			class={`${baseClassMainMenu}__main`}
 			onMouseEnter$={showOverlay$}
 			onMouseLeave$={hideMenu$}
 		>
 			<div class="row">
 				<div class="column">
-					<div class="main-nav">
-						<div class="header__main_inner">
+					<div class="mainNav">
+						<div class={`${baseClassMainMenu}__main_inner`}>
 							<MenuHeaderItems />
 							<ButtonBurger />
 						</div>

@@ -9,7 +9,7 @@ import {
 	getColorPreference,
 	setPreference
 } from '../../theme-toggle/theme-toggle'
-import styles from './main-nav.scss?inline'
+import styles from './mainNav.scss?inline'
 import { GlobalStore } from '../../../globalContext'
 import { MenuMain } from './components/MenuMain'
 import { MenuTopBar } from './components/MenuTopBar'
