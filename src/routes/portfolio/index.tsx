@@ -22,6 +22,21 @@ export default component$(() => {
 							<a href="../portfolio/venedig">Venedig</a>
 						</li>
 						<li>
+							<a href="../portfolio/black">black</a>
+						</li>
+						<li>
+							<a href="../portfolio/huricane">huricane</a>
+						</li>
+						<li>
+							<a href="../portfolio/labor">labor</a>
+						</li>
+						<li>
+							<a href="../portfolio/locked">locked</a>
+						</li>
+						<li>
+							<a href="../portfolio/golfing">golfing</a>
+						</li>
+						<li>
 							<a href="../portfolio/blacker">blacker</a>
 						</li>
 						<li>
