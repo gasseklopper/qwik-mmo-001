@@ -1,0 +1,131 @@
+.portfolio {
+	ul {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+	}
+
+	li {
+		list-style: none;
+	}
+
+	&__card {
+		width: 500px;
+		height: 500px;
+	}
+}
+
+.port_box {
+	padding-top: 2rem;
+}
+
+.port_box__layout {
+	background-color: var(--surface1);
+	border-top: 3px solid var(--text2);
+	margin-bottom: 2rem;
+	padding: 1rem;
+}
+
+.port_box__layout_intro {
+	height: 700px;
+}
+
+.port_box__layout_intro .port_box__intro_text {
+	font-size: 9rem;
+	font-weight: 700;
+	transform: translate(-20%, 810%) rotate(-80deg);
+}
+
+.port_box__layout_001 {
+	min-height: 300px;
+}
+
+.port_box__layout_002 {
+	min-height: 400px;
+}
+
+.port_box__layout_003 {
+	min-height: 700px;
+}
+
+.port_box__layout_004 {
+	min-height: 400px;
+}
+
+.port_box__layout_005 {
+	min-height: 240px;
+}
+
+.port_box__layout_006 {
+	min-height: 140px;
+}
+
+.port_box__layout_007 {
+	min-height: 380px;
+}
+
+.port_box__title {
+	font-size: 2rem;
+	font-weight: 700;
+}
+
+.port_box__layout_003 .port_box__number {
+	font-size: 7rem;
+	font-weight: 700;
+	padding-bottom: 1rem;
+}
+
+.port_box__layout_003 .port_box__number {
+	font-size: 7rem;
+	font-weight: 700;
+	padding-bottom: 1rem;
+}
+
+.port_box__description {
+	color: var(--text2);
+	font-size: 1.2rem;
+	font-weight: 700;
+	padding-bottom: 2rem;
+}
+
+.port_box__layout_003 .port_box__image img {
+	width: 150%;
+}
+
+.port_box__layout_001 .port_box__number {
+    font-size: 4rem;
+    font-weight: 700;
+    padding-bottom: 2rem;
+}
+
+.port_box__layout_002 .port_box__number {
+    font-size: 5rem;
+    font-weight: 700;
+    padding-bottom: 2rem;
+}
+
+.port_box__layout_003 .port_box__number {
+	font-size: 7rem;
+	font-weight: 700;
+	padding-bottom: 1rem;
+}
+
+.port_box__layout_004 .port_box__number {
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.port_box__layout_005 .port_box__number {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.port_box__layout_006 .port_box__number {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.port_box__number {
+	font-size: 5rem;
+	font-weight: 700;
+}
