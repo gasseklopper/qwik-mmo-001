@@ -1,4 +1,4 @@
-import { component$, useStyles$ } from '@builder.io/qwik'
+import { component$, useStyles$, useVisibleTask$, $, useSignal, useStore } from '@builder.io/qwik'
 import styles from './paris.scss?inline'
 
 export default component$(() => {
@@ -6,24 +6,11 @@ export default component$(() => {
 
 	return (
 		<section class={['test', 'paris']}>
-			{/* <div class="row">
-				<div class="column large-12">large 12</div>
-				<div class="column large-6">large 6</div>
-				<div class="column large-6">large 6</div>
-			</div> */}
-			{/* <Gallery3Col /> */}
+			<GalleryStaticTwo />
 			<Column1Text />
 			<Column3 />
 			<GalleryStatic />
 		</section>
-	)
-})
-
-export const ButtonBurger = component$(() => {
-	return (
-		<button class="header__burger">
-			<div class="header__icon"></div>
-		</button>
 	)
 })
 
@@ -101,7 +88,7 @@ export const Column3 = component$(() => {
 	return (
 		<div class="row">
 			<div class="column large-12">
-				<img src="../../assets/images/photography/paris/IMG_6733.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6763.jpg" alt="" />
 			</div>
 			<div class="column large-4">
 				<p>
@@ -140,6 +127,199 @@ export const Column3 = component$(() => {
 				<img src="../../assets/images/photography/paris/IMG_6763.jpg" alt="" />
 			</div>
 		</div>
+	)
+})
+
+export const GalleryStaticTwo = component$(() => {
+	useStyles$(styles)
+
+	const outputRef = useSignal<any>()
+	const imageContainerRef = useSignal<any>()
+
+	const store = useStore({
+		width: 0,
+		height: 0,
+		currentImage: 0,
+		transformX: '1',
+		transformY: '0px',
+	})
+
+	const forward = $(() => {
+		if (store.currentImage === 4) {
+			store.currentImage = 0
+		} else {
+			store.currentImage++
+		}
+		const images = outputRef.value!.querySelectorAll('.gallery__images-slider')
+		const imageContainer = imageContainerRef.value!
+		if (store.currentImage) {
+			imageContainer.style.setProperty(
+				'--demo-transformStart',
+				`${(store.currentImage - 1) * -800}px`
+			)
+			imageContainer.style.setProperty(
+				'--demo-transformEnd',
+				`${(store.currentImage + 0) * -800}px`
+			)
+		}
+		// console.log('imageContainer', imageContainer)
+		// console.log('images', images)
+		images.forEach((element: any) => {
+			console.log('element', element)
+			const color = 'green'
+			element.style.setProperty('--demo-color-change', color)
+		})
+		console.log('forward')
+	})
+
+	const back = $(() => {
+		console.log('store.currentImage', store.currentImage)
+		if (store.currentImage === 0) {
+			store.currentImage = 4
+		} else {
+			store.currentImage--
+		}
+		const images = outputRef.value!.querySelectorAll('.gallery__images-slider')
+		const imageContainer = imageContainerRef.value!
+		if (store.currentImage) {
+			imageContainer.style.setProperty(
+				'--demo-transformStart',
+				`${(store.currentImage + 1) * -800}px`
+			)
+			imageContainer.style.setProperty(
+				'--demo-transformEnd',
+				`${(store.currentImage - 0) * -800}px`
+			)
+		}
+		images.forEach((element: any) => {
+			console.log('element', element)
+			const color = 'blue'
+			element.style.setProperty('--demo-color-change', color)
+		})
+		console.log('back')
+	})
+
+	useVisibleTask$(() => {
+		if (outputRef.value) {
+			console.log('outputRef.value', outputRef.value)
+			const images = outputRef.value.querySelectorAll('.gallery__images-slider')
+			console.log('test', images)
+			console.log('test.length', images.length)
+			const rect = outputRef.value.getBoundingClientRect()
+			store.width = Math.round(rect.width)
+			store.height = Math.round(rect.height)
+		}
+	})
+
+	return (
+		<section class={['test', 'gallery']}>
+			<div>{store.currentImage}</div>
+			<div class="row">
+				<div class="column large-12">
+					<div class={['superstroke']}></div>
+				</div>
+				<div class="column large-3">
+					<div
+						class="gallery__firstImage"
+						style="background-image:url(../../assets/images/photography/paris/IMG_6733.jpg);"
+					></div>
+				</div>
+				<div class="column large-7">
+					{/* <Controls /> */}
+					<div class="gallery__controls-wrapper">
+						<div class="gallery__controls-slider">
+							<div class="back">
+								<button onClick$={back}>back</button>
+							</div>
+							<div class="forward">
+								<button onClick$={forward}>forward</button>
+							</div>
+						</div>
+					</div>
+					<div
+						class={['test', 'gallery__image-wrapper', { objectSyntax: true }]}
+						style={{
+							border: '1px solid red',
+						}}
+					>
+						<div
+							ref={imageContainerRef}
+							class={[
+								'gallery__images',
+								store.currentImage === -1 ? 'transformX-1' : '',
+								store.currentImage === 0 ? 'transformX0' : '',
+								store.currentImage === 1 ? 'transformX1' : '',
+								store.currentImage === 2 ? 'transformX2' : '',
+								store.currentImage === 3 ? 'transformX3' : '',
+								store.currentImage === 4 ? 'transformX4' : '',
+								store.currentImage === 5 ? 'transformX5' : '',
+								{ objectSyntax: true },
+							]}
+						>
+							<div class="gallery__images-container" ref={outputRef}>
+								<img
+									class="gallery__images-slider"
+									src="../../assets/images/photography/paris/IMG_6687.jpg"
+									alt=""
+								/>
+								<img
+									class="gallery__images-slider"
+									src="../../assets/images/photography/paris/IMG_6699.jpg"
+									alt=""
+								/>
+								<img
+									class="gallery__images-slider"
+									src="../../assets/images/photography/paris/IMG_6697.jpg"
+									alt=""
+								/>
+								<img
+									class="gallery__images-slider"
+									src="../../assets/images/photography/paris/IMG_6702.jpg"
+									alt=""
+								/>
+								<img
+									class="gallery__images-slider"
+									src="../../assets/images/photography/paris/IMG_6704.jpg"
+									alt=""
+								/>
+								<img
+									class="gallery__images-slider"
+									src="../../assets/images/photography/paris/IMG_6705.jpg"
+									alt=""
+								/>
+								<img
+									class="gallery__images-slider"
+									src="../../assets/images/photography/paris/IMG_6707.jpg"
+									alt=""
+								/>
+								<img
+									class="gallery__images-slider"
+									src="../../assets/images/photography/paris/IMG_6711.jpg"
+									alt=""
+								/>
+								<img
+									class="gallery__images-slider"
+									src="../../assets/images/photography/paris/IMG_6714.jpg"
+									alt=""
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="column large-2">
+					<div class={['', 'gallery__rowsImage']}>
+						<div
+							class="gallery__item-img"
+							style="background-image:url(../../assets/images/photography/paris/IMG_6717.jpg);"
+						></div>
+						<div
+							class="gallery__item-img"
+							style="background-image:url(../../assets/images/photography/paris/IMG_6722.jpg);"
+						></div>
+					</div>
+				</div>
+			</div>
+		</section>
 	)
 })
 

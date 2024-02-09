@@ -22,11 +22,11 @@ type ExtendedDivlement = QwikIntrinsicElements['h1'] &
 		'aria-label'?: string
 	}
 
-export type ExtendedProductCategoryProps = ExtendedDivlement & HeadlineProps
+export type ExtendedHeadlinesProps = ExtendedDivlement & HeadlineProps
 
 const mainClass = 'headlines'
 
-export default component$(({class: className, ...rest }: ExtendedProductCategoryProps) => {
+export default component$(({class: className, ...rest }: ExtendedHeadlinesProps) => {
 	useStyles$(styles)
 
 	const ComponentTag = rest.headlineTag || 'h2'

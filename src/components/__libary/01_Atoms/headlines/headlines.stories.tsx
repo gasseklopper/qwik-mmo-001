@@ -1,19 +1,19 @@
 import type { Meta, StoryObj } from 'storybook-framework-qwik'
-import HeadlineComponent, { ExtendedProductCategoryProps } from './headlines'
+import HeadlineComponent, { ExtendedHeadlinesProps } from './headlines'
 
-const primaryButtonProps: ExtendedProductCategoryProps = {
+const primaryButtonProps: ExtendedHeadlinesProps = {
 	headlineTag: 'h1',
 	headlineClass: 'h4',
 	class: 'testClassName'
 }
 
-const meta: Meta<ExtendedProductCategoryProps> = {
+const meta: Meta<ExtendedHeadlinesProps> = {
 	title: 'Atoms/Headline',
 	component: HeadlineComponent,
 	tags: ['autodocs'],
 }
 
-type Story = StoryObj<ExtendedProductCategoryProps>
+type Story = StoryObj<ExtendedHeadlinesProps>
 
 export default meta
 

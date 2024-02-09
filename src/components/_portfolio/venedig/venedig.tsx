@@ -6,9 +6,8 @@ export default component$(() => {
 
 	return (
 		<section class={['test', 'venedig']}>
-			<Column1Text />
-			<Column3 />
 			<GalleryStatic />
+			<Column3 />
 		</section>
 	)
 })
@@ -79,12 +78,6 @@ export const GalleryStatic = component$(() => {
 export const Column3 = component$(() => {
 	return (
 		<div class="row">
-			<div class="column large-12">
-				<img
-					src="../../assets/images/photography/venedig/IMG_1857.jpg"
-					alt=""
-				/>
-			</div>
 			<div class="column large-4">
 				<p>
 					Photographers tend not to photograph what they can’t see, which is the

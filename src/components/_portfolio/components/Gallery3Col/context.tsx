@@ -7,23 +7,10 @@ import {
 } from '@builder.io/qwik'
 import Gallery from './gallery'
 
-// interface GalleryStore {
-// 	first: string
-// 	last: string
-// 	username: string
-// 	email: string
-// 	password: string
-// }
-
 export const GalleryContext = createContextId<any>('gallery')
 
 export const Stores = component$(() => {
 	const gallery = useStore({
-		first: 'first',
-		last: 'last',
-		password: 'password',
-		email: 'email',
-		username: 'username',
 		slides: 'test',
 		currentSlide: '1',
 	})

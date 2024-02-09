@@ -6,9 +6,9 @@ export default component$(() => {
 
 	return (
 		<section class={['test', 'rippel']}>
-			<Column1Text />
-			<Column3 />
+			{/* <Column1Text /> */}
 			<GalleryStatic />
+			<Column3 />
 		</section>
 	)
 })
@@ -24,37 +24,35 @@ export const ButtonBurger = component$(() => {
 export const GalleryStatic = component$(() => {
 	return (
 		<div class="row">
-			<div class="column large-3">
+			<div class="column large-4">
 				<img
 					src="../../assets/images/photography/rippel/ripel_001.gif"
 					alt=""
 				/>
 			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/rippel/ripel_002.gif"
-					alt=""
-				/>
-			</div>
-			<div class="column large-3">
+			<div class="column large-4"></div>
+			<div class="column large-4">
 				<img
 					src="../../assets/images/photography/rippel/ripel_003.gif"
 					alt=""
 				/>
 			</div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/rippel/ripel_004.gif"
-					alt=""
-				/>
-			</div>
-			<div class="column large-3">
+			<div class="column large-4"></div>
+			<div class="column large-4">
 				<img
 					src="../../assets/images/photography/rippel/ripel_005.gif"
 					alt=""
 				/>
 			</div>
-			<div class="column large-3">
+			<div class="column large-4"></div>
+			<div class="column large-4">
+				<img
+					src="../../assets/images/photography/rippel/ripel_004.gif"
+					alt=""
+				/>
+			</div>
+			<div class="column large-4"></div>
+			<div class="column large-4">
 				<img
 					src="../../assets/images/photography/rippel/ripel_006.gif"
 					alt=""
@@ -67,12 +65,6 @@ export const GalleryStatic = component$(() => {
 export const Column3 = component$(() => {
 	return (
 		<div class="row">
-			<div class="column large-12">
-				<img
-					src="../../assets/images/photography/rippel/ripel_003.gif"
-					alt=""
-				/>
-			</div>
 			<div class="column large-4">
 				<p>
 					Photographers tend not to photograph what they can’t see, which is the
@@ -91,6 +83,12 @@ export const Column3 = component$(() => {
 				</p>
 			</div>
 			<div class="column large-4">
+				<img
+					src="../../assets/images/photography/rippel/ripel_002.gif"
+					alt=""
+				/>
+			</div>
+			<div class="column large-4">
 				<p>
 					Photography is a magical kind of art that allows people to preserve
 					time and moments, and to describe the world the way they see it and
@@ -105,12 +103,6 @@ export const Column3 = component$(() => {
 					just as effortlessly for both require the same commitment to vanity
 					and manipulations.
 				</p>
-			</div>
-			<div class="column large-4">
-				<img
-					src="../../assets/images/photography/rippel/ripel_002.gif"
-					alt=""
-				/>
 			</div>
 		</div>
 	)
