@@ -22,6 +22,9 @@ export default component$(() => {
 							<a href="../portfolio/venedig">Venedig</a>
 						</li>
 						<li>
+							<a href="../portfolio/blingbling">bling_bling_001.gif</a>
+						</li>
+						<li>
 							<a href="../portfolio/black">black</a>
 						</li>
 						<li>
