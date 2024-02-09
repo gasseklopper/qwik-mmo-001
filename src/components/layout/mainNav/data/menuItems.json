@@ -1,5 +1,5 @@
 [
-	{ "href": "/start", "label": "Home", "id": 1, "showMenu": true },
+	{ "href": "/", "label": "Home", "id": 1, "showMenu": true },
 	{ "href": "/portfolio", "label": "Portfolio", "id": 2, "showMenu": true },
 	{ "href": "/about-us", "label": "About Us", "id": 3, "showMenu": true },
 	{
@@ -7,11 +7,5 @@
 		"label": "Qwik Experiments",
 		"id": 4,
 		"showMenu": true
-	},
-	{
-		"href": "/input-context",
-		"label": "input-context",
-		"id": 5,
-		"showMenu": false
 	}
 ]

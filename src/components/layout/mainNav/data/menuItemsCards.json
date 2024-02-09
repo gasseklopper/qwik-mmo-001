@@ -85,11 +85,21 @@
 				"label": "Api Fetching",
 				"url": "/api-fetching",			
 				"image": {
-					"src": "../../assets/images/photography/blacker/photography_blackerthandays_014.jpg",
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_016.jpg",
 					"height": "",
 					"width": ""
 				},
 				"text": "api-fetching Design System In the realm where creativity meets technology, I am Markus Morley—an avid explorer of digital landscapes, weaving narratives through code, paintings, and the lens of my camera. Join me in this multifaceted journey, where passion for design, code, and visual storytelling converges into a harmonious symphony of expression. Welcome to my about section, a glimpse into the fusion of art and technology that defines my digital identity."
+			},
+			{
+				"label": "input-context",
+				"url": "/input-context",			
+				"image": {
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_016.jpg",
+					"height": "",
+					"width": ""
+				},
+				"text": "input-context Design System In the realm where creativity meets technology, I am Markus Morley—an avid explorer of digital landscapes, weaving narratives through code, paintings, and the lens of my camera. Join me in this multifaceted journey, where passion for design, code, and visual storytelling converges into a harmonious symphony of expression. Welcome to my about section, a glimpse into the fusion of art and technology that defines my digital identity."
 			},
 			{
 				"label": "Link List Locomotive",
@@ -105,7 +115,7 @@
 				"label": "The Lies of ChatGPT",
 				"url": "/theLiesOfChatGPT",			
 				"image": {
-					"src": "../../assets/images/photography/blacker/photography_blackerthandays_014.jpg",
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_017.jpg",
 					"height": "",
 					"width": ""
 				},

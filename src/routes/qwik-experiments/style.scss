@@ -1,0 +1,37 @@
+.input-context {
+	background: var(--surface2);
+}
+
+.dasGrid {
+	display: flex;
+	flex-direction: row;
+	width: 1200px;
+	background-color: aqua;
+	align-items: stretch;
+}
+
+.product-card {
+	background-color: green;
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative; /* Add this line */
+	height: 100%; /* Add this line */
+
+	&__content {
+		background-color: blue;
+		flex: 1;
+		position: relative;
+	}
+
+	&__lower-wrapper {
+		background-color: yellow;
+		position: relative;
+
+		.button {
+			position: absolute;
+			bottom: 0; /* Add this line */
+		}
+	}
+}
