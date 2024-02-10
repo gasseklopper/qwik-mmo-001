@@ -1,0 +1,24 @@
+@use './../00-vars/00-vars' as vars;
+@use './../1-helpers/0-mixins/color-contrast';
+@use 'sass:math';
+
+blockquote,
+q {
+	quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+	content: '';
+	content: none;
+}
+
+blockquote {
+	background: var(--surface4);
+	border-left: solid 3px var(--text2);
+	font-style: italic;
+	margin: math.div(vars.$gutter, 1) 0 math.div(vars.$gutter, 4) 0;
+	padding: math.div(vars.$gutter, 1.5) math.div(vars.$gutter, .2) math.div(vars.$gutter, 1) math.div(vars.$gutter, .6);
+}

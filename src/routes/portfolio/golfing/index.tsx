@@ -1,4 +1,4 @@
-import { component$, useVisibleTask$ } from '@builder.io/qwik'
+import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import Bodytext from '~/components/__libary/01_Atoms/bodytext/bodytext'
 import Headlines from '~/components/__libary/01_Atoms/headlines/headlines'
