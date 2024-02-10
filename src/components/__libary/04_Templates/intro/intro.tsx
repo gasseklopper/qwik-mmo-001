@@ -34,7 +34,7 @@ export default component$(
 		const componentClass = className || ''
 
 		return (
-			<div class={`${mainClass} row`} {...rest}>
+			<div class={`${mainClass} ${componentClass} ${componentVariant} row`} {...rest}>
 				{Slot && (
 					<div class="column">
 						<Slot />

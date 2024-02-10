@@ -3,7 +3,6 @@ import type { DocumentHead } from '@builder.io/qwik-city'
 import Bodytext from '~/components/__libary/01_Atoms/bodytext/bodytext'
 import Headlines from '~/components/__libary/01_Atoms/headlines/headlines'
 import Intro from '~/components/__libary/04_Templates/intro/intro'
-import Blacker from '~/components/_portfolio/blacker/blacker'
 
 export default component$(() => {
 	return (

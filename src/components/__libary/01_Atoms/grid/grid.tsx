@@ -31,7 +31,7 @@ export default component$(
 		const componentClass = className || ''
 
 		return (
-			<div class={`${mainClass} `} {...rest}>
+			<div class={`${mainClass} ${componentClass} ${componentVariant}`} {...rest}>
 				<Slot/>
 				{rest.info}
 				{rest.action}
