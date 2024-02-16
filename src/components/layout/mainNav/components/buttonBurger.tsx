@@ -32,7 +32,7 @@ export default component$(
 
 		return (
 			<>
-				<button {...rest} class={`${mainClass}`}>
+				<button {...rest} class={`${mainClass} ${className}`}>
 					<div class="header__icon"></div>
 					<Slot/>
 				</button>
