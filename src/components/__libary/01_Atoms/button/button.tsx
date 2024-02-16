@@ -1,10 +1,7 @@
 import type { QRL, QwikIntrinsicElements } from '@builder.io/qwik'
 import { Slot, component$, useStyles$ } from '@builder.io/qwik'
 import styles from './button.scss?inline'
-
-// Gloabl Types (design system?)
-type Size = 'large' | 'default' | 'small' | undefined
-type Variant = 'primary' | 'secondary'
+import { Size, Variant } from '~/globalContext'
 
 // ButtonProps type
 type ButtonProps = {
@@ -25,29 +22,31 @@ type ExtendedButtonElement = QwikIntrinsicElements['button'] & {
 // Combine QwikIntrinsicElements and ButtonProps type
 export type ExtendedButtonProps = ExtendedButtonElement & ButtonProps
 
-// Define baseClassDefault value for button component 
+// Define baseClassDefault value for button component
 const mainClass = 'button'
 
-export default component$(({class: className, ...rest }: ExtendedButtonProps) => {
-	useStyles$(styles)
+export default component$(
+	({ class: className, ...rest }: ExtendedButtonProps) => {
+		useStyles$(styles)
 
-	const componentVariant = `${mainClass}--${rest.buttonVariant}` || ''
-	const componentSize = `${mainClass}--${rest.buttonSize}` || ''
-	const componentBaseClass = rest.buttonBaseClass || mainClass
-	const componentClass = className || ''
-	const componentFit = rest.buttonFit ? `${mainClass}--fit` : ''
+		const componentVariant = `${mainClass}--${rest.buttonVariant}` || ''
+		const componentSize = `${mainClass}--${rest.buttonSize}` || ''
+		const componentBaseClass = rest.buttonBaseClass || mainClass
+		const componentClass = className || ''
+		const componentFit = rest.buttonFit ? `${mainClass}--fit` : ''
 
-	return (
-		<button
-			{...rest}
-			class={`${componentBaseClass} ${componentSize} ${componentFit} ${componentVariant} ${componentClass}`}
-		>
-			<span class='button__content-wrapper'>
-				<span >
-					{rest.buttonLabel}
-					<Slot />
+		return (
+			<button
+				{...rest}
+				class={`${mainClass} ${componentBaseClass} ${componentSize} ${componentFit} ${componentVariant} ${componentClass}`}
+			>
+				<span class={`${mainClass}__content-wrapper`}>
+					<span>
+						{rest.buttonLabel}
+						<Slot />
+					</span>
 				</span>
-			</span>
-		</button>
-	)
-})
+			</button>
+		)
+	}
+)

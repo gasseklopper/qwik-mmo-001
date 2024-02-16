@@ -117,11 +117,13 @@ export default component$(() => {
 	function getRandomValueR() {
 		return Math.floor(Math.random() * 100) + 1 // Adjust the range as needed
 	}
+
 	function getRandomValueC() {
 		return Math.floor(Math.random() * 7) + 1 // Adjust the range as needed
 	}
-	console.log('eee', getRandomValueR())
-	console.log('eee', getRandomValueC())
+
+	// console.log('eee', getRandomValueR())
+	// console.log('eee', getRandomValueC())
 
 	return (
 		<>
@@ -150,7 +152,7 @@ export default component$(() => {
 				<div class="section copy">
 					<div class="section-wrapper">
 						<div class="content">
-							<h2 class="h1">
+							<p class="h1">
 								Welcome to my digital realm, where lines of code dance to create
 								immersive experiences and interfaces. I am Markus Morley, a
 								coder of digital dreams, a resident of the enigmatic cityscape
@@ -169,7 +171,7 @@ export default component$(() => {
 								on this surreal journey as I unfold my story through a resume,
 								where dates and roles intertwine like the plot twists of a Lynch
 								film. From creative development at hauserlacour.de to my current
-								role as a Product Engineer at sinnerschrader.com, each chapter
+								role as a Product Engineer at sinner schrader com, each chapter
 								adds a layer to my narrative. Amidst the binary poetry, my
 								education reveals a canvas rich in visual communication, with
 								studies in photography, painting, and digital media at HFG,
@@ -182,7 +184,7 @@ export default component$(() => {
 								line of code and every captured image holds a story waiting to
 								be told. Welcome to my portfolio – a digital odyssey through the
 								surreal, the intricate, and the art of observation
-							</h2>
+							</p>
 						</div>
 					</div>
 				</div>

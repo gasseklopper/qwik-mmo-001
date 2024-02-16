@@ -1,14 +1,42 @@
-import { component$, useStyles$ } from '@builder.io/qwik'
+import {
+	component$,
+	useStyles$,
+	QwikIntrinsicElements,
+	QRL,
+	Slot,
+} from '@builder.io/qwik'
 import styles from './../mainNav.scss?inline'
+import { Size, Variant } from '~/globalContext'
 
-export default component$(() => {
-	useStyles$(styles)
+// ButtonProps type
+type ButtonProps = {
+	buttonBaseClass?: string
+	buttonLabel?: string
+	buttonSize?: Size
+	buttonVariant?: Variant
+	buttonFit?: boolean
+}
 
-	return (
-		<>
-			<button class="header__burger">
-				<div class="header__icon"></div>
-			</button>
-		</>
-	)
-})
+type ExtendedButtonElement = QwikIntrinsicElements['button'] & {
+	'aria-label'?: string
+	onClick$?: QRL<() => void>
+}
+
+export type ExtendedButtonProps = ExtendedButtonElement & ButtonProps
+
+const mainClass = 'button-burger'
+
+export default component$(
+	({ class: className, ...rest }: ExtendedButtonProps) => {
+		useStyles$(styles)
+
+		return (
+			<>
+				<button {...rest} class={`${mainClass}`}>
+					<div class="header__icon"></div>
+					<Slot/>
+				</button>
+			</>
+		)
+	}
+)

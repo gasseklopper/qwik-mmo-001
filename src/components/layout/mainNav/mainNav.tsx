@@ -7,21 +7,21 @@ import {
 import {
 	colorSchemeChangeListener,
 	getColorPreference,
-	setPreference
+	setPreference,
 } from '../../theme-toggle/theme-toggle'
 import styles from './mainNav.scss?inline'
-import { GlobalStore } from '../../../globalContext'
+import { GlobalMenuStore, GlobalStore } from '../../../globalContext'
 import { MenuMain } from './components/MenuMain'
 import { MenuTopBar } from './components/MenuTopBar'
 import { MenuOverlay } from './components/MenuOverlay'
 import { GlobalMenuStoreComponente } from './GlobalMenuStoreComponente'
+import { baseClassMainMenu, baseClassMobileMenu } from '~/components/header/header'
 
 export default component$(() => {
-	// Use Styles
 	useStyles$(styles)
 
-	// Use Context
 	const globalStore = useContext(GlobalStore)
+	const globalMenuStore = useContext(GlobalMenuStore)
 
 	useVisibleTask$(() => {
 		globalStore.theme = getColorPreference()
@@ -33,10 +33,20 @@ export default component$(() => {
 
 	return (
 		<div class="navigation">
-			<header class="header">
-				<GlobalMenuStoreComponente />
-				<MenuOverlay />
-				<MenuTopBar />
+			<header
+				class={
+					globalMenuStore.showMobileMenu
+						? `${baseClassMobileMenu}`
+						: `${baseClassMainMenu}`
+				}
+			>
+				{!globalMenuStore.showMobileMenu && (
+					<>
+						<GlobalMenuStoreComponente />
+						<MenuOverlay />
+						<MenuTopBar />
+					</>
+				)}
 				<MenuMain />
 			</header>
 		</div>
