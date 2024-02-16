@@ -122,8 +122,8 @@ export default component$(() => {
 		return Math.floor(Math.random() * 7) + 1 // Adjust the range as needed
 	}
 
-	// console.log('eee', getRandomValueR())
-	// console.log('eee', getRandomValueC())
+	console.log('eee', getRandomValueR())
+	console.log('eee', getRandomValueC())
 
 	return (
 		<>
