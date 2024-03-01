@@ -59,9 +59,9 @@ export default component$(() => {
 		gsap.registerPlugin(Flip)
 
 		const leftHand = document.querySelector('.hatting__left')
-		const middleHand = document.querySelector('.hatting__middle')
+		// const middleHand = document.querySelector('.hatting__middle')
 		const rightHand = document.querySelector('.hatting__right')
-		let state = Flip.getState('.card')
+		const state = Flip.getState('.card')
 
 		deleteAndReplace()
 
@@ -76,7 +76,7 @@ export default component$(() => {
 		// like a lot of frameworks do 🙃
 		function deleteAndReplace() {
 			let newParent
-			let oldCard = document.querySelector('.hatting__ball')
+			const oldCard = document.querySelector('.hatting__ball')
 
 			oldCard!.remove()
 
@@ -90,12 +90,12 @@ export default component$(() => {
 			store.left = !store.left
 		}
 
-		function reparentCard() {
-			store.left
-				? rightHand!.append(...leftHand!.childNodes)
-				: leftHand!.append(...rightHand!.childNodes)
-			store.left = !store.left
-		}
+		// function reparentCard() {
+		// 	store.left
+		// 		? rightHand!.append(...leftHand!.childNodes)
+		// 		: leftHand!.append(...rightHand!.childNodes)
+		// 	store.left = !store.left
+		// }
 	})
 
 	return (
