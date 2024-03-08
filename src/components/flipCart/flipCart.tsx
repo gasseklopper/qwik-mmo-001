@@ -2,22 +2,16 @@ import {
 	component$,
 	useStyles$,
 	useVisibleTask$,
-	$,
-	useStore,
 } from '@builder.io/qwik'
 import styles from './flipCart.scss?inline'
-import Flip from 'gsap-trial/dist/Flip'
-import CustomWiggle from 'gsap-trial/dist/CustomWiggle'
-import { gsap } from 'gsap-trial'
+import Flip from 'gsap/dist/Flip'
+import { gsap } from 'gsap'
 
 export default component$(() => {
 	useStyles$(styles)
-	const store = useStore({ ball: true, left: 2, middle: 3, right: 1 })
 
 	useVisibleTask$(() => {
-		gsap.registerPlugin(Flip, CustomWiggle)
-
-		// CustomWiggle.create('cartButtonWiggle', { wiggles: 8, type: 'easeOut' })
+		gsap.registerPlugin(Flip)
 
 		const reducedMotion = window.matchMedia(
 			'(prefers-reduced-motion: reduce)'
@@ -30,17 +24,17 @@ export default component$(() => {
 		const cartItems = cart!.querySelector('.items')
 		const cartEmptyText = cart!.querySelector('.empty-text')
 
-		const setInCartClass = (item, inCart) =>
+		const setInCartClass = (item: { parentNode: { classList: { toggle: (arg0: string, arg1: any) => any } } }, inCart: boolean) =>
 			item.parentNode.classList.toggle('in-cart', inCart)
-		const setActiveItemClass = (item, isActive) =>
+		const setActiveItemClass = (item: { parentNode: { classList: { toggle: (arg0: string, arg1: any) => any } } }, isActive: boolean) =>
 			item.parentNode.classList.toggle('active', isActive)
 
-		const updateCart = (item) => {
-			const hasItems = cartItems.children.length > 0
+		const updateCart = (item: any) => {
+			const hasItems = cartItems!.children.length > 0
 
-			cartCount.innerText = hasItems ? cartItems.children.length : null
-			cartEmptyText.hidden = hasItems
-			cartItems.hidden = !hasItems
+			cartCount!.innerText = hasItems ? cartItems!.children.length : null
+			cartEmptyText!.hidden = hasItems
+			cartItems!.hidden = !hasItems
 		}
 
 		const cartBtnAnimation = () => {
@@ -80,19 +74,19 @@ export default component$(() => {
 				)
 		}
 
-		const addToCart = (item) => {
+		const addToCart = (item: any) => {
 			const state = Flip.getState(item)
 
 			setInCartClass(item, true)
 			setActiveItemClass(item, true)
-			cartBtnWrapper.appendChild(item)
+			cartBtnWrapper!.appendChild(item)
 
 			Flip.from(state, {
 				duration: reducedMotion ? 0 : 0.5,
 				ease: 'back.in(0.8)',
 				onComplete: () => {
 					setActiveItemClass(item, false)
-					cartItems.appendChild(item)
+					cartItems!.appendChild(item)
 
 					gsap.fromTo(
 						item,
@@ -110,11 +104,11 @@ export default component$(() => {
 			})
 		}
 
-		const removeFromCart = (item) => {
+		const removeFromCart = (item: any) => {
 			let state = Flip.getState(item)
 
 			document
-				.querySelector(`[data-product-id="${item.dataset.productId}"]`)
+				.querySelector(`[data-product-id="${item.dataset.productId}"]`)!
 				.appendChild(item)
 			updateCart(item)
 			setActiveItemClass(item, true)
@@ -130,13 +124,13 @@ export default component$(() => {
 		}
 
 		pageItems!.addEventListener('click', (e) => {
-			if (e.target.classList.contains('btn-item')) {
+			if (e.target!.classList.contains('btn-item')) {
 				addToCart(e.target)
 			}
 		})
 
 		cartItems!.addEventListener('click', (e) => {
-			if (e.target.classList.contains('btn-item')) {
+			if (e.target!.classList.contains('btn-item')) {
 				removeFromCart(e.target)
 			}
 		})
