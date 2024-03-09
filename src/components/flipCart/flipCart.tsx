@@ -2,12 +2,310 @@ import {
 	component$,
 	useStyles$,
 	useVisibleTask$,
+	$,
+	useStore,
+	eventQrl,
+	event$,
+	useSignal,
 } from '@builder.io/qwik'
 import styles from './flipCart.scss?inline'
 import Flip from 'gsap/dist/Flip'
 import { gsap } from 'gsap'
 
+const ProductCardDataMock = [
+	{
+		id: 1,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: [],
+		buttonLabel: '1',
+	},
+	{
+		id: 2,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '2',
+	},
+	{
+		id: 3,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '3',
+	},
+	{
+		id: 4,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '4',
+	},
+	{
+		id: 5,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '5',
+	},
+	{
+		id: 6,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '6',
+	},
+	{
+		id: 7,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '7',
+	},
+	{
+		id: 8,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '8',
+	},
+	{
+		id: 9,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '9',
+	},
+	{
+		id: 10,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '10',
+	},
+	{
+		id: 11,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '11',
+	},
+	{
+		id: 12,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '12',
+	},
+	{
+		id: 13,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '13',
+	},
+	{
+		id: 14,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '14',
+	},
+	{
+		id: 15,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '15',
+	},
+	{
+		id: 16,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '16',
+	},
+	{
+		id: 17,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '17',
+	},
+	{
+		id: 18,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '18',
+	},
+	{
+		id: 19,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '19',
+	},
+	{
+		id: 20,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '20',
+	},
+	{
+		id: 21,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '21',
+	},
+	{
+		id: 22,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '22',
+	},
+	{
+		id: 23,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '23',
+	},
+	{
+		id: 24,
+		title: 'title--testtesttesttesttesttesttest',
+		image: 'https://picsum.photos/201/300?random=',
+		stars: 5,
+		size: 'default',
+		price: 22234,
+		currency: 'AUD',
+		label: 'label--test',
+		category: ['category--test1', 'category--test2', 'category--test3'],
+		buttonLabel: '24',
+	},
+]
+
 export default component$(() => {
+	const store = useStore({ cartOpen: false, cartItems: ProductCardDataMock })
+
 	useStyles$(styles)
 
 	useVisibleTask$(() => {
@@ -16,7 +314,10 @@ export default component$(() => {
 		const reducedMotion = window.matchMedia(
 			'(prefers-reduced-motion: reduce)'
 		).matches
+
+
 		const pageItems = document.querySelector('.content .items')
+
 		const cart = document.querySelector('.cart')
 		const cartBtnWrapper = cart!.querySelector('.btn-cart-wrapper')
 		const cartBtn = cart!.querySelector('.btn-cart')
@@ -24,10 +325,21 @@ export default component$(() => {
 		const cartItems = cart!.querySelector('.items')
 		const cartEmptyText = cart!.querySelector('.empty-text')
 
-		const setInCartClass = (item: { parentNode: { classList: { toggle: (arg0: string, arg1: any) => any } } }, inCart: boolean) =>
-			item.parentNode.classList.toggle('in-cart', inCart)
-		const setActiveItemClass = (item: { parentNode: { classList: { toggle: (arg0: string, arg1: any) => any } } }, isActive: boolean) =>
-			item.parentNode.classList.toggle('active', isActive)
+		console.log('test items', cartItems)
+
+		const setInCartClass = (
+			item: {
+				parentNode: { classList: { toggle: (arg0: string, arg1: any) => any } }
+			},
+			inCart: boolean
+		) => item.parentNode.classList.toggle('in-cart', inCart)
+
+		const setActiveItemClass = (
+			item: {
+				parentNode: { classList: { toggle: (arg0: string, arg1: any) => any } }
+			},
+			isActive: boolean
+		) => item.parentNode.classList.toggle('active', isActive)
 
 		const updateCart = (item: any) => {
 			const hasItems = cartItems!.children.length > 0
@@ -44,8 +356,8 @@ export default component$(() => {
 					cartBtn,
 					{ yPercent: 0, rotation: 0 },
 					{
-						duration: 0.9,
-						ease: 'cartButtonWiggle',
+						duration: 0.75,
+						ease: 'power4.out',
 						yPercent: 20,
 						rotation: -5,
 						clearProps: 'all',
@@ -134,139 +446,40 @@ export default component$(() => {
 				removeFromCart(e.target)
 			}
 		})
+	})
 
-		cartBtn!.addEventListener('click', () => cart!.classList.toggle('open'))
+	const position = useSignal<{ x: number; y: number }>()
+
+	const handleItemClick = $((e: any) => {
+		position.value = { x: e.x, y: e.y }
+		console.log('handleItemClick', e)
+	})
+
+	const handleCartClick = $(() => {
+		store.cartOpen = !store.cartOpen
 	})
 
 	return (
 		<>
 			<main class="content">
 				<ul class="items">
-					<li class="item" data-product-id="1">
-						<button class="btn-item" data-product-id="1">
-							1
-						</button>
-					</li>
-					<li class="item" data-product-id="2">
-						<button class="btn-item" data-product-id="2">
-							2
-						</button>
-					</li>
-					<li class="item" data-product-id="3">
-						<button class="btn-item" data-product-id="3">
-							3
-						</button>
-					</li>
-					<li class="item" data-product-id="4">
-						<button class="btn-item" data-product-id="4">
-							4
-						</button>
-					</li>
-					<li class="item" data-product-id="5">
-						<button class="btn-item" data-product-id="5">
-							5
-						</button>
-					</li>
-					<li class="item" data-product-id="6">
-						<button class="btn-item" data-product-id="6">
-							6
-						</button>
-					</li>
-					<li class="item" data-product-id="7">
-						<button class="btn-item" data-product-id="7">
-							7
-						</button>
-					</li>
-					<li class="item" data-product-id="8">
-						<button class="btn-item" data-product-id="8">
-							8
-						</button>
-					</li>
-					<li class="item" data-product-id="9">
-						<button class="btn-item" data-product-id="9">
-							9
-						</button>
-					</li>
-					<li class="item" data-product-id="10">
-						<button class="btn-item" data-product-id="10">
-							10
-						</button>
-					</li>
-					<li class="item" data-product-id="11">
-						<button class="btn-item" data-product-id="11">
-							11
-						</button>
-					</li>
-					<li class="item" data-product-id="12">
-						<button class="btn-item" data-product-id="12">
-							12
-						</button>
-					</li>
-					<li class="item" data-product-id="13">
-						<button class="btn-item" data-product-id="13">
-							13
-						</button>
-					</li>
-					<li class="item" data-product-id="14">
-						<button class="btn-item" data-product-id="14">
-							14
-						</button>
-					</li>
-					<li class="item" data-product-id="15">
-						<button class="btn-item" data-product-id="15">
-							15
-						</button>
-					</li>
-					<li class="item" data-product-id="16">
-						<button class="btn-item" data-product-id="16">
-							16
-						</button>
-					</li>
-					<li class="item" data-product-id="17">
-						<button class="btn-item" data-product-id="17">
-							17
-						</button>
-					</li>
-					<li class="item" data-product-id="18">
-						<button class="btn-item" data-product-id="18">
-							18
-						</button>
-					</li>
-					<li class="item" data-product-id="19">
-						<button class="btn-item" data-product-id="19">
-							19
-						</button>
-					</li>
-					<li class="item" data-product-id="20">
-						<button class="btn-item" data-product-id="20">
-							20
-						</button>
-					</li>
-					<li class="item" data-product-id="21">
-						<button class="btn-item" data-product-id="21">
-							21
-						</button>
-					</li>
-					<li class="item" data-product-id="22">
-						<button class="btn-item" data-product-id="22">
-							22
-						</button>
-					</li>
-					<li class="item" data-product-id="23">
-						<button class="btn-item" data-product-id="23">
-							23
-						</button>
-					</li>
-					<li class="item" data-product-id="24">
-						<button class="btn-item" data-product-id="24">
-							24
-						</button>
-					</li>
+					{store.cartItems.map((story: any, index: number) => (
+						<li class="item" data-product-id={story.id} key={index}>
+							<button
+								class="btn-item"
+								data-product-id={story.id}
+								onClick$={(event) => handleItemClick(event)}
+							>
+								<img src={`${story.image}${index + 1}`} alt="" />
+								{story.id}
+							</button>
+						</li>
+					))}
 				</ul>
 			</main>
-			<aside class="cart">
-				<div class="btn-cart-wrapper">
-					<button class="btn-cart">
+			<aside class={`cart ${store.cartOpen ? 'open' : ''}`}>
+				<div class="btn-cart-wrapper ">
+					<button class={`btn-cart`} onClick$={handleCartClick}>
 						<svg
 							class="icon"
 							aria-hidden="true"
@@ -316,6 +529,9 @@ export default component$(() => {
 						</svg>
 					</button>
 					<div class="count"></div>
+					<p>
+						Clicked at: ({position.value?.x}, {position.value?.y})
+					</p>
 				</div>
 				<div class="items-wrapper">
 					<div class="empty-text">Your cart is empty</div>

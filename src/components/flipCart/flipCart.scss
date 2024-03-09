@@ -1,7 +1,3 @@
-* {
-	box-sizing: border-box;
-  }
-  
   body {
 	--color-primary: var(--surface4);
 	--color-secondary: var(--text1);
@@ -14,6 +10,9 @@
 	font-family: monospace, monospace;
   }
   
+img {
+	pointer-events: none;
+}
   
   /* ITEMS */
   
@@ -36,13 +35,13 @@
   .item {
 	position: relative;
 	display: grid;
-	aspect-ratio: 1;
+	aspect-ratio: 9 / 14;
 	border-radius: var(--radius);
   }
   
   .item.in-cart {
 	color: var(--color-primary);
-	border: 2px dashed currentcolor;
+	border: 21px dashed red;
 	z-index: 1;
   }
   
@@ -69,7 +68,8 @@
   }
   
   .btn-item {
-	aspect-ratio: 1;
+	aspect-ratio: 9 / 14;
+	// aspect-ratio: 1;
 	display: flex;
 	align-items: center;
 	justify-content: center;
