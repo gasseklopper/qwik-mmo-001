@@ -69,205 +69,84 @@ export default component$(() => {
 		const hatTwoState = Flip.getState('.hatting__hatt-two')
 		const hatOneState = Flip.getState('.hatting__hatt-one')
 
+		function performCommonActions(
+			hatState1: Flip.FlipState,
+			hatState2: Flip.FlipState,
+			targets: string
+		) {
+			console.log('hat beige -->', store.left, store.middle, store.right);
+		
+			Flip.from(hatState1, {
+				duration: 0.6,
+				ease: 'elastic.out(1, 0.9)',
+				stagger: 0.01,
+				targets: targets,
+			});
+		
+			Flip.from(hatState2, {
+				duration: 0.6,
+				ease: 'elastic.out(1, 0.9)',
+				stagger: 0.01,
+				targets: targets,
+			});
+		
+			// Update store.left and store.middle based on the condition
+		}
+		
+		function performCommonActionsOneTwo() {
+			performCommonActions(hatOneState, hatTwoState, '.hatting__hatt-one, .hatting__hatt-two');
+		}
+		
+		function performCommonActionsOneThree() {
+			performCommonActions(hatOneState, hatThreeState, '.hatting__hatt-one, .hatting__hatt-three');
+		}
+		
+		function performCommonActionsTwoThree() {
+			performCommonActions(hatTwoState, hatThreeState, '.hatting__hatt-two, .hatting__hatt-three');
+		}
+		
 		if (sideId === 1) {
-			console.log('sideId 1')
-			function performCommonActionsOneTwo(
-				hatState1: Flip.FlipState,
-				hatState2: Flip.FlipState
-			) {
-				console.log('hat beige -->', store.left, store.middle, store.right)
-
-				Flip.from(hatState1, {
-					duration: 0.6,
-					ease: 'elastic.out(1, 0.9)',
-					stagger: 0.01,
-					targets: '.hatting__hatt-one',
-				})
-
-				Flip.from(hatState2, {
-					duration: 0.6,
-					ease: 'elastic.out(1, 0.9)',
-					stagger: 0.01,
-					targets: '.hatting__hatt-two',
-				})
-
-				// Update store.left and store.middle based on the condition
+			console.log('sideId 1');
+		
+			if ((store.left === 1 && store.middle === 2) || (store.left === 2 && store.middle === 1)) {
+				deleteAndReplaceOneTwo();
+				performCommonActionsOneTwo();
+				store.left = store.left === 1 ? 2 : 1;
+				store.middle = store.middle === 2 ? 1 : 2;
+			} else if ((store.left === 1 && store.middle === 3) || (store.left === 3 && store.middle === 1)) {
+				deleteAndReplaceOneThree();
+				performCommonActionsOneThree();
+				store.left = store.left === 1 ? 3 : 1;
+				store.middle = store.middle === 3 ? 1 : 3;
+			} else if ((store.left === 2 && store.middle === 3) || (store.left === 3 && store.middle === 2)) {
+				deleteAndReplaceTwoThree();
+				performCommonActionsTwoThree();
+				store.left = store.left === 2 ? 3 : 2;
+				store.middle = store.middle === 3 ? 2 : 3;
 			}
-
-			function performCommonActionsOneThree(
-				hatState1: Flip.FlipState,
-				hatState2: Flip.FlipState
-			) {
-				console.log('hat beige -->', store.left, store.middle, store.right)
-
-				Flip.from(hatState1, {
-					duration: 0.6,
-					ease: 'elastic.out(1, 0.9)',
-					stagger: 0.01,
-					targets: '.hatting__hatt-one',
-				})
-
-				Flip.from(hatState2, {
-					duration: 0.6,
-					ease: 'elastic.out(1, 0.9)',
-					stagger: 0.01,
-					targets: '.hatting__hatt-three',
-				})
-
-				// Update store.left and store.middle based on the condition
+		} else if (sideId === 3) {
+			console.log('sideId 3');
+		
+			if ((store.right === 1 && store.middle === 2) || (store.right === 2 && store.middle === 1)) {
+				deleteAndReplaceRightOneTwo();
+				performCommonActionsOneTwo();
+				store.right = store.right === 1 ? 2 : 1;
+				store.middle = store.middle === 2 ? 1 : 2;
+			} else if ((store.right === 1 && store.middle === 3) || (store.right === 3 && store.middle === 1)) {
+				deleteAndReplaceRightOneThree();
+				performCommonActionsOneThree();
+				store.right = store.right === 1 ? 3 : 1;
+				store.middle = store.middle === 3 ? 1 : 3;
+			} else if ((store.right === 2 && store.middle === 3) || (store.right === 3 && store.middle === 2)) {
+				deleteAndReplaceRightTwoThree();
+				performCommonActionsTwoThree();
+				store.right = store.right === 2 ? 3 : 2;
+				store.middle = store.middle === 3 ? 2 : 3;
 			}
-
-			function performCommonActionsTwoThree(
-				hatState1: Flip.FlipState,
-				hatState2: Flip.FlipState
-			) {
-				console.log('hat beige -->', store.left, store.middle, store.right)
-
-				Flip.from(hatState1, {
-					duration: 0.6,
-					ease: 'elastic.out(1, 0.9)',
-					stagger: 0.01,
-					targets: '.hatting__hatt-two',
-				})
-
-				Flip.from(hatState2, {
-					duration: 0.6,
-					ease: 'elastic.out(1, 0.9)',
-					stagger: 0.01,
-					targets: '.hatting__hatt-three',
-				})
-
-				// Update store.left and store.middle based on the condition
-			}
-
-			if (
-				(store.left === 1 && store.middle === 2) ||
-				(store.left === 2 && store.middle === 1)
-			) {
-				deleteAndReplaceOneTwo()
-				performCommonActionsOneTwo(hatOneState, hatTwoState)
-				store.left = store.left === 1 ? 2 : 1
-				store.middle = store.middle === 2 ? 1 : 2
-			} else if (
-				(store.left === 1 && store.middle === 3) ||
-				(store.left === 3 && store.middle === 1)
-			) {
-				deleteAndReplaceOneThree()
-				performCommonActionsOneThree(hatOneState, hatThreeState)
-				store.left = store.left === 1 ? 3 : 1
-				store.middle = store.middle === 3 ? 1 : 3
-			} else if (
-				(store.left === 2 && store.middle === 3) ||
-				(store.left === 3 && store.middle === 2)
-			) {
-				deleteAndReplaceTwoThree()
-				performCommonActionsTwoThree(hatTwoState, hatThreeState)
-				store.left = store.left === 2 ? 3 : 2
-				store.middle = store.middle === 3 ? 2 : 3
-			}
+		} else if (sideId === 2) {
+			console.log('sideId 2');
 		}
 		
-		if (sideId === 2) {
-			console.log('sideId 2')
-		}
-		
-		if (sideId === 3) {
-			console.log('sideId 3')
-			function performCommonActionsOneTwo(
-				hatState1: Flip.FlipState,
-				hatState2: Flip.FlipState
-			) {
-				console.log('hat beige -->', store.left, store.middle, store.right)
-
-				Flip.from(hatState1, {
-					duration: 0.6,
-					ease: 'elastic.out(1, 0.9)',
-					stagger: 0.01,
-					targets: '.hatting__hatt-one',
-				})
-
-				Flip.from(hatState2, {
-					duration: 0.6,
-					ease: 'elastic.out(1, 0.9)',
-					stagger: 0.01,
-					targets: '.hatting__hatt-two',
-				})
-
-				// Update store.left and store.middle based on the condition
-			}
-
-			function performCommonActionsOneThree(
-				hatState1: Flip.FlipState,
-				hatState2: Flip.FlipState
-			) {
-				console.log('hat beige -->', store.left, store.middle, store.right)
-
-				Flip.from(hatState1, {
-					duration: 0.6,
-					ease: 'elastic.out(1, 0.9)',
-					stagger: 0.01,
-					targets: '.hatting__hatt-one',
-				})
-
-				Flip.from(hatState2, {
-					duration: 0.6,
-					ease: 'elastic.out(1, 0.9)',
-					stagger: 0.01,
-					targets: '.hatting__hatt-three',
-				})
-
-				// Update store.left and store.middle based on the condition
-			}
-
-			function performCommonActionsTwoThree(
-				hatState1: Flip.FlipState,
-				hatState2: Flip.FlipState
-			) {
-				console.log('hat beige -->', store.left, store.middle, store.right)
-
-				Flip.from(hatState1, {
-					duration: 0.6,
-					ease: 'elastic.out(1, 0.9)',
-					stagger: 0.01,
-					targets: '.hatting__hatt-two',
-				})
-
-				Flip.from(hatState2, {
-					duration: 0.6,
-					ease: 'elastic.out(1, 0.9)',
-					stagger: 0.01,
-					targets: '.hatting__hatt-three',
-				})
-
-				// Update store.left and store.middle based on the condition
-			}
-
-			if (
-				(store.right === 1 && store.middle === 2) ||
-				(store.right === 2 && store.middle === 1)
-			) {
-				deleteAndReplaceRightOneTwo()
-				performCommonActionsOneTwo(hatOneState, hatTwoState)
-				store.right = store.right === 1 ? 2 : 1
-				store.middle = store.middle === 2 ? 1 : 2
-			} else if (
-				(store.right === 1 && store.middle === 3) ||
-				(store.right === 3 && store.middle === 1)
-			) {
-				deleteAndReplaceRightOneThree()
-				performCommonActionsOneThree(hatOneState, hatThreeState)
-				store.right = store.right === 1 ? 3 : 1
-				store.middle = store.middle === 3 ? 1 : 3
-			} else if (
-				(store.right === 2 && store.middle === 3) ||
-				(store.right === 3 && store.middle === 2)
-			) {
-				deleteAndReplaceRightTwoThree()
-				performCommonActionsTwoThree(hatTwoState, hatThreeState)
-				store.right = store.right === 2 ? 3 : 2
-				store.middle = store.middle === 3 ? 2 : 3
-			}
-		}
 
 		function deleteAndReplaceRightOneTwo() {
 			let newParent
