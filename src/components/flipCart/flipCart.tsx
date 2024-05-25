@@ -339,8 +339,9 @@ export default component$(() => {
 			isActive: boolean
 		) => item.parentNode.classList.toggle('active', isActive)
 
-		const updateCart = (_item: any) => {
+		const updateCart = (item: any) => {
 			const hasItems = cartItems!.children.length > 0;
+			console.log(item);
 
 			// Type assertion to HTMLElement to access 'innerText'
 			(cartCount as HTMLElement)!.innerText = hasItems ? cartItems!.children.length.toString() : '';

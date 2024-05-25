@@ -1,7 +1,6 @@
 import {
 	component$,
 	useStyles$,
-	useVisibleTask$,
 	$,
 	useStore,
 } from '@builder.io/qwik'
