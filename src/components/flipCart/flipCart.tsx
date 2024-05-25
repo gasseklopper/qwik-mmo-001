@@ -342,11 +342,12 @@ export default component$(() => {
 		) => item.parentNode.classList.toggle('active', isActive)
 
 		const updateCart = (item: any) => {
-			const hasItems = cartItems!.children.length > 0
+			const hasItems = cartItems!.children.length > 0;
 
-			cartCount!.innerText = hasItems ? cartItems!.children.length : null
-			cartEmptyText!.hidden = hasItems
-			cartItems!.hidden = !hasItems
+			// Type assertion to HTMLElement to access 'innerText'
+			(cartCount as HTMLElement)!.innerText = hasItems ? cartItems!.children.length.toString() : '';
+			(cartEmptyText as HTMLElement)!.hidden = hasItems;
+			(cartItems as HTMLElement)!.hidden = !hasItems;
 		}
 
 		const cartBtnAnimation = () => {
@@ -436,16 +437,18 @@ export default component$(() => {
 		}
 
 		pageItems!.addEventListener('click', (e) => {
-			if (e.target!.classList.contains('btn-item')) {
-				addToCart(e.target)
+			const target = e.target as HTMLElement; // Type assertion to HTMLElement
+			if (target.classList.contains('btn-item')) {
+				addToCart(target);
 			}
-		})
+		});
 
 		cartItems!.addEventListener('click', (e) => {
-			if (e.target!.classList.contains('btn-item')) {
-				removeFromCart(e.target)
+			const target = e.target as HTMLElement; // Type assertion to HTMLElement
+			if (target.classList.contains('btn-item')) {
+				removeFromCart(target);
 			}
-		})
+		});
 	})
 
 	const position = useSignal<{ x: number; y: number }>()
