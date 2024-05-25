@@ -4,8 +4,6 @@ import {
 	useVisibleTask$,
 	$,
 	useStore,
-	eventQrl,
-	event$,
 	useSignal,
 } from '@builder.io/qwik'
 import styles from './imageGallery.scss?inline'
@@ -312,9 +310,10 @@ export default component$(() => {
 		gsap.registerPlugin(gsap)
 		gsap.registerPlugin(Observer)
 
-		const reducedMotion = window.matchMedia(
+		const _reducedMotion = window.matchMedia(
 			'(prefers-reduced-motion: reduce)'
 		).matches
+		console.log(_reducedMotion)
 
 	})
 
@@ -329,8 +328,8 @@ export default component$(() => {
 		store.cartOpen = !store.cartOpen
 
 		/** Direction constants */
-		const NEXT = 1;
-		const PREV = -1;
+		// const NEXT = 1;
+		// const PREV = -1;
 
 		/**
 		 * Slideshow Class
@@ -487,6 +486,7 @@ export default component$(() => {
 		// Usage example
 		const sliderElement = document.querySelector('.slider');
 		const mySlider = new Slideshow(sliderElement);
+		mySlider
 
 
 		const slides = document.querySelector('.slides');

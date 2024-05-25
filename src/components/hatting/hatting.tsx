@@ -13,48 +13,6 @@ export default component$(() => {
 	useStyles$(styles)
 	const store = useStore({ ball: true, left: 2, middle: 3, right: 1 })
 
-	useVisibleTask$(() => {
-		// gsap.registerPlugin(Flip)
-		// const leftHand = document.querySelector('.left')
-		// const rightHand = document.querySelector('.right')
-		// gsap.to('.hatting__ball', {
-		// 	keyframes: {
-		// 		'0%': { yPercent: 0, scaleX: 1, scaleY: 1 },
-		// 		'7%': { yPercent: 5, scaleX: 0.9, scaleY: 1.1 },
-		// 		'25%': { yPercent: 100, scaleX: 0.9 },
-		// 		'50%': { yPercent: 100, scaleX: 1, scaleY: 1 },
-		// 		'60%': { scaleX: 1.6, scaleY: 0.4 },
-		// 		'65%': { yPercent: 100, scaleX: 1, scaleY: 1 },
-		// 		'100%': { yPercent: 0, scaleX: 1, scaleY: 1 },
-		// 		easeEach: 'sine.out',
-		// 	},
-		// 	duration: 0.8,
-		// 	repeat: -1,
-		// 	transformOrigin: 'center bottom',
-		// })
-		// document.body.addEventListener('click', () => {
-		// 	let state = Flip.getState('.card')
-		// 	deleteAndReplace()
-		// 	Flip.from(state, {
-		// 		duration: 1,
-		// 		ease: 'sine.out',
-		// 		spin: 1,
-		// 		targets: '.card',
-		// 	})
-		// })
-		// function deleteAndReplace() {
-		// 	let newParent
-		// 	let oldCard = document.querySelector('.card')
-		// 	oldCard!.remove()
-		// 	store.left ? (newParent = rightHand) : (newParent = leftHand)
-		// 	newParent!.insertAdjacentHTML(
-		// 		'afterbegin',
-		// 		'<div class="hatting__ball card" data-flip-id="rememberMe">ball</div>'
-		// 	)
-		// 	store.left = !store.left
-		// }
-	})
-
 	const handleButtonClick = $((hatId: any) => {
 		gsap.registerPlugin(Flip)
 
@@ -466,76 +424,6 @@ export default component$(() => {
 				'<div class="hatting__hatt-three" data-flip-id="rememberMe3">hat three</div>'
 			)
 		}
-	})
-
-	const handleHatThreeClick = $(() => {
-		gsap.registerPlugin(Flip)
-
-		const leftHand = document.querySelector('.hatting__left')
-		const middleHand = document.querySelector('.hatting__middle')
-		const rightHand = document.querySelector('.hatting__right')
-		const hatThreeState = Flip.getState('.hatting__hatt-three')
-		const hatTwoState = Flip.getState('.hatting__hatt-two')
-
-		deleteAndReplace()
-
-		Flip.from(hatTwoState, {
-			duration: 0.6,
-			ease: 'elastic.out(1, 0.9)',
-			stagger: 0.01,
-			// duration: 1,
-			// ease: 'sine.out',
-			// spin: 1,
-			// position: 'absolute',
-			targets: '.hatting__hatt-two',
-		})
-
-		Flip.from(hatThreeState, {
-			duration: 0.6,
-			ease: 'elastic.out(1, 0.9)',
-			stagger: 0.01,
-			// duration: 1,
-			// ease: 'sine.out',
-			// spin: 1,
-			// position: 'absolute',
-			targets: '.hatting__hatt-three',
-		})
-
-		// like a lot of frameworks do 🙃
-		function deleteAndReplace() {
-			let newParent
-			const oldCard = document.querySelector('.hatting__hatt-three')
-
-			oldCard!.remove()
-
-			store.left ? (newParent = rightHand) : (newParent = middleHand)
-
-			newParent!.insertAdjacentHTML(
-				'afterbegin',
-				'<div class="hatting__hatt-three" data-flip-id="rememberMe">hat three</div>'
-			)
-
-			let newParent2
-			const oldCard2 = document.querySelector('.hatting__hatt-two')
-
-			oldCard2!.remove()
-
-			store.left ? (newParent2 = middleHand) : (newParent2 = rightHand)
-
-			newParent2!.insertAdjacentHTML(
-				'afterbegin',
-				'<div class="hatting__hatt-two" data-flip-id="rememberMe2">hat two</div>'
-			)
-
-			// store.left = !store.left
-		}
-
-		// function reparentCard() {
-		// 	store.left
-		// 		? rightHand!.append(...leftHand!.childNodes)
-		// 		: leftHand!.append(...rightHand!.childNodes)
-		// 	store.left = !store.left
-		// }
 	})
 
 	return (

@@ -4,8 +4,6 @@ import {
 	useVisibleTask$,
 	$,
 	useStore,
-	eventQrl,
-	event$,
 	useSignal,
 } from '@builder.io/qwik'
 import styles from './flipCart.scss?inline'
@@ -341,7 +339,7 @@ export default component$(() => {
 			isActive: boolean
 		) => item.parentNode.classList.toggle('active', isActive)
 
-		const updateCart = (item: any) => {
+		const updateCart = (_item: any) => {
 			const hasItems = cartItems!.children.length > 0;
 
 			// Type assertion to HTMLElement to access 'innerText'
@@ -418,7 +416,7 @@ export default component$(() => {
 		}
 
 		const removeFromCart = (item: any) => {
-			let state = Flip.getState(item)
+			const state = Flip.getState(item)
 
 			document
 				.querySelector(`[data-product-id="${item.dataset.productId}"]`)!
