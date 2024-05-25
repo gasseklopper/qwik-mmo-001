@@ -322,7 +322,7 @@ export default component$(() => {
 
 	const handleItemClick = $((e: any) => {
 		position.value = { x: e.x, y: e.y }
-		console.log('handleItemClick', e)
+		console.log('handleItemClick position.value', position.value)
 	})
 
 	const slideshowPrevClick = $(() => {
@@ -337,22 +337,29 @@ export default component$(() => {
 		 * Manages slideshow functionality including navigation and animations.
 		 * @export
 		 */
-		 class Slideshow {
+		interface DOMStructure {
+			el: Element | null;
+			slides: Element[];
+			slidesInner: Element[];
+		}
 
+		class Slideshow {
 			/**
 			 * Holds references to relevant DOM elements.
-			 * @type {Object}
+			 * @type {DOMStructure}
 			 */
-			DOM: object = {
+			DOM: DOMStructure = {
 				el: null,            // Main slideshow container
-				slides: null,        // Individual slides
-				slidesInner: null    // Inner content of slides (usually images)
+				slides: [],        // Individual slides
+				slidesInner: []    // Inner content of slides (usually images)
 			};
+
 			/**
 			 * Index of the current slide being displayed.
 			 * @type {number}
 			 */
 			current: number = 0;
+
 			/**
 			 * Total number of slides.
 			 * @type {number}
@@ -373,14 +380,20 @@ export default component$(() => {
 			constructor(DOM_el: Element | null) {
 				// Initialize DOM elements
 				this.DOM.el = DOM_el;
-				this.DOM.slides = [...this.DOM.el.querySelectorAll('.slide')];
-				this.DOM.slidesInner = this.DOM.slides.map((item: { querySelector: (arg0: string) => any }) => item.querySelector('.slide__img'));
+				if (DOM_el) {
+					this.DOM.slides = [...DOM_el.querySelectorAll('.slide')];
+					this.DOM.slidesInner = this.DOM.slides
+						.map((item) => item.querySelector('.slide__img'))
+						.filter((item): item is Element => item !== null);
+				}
 
 				// Set initial slide as current
-				this.DOM.slides[this.current].classList.add('slide--current');
+				if (this.DOM.slides && this.DOM.slides[this.current]) {
+					this.DOM.slides[this.current].classList.add('slide--current');
+				}
 
 				// Count total slides
-				this.slidesTotal = this.DOM.slides.length;
+				this.slidesTotal = this.DOM.slides ? this.DOM.slides.length : 0;
 			}
 
 			/**
@@ -388,7 +401,7 @@ export default component$(() => {
 			 * @returns {void}
 			 */
 			next(): void {
-				this.navigate(NEXT);
+				this.navigate(1);
 			}
 
 			/**
@@ -396,7 +409,7 @@ export default component$(() => {
 			 * @returns {void}
 			 */
 			prev(): void {
-				this.navigate(PREV);
+				this.navigate(-1);
 			}
 
 			/**
@@ -413,13 +426,18 @@ export default component$(() => {
 				const previous = this.current;
 				this.current = direction === 1 ?
 					this.current < this.slidesTotal - 1 ? ++this.current : 0 :
-					this.current > 0 ? --this.current : this.slidesTotal - 1
+					this.current > 0 ? --this.current : this.slidesTotal - 1;
 
 				// Get the current and upcoming slides and their inner elements
-				const currentSlide = this.DOM.slides[previous];
-				const currentInner = this.DOM.slidesInner[previous];
-				const upcomingSlide = this.DOM.slides[this.current];
-				const upcomingInner = this.DOM.slidesInner[this.current];
+				const currentSlide = this.DOM.slides ? this.DOM.slides[previous] : null;
+				const currentInner = this.DOM.slidesInner ? this.DOM.slidesInner[previous] : null;
+				const upcomingSlide = this.DOM.slides ? this.DOM.slides[this.current] : null;
+				const upcomingInner = this.DOM.slidesInner ? this.DOM.slidesInner[this.current] : null;
+
+				if (!currentSlide || !currentInner || !upcomingSlide || !upcomingInner) {
+					this.isAnimating = false;
+					return false;
+				}
 
 				// Animation sequence using GSAP
 				gsap
@@ -430,11 +448,15 @@ export default component$(() => {
 						},
 						onStart: () => {
 							// Add class to the upcoming slide to mark it as current
-							this.DOM.slides[this.current].classList.add('slide--current');
+							if (this.DOM.slides) {
+								this.DOM.slides[this.current].classList.add('slide--current');
+							}
 						},
 						onComplete: () => {
 							// Remove class from the previous slide to unmark it as current
-							this.DOM.slides[previous].classList.remove('slide--current');
+							if (this.DOM.slides) {
+								this.DOM.slides[previous].classList.remove('slide--current');
+							}
 							// Reset animation flag
 							this.isAnimating = false;
 						}
@@ -454,13 +476,18 @@ export default component$(() => {
 					}, 'start')
 					.fromTo(upcomingInner, {
 						yPercent: -direction * 30
-						//yPercent: 0
 					}, {
 						yPercent: 0
 					}, 'start');
-			}
 
+				return true;
+			}
 		}
+
+		// Usage example
+		const sliderElement = document.querySelector('.slider');
+		const mySlider = new Slideshow(sliderElement);
+
 
 		const slides = document.querySelector('.slides');
 
@@ -505,6 +532,7 @@ export default component$(() => {
 				<nav class="slides-nav">
 					<button onClick$={slideshowPrevClick} class="slides-nav__item slides-nav__item--prev">&larr;</button>
 					<button onClick$={slideshowNextClick} class="slides-nav__item slides-nav__item--next">&rarr;</button>
+					<button onClick$={handleItemClick} class="slides-nav__item slides-nav__item--next">&rarr;</button>
 				</nav>
 			</div>
 		</>
