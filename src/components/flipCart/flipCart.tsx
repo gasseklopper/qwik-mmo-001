@@ -472,7 +472,8 @@ export default component$(() => {
 								data-product-id={story.id}
 								onClick$={(event) => handleItemClick(event)}
 							>
-								<img src={`${story.image}${index + 1}`} alt="" />
+								<img src={`${story.image}${index + 1}`} alt="" width={800}
+									height={800} />
 								{story.id}
 							</button>
 						</li>

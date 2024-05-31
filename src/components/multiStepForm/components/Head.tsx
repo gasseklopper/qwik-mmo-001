@@ -20,7 +20,7 @@ export const Head = component$(() => {
 			<link rel="icon" href="/favicon.ico" />
 
 			{documentHead.meta.map((meta) => (
-				<meta {...meta} />
+				<meta {...meta} key={meta.key} />
 			))}
 
 			{documentHead.links.map((link) => (
@@ -28,7 +28,7 @@ export const Head = component$(() => {
 			))}
 
 			{documentHead.styles.map((style) => (
-				<style {...style.props} dangerouslySetInnerHTML={style.style} />
+				<style {...style.props} dangerouslySetInnerHTML={style.style} key={style.key} />
 			))}
 
 			<script

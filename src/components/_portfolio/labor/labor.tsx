@@ -20,6 +20,8 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/labor/labor_002.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-4">
@@ -59,6 +61,8 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/minigolf/minigolf_001.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 		</div>

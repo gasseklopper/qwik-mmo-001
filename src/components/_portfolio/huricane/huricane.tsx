@@ -15,7 +15,9 @@ export const Column3 = component$(() => {
 	return (
 		<div class="row">
 			<div class="column large-12">
-				<img src="../../assets/images/photography/huricane/IMG_0532.jpg" alt="" />
+				<img src="../../assets/images/photography/huricane/IMG_0532.jpg" alt=""
+					width={800}
+					height={800} />
 			</div>
 			<div class="column large-4">
 				<p>
@@ -54,6 +56,8 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/minigolf/minigolf_001.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 		</div>

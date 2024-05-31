@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from 'storybook-framework-qwik'
 import Button, { type ExtendedButtonProps } from './button'
 import Icon from '../icon/icon'
-import { ExtendedIconProps } from '../icon/icon'
+import { type ExtendedIconProps } from '../icon/icon'
 
 const primaryButtonProps: ExtendedButtonProps = {
 	buttonSize: 'default',

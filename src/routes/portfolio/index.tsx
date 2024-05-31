@@ -39,8 +39,8 @@ export default component$(() => {
 									<img
 										src="../../assets/images/photography/blacker/photography_blackerthandays_002.jpg"
 										alt=""
-										width={300}
-										height={300}
+										width={800}
+										height={800}
 									/>
 								</Link>
 							</div>

@@ -2,11 +2,11 @@ import {
 	component$,
 	useStyles$,
 	QwikIntrinsicElements,
-	QRL,
+	type QRL,
 	Slot,
 } from '@builder.io/qwik'
 import styles from './../mainNav.scss?inline'
-import { Size, Variant } from '~/globalContext'
+import { type Size, type Variant } from '~/globalContext'
 
 // ButtonProps type
 type ButtonProps = {

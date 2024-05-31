@@ -3,7 +3,7 @@ import styles from './section_hero_002.scss?inline'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { gsap } from 'gsap'
 import LocomotiveScroll from 'locomotive-scroll'
-import { ScrollToOptions as LocoScrollToOptions } from 'locomotive-scroll' // Adjust the import based on your actual setup
+import { type ScrollToOptions as LocoScrollToOptions } from 'locomotive-scroll'
 
 export default component$(() => {
 	useStyles$(styles)
