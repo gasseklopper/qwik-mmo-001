@@ -1,4 +1,4 @@
-import type { QRL, QwikIntrinsicElements } from '@builder.io/qwik'
+import { type QRL, type QwikIntrinsicElements } from '@builder.io/qwik'
 import { Slot, component$, useStyles$ } from '@builder.io/qwik'
 import styles from './button.scss?inline'
 import { Size, Variant } from '~/globalContext'
