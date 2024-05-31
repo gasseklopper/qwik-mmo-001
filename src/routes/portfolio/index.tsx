@@ -19,111 +19,154 @@ export default component$(() => {
 		<>
 			<div class="port_box">
 				<div class="row">
+					{/* Headline Column 1*/}
 					<div class="column large-2">
 						<div class="port_box__layout_intro">
 							<div class="port_box__intro_text h1">Portfolio</div>
 						</div>
 					</div>
+					{/* Column 2*/}
 					<div class="column large-2">
 						<div class="port_box__layout port_box__layout_001">
 							<div class="port_box__number h1">1</div>
-							<a href="../portfolio/black">
-								<div class="port_box__title h2">Black</div>
-							</a>
+							<Link href='/portfolio/black'><div class="port_box__title h2">Black</div></Link>
 							<p class="port_box__description">s/w pictures</p>
 						</div>
 						<div class="port_box__layout port_box__layout_002">
 							<div class="port_box__number h1">2</div>
-							<a href="../portfolio/blacker">
+							<Link href='/portfolio/blacker'>
 								<div class="port_box__title h2">Darker Days</div>
-							</a>
+							</Link>
 							<p class="port_box__description">overpainting</p>
 							<div class="port_box__image">
-								<a href="../portfolio/blacker">
+								<Link href='/portfolio/blacker'>
 									<img
 										src="../../assets/images/photography/blacker/photography_blackerthandays_002.jpg"
 										alt=""
 									/>
-								</a>
+								</Link>
 							</div>
 						</div>
+						<div class="port_box__layout port_box__layout_001">
+							<div class="port_box__number h1">9</div>
+							<Link href='/portfolio/golfing'><div class="port_box__title h2">golfing</div></Link>
+							<p class="port_box__description">golfing</p>
+						</div>
+						<div class="port_box__layout port_box__layout_001">
+							<div class="port_box__number h1">11</div>
+							<Link href='/portfolio/rippel'><div class="port_box__title h2">rippel</div></Link>
+							<p class="port_box__description">rippel</p>
+						</div>
 					</div>
+					{/* Column 3*/}
 					<div class="column large-4">
 						<div class="port_box__layout port_box__layout_003">
 							<div class="port_box__number h1">3</div>
-							<a href="../portfolio/blingbling">
+							<Link href='/portfolio/blingbling'>
 								<div class="port_box__title h2">Bling Bling!</div>
-							</a>
+							</Link>
 							<p class="port_box__description">Painting with light</p>
 							<div class="port_box__image">
-								<a href="../portfolio/blingbling">
+								<Link href='/portfolio/blingbling'>
 									<image
 										src="/assets/images/photography/blingbling/bling_bling_009.gif"
 										alt="/assets/images/photography/blingbling/bling_bling_009.gif"
 									/>
-								</a>
+								</Link>
+							</div>
+						</div>
+						<div class="port_box__layout port_box__layout_003">
+							<div class="port_box__number h1">8</div>
+							<Link href='/portfolio/venedig'>
+								<div class="port_box__title h2">Venedig</div>
+							</Link>
+							<p class="port_box__description">Painting with light</p>
+							<div class="port_box__image">
+								<Link href='/portfolio/venedig'>
+									<image
+										src="/assets/images/photography/venedig/IMG_1905.jpg"
+										alt="/assets/images/photography/venedig/IMG_1905.jpg"
+									/>
+								</Link>
 							</div>
 						</div>
 					</div>
-
+					{/* Column 4*/}
 					<div class="column large-4">
 						<div class="row">
 							<div class="column large-6">
 								<div class="port_box__layout port_box__layout_004">
 									<div class="port_box__number h1">4</div>
-									<a href="../portfolio/labor">
+									<Link href='/portfolio/labor'>
 										<div class="port_box__title h2">Labor</div>
-									</a>
+									</Link>
 									<p class="port_box__description">s/w pictures</p>
 									<div class="port_box__image">
-										<a href="../portfolio/labor">
+										<Link href='/portfolio/labor'>
 											<img
 												src="/assets/images/photography/labor/labor_001.gif"
 												alt="/assets/images/photography/labor/labor_001.gif"
 											/>
-										</a>
+										</Link>
 									</div>
 								</div>
 							</div>
 							<div class="column large-6">
 								<div class="port_box__layout port_box__layout_005">
 									<div class="port_box__number h1">5</div>
-									<a href="../portfolio/huricane">
+									<Link href='/portfolio/huricane'>
 										<div class="port_box__title h2">hurricane</div>
-									</a>
+									</Link>
 									<p class="port_box__description">
 										a storms comes over germany
 									</p>
 								</div>
 								<div class="port_box__layout port_box__layout_006">
 									<div class="port_box__number h1">6</div>
-									<a href="../portfolio/locked">
+									<Link href='/portfolio/locked'>
 										<div class="port_box__title h2">locked</div>
-									</a>
+									</Link>
 									<p class="port_box__description">walking</p>
 								</div>
 							</div>
 							<div class="column large-12">
 								<div class="port_box__layout port_box__layout_007">
 									<div class="port_box__number h1">7</div>
-									<a class="port_box__title h2" href="../portfolio/paris">
+									<Link class="port_box__title h2" href='/portfolio/paris'>
 										Paris
-									</a>
+									</Link>
 									<p class="port_box__description">People</p>
 									<div class="port_box__image">
-										<a class="port_box__title h2" href="../portfolio/paris">
+										<Link class="port_box__title h2" href='/portfolio/paris'>
 											<img
 												src="/assets/images/photography/paris/IMG_6685.jpg"
 												alt="/assets/images/photography/paris/IMG_6685.jpg"
 											/>
-										</a>
+										</Link>
 									</div>
+								</div>
+							</div>
+							<div class="column large-12">
+								<div class="port_box__layout port_box__layout_007">
+									<div class="port_box__number h1">10</div>
+									<div class="port_box__image">
+										<Link class="port_box__title h2" href='/portfolio/portrait'>
+											<img
+												src="/assets/images/photography/portrait/Portrait_008.jpg"
+												alt="/assets/images/photography/portrait/Portrait_008.jpg"
+											/>
+										</Link>
+									</div>
+
+									<Link class="port_box__title h2" href='/portfolio/portrait'>
+										portrait
+									</Link>
+									<p class="port_box__description">People</p>
+
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="column large-12"></div>
-					<div class="column large-12"></div>
 				</div>
 			</div>
 			<div class="portfolio">

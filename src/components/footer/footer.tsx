@@ -1,5 +1,5 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
-import styles from './footer.css?inline'
+import styles from './footer.scss?inline'
 
 export default component$(() => {
 	useStyles$(styles)
@@ -8,31 +8,27 @@ export default component$(() => {
 		<footer>
 			<ul>
 				<li>
-					<a href="/docs">Docs</a>
+					<a href="/home">Home</a>
 				</li>
 				<li>
-					<a href="/about-us">About Us</a>
+					<a href="/about">About</a>
 				</li>
 				<li>
-					<a href="https://qwik.builder.io/">Qwik</a>
+					<a href="https://www.instagram.com/yelrom_/">Instgram</a>
 				</li>
 				<li>
-					<a href="https://twitter.com/QwikDev">Twitter</a>
+					<a href="https://www.behance.net/markusmorley">Behance</a>
 				</li>
 				<li>
-					<a href="https://github.com/BuilderIO/qwik">Github</a>
-				</li>
-				<li>
-					<a href="https://qwik.builder.io/chat">Chat</a>
+					<a href="https://github.com/gasseklopper">Github</a>
 				</li>
 			</ul>
-			<div>
+			<div class="promo">
 				<a
-					href="https://www.builder.io/"
+					href="https://www.markusmorley.de/"
 					target="_blank"
-					class="builder"
 				>
-					Made with ♡ by Builder.io
+					Made with ♡ by Markus Morley
 				</a>
 			</div>
 		</footer>

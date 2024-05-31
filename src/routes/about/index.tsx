@@ -142,22 +142,30 @@ export const AboutResume = component$(() => {
 					Resume
 				</h3>
 				<ul>
-					<li>Unordered lists have basic styles</li>
 					<li>
 						01.01.2021 - 30.6.2021 Creative Developer / Frontend-Developer{' '}
 						<a class="link-nav link-nav--helike" href="http://hauserlacour.de">
 							<span>hauserlacour.de</span>
 						</a>
-						<ul>
-							<li>Nested lists styled to feel right</li>
-							<li>Can nest either type of list into the other</li>
-						</ul>
 					</li>
-					<li>Just more list items mama san</li>
 				</ul>
 				<ul>
 					<li>
-						01.07.2021 - now Product Engineer / Frontend-Developer
+						01.07.2021 - 01.01.2022 Accenture / Senior Product Engineer / Frontend-Developer{' '}
+						<a
+							class="link-nav link-nav--helike"
+							href="http://accenture.com"
+						>
+							<span>accenture.com</span>
+						</a>
+						<ul>
+							<li>TypeScript</li>
+							<li>next</li>
+							<li>D3.js</li>
+						</ul>
+					</li>
+					<li>
+						01.07.2021 - 01.01.2022 Sinner Schrader / Product Engineer / Frontend-Developer
 						<a
 							class="link-nav link-nav--helike"
 							href="http://sinnerschrader.com"
@@ -165,8 +173,9 @@ export const AboutResume = component$(() => {
 							<span>sinnerschrader.com</span>
 						</a>
 						<ul>
-							<li>Can</li>
-							<li>Can</li>
+							<li>TypeScript</li>
+							<li>React</li>
+							<li>Webcomponents</li>
 						</ul>
 					</li>
 					<li>
@@ -219,34 +228,40 @@ export const AboutResume = component$(() => {
 							</li>
 						</ul>
 					</li>
-					<li>
-						2010-2017 Photographer / Digital Operator / Web-Designer
-						<ul>
-							<li>Can</li>
-							<li>Can</li>
-							<li>Can</li>
-							<li>Can</li>
-							<li>Can</li>
-							<li>Can</li>
-							<li>Can</li>
-							<li>Can</li>
-							<li>Can</li>
-						</ul>
-					</li>
 				</ul>
 				<ul>
 					<li>
-						<p>
-							2010-2017 Photographer / Digital Operator / Web-Designer 2016 -
-							Webdesign - Dieter Roosen 2015 - Digital Operator - Frank Weinert
-							2015 - Webdesign - Stefanie Koesling 2014 - Retouching - Maggi
-							Thommy Rezept Ideen 2014 - CleverPrinting Colormanagement
-							Certificate 2013 - Webdesign - Bernd Mayer 2012 - Digital Operator
-							- Dieter Roosen 2011 - Webdesign - friedrich und ruppel - hauser
-							lacour 2011 - Digital Operator - Stefanie Koesling 2011 - Digital
-							Operator - Becker Lacour 2010 - Digital Operator - Thomas Goos
-							2010 - Kulissen Bau- Andreas Kopp
-						</p>
+						⋅⋅ 2016 - Webdesign - Dieter Roosen
+					</li>
+					<li>
+						⋅⋅ 2015 - Digital Operator - Frank Weinert
+					</li>
+					<li>
+						⋅⋅ 2015 - Webdesign - Stefanie Koesling
+					</li>
+					<li>
+						⋅⋅ 2014 - Retouching - Maggi & Thommy Rezept Ideen
+					</li>
+					<li>
+						⋅⋅ 2014 - CleverPrinting Colormanagement Certificate
+					</li>
+					<li>
+						⋅⋅ 2012 - Digital Operator - Dieter Roosen
+					</li>
+					<li>
+						⋅⋅ 2011 - Webdesign - friedrich und ruppel - hauser lacour
+					</li>
+					<li>
+						⋅⋅ 2011 - Digital Operator - Stefanie Koesling
+					</li>
+					<li>
+						⋅⋅ 2011 - Digital Operator - Becker Lacour
+					</li>
+					<li>
+						⋅⋅ 2010 - Digital Operator - Thomas Goos
+					</li>
+					<li>
+						⋅⋅ 2010 - Kulissen Bau- Andreas Kopp
 					</li>
 					<li>
 						<p>
@@ -518,15 +533,35 @@ export const AboutIntro = component$(() => {
 		<div class="row">
 			<div class="column large-4">
 				<div class="h5">about.me</div>
-				<h2 class="h2">Hi, i am Markus Morley.</h2>
-				<h3 class="h3">I’m Coding Digital Experiences & Interfaces</h3>
-				<h4 class="h4">Desiging, living and working in Frankfurt am Main.</h4>
-				<p>
-					{' '}
-					i love design. build ux prototypes. develop frontend components for
-					atomic design. develop and create digital projects for a large scale
-					approach.
-				</p>
+				<h1>Hi, I'm Markus Morley</h1>
+				<p>I'm passionate about coding digital experiences and crafting user interfaces. Based in Frankfurt am Main, I dedicate my professional life to designing, developing, and bringing to life innovative digital solutions.</p>
+
+			</div>
+			<div class="column large-4">
+				<h2>What I Do</h2>
+				<h3>Design</h3>
+				<p>I have a deep love for design. Whether it’s creating visually stunning layouts or ensuring seamless user experiences, I strive to merge creativity with functionality in every project. My design philosophy is rooted in understanding user needs and crafting intuitive, engaging interfaces.</p>
+			</div>
+			<div class="column large-4">
+				<h3>Prototyping</h3>
+				<p>Building UX prototypes is a core part of my work. I transform ideas into interactive prototypes that allow for early user testing and feedback. This iterative process helps refine the user experience and ensures that the final product meets user expectations.</p>
+			</div>
+			<div class="column large-4">
+				<h3>Large-Scale Digital Projects</h3>
+				<p>I develop and manage large-scale digital projects, leveraging modern technologies to create high-performance applications. My expertise spans from initial concept to final deployment, ensuring each project is executed with precision and meets the highest standards of quality.</p>
+			</div>
+			<div class="column large-4">
+				<h3>Development</h3>
+				<p>Specializing in frontend development, I create robust components using atomic design principles. This methodology allows for the development of scalable and maintainable user interfaces by breaking down designs into their simplest, reusable parts.</p>
+			</div>
+			<div class="column large-4">
+				<h2>My Mission</h2>
+				<p>My goal is to bridge the gap between design and development, creating digital experiences that are not only visually appealing but also highly functional. I am committed to continuous learning and staying updated with the latest industry trends to deliver cutting-edge solutions.</p>
+
+			</div>
+			<div class="column large-4">
+				<h3>forward</h3>
+				<p>I look forward to collaborating with like-minded professionals and organizations to push the boundaries of what’s possible in the digital space. Let's create something extraordinary together!</p>
 				<div>
 					<div class="about-page__social">
 						<a href="https://www.instagram.com/yelrom_/">instagram</a>
@@ -542,14 +577,8 @@ export const AboutIntro = component$(() => {
 			</div>
 			<div class="column large-4">
 				<h3 class="h3">Contact me</h3>
-				<p>
-					The contact form on this page uses [Netlify
-					Forms](https://www.netlify.com/docs/form-handling/) to process
-					submissions, and saves them in the connected Netlify account where
-					notifications can optionally be configured. Each submission is passed
-					through a spam filter and if flagged, will display a CAPTCHA challenge
-					to the user.
-				</p>
+
+				<p>I'm always excited to collaborate on new projects or discuss innovative ideas. If you have any questions, proposals, or just want to say hello, feel free to get in touch using the form below. I look forward to hearing from you!</p>
 
 				<form class="form" name="contact" method="POST" data-netlify="true">
 					<p>
