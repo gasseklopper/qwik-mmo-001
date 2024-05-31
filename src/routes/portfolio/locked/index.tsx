@@ -32,6 +32,8 @@ export default component$(() => {
 						<img
 							src="../../assets/images/photography/locked/looked_001.gif"
 							alt=""
+							width={800}
+							height={800}
 						/>
 					</>
 				}

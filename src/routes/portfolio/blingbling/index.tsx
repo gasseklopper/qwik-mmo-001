@@ -18,30 +18,40 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/blingbling/bling_bling_001.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-6">
 				<img
 					src="../../assets/images/photography/blingbling/bling_bling_001.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-4">
 				<img
 					src="../../assets/images/photography/blingbling/bling_bling_002.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-4">
 				<img
 					src="../../assets/images/photography/blingbling/bling_bling_003.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-4">
 				<img
 					src="../../assets/images/photography/blingbling/bling_bling_004.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-5"></div>
@@ -66,13 +76,15 @@ export const Column3 = component$(() => {
 			</div>
 			<div class="column large-3"></div>
 			<div class="column large-6">
-			<img src="../../assets/images/photography/blingbling/bling_bling_005.gif" alt="" />
+				<img src="../../assets/images/photography/blingbling/bling_bling_005.gif" alt="" />
 
 			</div>
 			<div class="column large-6">
 				<img
 					src="../../assets/images/photography/blingbling/bling_bling_006.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 
@@ -80,6 +92,8 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/blingbling/bling_bling_004.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-1"></div>
@@ -88,12 +102,16 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/blingbling/bling_bling_008.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-4">
 				<img
 					src="../../assets/images/photography/blingbling/bling_bling_007.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 		</div>

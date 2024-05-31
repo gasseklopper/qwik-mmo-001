@@ -43,6 +43,8 @@ export default component$(() => {
 									<img
 										src="../../assets/images/photography/blacker/photography_blackerthandays_002.jpg"
 										alt=""
+										width={300}
+										height={300}
 									/>
 								</Link>
 							</div>
@@ -71,6 +73,8 @@ export default component$(() => {
 									<image
 										src="/assets/images/photography/blingbling/bling_bling_009.gif"
 										alt="/assets/images/photography/blingbling/bling_bling_009.gif"
+										width={300}
+										height={300}
 									/>
 								</Link>
 							</div>
@@ -86,6 +90,8 @@ export default component$(() => {
 									<image
 										src="/assets/images/photography/venedig/IMG_1905.jpg"
 										alt="/assets/images/photography/venedig/IMG_1905.jpg"
+										width={300}
+										height={300}
 									/>
 								</Link>
 							</div>
@@ -106,6 +112,8 @@ export default component$(() => {
 											<img
 												src="/assets/images/photography/labor/labor_001.gif"
 												alt="/assets/images/photography/labor/labor_001.gif"
+												width={300}
+												height={300}
 											/>
 										</Link>
 									</div>
@@ -141,6 +149,8 @@ export default component$(() => {
 											<img
 												src="/assets/images/photography/paris/IMG_6685.jpg"
 												alt="/assets/images/photography/paris/IMG_6685.jpg"
+												width={300}
+												height={300}
 											/>
 										</Link>
 									</div>
@@ -154,10 +164,11 @@ export default component$(() => {
 											<img
 												src="/assets/images/photography/portrait/Portrait_008.jpg"
 												alt="/assets/images/photography/portrait/Portrait_008.jpg"
+												width={300}
+												height={300}
 											/>
 										</Link>
 									</div>
-
 									<Link class="port_box__title h2" href='/portfolio/portrait'>
 										portrait
 									</Link>
@@ -166,186 +177,6 @@ export default component$(() => {
 								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-			<div class="portfolio">
-				<div class="row">
-					<div class="column">
-						<h1>Portfolio</h1>
-						<p>this is the portfolio main page</p>
-						<ul>
-							<li>
-								<div class="portfolio__card">
-									<a href="../portfolio/venedig">
-										<img
-											src="../../assets/images/photography/blingbling/bling_bling_006.gif"
-											alt=""
-										/>
-									</a>
-									<a href="../portfolio/venedig">Venedig</a>
-									<Bodytext>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</Bodytext>
-								</div>
-							</li>
-							<li>
-								<div class="portfolio__card">
-									<a href="../portfolio/blingbling">
-										{' '}
-										<img
-											src="../../assets/images/photography/blingbling/bling_bling_006.gif"
-											alt=""
-										/>
-									</a>
-									<a href="../portfolio/blingbling">bling_bling_001.gif</a>
-									<Bodytext>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</Bodytext>
-								</div>
-							</li>
-							<li>
-								<div class="portfolio__card">
-									<a href="../portfolio/black">
-										<img
-											src="../../assets/images/photography/blingbling/bling_bling_006.gif"
-											alt=""
-										/>
-									</a>
-									<a href="../portfolio/black">black</a>
-									<Bodytext>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</Bodytext>
-								</div>
-							</li>
-							<li>
-								<div class="portfolio__card">
-									<a href="../portfolio/huricane">
-										<img
-											src="../../assets/images/photography/blingbling/bling_bling_006.gif"
-											alt=""
-										/>
-									</a>
-									<a href="../portfolio/huricane">huricane</a>
-									<Bodytext>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</Bodytext>
-								</div>
-							</li>
-							<li>
-								<div class="portfolio__card">
-									<a href="../portfolio/labor">
-										<img
-											src="../../assets/images/photography/blingbling/bling_bling_006.gif"
-											alt=""
-										/>
-									</a>
-									<a href="../portfolio/labor">labor</a>
-									<Bodytext>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</Bodytext>
-								</div>
-							</li>
-							<li>
-								<div class="portfolio__card">
-									<a href="../portfolio/locked">
-										<img
-											src="../../assets/images/photography/blingbling/bling_bling_006.gif"
-											alt=""
-										/>
-									</a>
-									<a href="../portfolio/locked">locked</a>
-									<Bodytext>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</Bodytext>
-								</div>
-							</li>
-							<li>
-								<div class="portfolio__card">
-									<a href="../portfolio/golfing">
-										<img
-											src="../../assets/images/photography/blingbling/bling_bling_006.gif"
-											alt=""
-										/>
-									</a>
-									<a href="../portfolio/golfing">golfing</a>
-									<Bodytext>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</Bodytext>
-								</div>
-							</li>
-							<li>
-								<div class="portfolio__card">
-									<a href="../portfolio/blacker">
-										<img
-											src="../../assets/images/photography/blingbling/bling_bling_006.gif"
-											alt=""
-										/>
-									</a>
-									<a href="../portfolio/blacker">blacker</a>
-									<Bodytext>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</Bodytext>
-								</div>
-							</li>
-							<li>
-								<div class="portfolio__card">
-									<a href="../portfolio/rippel">
-										<img
-											src="../../assets/images/photography/blingbling/bling_bling_006.gif"
-											alt=""
-										/>
-									</a>
-									<a href="../portfolio/rippel">rippel</a>
-									<Bodytext>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</Bodytext>
-								</div>
-							</li>
-							<li>
-								<div class="portfolio__card">
-									<a href="../portfolio/portrait">
-										<img
-											src="../../assets/images/photography/blingbling/bling_bling_006.gif"
-											alt=""
-										/>
-									</a>
-									<a href="../portfolio/portrait">portrait</a>
-									<Bodytext>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</Bodytext>
-								</div>
-							</li>
-							<li>
-								<div class="portfolio__card">
-									<a href="../portfolio/paris">
-										<img
-											src="../../assets/images/photography/blingbling/bling_bling_006.gif"
-											alt=""
-										/>
-									</a>
-									<a href="../portfolio/paris">paris</a>
-									<Bodytext>
-										Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									</Bodytext>
-								</div>
-							</li>
-							<li>
-								<div class="portfolio__card">
-									<Link href="../portfolio/venedig">Venedig (prefered)</Link>
-									<button onClick$={() => nav('../portfolio/venedig')}>
-										About
-									</button>
-								</div>
-							</li>
-							<li>
-								<div class="portfolio__card">
-									<Link reload>Refresh (better accesibility)</Link>
-									<button onClick$={() => nav()}>Refresh</button>
-									<p>Server time: {serverTime.value}</p>
-								</div>
-							</li>
-						</ul>
 					</div>
 				</div>
 			</div>

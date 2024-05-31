@@ -15,14 +15,17 @@ export const Column3 = component$(() => {
 	return (
 		<div class="row">
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Black_001.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Black_001.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Black_002.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Black_002.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-3"></div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Black_003.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Black_003.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-3"></div>
 			<div class="column large-3"></div>
@@ -47,49 +50,63 @@ export const Column3 = component$(() => {
 			</div>
 			<div class="column large-3"></div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Black_011.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Black_011.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Black_012.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Black_012.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-3"></div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Black_013.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Black_013.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-1"></div>
 			<div class="column large-1"></div>
 			<div class="column large-4">
-				<img src="../../assets/images/photography/black/Black_016.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Black_016.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-4">
-				<img src="../../assets/images/photography/black/Black_014.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Black_014.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-4">
-				<img src="../../assets/images/photography/black/Black_018.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Black_018.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Template_index_01.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Template_index_01.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Template_index_02.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Template_index_02.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Template_index_03.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Template_index_03.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Template_index_04.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Template_index_04.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Template_index_05.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Template_index_05.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Template_index_06.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Template_index_06.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Template_index_07.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Template_index_07.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/black/Template_index_08.jpg" alt="" />
+				<img src="../../assets/images/photography/black/Template_index_08.jpg" alt="" width={800}
+					height={800} />
 			</div>
 		</div>
 	)

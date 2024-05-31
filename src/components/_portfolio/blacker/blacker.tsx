@@ -27,24 +27,32 @@ export const GalleryStatic = component$(() => {
 				<img
 					src="../../assets/images/photography/blacker/photography_blackerthandays_001.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/blacker/photography_blackerthandays_009.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/blacker/photography_blackerthandays_002.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/blacker/photography_blackerthandays_005.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 		</div>
@@ -58,6 +66,8 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/blacker/photography_blackerthandays_016.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-4">
@@ -97,6 +107,8 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/blacker/photography_blackerthandays_001.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 		</div>

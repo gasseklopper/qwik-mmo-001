@@ -34,6 +34,8 @@ export default component$(() => {
 						<img
 							src="../../assets/images/photography/minigolf/minigolf_001.gif"
 							alt=""
+							width={800}
+							height={800}
 						/>
 					</>
 				}
@@ -50,6 +52,8 @@ export const GalleryStatic = component$(() => {
 				<img
 					src="../../assets/images/photography/minigolf/minigolf_002.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-6"></div>
@@ -58,6 +62,8 @@ export const GalleryStatic = component$(() => {
 				<img
 					src="../../assets/images/photography/minigolf/minigolf_003.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 		</div>

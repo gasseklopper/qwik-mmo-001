@@ -41,21 +41,19 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/hurricane/IMG_0537.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-6">
 				<img
 					src="../../assets/images/photography/hurricane/IMG_0532.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3"></div>
-			<div class="column large-3">
-				<img
-					src="../../assets/images/photography/huricane/labor_004.gif"
-					alt=""
-				/>
-			</div>
 		</div>
 	)
 })

@@ -28,6 +28,8 @@ export const GalleryStatic = component$(() => {
 				<img
 					src="../../assets/images/photography/rippel/ripel_001.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-4"></div>
@@ -35,6 +37,8 @@ export const GalleryStatic = component$(() => {
 				<img
 					src="../../assets/images/photography/rippel/ripel_003.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-4"></div>
@@ -42,6 +46,8 @@ export const GalleryStatic = component$(() => {
 				<img
 					src="../../assets/images/photography/rippel/ripel_005.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-4"></div>
@@ -49,6 +55,8 @@ export const GalleryStatic = component$(() => {
 				<img
 					src="../../assets/images/photography/rippel/ripel_004.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-4"></div>
@@ -56,6 +64,8 @@ export const GalleryStatic = component$(() => {
 				<img
 					src="../../assets/images/photography/rippel/ripel_006.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 		</div>
@@ -86,6 +96,8 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/rippel/ripel_002.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-4">

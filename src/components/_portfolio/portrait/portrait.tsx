@@ -253,48 +253,64 @@ export const GalleryStatic = component$(() => {
 				<img
 					src="../../assets/images/photography/portrait/Portrait_001.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/portrait/Portrait_002.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/portrait/Portrait_003.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/portrait/Portrait_004.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/portrait/Portrait_005.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/portrait/Portrait_006.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/portrait/Portrait_019.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/portrait/Portrait_020.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 		</div>
@@ -433,46 +449,64 @@ export const GalleryStaticTwo = component$(() => {
 									class="gallery__images-slider"
 									src="../../assets/images/photography/portrait/Portrait_008.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/portrait/Portrait_015.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/portrait/Portrait_016.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/portrait/Portrait_017.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/portrait/Portrait_018.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/portrait/Portrait_019.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/portrait/Portrait_020.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/portrait/Portrait_021.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/portrait/Portrait_022.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 							</div>
 						</div>
@@ -503,6 +537,8 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/portrait/Portrait_011.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-4">
@@ -542,6 +578,8 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/portrait/Portrait_021.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 		</div>

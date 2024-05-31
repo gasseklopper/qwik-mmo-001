@@ -32,6 +32,8 @@ export default component$(() => {
 						<img
 							src="../../assets/images/photography/labor/labor_001.gif"
 							alt=""
+							width={800}
+							height={800}
 						/>
 					</>
 				}
@@ -48,21 +50,27 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/labor/labor_002.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
-			</div>	
+			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/labor/labor_003.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
-	
+
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/labor/labor_004.gif"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 		</div>

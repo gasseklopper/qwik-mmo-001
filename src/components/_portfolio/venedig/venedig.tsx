@@ -12,14 +12,6 @@ export default component$(() => {
 	)
 })
 
-export const ButtonBurger = component$(() => {
-	return (
-		<button class="header__burger">
-			<div class="header__icon"></div>
-		</button>
-	)
-})
-
 export const GalleryStatic = component$(() => {
 	return (
 		<div class="row">
@@ -27,48 +19,64 @@ export const GalleryStatic = component$(() => {
 				<img
 					src="../../assets/images/photography/venedig/IMG_2063.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/venedig/IMG_1905.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/venedig/IMG_1903.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/venedig/IMG_1869.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/venedig/IMG_2039.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/venedig/IMG_1939.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/venedig/IMG_1523.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-3">
 				<img
 					src="../../assets/images/photography/venedig/IMG_2094.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 		</div>
@@ -115,6 +123,8 @@ export const Column3 = component$(() => {
 				<img
 					src="../../assets/images/photography/venedig/IMG_1840.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 		</div>

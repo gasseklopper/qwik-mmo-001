@@ -33,6 +33,8 @@ export default component$(() => {
 						<img
 							src="../../assets/images/photography/venedig/IMG_1857.jpg"
 							alt=""
+							width={800}
+							height={800}
 						/>
 					</>
 				}

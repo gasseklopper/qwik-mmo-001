@@ -33,6 +33,8 @@ export default component$(() => {
 						<img
 							src="../../assets/images/photography/blacker/photography_blackerthandays_013.jpg"
 							alt=""
+							width={800}
+							height={800}
 						/>
 					</>
 				}

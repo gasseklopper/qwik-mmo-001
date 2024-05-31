@@ -18,67 +18,88 @@ export const GalleryStatic = component$(() => {
 	return (
 		<div class="row">
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6685.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6685.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6687.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6687.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6697.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6697.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6699.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6699.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6702.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6702.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6704.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6704.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6705.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6705.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6707.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6707.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6711.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6711.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6714.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6714.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6717.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6717.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6722.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6722.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6730.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6730.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6756.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6756.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6757.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6757.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6759.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6759.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6771.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6771.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6772.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6772.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6778.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6778.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6779.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6779.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/paris/IMG_6781.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6781.jpg" alt="" width={800}
+					height={800} />
 			</div>
 		</div>
 	)
@@ -88,7 +109,8 @@ export const Column3 = component$(() => {
 	return (
 		<div class="row">
 			<div class="column large-12">
-				<img src="../../assets/images/photography/paris/IMG_6763.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6763.jpg" alt="" width={800}
+					height={800} />
 			</div>
 			<div class="column large-4">
 				<p>
@@ -124,7 +146,8 @@ export const Column3 = component$(() => {
 				</p>
 			</div>
 			<div class="column large-4">
-				<img src="../../assets/images/photography/paris/IMG_6763.jpg" alt="" />
+				<img src="../../assets/images/photography/paris/IMG_6763.jpg" alt="" width={800}
+					height={800} />
 			</div>
 		</div>
 	)
@@ -261,46 +284,64 @@ export const GalleryStaticTwo = component$(() => {
 									class="gallery__images-slider"
 									src="../../assets/images/photography/paris/IMG_6687.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/paris/IMG_6699.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/paris/IMG_6697.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/paris/IMG_6702.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/paris/IMG_6704.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/paris/IMG_6705.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/paris/IMG_6707.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/paris/IMG_6711.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../assets/images/photography/paris/IMG_6714.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 							</div>
 						</div>
