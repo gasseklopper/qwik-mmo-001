@@ -1,7 +1,7 @@
 import {
 	component$,
 	useStyles$,
-	QwikIntrinsicElements,
+	type QwikIntrinsicElements,
 	type QRL,
 	Slot,
 } from '@builder.io/qwik'

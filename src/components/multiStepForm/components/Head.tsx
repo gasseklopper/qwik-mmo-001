@@ -24,7 +24,7 @@ export const Head = component$(() => {
 			))}
 
 			{documentHead.links.map((link) => (
-				<link {...link} />
+				<link {...link} key={link.key} />
 			))}
 
 			{documentHead.styles.map((style) => (
