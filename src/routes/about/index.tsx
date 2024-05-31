@@ -573,6 +573,8 @@ export const AboutIntro = component$(() => {
 				<img
 					src="../../assets/images/photography/venedig/IMG_2063.jpg"
 					alt=""
+					width={800}
+					height={800}
 				/>
 			</div>
 			<div class="column large-4">

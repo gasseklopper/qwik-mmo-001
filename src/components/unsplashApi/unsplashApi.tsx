@@ -81,12 +81,16 @@ export const ImageListComponent = component$((props: { state: any }) => {
 							<img
 								src={items.urls.small}
 								style="visibility: none;" // hidden, none, collapse
+								width={800}
+								height={800}
 							/>
 						) : (
 							<img
 								src={items.urls.small}
 								style="visibility: none;"
 								hidden // hidden, none, collapse
+								width={800}
+								height={800}
 							/>
 						)}
 					</li>

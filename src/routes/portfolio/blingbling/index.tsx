@@ -76,7 +76,8 @@ export const Column3 = component$(() => {
 			</div>
 			<div class="column large-3"></div>
 			<div class="column large-6">
-				<img src="../../assets/images/photography/blingbling/bling_bling_005.gif" alt="" />
+				<img src="../../assets/images/photography/blingbling/bling_bling_005.gif" alt="" width={800}
+					height={800} />
 
 			</div>
 			<div class="column large-6">

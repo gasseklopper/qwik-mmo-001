@@ -143,6 +143,8 @@ export default component$(() => {
 									<img
 										class="image"
 										src="../../assets/images/photography/black/Template_index_01.jpg"
+										width={800}
+										height={800}
 									/>
 								</div>
 							</div>

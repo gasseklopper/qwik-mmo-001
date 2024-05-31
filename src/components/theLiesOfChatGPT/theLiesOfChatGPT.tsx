@@ -109,8 +109,8 @@ export default component$(() => {
 				<div class="wrap">
 					<div class="nose" style={{
 						width: `${mousePositionForRotate.sizeFactorW}px`,
-				transform: `rotate(${mousePositionForRotate.rotation}deg)`
-			}}></div>
+						transform: `rotate(${mousePositionForRotate.rotation}deg)`
+					}}></div>
 					<div class="hat"></div>
 					<div class="hair"></div>
 					<div class="head">
@@ -150,6 +150,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_001.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -166,6 +168,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_002.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -181,6 +185,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_003.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -196,6 +202,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_004.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -211,6 +219,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_005.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -226,6 +236,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_006.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -241,6 +253,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_007.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -256,6 +270,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_008.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -271,6 +287,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_009.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -286,6 +304,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_010.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -301,6 +321,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_011.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -316,6 +338,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_012.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -331,6 +355,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_013.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -346,6 +372,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_014.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -361,6 +389,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_015.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -376,6 +406,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_016.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
@@ -391,6 +423,8 @@ export default component$(() => {
 							<img
 								src="../../assets/images/theLiesOfChatGPT/pin_017.jpg"
 								alt="image"
+								width={800}
+								height={800}
 							/>
 						</div>
 					</div>
