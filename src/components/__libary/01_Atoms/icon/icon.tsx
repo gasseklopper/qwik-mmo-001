@@ -1,6 +1,6 @@
 import * as LucideIcons from '@qwikest/icons/lucide'
-import type {
-	IntrinsicSVGElements,
+import {
+	type IntrinsicSVGElements,
 } from '@builder.io/qwik'
 import { component$, useStyles$ } from '@builder.io/qwik'
 import styles from './icon.scss?inline'

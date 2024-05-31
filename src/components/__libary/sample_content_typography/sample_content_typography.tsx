@@ -792,7 +792,8 @@ export default component$(() => {
 						<img
 							class="image fit"
 							src="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80"
-							alt=""
+							alt="" width={800}
+							height={800}
 						></img>
 					</span>
 					<hr />
@@ -802,7 +803,8 @@ export default component$(() => {
 						<img
 							class="image fit"
 							src="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80"
-							alt=""
+							alt="" width={800}
+							height={800}
 						></img>
 					</span>
 					<hr />
@@ -812,7 +814,8 @@ export default component$(() => {
 						<img
 							class="image fit"
 							src="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80"
-							alt=""
+							alt="" width={800}
+							height={800}
 						></img>
 					</span>
 					<hr />
@@ -822,7 +825,8 @@ export default component$(() => {
 						<img
 							class="image fit"
 							src="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80"
-							alt=""
+							alt="" width={800}
+							height={800}
 						></img>
 					</span>
 					<hr />
@@ -833,7 +837,8 @@ export default component$(() => {
 						<img
 							class="image fit"
 							src="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80"
-							alt=""
+							alt="" width={800}
+							height={800}
 						></img>
 					</span>
 					<hr />
@@ -843,7 +848,8 @@ export default component$(() => {
 						<img
 							class="image fit"
 							src="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80"
-							alt=""
+							alt="" width={800}
+							height={800}
 						></img>
 					</span>
 					<hr />
@@ -853,7 +859,8 @@ export default component$(() => {
 						<img
 							class="image fit"
 							src="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80"
-							alt=""
+							alt="" width={800}
+							height={800}
 						></img>
 					</span>
 					<hr />
@@ -863,7 +870,8 @@ export default component$(() => {
 						<img
 							class="image fit"
 							src="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80"
-							alt=""
+							alt="" width={800}
+							height={800}
 						></img>
 					</span>
 					<hr />
@@ -876,7 +884,8 @@ export default component$(() => {
 					<h3>Left &amp; Right</h3>
 					<p>
 						<span class="image left">
-							<img src="images/pic08.jpg" alt="" />
+							<img src="images/pic08.jpg" alt="" width={800}
+								height={800} />
 						</span>
 						Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis
 						sagittis eget. tempus euismod. Vestibulum ante ipsum primis in
@@ -894,7 +903,8 @@ export default component$(() => {
 					</p>
 					<p>
 						<span class="image right">
-							<img src="images/pic08.jpg" alt="" />
+							<img src="images/pic08.jpg" alt="" width={800}
+								height={800} />
 						</span>
 						Lorem ipsum dolor sit accumsan interdum nisi, quis tincidunt felis
 						sagittis eget. tempus euismod. Vestibulum ante ipsum primis in
@@ -950,7 +960,7 @@ export default component$(() => {
 					<h3>PREFORMATTED</h3>
 					<pre>
 						<code>
-							i = 0; "while (!deck.isInOrder()) {}" print 'It took ' + i + '
+							i = 0; "while (!deck.isInOrder()) { }" print 'It took ' + i + '
 							iterations to sort the deck.';
 						</code>
 					</pre>

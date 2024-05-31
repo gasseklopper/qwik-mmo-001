@@ -1,6 +1,6 @@
 import { useContext } from '@builder.io/qwik'
 import { createContextId } from '@builder.io/qwik'
-import { TProduct } from './productCardTypes'
+import { type TProduct } from './productCardTypes'
 
 const ProductCardContext = createContextId<TProduct>('product.product-context')
 

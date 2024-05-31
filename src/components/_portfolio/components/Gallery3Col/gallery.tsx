@@ -381,46 +381,64 @@ export default component$(() => {
 									class="gallery__images-slider"
 									src="../../../assets/images/photography/blacker/photography_blackerthandays_001.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../../assets/images/photography/blacker/photography_blackerthandays_002.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../../assets/images/photography/blacker/photography_blackerthandays_003.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../../assets/images/photography/blacker/photography_blackerthandays_010.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../../assets/images/photography/blacker/photography_blackerthandays_004.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../../assets/images/photography/blacker/photography_blackerthandays_011.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../../assets/images/photography/blacker/photography_blackerthandays_012.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../../assets/images/photography/blacker/photography_blackerthandays_014.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 								<img
 									class="gallery__images-slider"
 									src="../../../assets/images/photography/blacker/photography_blackerthandays_016.jpg"
 									alt=""
+									width={800}
+									height={800}
 								/>
 							</div>
 						</div>

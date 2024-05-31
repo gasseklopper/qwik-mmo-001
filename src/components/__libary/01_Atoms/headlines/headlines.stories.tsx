@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from 'storybook-framework-qwik'
-import HeadlineComponent, { ExtendedHeadlinesProps } from './headlines'
+import HeadlineComponent, { type ExtendedHeadlinesProps } from './headlines'
 
 const primaryButtonProps: ExtendedHeadlinesProps = {
 	headlineTag: 'h1',

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from "storybook-framework-qwik";
-import Friends,{ HeadlineProps } from "./friends";
+import Friends, { type HeadlineProps } from "./friends";
 
 const meta: Meta<HeadlineProps> = {
   component: Friends,
@@ -13,5 +13,5 @@ export const Primary: Story = {
   args: {
 
   },
-  render: (props) => <Friends {...props}/>,
+  render: (props) => <Friends {...props} />,
 };

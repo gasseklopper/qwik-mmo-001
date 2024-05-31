@@ -1,5 +1,5 @@
 import {
-	QwikIntrinsicElements,
+	type QwikIntrinsicElements,
 	Slot,
 	component$,
 	useStore,

@@ -50,6 +50,8 @@ export default component$(() => {
 										class="h-96 w-full rounded-lg object-cover"
 										src="https://images.unsplash.com/photo-1621111848501-8d3634f82336?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1565&q=80"
 										alt=""
+										width={800}
+										height={800}
 									/>
 									<h2 class="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white">
 										Best website collections
@@ -64,6 +66,8 @@ export default component$(() => {
 										class="h-96 w-full rounded-lg object-cover"
 										src="https://images.unsplash.com/photo-1621609764180-2ca554a9d6f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
 										alt=""
+										width={800}
+										height={800}
 									/>
 									<h2 class="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white">
 										Block of Ui kit collections
@@ -78,6 +82,8 @@ export default component$(() => {
 										class="h-96 w-full rounded-lg object-cover"
 										src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
 										alt=""
+										width={800}
+										height={800}
 									/>
 									<h2 class="mt-4 text-2xl font-semibold capitalize text-gray-800 dark:text-white">
 										Ton’s of mobile mockup
@@ -111,6 +117,8 @@ export default component$(() => {
 								class="h-32 w-32 rounded-full object-cover ring-4 ring-gray-300"
 								src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
 								alt=""
+								width={800}
+								height={800}
 							/>
 
 							<h1 class="mt-4 text-2xl font-semibold capitalize text-gray-700 group-hover:text-white dark:text-white">
@@ -174,6 +182,8 @@ export default component$(() => {
 								class="h-32 w-32 rounded-full object-cover ring-4 ring-gray-300"
 								src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
 								alt=""
+								width={800}
+								height={800}
 							/>
 
 							<h1 class="mt-4 text-2xl font-semibold capitalize text-gray-700 group-hover:text-white dark:text-white">
@@ -237,6 +247,8 @@ export default component$(() => {
 								class="h-32 w-32 rounded-full object-cover ring-4 ring-gray-300"
 								src="https://images.unsplash.com/photo-1488508872907-592763824245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
 								alt=""
+								width={800}
+								height={800}
 							/>
 
 							<h1 class="mt-4 text-2xl font-semibold capitalize text-gray-700 group-hover:text-white dark:text-white">
@@ -300,6 +312,8 @@ export default component$(() => {
 								class="h-32 w-32 rounded-full object-cover ring-4 ring-gray-300"
 								src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
 								alt=""
+								width={800}
+								height={800}
 							/>
 
 							<h1 class="mt-4 text-2xl font-semibold capitalize text-gray-700 group-hover:text-white dark:text-white">
@@ -363,6 +377,8 @@ export default component$(() => {
 								class="h-32 w-32 rounded-full object-cover ring-4 ring-gray-300"
 								src="https://images.unsplash.com/photo-1499470932971-a90681ce8530?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
 								alt=""
+								width={800}
+								height={800}
 							/>
 
 							<h1 class="mt-4 text-2xl font-semibold capitalize text-gray-700 group-hover:text-white dark:text-white">
@@ -426,6 +442,8 @@ export default component$(() => {
 								class="h-32 w-32 rounded-full object-cover ring-4 ring-gray-300"
 								src="https://images.unsplash.com/photo-1608174386344-80898cec6beb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 								alt=""
+								width={800}
+								height={800}
 							/>
 
 							<h1 class="mt-4 text-2xl font-semibold capitalize text-gray-700 group-hover:text-white dark:text-white">
@@ -489,6 +507,8 @@ export default component$(() => {
 								class="h-32 w-32 rounded-full object-cover ring-4 ring-gray-300"
 								src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 								alt=""
+								width={800}
+								height={800}
 							/>
 
 							<h1 class="mt-4 text-2xl font-semibold capitalize text-gray-700 group-hover:text-white dark:text-white">
@@ -552,6 +572,8 @@ export default component$(() => {
 								class="h-32 w-32 rounded-full object-cover ring-4 ring-gray-300"
 								src="https://images.unsplash.com/photo-1521488741203-dcc320950ce5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
 								alt=""
+								width={800}
+								height={800}
 							/>
 
 							<h1 class="mt-4 text-2xl font-semibold capitalize text-gray-700 group-hover:text-white dark:text-white">
@@ -687,6 +709,8 @@ export default component$(() => {
 									class="mx-2 h-14 w-14 shrink-0 rounded-full object-cover ring-4 ring-gray-300 dark:ring-gray-700"
 									src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80"
 									alt=""
+									width={800}
+									height={800}
 								/>
 
 								<div class="mx-2">
@@ -715,6 +739,8 @@ export default component$(() => {
 									class="mx-2 h-14 w-14 shrink-0 rounded-full object-cover ring-4 ring-blue-200"
 									src="https://images.unsplash.com/photo-1531590878845-12627191e687?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80"
 									alt=""
+									width={800}
+									height={800}
 								/>
 
 								<div class="mx-2">
@@ -743,6 +769,8 @@ export default component$(() => {
 									class="mx-2 h-14 w-14 shrink-0 rounded-full object-cover ring-4 ring-gray-300 dark:ring-gray-700"
 									src="https://images.unsplash.com/photo-1488508872907-592763824245?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
 									alt=""
+									width={800}
+									height={800}
 								/>
 
 								<div class="mx-2">

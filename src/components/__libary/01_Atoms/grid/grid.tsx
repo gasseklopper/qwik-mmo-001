@@ -1,7 +1,7 @@
 import {
-	FunctionComponent,
-	JSXNode,
-	QwikIntrinsicElements,
+	type FunctionComponent,
+	type JSXNode,
+	type QwikIntrinsicElements,
 	Slot,
 	component$,
 	useStyles$,

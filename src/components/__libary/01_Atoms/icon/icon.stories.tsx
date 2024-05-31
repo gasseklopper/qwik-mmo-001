@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from 'storybook-framework-qwik'
-import Icon, { ExtendedIconProps } from './icon'
+import Icon, {type ExtendedIconProps } from './icon'
 
 const iconProps: ExtendedIconProps = {
 	iconName: 'LuActivitySquare',

@@ -1,4 +1,4 @@
-import { QwikIntrinsicElements, component$, useStyles$ } from '@builder.io/qwik'
+import { type QwikIntrinsicElements, component$, useStyles$ } from '@builder.io/qwik'
 import styles from './image.scss?inline'
 
 export interface ImageProps {
@@ -15,7 +15,7 @@ export type ExtendedImageProps = ExtendedImageElement & ImageProps
 
 const mainClass = 'image'
 
-export default component$(({class: className,...props}: ExtendedImageProps) => {
+export default component$(({ class: className, ...props }: ExtendedImageProps) => {
 	useStyles$(styles)
 
 	const componentClass = className || ''
