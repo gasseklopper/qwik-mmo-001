@@ -1,7 +1,6 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
-import { Link, useNavigate, routeLoader$ } from '@builder.io/qwik-city'
-import Bodytext from '~/components/__libary/01_Atoms/bodytext/bodytext'
+import { Link, routeLoader$ } from '@builder.io/qwik-city'
 import styles from './index-portfolio.scss?inline'
 
 export const useServerTime = routeLoader$(() => {
@@ -11,9 +10,6 @@ export const useServerTime = routeLoader$(() => {
 
 export default component$(() => {
 	useStyles$(styles)
-
-	const nav = useNavigate()
-	const serverTime = useServerTime()
 
 	return (
 		<>
