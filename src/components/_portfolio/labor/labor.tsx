@@ -60,7 +60,7 @@ export const Column3 = component$(() => {
 			<div class="column large-4">
 				<img
 					src="../../assets/images/photography/minigolf/minigolf_001.gif"
-					alt=""
+					alt="test"
 					width={800}
 					height={800}
 				/>
