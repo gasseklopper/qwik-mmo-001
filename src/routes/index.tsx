@@ -24,6 +24,7 @@ export default component$(() => {
 						src={'../../assets/images/photography/black/Black_001.jpg'}
 						height={1080}
 						width={820}
+						alt='test3'
 					/>
 				</div>
 				<div class="column medium-2">
@@ -31,6 +32,7 @@ export default component$(() => {
 						src={'../../assets/images/photography/black/Black_001.jpg'}
 						height={1080}
 						width={820}
+						alt='test3'
 					/>
 					<Image
 						src={'../../assets/images/photography/blacker/photography_blackerthandays_016.jpg'}
@@ -51,6 +53,7 @@ export default component$(() => {
 						src={'../../assets/images/photography/black/Black_001.jpg'}
 						height={1080}
 						width={820}
+						alt='test3'
 					/>
 				</div>
 				<div class="column medium-2">
@@ -58,6 +61,7 @@ export default component$(() => {
 						src={'../../assets/images/photography/black/Black_001.jpg'}
 						height={1080}
 						width={820}
+						alt='test3'
 					/>
 					<Image
 						src={'../../assets/images/photography/blacker/photography_blackerthandays_016.jpg'}
