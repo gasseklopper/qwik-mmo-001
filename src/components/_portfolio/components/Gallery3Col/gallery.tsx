@@ -408,7 +408,7 @@ export default component$(() => {
 								/>
 								<img
 									class="gallery__images-slider"
-									src="../../../assets/images/photography/blacker/photography_blackerthandays_004.jpg"
+									src="../../../assets/images/photography/blacker/photography_blackerthandays_004-min.jpg"
 									alt=""
 									width={800}
 									height={800}
