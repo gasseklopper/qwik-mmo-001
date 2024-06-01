@@ -91,6 +91,7 @@ export default component$(() => {
 					name="description"
 					content="Halten Sie bei Ihren Meta Descriptions die Länge von 140 bis 160 Zeichen ein, damit Google sie vollständig anzeigt. Verwenden Sie auch Ihr Keyword!"
 				/>
+				<meta name="robots" content="index"/>
 				<link rel="manifest" href="/manifest.json" />
 				<link rel="preconnect" href="https://fonts.gstatic.com"></link>
 				<link
