@@ -164,7 +164,7 @@ export default component$(() => {
 				<div class="column medium-9">
 					<Image
 						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
-						height={1080}
+						height={461}
 						width={820}
 						alt='test2'
 					/>
@@ -174,7 +174,7 @@ export default component$(() => {
 				<div class="column medium-9">
 					<Image
 						src={'../../assets/images/photography/black/Black_001-min.jpg'}
-						height={1080}
+						height={461}
 						width={820}
 						alt='test2 mmmo'
 					/>
