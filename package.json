@@ -37,8 +37,11 @@
     "@builder.io/partytown": "^0.8.1",
     "@builder.io/qwik": "^1.5.5",
     "@builder.io/qwik-city": "^1.5.5",
+    "@modular-forms/qwik": "^0.20.0",
     "@netlify/edge-functions": "^2.0.0",
+    "@netlify/plugin-lighthouse": "^6.0.0",
     "@netlify/vite-plugin-netlify-edge": "1.1.2",
+    "@qwikest/icons": "^0.0.13",
     "@storybook/addon-essentials": "^7.4.6",
     "@storybook/addon-links": "^7.4.6",
     "@storybook/blocks": "^7.4.6",
@@ -55,6 +58,7 @@
     "@typescript-eslint/parser": "^7.7.1",
     "@vitest/coverage-c8": "^0.33.0",
     "body-scroll-lock": "^4.0.0-beta.0",
+    "clsx": "^1.2.1",
     "dotenv": "^16.0.3",
     "dotenv-expand": "^10.0.0",
     "eslint": "^8.57.0",
@@ -66,15 +70,12 @@
     "prettier": "^3.2.5",
     "sass": "^1.62.1",
     "storybook": "^7.4.6",
+    "storybook-addon-data-theme-switcher": "^0.1.7",
     "storybook-framework-qwik": "^0.2.4",
     "typescript": "5.4.5",
+    "undici": "*",
     "vite": "^5.2.10",
     "vite-tsconfig-paths": "^4.2.1",
-    "vitest": "^0.31.1",
-    "undici": "*",
-    "@modular-forms/qwik": "^0.20.0",
-    "@qwikest/icons": "^0.0.13",
-    "clsx": "^1.2.1",
-    "storybook-addon-data-theme-switcher": "^0.1.7"
+    "vitest": "^0.31.1"
   }
 }

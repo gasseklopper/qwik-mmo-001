@@ -11,3 +11,5 @@ framework = "#static"
   for = "/assets/images/photography/black/*"
 [headers.values]
   Cache-Control = "public, max-age=60"
+[[plugins]]
+  package = "@netlify/plugin-lighthouse"
