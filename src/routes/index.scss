@@ -1,13 +1,13 @@
 .blog-item-row {
     &__content {
         display: flex;
-        background-color: purple;
+        // background-color: purple;
     }
 
     &__content2 {
         display: flex;
         flex-direction: column;
-        background-color: green;
+        // background-color: green;
     }
 }
 
@@ -15,7 +15,7 @@
     .blog-item {
         &--column-view {
             display: flex;
-            background-color: aqua;
+            // background-color: aqua;
         }
     }
 }
