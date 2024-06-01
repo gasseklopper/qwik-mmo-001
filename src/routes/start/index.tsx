@@ -1,12 +1,12 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
-import MultiStepForm from '~/components/multiStepForm'
+// import MultiStepForm from '~/components/multiStepForm'
 
 export default component$(() => {
 	return (
 		<div class="row">
 			<div class="column">
-				<MultiStepForm />
+				{/* <MultiStepForm /> */}
 			</div>
 			<div class="column">
 				<h1>Welcome to Qwik Docs Starter</h1>
