@@ -70,10 +70,10 @@ export default component$(() => {
 		store.count = 0
 	})
 
-	const handleProductCardClick = $((label: string) => {
-		store.count = 777
-		console.log('test click', label)
-	})
+	// const handleProductCardClick = $((label: string) => {
+	// 	store.count = 777
+	// 	console.log('test click', label)
+	// })
 
 	return (
 		<div>
