@@ -17,7 +17,7 @@ export const Head = component$(() => {
 
 			<link rel="manifest" href="/manifest.json" />
 			<link rel="canonical" href={location.url.href} />
-			<link rel="icon" href="/favicon.ico" />
+			<link rel="icon " href="/favicon.ico" />
 
 			{documentHead.meta.map((meta) => (
 				<meta {...meta} key={meta.key} />
