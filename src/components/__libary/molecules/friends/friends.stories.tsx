@@ -11,7 +11,10 @@ export default meta;
 
 export const Primary: Story = {
   args: {
-
+    tag: 'h1',
+    text: 'Hello, Friends!',
+    size: 'large',
+    variant: 'primary',
   },
-  render: (props) => <Friends {...props} />,
+  render: (args: HeadlineProps) => <Friends {...args} />,
 };

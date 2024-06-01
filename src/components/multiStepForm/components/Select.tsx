@@ -91,7 +91,7 @@ export const Select = component$(
 						))}
 					</select>
 					{!multiple && (
-						<AngleDownIcon class="pointer-events-none absolute right-6 h-5 lg:right-8 lg:h-6" />
+						<AngleDownIcon />
 					)}
 				</div>
 				<InputError name={name} error={error} />

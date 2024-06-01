@@ -66,7 +66,7 @@ export default component$(() => {
 							<p class="port_box__description">Painting with light</p>
 							<div class="port_box__image">
 								<Link href='/portfolio/blingbling'>
-									<image
+									<img
 										src="/assets/images/photography/blingbling/bling_bling_009.gif"
 										alt="/assets/images/photography/blingbling/bling_bling_009.gif"
 										width={300}
@@ -83,7 +83,7 @@ export default component$(() => {
 							<p class="port_box__description">Painting with light</p>
 							<div class="port_box__image">
 								<Link href='/portfolio/venedig'>
-									<image
+									<img
 										src="/assets/images/photography/venedig/IMG_1905.jpg"
 										alt="/assets/images/photography/venedig/IMG_1905.jpg"
 										width={300}
