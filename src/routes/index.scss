@@ -1,0 +1,21 @@
+.blog-item-row {
+    &__content {
+        display: flex;
+        background-color: purple;
+    }
+
+    &__content2 {
+        display: flex;
+        flex-direction: column;
+        background-color: green;
+    }
+}
+
+.blog-item-column {
+    .blog-item {
+        &--column-view {
+            display: flex;
+            background-color: aqua;
+        }
+    }
+}
