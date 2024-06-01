@@ -2,8 +2,12 @@
   "name": "my-qwik-docs-starter",
   "description": "Documentation site starter",
   "engines": {
-    "node": ">=18.0.0"
+    "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
   },
+  "engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime",
+  "trustedDependencies": [
+    "sharp"
+  ],
   "private": true,
   "scripts": {
     "build": "qwik build",
