@@ -1,7 +1,7 @@
 import { component$ } from '@builder.io/qwik'
 import { type DocumentHead } from '@builder.io/qwik-city'
-import { email, minLength, required, useForm } from '@modular-forms/qwik'
-import { FormHeader, TextInput, FormFooter } from './components'
+import { useForm } from '@modular-forms/qwik'
+import { FormHeader, FormFooter } from './components'
 
 type LoginForm = {
 	email: string
@@ -21,7 +21,7 @@ export default component$(() => {
 		>
 			<FormHeader of={loginForm} heading="Login form" />
 			<div class="space-y-8 md:space-y-10 lg:space-y-12">
-				<Field
+				{/* <Field
 					name="email"
 					validate={[
 						required('Please enter your email.'),
@@ -39,8 +39,8 @@ export default component$(() => {
 							required
 						/>
 					)}
-				</Field>
-				<Field
+				</Field> */}
+				{/* <Field
 					name="password"
 					validate={[
 						required('Please enter your password.'),
@@ -58,7 +58,7 @@ export default component$(() => {
 							required
 						/>
 					)}
-				</Field>
+				</Field> */}
 			</div>
 			<FormFooter of={loginForm} />
 		</Form>

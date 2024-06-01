@@ -26,7 +26,7 @@ export function FormFooter({
 				type="submit"
 				form={form}
 			/>
-			<ResetForm action={resetAction!}>
+			<Form action={resetAction!}>
 				<ActionButton
 					variant="secondary"
 					label="Reset"
@@ -34,7 +34,7 @@ export function FormFooter({
 					preventdefault:click
 					onClick$={() => reset(formStore)}
 				/>
-			</ResetForm>
+			</Form>
 		</footer>
 	)
 }

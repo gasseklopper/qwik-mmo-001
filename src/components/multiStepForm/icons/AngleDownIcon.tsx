@@ -1,7 +1,7 @@
-import { component$, type HTMLAttributes } from '@builder.io/qwik'
+import {type SVGAttributes, component$ } from '@builder.io/qwik'
 
 export const AngleDownIcon = component$(
-	(props: HTMLAttributes<HTMLElement>) => (
+	(props: SVGAttributes<SVGSVGElement>) => (
 		<svg
 			viewBox="0 0 36 48"
 			role="img"

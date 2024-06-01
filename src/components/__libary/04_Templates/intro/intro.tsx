@@ -5,6 +5,7 @@ import {
 	Slot,
 	component$,
 	useStyles$,
+	JSXOutput,
 } from '@builder.io/qwik'
 import styles from './intro.scss?inline'
 
@@ -12,10 +13,10 @@ export interface GridProps {
 	variant?: 'bodytext' | 'subline' | 'eyebrow' | 'browLine'
 	columnOne?:
 	| JSXNode<string | FunctionComponent<Record<string, any>>>
-	| undefined
+	| JSXOutput | undefined
 	columnTwo?:
 	| JSXNode<string | FunctionComponent<Record<string, any>>>
-	| undefined
+	| JSXOutput | undefined
 }
 
 type ExtendedDivlement = QwikIntrinsicElements['div'] & {

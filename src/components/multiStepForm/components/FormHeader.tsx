@@ -26,7 +26,7 @@ export function FormHeader({
 				{heading}
 			</h1>
 			<div class="hidden lg:flex lg:space-x-8">
-				<ResetForm action={resetAction!}>
+				<Form action={resetAction!}>
 					<ActionButton
 						variant="secondary"
 						label="Reset"
@@ -34,7 +34,7 @@ export function FormHeader({
 						preventdefault:click
 						onClick$={() => reset(formStore)}
 					/>
-				</ResetForm>
+				</Form>
 				<ActionButton
 					variant="primary"
 					label="Submit"

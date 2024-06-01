@@ -1,5 +1,6 @@
 import * as LucideIcons from '@qwikest/icons/lucide'
 import {
+	SVGProps,
 	type IntrinsicSVGElements,
 } from '@builder.io/qwik'
 import { component$, useStyles$ } from '@builder.io/qwik'
@@ -12,7 +13,7 @@ type IconProps = {
 	iconName: LucideIconName
 }
 
-type ExtendedIconElement = IntrinsicSVGElements['svg'] & {
+type ExtendedIconElement = SVGProps<SVGSVGElement> & {
 	'aria-label'?: string
 }
 

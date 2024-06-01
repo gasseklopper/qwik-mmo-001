@@ -25,7 +25,7 @@ type FileInputProps = {
 	onInput$: PropFunction<(event: Event, element: HTMLInputElement) => void>
 	onChange$: PropFunction<
 		(
-			event: QwikChangeEvent<HTMLInputElement>,
+			event: HTMLInputElement,
 			element: HTMLInputElement
 		) => void
 	>
@@ -67,7 +67,7 @@ export const FileInput = component$(
 						!files.value?.length && 'text-slate-500'
 					)}
 				>
-					{files.value?.length
+					{/* {files.value?.length
 						? `Selected file${multiple ? 's' : ''}: ${files.value
 								.map(({ name }) => name)
 								.join(', ')}`
@@ -79,7 +79,7 @@ export const FileInput = component$(
 						id={name}
 						aria-invalid={!!error}
 						aria-errormessage={`${name}-error`}
-					/>
+					/> */}
 				</label>
 				<InputError name={name} error={error} />
 			</div>

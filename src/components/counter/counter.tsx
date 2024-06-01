@@ -86,21 +86,21 @@ export default component$(() => {
 
 			<ProductCard
 				product={ProductCardDataMock}
-				image={<ProductImage />}
-				info={
-					<ProductInfo>
-						{<ProductRating />}
-						{<ProductPrice currency={ProductCardDataMock.currency} />}
-						{<ProductCategory />}
-						{<ProductTitle />}
-						{<ProductLabel />}
-					</ProductInfo>
-				}
-				action={
-					<ProductButton
-						onClick$={() => handleProductCardClick(ProductCardDataMock.label)}
-					/>
-				}
+				// image={<ProductImage />}
+				// info={
+				// 	<ProductInfo>
+				// 		{<ProductRating />}
+				// 		{<ProductPrice currency={ProductCardDataMock.currency} />}
+				// 		{<ProductCategory />}
+				// 		{<ProductTitle />}
+				// 		{<ProductLabel />}
+				// 	</ProductInfo>
+				// }
+				// action={
+				// 	<ProductButton
+				// 		onClick$={() => handleProductCardClick(ProductCardDataMock.label)}
+				// 	/>
+				// }
 			></ProductCard>
 			<Button
 				buttonSize='default'
