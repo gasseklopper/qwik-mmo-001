@@ -15,13 +15,13 @@ export default component$(() => {
 			<div class="row">
 				<div class="column medium-2">
 					<Image
-						src={'../../assets/images/photography/blacker/photography_blackerthandays_016.jpg'}
+						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 						height={1680}
 						width={1820}
 						alt='test'
 					/>
 					<Image
-						src={'../../assets/images/photography/black/Black_001.jpg'}
+						src={'../../assets/images/photography/black/Black_001-min.jpg'}
 						height={1080}
 						width={820}
 						alt='test3'
@@ -29,13 +29,13 @@ export default component$(() => {
 				</div>
 				<div class="column medium-2">
 					<Image
-						src={'../../assets/images/photography/black/Black_001.jpg'}
+						src={'../../assets/images/photography/black/Black_001-min.jpg'}
 						height={1080}
 						width={820}
 						alt='test3'
 					/>
 					<Image
-						src={'../../assets/images/photography/blacker/photography_blackerthandays_016.jpg'}
+						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 						height={1680}
 						width={1820}
 						alt='test'
@@ -44,13 +44,13 @@ export default component$(() => {
 				<div class="column medium-4"><h2>there are products</h2></div>
 				<div class="column medium-2">
 					<Image
-						src={'../../assets/images/photography/blacker/photography_blackerthandays_016.jpg'}
+						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 						height={1680}
 						width={1820}
 						alt='test'
 					/>
 					<Image
-						src={'../../assets/images/photography/black/Black_001.jpg'}
+						src={'../../assets/images/photography/black/Black_001-min.jpg'}
 						height={1080}
 						width={820}
 						alt='test3'
@@ -58,13 +58,13 @@ export default component$(() => {
 				</div>
 				<div class="column medium-2">
 					<Image
-						src={'../../assets/images/photography/black/Black_001.jpg'}
+						src={'../../assets/images/photography/black/Black_001-min.jpg'}
 						height={1080}
 						width={820}
 						alt='test3'
 					/>
 					<Image
-						src={'../../assets/images/photography/blacker/photography_blackerthandays_016.jpg'}
+						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 						height={1680}
 						width={1820}
 						alt='test'
@@ -76,7 +76,7 @@ export default component$(() => {
 					<div class="intro">
 						<h1>Morley</h1>
 						<Image
-							src={'../../assets/images/photography/blacker/photography_blackerthandays_016.jpg'}
+							src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 							height={1680}
 							width={1820}
 							alt='test'
@@ -163,7 +163,7 @@ export default component$(() => {
 				</div>
 				<div class="column medium-9">
 					<Image
-						src={'../../assets/images/photography/blacker/photography_blackerthandays_016.jpg'}
+						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 						height={1080}
 						width={820}
 						alt='test2'
@@ -173,7 +173,7 @@ export default component$(() => {
 			<div class="row">
 				<div class="column medium-9">
 					<Image
-						src={'../../assets/images/photography/black/Black_001.jpg'}
+						src={'../../assets/images/photography/black/Black_001-min.jpg'}
 						height={1080}
 						width={820}
 						alt='test2'
