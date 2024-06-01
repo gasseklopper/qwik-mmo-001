@@ -79,7 +79,7 @@ export default component$(() => {
 							src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 							height={704}
 							width={1251}
-							alt='test'
+							alt='test mmo'
 						/>
 					</div>
 				</div>
@@ -176,7 +176,7 @@ export default component$(() => {
 						src={'../../assets/images/photography/black/Black_001-min.jpg'}
 						height={1080}
 						width={820}
-						alt='test2'
+						alt='test2 mmmo'
 					/>
 				</div>
 				<div class="column medium-3">
