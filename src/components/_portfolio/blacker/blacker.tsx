@@ -49,7 +49,7 @@ export const GalleryStatic = component$(() => {
 			</div>
 			<div class="column large-3">
 				<img
-					src="../../assets/images/photography/blacker/photography_blackerthandays_005.jpg"
+					src="../../assets/images/photography/blacker/photography_blackerthandays_005-min.jpg"
 					alt=""
 					width={800}
 					height={800}

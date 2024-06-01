@@ -7,7 +7,7 @@
 				"label": "Welcome To My Home",
 				"url": "/start",
 				"image": {
-					"src": "../../assets/images/photography/blacker/photography_blackerthandays_003.jpg",
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_003-min.jpg",
 					"height": "",
 					"width": ""
 				},
@@ -33,7 +33,7 @@
 				"label": "Eccentric Canvas: A Tapestry of Code, Color, and Captured Moments",
 				"url": "test1",
 				"image": {
-					"src": "../../assets/images/photography/blacker/photography_blackerthandays_003.jpg",
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_003-min.jpg",
 					"height": "",
 					"width": ""
 				},
@@ -151,7 +151,7 @@
 				"label": "Agile IT Service Management",
 				"url": "test1",
 				"image": {
-					"src": "../../assets/images/photography/blacker/photography_blackerthandays_005.jpg",
+					"src": "../../assets/images/photography/blacker/photography_blackerthandays_005-min.jpg",
 					"height": "",
 					"width": ""
 				},

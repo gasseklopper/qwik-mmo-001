@@ -394,7 +394,7 @@ export default component$(() => {
 								/>
 								<img
 									class="gallery__images-slider"
-									src="../../../assets/images/photography/blacker/photography_blackerthandays_003.jpg"
+									src="../../../assets/images/photography/blacker/photography_blackerthandays_003-min.jpg"
 									alt=""
 									width={800}
 									height={800}
@@ -449,11 +449,11 @@ export default component$(() => {
 					<div class={['', 'gallery__rowsImage']}>
 						<div
 							class="gallery__item-img"
-							style="background-image:url(../../../assets/images/photography/blacker/photography_blackerthandays_003.jpg);"
+							style="background-image:url(../../../assets/images/photography/blacker/photography_blackerthandays_003-min.jpg);"
 						></div>
 						<div
 							class="gallery__item-img"
-							style="background-image:url(../../../assets/images/photography/blacker/photography_blackerthandays_005.jpg);"
+							style="background-image:url(../../../assets/images/photography/blacker/photography_blackerthandays_005-min.jpg);"
 						></div>
 					</div>
 				</div>
