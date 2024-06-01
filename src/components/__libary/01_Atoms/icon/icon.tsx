@@ -1,7 +1,6 @@
 import * as LucideIcons from '@qwikest/icons/lucide'
 import {
-	SVGProps,
-	type IntrinsicSVGElements,
+	SVGProps
 } from '@builder.io/qwik'
 import { component$, useStyles$ } from '@builder.io/qwik'
 import styles from './icon.scss?inline'
@@ -22,11 +21,11 @@ export type ExtendedIconProps = ExtendedIconElement & IconProps
 
 const mainClass = 'icon'
 
-export default component$(({class: className, ...rest}: ExtendedIconProps) => {
+export default component$(({ class: className, ...rest }: ExtendedIconProps) => {
 	useStyles$(styles)
 
 	const componentClass = className || ''
 	const IconComponent = LucideIcons[rest.iconName]
 
-	return <IconComponent {...rest} class={`${mainClass} ${componentClass}`}/>
+	return <IconComponent {...rest} class={`${mainClass} ${componentClass}`} />
 })

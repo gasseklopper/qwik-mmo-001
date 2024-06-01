@@ -5,7 +5,7 @@ import {
 	Slot,
 	component$,
 	useStyles$,
-	JSXOutput,
+	type JSXOutput,
 } from '@builder.io/qwik'
 import styles from './intro.scss?inline'
 

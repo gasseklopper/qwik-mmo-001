@@ -1,5 +1,4 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
-import Image from '../../01_Atoms/image/image'
 import styles from './friends.scss?inline'
 
 export interface HeadlineProps {

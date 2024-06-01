@@ -1,14 +1,14 @@
 import { component$, useStore, $ } from '@builder.io/qwik'
 import Button from '../__libary/01_Atoms/button/button'
 import ProductCard from '../__libary/atoms/productCard/productCard'
-import ProductImage from '../__libary/atoms/productCard/productImage'
-import ProductInfo from '../__libary/atoms/productCard/productInfo'
-import ProductButton from '../__libary/atoms/productCard/productButton'
-import ProductRating from '../__libary/atoms/productCard/productRating'
-import ProductPrice from '../__libary/atoms/productCard/productPrice'
-import ProductCategory from '../__libary/atoms/productCard/productCategory'
-import ProductTitle from '../__libary/atoms/productCard/productTitle'
-import ProductLabel from '../__libary/atoms/productCard/ProductLabel'
+// import ProductImage from '../__libary/atoms/productCard/productImage'
+// import ProductInfo from '../__libary/atoms/productCard/productInfo'
+// import ProductButton from '../__libary/atoms/productCard/productButton'
+// import ProductRating from '../__libary/atoms/productCard/productRating'
+// import ProductPrice from '../__libary/atoms/productCard/productPrice'
+// import ProductCategory from '../__libary/atoms/productCard/productCategory'
+// import ProductTitle from '../__libary/atoms/productCard/productTitle'
+// import ProductLabel from '../__libary/atoms/productCard/ProductLabel'
 
 const TestButtonDataMock = {
 	label: 'testtesttesttesttesttesttest',
