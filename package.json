@@ -2,7 +2,7 @@
   "name": "my-qwik-docs-starter",
   "description": "Documentation site starter",
   "engines": {
-    "node": ">=15.0.0"
+    "node": ">=18.0.0"
   },
   "private": true,
   "scripts": {
