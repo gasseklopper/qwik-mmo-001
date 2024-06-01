@@ -7,6 +7,8 @@ import ImgBlack from './../../../public/assets/images/photography/black/Template
 import ImgParis from './../../../public/assets/images/photography/paris/IMG_6685.jpg?jsx';
 import ImgPortrait from './../../../public/assets/images/photography/portrait/Portrait_008.jpg?jsx';
 import ImgVenedig from './../../../public/assets/images/photography/venedig/IMG_1905.jpg?jsx';
+import ImgBling from './../../../public/assets/images/photography/blingbling/bling_bling_009.gif?jsx';
+import ImgLabor from './../../../public/assets/images/photography/labor/labor_001.gif?jsx';
 
 export const useServerTime = routeLoader$(() => {
 	// This will re-execute in the server when the page refreshes.
@@ -69,13 +71,7 @@ export default component$(() => {
 							<p class="port_box__description">Painting with light</p>
 							<div class="port_box__image">
 								<Link href='/portfolio/blingbling'>
-
-									<img
-										src="/assets/images/photography/blingbling/bling_bling_009.gif"
-										alt="/assets/images/photography/blingbling/bling_bling_009.gif"
-										width={300}
-										height={300}
-									/>
+									<ImgBling/>
 								</Link>
 							</div>
 						</div>
@@ -104,12 +100,7 @@ export default component$(() => {
 									<p class="port_box__description">s/w pictures</p>
 									<div class="port_box__image">
 										<Link href='/portfolio/labor'>
-											<img
-												src="/assets/images/photography/labor/labor_001.gif"
-												alt="/assets/images/photography/labor/labor_001.gif"
-												width={300}
-												height={300}
-											/>
+											<ImgLabor/>
 										</Link>
 									</div>
 								</div>
