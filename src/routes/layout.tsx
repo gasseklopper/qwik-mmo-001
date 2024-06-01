@@ -15,6 +15,7 @@ export default component$(() => {
 	// auth check getUser
 	const outputRef = useSignal<Element>()
 	// auth check getUser
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		if (outputRef.value) {
 			console.log('menuStore.showOverlay', globalMenuStore.showOverlay)

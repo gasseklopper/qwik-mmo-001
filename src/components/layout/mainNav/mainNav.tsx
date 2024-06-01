@@ -22,7 +22,7 @@ export default component$(() => {
 
 	const globalStore = useContext(GlobalStore)
 	const globalMenuStore = useContext(GlobalMenuStore)
-
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		globalStore.theme = getColorPreference()
 		return colorSchemeChangeListener((isDark) => {

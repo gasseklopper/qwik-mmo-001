@@ -72,7 +72,7 @@ export default component$(() => {
 	})
 
 	const userSession: any = useContext(UserSessionContext)
-
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(async () => {
 		const { data, error } = await supabase.auth.getUser()
 		console.log('check auth with get user')

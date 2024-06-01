@@ -1,6 +1,6 @@
 import * as LucideIcons from '@qwikest/icons/lucide'
 import {
-	SVGProps
+	type SVGProps
 } from '@builder.io/qwik'
 import { component$, useStyles$ } from '@builder.io/qwik'
 import styles from './icon.scss?inline'

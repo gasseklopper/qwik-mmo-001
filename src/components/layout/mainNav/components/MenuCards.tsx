@@ -17,7 +17,7 @@ export const MenuCards = component$(() => {
 	const store: {
 		activeItemCard: any
 	} = useStore({ activeItemCard: 0 })
-
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		// TODO BODYSCROLLLOCK
 	})
@@ -31,10 +31,10 @@ export const MenuCards = component$(() => {
 				visible: globalMenuStore.showMenu,
 			}}
 			onMouseEnter$={() => (globalMenuStore.isHover = true)}
-			// onMouseLeave$={() => (
-			// 	// (globalMenuStore.isHover = false),
-			// 	// enableBodyScroll(targetRef.value)
-			// )}
+		// onMouseLeave$={() => (
+		// 	// (globalMenuStore.isHover = false),
+		// 	// enableBodyScroll(targetRef.value)
+		// )}
 		>
 			{menuItemsCardsJson.length && (
 				<>

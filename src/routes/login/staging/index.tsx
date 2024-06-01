@@ -29,7 +29,7 @@ export default component$(() => {
 	// 		eagerness: 'load', // 'load' | 'visible' | 'idle'
 	// 	}
 	// )
-
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(async () => {
 		const timeout = setTimeout(async () => {
 			const { data, error } = await supabase.auth.getUser()

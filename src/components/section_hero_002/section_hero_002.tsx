@@ -7,7 +7,7 @@ import { type ScrollToOptions as LocoScrollToOptions } from 'locomotive-scroll'
 
 export default component$(() => {
 	useStyles$(styles)
-
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		gsap.registerPlugin(ScrollTrigger)
 

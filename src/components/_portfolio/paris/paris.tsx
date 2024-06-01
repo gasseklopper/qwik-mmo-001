@@ -221,7 +221,7 @@ export const GalleryStaticTwo = component$(() => {
 		})
 		console.log('back')
 	})
-
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		if (outputRef.value) {
 			console.log('outputRef.value', outputRef.value)

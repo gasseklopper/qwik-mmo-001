@@ -12,7 +12,7 @@ import { gsap } from 'gsap'
 export default component$(() => {
 	useStyles$(styles)
 	const contentRef = useSignal<HTMLDivElement>()
-
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		gsap.registerPlugin(ScrollTrigger)
 
@@ -33,7 +33,7 @@ export default component$(() => {
 				.timeline({
 					scrollTrigger: {
 						trigger: item,
-						start: `top ${ gsap.utils.random(100, 700)}`,
+						start: `top ${gsap.utils.random(100, 700)}`,
 						end: 'bottom top',
 						scrub: true,
 					},
@@ -50,13 +50,13 @@ export default component$(() => {
 	})
 
 	function getRandomValueR() {
-        return Math.floor(Math.random() * 100) + 1; // Adjust the range as needed
-    }
+		return Math.floor(Math.random() * 100) + 1; // Adjust the range as needed
+	}
 	function getRandomValueC() {
-        return Math.floor(Math.random() * 7) + 1; // Adjust the range as needed
-    }
-	console.log("eee",getRandomValueR())
-	console.log("eee",getRandomValueC())
+		return Math.floor(Math.random() * 7) + 1; // Adjust the range as needed
+	}
+	console.log("eee", getRandomValueR())
+	console.log("eee", getRandomValueC())
 
 	return (
 		<>
@@ -68,7 +68,7 @@ export default component$(() => {
 							style="background-image:url(../../assets/images/photography/black/Template_index_01.jpg);"
 						></div>
 					</div>
-					<div class="grid__item"  style={`--r: ${getRandomValueR()}; --c: ${getRandomValueC()}`}>
+					<div class="grid__item" style={`--r: ${getRandomValueR()}; --c: ${getRandomValueC()}`}>
 						<div
 							class="grid__item-img"
 							style="background-image:url(../../assets/images/photography/black/Template_index_02.jpg);"
@@ -80,7 +80,7 @@ export default component$(() => {
 							style="background-image:url(../../assets/images/photography/black/Template_index_03.jpg);"
 						></div>
 					</div>
-					<div class="grid__item"style={`--r:${getRandomValueR()}; --c:${getRandomValueC()}`}>
+					<div class="grid__item" style={`--r:${getRandomValueR()}; --c:${getRandomValueC()}`}>
 						<div
 							class="grid__item-img"
 							style="background-image:url(../../assets/images/photography/black/Template_index_04.jpg);"

@@ -11,6 +11,7 @@ import styles from './section_intro.scss?inline'
 export default component$(() => {
 	useStyles$(styles)
 	const introRef = useSignal<HTMLDivElement>()
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		const overlay = introRef.value!.querySelector('.intro__overlay')
 

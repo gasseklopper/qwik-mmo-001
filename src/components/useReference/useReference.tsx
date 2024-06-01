@@ -12,6 +12,7 @@ export default component$(() => {
 	})
 
 	const outputRef = useSignal<Element>()
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		if (outputRef.value) {
 			const rect = outputRef.value.getBoundingClientRect()

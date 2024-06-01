@@ -9,6 +9,8 @@
     "sharp"
   ],
   "private": true,
+  "trustedDependencies-annotation": "Needed for bun to allow running install scripts",
+  "type": "module",
   "scripts": {
     "build": "qwik build",
     "build-storybook": "storybook build -- -o public/storybook",
@@ -43,7 +45,7 @@
     "@storybook/builder-vite": "^7.4.6",
     "@storybook/html": "^7.4.6",
     "@storybook/html-vite": "^7.4.6",
-    "@supabase/supabase-js": "^2.11.0",
+    "@supabase/supabase-js": "^2.43.4",
     "@types/body-scroll-lock": "^3.1.0",
     "@types/eslint": "^8.56.10",
     "@types/gsap": "^3.0.0",

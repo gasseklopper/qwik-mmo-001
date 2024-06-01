@@ -14,7 +14,7 @@ export default component$(() => {
 		minute: 20,
 		second: 30,
 	})
-
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		const update = () => {
 			const now = new Date()

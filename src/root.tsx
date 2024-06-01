@@ -37,6 +37,7 @@ export default component$(() => {
 	})
 
 	// auth change listener
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(async () => {
 		const { data: authListener } = supabase.auth.onAuthStateChange(
 			async (event: string, session: any) => {
@@ -67,6 +68,7 @@ export default component$(() => {
 	})
 
 	// auth check getUser
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(async () => {
 		const { data, error } = await supabase.auth.getUser()
 		if (data.user?.id && !error) {

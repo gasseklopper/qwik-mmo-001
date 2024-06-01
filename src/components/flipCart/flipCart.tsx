@@ -305,7 +305,7 @@ export default component$(() => {
 	const store = useStore({ cartOpen: false, cartItems: ProductCardDataMock })
 
 	useStyles$(styles)
-
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		gsap.registerPlugin(Flip)
 
