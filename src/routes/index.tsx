@@ -77,8 +77,8 @@ export default component$(() => {
 						<h1>Morley</h1>
 						<Image
 							src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
-							height={680}
-							width={1280}
+							height={704}
+							width={1251}
 							alt='test'
 						/>
 					</div>
