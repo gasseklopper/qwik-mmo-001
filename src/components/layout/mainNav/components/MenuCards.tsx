@@ -89,8 +89,8 @@ export const MenuCards = component$(() => {
 														},
 													]}
 													src={item.image.src}
-													height={500}
-													width={500}
+													height={1080}
+													width={820}
 												/>
 											) : (
 												null
