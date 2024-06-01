@@ -2,6 +2,11 @@ import { component$, useStyles$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import { Link, routeLoader$ } from '@builder.io/qwik-city'
 import styles from './index-portfolio.scss?inline'
+import ImgBlacker from './../../../public/assets/images/photography/blacker/photography_blackerthandays_002.jpg?jsx';
+import ImgBlack from './../../../public/assets/images/photography/black/Template_index_016.jpg?jsx';
+import ImgParis from './../../../public/assets/images/photography/paris/IMG_6685.jpg?jsx';
+import ImgPortrait from './../../../public/assets/images/photography/portrait/Portrait_008.jpg?jsx';
+import ImgVenedig from './../../../public/assets/images/photography/venedig/IMG_1905.jpg?jsx';
 
 export const useServerTime = routeLoader$(() => {
 	// This will re-execute in the server when the page refreshes.
@@ -27,6 +32,9 @@ export default component$(() => {
 							<div class="port_box__number h1">1</div>
 							<Link href='/portfolio/black'><div class="port_box__title h2">Black</div></Link>
 							<p class="port_box__description">s/w pictures</p>
+							<Link href='/portfolio/black'>
+								<ImgBlack />
+							</Link>
 						</div>
 						<div class="port_box__layout port_box__layout_002">
 							<div class="port_box__number h1">2</div>
@@ -36,12 +44,7 @@ export default component$(() => {
 							<p class="port_box__description">overpainting</p>
 							<div class="port_box__image">
 								<Link href='/portfolio/blacker'>
-									<img
-										src="../../assets/images/photography/blacker/photography_blackerthandays_002.jpg"
-										alt=""
-										width={800}
-										height={800}
-									/>
+									<ImgBlacker />
 								</Link>
 							</div>
 						</div>
@@ -66,6 +69,7 @@ export default component$(() => {
 							<p class="port_box__description">Painting with light</p>
 							<div class="port_box__image">
 								<Link href='/portfolio/blingbling'>
+
 									<img
 										src="/assets/images/photography/blingbling/bling_bling_009.gif"
 										alt="/assets/images/photography/blingbling/bling_bling_009.gif"
@@ -83,12 +87,7 @@ export default component$(() => {
 							<p class="port_box__description">Painting with light</p>
 							<div class="port_box__image">
 								<Link href='/portfolio/venedig'>
-									<img
-										src="/assets/images/photography/venedig/IMG_1905.jpg"
-										alt="/assets/images/photography/venedig/IMG_1905.jpg"
-										width={300}
-										height={300}
-									/>
+									<ImgVenedig />
 								</Link>
 							</div>
 						</div>
@@ -142,12 +141,7 @@ export default component$(() => {
 									<p class="port_box__description">People</p>
 									<div class="port_box__image">
 										<Link class="port_box__title h2" href='/portfolio/paris'>
-											<img
-												src="/assets/images/photography/paris/IMG_6685.jpg"
-												alt="/assets/images/photography/paris/IMG_6685.jpg"
-												width={300}
-												height={300}
-											/>
+											<ImgParis />
 										</Link>
 									</div>
 								</div>
@@ -157,12 +151,7 @@ export default component$(() => {
 									<div class="port_box__number h1">10</div>
 									<div class="port_box__image">
 										<Link class="port_box__title h2" href='/portfolio/portrait'>
-											<img
-												src="/assets/images/photography/portrait/Portrait_008.jpg"
-												alt="/assets/images/photography/portrait/Portrait_008.jpg"
-												width={300}
-												height={300}
-											/>
+											<ImgPortrait />
 										</Link>
 									</div>
 									<Link class="port_box__title h2" href='/portfolio/portrait'>
