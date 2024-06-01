@@ -69,9 +69,7 @@
     "vite": "^5.2.10",
     "vite-tsconfig-paths": "^4.2.1",
     "vitest": "^0.31.1",
-    "undici": "*"
-  },
-  "dependencies": {
+    "undici": "*",
     "@modular-forms/qwik": "^0.20.0",
     "@qwikest/icons": "^0.0.13",
     "clsx": "^1.2.1",
