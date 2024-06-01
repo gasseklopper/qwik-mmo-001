@@ -80,7 +80,6 @@ export default component$(() => {
 							height={704}
 							width={1251}
 							alt='test mmo'
-							loading="lazy"
 						/>
 					</div>
 				</div>
