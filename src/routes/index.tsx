@@ -16,28 +16,28 @@ export default component$(() => {
 				<div class="column medium-2">
 					<Image
 						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
-						height={1680}
-						width={1820}
+						height={104}
+						width={185}
 						alt='test'
 					/>
 					<Image
 						src={'../../assets/images/photography/black/Black_001-min.jpg'}
-						height={1080}
-						width={820}
+						height={104}
+						width={185}
 						alt='test3'
 					/>
 				</div>
 				<div class="column medium-2">
 					<Image
 						src={'../../assets/images/photography/black/Black_001-min.jpg'}
-						height={1080}
-						width={820}
+						height={104}
+						width={185}
 						alt='test3'
 					/>
 					<Image
 						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
-						height={1680}
-						width={1820}
+						height={104}
+						width={185}
 						alt='test'
 					/>
 				</div>
@@ -45,28 +45,28 @@ export default component$(() => {
 				<div class="column medium-2">
 					<Image
 						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
-						height={1680}
-						width={1820}
+						height={104}
+						width={185}
 						alt='test'
 					/>
 					<Image
 						src={'../../assets/images/photography/black/Black_001-min.jpg'}
-						height={1080}
-						width={820}
+						height={104}
+						width={185}
 						alt='test3'
 					/>
 				</div>
 				<div class="column medium-2">
 					<Image
 						src={'../../assets/images/photography/black/Black_001-min.jpg'}
-						height={1080}
-						width={820}
+						height={104}
+						width={185}
 						alt='test3'
 					/>
 					<Image
 						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
-						height={1680}
-						width={1820}
+						height={104}
+						width={185}
 						alt='test'
 					/>
 				</div>
@@ -77,8 +77,8 @@ export default component$(() => {
 						<h1>Morley</h1>
 						<Image
 							src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
-							height={1680}
-							width={1820}
+							height={680}
+							width={1280}
 							alt='test'
 						/>
 					</div>
