@@ -5,7 +5,7 @@ import Debounced from './debounced'
 beforeAll(() => {
 	// mock useStore to start with count of 1
 	vi.mock('@builder.io/qwik', async () => {
-		const qwik = await vi.importActual<typeof import('@builder.io/qwik')>(
+		const qwik: any = await vi.importActual(
 			'@builder.io/qwik'
 		)
 		return {
