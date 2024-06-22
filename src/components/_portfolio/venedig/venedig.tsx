@@ -1,11 +1,206 @@
-import { component$, useStyles$ } from '@builder.io/qwik'
+import { $, component$, useSignal, useStyles$ } from '@builder.io/qwik'
 import styles from './venedig.scss?inline'
+import { Carousel } from '~/components/__libary/02_Molecules/carousel/component'
 
 export default component$(() => {
 	useStyles$(styles)
+	const currentIndexSig = useSignal<number>(0);
+
+	const slideImageMetadata = [
+		{
+			id: '10',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1523.jpg',
+			download_url: 'https://picsum.photos/id/10/2500/1667',
+		},
+		{
+			id: '11',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1840.jpg',
+			download_url: 'https://picsum.photos/id/11/2500/1667',
+		},
+		{
+			id: '12',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1841.jpg',
+			download_url: 'https://picsum.photos/id/12/2500/1667',
+		},
+		{
+			id: '13',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1846.jpg',
+			download_url: 'https://picsum.photos/id/13/2500/1667',
+		},
+		{
+			id: '14',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1854.jpg',
+			download_url: 'https://picsum.photos/id/14/2500/1667',
+		},
+		{
+			id: '15',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1857.jpg',
+			download_url: 'https://picsum.photos/id/15/2500/1667',
+		},
+		{
+			id: '16',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1858.jpg',
+			download_url: 'https://picsum.photos/id/16/2500/1667',
+		},
+		{
+			id: '17',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1859.jpg',
+			download_url: 'https://picsum.photos/id/17/2500/1667',
+		},
+		{
+			id: '18',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1862.jpg',
+			download_url: 'https://picsum.photos/id/18/2500/1667',
+		},
+		{
+			id: '19',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1869.jpg',
+			download_url: 'https://picsum.photos/id/19/2500/1667',
+		},
+		{
+			id: '19',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1882.jpg',
+			download_url: 'https://picsum.photos/id/19/2500/1667',
+		},
+		{
+			id: '19',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1903.jpg',
+			download_url: 'https://picsum.photos/id/19/2500/1667',
+		},
+		{
+			id: '19',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1905.jpg',
+			download_url: 'https://picsum.photos/id/19/2500/1667',
+		},
+		{
+			id: '19',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_1939.jpg',
+			download_url: 'https://picsum.photos/id/19/2500/1667',
+		},
+		{
+			id: '19',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_2039.jpg',
+			download_url: 'https://picsum.photos/id/19/2500/1667',
+		},
+		{
+			id: '19',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_2063.jpg',
+			download_url: 'https://picsum.photos/id/19/2500/1667',
+		},
+		{
+			id: '19',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/venedig/IMG_2094.jpg',
+			download_url: 'https://picsum.photos/id/19/2500/1667',
+		},
+	];
 
 	return (
 		<section class={['test', 'venedig']}>
+			<div class="row">
+				<div class="column medium-12">
+					<Carousel.Root
+						bind:currSlideIndex={currentIndexSig}
+						spaceBetweenSlides={30}
+						carouselWidth={600}
+						carouselHeight={900}
+						class="carousel--primary"
+					>
+						<div class="carousel__controls">
+							<h2>
+								THERE
+								IS A
+								GALLERY
+							</h2>
+							<div class="carousel__buttons">
+								<Carousel.Prev class="carousel__prev-button">Previous image</Carousel.Prev>
+								<Carousel.Next class="carousel__next-button">Next image</Carousel.Next>
+							</div>
+						</div>
+						<Carousel.View>
+							<Carousel.Container class="carousel__container">
+								{slideImageMetadata.map((data) => (
+									<Carousel.Slide key={data.id} class="carousel__slide">
+										<img
+											class="carousel__img"
+											width="1"
+											height="320"
+											src={`${data.url}`}
+											alt={data.author}
+										/>
+									</Carousel.Slide>
+								))}
+							</Carousel.Container>
+						</Carousel.View>
+						<div>
+							<Carousel.Pagination
+								class="carousel__pagination"
+								renderBullet$={$((i: number) => {
+									return (
+										<div
+											class={`carousel__pagination-bullet ${currentIndexSig.value === i ? 'carousel__pagination-underline' : ''
+												}`}
+											onClick$={() => (currentIndexSig.value = i)}
+										>
+											{i}
+										</div>
+									);
+								})}
+							/>
+						</div>
+					</Carousel.Root>
+				</div>
+			</div>
 			<Column3 />
 			<GalleryStatic />
 			<Column4 />

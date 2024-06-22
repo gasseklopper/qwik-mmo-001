@@ -1,10 +1,6 @@
 .carousel--primary {
     --slide-size: 100%;
     overflow: hidden;
-    // background-color: lawngreen;
-    // display: flex;
-    // justify-content: space-between;
-    // flex-direction: column-reverse;
 
     .carousel__buttons {
         position: absolute;
@@ -66,8 +62,11 @@
     }
 
     .carousel__img {
-        width: 100%;
-        object-fit: cover;
+        position: absolute;
+        // top: -300px;
+        // width: 100%;
+        // object-fit: fit;
+        // object-position: center;
         pointer-events: none;
 
     }

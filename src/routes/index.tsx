@@ -3,7 +3,6 @@ import type { DocumentHead } from '@builder.io/qwik-city'
 import Image from '~/components/__libary/01_Atoms/image/image'
 import styles from './index.scss?inline'
 import { Carousel } from '~/components/__libary/02_Molecules/carousel/component';
-// import Gallery from '~/components/__libary/02_Molecules/gallery/gallery'
 
 // import Section_hero_001 from '~/components/section_hero_001/section_hero_001'
 // import Section_hero_002 from '~/components/section_hero_002/section_hero_002'
@@ -277,17 +276,6 @@ export default component$(() => {
 					<button>next</button>
 					<button>prev</button>
 				</div>
-				{/* <Gallery>
-					<div class="carousel-item">
-						<img src="../../assets/images/photography/black/Black_001-min.jpg" alt="First slide" />
-					</div>
-					<div class="carousel-item">
-						<img src="../../assets/images/photography/black/Black_001-min.jpg" alt="Second slide" />
-					</div>
-					<div class="carousel-item">
-						<img src="../../assets/images/photography/black/Black_001-min.jpg" alt="Third slide" />
-					</div>
-				</Gallery> */}
 				<div class="column medium-12">
 					<Carousel.Root
 						bind:currSlideIndex={currentIndexSig}
