@@ -189,7 +189,17 @@ export default component$(() => {
 					<button>next</button>
 					<button>prev</button>
 				</div>
-				<Gallery srcList={['../../assets/images/photography/black/Black_001-min.jpg', '../../assets/images/photography/black/Black_001-min.jpg', '../../assets/images/photography/black/Black_001-min.jpg']}></Gallery>
+				<Gallery>
+					<div class="carousel-item">
+						<img src="../../assets/images/photography/black/Black_001-min.jpg" alt="First slide" />
+					</div>
+					<div class="carousel-item">
+						<img src="../../assets/images/photography/black/Black_001-min.jpg" alt="Second slide" />
+					</div>
+					<div class="carousel-item">
+						<img src="../../assets/images/photography/black/Black_001-min.jpg" alt="Third slide" />
+					</div>					
+				</Gallery>
 			</div>
 			<div class="row">
 				<div class="column medium-4">
