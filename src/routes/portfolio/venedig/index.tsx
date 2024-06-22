@@ -13,18 +13,8 @@ export default component$(() => {
 					<>
 						<Headlines>Venedig</Headlines>
 						<Bodytext>
-							this is the Venedig main page Lorem ipsum dolor sit, amet
-							consectetur adipisicing elit. Natus non adipisci nam cupiditate,
-							quis quam porro! Adipisci mollitia fuga deserunt nemo nihil ea
-							quod. Culpa quae velit amet expedita, sequi ducimus commodi ut
-							sint voluptatum, magnam iste molestiae unde molestias
-							exercitationem, at perspiciatis itaque nam vitae. Quidem, nam
-							adipisci, explicabo neque molestiae sint cum, optio pariatur sed
-							provident quos officia cupiditate? Inventore, eum! Quisquam
-							dolorem repellendus facilis nostrum tempore quo, accusantium ut
-							unde a eveniet earum? Maxime laudantium aliquam accusamus, ducimus
-							tempore nulla vel, quas nisi odit recusandae qui quibusdam rem.
-							Porro dolor officia cumque esse quis soluta quas quia.
+							The image evokes a sense of nostalgia and melancholy, reflecting the transient nature of beauty and the inevitability of decay. The closed shutters can symbolize a barrier, perhaps representing the isolation felt by the city as it contends with the challenges of preservation and modernization. Yet, the enduring beauty of the architectural elements offers a counterpoint, suggesting resilience and continuity.
+							In conclusion, this titular image of a Venetian window with its green shutters and wrought-iron balcony encapsulates the essence of Venice. It speaks to the city's rich architectural heritage, the interplay of decay and preservation, and the emotional depth that comes with centuries of history. Through its composition and details, it invites viewers to engage with Venice not just as a picturesque destination but as a living, breathing entity steeped in art, culture, and history
 						</Bodytext>
 					</>
 				}

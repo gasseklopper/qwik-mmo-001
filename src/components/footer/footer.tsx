@@ -14,7 +14,7 @@ export default component$(() => {
 					<a href="/about">About</a>
 				</li>
 				<li>
-					<a href="https://www.instagram.com/yelrom_/">Instgram</a>
+					<a href="https://www.instagram.com/yelrom_/">Instagram</a>
 				</li>
 				<li>
 					<a href="https://www.behance.net/markusmorley">Behance</a>

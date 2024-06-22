@@ -2,6 +2,7 @@ import { component$, useStyles$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import Image from '~/components/__libary/01_Atoms/image/image'
 import styles from './index.scss?inline'
+import Gallery from '~/components/__libary/02_Molecules/gallery/gallery'
 
 // import Section_hero_001 from '~/components/section_hero_001/section_hero_001'
 // import Section_hero_002 from '~/components/section_hero_002/section_hero_002'
@@ -41,7 +42,7 @@ export default component$(() => {
 						alt='test'
 					/>
 				</div>
-				<div class="column medium-4"><h2>there are products</h2></div>
+				<div class="column medium-4"><h2>Product</h2><h2>Engineer</h2></div>
 				<div class="column medium-2">
 					<Image
 						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
@@ -74,7 +75,7 @@ export default component$(() => {
 			<div class="row">
 				<div class="column small-12">
 					<div class="intro">
-						<h1>Morley</h1>
+						<h1>Markus Morley</h1>
 						<Image
 							src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 							height={704}
@@ -188,6 +189,7 @@ export default component$(() => {
 					<button>next</button>
 					<button>prev</button>
 				</div>
+				<Gallery srcList={['../../assets/images/photography/black/Black_001-min.jpg', '../../assets/images/photography/black/Black_001-min.jpg', '../../assets/images/photography/black/Black_001-min.jpg']}></Gallery>
 			</div>
 			<div class="row">
 				<div class="column medium-4">

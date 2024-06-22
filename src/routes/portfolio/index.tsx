@@ -1,6 +1,6 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
-import { Link, routeLoader$ } from '@builder.io/qwik-city'
+import { Link } from '@builder.io/qwik-city'
 import styles from './index-portfolio.scss?inline'
 import ImgBlacker from './../../../public/assets/images/photography/blacker/photography_blackerthandays_002.jpg?jsx';
 import ImgBlack from './../../../public/assets/images/photography/black/Template_index_016.jpg?jsx';
@@ -9,11 +9,6 @@ import ImgPortrait from './../../../public/assets/images/photography/portrait/Po
 import ImgVenedig from './../../../public/assets/images/photography/venedig/IMG_1905.jpg?jsx';
 import ImgBling from './../../../public/assets/images/photography/blingbling/bling_bling_009.gif?jsx';
 import ImgLabor from './../../../public/assets/images/photography/labor/labor_001.gif?jsx';
-
-export const useServerTime = routeLoader$(() => {
-	// This will re-execute in the server when the page refreshes.
-	return Date.now()
-})
 
 export default component$(() => {
 	useStyles$(styles)
