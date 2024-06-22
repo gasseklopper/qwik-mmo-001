@@ -1,8 +1,9 @@
-import { component$, useStyles$ } from '@builder.io/qwik'
+import { $, component$, useSignal, useStyles$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
 import Image from '~/components/__libary/01_Atoms/image/image'
 import styles from './index.scss?inline'
-import Gallery from '~/components/__libary/02_Molecules/gallery/gallery'
+import { Carousel } from '~/components/__libary/02_Molecules/carousel/component';
+// import Gallery from '~/components/__libary/02_Molecules/gallery/gallery'
 
 // import Section_hero_001 from '~/components/section_hero_001/section_hero_001'
 // import Section_hero_002 from '~/components/section_hero_002/section_hero_002'
@@ -10,6 +11,93 @@ import Gallery from '~/components/__libary/02_Molecules/gallery/gallery'
 
 export default component$(() => {
 	useStyles$(styles)
+	const currentIndexSig = useSignal<number>(0);
+	const currentIndexSig2 = useSignal<number>(0);
+	const currentIndexSig3 = useSignal<number>(0);
+
+	const slideImageMetadata = [
+		{
+			id: '10',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/black/Black_004.jpg',
+			download_url: 'https://picsum.photos/id/10/2500/1667',
+		},
+		{
+			id: '11',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/black/Black_005.jpg',
+			download_url: 'https://picsum.photos/id/11/2500/1667',
+		},
+		{
+			id: '12',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/black/Black_006.jpg',
+			download_url: 'https://picsum.photos/id/12/2500/1667',
+		},
+		{
+			id: '13',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/black/Black_007.jpg',
+			download_url: 'https://picsum.photos/id/13/2500/1667',
+		},
+		{
+			id: '14',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/black/Black_008.jpg',
+			download_url: 'https://picsum.photos/id/14/2500/1667',
+		},
+		{
+			id: '15',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/black/Black_009.jpg',
+			download_url: 'https://picsum.photos/id/15/2500/1667',
+		},
+		{
+			id: '16',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/black/Black_010.jpg',
+			download_url: 'https://picsum.photos/id/16/2500/1667',
+		},
+		{
+			id: '17',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/black/Black_011.jpg',
+			download_url: 'https://picsum.photos/id/17/2500/1667',
+		},
+		{
+			id: '18',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/black/Black_012.jpg',
+			download_url: 'https://picsum.photos/id/18/2500/1667',
+		},
+		{
+			id: '19',
+			author: 'Paul Jarvis',
+			width: 2500,
+			height: 1667,
+			url: '../../assets/images/photography/black/Black_022.jpg',
+			download_url: 'https://picsum.photos/id/19/2500/1667',
+		},
+	];
+
 
 	return (
 		<>
@@ -189,7 +277,7 @@ export default component$(() => {
 					<button>next</button>
 					<button>prev</button>
 				</div>
-				<Gallery>
+				{/* <Gallery>
 					<div class="carousel-item">
 						<img src="../../assets/images/photography/black/Black_001-min.jpg" alt="First slide" />
 					</div>
@@ -198,8 +286,151 @@ export default component$(() => {
 					</div>
 					<div class="carousel-item">
 						<img src="../../assets/images/photography/black/Black_001-min.jpg" alt="Third slide" />
-					</div>					
-				</Gallery>
+					</div>
+				</Gallery> */}
+				<div class="column medium-12">
+					<Carousel.Root
+						bind:currSlideIndex={currentIndexSig}
+						spaceBetweenSlides={30}
+						carouselWidth={1300}
+						carouselHeight={500}
+						class="carousel"
+					>
+						<div class="carousel__buttons">
+							<Carousel.Prev class="carousel__prev-button">Previous image</Carousel.Prev>
+							<Carousel.Next class="carousel__next-button">Next image</Carousel.Next>
+						</div>
+						<Carousel.View>
+							<Carousel.Container class="carousel__container">
+								{slideImageMetadata.map((data) => (
+									<Carousel.Slide key={data.id} class="carousel__slide">
+										<img
+											class="carousel__img"
+											width="1111"
+											height="320"
+											src={`${data.url}`}
+											alt={data.author}
+										/>
+									</Carousel.Slide>
+								))}
+							</Carousel.Container>
+						</Carousel.View>
+						<div>
+							<Carousel.Pagination
+								class="carousel__pagination"
+								renderBullet$={$((i: number) => {
+									return (
+										<div
+											class={`carousel__pagination-bullet ${currentIndexSig.value === i ? 'carousel__pagination-underline' : ''
+												}`}
+											onClick$={() => (currentIndexSig.value = i)}
+										>
+											{i}
+										</div>
+									);
+								})}
+							/>
+						</div>
+					</Carousel.Root>
+				</div>
+				<div class="column medium-12">
+					<Carousel.Root
+						bind:currSlideIndex={currentIndexSig3}
+						spaceBetweenSlides={30}
+						carouselWidth={800}
+						carouselHeight={455}
+						class="carousel--primary"
+					>
+						<div class="carousel__controls">
+							<h2>
+								THERE
+								IS A
+								GALLERY
+							</h2>
+							<div class="carousel__buttons">
+								<Carousel.Prev class="carousel__prev-button">Previous image</Carousel.Prev>
+								<Carousel.Next class="carousel__next-button">Next image</Carousel.Next>
+							</div>
+						</div>
+						<Carousel.View>
+							<Carousel.Container class="carousel__container">
+								{slideImageMetadata.map((data) => (
+									<Carousel.Slide key={data.id} class="carousel__slide">
+										<img
+											class="carousel__img"
+											width="140"
+											height="320"
+											src={`${data.url}`}
+											alt={data.author}
+										/>
+									</Carousel.Slide>
+								))}
+							</Carousel.Container>
+						</Carousel.View>
+
+						<div>
+							<Carousel.Pagination
+								class="carousel__pagination"
+								renderBullet$={$((i: number) => {
+									return (
+										<div
+											class={`carousel__pagination-bullet ${currentIndexSig3.value === i ? 'carousel__pagination-underline' : ''
+												}`}
+											onClick$={() => (currentIndexSig3.value = i)}
+										>
+											{i}
+										</div>
+									);
+								})}
+							/>
+						</div>
+					</Carousel.Root>
+				</div>
+				<div class="column medium-12">
+					<Carousel.Root
+						bind:currSlideIndex={currentIndexSig2}
+						spaceBetweenSlides={30}
+						carouselWidth={300}
+						carouselHeight={100}
+						class="carousel"
+					>
+						<div class="carousel__buttons">
+							<Carousel.Prev class="carousel__prev-button">Previous image</Carousel.Prev>
+							<Carousel.Next class="carousel__next-button">Next image</Carousel.Next>
+						</div>
+						<Carousel.View>
+							<Carousel.Container class="carousel__container">
+								{slideImageMetadata.map((data) => (
+									<Carousel.Slide key={data.id} class="carousel__slide">
+										<img
+											class="carousel__img"
+											width="640"
+											height="320"
+											src={`https://picsum.photos/id/${data.id}/640/320`}
+											alt={data.author}
+										/>
+									</Carousel.Slide>
+								))}
+							</Carousel.Container>
+						</Carousel.View>
+						<div>
+							<Carousel.Pagination
+								class="carousel__pagination"
+								renderBullet$={$((i: number) => {
+									return (
+										<div
+											class={`carousel__pagination-bullet ${currentIndexSig2.value === i ? 'carousel__pagination-underline' : ''
+												}`}
+											onClick$={() => (currentIndexSig2.value = i)}
+										>
+											{i}
+										</div>
+									);
+								})}
+							/>
+						</div>
+					</Carousel.Root>
+				</div>
 			</div>
 			<div class="row">
 				<div class="column medium-4">

@@ -1,0 +1,265 @@
+.carousel--primary {
+    --slide-size: 100%;
+    overflow: hidden;
+    // background-color: lawngreen;
+    // display: flex;
+    // justify-content: space-between;
+    // flex-direction: column-reverse;
+
+    .carousel__buttons {
+        position: absolute;
+        width: 200px;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        border: 2px dotted var(--surface3);
+        // background-color: aqua;
+        z-index: 1;
+    }
+
+    .carousel__container {
+        backface-visibility: hidden;
+        display: flex;
+        touch-action: pan-y;
+        margin-left: calc(var(--slide-spacing) * -1);
+        transition-property: transform;
+        transition-timing-function: ease;
+        overflow-x: visible;
+        padding-block: 0.5rem;
+    }
+
+    .carousel__slide {
+        flex: 0 0 var(--slide-size);
+        min-width: 0;
+        position: relative;
+        user-select: none;
+        transition-property: transform;
+        border: 2px dotted hsl(var(--primary));
+        pointer-events: none;
+    }
+
+    .carousel__pagination {
+        background-color: var(--surface3);
+        // position: absolute;
+        // left: 0;
+        // bottom: 100px;
+        display: flex;
+        display: none;
+        gap: 0.5rem;
+        padding: 1rem;
+        border: 2px dotted hsl(var(--foreground));
+        z-index: 3;
+    }
+
+    .carousel__buttons button[aria-disabled='true'] {
+        opacity: 0.5;
+    }
+
+    .carousel__buttons button {
+        border: 2px dotted hsl(var(--foreground));
+        padding: 0.5rem;
+    }
+
+    .carousel__buttons button:hover {
+        background-color: hsla(var(--primary) / 0.08);
+    }
+
+    .carousel__img {
+        width: 100%;
+        object-fit: cover;
+        pointer-events: none;
+
+    }
+
+    .carousel__pagination-bullet {
+        cursor: pointer;
+        padding-inline: 0.5rem;
+    }
+
+    .carousel__pagination-underline {
+        outline: 2px dotted hsl(var(--primary));
+        background-color: hsla(var(--primary) / 0.08);
+    }
+
+    .carousel__pagination-bullet:hover {
+        background-color: var(--surface1);
+    }
+
+}
+.carousel {
+    --slide-size: 100%;
+    overflow: hidden;
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        border: 2px dotted hsl(var(--accent));
+        background-color: aqua;
+    }
+
+    &__container {
+        backface-visibility: hidden;
+        display: flex;
+        touch-action: pan-y;
+        margin-left: calc(var(--slide-spacing) * -1);
+        transition-property: transform;
+        transition-timing-function: ease;
+        overflow-x: visible;
+        padding-block: 0.5rem;
+    }
+
+    &__slide {
+        flex: 0 0 var(--slide-size);
+        min-width: 0;
+        position: relative;
+        user-select: none;
+        transition-property: transform;
+        border: 2px dotted hsl(var(--primary));
+        pointer-events: none;
+    }
+
+    &__pagination {
+        background-color: var(--surface3);
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        display: flex;
+        gap: 0.5rem;
+        padding: 1rem;
+        border: 2px dotted hsl(var(--foreground));
+        z-index: 3;
+    }
+
+    &__buttons button[aria-disabled='true'] {
+        opacity: 0.5;
+    }
+
+    &__buttons button {
+        border: 2px dotted hsl(var(--foreground));
+        padding: 0.5rem;
+    }
+
+    &__buttons button:hover {
+        background-color: hsla(var(--primary) / 0.08);
+    }
+
+    &__img {
+        width: 100%;
+        // height: 1300px;
+        object-fit: cover;
+        pointer-events: none;
+
+    }
+
+    &__pagination-bullet {
+        cursor: pointer;
+        padding-inline: 0.5rem;
+    }
+
+    &__pagination-underline {
+        outline: 2px dotted hsl(var(--primary));
+        background-color: hsla(var(--primary) / 0.08);
+    }
+
+    &__pagination-bullet:hover {
+        background-color: var(--surface1);
+    }
+
+}
+
+.carousel--primary {
+    --slide-size: 100%;
+    overflow: hidden;
+    // background-color: lawngreen;
+    // position: relative;
+    // display: flex;
+    // justify-content: space-between;
+    // flex-direction: column-reverse;
+
+    .carousel__controls {
+        position: absolute;
+        // width: 200px;
+        right: 0;
+        border: 6px dotted var(--surface1);
+        background-color: var(--surface3);
+        z-index: 1;
+        padding: 18px;
+    }
+
+    .carousel__buttons {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        border: 6px dotted var(--surface1);
+        background-color: var(--surface3);
+        z-index: 1;
+    }
+
+    .carousel__container {
+        backface-visibility: hidden;
+        display: flex;
+        touch-action: pan-y;
+        margin-left: calc(var(--slide-spacing) * -1);
+        transition-property: transform;
+        transition-timing-function: ease;
+        overflow-x: visible;
+        padding-block: 0.5rem;
+    }
+
+    .carousel__slide {
+        flex: 0 0 var(--slide-size);
+        min-width: 0;
+        position: relative;
+        user-select: none;
+        transition-property: transform;
+        border: 2px dotted hsl(var(--primary));
+        pointer-events: none;
+    }
+
+    .carousel__pagination {
+        background-color: var(--surface3);
+        display: flex;
+        display: none;
+        gap: 0.5rem;
+        padding: 1rem;
+        border: 2px dotted hsl(var(--foreground));
+        z-index: 3;
+    }
+
+    .carousel__buttons button[aria-disabled='true'] {
+        opacity: 0.5;
+    }
+
+    .carousel__buttons button {
+        border: 2px dotted hsl(var(--foreground));
+        padding: 0.5rem;
+    }
+
+    .carousel__buttons button:hover {
+        background-color: hsla(var(--primary) / 0.08);
+    }
+
+    .carousel__img {
+        width: 100%;
+        object-fit: cover;
+        pointer-events: none;
+
+    }
+
+    .carousel__pagination-bullet {
+        cursor: pointer;
+        padding-inline: 0.5rem;
+    }
+
+    .carousel__pagination-underline {
+        outline: 2px dotted hsl(var(--primary));
+        background-color: hsla(var(--primary) / 0.08);
+    }
+
+    .carousel__pagination-bullet:hover {
+        background-color: var(--surface1);
+    }
+
+}
