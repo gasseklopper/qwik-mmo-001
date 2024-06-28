@@ -2,18 +2,24 @@
     position: fixed;
     top: 20%;
     right: 0;
+    background: var(--surface2);
     // background-color: black;
     z-index: 10000;
     color: white;
-
     &__button {
         background: var(--surface2);
-        color: white;
+        // background: red;
     }
+
+    &__state-indicator {
+        background: var(--surface2);
+    }
+    
 
     &__view {
         display: flex;
         flex-direction: row;
+        background: var(--surface4);
         // background-color: aqua;
         align-items: center;
     }

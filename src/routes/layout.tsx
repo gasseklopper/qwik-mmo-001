@@ -90,7 +90,6 @@ export default component$(() => {
 					transform: isSettingsOpen.value ? `translate3d(0px, 0px, 0px)` : `translate3d(400px, 0px, 0px)`,
 					transition: 'transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 100ms',
 					animation: (isSettingsOpen.value ? `slideInBounce ${transitionDuration} ease-in-out 100ms` : `slideOutBounce ${transitionDuration} ease-in-out 100ms`),
-					background: 'var(--surface4)',
 					height: `${500}px`,
 					width: `${500}px`
 
@@ -101,44 +100,60 @@ export default component$(() => {
 				<Settings.View>
 					<Settings.Button class="settings__button">
 						<button onClick$={handleOnClick}>settings</button>
-						<h2 >{isSettingsOpen.value ? 'true' : 'false'}</h2>
+						<h3 class="settings__state-indicator">{isSettingsOpen.value ? 'true' : 'false'}</h3>
 					</Settings.Button>
 					<Settings.Container class="settings__container">
-						<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium, excepturi doloribus.</h1>
+						<h1>Settings</h1>
+						<h2>color modes</h2>
+						<Button
+							buttonLabel={`animated cursor`}
+							buttonVariant="primary"
+							buttonSize="small"
+							onClick$={() => console.log('cursor mode')}
+							aria-label='test'
+						/>
+						<h2>color modes</h2>
 						{/* <ThemeToggle /> */}
 						<Button
-							buttonLabel={`miami mode`}
+							buttonLabel={`miami`}
 							buttonVariant="primary"
 							buttonSize="small"
 							onClick$={() => setPreference('miami')}
 							aria-label='test'
 						/>
 						<Button
-							buttonLabel={`dark mode`}
+							buttonLabel={`dark`}
 							buttonVariant="primary"
 							buttonSize="small"
 							onClick$={() => setPreference('dark')}
 							aria-label='test'
 						/>
 						<Button
-							buttonLabel={`light mode`}
+							buttonLabel={`light`}
 							buttonVariant="primary"
 							buttonSize="small"
 							onClick$={() => setPreference('light')}
 							aria-label='test'
 						/>
 						<Button
-							buttonLabel={`dim mode`}
+							buttonLabel={`dim`}
 							buttonVariant="primary"
 							buttonSize="small"
 							onClick$={() => setPreference('dim')}
 							aria-label='test'
 						/>
 						<Button
-							buttonLabel={`sim mode`}
+							buttonLabel={`sim`}
 							buttonVariant="primary"
 							buttonSize="small"
 							onClick$={() => setPreference('sim')}
+							aria-label='test'
+						/>
+						<Button
+							buttonLabel={`lights2`}
+							buttonVariant="primary"
+							buttonSize="small"
+							onClick$={() => setPreference('lights2')}
 							aria-label='test'
 						/>
 						<Button

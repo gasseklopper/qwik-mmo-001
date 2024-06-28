@@ -42,6 +42,11 @@
 	@include dim-sheme.dim-sheme;
 }
 
+[data-theme='light'] {
+	color-scheme: light;
+	@include light-sheme.light-sheme;
+}
+
 [data-theme='lights2'] {
 	color-scheme: lights2;
 	@include lights2-sheme.lights2-sheme;
