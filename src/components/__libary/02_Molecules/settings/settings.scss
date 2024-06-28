@@ -1,0 +1,20 @@
+.settings {
+    position: fixed;
+    top: 20%;
+    right: 0;
+    // background-color: black;
+    z-index: 10000;
+    color: white;
+
+    &__button {
+        background: var(--surface2);
+        color: white;
+    }
+
+    &__view {
+        display: flex;
+        flex-direction: row;
+        // background-color: aqua;
+        align-items: center;
+    }
+}

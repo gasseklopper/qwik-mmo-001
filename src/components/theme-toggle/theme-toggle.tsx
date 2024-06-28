@@ -4,7 +4,7 @@ import themeToggle from './theme-toggle.css?inline'
 import { GlobalStore } from '../../globalContext'
 import Button from '../__libary/01_Atoms/button/button'
 
-export type ThemePreference = 'dark' | 'miami'
+export type ThemePreference = 'dark' | 'miami' | 'light' | 'dim' | 'sim'
 
 export const colorSchemeChangeListener = (
 	onColorSchemeChange: (isDark: boolean) => void
