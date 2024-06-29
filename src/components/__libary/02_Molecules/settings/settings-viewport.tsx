@@ -2,18 +2,14 @@ import {
   component$,
   type PropsOf,
   Slot,
-  useContext,
-  $,
-  useSignal,
-  useTask$,
 } from '@builder.io/qwik';
-import CarouselContextId from './settings-context-id';
+// import CarouselContextId from './settings-context-id';
 // import { isBrowser } from '@builder.io/qwik/build';
 
 type CarouselViewportProps = PropsOf<'div'>;
 
 export const SettingsView = component$((props: CarouselViewportProps) => {
-  const context = useContext(CarouselContextId);
+  // const context = useContext(CarouselContextId);
 
   // const totalWidthSig = useSignal<number>(0);
 

@@ -8,25 +8,25 @@ import {
   useTask$,
 } from '@builder.io/qwik';
 import CarouselContextId from './carousel-context-id';
-import { isBrowser } from '@builder.io/qwik/build';
+// import { isBrowser } from '@builder.io/qwik/build';
 
 type CarouselViewportProps = PropsOf<'div'>;
 
 export const CarouselView = component$((props: CarouselViewportProps) => {
   const context = useContext(CarouselContextId);
 
-  const totalWidthSig = useSignal<number>(0);
+  // const totalWidthSig = useSignal<number>(0);
 
-  useTask$(({ track }) => {
-    // track(() => context.isDraggingSig.value);
+  // useTask$(({ track }) => {
+  //   // track(() => context.isDraggingSig.value);
 
-    // if (isBrowser) {
-    //   totalWidthSig.value =
-    //     context.numSlidesSig.value *
-    //     context.slideRefsArray.value[0].value.offsetWidth *
-    //     -1;
-    // }
-  });
+  //   // if (isBrowser) {
+  //   //   totalWidthSig.value =
+  //   //     context.numSlidesSig.value *
+  //   //     context.slideRefsArray.value[0].value.offsetWidth *
+  //   //     -1;
+  //   // }
+  // });
 
   const handlePointerMove$ = $((e: PointerEvent) => {
     if (context.isDraggingSig.value) {

@@ -1,4 +1,4 @@
-import { component$, Slot, useStyles$, useSignal, useVisibleTask$, useContext, useStore, $ } from '@builder.io/qwik'
+import { component$, Slot, useStyles$, useSignal, useVisibleTask$, useContext, $ } from '@builder.io/qwik'
 import Footer from '~/components/footer/footer'
 import Header from '~/components/header/header'
 import styles from '~/index.scss?inline'
@@ -9,7 +9,7 @@ import styles from '~/index.scss?inline'
 // } from 'body-scroll-lock'
 import { GlobalMenuStore, GlobalStore } from '~/globalContext'
 import { Settings } from '~/components/__libary/02_Molecules/settings/component'
-import { ThemeToggle, setPreference } from '~/components/theme-toggle/theme-toggle'
+import { setPreference } from '~/components/theme-toggle/theme-toggle'
 import Button from '~/components/__libary/01_Atoms/button/button'
 import { calcWinsize, getMousePos } from '~/utils/utils'
 import { gsap } from 'gsap'
@@ -29,6 +29,8 @@ export default component$(() => {
 	// STATES--
 	const isPrefersReducedMotion = useSignal()
 	const isSettingsOpen = useSignal<boolean>(true)
+	
+	// isPrefersReducedMotion.value = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
@@ -56,8 +58,6 @@ export default component$(() => {
 			winsize = calcWinsize();
 			console.log('winsize', winsize);
 		};
-
-		isPrefersReducedMotion.value = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 		window.addEventListener('resize', handleResize);
 
@@ -99,10 +99,10 @@ export default component$(() => {
 		setPreference(state.theme)
 	})
 
-	const checkMotionPreference = $(() => {
-		isPrefersReducedMotion.value = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-		localStorage.setItem('prefers-reduced-motion','reduce' )
-	})
+	// const checkMotionPreference = $(() => {
+	// 	isPrefersReducedMotion.value = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+	// 	localStorage.setItem('prefers-reduced-motion', 'reduce')
+	// })
 
 	return (
 		<>
@@ -146,7 +146,7 @@ export default component$(() => {
 							onClick$={() => console.log('cursor mode')}
 							aria-label='test'
 						/>
-						<button onClick$={checkMotionPreference}>Check Motion Preference</button>
+						{/* <button onClick$={checkMotionPreference}>Check Motion Preference</button> */}
 						<h2>color modes</h2>
 						{/* <ThemeToggle /> */}
 						<Button
