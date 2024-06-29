@@ -6,6 +6,7 @@
     // background-color: black;
     z-index: 10000;
     color: white;
+
     &__button {
         background: var(--surface2);
         // background: red;
@@ -14,7 +15,7 @@
     &__state-indicator {
         background: var(--surface2);
     }
-    
+
 
     &__view {
         display: flex;
@@ -22,5 +23,59 @@
         background: var(--surface4);
         // background-color: aqua;
         align-items: center;
+    }
+}
+
+.cursor {
+    position: fixed;
+    // background: var(--surface4);
+    // background: blue;
+    opacity: .4;
+    width: 120px;
+    top: 0;
+    left: 0;
+    height: 120px;
+    z-index: 9999999;
+    pointer-events: none;
+
+    circle {
+        fill: var(--text4);
+        opacity: .4;
+    }
+}
+
+@keyframes slideInBounce {
+    0% {
+        transform: translate3d(400px, 0, 0);
+    }
+
+    60% {
+        transform: translate3d(-20px, 0, 0);
+    }
+
+    80% {
+        transform: translate3d(10px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes slideOutBounce {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+
+    20% {
+        transform: translate3d(-10px, 0, 0);
+    }
+
+    40% {
+        transform: translate3d(20px, 0, 0);
+    }
+
+    100% {
+        transform: translate3d(400px, 0, 0);
     }
 }

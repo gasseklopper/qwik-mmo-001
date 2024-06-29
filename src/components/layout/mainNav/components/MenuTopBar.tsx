@@ -12,7 +12,7 @@ export const MenuTopBar = component$(() => {
 				</div>
 				<div class="column large-2">
 					<div class="last-column-flex-end">
-						<ThemeToggle />
+						{/* <ThemeToggle /> */}
 					</div>
 				</div>
 			</div>
