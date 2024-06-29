@@ -4,8 +4,6 @@ import {
   Slot,
   useContext,
   $,
-  useSignal,
-  useTask$,
 } from '@builder.io/qwik';
 import CarouselContextId from './carousel-context-id';
 // import { isBrowser } from '@builder.io/qwik/build';

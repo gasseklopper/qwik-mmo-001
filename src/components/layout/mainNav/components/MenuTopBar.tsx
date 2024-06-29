@@ -1,5 +1,5 @@
 import { component$ } from '@builder.io/qwik'
-import { ThemeToggle } from '~/components/theme-toggle/theme-toggle'
+// import { ThemeToggle } from '~/components/theme-toggle/theme-toggle'
 import Logo from './logo'
 import { baseClassMainMenu } from '~/components/header/header'
 
