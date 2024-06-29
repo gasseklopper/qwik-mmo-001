@@ -2,10 +2,11 @@
     position: fixed;
     top: 20%;
     right: 0;
-    background: var(--surface2);
+    background: var(--surface4);
     // background-color: black;
     z-index: 10000;
     color: white;
+    // transform: translate3d(400px, 0, 0);
 
     &__button {
         background: var(--surface2);

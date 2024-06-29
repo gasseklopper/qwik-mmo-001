@@ -20,7 +20,8 @@ export default component$(() => {
 	useStyles$(styles)
 	// CONTEXT--
 	const globalMenuStore = useContext(GlobalMenuStore)
-	const state = useContext(GlobalStore)
+	const globalState = useContext(GlobalStore)
+	console.log('settings global', globalState.settings)
 	// REFS--
 	const outputRef = useSignal<Element>()
 	const cursorRef = useSignal<HTMLDivElement>()
@@ -28,8 +29,9 @@ export default component$(() => {
 
 	// STATES--
 	const isPrefersReducedMotion = useSignal()
-	const isSettingsOpen = useSignal<boolean>(true)
-	
+	const isSettingsOpen = useSignal<boolean>(globalState.settings)
+	const isCursorAnimation = useSignal<boolean>(true)
+
 	// isPrefersReducedMotion.value = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 	// eslint-disable-next-line qwik/no-use-visible-task
@@ -90,13 +92,19 @@ export default component$(() => {
 
 	const handleOnClick = $(() => {
 		isSettingsOpen.value = !isSettingsOpen.value
+		globalState.settings = isSettingsOpen.value
 	})
 
 	const transitionDuration = '300ms';
 
 	const onClick$ = $(() => {
-		state.theme = state.theme === 'miami' ? 'dark' : 'miami'
-		setPreference(state.theme)
+		globalState.theme = globalState.theme === 'miami' ? 'dark' : 'miami'
+		setPreference(globalState.theme)
+	})
+	
+	const animateCursor = $(() => {
+		isCursorAnimation.value = !isCursorAnimation.value
+		console.log('cursor mode')
 	})
 
 	// const checkMotionPreference = $(() => {
@@ -119,10 +127,10 @@ export default component$(() => {
 				class="settings"
 				style={{
 					// transform: `translate3d(400px, 0px, 0px)`,
-					transform: isSettingsOpen.value ? `translate3d(0px, 0px, 0px)` : `translate3d(400px, 0px, 0px)`,
+					transform: globalState.settings ? `translate3d(0px, 0px, 0px)` : `translate3d(400px, 0px, 0px)`,
 					transition: 'transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 100ms',
 					// animation: prefersReducedMotion ? 'none' : (isSettingsOpen.value ? `slideInBounce ${transitionDuration} ease-in-out 100ms` : `slideOutBounce ${transitionDuration} ease-in-out 100ms`),
-					animation: (isSettingsOpen.value ? `slideInBounce ${transitionDuration} ease-in-out 100ms` : `slideOutBounce ${transitionDuration} ease-in-out 100ms`),
+					// animation: (globalState.settings ? `slideInBounce ${transitionDuration} ease-in-out 100ms` : `slideOutBounce ${transitionDuration} ease-in-out 100ms`),
 					height: `${500}px`,
 					width: `${500}px`
 
@@ -135,6 +143,7 @@ export default component$(() => {
 						<button onClick$={handleOnClick}>settings</button>
 						<h3 class="settings__state-indicator">{isSettingsOpen.value ? 'true' : 'false'}</h3>
 						<h3 class="settings__state-indicator">{isPrefersReducedMotion.value ? 'true' : 'false'}</h3>
+						<h3 class="settings__state-indicator">{isCursorAnimation.value ? 'true' : 'false'}</h3>
 					</Settings.Button>
 					<Settings.Container class="settings__container">
 						<h1>Settings</h1>
@@ -143,7 +152,7 @@ export default component$(() => {
 							buttonLabel={`animated cursor`}
 							buttonVariant="primary"
 							buttonSize="small"
-							onClick$={() => console.log('cursor mode')}
+							onClick$={animateCursor}
 							aria-label='test'
 						/>
 						{/* <button onClick$={checkMotionPreference}>Check Motion Preference</button> */}
@@ -192,7 +201,7 @@ export default component$(() => {
 							aria-label='test'
 						/>
 						<Button
-							buttonLabel={`${state.theme === 'miami' ? 'Dark' : 'Miami'} mode`}
+							buttonLabel={`${globalState.theme === 'miami' ? 'Dark' : 'Miami'} mode`}
 							buttonVariant="primary"
 							buttonSize="small"
 							onClick$={onClick$}

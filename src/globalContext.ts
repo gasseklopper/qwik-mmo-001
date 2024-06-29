@@ -7,6 +7,7 @@ import type { ThemePreference } from './components/theme-toggle/theme-toggle'
 
 export interface SiteStore {
 	theme: ThemePreference | 'auto'
+	settings: boolean
 }
 
 export interface MenuStore {
