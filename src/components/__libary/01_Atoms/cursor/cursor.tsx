@@ -70,7 +70,7 @@ export default component$(
 		// const componentFit = rest.buttonFit ? `${mainClass}--fit` : ''
 
 		return (
-			<div class="cursor" ref={cursorRef}>
+			<div class="cursor" id='cursor-id' ref={cursorRef}>
 				<svg width="122" height="122" viewBox="0 0 124 124">
 					<circle class="cursor__inner" cx="61" cy="61" r="60" stroke="var(--text1)" stroke-width="2" ref={circleInnerRef} />
 				</svg>

@@ -1,7 +1,5 @@
-.cursor {
+#cursor-id {
     position: fixed;
-    // background: var(--surface4);
-    // background: blue;
     opacity: .4;
     width: 120px;
     top: 0;
@@ -9,6 +7,10 @@
     height: 120px;
     z-index: 1000;
     pointer-events: none;
+
+    &.cursor {
+        display: none;
+    }
 
     circle {
         fill: var(--text4);

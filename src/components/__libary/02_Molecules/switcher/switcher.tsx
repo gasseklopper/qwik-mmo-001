@@ -1,5 +1,6 @@
 import { component$, useStore, useVisibleTask$, $, useSignal, PropFunction, useContext } from '@builder.io/qwik';
 import { AppContext } from '~/globalContext';
+import Button from '../../01_Atoms/button/button';
 
 // Define the prop types
 interface SwitcherProps {
@@ -10,7 +11,8 @@ interface SwitcherProps {
     // overlayType: string;
 }
 
-export const Switcher = component$<SwitcherProps>(({ dispatch, cursor1, cursor2, switcherDir }) => {
+// export const Switcher = component$<SwitcherProps>(({ dispatch, cursor1, cursor2, switcherDir }) => {
+export const Switcher = component$<SwitcherProps>(({ dispatch, switcherDir }) => {
     const state = useStore({
         switcherOpen: false,
         cursorStyle: 2
@@ -21,7 +23,7 @@ export const Switcher = component$<SwitcherProps>(({ dispatch, cursor1, cursor2,
     const switcherItems = useSignal<any>();
     const switcherOpen = useSignal<any>();
     const switcherClose = useSignal<any>();
-    const cursorStyle = useSignal<any>();
+    // const cursorStyle = useSignal<any>();
 
     // eslint-disable-next-line qwik/no-use-visible-task
     useVisibleTask$(() => {
@@ -48,9 +50,9 @@ export const Switcher = component$<SwitcherProps>(({ dispatch, cursor1, cursor2,
 
             setupButtonHandlers('.layout-type button', 'active', (button: { getAttribute: (arg0: string) => any; }) => {
                 const mode = button.getAttribute('data-mode');
-                const smoothContent = document.getElementById('smooth-content');
+                const smoothContent = document.getElementById('main');
                 if (smoothContent) {
-                    smoothContent.classList.toggle('box-layout', mode === 'box');
+                    smoothContent.classList.toggle('container', mode === 'box');
                 }
                 dispatch({ type: 'setLayout', value: mode === 'box' ? 'box' : '' });
             });
@@ -59,6 +61,21 @@ export const Switcher = component$<SwitcherProps>(({ dispatch, cursor1, cursor2,
                 const mode = button.getAttribute('data-mode');
                 document.body.classList.toggle('dir-rtl', mode === 'rtl');
                 dispatch({ type: 'setDirection', value: mode === 'rtl' ? 'rtl' : '' });
+            });
+
+            setupButtonHandlers('.cursor-type button', 'active', (button: { getAttribute: (arg0: string) => any; }) => {
+                const mode = button.getAttribute('data-mode');
+                document.body.classList.toggle('isAnimatedCursor', mode === 'rtl');
+                dispatch({ type: 'setDirection', value: mode === 'rtl' ? 'rtl' : '' });
+            });
+
+            setupButtonHandlers('.cursor-type button', 'active', (button: { getAttribute: (arg0: string) => any; }) => {
+                const mode = button.getAttribute('data-mode');
+                const elem = document.getElementById('cursor-id');
+                if (elem) {
+                    elem.classList.toggle('cursor', mode === 'yes');
+                }
+                dispatch({ type: 'cursor', value: mode === 'yes' ? 'yes' : '' });
             });
 
             setupButtonHandlers('.overlay-type button', 'active', (button: { getAttribute: (arg0: string) => any; }) => {
@@ -88,11 +105,11 @@ export const Switcher = component$<SwitcherProps>(({ dispatch, cursor1, cursor2,
         switcherItems.value.style[switcherDir] = '-280px';
     });
 
-    const cursor = $(() => {
-        const cursorVal = cursorStyle.value.value;
-        cursor1.value!.style.display = cursorVal == '1' ? 'none' : '';
-        cursor2.value!.style.display = cursorVal == '1' ? 'none' : '';
-    });
+    // const cursor = $(() => {
+    //     const cursorVal = cursorStyle.value.value;
+    //     cursor1.value!.style.display = cursorVal == '1' ? 'none' : '';
+    //     cursor2.value!.style.display = cursorVal == '1' ? 'none' : '';
+    // });
 
     return (
         <>
@@ -104,46 +121,71 @@ export const Switcher = component$<SwitcherProps>(({ dispatch, cursor1, cursor2,
                 <div class={`switcher__items ${switcherDir === "left" ? "switcher_left" : ""}`} ref={switcherItems}>
                     <div class="switcher__item">
                         <div class="switch__title-wrap"><h2 class="switcher__title text-white">Cursor</h2></div>
-                        <div class="switcher__btn">
-                            <select value={state.cursorStyle} name="cursor-style" id="cursor_style" ref={cursorStyle} onChange$={cursor}>
-                                <option value="1">default</option>
-                                <option value="2">animated</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="switcher__item">
-                        <div class="switch__title-wrap"><h2 class="switcher__title text-white">Mode</h2></div>
-                        <div class="switcher__btn mode-type wc-col-2">
-                            <button data-mode="light">Light</button>
-                            <button class="active" data-mode="dark">Dark</button>
+                        <div class="switcher__btn cursor-type wc-col-2">
+                            <Button
+                                buttonLabel={`Toggle default`}
+                                buttonVariant="primary"
+                                buttonSize="small"
+                                data-mode="yes"
+                            />
+                            <Button
+                                buttonLabel={`Toggle animated`}
+                                buttonVariant="primary"
+                                buttonSize="small"
+                                data-mode="no"
+                            />
                         </div>
                     </div>
                     <div class="switcher__item">
                         <div class="switch__title-wrap"><h2 class="switcher__title text-white">Direction</h2></div>
                         <div class="switcher__btn direction-type wc-col-2">
-                            <button class="active" data-mode="ltr">LTR</button>
-                            <button data-mode="rtl">RTL</button>
+                            <Button
+                                buttonLabel={`Toggle LTR`}
+                                buttonVariant="primary"
+                                buttonSize="small"
+                                data-mode="ltr"
+                            />
+                            <Button
+                                buttonLabel={`Toggle RTL`}
+                                buttonVariant="primary"
+                                buttonSize="small"
+                                data-mode="rtl"
+                            />
                         </div>
                     </div>
                     <div class="switcher__item">
                         <div class="switch__title-wrap"><h2 class="switcher__title text-white">Layout</h2></div>
                         <div class="switcher__btn layout-type wc-col-2">
-                            <button data-mode="box">Box</button>
-                            <button class="active" data-mode="full">Full</button>
+                            <Button
+                                buttonLabel={`Toggle Box Layout`}
+                                buttonVariant="primary"
+                                buttonSize="small"
+                                data-mode="box"
+                            />
+                            <Button
+                                buttonLabel={`Toggle fullwidth Layout`}
+                                buttonVariant="primary"
+                                buttonSize="small"
+                                data-mode="full"
+                                class="active"
+                            />
                         </div>
                     </div>
                     <div class="switcher__item">
                         <div class="switch__title-wrap"><h2 class="switcher__title text-white">Overlay</h2></div>
                         <div class="switcher__btn overlay-type wc-col-2">
-                            <button data-mode="yes">Yes</button>
-                            <button class="active" data-mode="no">No</button>
-                        </div>
-                    </div>
-                    <div class="switcher__item">
-                        <div class="switch__title-wrap"><h2 class="switcher__title text-white">Direction</h2></div>
-                        <div class="switcher__btn direction-type wc-col-2">
-                            <button class="active" data-mode="yes">LTR</button>
-                            <button data-mode="no">RTL</button>
+                            <Button
+                                buttonLabel={`Toggle Overlay on`}
+                                buttonVariant="primary"
+                                buttonSize="small"
+                                data-mode="yes"
+                            />
+                            <Button
+                                buttonLabel={`Toggle Overlay off`}
+                                buttonVariant="primary"
+                                buttonSize="small"
+                                data-mode="no"
+                            />
                         </div>
                     </div>
                 </div>

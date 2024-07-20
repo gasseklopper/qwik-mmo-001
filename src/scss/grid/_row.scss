@@ -2,17 +2,47 @@
 @use 'vars';
 @use 'mixins';
 
-.container {
-	margin: 0 auto;
-	width: 100%;
-	max-width: vars.$reworkGrid__width;
-}
+// #main {
+// 	margin: 0 auto;
+// 	width: 100%;
+// 	max-width: vars.$reworkGrid__width;
 
-.container_full {
-	margin: 0 auto;
-	width: 100vw;
-}
+// 	&.container {
+// 		margin: 0 auto;
+// 		width: 100%;
+// 		max-width: 100%;
+// 	}
 
+// 	.container {
+// 		background-color: aqua;
+// 		margin: 0 auto;
+// 		width: 100%;
+// 		max-width: 100%;
+// 	}
+
+// 	&.container_full {
+// 		margin: 0 auto;
+// 		width: 100vw;
+// 	}
+// }
+
+#main {
+	&.container {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 100%;
+		// max-width: vars.$reworkGrid__width;
+
+
+		.container {
+			margin: 0 auto;
+			width: 100%;
+			max-width: vars.$reworkGrid__width;
+			// max-width: 100%;
+
+		}
+	}
+}
 
 
 .row {
@@ -24,12 +54,14 @@
 	padding: 0 vars.$reworkGrid__outer;
 	width: 100%;
 	max-width: vars.$reworkGrid__width;
+	max-width: 100%;
+	;
 
 	&--spacing {
 		margin-bottom: -(vars.$gutter);
 	}
 
-	&--spacing > .column {
+	&--spacing>.column {
 		margin-bottom: vars.$gutter;
 	}
 
@@ -63,11 +95,13 @@
 	}
 }
 
+
 // RTL Adjustemnts on grid system Default LTR
 .dir-rtl {
 	.row {
 		flex-direction: row-reverse;
 	}
+
 	.column {
 		text-align: end;
 	}

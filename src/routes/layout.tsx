@@ -74,10 +74,10 @@ export default component$(() => {
 		setPreference(globalState.theme)
 	})
 
-	const onClickDirection$ = $(() => {
-		appState.direction = !appState.direction
-		// setPreference(globalState.theme)
-	})
+	// const onClickDirection$ = $(() => {
+	// 	appState.direction = !appState.direction
+	// 	// setPreference(globalState.theme)
+	// })
 
 	// const animateCursor = $(() => {
 	// 	isCursorAnimation.value = !isCursorAnimation.value
@@ -138,19 +138,15 @@ export default component$(() => {
 							buttonSize="small"
 							onClick$={onClick$}
 						/>
-						<Button
-							buttonLabel={`Toggle RTL/LTR`}
-							buttonVariant="primary"
-							buttonSize="small"
-							onClick$={onClickDirection$}
-						/>
 						<Switcher {...staticProps} />
 					</Settings.Container>
 				</Settings.View>
 			</Settings.Root>
 			<Header />
-			<main class="test" ref={outputRef}>
-				<Slot />
+			<main id='main' class="test container" ref={outputRef}>
+				<div class="container">
+					<Slot />
+				</div>
 			</main>
 			<Footer />
 		</>
