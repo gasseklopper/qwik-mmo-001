@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik'
 import { useDocumentHead, useLocation } from '@builder.io/qwik-city'
-import { ThemeScript } from './theme-script'
+import { IsOpenSettingsScript, ReduceMotionScript, ThemeScript } from './theme-script'
 
 /**
  * The RouterHead component is placed inside of the document `<head>` element.
@@ -48,6 +48,8 @@ export const RouterHead = component$(() => {
 			))}
 
 			<ThemeScript />
+			<ReduceMotionScript />
+			<IsOpenSettingsScript />
 		</>
 	)
 })

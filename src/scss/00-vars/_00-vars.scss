@@ -53,10 +53,10 @@ $bpXXL: 1920px;
 //   |    |   \ / __ \_\___ \|  \  \___\    \_\  \  | \/  / /_/ |
 //   |______  /(____  /____  >__|\___  >\______  /__|  |__\____ |
 //          \/      \/     \/        \/        \/              \/
-
-$basicGrid__width: $maxWidth;
-$basicGrid__gutter: $gutter;
-$basicGrid__sizes: (
+$reworkGrid__centering-divisor: -2;
+$reworkGrid__width: $maxWidth;
+$reworkGrid__gutter: $gutter;
+$reworkGrid__sizes: (
 	'small': 0,
 	'medium': $bpXS,
 	'large': $bpM,

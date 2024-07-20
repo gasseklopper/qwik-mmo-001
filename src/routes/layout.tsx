@@ -1,27 +1,28 @@
-import { component$, Slot, useStyles$, useSignal, useVisibleTask$, useContext, $ } from '@builder.io/qwik'
+import { component$, Slot, useStyles$, useSignal, useVisibleTask$, useContext, $, PropFunction, useContextProvider, useStore } from '@builder.io/qwik'
 import Footer from '~/components/footer/footer'
 import Header from '~/components/header/header'
 import styles from '~/index.scss?inline'
-// import {
-// 	disableBodyScroll,
-// 	enableBodyScroll,
-// 	clearAllBodyScrollLocks,
-// } from 'body-scroll-lock'
-import { GlobalMenuStore, GlobalStore } from '~/globalContext'
+import { AppContext, AppState, GlobalMenuStore, GlobalStore } from '~/globalContext'
 import { Settings } from '~/components/__libary/02_Molecules/settings/component'
 import { setPreference } from '~/components/theme-toggle/theme-toggle'
 import Button from '~/components/__libary/01_Atoms/button/button'
 import { calcWinsize, getMousePos } from '~/utils/utils'
 import { gsap } from 'gsap'
+import { Switcher } from '~/components/__libary/02_Molecules/switcher/switcher'
 // import { themeStorageKey } from '~/'
 
+export type CursorPreference = 'noAnimation' | 'animation'
 
 export default component$(() => {
 	useStyles$(styles)
 	// CONTEXT--
 	const globalMenuStore = useContext(GlobalMenuStore)
 	const globalState = useContext(GlobalStore)
+	const appState = useContext<AppState>(AppContext);
 	console.log('settings global', globalState.settings)
+	console.log('appContext layout', appState.layout)
+	console.log('appContext direction', appState.direction)
+	console.log('appContext stopScrollTop', appState.stopScrollTop)
 	// REFS--
 	const outputRef = useSignal<Element>()
 	const cursorRef = useSignal<HTMLDivElement>()
@@ -101,120 +102,86 @@ export default component$(() => {
 		globalState.theme = globalState.theme === 'miami' ? 'dark' : 'miami'
 		setPreference(globalState.theme)
 	})
-	
+
+	const onClickDirection$ = $(() => {
+		appState.direction = !appState.direction
+		// setPreference(globalState.theme)
+	})
+
 	const animateCursor = $(() => {
 		isCursorAnimation.value = !isCursorAnimation.value
 		console.log('cursor mode')
 	})
+
+	const getCursorPreference = (): CursorPreference => {
+		const themeStorageKey = 'theme-preference'
+		if (localStorage.getItem(themeStorageKey)) {
+			return localStorage.getItem(themeStorageKey) as CursorPreference
+		} else {
+			return window.matchMedia('(prefers-color-scheme: dark)').matches
+				? 'noAnimation'
+				: 'animation'
+		}
+	}
 
 	// const checkMotionPreference = $(() => {
 	// 	isPrefersReducedMotion.value = window.matchMedia("(prefers-reduced-motion: reduce)").matches
 	// 	localStorage.setItem('prefers-reduced-motion', 'reduce')
 	// })
 
+	const staticProps = {
+		dispatch: $((action: any) => {
+			console.log('Dispatch action:', action);
+		}),
+		cursor1: { value: null },
+		cursor2: { value: null },
+		switcherDir: 'left',
+	};
+
 	return (
 		<>
 			<div class="cursor" ref={cursorRef}>
-				<svg class="" width="122" height="122" viewBox="0 0 124 124">
+				<svg width="122" height="122" viewBox="0 0 124 124">
 					<circle class="cursor__inner" cx="61" cy="61" r="60" stroke="var(--text1)" stroke-width="2" ref={circleInnerRef} />
 				</svg>
 			</div>
+			<Switcher {...staticProps} />
 			<Settings.Root
-				// bind:currSlideIndex={1}
 				spaceBetweenSlides={30}
 				carouselWidth={500}
 				carouselHeight={500}
 				class="settings"
 				style={{
-					// transform: `translate3d(400px, 0px, 0px)`,
 					transform: globalState.settings ? `translate3d(0px, 0px, 0px)` : `translate3d(400px, 0px, 0px)`,
 					transition: 'transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 100ms',
-					// animation: prefersReducedMotion ? 'none' : (isSettingsOpen.value ? `slideInBounce ${transitionDuration} ease-in-out 100ms` : `slideOutBounce ${transitionDuration} ease-in-out 100ms`),
-					// animation: (globalState.settings ? `slideInBounce ${transitionDuration} ease-in-out 100ms` : `slideOutBounce ${transitionDuration} ease-in-out 100ms`),
 					height: `${500}px`,
 					width: `${500}px`
-
-					// width: context.carouselWidth,
-					// height: context.carouselHeight,
 				}}
 			>
 				<Settings.View>
 					<Settings.Button class="settings__button">
-						<button onClick$={handleOnClick}>settings</button>
-						<h3 class="settings__state-indicator">{isSettingsOpen.value ? 'true' : 'false'}</h3>
-						<h3 class="settings__state-indicator">{isPrefersReducedMotion.value ? 'true' : 'false'}</h3>
-						<h3 class="settings__state-indicator">{isCursorAnimation.value ? 'true' : 'false'}</h3>
+						<button onClick$={handleOnClick}>Settings</button>
 					</Settings.Button>
 					<Settings.Container class="settings__container">
 						<h1>Settings</h1>
-						<h2>animation modes</h2>
 						<Button
-							buttonLabel={`animated cursor`}
-							buttonVariant="primary"
-							buttonSize="small"
-							onClick$={animateCursor}
-							aria-label='test'
-						/>
-						{/* <button onClick$={checkMotionPreference}>Check Motion Preference</button> */}
-						<h2>color modes</h2>
-						{/* <ThemeToggle /> */}
-						<Button
-							buttonLabel={`miami`}
-							buttonVariant="primary"
-							buttonSize="small"
-							onClick$={() => setPreference('miami')}
-							aria-label='test'
-						/>
-						<Button
-							buttonLabel={`dark`}
-							buttonVariant="primary"
-							buttonSize="small"
-							onClick$={() => setPreference('dark')}
-							aria-label='test'
-						/>
-						<Button
-							buttonLabel={`light`}
-							buttonVariant="primary"
-							buttonSize="small"
-							onClick$={() => setPreference('light')}
-							aria-label='test'
-						/>
-						<Button
-							buttonLabel={`dim`}
-							buttonVariant="primary"
-							buttonSize="small"
-							onClick$={() => setPreference('dim')}
-							aria-label='test'
-						/>
-						<Button
-							buttonLabel={`sim`}
-							buttonVariant="primary"
-							buttonSize="small"
-							onClick$={() => setPreference('sim')}
-							aria-label='test'
-						/>
-						<Button
-							buttonLabel={`lights2`}
-							buttonVariant="primary"
-							buttonSize="small"
-							onClick$={() => setPreference('lights2')}
-							aria-label='test'
-						/>
-						<Button
-							buttonLabel={`${globalState.theme === 'miami' ? 'Dark' : 'Miami'} mode`}
+							buttonLabel={`Toggle Theme`}
 							buttonVariant="primary"
 							buttonSize="small"
 							onClick$={onClick$}
-							aria-label='test'
+						/>
+						<Button
+							buttonLabel={`Toggle RTL/LTR`}
+							buttonVariant="primary"
+							buttonSize="small"
+							onClick$={onClickDirection$}
 						/>
 					</Settings.Container>
 				</Settings.View>
 			</Settings.Root>
 			<Header />
-			<main class="test 2" ref={outputRef}>
-				{/* <div class="container"> */}
+			<main class="test" ref={outputRef}>
 				<Slot />
-				{/* </div> */}
 			</main>
 			<Footer />
 		</>

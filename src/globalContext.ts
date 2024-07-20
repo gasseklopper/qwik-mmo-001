@@ -20,5 +20,15 @@ export interface MenuStore {
 	showMobileMenu: boolean
 }
 
+export interface AppState {
+	mode: string;
+	direction: boolean;
+	layout: string;
+	overlay: string;
+	switcherDir: string;
+	stopScrollTop: boolean;
+  }
+
 export const GlobalMenuStore = createContextId<MenuStore>('menu-store')
 export const GlobalStore = createContextId<SiteStore>('site-store')
+export const AppContext = createContextId<AppState>('app-state')

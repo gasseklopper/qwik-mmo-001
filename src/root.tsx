@@ -14,17 +14,27 @@ import {
 import { RouterHead } from './components/router-head/router-head'
 import './global.css'
 import { supabase } from './utils/supabase'
-import type { SiteStore } from './globalContext'
-import { GlobalMenuStore } from './globalContext'
+import type { AppState, SiteStore } from './globalContext'
+import { AppContext, GlobalMenuStore } from './globalContext'
 import { GlobalStore } from './globalContext'
 
 export const UserSessionContext = createContextId<any>('user-session')
+
+const initialAppState: AppState = {
+	mode: "",
+	direction: false,
+	layout: "",
+	overlay: "",
+	switcherDir: "right",
+	stopScrollTop: false,
+};
 
 export default component$(() => {
 	const userSession: any = useStore({ userId: '', isLoggedIn: false })
 
 	const store = useStore<SiteStore>({
 		theme: 'auto',
+		settings: false,
 	})
 
 	const menuStore = useStore({
@@ -35,6 +45,8 @@ export default component$(() => {
 		isHoverId: 0,
 		test: 'test',
 	})
+
+	const appState = useStore<AppState>(initialAppState);
 
 	// auth change listener
 	// eslint-disable-next-line qwik/no-use-visible-task
@@ -83,6 +95,7 @@ export default component$(() => {
 	// pass state to children via context
 	useContextProvider(GlobalStore, store)
 	useContextProvider(GlobalMenuStore, menuStore)
+	useContextProvider(AppContext, appState)
 	useContextProvider(UserSessionContext, userSession)
 
 	return (
@@ -93,7 +106,7 @@ export default component$(() => {
 					name="description"
 					content="Halten Sie bei Ihren Meta Descriptions die Länge von 140 bis 160 Zeichen ein, damit Google sie vollständig anzeigt. Verwenden Sie auch Ihr Keyword!"
 				/>
-				<meta name="robots" content="index"/>
+				<meta name="robots" content="index" />
 				<link rel="manifest" href="/manifest.json" />
 				<link rel="preconnect" href="https://fonts.gstatic.com"></link>
 				<link
