@@ -1,4 +1,4 @@
-import { component$, useStore, useVisibleTask$, useContextProvider, createContextId, useContext, JSXChildren } from '@builder.io/qwik';
+import { component$, useStore,  useContextProvider, createContextId } from '@builder.io/qwik';
 
 // Define the state interface
 interface AppState {

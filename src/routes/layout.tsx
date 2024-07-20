@@ -1,4 +1,4 @@
-import { component$, Slot, useStyles$, useSignal, useVisibleTask$, useContext, $, PropFunction, useContextProvider, useStore } from '@builder.io/qwik'
+import { component$, Slot, useStyles$, useSignal, useVisibleTask$, useContext, $ } from '@builder.io/qwik'
 import Footer from '~/components/footer/footer'
 import Header from '~/components/header/header'
 import styles from '~/index.scss?inline'
@@ -29,9 +29,9 @@ export default component$(() => {
 	const circleInnerRef = useSignal<SVGElement>()
 
 	// STATES--
-	const isPrefersReducedMotion = useSignal()
+	// const isPrefersReducedMotion = useSignal()
 	const isSettingsOpen = useSignal<boolean>(globalState.settings)
-	const isCursorAnimation = useSignal<boolean>(true)
+	// const isCursorAnimation = useSignal<boolean>(true)
 
 	// isPrefersReducedMotion.value = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -96,7 +96,7 @@ export default component$(() => {
 		globalState.settings = isSettingsOpen.value
 	})
 
-	const transitionDuration = '300ms';
+	// const transitionDuration = '300ms';
 
 	const onClick$ = $(() => {
 		globalState.theme = globalState.theme === 'miami' ? 'dark' : 'miami'
@@ -108,21 +108,21 @@ export default component$(() => {
 		// setPreference(globalState.theme)
 	})
 
-	const animateCursor = $(() => {
-		isCursorAnimation.value = !isCursorAnimation.value
-		console.log('cursor mode')
-	})
+	// const animateCursor = $(() => {
+	// 	isCursorAnimation.value = !isCursorAnimation.value
+	// 	console.log('cursor mode')
+	// })
 
-	const getCursorPreference = (): CursorPreference => {
-		const themeStorageKey = 'theme-preference'
-		if (localStorage.getItem(themeStorageKey)) {
-			return localStorage.getItem(themeStorageKey) as CursorPreference
-		} else {
-			return window.matchMedia('(prefers-color-scheme: dark)').matches
-				? 'noAnimation'
-				: 'animation'
-		}
-	}
+	// const getCursorPreference = (): CursorPreference => {
+	// 	const themeStorageKey = 'theme-preference'
+	// 	if (localStorage.getItem(themeStorageKey)) {
+	// 		return localStorage.getItem(themeStorageKey) as CursorPreference
+	// 	} else {
+	// 		return window.matchMedia('(prefers-color-scheme: dark)').matches
+	// 			? 'noAnimation'
+	// 			: 'animation'
+	// 	}
+	// }
 
 	// const checkMotionPreference = $(() => {
 	// 	isPrefersReducedMotion.value = window.matchMedia("(prefers-reduced-motion: reduce)").matches
