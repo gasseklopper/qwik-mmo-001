@@ -6,6 +6,7 @@ import type { ThemePreference } from './components/theme-toggle/theme-toggle'
  export type Variant = 'primary' | 'secondary'
 
 export interface SiteStore {
+	isSettingsOpen: boolean
 	theme: ThemePreference | 'auto'
 	settings: boolean
 }

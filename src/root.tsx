@@ -17,6 +17,8 @@ import { supabase } from './utils/supabase'
 import type { AppState, SiteStore } from './globalContext'
 import { AppContext, GlobalMenuStore } from './globalContext'
 import { GlobalStore } from './globalContext'
+import OverlayContainer from './components/__libary/01_Atoms/overlayContainer/overlayContainer'
+import Cursor from './components/__libary/01_Atoms/cursor/cursor'
 
 export const UserSessionContext = createContextId<any>('user-session')
 
@@ -35,6 +37,7 @@ export default component$(() => {
 	const store = useStore<SiteStore>({
 		theme: 'auto',
 		settings: false,
+		isSettingsOpen: false,
 	})
 
 	const menuStore = useStore({
@@ -121,6 +124,8 @@ export default component$(() => {
 				<RouterHead />
 			</head>
 			<body>
+				<Cursor />
+				<OverlayContainer/>
 				<RouterOutlet />
 				<ServiceWorkerRegister />
 			</body>

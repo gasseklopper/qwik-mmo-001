@@ -6,8 +6,7 @@ import { AppContext, AppState, GlobalMenuStore, GlobalStore } from '~/globalCont
 import { Settings } from '~/components/__libary/02_Molecules/settings/component'
 import { setPreference } from '~/components/theme-toggle/theme-toggle'
 import Button from '~/components/__libary/01_Atoms/button/button'
-import { calcWinsize, getMousePos } from '~/utils/utils'
-import { gsap } from 'gsap'
+import { calcWinsize } from '~/utils/utils'
 import { Switcher } from '~/components/__libary/02_Molecules/switcher/switcher'
 // import { themeStorageKey } from '~/'
 
@@ -25,12 +24,10 @@ export default component$(() => {
 	console.log('appContext stopScrollTop', appState.stopScrollTop)
 	// REFS--
 	const outputRef = useSignal<Element>()
-	const cursorRef = useSignal<HTMLDivElement>()
-	const circleInnerRef = useSignal<SVGElement>()
 
 	// STATES--
 	// const isPrefersReducedMotion = useSignal()
-	const isSettingsOpen = useSignal<boolean>(globalState.settings)
+	// const isSettingsOpen = useSignal<boolean>(globalState.settings)
 	// const isCursorAnimation = useSignal<boolean>(true)
 
 	// isPrefersReducedMotion.value = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -55,7 +52,7 @@ export default component$(() => {
 	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		let winsize = calcWinsize();
-		let mouse = { x: 0, y: 0 };
+
 
 		const handleResize = () => {
 			winsize = calcWinsize();
@@ -63,37 +60,11 @@ export default component$(() => {
 		};
 
 		window.addEventListener('resize', handleResize);
-
-		const onMouseMove = (ev: { clientX: any; clientY: any }) => {
-			mouse = getMousePos(ev);
-			const bounds = cursorRef.value!.getBoundingClientRect();
-			const tx = mouse.x - bounds.width / 2;
-			const ty = mouse.y - bounds.height / 2;
-
-			gsap.to(cursorRef.value!, {
-				duration: 0.9,
-				ease: 'power3.easeOut',
-				x: tx,
-				y: ty,
-				opacity: .4,
-				onUpdate: () => {
-					circleInnerRef.value!.setAttribute('r', '60');
-				}
-			});
-		};
-
-		window.addEventListener('mousemove', onMouseMove);
-
-		return () => {
-			window.removeEventListener('resize', handleResize);
-			window.removeEventListener('mousemove', onMouseMove);
-		};
-
 	})
 
 	const handleOnClick = $(() => {
-		isSettingsOpen.value = !isSettingsOpen.value
-		globalState.settings = isSettingsOpen.value
+		globalState.isSettingsOpen = !globalState.isSettingsOpen
+		globalState.settings = globalState.isSettingsOpen
 	})
 
 	// const transitionDuration = '300ms';
@@ -136,16 +107,13 @@ export default component$(() => {
 		cursor1: { value: null },
 		cursor2: { value: null },
 		switcherDir: 'left',
+		overlayType: "false"
 	};
 
 	return (
 		<>
-			<div class="cursor" ref={cursorRef}>
-				<svg width="122" height="122" viewBox="0 0 124 124">
-					<circle class="cursor__inner" cx="61" cy="61" r="60" stroke="var(--text1)" stroke-width="2" ref={circleInnerRef} />
-				</svg>
-			</div>
-			<Switcher {...staticProps} />
+			{/* <Cursor /> */}
+
 			<Settings.Root
 				spaceBetweenSlides={30}
 				carouselWidth={500}
@@ -176,6 +144,7 @@ export default component$(() => {
 							buttonSize="small"
 							onClick$={onClickDirection$}
 						/>
+						<Switcher {...staticProps} />
 					</Settings.Container>
 				</Settings.View>
 			</Settings.Root>

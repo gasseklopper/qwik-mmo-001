@@ -4,7 +4,7 @@
     right: 0;
     background: var(--surface4);
     // background-color: black;
-    z-index: 10000;
+    z-index: 99;
     color: white;
     // transform: translate3d(400px, 0, 0);
 
@@ -27,23 +27,6 @@
     }
 }
 
-.cursor {
-    position: fixed;
-    // background: var(--surface4);
-    // background: blue;
-    opacity: .4;
-    width: 120px;
-    top: 0;
-    left: 0;
-    height: 120px;
-    z-index: 9999999;
-    pointer-events: none;
-
-    circle {
-        fill: var(--text4);
-        opacity: .4;
-    }
-}
 
 @keyframes slideInBounce {
     0% {

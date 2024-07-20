@@ -23,12 +23,12 @@ export const ReduceMotionScript = () => {
 }
 
 
-export const IsOpenSettingsScript = () => {
-	const script = `
-        document.firstElementChild
-            .setAttribute('is-settings-open',
-                localStorage.getItem('${isSettingsOpenKey}') ??
-                (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'lights2')
-            )`
-	return <script dangerouslySetInnerHTML={script} />
-}
+// export const IsOpenSettingsScript = () => {
+// 	const script = `
+//         document.firstElementChild
+//             .setAttribute('is-settings-open',
+//                 localStorage.getItem('${isSettingsOpenKey}') ??
+//                 (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'lights2')
+//             )`
+// 	return <script dangerouslySetInnerHTML={script} />
+// }
