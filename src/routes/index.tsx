@@ -1,5 +1,5 @@
 import { $, component$, useSignal, useStyles$ } from '@builder.io/qwik'
-import type { DocumentHead } from '@builder.io/qwik-city'
+import { Link, type DocumentHead } from '@builder.io/qwik-city'
 import Image from '~/components/__libary/01_Atoms/image/image'
 import styles from './index.scss?inline'
 import { Carousel } from '~/components/__libary/02_Molecules/carousel/component';
@@ -110,7 +110,7 @@ export default component$(() => {
 										<h1 class="typed_title wc-color-white" style="opacity: 1; transform: translate(0px, 0px);">
 											Hi 🖐 I’m <span id="typed_list"
 												style="clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px;"><span>Michel</span><span>Designer</span></span><span
-													id="typed">Miche</span><span class="typed-cursor" aria-hidden="true">|</span></h1>
+													id="typed">Markus</span><span class="typed-cursor" aria-hidden="true">|</span></h1>
 									</div>
 									<div class="pb-30 blade">
 										<h2 class="title" data-delay=".7" style="perspective: 400px;">
@@ -122,12 +122,12 @@ export default component$(() => {
 												<span>Product</span> </div>
 											<div
 												style="display: block; text-align: start; position: relative; translate: none; rotate: none; scale: none; transform-origin: 286.5px 45px; transform: translate3d(0px, 0px, 0px); opacity: 1;">
-												Designer</div>
+												Engineer</div>
 										</h2>
 									</div>
 									<div data-fade-from="top" data-delay="1" data-ease="bounce"
-										style="opacity: 1; transform: translate(0px, 0px);"><a class="btn-hover-mask "
-											data-text="View My Works" href="product-designer/#work">View My Works</a></div>
+										style="opacity: 1; transform: translate(0px, 0px);">
+										<Link class="btn-hover-mask" data-text="View My Works" href="/portfolio">View My Works</Link></div>
 								</div>
 							</div>
 							<div class="col-md-6">
@@ -207,9 +207,9 @@ export default component$(() => {
 								style="color: transparent;" /></div>
 						<div class="hero-img" data-on-scroll="0" data-delay=".7" data-fade-offset="80" data-duration="3"
 							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><img
-								alt="Hero image" width="763" height="925" decoding="async" data-nimg="1"
+								alt="Hero image" decoding="async" data-nimg="1"
 								class="jh-img"
-								src={'../../assets/images/hero/2.png'}
+								src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 								style="color: transparent; height: auto;" /></div>
 					</div>
 				</div>
