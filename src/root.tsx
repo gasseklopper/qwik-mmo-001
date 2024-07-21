@@ -19,6 +19,7 @@ import { AppContext, GlobalMenuStore } from './globalContext'
 import { GlobalStore } from './globalContext'
 import OverlayContainer from './components/__libary/01_Atoms/overlayContainer/overlayContainer'
 import Cursor from './components/__libary/01_Atoms/cursor/cursor'
+import ScrollTop from './components/__libary/01_Atoms/scrollTop/scrollTop'
 
 export const UserSessionContext = createContextId<any>('user-session')
 
@@ -125,6 +126,7 @@ export default component$(() => {
 			</head>
 			<body>
 				<Cursor />
+				<ScrollTop />
 				<OverlayContainer/>
 				<RouterOutlet />
 				<ServiceWorkerRegister />
