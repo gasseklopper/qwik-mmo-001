@@ -2,116 +2,70 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 gsap.registerPlugin(ScrollTrigger);
 
-let history = [];
+const history = [];
+
+const DEFAULTS = {
+  fadeDirection: "bottom",
+  onscrollValue: 1,
+  durationValue: 1.5,
+  fadeOffset: 50,
+  delayValue: 0.5,
+  easeValue: "power2.out"
+};
+
+const getAttributeOrDefault = (element, attribute, defaultValue) => {
+  return element.getAttribute(attribute) || defaultValue;
+};
+
+const animateElement = (element, params) => {
+  gsap.from(element, {
+    y: params.fadeDirection === "top" || params.fadeDirection === "bottom" 
+       ? params.fadeDirection === "top" ? -params.fadeOffset : params.fadeOffset 
+       : 0,
+    x: params.fadeDirection === "left" || params.fadeDirection === "right" 
+       ? params.fadeDirection === "left" ? -params.fadeOffset : params.fadeOffset 
+       : 0,
+    opacity: 0,
+    ease: params.easeValue,
+    duration: params.durationValue,
+    delay: params.delayValue,
+    scrollTrigger: params.onscrollValue == 1 ? {
+      trigger: element,
+      start: "top 85%",
+    } : "",
+  });
+};
 
 export default function hasFadeAnim(item) {
-  if (item) {
-    let fade_direction = "bottom";
-    let onscroll_value = 1;
-    let duration_value = 1.5;
-    let fade_offset = 50;
-    let delay_value = 0.5;
-    let ease_value = "power2.out";
+  if (!item || typeof window === "undefined") return;
 
-    const gsapFunction = (item) => {
-      if (history.includes(item)) {
-        return;
-      } else {
-        history.push(item);
-        let tHero = gsap.context(() => {
-          try {
-            gsap.from(item, {
-              y:
-                fade_direction == "top" || fade_direction == "bottom"
-                  ? fade_direction == "top"
-                    ? -fade_offset
-                    : fade_offset
-                  : 0,
-              x:
-                fade_direction == "left" || fade_direction == "right"
-                  ? fade_direction == "left"
-                    ? -fade_offset
-                    : fade_offset
-                  : 0,
-              opacity: 0,
-              ease: ease_value,
-              duration: duration_value,
-              delay: delay_value,
-              scrollTrigger:
-                onscroll_value == 1
-                  ? {
-                      trigger: item,
-                      start: "top 85%",
-                    }
-                  : "",
-            });
-          } catch (e) {
-            console.log(e);
-          }
-        });
-        return () => tHero.revert();
-      }
+  const applyAnimation = (el) => {
+    if (history.includes(el)) return;
+
+    history.push(el);
+    const params = {
+      fadeDirection: getAttributeOrDefault(el, "data-fade-from", DEFAULTS.fadeDirection),
+      onscrollValue: getAttributeOrDefault(el, "data-on-scroll", DEFAULTS.onscrollValue),
+      durationValue: getAttributeOrDefault(el, "data-duration", DEFAULTS.durationValue),
+      fadeOffset: getAttributeOrDefault(el, "data-fade-offset", DEFAULTS.fadeOffset),
+      delayValue: getAttributeOrDefault(el, "data-delay", DEFAULTS.delayValue),
+      easeValue: getAttributeOrDefault(el, "data-ease", DEFAULTS.easeValue)
     };
 
-    if (typeof window !== "undefined") {
-      if (item.children) {
-        let children = Object.values(item.children).filter((el) =>
-          el.className.includes("has_fade_anim")
-        );
-        if (children && children.length) {
-          for (let j = 0; j < children.length; j++) {
-            fade_direction = children[j].getAttribute("data-fade-from")
-              ? children[j].getAttribute("data-fade-from")
-              : fade_direction;
+    animateElement(el, params);
+  };
 
-            onscroll_value = children[j].getAttribute("data-on-scroll")
-              ? children[j].getAttribute("data-on-scroll")
-              : onscroll_value;
+  if (item.children) {
+    const children = Array.from(item.children).filter(el =>
+      el.className.includes("has_fade_anim")
+    );
 
-            duration_value = children[j].getAttribute("data-duration")
-              ? children[j].getAttribute("data-duration")
-              : duration_value;
-
-            fade_offset = children[j].getAttribute("data-fade-offset")
-              ? children[j].getAttribute("data-fade-offset")
-              : fade_offset;
-
-            delay_value = children[j].getAttribute("data-delay")
-              ? children[j].getAttribute("data-delay")
-              : delay_value;
-
-            ease_value = children[j].getAttribute("data-ease")
-              ? children[j].getAttribute("data-ease")
-              : ease_value;
-            gsapFunction(children[j]);
-          }
-        } else {
-          fade_direction = item.getAttribute("data-fade-from")
-            ? item.getAttribute("data-fade-from")
-            : fade_direction;
-
-          onscroll_value = item.getAttribute("data-on-scroll")
-            ? item.getAttribute("data-on-scroll")
-            : onscroll_value;
-
-          duration_value = item.getAttribute("data-duration")
-            ? item.getAttribute("data-duration")
-            : duration_value;
-
-          fade_offset = item.getAttribute("data-fade-offset")
-            ? item.getAttribute("data-fade-offset")
-            : fade_offset;
-
-          delay_value = item.getAttribute("data-delay")
-            ? item.getAttribute("data-delay")
-            : delay_value;
-
-          ease_value = item.getAttribute("data-ease")
-            ? item.getAttribute("data-ease")
-            : ease_value;
-          gsapFunction(item);
-        }
-      }
+    if (children.length) {
+      children.forEach(child => applyAnimation(child));
+    } else {
+      applyAnimation(item);
     }
+  } else {
+    applyAnimation(item);
   }
 }

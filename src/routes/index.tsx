@@ -18,6 +18,12 @@ export default component$(() => {
 	const currentIndexSig3 = useSignal<number>(0);
 
 	const fadeAnim1 = useSignal<any>("");
+	const fadeAnim2 = useSignal<any>("");
+	const fadeAnim3 = useSignal<any>("");
+	const fadeAnim4 = useSignal<any>("");
+	const fadeAnim5 = useSignal<any>("");
+	const fadeAnim6 = useSignal<any>("");
+	const fadeAnim7 = useSignal<any>("");
 
 	const slideImageMetadata = [
 		{
@@ -105,6 +111,12 @@ export default component$(() => {
 
 	useVisibleTask$(() => {
 		hasFadeAnim(fadeAnim1.value);
+		hasFadeAnim(fadeAnim2.value);
+		hasFadeAnim(fadeAnim3.value);
+		hasFadeAnim(fadeAnim4.value);
+		hasFadeAnim(fadeAnim5.value);
+		hasFadeAnim(fadeAnim6.value);
+		hasFadeAnim(fadeAnim7.value);
 	})
 
 	return (
@@ -134,28 +146,42 @@ export default component$(() => {
 												Engineer</div>
 										</h2>
 									</div>
-									<div data-fade-from="top" data-delay="1" data-ease="bounce"
+									<div
+										data-fade-from="top"
+										data-delay="1"
+										data-ease="bounce"
+										ref={fadeAnim2}
 										style="opacity: 1; transform: translate(0px, 0px);">
-										<Link class="btn-hover-mask" data-text="View My Works" href="/portfolio">View My Works</Link></div>
+										<Link class="btn-hover-mask" data-text="View My Works" href="/portfolio">View My Works</Link>
+									</div>
 								</div>
 							</div>
 							<div class="col-md-6">
 								<div class="right">
 									<div class="text">
-										<div data-on-scroll="0" data-delay="1.2"
-											style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+										<div
+											data-on-scroll="0"
+											data-delay="1.2"
+											ref={fadeAnim3}
+										>
 											<img alt="Shape Image" width="37" height="37" decoding="async"
 												data-nimg="1" class="mb-30"
 												src={'../../assets/images/common/shape-9.png'}
 												style="color: transparent;" /></div>
-										<div class="cf-text" data-delay="1.2" style="opacity: 1; transform: translate(0px, 0px);">
+										<div
+											class="cf-text"
+											data-delay="1.2"
+											ref={fadeAnim7}
+										>
 											<p>A Freelance UI/UX Designer and Developer <span>based in Germany</span>. I strives to
 												build immersive and beautiful web applications through carefully crafted
 												user-centric design.</p>
 										</div>
 									</div>
-									<div class="experience" data-on-scroll="0" data-delay="2"
-										style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);">
+									<div
+										class="experience" data-on-scroll="0" data-delay="2" ref={fadeAnim4}
+										style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"
+									>
 										<div class="social-wrapper">
 											<h3 class="follow-me">Follow Me</h3>
 											<ul class="social">
@@ -209,13 +235,27 @@ export default component$(() => {
 								</div>
 							</div>
 						</div>
-						<div class="hero-shape" data-on-scroll="0" data-delay="2.5" data-fade-from="right" data-fade-offset="100"
+						<div
+							class="hero-shape"
+							data-on-scroll="0"
+							data-delay="2.5"
+							data-fade-from="right"
+							data-fade-offset="100"
+							ref={fadeAnim5}
 							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><img
 								alt="Shape Image" width="429" height="214" decoding="async" data-nimg="1"
 								src={'../../assets/images/common/shape-8.png'}
 								style="color: transparent;" /></div>
-						<div class="hero-img" data-on-scroll="0" data-delay=".7" data-fade-offset="80" data-duration="3"
-							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><ImgPhotographyBlackerthandays001
+						<div
+							class="hero-img"
+							data-on-scroll="0"
+							data-delay=".7"
+							data-fade-offset="80"
+							data-duration="3"
+							ref={fadeAnim6}
+							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"
+						>
+							<ImgPhotographyBlackerthandays001
 								alt="Hero image" decoding="async" data-nimg="1"
 								class="jh-img"
 								style="color: transparent; height: auto;" /></div>
