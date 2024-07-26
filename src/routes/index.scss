@@ -88,7 +88,7 @@
 
 .pd-hero .right {
     position: absolute;
-    right: 0;
+    right: 100px;
     bottom: 0;
     height: auto;
     -webkit-margin-start: 0;
@@ -112,7 +112,7 @@
     // bottom: 0;
     // left: 0;
     width: 100%;
-    background: green;
+    // background: green;
     padding: 30px 70px;
     margin-bottom: 100px;
 }
@@ -135,4 +135,17 @@
     bottom: 0;
     inset-inline-start: 20px;
 
+}
+
+.hero-shape {
+    position: absolute;
+    bottom: 0;
+    inset-inline-start: 20px;
+
+}
+
+.social-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 }

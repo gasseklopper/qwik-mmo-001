@@ -1,8 +1,11 @@
-import { $, component$, useSignal, useStyles$ } from '@builder.io/qwik'
+
+import ImgPhotographyBlackerthandays001 from '~/media/assets/images/photography/blacker/photography_blackerthandays_001.jpg?jsx';
+import { $, component$, useSignal, useStyles$, useVisibleTask$ } from '@builder.io/qwik'
 import { Link, type DocumentHead } from '@builder.io/qwik-city'
 import Image from '~/components/__libary/01_Atoms/image/image'
 import styles from './index.scss?inline'
 import { Carousel } from '~/components/__libary/02_Molecules/carousel/component';
+import hasFadeAnim from '~/utils/hasFadeAnim';
 
 // import Section_hero_001 from '~/components/section_hero_001/section_hero_001'
 // import Section_hero_002 from '~/components/section_hero_002/section_hero_002'
@@ -13,6 +16,8 @@ export default component$(() => {
 	const currentIndexSig = useSignal<number>(0);
 	const currentIndexSig2 = useSignal<number>(0);
 	const currentIndexSig3 = useSignal<number>(0);
+
+	const fadeAnim1 = useSignal<any>("");
 
 	const slideImageMetadata = [
 		{
@@ -98,6 +103,10 @@ export default component$(() => {
 	];
 
 
+	useVisibleTask$(() => {
+		hasFadeAnim(fadeAnim1.value);
+	})
+
 	return (
 		<>
 			<section class="pd-hero" id="top">
@@ -107,7 +116,7 @@ export default component$(() => {
 							<div class="col-md-6">
 								<div class="left">
 									<div class="pb-20">
-										<h1 class="typed_title wc-color-white" style="opacity: 1; transform: translate(0px, 0px);">
+										<h1 class="typed_title wc-color-white" style="opacity: 1; transform: translate(0px, 0px);" ref={fadeAnim1}>
 											Hi 🖐 I’m <span id="typed_list"
 												style="clip: rect(0px, 0px, 0px, 0px); clip-path: inset(50%); height: 1px; overflow: hidden; position: absolute; white-space: nowrap; width: 1px;"><span>Michel</span><span>Designer</span></span><span
 													id="typed">Markus</span><span class="typed-cursor" aria-hidden="true">|</span></h1>
@@ -206,10 +215,9 @@ export default component$(() => {
 								src={'../../assets/images/common/shape-8.png'}
 								style="color: transparent;" /></div>
 						<div class="hero-img" data-on-scroll="0" data-delay=".7" data-fade-offset="80" data-duration="3"
-							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><img
+							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><ImgPhotographyBlackerthandays001
 								alt="Hero image" decoding="async" data-nimg="1"
 								class="jh-img"
-								src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 								style="color: transparent; height: auto;" /></div>
 					</div>
 				</div>
@@ -319,9 +327,11 @@ export default component$(() => {
 						</div>
 					</div>
 				</div>
+
 				<div class="column medium-6">
 					<div class="blog-item-row">
 						<div class="blog-item-row__headline">
+
 							<h1>
 								THERE ARE FEATURES
 							</h1>
@@ -362,6 +372,11 @@ export default component$(() => {
 					<h2>
 						THERE ARE FEATURES
 					</h2>
+					<div class="hero-shape" data-on-scroll="0" data-delay="2.5" data-fade-from="right" data-fade-offset="100"
+						style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"><img
+							alt="Shape Image" width="429" height="214" decoding="async" data-nimg="1"
+							src={'../../assets/images/common/shape-8.png'}
+							style="color: transparent;" /></div>
 				</div>
 				<div class="column medium-9">
 					<Image
