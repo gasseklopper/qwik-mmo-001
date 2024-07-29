@@ -2,7 +2,7 @@ import { component$, Slot, useStyles$, useSignal, useVisibleTask$, useContext, $
 import Footer from '~/components/footer/footer'
 import Header from '~/components/header/header'
 import styles from '~/index.scss?inline'
-import { AppContext, AppState, GlobalMenuStore, GlobalStore } from '~/globalContext'
+import { GlobalMenuStore, GlobalStore } from '~/globalContext'
 import { Settings } from '~/components/__libary/02_Molecules/settings/component'
 import { setPreference } from '~/components/theme-toggle/theme-toggle'
 import Button from '~/components/__libary/01_Atoms/button/button'
@@ -10,18 +10,11 @@ import { calcWinsize } from '~/utils/utils'
 import { Switcher } from '~/components/__libary/02_Molecules/switcher/switcher'
 // import { themeStorageKey } from '~/'
 
-export type CursorPreference = 'noAnimation' | 'animation'
-
 export default component$(() => {
 	useStyles$(styles)
 	// CONTEXT--
 	const globalMenuStore = useContext(GlobalMenuStore)
 	const globalState = useContext(GlobalStore)
-	const appState = useContext<AppState>(AppContext);
-	console.log('settings global', globalState.settings)
-	console.log('appContext layout', appState.layout)
-	console.log('appContext direction', appState.direction)
-	console.log('appContext stopScrollTop', appState.stopScrollTop)
 	// REFS--
 	const outputRef = useSignal<Element>()
 	const settingsRef = useSignal<Element>()

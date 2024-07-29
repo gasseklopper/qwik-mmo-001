@@ -14,7 +14,9 @@ export const MenuMain = component$(() => {
 
 	// Perfrorm navigation interaction
 	const showOverlay$ = $(() => {
+
 		globalMenuStore.showOverlay = true
+
 	})
 
 	const hideMenu$ = $(() => {

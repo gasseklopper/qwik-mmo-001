@@ -2,7 +2,7 @@ import {
 	component$,
 	useContext,
 } from '@builder.io/qwik'
-import { GlobalMenuStore } from '../../../../globalContext'
+import { GlobalMenuStore } from '~/globalContext'
 import { baseClassMainMenu } from '~/components/header/header'
 
 export const MenuOverlay = component$(() => {
@@ -14,6 +14,6 @@ export const MenuOverlay = component$(() => {
 				globalMenuStore.showOverlay ? 'visible' : '',
 				{ objectSyntax: true },
 			]}
-		></div>
+		/>
 	)
 })

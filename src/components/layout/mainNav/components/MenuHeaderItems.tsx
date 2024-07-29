@@ -2,8 +2,8 @@ import { component$, useContext, useStore } from '@builder.io/qwik'
 import { GlobalMenuStore } from '../../../../globalContext'
 import { Link, useLocation } from '@builder.io/qwik-city'
 import type { MenuDataItem } from '../menuTypes'
-import menuDataJson from '../data/menuItems.json'
 import { baseClassMainMenu } from '~/components/header/header'
+import headerMenu from "~/config/navigation.json";
 
 export const MenuHeaderItems = component$(() => {
 	const { url } = useLocation()
@@ -17,16 +17,16 @@ export const MenuHeaderItems = component$(() => {
 
 	return (
 		<nav class={`${baseClassMainMenu}__items`}>
-			{menuDataJson.length && (
+			{headerMenu.header.length && (
 				<>
-					{menuDataJson.map((item: MenuDataItem) => (
+					{headerMenu.header.map((item: MenuDataItem) => (
 						<>
 							<Link key={item.id} href={item.href}
 								class={{
 									header__item: true,
 									visible: globalMenuStore.showMenu,
 									active: url.pathname.startsWith(item.href),
-									hover: store.activeItemCard == item.id && globalMenuStore.showMenu,
+									hover: store.activeItemCard === item.id && globalMenuStore.showMenu,
 								}}
 								aria-label={item.label}
 								data-header-menu-id={item.id}
