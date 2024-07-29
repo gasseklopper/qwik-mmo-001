@@ -6,6 +6,9 @@ import Image from '~/components/__libary/01_Atoms/image/image'
 import styles from './index.scss?inline'
 import { Carousel } from '~/components/__libary/02_Molecules/carousel/component';
 import hasFadeAnim from '~/utils/hasFadeAnim';
+import hasFadeAnim2 from '~/utils/hasFadeAnim2';
+import imgAnimReveal from '~/utils/imgAnimReveal';
+
 
 // import Section_hero_001 from '~/components/section_hero_001/section_hero_001'
 // import Section_hero_002 from '~/components/section_hero_002/section_hero_002'
@@ -24,6 +27,8 @@ export default component$(() => {
 	const fadeAnim5 = useSignal<any>("");
 	const fadeAnim6 = useSignal<any>("");
 	const fadeAnim7 = useSignal<any>("");
+	const imgAnim = useSignal<any>("");
+	const fadeAnimSecondary = useSignal<any>("");
 
 	const slideImageMetadata = [
 		{
@@ -117,10 +122,12 @@ export default component$(() => {
 		hasFadeAnim(fadeAnim5.value);
 		hasFadeAnim(fadeAnim6.value);
 		hasFadeAnim(fadeAnim7.value);
+		imgAnimReveal(imgAnim.value);
+		hasFadeAnim2(fadeAnimSecondary.value);
 	})
 
 	return (
-		<>
+		<> 
 			<section class="pd-hero" id="top">
 				<div class="area">
 					<div class="container g-0 line">
@@ -247,29 +254,35 @@ export default component$(() => {
 								src={'../../assets/images/common/shape-8.png'}
 								style="color: transparent;" /></div>
 						<div
-							class="hero-img"
-							data-on-scroll="0"
-							data-delay=".7"
-							data-fade-offset="80"
-							data-duration="3"
-							ref={fadeAnim6}
-							style="translate: none; rotate: none; scale: none; opacity: 1; transform: translate(0px, 0px);"
+							class="img_anim_reveal" ref={imgAnim}
 						>
 							<ImgPhotographyBlackerthandays001
-								alt="Hero image" decoding="async" data-nimg="1"
-								class="jh-img"
-								style="color: transparent; height: auto;" /></div>
+							   style={{ height: "auto" }}
+							   class="jh-img"
+							   alt="about-thumb"></ImgPhotographyBlackerthandays001>
+						</div>
 					</div>
 				</div>
 			</section>
-			<div class="row">
-				<div class="column medium-2">
+			<div class="row" ref={fadeAnimSecondary}>
+				<div class="column medium-2"  >
 					<Image
 						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 						height={104}
 						width={185}
 						alt='test'
 					/>
+				</div>
+				<div class="column medium-2"  >
+					<Image
+						src={'../../assets/images/photography/black/Black_001-min.jpg'}
+						height={104}
+						width={185}
+						alt='test3'
+					/>
+				</div>
+				<div class="column medium-4"><h2>Product</h2><h2></h2></div>
+				<div class="column medium-2">
 					<Image
 						src={'../../assets/images/photography/black/Black_001-min.jpg'}
 						height={104}
@@ -279,31 +292,19 @@ export default component$(() => {
 				</div>
 				<div class="column medium-2">
 					<Image
-						src={'../../assets/images/photography/black/Black_001-min.jpg'}
-						height={104}
-						width={185}
-						alt='test3'
-					/>
-					<Image
 						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 						height={104}
 						width={185}
 						alt='test'
 					/>
 				</div>
-				<div class="column medium-4"><h2>Product</h2><h2>Engineer</h2></div>
+
 				<div class="column medium-2">
 					<Image
 						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 						height={104}
 						width={185}
 						alt='test'
-					/>
-					<Image
-						src={'../../assets/images/photography/black/Black_001-min.jpg'}
-						height={104}
-						width={185}
-						alt='test3'
 					/>
 				</div>
 				<div class="column medium-2">
@@ -313,6 +314,17 @@ export default component$(() => {
 						width={185}
 						alt='test3'
 					/>
+				</div>
+				<div class="column medium-4"><h2></h2><h2>Engineer</h2></div>
+				<div class="column medium-2">
+					<Image
+						src={'../../assets/images/photography/black/Black_001-min.jpg'}
+						height={104}
+						width={185}
+						alt='test3'
+					/>
+				</div>
+				<div class="column medium-2">
 					<Image
 						src={'../../assets/images/photography/blacker/photography_blackerthandays_016-min.jpg'}
 						height={104}

@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "author": "Markus Morley",
+    "image": "",
+    "description": "Markus Morley personal portfolio website"
+  },
+  "site_info": {
+    "title": "Markus Morley personal portfolio",
+    "description": "",
+    "base_url": "",
+    "favicon": "/assets/images/logo/favicon.png",
+    "logo": "",
+    "logo_dark": "",
+    "logo_width": "",
+    "logo_height": "",
+    "logo2": "",
+    "logo_dark2": "",
+    "logo_width2": "",
+    "logo_height2": "",
+    "logo_text": "Markus Morley"
+  },
+  "footer_info": {
+    "floating_shape": "",
+    "address": {
+      "name": "",
+      "link": "",
+      "iframe_src": ""
+    },
+    "promo": {
+      "bodytext": "Made with ♡ by Markus Morley",
+      "link": "https://maps.app.goo.gl/JNHvEqWiaBD6fZvUA"
+    },
+    "email": "",
+    "mobile": "",
+    "open_date": "",
+    "open_time": "",
+    "copyright": {
+      "enable": true,
+      "label": "© Alrights reserved by",
+      "company": "",
+      "link": ""
+    },
+    "subscription": {
+      "enable": true,
+      "title": "",
+      "sub_title": "",
+      "input_placeholder": "Enter your email",
+      "submit_button": {
+        "enable": true,
+        "image": "",
+        "image_dark": ""
+      }
+    }
+  },
+  "social": [
+    {
+      "name": "Instagram",
+      "link": "https://www.instagram.com/yelrom_/"
+    },
+    {
+      "name": "Behance",
+      "link": "https://www.behance.net/markusmorley"
+    },
+    {
+      "name": "Github",
+      "link": "https://github.com/gasseklopper"
+    }
+  ]
+}

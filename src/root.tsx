@@ -20,6 +20,8 @@ import { GlobalStore } from './globalContext'
 import OverlayContainer from './components/__libary/01_Atoms/overlayContainer/overlayContainer'
 import Cursor from './components/__libary/01_Atoms/cursor/cursor'
 import ScrollTop from './components/__libary/01_Atoms/scrollTop/scrollTop'
+import siteConfig from "./config/siteConfig.json";
+
 
 export const UserSessionContext = createContextId<any>('user-session')
 
@@ -108,9 +110,11 @@ export default component$(() => {
 				<meta
 					charSet="utf-8"
 					name="description"
-					content="Halten Sie bei Ihren Meta Descriptions die Länge von 140 bis 160 Zeichen ein, damit Google sie vollständig anzeigt. Verwenden Sie auch Ihr Keyword!"
+					content={siteConfig.metadata.description}
 				/>
 				<meta name="robots" content="index" />
+				<meta name="author" content={siteConfig.metadata.author}/>
+				<meta property="og:image" content={siteConfig.metadata.image} />
 				<link rel="manifest" href="/manifest.json" />
 				<link rel="preconnect" href="https://fonts.gstatic.com"></link>
 				<link
@@ -127,7 +131,7 @@ export default component$(() => {
 			<body>
 				<Cursor />
 				<ScrollTop />
-				<OverlayContainer/>
+				<OverlayContainer />
 				<RouterOutlet />
 				<ServiceWorkerRegister />
 			</body>

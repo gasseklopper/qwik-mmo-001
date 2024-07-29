@@ -1,6 +1,7 @@
 import { component$ } from '@builder.io/qwik'
 import { useDocumentHead, useLocation } from '@builder.io/qwik-city'
 import { ReduceMotionScript, ThemeScript } from './theme-script'
+import siteConfig from "../../config/siteConfig.json";
 
 /**
  * The RouterHead component is placed inside of the document `<head>` element.
@@ -18,7 +19,7 @@ export const RouterHead = component$(() => {
 				name="viewport"
 				content="width=device-width, initial-scale=1.0"
 			/>
-			<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+			<link rel="shortcut icon" href={siteConfig.site_info.favicon} />
 
 			<link rel="preconnect" href="https://fonts.googleapis.com" />
 			<link
