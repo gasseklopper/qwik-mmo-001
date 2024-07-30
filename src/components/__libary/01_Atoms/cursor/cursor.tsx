@@ -34,7 +34,7 @@ export default component$(
 		const cursorRef = useSignal<HTMLDivElement>()
 		const circleInnerRef = useSignal<SVGElement>()
 
-
+		// eslint-disable-next-line qwik/no-use-visible-task
 		useVisibleTask$(() => {
 			let mouse = { x: 0, y: 0 };
 

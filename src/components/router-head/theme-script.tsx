@@ -12,6 +12,16 @@ export const ThemeScript = () => {
 	return <script dangerouslySetInnerHTML={themeScript} />
 }
 
+export const CursorAnimationScript = () => {
+	const Script = `
+        document.firstElementChild
+            .setAttribute('data-cursor',
+                localStorage.getItem('${cursorAnimationKey}') ??
+                (window.matchMedia('(prefers-color-scheme: reduce)').matches ? 'false' : 'true')
+            )`
+	return <script dangerouslySetInnerHTML={Script} />
+}
+
 export const ReduceMotionScript = () => {
 	const reduceMotion = `
         document.firstElementChild

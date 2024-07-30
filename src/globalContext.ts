@@ -1,5 +1,5 @@
 import { createContextId } from '@builder.io/qwik'
-import type { ThemePreference } from './components/theme-toggle/theme-toggle'
+import { ThemePreference } from './utils/settingsHandler'
 
  // Gloabl Types (design system?)
  export type Size = 'large' | 'default' | 'small' | undefined
@@ -22,7 +22,7 @@ export interface MenuStore {
 }
 
 export interface AppState {
-	mode: string;
+	mode: string | 'no-preference';
 	direction: boolean;
 	layout: string;
 	overlay: string;

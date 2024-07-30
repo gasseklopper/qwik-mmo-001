@@ -4,10 +4,10 @@ import Header from '~/components/header/header'
 import styles from '~/index.scss?inline'
 import { GlobalMenuStore, GlobalStore } from '~/globalContext'
 import { Settings } from '~/components/__libary/02_Molecules/settings/component'
-import { setPreference } from '~/components/theme-toggle/theme-toggle'
 import Button from '~/components/__libary/01_Atoms/button/button'
 import { calcWinsize } from '~/utils/utils'
 import { Switcher } from '~/components/__libary/02_Molecules/switcher/switcher'
+import { colorSchemeChangeListener, getColorPreference, setPreference } from '~/utils/settingsHandler'
 // import { themeStorageKey } from '~/'
 
 export default component$(() => {
@@ -63,6 +63,15 @@ export default component$(() => {
 		globalState.settings = globalState.isSettingsOpen
 	})
 
+	// eslint-disable-next-line qwik/no-use-visible-task
+	useVisibleTask$(() => {
+		globalState.theme = getColorPreference()
+		return colorSchemeChangeListener((isDark) => {
+			globalState.theme = isDark ? 'dark' : 'miami'
+			setPreference(globalState.theme)
+		})
+	})
+
 	// const transitionDuration = '300ms';
 
 	const onClick$ = $(() => {
@@ -112,7 +121,8 @@ export default component$(() => {
 			handleOnClick();
 		}
 	});
-
+	
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		document.addEventListener('mousedown', handleClickOutside);
 		return () => {

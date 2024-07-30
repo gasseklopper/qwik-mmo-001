@@ -15,8 +15,7 @@ import { RouterHead } from './components/router-head/router-head'
 import './global.css'
 import { supabase } from './utils/supabase'
 import type { AppState, SiteStore } from './globalContext'
-import { AppContext, GlobalMenuStore } from './globalContext'
-import { GlobalStore } from './globalContext'
+import { AppContext, GlobalMenuStore, GlobalStore } from './globalContext'
 import OverlayContainer from './components/__libary/01_Atoms/overlayContainer/overlayContainer'
 import Cursor from './components/__libary/01_Atoms/cursor/cursor'
 import ScrollTop from './components/__libary/01_Atoms/scrollTop/scrollTop'
@@ -53,6 +52,9 @@ export default component$(() => {
 	})
 
 	const appState = useStore<AppState>(initialAppState);
+	
+
+
 
 	// auth change listener
 	// eslint-disable-next-line qwik/no-use-visible-task
@@ -113,7 +115,7 @@ export default component$(() => {
 					content={siteConfig.metadata.description}
 				/>
 				<meta name="robots" content="index" />
-				<meta name="author" content={siteConfig.metadata.author}/>
+				<meta name="author" content={siteConfig.metadata.author} />
 				<meta property="og:image" content={siteConfig.metadata.image} />
 				<link rel="manifest" href="/manifest.json" />
 				<link rel="preconnect" href="https://fonts.gstatic.com"></link>

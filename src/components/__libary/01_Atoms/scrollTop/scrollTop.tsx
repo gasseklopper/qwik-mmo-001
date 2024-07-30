@@ -31,6 +31,7 @@ export default component$(
 		useStyles$(styles)
 		const topScroll = useSignal<HTMLDivElement>()
 
+		// eslint-disable-next-line qwik/no-use-visible-task
 		useVisibleTask$(() => {
 			if (typeof window !== "undefined") {
 				const scroll_top = topScroll.value;

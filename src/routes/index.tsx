@@ -113,7 +113,7 @@ export default component$(() => {
 		},
 	];
 
-
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		hasFadeAnim(fadeAnim1.value);
 		hasFadeAnim(fadeAnim2.value);
@@ -127,7 +127,7 @@ export default component$(() => {
 	})
 
 	return (
-		<> 
+		<>
 			<section class="pd-hero" id="top">
 				<div class="area">
 					<div class="container g-0 line">
@@ -257,9 +257,9 @@ export default component$(() => {
 							class="img_anim_reveal" ref={imgAnim}
 						>
 							<ImgPhotographyBlackerthandays001
-							   style={{ height: "auto" }}
-							   class="jh-img"
-							   alt="about-thumb"></ImgPhotographyBlackerthandays001>
+								style={{ height: "auto" }}
+								class="jh-img"
+								alt="about-thumb"></ImgPhotographyBlackerthandays001>
 						</div>
 					</div>
 				</div>
