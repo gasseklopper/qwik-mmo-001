@@ -14,6 +14,8 @@ import imgAnimReveal from '~/utils/imgAnimReveal';
 // import Section_hero_002 from '~/components/section_hero_002/section_hero_002'
 // import Section_intro from '~/components/section_intro/section_intro'
 
+
+// seperate concerns in extra files
 export default component$(() => {
 	useStyles$(styles);
 	const currentIndexSig = useSignal<number>(0);
