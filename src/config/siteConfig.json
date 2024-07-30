@@ -20,6 +20,7 @@
     "logo_text": "Markus Morley"
   },
   "footer_info": {
+    "isFixed": false,
     "floating_shape": "",
     "address": {
       "name": "",

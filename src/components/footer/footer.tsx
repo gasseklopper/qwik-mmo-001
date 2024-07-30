@@ -1,14 +1,14 @@
 import { component$, useStyles$ } from '@builder.io/qwik'
 import styles from './footer.scss?inline'
-import siteConfig from "../../config/siteConfig.json";
-import navigation from "../../config/navigation.json";
+import siteConfig from "~//config/siteConfig.json";
+import navigation from "~/config/navigation.json";
 import { Link } from '@builder.io/qwik-city';
 
 export default component$(() => {
 	useStyles$(styles)
 
 	return (
-		<footer>
+		<footer class={siteConfig.footer_info.isFixed ? 'fixed' : ''}>
 			<ul>
 				<>
 					{navigation.footer.map((item, index) => (

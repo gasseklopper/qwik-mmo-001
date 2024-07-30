@@ -4,10 +4,14 @@ footer {
 	padding: 16px 0;
 	text-align: center;
 	background-color: var(--surface1);
-	position: fixed;
 	z-index: 1000;
-	left: 0;
-	bottom: 0;
+
+
+	&.fixed {
+		position: fixed;
+		left: 0;
+		bottom: 0;
+	}
 
 	ul {
 		list-style: none;
@@ -19,7 +23,7 @@ footer {
 		display: inline-block;
 		padding: 6px 12px;
 	}
-	
+
 	a {
 		padding: 4px;
 	}
