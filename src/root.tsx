@@ -25,7 +25,7 @@ import siteConfig from "./config/siteConfig.json";
 export const UserSessionContext = createContextId<any>('user-session')
 
 const initialAppState: AppState = {
-	mode: "",
+	mode: "reduce",
 	direction: false,
 	layout: "",
 	overlay: "",

@@ -17,7 +17,7 @@ export const CursorAnimationScript = () => {
         document.firstElementChild
             .setAttribute('data-cursor',
                 localStorage.getItem('${cursorAnimationKey}') ??
-                (window.matchMedia('(prefers-color-scheme: reduce)').matches ? 'false' : 'true')
+                (window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'false' : 'true')
             )`
 	return <script dangerouslySetInnerHTML={Script} />
 }
@@ -26,7 +26,7 @@ export const ReduceMotionScript = () => {
 	const reduceMotion = `
         document.firstElementChild
             .setAttribute('cursor-animation',
-                localStorage.getItem('${cursorAnimationKey}') ??
+                localStorage.getItem('123') ??
                 (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'lights2')
             )`
 	return <script dangerouslySetInnerHTML={reduceMotion} />

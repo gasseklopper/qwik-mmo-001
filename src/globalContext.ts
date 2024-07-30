@@ -22,7 +22,7 @@ export interface MenuStore {
 }
 
 export interface AppState {
-	mode: string | 'no-preference';
+	mode: string | 'reduced';
 	direction: boolean;
 	layout: string;
 	overlay: string;

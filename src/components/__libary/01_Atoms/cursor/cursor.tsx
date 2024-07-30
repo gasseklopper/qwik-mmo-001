@@ -1,7 +1,7 @@
-import { useSignal, useVisibleTask$, type QRL, type QwikIntrinsicElements } from '@builder.io/qwik'
+import { useContext, useSignal, useVisibleTask$, type QRL, type QwikIntrinsicElements } from '@builder.io/qwik'
 import { component$, useStyles$ } from '@builder.io/qwik'
 import styles from './cursor.scss?inline'
-import { type Size, type Variant } from '~/globalContext'
+import { AppContext, type Size, type Variant } from '~/globalContext'
 import { gsap } from 'gsap'
 import { getMousePos } from '~/utils/utils'
 
@@ -33,7 +33,8 @@ export default component$(
 		useStyles$(styles)
 		const cursorRef = useSignal<HTMLDivElement>()
 		const circleInnerRef = useSignal<SVGElement>()
-
+		const appState = useContext(AppContext)
+		console.log('appState.mode1', appState.mode)
 		// eslint-disable-next-line qwik/no-use-visible-task
 		useVisibleTask$(() => {
 			let mouse = { x: 0, y: 0 };
@@ -70,7 +71,7 @@ export default component$(
 		// const componentFit = rest.buttonFit ? `${mainClass}--fit` : ''
 
 		return (
-			<div class="cursor" id='cursor-id' ref={cursorRef}>
+			<div class={appState.mode === 'reduce' ? "cursor" : ""} id='cursor-id' ref={cursorRef}>
 				<svg width="122" height="122" viewBox="0 0 124 124">
 					<circle class="cursor__inner" cx="61" cy="61" r="60" stroke="var(--text1)" stroke-width="2" ref={circleInnerRef} />
 				</svg>

@@ -66,7 +66,7 @@ export default component$(() => {
 							<p class="port_box__description">Painting with light</p>
 							<div class="port_box__image">
 								<Link href='/portfolio/blingbling'>
-									<ImgBling/>
+									<ImgBling />
 								</Link>
 							</div>
 						</div>
@@ -95,7 +95,7 @@ export default component$(() => {
 									<p class="port_box__description">s/w pictures</p>
 									<div class="port_box__image">
 										<Link href='/portfolio/labor'>
-											<ImgLabor/>
+											<ImgLabor />
 										</Link>
 									</div>
 								</div>

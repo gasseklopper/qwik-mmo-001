@@ -15,17 +15,7 @@ export default component$(() => {
 	useStyles$(styles)
 
 	const globalMenuStore = useContext(GlobalMenuStore)
-	// const globalAppStore = useContext(AppContext)
-
-
-	// useVisibleTask$(() => {
-	// 	globalAppStore.mode = getMotionPreference()
-	// 	return colorSchemeChangeListener((isDark) => {
-	// 		globalStore.theme = isDark ? 'dark' : 'miami'
-	// 		setPreference(globalStore.theme)
-	// 	})
-	// })
-
+	
 	return (
 		<div class="navigation">
 			<header

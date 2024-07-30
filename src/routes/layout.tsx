@@ -2,12 +2,12 @@ import { component$, Slot, useStyles$, useSignal, useVisibleTask$, useContext, $
 import Footer from '~/components/footer/footer'
 import Header from '~/components/header/header'
 import styles from '~/index.scss?inline'
-import { GlobalMenuStore, GlobalStore } from '~/globalContext'
+import { AppContext, GlobalMenuStore, GlobalStore } from '~/globalContext'
 import { Settings } from '~/components/__libary/02_Molecules/settings/component'
 import Button from '~/components/__libary/01_Atoms/button/button'
 import { calcWinsize } from '~/utils/utils'
 import { Switcher } from '~/components/__libary/02_Molecules/switcher/switcher'
-import { colorSchemeChangeListener, getColorPreference, setPreference } from '~/utils/settingsHandler'
+import { colorSchemeChangeListener, getColorPreference, getCursorPreference, setCursorPreference, setPreference } from '~/utils/settingsHandler'
 // import { themeStorageKey } from '~/'
 
 export default component$(() => {
@@ -15,6 +15,7 @@ export default component$(() => {
 	// CONTEXT--
 	const globalMenuStore = useContext(GlobalMenuStore)
 	const globalState = useContext(GlobalStore)
+	const appState = useContext(AppContext)
 	// REFS--
 	const outputRef = useSignal<Element>()
 	const settingsRef = useSignal<Element>()
@@ -71,12 +72,28 @@ export default component$(() => {
 			setPreference(globalState.theme)
 		})
 	})
+	
+	// eslint-disable-next-line qwik/no-use-visible-task
+	useVisibleTask$(() => {
+		appState.mode = getCursorPreference()
+		console.log('appState.mode',appState.mode)
+		// return colorSchemeChangeListener((isDark) => {
+		// 	globalState.theme = isDark ? 'dark' : 'miami'
+		// 	setPreference(globalState.theme)
+		// })
+	})
 
 	// const transitionDuration = '300ms';
 
 	const onClick$ = $(() => {
 		globalState.theme = globalState.theme === 'miami' ? 'dark' : 'miami'
 		setPreference(globalState.theme)
+	})
+
+	const onClickCursorPreference$ = $(() => {
+		// globalState.theme = globalState.theme === 'miami' ? 'dark' : 'miami'
+		appState.mode = appState.mode === 'reduce' ? 'no-preference' : 'reduce'
+		setCursorPreference(appState.mode)
 	})
 
 	// const onClickDirection$ = $(() => {
@@ -121,7 +138,7 @@ export default component$(() => {
 			handleOnClick();
 		}
 	});
-	
+
 	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		document.addEventListener('mousedown', handleClickOutside);
@@ -159,6 +176,28 @@ export default component$(() => {
 							buttonSize="small"
 							onClick$={onClick$}
 						/>
+						<Button
+							buttonLabel={`Toggle cursor`}
+							buttonVariant="primary"
+							buttonSize="small"
+							onClick$={onClickCursorPreference$}
+						/>
+						<div class="switcher__btn cursor-type wc-col-2">
+							<Button
+								buttonLabel={`Toggle default`}
+								buttonVariant="primary"
+								buttonSize="small"
+								data-mode="yes"
+								onClick$={onClickCursorPreference$}
+							/>
+							<Button
+								buttonLabel={`Toggle animated`}
+								buttonVariant="primary"
+								buttonSize="small"
+								data-mode="no"
+								onClick$={onClickCursorPreference$}
+							/>
+						</div>
 						<Switcher {...staticProps} />
 					</Settings.Container>
 				</Settings.View>
