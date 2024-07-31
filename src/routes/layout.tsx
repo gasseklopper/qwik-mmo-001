@@ -72,15 +72,11 @@ export default component$(() => {
 			setPreference(globalState.theme)
 		})
 	})
-	
+
 	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		appState.mode = getCursorPreference()
-		console.log('appState.mode',appState.mode)
-		// return colorSchemeChangeListener((isDark) => {
-		// 	globalState.theme = isDark ? 'dark' : 'miami'
-		// 	setPreference(globalState.theme)
-		// })
+		console.log('appState.mode', appState.mode)
 	})
 
 	// const transitionDuration = '300ms';
