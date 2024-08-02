@@ -27,7 +27,7 @@ export const UserSessionContext = createContextId<any>('user-session')
 const initialAppState: AppState = {
 	mode: "reduce",
 	direction: false,
-	layout: "",
+	layout: "box",
 	overlay: "",
 	switcherDir: "right",
 	stopScrollTop: false,

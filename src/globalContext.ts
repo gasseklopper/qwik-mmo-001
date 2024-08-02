@@ -4,6 +4,7 @@ import { ThemePreference } from './utils/settingsHandler'
  // Gloabl Types (design system?)
  export type Size = 'large' | 'default' | 'small' | undefined
  export type Variant = 'primary' | 'secondary'
+ export type Layout = 'box' | 'fullwidth' | string
 
 export interface SiteStore {
 	isSettingsOpen: boolean
@@ -24,7 +25,7 @@ export interface MenuStore {
 export interface AppState {
 	mode: string | 'reduced';
 	direction: boolean;
-	layout: string;
+	layout: Layout;
 	overlay: string;
 	switcherDir: string;
 	stopScrollTop: boolean;

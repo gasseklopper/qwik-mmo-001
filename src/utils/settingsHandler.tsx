@@ -1,9 +1,10 @@
-import { cursorAnimationKey, motionPreferenceKey, themeStorageKey } from "~/components/router-head/theme-script";
+import { cursorAnimationKey, layoutKey, motionPreferenceKey, themeStorageKey } from "~/components/router-head/theme-script";
 
 // Define the types for theme and cursor preferences
 export type ThemePreference = 'dark' | 'miami' | 'light' | 'dim' | 'sim' | 'lights2';
 export type CursorPreference = 'reduce' | 'no-preference' | string;
 export type MotionPreference = 'reduce' | 'no-preference' | string;
+export type LayoutPreference = 'box' | 'fullwidth' | string;
 
 /**
  * Listens for changes in the color scheme preference (dark mode)
@@ -49,6 +50,16 @@ export const setCursorPreference = (preference: CursorPreference) => {
 };
 
 /**
+ * Sets the cursor animation preference in local storage and updates the HTML attribute to reflect the preference.
+ *
+ * @param preference - The selected cursor animation preference.
+ */
+export const setLayoutPreference = (preference: LayoutPreference) => {
+    localStorage.setItem(layoutKey, preference);
+    document.firstElementChild?.setAttribute('data-layout', preference);
+};
+
+/**
  * Retrieves the saved theme preference from local storage, or defaults to
  * the system's dark mode preference if no preference is saved.
  *
@@ -75,6 +86,21 @@ export const getCursorPreference = (): CursorPreference => {
         return savedPreference as CursorPreference;
     } else {
         return window.matchMedia('(prefers-reduced-motion: no-preference)').matches ? 'reduce' : 'reduce';
+    }
+};
+
+/**
+ * Retrieves the saved cursor animation preference from local storage, or defaults to
+ * 'reduce' if no preference is saved.
+ *
+ * @returns The current cursor animation preference.
+ */
+export const getLayoutPreference = (): LayoutPreference => {
+    const savedPreference = localStorage.getItem(layoutKey);
+    if (savedPreference) {
+        return savedPreference as CursorPreference;
+    } else {
+        return 'box';
     }
 };
 

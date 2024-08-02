@@ -2,66 +2,21 @@
 @use 'vars';
 @use 'mixins';
 
-// #main {
-// 	margin: 0 auto;
-// 	width: 100%;
-// 	max-width: vars.$reworkGrid__width;
-
-// 	&.container {
-// 		margin: 0 auto;
-// 		width: 100%;
-// 		max-width: 100%;
-// 	}
-
-// 	.container {
-// 		background-color: aqua;
-// 		margin: 0 auto;
-// 		width: 100%;
-// 		max-width: 100%;
-// 	}
-
-// 	&.container_full {
-// 		margin: 0 auto;
-// 		width: 100vw;
-// 	}
-// }
-
-#main {
-	&.container {
+[data-layout="box"] {
+	.container {
 		margin: 0 auto;
 		width: 100%;
-		max-width: 100%;
-		// max-width: vars.$reworkGrid__width;
-
-
-		.container {
-			margin: 0 auto;
-			width: 100%;
-			max-width: vars.$reworkGrid__width;
-			// max-width: 100%;
-
-		}
+		max-width: vars.$reworkGrid__width;
 	}
 }
 
-.header__main {
-	&.container {
+[data-layout="fullwidth"] {
+	.container {
 		margin: 0 auto;
 		width: 100%;
 		max-width: 100%;
-		// max-width: vars.$reworkGrid__width;
-
-
-		.container {
-			margin: 0 auto;
-			width: 100%;
-			max-width: vars.$reworkGrid__width;
-			// max-width: 100%;
-
-		}
 	}
 }
-
 
 .row {
 	display: flex;
