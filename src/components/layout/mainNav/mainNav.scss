@@ -5,10 +5,8 @@
 }
 
 .navigation {
-	background-color: aqua;
-
-	.container {
-		background-color: aquamarine;
+	.wrapper {
+		background-color: var(--surface1);
 	}
 
 	.header {
