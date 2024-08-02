@@ -10,14 +10,15 @@ import {
 
 export const MenuMain = component$(() => {
 	const globalMenuStore = useContext(GlobalMenuStore)
+	console.log(globalMenuStore)
 
 
 	// Perfrorm navigation interaction
-	const showOverlay$ = $(() => {
+	// const showOverlay$ = $(() => {
 
-		globalMenuStore.showOverlay = true
+	// 	globalMenuStore.showOverlay = true
 
-	})
+	// })
 
 	const hideMenu$ = $(() => {
 		globalMenuStore.showOverlay = false
@@ -31,11 +32,11 @@ export const MenuMain = component$(() => {
 	})
 
 	return (
-		<>
+		<div class="container">
 			{!globalMenuStore.showMobileMenu ? (
 				<div
 					class={`${baseClassMainMenu}__main`}
-					onMouseEnter$={showOverlay$}
+					// onMouseEnter$={showOverlay$}
 					onMouseLeave$={hideMenu$}
 				>
 					<div class="row">
@@ -82,6 +83,6 @@ export const MenuMain = component$(() => {
 					</div>
 				</div>
 			)}
-		</>
+		</div>
 	)
 })

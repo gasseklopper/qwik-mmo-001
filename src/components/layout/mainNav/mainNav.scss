@@ -5,6 +5,11 @@
 }
 
 .navigation {
+	background-color: aqua;
+
+	.container {
+		background-color: aquamarine;
+	}
 
 	.header {
 		$duration: 0.4s;
@@ -14,13 +19,13 @@
 		$burgerBarWidth: 38px;
 		$burgerBarMargin: 6px;
 		$headerLinksHeight: 40px;
-
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
 		z-index: 33;
 		background-color: var(--surface2);
+
 
 		&__top-bar {
 			display: flex;
@@ -48,7 +53,7 @@
 				grid-template-columns: 1em;
 			}
 
-			.form-control + .form-control {
+			.form-control+.form-control {
 				margin-right: 1em;
 			}
 
@@ -184,6 +189,7 @@
 		&__main {
 			position: relative;
 			background-color: var(--surface1);
+
 			&::before {
 				content: '';
 				position: absolute;
@@ -245,6 +251,7 @@
 			text-decoration: none;
 			opacity: 1;
 			transition: opacity $duration $timing;
+
 			@media (max-width: 1024px) {
 				font-size: 0.814em;
 			}
@@ -309,6 +316,7 @@
 			// @extend %button;
 
 			display: none;
+			// display: block;
 
 			@media (max-width: 720px) {
 				display: block;
@@ -371,29 +379,31 @@
 			// padding: $gutter;
 			padding: 19px;
 		}
+
 		// Menu ---------------------------------------------------- //
 
 		&__menu {
 			position: absolute;
-			top: 99%;
-			left: auto;
-			right: auto;
-			width: calc(100% - 29px);
-			padding: 24px 48px;
+			/* top: 99%; */
+			left: 50%;
+			/* right: auto; */
+			width: calc(70% - 29px);
+			/* padding: 24px 48px; */
 			pointer-events: none;
 			opacity: 0;
 			min-height: 70vh;
-			// max-height: 10vh;
-			transform: translateY(160px);
+			/* max-height: 10vh; */
+			transform: translate(-50%, 160px);
 			background-color: var(--surface3);
 			transition-property: opacity, transform;
 			transition-duration: $duration;
 			transition-timing-function: $timing;
 			overflow-y: scroll;
+
 			&.visible {
 				pointer-events: all;
 				opacity: 1;
-				transform: none;
+				transform: translateX(-50%);
 			}
 		}
 
@@ -420,6 +430,7 @@
 			line-height: 1.3;
 			text-decoration: none;
 			transition: transform $duration $timing;
+
 			&.active,
 			&:hover {
 				background-color: var(--surface1);

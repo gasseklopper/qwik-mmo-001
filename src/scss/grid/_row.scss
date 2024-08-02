@@ -44,6 +44,24 @@
 	}
 }
 
+.header__main {
+	&.container {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 100%;
+		// max-width: vars.$reworkGrid__width;
+
+
+		.container {
+			margin: 0 auto;
+			width: 100%;
+			max-width: vars.$reworkGrid__width;
+			// max-width: 100%;
+
+		}
+	}
+}
+
 
 .row {
 	display: flex;

@@ -15,25 +15,25 @@ export default component$(() => {
 	useStyles$(styles)
 
 	const globalMenuStore = useContext(GlobalMenuStore)
-	
+
 	return (
-		<div class="navigation">
-			<header
-				class={
-					globalMenuStore.showMobileMenu
-						? `${baseClassMobileMenu}`
-						: `${baseClassMainMenu}`
-				}
-			>
-				{!globalMenuStore.showMobileMenu && (
-					<>
-						<GlobalMenuStoreComponente />
-						<MenuOverlay />
-						<MenuTopBar />
-					</>
-				)}
-				<MenuMain />
-			</header>
+		<div class="navigation">			
+				<header
+					class={
+						globalMenuStore.showMobileMenu
+							? `${baseClassMobileMenu}`
+							: `${baseClassMainMenu}`
+					}
+				>
+					{!globalMenuStore.showMobileMenu && (
+						<>
+							<GlobalMenuStoreComponente />
+							<MenuOverlay />
+							<MenuTopBar />
+						</>
+					)}
+					<MenuMain />
+				</header>		
 		</div>
 	)
 })

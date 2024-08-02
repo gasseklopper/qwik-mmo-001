@@ -1,18 +1,23 @@
 /* Mobile Navigation Style */
 .global-menu {
 	width: 100vw;
-	height: 100vh;
+	height: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	position: fixed;
+	position: fixed; 
 	top: 0;
 	left: 0;
-	z-index: 10;
-	font-size: 3rem;
-	// background: var(--surface1);
+	z-index: 110;
+	font-size: 2.6rem;
+	background: var(--surface1);
 }
 
 .header-mobile {
-    background-color: aqua;
+    background-color: var(--surface1);
+
+	.header__items {
+		display: flex;
+		flex-direction: column;
+	}
 }

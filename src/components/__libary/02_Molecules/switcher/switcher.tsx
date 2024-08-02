@@ -42,11 +42,11 @@ export const Switcher = component$<SwitcherProps>(({ dispatch, switcherDir }) =>
                 });
             };
 
-            setupButtonHandlers('.mode-type button', 'active', (button: { getAttribute: (arg0: string) => any; }) => {
-                const mode = button.getAttribute('data-mode');
-                document.body.classList.toggle('light', mode === 'light');
-                dispatch({ type: 'setMode', value: mode === 'light' ? 'light' : '' });
-            });
+            // setupButtonHandlers('.mode-type button', 'active', (button: { getAttribute: (arg0: string) => any; }) => {
+            //     const mode = button.getAttribute('data-mode');
+            //     document.body.classList.toggle('light', mode === 'light');
+            //     dispatch({ type: 'setMode', value: mode === 'light' ? 'light' : '' });
+            // });
 
             setupButtonHandlers('.layout-type button', 'active', (button: { getAttribute: (arg0: string) => any; }) => {
                 const mode = button.getAttribute('data-mode');
