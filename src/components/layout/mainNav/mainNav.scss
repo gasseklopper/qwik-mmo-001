@@ -321,22 +321,22 @@
 			}
 		}
 
-		&__icon {
-			// @include burger($burgerBarWidth, $burgerBarHeight, $burgerBarMargin, var(--text1));
+		// &__icon {
+		// 	// @include burger($burgerBarWidth, $burgerBarHeight, $burgerBarMargin, var(--text1));
 
-			&.active {
-				// @include burger-to-cross();
-			}
-		}
+		// 	// &.active {
+		// 	// 	// @include burger-to-cross();
+		// 	// }
+		// }
 
 		&--opaque &__icon,
-		&--scrolled &__icon {
-			// @include burger($burgerBarWidth, $burgerBarHeight, $burgerBarMargin, color('primary'));
+		// &--scrolled &__icon {
+		// 	// @include burger($burgerBarWidth, $burgerBarHeight, $burgerBarMargin, color('primary'));
 
-			&.active {
-				// @include burger-to-cross();
-			}
-		}
+		// 	&.active {
+		// 		// @include burger-to-cross();
+		// 	}
+		// }
 
 		// Logo --------------------------------------------------- //
 
