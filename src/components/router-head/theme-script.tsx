@@ -3,6 +3,7 @@ export const cursorAnimationKey = 'theme-cursor-preference'
 export const layoutKey = 'theme-layout-preference'
 export const isSettingsOpenKey = 'theme-settings-preference'
 export const motionPreferenceKey = 'theme-motion-preference'
+export const layoutDirectionPreferenceKey = 'theme-layout-direction-preference'
 
 export const ThemeScript = () => {
     const themeScript = `
@@ -26,10 +27,19 @@ export const CursorAnimationScript = () => {
 
 export const LayoutScript = () => {
     const Script = `
-        document.firstElementChild
-            .setAttribute('data-layout',
-                localStorage.getItem('${layoutKey}') 
-            )`
+    document.firstElementChild
+        .setAttribute('data-layout',
+            localStorage.getItem('${layoutKey}') ?? 'box'
+        )`
+    return <script dangerouslySetInnerHTML={Script} />
+}
+
+export const LayoutDirectionScript = () => {
+    const Script = `
+    document.firstElementChild
+        .setAttribute('data-layout',
+            localStorage.getItem('${layoutDirectionPreferenceKey}') ?? 'ltr'
+        )`
     return <script dangerouslySetInnerHTML={Script} />
 }
 

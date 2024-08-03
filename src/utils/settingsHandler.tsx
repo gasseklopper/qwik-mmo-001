@@ -1,10 +1,11 @@
-import { cursorAnimationKey, layoutKey, motionPreferenceKey, themeStorageKey } from "~/components/router-head/theme-script";
+import { cursorAnimationKey, layoutDirectionPreferenceKey, layoutKey, motionPreferenceKey, themeStorageKey } from "~/components/router-head/theme-script";
 
 // Define the types for theme and cursor preferences
 export type ThemePreference = 'dark' | 'miami' | 'light' | 'dim' | 'sim' | 'lights2';
 export type CursorPreference = 'reduce' | 'no-preference' | string;
 export type MotionPreference = 'reduce' | 'no-preference' | string;
 export type LayoutPreference = 'box' | 'fullwidth' | string;
+export type LayoutDirectionPreference = 'ltr' | 'rtl' | string;
 
 /**
  * Listens for changes in the color scheme preference (dark mode)
@@ -57,6 +58,16 @@ export const setCursorPreference = (preference: CursorPreference) => {
 export const setLayoutPreference = (preference: LayoutPreference) => {
     localStorage.setItem(layoutKey, preference);
     document.firstElementChild?.setAttribute('data-layout', preference);
+};
+
+/**
+ * Sets the cursor animation preference in local storage and updates the HTML attribute to reflect the preference.
+ *
+ * @param preference - The selected cursor animation preference.
+ */
+export const setLayoutDirectionPreference = (preference: LayoutDirectionPreference) => {
+    localStorage.setItem(layoutDirectionPreferenceKey, preference);
+    document.firstElementChild?.setAttribute('data-layout-direction', preference);
 };
 
 /**

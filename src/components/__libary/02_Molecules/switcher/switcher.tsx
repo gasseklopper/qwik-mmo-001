@@ -1,6 +1,6 @@
-import { component$, useStore, useVisibleTask$, $, useSignal, PropFunction, useContext } from '@builder.io/qwik';
+import { component$, useVisibleTask$, useSignal, PropFunction, useContext } from '@builder.io/qwik';
 import { AppContext } from '~/globalContext';
-import Button from '../../01_Atoms/button/button';
+// import Button from '../../01_Atoms/button/button';
 
 // Define the prop types
 interface SwitcherProps {
@@ -12,17 +12,18 @@ interface SwitcherProps {
 }
 
 // export const Switcher = component$<SwitcherProps>(({ dispatch, cursor1, cursor2, switcherDir }) => {
-export const Switcher = component$<SwitcherProps>(({ dispatch, switcherDir }) => {
-    const state = useStore({
-        switcherOpen: false,
-        cursorStyle: 2
-    });
+// export const Switcher = component$<SwitcherProps>(({ dispatch, switcherDir }) => {
+export const Switcher = component$<SwitcherProps>(({ dispatch }) => {
+    // const state = useStore({
+    //     switcherOpen: false,
+    //     cursorStyle: 2
+    // });
     const globalState = useContext(AppContext)
     console.log('globalState sopScrollTop', globalState.stopScrollTop)
     const switcherIcon = useSignal<any>();
     const switcherItems = useSignal<any>();
-    const switcherOpen = useSignal<any>();
-    const switcherClose = useSignal<any>();
+    // const switcherOpen = useSignal<any>();
+    // const switcherClose = useSignal<any>();
     // const cursorStyle = useSignal<any>();
 
     // eslint-disable-next-line qwik/no-use-visible-task
@@ -89,21 +90,21 @@ export const Switcher = component$<SwitcherProps>(({ dispatch, switcherDir }) =>
         }
     });
 
-    const openSwitcher = $(() => {
-        state.switcherOpen = true;
-        switcherOpen.value.style.display = 'none';
-        switcherClose.value.style.display = 'flex';
-        switcherIcon.value.style[switcherDir] = '280px';
-        switcherItems.value.style[switcherDir] = '0';
-    });
+    // const openSwitcher = $(() => {
+    //     state.switcherOpen = true;
+    //     switcherOpen.value.style.display = 'none';
+    //     switcherClose.value.style.display = 'flex';
+    //     switcherIcon.value.style[switcherDir] = '280px';
+    //     switcherItems.value.style[switcherDir] = '0';
+    // });
 
-    const closeSwitcher = $(() => {
-        state.switcherOpen = false;
-        switcherClose.value.style.display = 'none';
-        switcherOpen.value.style.display = 'flex';
-        switcherIcon.value.style[switcherDir] = '0';
-        switcherItems.value.style[switcherDir] = '-280px';
-    });
+    // const closeSwitcher = $(() => {
+    //     state.switcherOpen = false;
+    //     switcherClose.value.style.display = 'none';
+    //     switcherOpen.value.style.display = 'flex';
+    //     switcherIcon.value.style[switcherDir] = '0';
+    //     switcherItems.value.style[switcherDir] = '-280px';
+    // });
 
     // const cursor = $(() => {
     //     const cursorVal = cursorStyle.value.value;
@@ -113,29 +114,8 @@ export const Switcher = component$<SwitcherProps>(({ dispatch, switcherDir }) =>
 
     return (
         <>
-            <div class="switcher__area">
-                <div class={`switcher__icon ${switcherDir === "left" ? "switcher_left" : ""}`} ref={switcherIcon}>
-                    <button id="switcher_open" ref={switcherOpen} onClick$={openSwitcher}>fagear</button>
-                    <button id="switcher_close" ref={switcherClose} onClick$={closeSwitcher}>faxmark</button>
-                </div>
-                <div class={`switcher__items ${switcherDir === "left" ? "switcher_left" : ""}`} ref={switcherItems}>
-                    <div class="switcher__item">
-                        <div class="switch__title-wrap"><h2 class="switcher__title text-white">Cursor</h2></div>
-                        <div class="switcher__btn cursor-type wc-col-2">
-                            <Button
-                                buttonLabel={`Toggle default`}
-                                buttonVariant="primary"
-                                buttonSize="small"
-                                data-mode="yes"
-                            />
-                            <Button
-                                buttonLabel={`Toggle animated`}
-                                buttonVariant="primary"
-                                buttonSize="small"
-                                data-mode="no"
-                            />
-                        </div>
-                    </div>
+            {/* <div class="switcher__area">
+                <div class={`switcher__items ${switcherDir === "left" ? "switcher_left" : ""}`} ref={switcherItems}>   
                     <div class="switcher__item">
                         <div class="switch__title-wrap"><h2 class="switcher__title text-white">Direction</h2></div>
                         <div class="switcher__btn direction-type wc-col-2">
@@ -189,7 +169,7 @@ export const Switcher = component$<SwitcherProps>(({ dispatch, switcherDir }) =>
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </>
     );
 });

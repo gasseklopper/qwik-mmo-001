@@ -18,6 +18,34 @@
 	}
 }
 
+[data-layout-direction="rtl"] {
+	.row {
+		// flex-direction: row-reverse;
+	}
+
+	.column {
+		// text-align: end;
+	}
+
+	body {
+		direction: rtl;
+	}
+}
+
+[data-layout-direction="ltr"] {
+	.row {
+		// flex-direction: row-reverse;
+	}
+
+	.column {
+		// text-align: end;
+	}
+
+	body {
+		direction: ltr;
+	}
+}
+
 .row {
 	display: flex;
 	flex-direction: row;
@@ -69,13 +97,13 @@
 }
 
 
-// RTL Adjustemnts on grid system Default LTR
-.dir-rtl {
-	.row {
-		flex-direction: row-reverse;
-	}
+// // RTL Adjustemnts on grid system Default LTR
+// .dir-rtl {
+// 	.row {
+// 		flex-direction: row-reverse;
+// 	}
 
-	.column {
-		text-align: end;
-	}
-}
+// 	.column {
+// 		text-align: end;
+// 	}
+// }

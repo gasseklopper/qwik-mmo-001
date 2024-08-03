@@ -2,13 +2,14 @@
     position: fixed;
     opacity: .4;
     width: 120px;
-    top: 0;
-    left: 0;
+    // top: 0;
+    // left: 0;
     height: 120px;
     z-index: 1000;
     pointer-events: none;
 
     &.cursor {
+        opacity: 0;
         display: none;
     }
 

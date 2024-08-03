@@ -6,8 +6,8 @@ import { AppContext, GlobalMenuStore, GlobalStore } from '~/globalContext'
 import { Settings } from '~/components/__libary/02_Molecules/settings/component'
 import Button from '~/components/__libary/01_Atoms/button/button'
 import { calcWinsize } from '~/utils/utils'
-import { Switcher } from '~/components/__libary/02_Molecules/switcher/switcher'
-import { colorSchemeChangeListener, getColorPreference, getCursorPreference, getLayoutPreference, setCursorPreference, setLayoutPreference, setPreference } from '~/utils/settingsHandler'
+// import { Switcher } from '~/components/__libary/02_Molecules/switcher/switcher'
+import { colorSchemeChangeListener, getColorPreference, getCursorPreference, getLayoutPreference, setCursorPreference, setLayoutDirectionPreference, setLayoutPreference, setPreference } from '~/utils/settingsHandler'
 // import { themeStorageKey } from '~/'
 
 export default component$(() => {
@@ -103,6 +103,11 @@ export default component$(() => {
 		setLayoutPreference(appState.layout)
 	})
 
+	const onClickLayoutDirectionPreference$ = $(() => {
+		appState.direction = appState.direction === 'ltr' ? 'rtl' : 'ltr'
+		setLayoutDirectionPreference(appState.direction)
+	})
+
 	// const onClickDirection$ = $(() => {
 	// 	appState.direction = !appState.direction
 	// 	// setPreference(globalState.theme)
@@ -129,15 +134,15 @@ export default component$(() => {
 	// 	localStorage.setItem('prefers-reduced-motion', 'reduce')
 	// })
 
-	const staticProps = {
-		dispatch: $((action: any) => {
-			console.log('Dispatch action:', action);
-		}),
-		cursor1: { value: null },
-		cursor2: { value: null },
-		switcherDir: 'left',
-		overlayType: "false"
-	};
+	// const staticProps = {
+	// 	dispatch: $((action: any) => {
+	// 		console.log('Dispatch action:', action);
+	// 	}),
+	// 	cursor1: { value: null },
+	// 	cursor2: { value: null },
+	// 	switcherDir: 'left',
+	// 	overlayType: "false"
+	// };
 
 	const handleClickOutside = $((event: any) => {
 		if (settingsRef.value && !settingsRef.value.contains(event.target) && globalState.isSettingsOpen &&
@@ -198,7 +203,14 @@ export default component$(() => {
 							buttonSize="small"
 							onClick$={onClickLayoutPreference$}
 						/>
-						<Switcher {...staticProps} />
+						<h3>Toggle Layout Direction</h3>
+						<Button
+							buttonLabel={`Toggle Layout Direction`}
+							buttonVariant="primary"
+							buttonSize="small"
+							onClick$={onClickLayoutDirectionPreference$}
+						/>
+						{/* <Switcher {...staticProps} /> */}
 					</Settings.Container>
 				</Settings.View>
 			</Settings.Root>
