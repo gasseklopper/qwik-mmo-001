@@ -28,7 +28,7 @@ const initialAppState: AppState = {
 	mode: "reduce",
 	direction: "ltr",
 	layout: "box",
-	overlay: "",
+	overlay: "off",
 	switcherDir: "right",
 	stopScrollTop: false,
 };

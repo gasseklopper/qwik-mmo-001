@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik'
 import { useDocumentHead, useLocation } from '@builder.io/qwik-city'
-import { CursorAnimationScript, LayoutScript, ReduceMotionScript, ThemeScript } from './theme-script'
+import { CursorAnimationScript, LayoutScript, OverlayScript, ReduceMotionScript, ThemeScript } from './theme-script'
 import siteConfig from "../../config/siteConfig.json";
 
 /**
@@ -50,6 +50,7 @@ export const RouterHead = component$(() => {
 
 			<ThemeScript />
 			<LayoutScript />
+			<OverlayScript />
 			<CursorAnimationScript />
 			<ReduceMotionScript />
 			{/* <IsOpenSettingsScript /> */}

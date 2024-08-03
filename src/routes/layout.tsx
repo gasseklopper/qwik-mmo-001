@@ -7,7 +7,7 @@ import { Settings } from '~/components/__libary/02_Molecules/settings/component'
 import Button from '~/components/__libary/01_Atoms/button/button'
 import { calcWinsize } from '~/utils/utils'
 // import { Switcher } from '~/components/__libary/02_Molecules/switcher/switcher'
-import { colorSchemeChangeListener, getColorPreference, getCursorPreference, getLayoutPreference, setCursorPreference, setLayoutDirectionPreference, setLayoutPreference, setPreference } from '~/utils/settingsHandler'
+import { colorSchemeChangeListener, getColorPreference, getCursorPreference, getLayoutPreference, getOverlayPreference, setCursorPreference, setLayoutDirectionPreference, setLayoutPreference, setOverlayPreference, setPreference } from '~/utils/settingsHandler'
 // import { themeStorageKey } from '~/'
 
 export default component$(() => {
@@ -85,6 +85,12 @@ export default component$(() => {
 		console.log('appState.layout', appState.layout)
 	})
 
+	// eslint-disable-next-line qwik/no-use-visible-task
+	useVisibleTask$(() => {
+		appState.overlay = getOverlayPreference()
+		console.log('appState.overlay', appState.overlay)
+	})
+
 	// const transitionDuration = '300ms';
 
 	const onClick$ = $(() => {
@@ -106,6 +112,14 @@ export default component$(() => {
 	const onClickLayoutDirectionPreference$ = $(() => {
 		appState.direction = appState.direction === 'ltr' ? 'rtl' : 'ltr'
 		setLayoutDirectionPreference(appState.direction)
+	})
+
+	const onClickOverlayPreference$ = $(() => {
+		console.log("appState.overlay",appState.overlay)
+		appState.overlay = appState.overlay === 'on' ? 'off' : 'on'
+		setOverlayPreference(appState.overlay)
+		console.log("appState.overlay",appState.overlay)
+
 	})
 
 	// const onClickDirection$ = $(() => {
@@ -209,6 +223,13 @@ export default component$(() => {
 							buttonVariant="primary"
 							buttonSize="small"
 							onClick$={onClickLayoutDirectionPreference$}
+						/>
+						<h3>Toggle Overlay</h3>
+						<Button
+							buttonLabel={`Toggle Overlay`}
+							buttonVariant="primary"
+							buttonSize="small"
+							onClick$={onClickOverlayPreference$}
 						/>
 						{/* <Switcher {...staticProps} /> */}
 					</Settings.Container>

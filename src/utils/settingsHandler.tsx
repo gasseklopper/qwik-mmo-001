@@ -1,4 +1,4 @@
-import { cursorAnimationKey, layoutDirectionPreferenceKey, layoutKey, motionPreferenceKey, themeStorageKey } from "~/components/router-head/theme-script";
+import { cursorAnimationKey, layoutDirectionPreferenceKey, layoutKey, motionPreferenceKey, overlayPreferenceKey, themeStorageKey } from "~/components/router-head/theme-script";
 
 // Define the types for theme and cursor preferences
 export type ThemePreference = 'dark' | 'miami' | 'light' | 'dim' | 'sim' | 'lights2';
@@ -6,6 +6,7 @@ export type CursorPreference = 'reduce' | 'no-preference' | string;
 export type MotionPreference = 'reduce' | 'no-preference' | string;
 export type LayoutPreference = 'box' | 'fullwidth' | string;
 export type LayoutDirectionPreference = 'ltr' | 'rtl' | string;
+export type OverlayPreference = 'on' | 'off' | string;
 
 /**
  * Listens for changes in the color scheme preference (dark mode)
@@ -71,6 +72,16 @@ export const setLayoutDirectionPreference = (preference: LayoutDirectionPreferen
 };
 
 /**
+ * Sets the cursor animation preference in local storage and updates the HTML attribute to reflect the preference.
+ *
+ * @param preference - The selected cursor animation preference.
+ */
+export const setOverlayPreference = (preference: OverlayPreference) => {
+    localStorage.setItem(overlayPreferenceKey, preference);
+    document.firstElementChild?.setAttribute('data-overlay', preference);
+};
+
+/**
  * Retrieves the saved theme preference from local storage, or defaults to
  * the system's dark mode preference if no preference is saved.
  *
@@ -112,6 +123,21 @@ export const getLayoutPreference = (): LayoutPreference => {
         return savedPreference as CursorPreference;
     } else {
         return 'box';
+    }
+};
+
+/**
+ * Retrieves the saved cursor animation preference from local storage, or defaults to
+ * 'reduce' if no preference is saved.
+ *
+ * @returns The current cursor animation preference.
+ */
+export const getOverlayPreference = (): OverlayPreference => {
+    const savedPreference = localStorage.getItem(overlayPreferenceKey);
+    if (savedPreference) {
+        return savedPreference as OverlayPreference;
+    } else {
+        return 'off';
     }
 };
 

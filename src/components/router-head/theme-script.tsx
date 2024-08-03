@@ -4,6 +4,7 @@ export const layoutKey = 'theme-layout-preference'
 export const isSettingsOpenKey = 'theme-settings-preference'
 export const motionPreferenceKey = 'theme-motion-preference'
 export const layoutDirectionPreferenceKey = 'theme-layout-direction-preference'
+export const overlayPreferenceKey = 'theme-overlay-preference'
 
 export const ThemeScript = () => {
     const themeScript = `
@@ -39,6 +40,15 @@ export const LayoutDirectionScript = () => {
     document.firstElementChild
         .setAttribute('data-layout',
             localStorage.getItem('${layoutDirectionPreferenceKey}') ?? 'ltr'
+        )`
+    return <script dangerouslySetInnerHTML={Script} />
+}
+
+export const OverlayScript = () => {
+    const Script = `
+    document.firstElementChild
+        .setAttribute('data-overlay',
+            localStorage.getItem('${overlayPreferenceKey}') ?? 'off'
         )`
     return <script dangerouslySetInnerHTML={Script} />
 }
