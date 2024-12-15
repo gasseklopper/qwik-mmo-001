@@ -6,14 +6,15 @@ import UseReference from '~/components/useReference/useReference'
 import Counter from '~/components/counter/counter'
 import Debounced from '~/components/debounced/debounced'
 import Yatzee from '~/components/dojo/yatzee'
+import StartNew from '~/components/dojo/yatzee/startNew'
 
 export default component$(() => {
 	return (
 		<div class="row">
 			<div class="column">
-				<Yatzee
+				{/* <Yatzee
 					diceRoll={[0, 0, 0, 0, 0]}
-					ruleOptionsChoosed={["1","2"]}
+					ruleOptionsChoosed={['1', '2']}
 					roll={{ count: 0 }}
 					ruleNumber={{ value: '0' }}
 					game={{ index: 1, round: 3 }}
@@ -29,12 +30,13 @@ export default component$(() => {
 						value4: false,
 						value5: false,
 					}}
-				/>
-				<UsingContext />
+				/> */}
+				<StartNew diceRoll={[0, 0, 0, 0, 0]}></StartNew>
+				{/* <UsingContext />
 				<UseStyles />
 				<UseReference />
 				<Counter />
-				<Debounced />
+				<Debounced /> */}
 			</div>
 		</div>
 	)
