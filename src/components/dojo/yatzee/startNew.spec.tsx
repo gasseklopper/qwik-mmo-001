@@ -22,10 +22,8 @@ import StartNew from '.'
 
 describe('UI Test', function () {
 	it('should disable used rule options in UI', async () => {
-		// create the component's DOM and get back the container and a render method
 		const { screen, render, userEvent } = await createDOM()
-
-		// call the render method with the JSX node of our Counter component as a parameter
+		
 		await render(
 			<StartNew
 				diceRoll={[1, 1, 1, 5, 5]}
