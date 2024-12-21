@@ -22,7 +22,7 @@ type RuleOption =
 
 type RuleOptionsChoosed = Record<string, boolean>
 
-export default component$((props: {}) => {
+export default component$(() => {
 	const maxRoundCount = 3
 	const store = useStore({
 		dices: { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 },
@@ -50,13 +50,10 @@ export default component$((props: {}) => {
 		if (store.roundCount < maxRoundCount) {
 			const internalRoll: Record<number, Dice> = { ...store.dices }
 
-			// Iterate through the dice object
 			for (const key in internalRoll) {
 				if (store.keepDice[`value${key}`]) {
-					// Keep the current dice value
 					internalRoll[parseInt(key)] = store.dices[parseInt(key)]
 				} else {
-					// Roll a new dice value
 					internalRoll[parseInt(key)] = Math.floor(Math.random() * 6) + 1
 				}
 			}
@@ -114,11 +111,8 @@ export default component$((props: {}) => {
 	})
 
 	const setDices = $((a: { target: { value: string } }) => {
-		if (a.target.value === '1') store.keepDice.value1 = !store.keepDice.value1
-		if (a.target.value === '2') store.keepDice.value2 = !store.keepDice.value2
-		if (a.target.value === '3') store.keepDice.value3 = !store.keepDice.value3
-		if (a.target.value === '4') store.keepDice.value4 = !store.keepDice.value4
-		if (a.target.value === '5') store.keepDice.value5 = !store.keepDice.value5
+		const valueKey = `value${a.target.value}`
+		store.keepDice[valueKey] = !store.keepDice[valueKey]
 	})
 
 	const setRuleNumber = $((a: { target: { value: RuleOption } }) => {
@@ -128,7 +122,7 @@ export default component$((props: {}) => {
 	const submit = $(() => {
 		if (!store.ruleOptionsChoosed.value[store.ruleNumber.value]) {
 			console.log('Submitting rule', store.ruleNumber.value)
-			store.ruleOptionsChoosed.value[store.ruleNumber.value] = true // Mark the rule as chosen
+			store.ruleOptionsChoosed.value[store.ruleNumber.value] = true
 		} else {
 			console.log('Rule already chosen')
 		}
@@ -181,51 +175,19 @@ export default component$((props: {}) => {
 					disabled={store.roundCount === 0 || store.roundCount === 3}
 				>
 					<form class="submitForm">
-						<input
-							type="checkbox"
-							id="1"
-							name="dice_1"
-							value="1"
-							onClick$={(e: any) => setDices(e)}
-							checked={store.keepDice.value1}
-						/>
-						<label for="1">1</label>
-						<input
-							type="checkbox"
-							id="2"
-							name="dice_2"
-							value="2"
-							onClick$={(e: any) => setDices(e)}
-							checked={store.keepDice.value2}
-						/>
-						<label for="2">2</label>
-						<input
-							type="checkbox"
-							id="3"
-							name="dice_3"
-							value="3"
-							onClick$={(e: any) => setDices(e)}
-							checked={store.keepDice.value3}
-						/>
-						<label for="3">3</label>
-						<input
-							type="checkbox"
-							id="4"
-							name="dice_4"
-							value="4"
-							onClick$={(e: any) => setDices(e)}
-							checked={store.keepDice.value4}
-						/>
-						<label for="4">4</label>
-						<input
-							type="checkbox"
-							id="5"
-							name="dice_5"
-							value="5"
-							onClick$={(e: any) => setDices(e)}
-							checked={store.keepDice.value5}
-						/>
-						<label for="5">5</label>
+						{[1, 2, 3, 4, 5].map((num) => (
+							<div key={num}>
+								<input
+									type="checkbox"
+									id={num.toString()}
+									name={`dice_${num}`}
+									value={num.toString()}
+									onClick$={(e: any) => setDices(e)}
+									checked={store.keepDice[`value${num}`]}
+								/>
+								<label htmlFor={num.toString()}>{num}</label>
+							</div>
+						))}
 					</form>
 				</fieldset>
 
