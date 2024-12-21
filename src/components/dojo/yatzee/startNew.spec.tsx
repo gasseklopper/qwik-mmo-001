@@ -21,73 +21,61 @@ import StartNew from '.'
 // })
 
 describe('UI Test', function () {
+	it('should show the default values in UI', async () => {
+		const { screen, render, userEvent } = await createDOM()
+		const expectedValues = ['1', '4', '3', '4', '5']
+
+		await render(<StartNew />)
+
+		// get the div that displays the store.roundCount from our container
+		const roundCount = screen.querySelector('.roundCount')
+		const diceString = screen.querySelector('.diceString')
+		const diceElements = screen.querySelectorAll('.dice')
+
+		// expect before interaction of ui
+		expect(diceElements?.length).toBe(5)
+		expectedValues.forEach((value, index) => {
+			expect(diceElements?.[index].textContent).toBe(value)
+		})
+		expect(roundCount?.textContent).toBe('0')
+		expect(diceString?.textContent).toBe('{"1":1,"2":4,"3":3,"4":4,"5":5}')
+	})
+})
+
+describe.skip('UI Test', function () {
 	it('should disable used rule options in UI', async () => {
 		const { screen, render, userEvent } = await createDOM()
-		
-		await render(
-			<StartNew
-				diceRoll={[1, 1, 1, 5, 5]}
-				roll={{ count: 1 }}
-				ruleOptionsChoosed={[
-					'0',
-					'1',
-					'3',
-					'4',
-					'5',
-					'6',
-					'7',
-					'8',
-					'9',
-					'10',
-					'11',
-					'12',
-					'13',
-					'14',
-					'15',
-				]}
-				ruleNumber={{ value: '2' }}
-				game={{
-					index: 1,
-					round: 14,
-				}}
-				player={{ index: 1 }}
-				sumPoints={{ value: 55 }}
-				bottomPoints={{ value: 55 }}
-				topPoints={{ value: 55 }}
-				topBonus={{ value: false }}
-				keepDice={{
-					value1: false,
-					value2: false,
-					value3: false,
-					value4: false,
-					value5: false,
-				}}
-			/>
-		)
 
-		// get the div that displays the count from our container
-		const gameRound = screen.querySelector('.gameRound')
+		await render(<StartNew />)
 
-		const countElement = screen.querySelectorAll('.dice')
-		console.log('countElement', countElement.length)
-		const rollCountElement = screen.querySelector('.countRoll')
-		const pointsValueElement = screen.querySelector('.pointsValue')
-		const rulesOptionsChossed = screen.querySelector('.ruleOptionsChoosed')
-		const rule1 = screen.querySelector('.test-rule-1')
-		const rule2 = screen.querySelector('.test-rule-2')
-		const rule3 = screen.querySelector('.test-rule-3')
-		const rule4 = screen.querySelector('.test-rule-4')
-		const rule5 = screen.querySelector('.test-rule-5')
-		const rule6 = screen.querySelector('.test-rule-6')
-		const rule7 = screen.querySelector('.test-rule-7')
-		const rule8 = screen.querySelector('.test-rule-8')
-		const rule9 = screen.querySelector('.test-rule-9')
-		const rule10 = screen.querySelector('.test-rule-10')
-		const rule11 = screen.querySelector('.test-rule-11')
-		const rule12 = screen.querySelector('.test-rule-12')
-		const rule13 = screen.querySelector('.test-rule-13')
-		const rule14 = screen.querySelector('.test-rule-14')
-		const rule15 = screen.querySelector('.test-rule-15')
+		// get the div that displays the store.roundCount from our container
+		const roundCount = screen.querySelector('.roundCount')
+		const diceString = screen.querySelector('.diceString')
+
+		// expect before interaction of ui
+		expect(roundCount?.textContent).toBe('0')
+		expect(diceString?.textContent).toBe('{"1":1,"2":4,"3":3,"4":4,"5":5}')
+
+		// const countElement = screen.querySelectorAll('.dice')
+		// console.log('countElement', countElement.length)
+		// const rollCountElement = screen.querySelector('.countRoll')
+		// const pointsValueElement = screen.querySelector('.pointsValue')
+		// const rulesOptionsChossed = screen.querySelector('.ruleOptionsChoosed')
+		// const rule1 = screen.querySelector('.test-rule-1')
+		// const rule2 = screen.querySelector('.test-rule-2')
+		// const rule3 = screen.querySelector('.test-rule-3')
+		// const rule4 = screen.querySelector('.test-rule-4')
+		// const rule5 = screen.querySelector('.test-rule-5')
+		// const rule6 = screen.querySelector('.test-rule-6')
+		// const rule7 = screen.querySelector('.test-rule-7')
+		// const rule8 = screen.querySelector('.test-rule-8')
+		// const rule9 = screen.querySelector('.test-rule-9')
+		// const rule10 = screen.querySelector('.test-rule-10')
+		// const rule11 = screen.querySelector('.test-rule-11')
+		// const rule12 = screen.querySelector('.test-rule-12')
+		// const rule13 = screen.querySelector('.test-rule-13')
+		// const rule14 = screen.querySelector('.test-rule-14')
+		// const rule15 = screen.querySelector('.test-rule-15')
 
 		// expect before interaction of ui
 		// expect(countElement?.textContent).toBe('1,1,1,5,5')

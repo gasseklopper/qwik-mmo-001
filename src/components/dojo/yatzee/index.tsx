@@ -24,18 +24,18 @@ type RuleOptionsChoosed = Record<string, boolean>
 
 const DiceRoller = $(({ store, rollDice }) => (
 	<>
-		<div className="row">
-			<div className="column large-12">
+		<div class="row">
+			<div class="column large-12">
 				<button onClick$={rollDice}>Roll Dice</button>
 			</div>
 		</div>
-		<div className="row">
+		<div class="row">
 			{Object.entries(store.dices).map(([key, die]) => (
-				<div className="column large-1" key={key}>
-					<h3 className="dice">{die}</h3>
+				<div class="column large-1" key={key}>
+					<h3 class="dice">{die}</h3>
 				</div>
 			))}
-			<div>{JSON.stringify(store.dices)}</div>
+			<div class="diceString">{JSON.stringify(store.dices)}</div>
 		</div>
 	</>
 ))
@@ -43,24 +43,24 @@ const DiceRoller = $(({ store, rollDice }) => (
 const GameInfo = $(({ store }) => (
 	<>
 		<h2>Game info</h2>
-		<div className="row">
-			<div className="column large-4">
+		<div class="row">
+			<div class="column large-4">
 				<div>Round count</div>
-				<div>{store.roundCount}</div>
+				<div class="roundCount h2">{store.roundCount}</div>
 			</div>
-			<div className="column large-4">
+			<div class="column large-4">
 				<div>Score sumPoints</div>
 				<div>{store.points.sumPoints}</div>
 			</div>
-			<div className="column large-4">
+			<div class="column large-4">
 				<div>Score topPoints</div>
 				<div>{store.points.topPoints}</div>
 			</div>
-			<div className="column large-4">
+			<div class="column large-4">
 				<div>Score topBonusPoints</div>
 				<div>{store.points.topBonusPoints}</div>
 			</div>
-			<div className="column large-4">
+			<div class="column large-4">
 				<div>Score bottomPoints</div>
 				<div>{store.points.bottomPoints}</div>
 			</div>
@@ -72,10 +72,10 @@ const KeepDices = $(({ store, setDices }) => (
 	<>
 		<h2>Keep dices</h2>
 		<fieldset
-			className="keep_dice"
+			class="keep_dice"
 			disabled={store.roundCount === 0 || store.roundCount === 3}
 		>
-			<form className="submitForm">
+			<form class="submitForm">
 				{[1, 2, 3, 4, 5].map((num) => (
 					<div key={num}>
 						<input
@@ -108,8 +108,8 @@ const RuleSelection = $(({ store, setRuleNumber }) => (
 						.map((key, index) => <li key={index}>{key}</li>)
 				: 'no value'}
 		</ul>
-		<fieldset className="set_rule" disabled={store.roundCount === 0}>
-			<form className="submitForm2">
+		<fieldset class="set_rule" disabled={store.roundCount === 0}>
+			<form class="submitForm2">
 				{[
 					{ value: '1', label: 'ones' },
 					{ value: '2', label: 'twos' },
@@ -133,9 +133,9 @@ const RuleSelection = $(({ store, setRuleNumber }) => (
 							id={label}
 							name="drone"
 							value={value}
-							className={`test-rule-${value}`}
+							class={`test-rule-${value}`}
 							onClick$={(e: any) => setRuleNumber(e)}
-							checked={store.ruleNumber === value}
+							checked={store.ruleNumber.value === value}
 							disabled={store.ruleOptionsChoosed.value[value]}
 						/>
 						<label
@@ -160,14 +160,14 @@ const Actions = $(({ rollDice, reset, resetGame, submit }) => (
 		<h2>Submit</h2>
 		<button onClick$={submit}>Submit</button>
 		<hr />
-		<div className="row">
-			<div className="column large-12">
+		<div class="row">
+			<div class="column large-12">
 				<button onClick$={rollDice}>Roll Dice</button>
 			</div>
-			<div className="column large-6">
+			<div class="column large-6">
 				<button onClick$={reset}>Reset Round</button>
 			</div>
-			<div className="column large-6">
+			<div class="column large-6">
 				<button onClick$={resetGame}>Reset Game</button>
 			</div>
 		</div>
@@ -193,7 +193,7 @@ export default component$(
 	) => {
 		const maxRoundCount = 3
 		const store = useStore({
-			dices: props.dices || { 1: 1, 2: 2, 3: 3, 4: 4, 5: 5 },
+			dices: props.dices || { 1: 1, 2: 4, 3: 3, 4: 4, 5: 5 },
 			roundCount: props.roundCount || 0,
 			keepDice: props.keepDice || {
 				value1: false,
@@ -251,6 +251,7 @@ export default component$(
 				value4: false,
 				value5: false,
 			}
+			store.ruleNumber.value = '0'
 		})
 
 		const resetGame = $(() => {
