@@ -1,10 +1,7 @@
-import { component$, useStore, $ } from '@builder.io/qwik'
+import { $, component$, useStore } from '@builder.io/qwik'
 import type { Dice, RuleOption, RuleOptionsChoosed } from './yathzeeTypes'
 import DiceRoller from './DiceRoller'
 import GameInfo from './GameInfo'
-import KeepDices from './KeepDices'
-import RuleSelection from './RuleSelection'
-import Actions from './Actions'
 
 export default component$(
 	(
@@ -20,7 +17,7 @@ export default component$(
 				topBonusPoints?: number
 				bottomPoints?: number
 			}
-		} = { dices: { 1: 1, 2: 4, 3: 3, 4: 4, 5: 5 } }
+		} = {}
 	) => {
 		const maxRoundCount = 3
 		const store = useStore({
@@ -138,16 +135,16 @@ export default component$(
 		return (
 			<>
 				<div>
-					<DiceRoller store={store} rollDice={rollDice} />
+					<DiceRoller store={props} rollDice={rollDice} />
 					<GameInfo store={store} />
-					<KeepDices store={store} setDices={setDices} />
+					{/* <KeepDices store={store} setDices={setDices} />
 					<RuleSelection store={store} setRuleNumber={setRuleNumber} />
 					<Actions
 						rollDice={rollDice}
 						reset={reset}
 						resetGame={resetGame}
 						submit={submit}
-					/>
+					/> */}
 				</div>
 			</>
 		)

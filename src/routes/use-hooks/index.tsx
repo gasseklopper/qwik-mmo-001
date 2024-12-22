@@ -32,7 +32,7 @@ export default component$(() => {
 					}}
 				/> */}
 				<StartNew
-					dices={{ '1': 1, '2': 4, '3': 3, '4': 4, '5': 5 }}
+					dices={{ '1': 1, '2': 2, '3': 3, '4': 4, '5': 5 }}
 					ruleNumber="5"
 					ruleOptionsChoosed={{
 						'1': true,

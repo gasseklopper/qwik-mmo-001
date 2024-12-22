@@ -18,7 +18,7 @@ export default component$(({ store, setDices }) => (
 							onClick$={(e: any) => setDices(e)}
 							checked={store.keepDice[`value${num}`]}
 						/>
-						<label htmlFor={num.toString()}>{num}</label>
+						<label for={num.toString()}>{num}</label>
 					</div>
 				))}
 			</form>

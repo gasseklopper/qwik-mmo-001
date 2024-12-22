@@ -45,7 +45,7 @@ export default component$(({ store, setRuleNumber }) => (
 							disabled={store.ruleOptionsChoosed.value[value]}
 						/>
 						<label
-							htmlFor={label}
+							for={label}
 							style={{
 								textDecoration: store.ruleOptionsChoosed.value[value]
 									? 'line-through'

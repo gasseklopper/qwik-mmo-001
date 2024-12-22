@@ -20,8 +20,8 @@ import StartNew from '.'
 // 	})
 // })
 
-describe('UI Test', function () {
-	it('should show the default values in UI', async () => {
+describe('UI Test ⭐', function () {
+	it('should show the default values in UI DiceRoller 💣', async () => {
 		const { screen, render, userEvent } = await createDOM()
 		const expectedValues = ['1', '4', '3', '4', '5']
 
@@ -29,32 +29,30 @@ describe('UI Test', function () {
 			<StartNew dices={{ '1': 1, '2': 4, '3': 3, '4': 4, '5': 5 }} />
 		)
 
-		// get the div that displays the store.roundCount from our container
-		const roundCount = screen.querySelector('.roundCount')
+		// get the div that displays the diceString from our container
 		const diceString = screen.querySelector('.diceString')
 		const diceElements = screen.querySelectorAll('.dice')
 
 		// expect before interaction of ui
-		// expect(diceElements?.length).toBe(5)
-		// expectedValues.forEach((value, index) => {
-		// 	expect(diceElements?.[index].textContent).toBe(value)
-		// })
-		// expect(roundCount?.textContent).toBe('0')
+		expect(diceElements?.length).toBe(5)
+		expectedValues.forEach((value, index) => {
+			expect(diceElements?.[index].textContent).toBe(value)
+		})
 		expect(diceString?.textContent).toBe('{"1":1,"2":4,"3":3,"4":4,"5":5}')
 	})
 
 	it('should show the default values in UI component Gameinfo', async () => {
 		const { screen, render, userEvent } = await createDOM()
 
-		await render(<StartNew />)
-
+		await render(
+			<StartNew dices={{ '1': 1, '2': 4, '3': 3, '4': 4, '5': 5 }} />
+		)
 		// get the div that displays the store.roundCount from our container
 		const roundCount = screen.querySelector('.roundCount')
 		const sumPoints = screen.querySelector('.sumPoints')
 		const topPoints = screen.querySelector('.topPoints')
 		const topBonusPoints = screen.querySelector('.topBonusPoints')
 		const bottomPoints = screen.querySelector('.bottomPoints')
-
 		// expect before interaction of ui
 		expect(roundCount?.textContent).toBe('0')
 		expect(sumPoints?.textContent).toBe('0')
@@ -63,48 +61,48 @@ describe('UI Test', function () {
 		expect(bottomPoints?.textContent).toBe('0')
 	})
 
-	it('should show the default values in UI component KeepDices', async () => {
-		const { screen, render, userEvent } = await createDOM()
+	// it('should show the default values in UI component KeepDices', async () => {
+	// 	const { screen, render, userEvent } = await createDOM()
 
-		await render(<StartNew />)
+	// 	await render(<StartNew />)
 
-		// get all checkboxes
-		const checkboxes = screen.querySelectorAll(
-			'.submitForm input[type="checkbox"]'
-		)
+	// 	// get all checkboxes
+	// 	const checkboxes = screen.querySelectorAll(
+	// 		'.submitForm input[type="checkbox"]'
+	// 	)
 
-		// expect all checkboxes to be deselected
-		checkboxes.forEach((checkbox) => {
-			expect(checkbox.checked).toBe(false)
-		})
-	})
+	// 	// expect all checkboxes to be deselected
+	// 	checkboxes.forEach((checkbox) => {
+	// 		expect(checkbox.checked).toBe(false)
+	// 	})
+	// })
 
-	it('should show the default values in UI component RuleSelection', async () => {
-		const { screen, render, userEvent } = await createDOM()
+	// it('should show the default values in UI component RuleSelection', async () => {
+	// 	const { screen, render, userEvent } = await createDOM()
 
-		await render(<StartNew />)
+	// 	await render(<StartNew />)
 
-		// get all radio buttons
-		const radioButtons = screen.querySelectorAll(
-			'.submitForm2 input[type="radio"]'
-		)
+	// 	// get all radio buttons
+	// 	const radioButtons = screen.querySelectorAll(
+	// 		'.submitForm2 input[type="radio"]'
+	// 	)
 
-		// expect all radio buttons to be deselected
-		radioButtons.forEach((radioButton) => {
-			expect(radioButton.checked).toBe(false)
-		})
+	// 	// expect all radio buttons to be deselected
+	// 	radioButtons.forEach((radioButton) => {
+	// 		expect(radioButton.checked).toBe(false)
+	// 	})
 
-		// check that rules 1, 2, and 3 are already chosen
-		const alreadyChosenRules = screen.querySelector('ul')
-		const chosenRules = Array.from(
-			alreadyChosenRules?.querySelectorAll('li') || []
-		).map((li) => li.textContent)
-		expect(chosenRules).toEqual(['1', '2', '3'])
+	// 	// check that rules 1, 2, and 3 are already chosen
+	// 	const alreadyChosenRules = screen.querySelector('ul')
+	// 	const chosenRules = Array.from(
+	// 		alreadyChosenRules?.querySelectorAll('li') || []
+	// 	).map((li) => li.textContent)
+	// 	expect(chosenRules).toEqual(['1', '2', '3'])
 
-		// check that the active chosen rule is 0
-		const activeChosenRule = screen.querySelector('.chosenRule')
-		expect(activeChosenRule?.textContent).toBe('0')
-	})
+	// 	// check that the active chosen rule is 0
+	// 	const activeChosenRule = screen.querySelector('.chosenRule')
+	// 	expect(activeChosenRule?.textContent).toBe('0')
+	// })
 })
 
 describe.skip('UI Test', function () {

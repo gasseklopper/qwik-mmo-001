@@ -26,10 +26,6 @@ export const MenuCards = component$(() => {
 					visible: globalMenuStore.showMenu,
 				}}
 				onMouseEnter$={() => (globalMenuStore.isHover = true)}
-			// onMouseLeave$={() => (
-			// 	// (globalMenuStore.isHover = false),
-			// 	// enableBodyScroll(targetRef.value)
-			// )}
 			>
 				{navigation.headerSubItems.length && (
 					<>
