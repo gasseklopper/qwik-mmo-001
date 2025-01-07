@@ -1,11 +1,11 @@
 import { component$ } from '@builder.io/qwik'
 import type { DocumentHead } from '@builder.io/qwik-city'
-import UsingContext from '~/components/usingContext/usingContext'
-import UseStyles from '~/components/useStyles/useStyles'
-import UseReference from '~/components/useReference/useReference'
-import Counter from '~/components/counter/counter'
-import Debounced from '~/components/debounced/debounced'
-import Yatzee from '~/components/dojo/yatzee'
+// import UsingContext from '~/components/usingContext/usingContext'
+// import UseStyles from '~/components/useStyles/useStyles'
+// import UseReference from '~/components/useReference/useReference'
+// import Counter from '~/components/counter/counter'
+// import Debounced from '~/components/debounced/debounced'
+// import Yatzee from '~/components/dojo/yatzee'
 import StartNew from '~/components/dojo/yatzee'
 
 export default component$(() => {
@@ -32,13 +32,27 @@ export default component$(() => {
 					}}
 				/> */}
 				<StartNew
-					dices={{ '1': 1, '2': 2, '3': 3, '4': 4, '5': 5 }}
+					dices={{ '1': 6, '2': 2, '3': 3, '4': 4, '5': 6 }}
 					ruleNumber="5"
 					ruleOptionsChoosed={{
 						'1': true,
 						'2': true,
 						'3': true,
 						'4': true,
+					}}
+					roundCount={0}
+					keepDice={{
+						value1: false,
+						value2: false,
+						value3: false,
+						value4: false,
+						value5: false,
+					}}
+					points={{
+						sumPoints: 0,
+						topPoints: 0,
+						topBonusPoints: 0,
+						bottomPoints: 0,
 					}}
 				></StartNew>
 				{/* <UsingContext />

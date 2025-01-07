@@ -1,6 +1,15 @@
+import type { QRL} from '@builder.io/qwik';
 import { component$ } from '@builder.io/qwik'
 
-export default component$(({ store, setDices }) => (
+interface KeepDicesProps {
+	store: {
+		roundCount: number
+		keepDice: Record<string, boolean>
+	}
+	setDices: QRL<(e: Event) => void>
+}
+
+export default component$<KeepDicesProps>(({ store, setDices }) => (
 	<>
 		<h2>Keep dices</h2>
 		<fieldset

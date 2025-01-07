@@ -1,6 +1,14 @@
+import type { QRL} from '@builder.io/qwik';
 import { component$ } from '@builder.io/qwik'
 
-export default component$(({ rollDice, reset, resetGame, submit }) => (
+interface ActionsProps {
+	rollDice: QRL<() => void>
+	reset: QRL<() => void>
+	resetGame: QRL<() => void>
+	submit: QRL<() => void>
+}
+
+export default component$<ActionsProps>(({ rollDice, reset, resetGame, submit }) => (
 	<>
 		<h2>Submit</h2>
 		<button onClick$={submit}>Submit</button>
