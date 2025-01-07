@@ -1,7 +1,7 @@
 import { createDOM } from '@builder.io/qwik/testing' // import the createDOM method
 import { describe, expect, it } from 'vitest'
 // import { describe, expect, it, vi, beforeAll } from 'vitest'
-import StartNew from '.'
+// import StartNew from '.'
 
 // beforeAll(() => {
 // 	// mock useStore to start with count of 1
@@ -22,7 +22,7 @@ import StartNew from '.'
 
 describe('UI Test ⭐', function () {
 	it('should show the default values in UI DiceRoller 💣', async () => {
-		const { screen, render, userEvent } = await createDOM()
+		const { screen, render } = await createDOM()
 		const expectedValues = ['1', '4', '3', '4', '5']
 
 		await render(

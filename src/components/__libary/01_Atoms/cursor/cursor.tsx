@@ -37,13 +37,13 @@ export default component$(
 		console.log('appState.mode1', appState.mode)
 		// eslint-disable-next-line qwik/no-use-visible-task
 		useVisibleTask$(() => {
-			let mouse = { x: 0 , y: 0 };
+			let mouse = { x: 0, y: 0 }
 
 			const onMouseMove = (ev: { clientX: any; clientY: any }) => {
-				mouse = getMousePos(ev);
-				const bounds = cursorRef.value!.getBoundingClientRect();
-				const tx = mouse.x - bounds.width / 2;
-				const ty = mouse.y - bounds.height / 2;
+				mouse = getMousePos(ev)
+				const bounds = cursorRef.value!.getBoundingClientRect()
+				const tx = mouse.x - bounds.width / 2
+				const ty = mouse.y - bounds.height / 2
 
 				gsap.to(cursorRef.value!, {
 					duration: 0.9,
@@ -52,16 +52,16 @@ export default component$(
 					y: ty,
 					opacity: .4,
 					onUpdate: () => {
-						circleInnerRef.value!.setAttribute('r', '60');
+						circleInnerRef.value!.setAttribute('r', '60')
 					}
-				});
-			};
+				})
+			}
 
-			window.addEventListener('mousemove', onMouseMove);
+			window.addEventListener('mousemove', onMouseMove)
 
 			return () => {
-				window.removeEventListener('mousemove', onMouseMove);
-			};
+				window.removeEventListener('mousemove', onMouseMove)
+			}
 
 		})
 		// const componentVariant = `${mainClass}--${rest.buttonVariant}` || ''

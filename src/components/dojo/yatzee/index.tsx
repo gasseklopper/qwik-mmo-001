@@ -2,6 +2,7 @@ import { $, component$, useStore } from '@builder.io/qwik'
 import type { Dice, RuleOption, RuleOptionsChoosed } from './yathzeeTypes'
 import DiceRoller from './DiceRoller'
 import GameInfo from './GameInfo'
+// import GameInfo from './GameInfo'
 
 export default component$(
 	(
@@ -17,7 +18,16 @@ export default component$(
 				topBonusPoints?: number
 				bottomPoints?: number
 			}
-		} = {}
+		} = {
+			dices: {
+				1: 0,
+				2: 0,
+				3: 0,
+				4: 0,
+				5: 0,
+			} as Record<number, Dice>,
+			ruleNumber: '0'
+		}
 	) => {
 		const maxRoundCount = 3
 		const store = useStore({
@@ -40,10 +50,10 @@ export default component$(
 				},
 			},
 			points: props.points || {
-				sumPoints: 0,
-				topPoints: 0,
-				topBonusPoints: 0,
-				bottomPoints: 0,
+				sumPoints: props.points?.sumPoints ?? 0,
+				topPoints: props.points?.topPoints ?? 0,
+				topBonusPoints: props.points?.topBonusPoints ?? 0,
+				bottomPoints: props.points?.bottomPoints ?? 0,
 			},
 		})
 
