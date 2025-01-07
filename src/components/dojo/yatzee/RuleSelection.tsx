@@ -1,6 +1,18 @@
+import type { QRL} from '@builder.io/qwik';
 import { component$ } from '@builder.io/qwik'
 
-export default component$(({ store, setRuleNumber }) => (
+interface RuleSelectionProps {
+	store: {
+		ruleNumber: string
+		ruleOptionsChoosed: {
+			value: Record<string, boolean>
+		}
+		roundCount: number
+	}
+	setRuleNumber: QRL<(e: Event) => void>
+}
+
+export default component$<RuleSelectionProps>(({ store, setRuleNumber }) => (
 	<>
 		<h2>active chosen rule</h2>
 		<h2 class="chosenRule">{store.ruleNumber}</h2>
@@ -10,8 +22,8 @@ export default component$(({ store, setRuleNumber }) => (
 				(key) => store.ruleOptionsChoosed.value[key]
 			).length > 0
 				? Array.from({ length: 15 }, (_, i) => `${i + 1}`)
-						.filter((key) => store.ruleOptionsChoosed.value[key])
-						.map((key, index) => <li key={index}>{key}</li>)
+					.filter((key) => store.ruleOptionsChoosed.value[key])
+					.map((key, index) => <li key={index}>{key}</li>)
 				: 'no value'}
 		</ul>
 		<fieldset class="set_rule" disabled={store.roundCount === 0}>
@@ -39,21 +51,9 @@ export default component$(({ store, setRuleNumber }) => (
 							id={label}
 							name="drone"
 							value={value}
-							class={`test-rule-${value}`}
-							onClick$={(e: any) => setRuleNumber(e)}
-							checked={store.ruleNumber.value === value}
-							disabled={store.ruleOptionsChoosed.value[value]}
+							onClick$={setRuleNumber}
 						/>
-						<label
-							for={label}
-							style={{
-								textDecoration: store.ruleOptionsChoosed.value[value]
-									? 'line-through'
-									: 'none',
-							}}
-						>
-							{label}
-						</label>
+						<label for={label}>{label}</label>
 					</div>
 				))}
 			</form>

@@ -1,20 +1,21 @@
-import { Power2, gsap } from "gsap";
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { gsap, Power2 } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 gsap.registerPlugin(ScrollTrigger);
 
-let history = [];
+const revealedImages: HTMLElement[] = [];
 
-export default function imgAnimReveal(item) {
-  const gsapFunction = (img_reveal) => {
-    if (history.includes(img_reveal)) {
+export default function imgAnimReveal(item: HTMLElement) {
+  const gsapFunction = (img_reveal: HTMLElement) => {
+    if (revealedImages.includes(img_reveal)) {
       return;
     } else {
-      history.push(img_reveal);
-      let tHero = gsap.context(() => {
+      revealedImages.push(img_reveal);
+      const tHero = gsap.context(() => {
         try {
           if (img_reveal) {
-            let image = img_reveal.querySelector("img");
-            let tl = gsap.timeline({
+            const image = img_reveal.querySelector("img");
+            const tl = gsap.timeline({
               scrollTrigger: {
                 trigger: img_reveal,
                 start: "top 50%",
@@ -26,32 +27,35 @@ export default function imgAnimReveal(item) {
               opacity: 0,
               duration: 1.5,
               xPercent: -60,
-              ease: Power2.out,
+              ease: Power2.easeOut,
             });
-            tl.from(image, {
-              opacity: 1,
-              duration: 1.5,
-              xPercent: 100,
-              scale: 1.3,
-              delay: -1.5,
-              ease: Power2.out,
-            });
+            if (image) {
+              tl.from(image, {
+                opacity: 1,
+                duration: 1.5,
+                xPercent: 100,
+                scale: 1.3,
+                delay: -1.5,
+                ease: Power2.easeOut,
+              });
+            }
           }
         } catch (e) {
-          console.log(e);
+          console.error(e);
         }
       });
       return () => tHero.revert();
     }
   };
+
   if (typeof window !== "undefined") {
     if (item.children) {
-      let children = Object.values(item.children).filter((el) =>
+      const children = Array.from(item.children).filter((el) =>
         el.className.includes("img_anim_reveal")
-      );
-      if (children && children.length) {
-        children.forEach((el, j) => {
-          gsapFunction(children[j]);
+      ) as HTMLElement[];
+      if (children.length) {
+        children.forEach((el) => {
+          gsapFunction(el);
         });
       } else {
         gsapFunction(item);
