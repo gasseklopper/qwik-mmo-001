@@ -10,9 +10,9 @@ import { Link, type DocumentHead } from '@builder.io/qwik-city'
 import Image from '~/components/__libary/01_Atoms/image/image'
 import styles from './index.scss?inline'
 import { Carousel } from '~/components/__libary/02_Molecules/carousel/component'
-import hasFadeAnim from '~/utils/hasFadeAnim'
-import hasFadeAnim2 from '~/utils/hasFadeAnim2'
-import imgAnimReveal from '~/utils/imgAnimReveal'
+// import hasFadeAnim from '~/utils/hasFadeAnim'
+// import hasFadeAnim2 from '~/utils/hasFadeAnim2'
+// import imgAnimReveal from '~/utils/imgAnimReveal'
 
 // import Section_hero_001 from '~/components/section_hero_001/section_hero_001'
 // import Section_hero_002 from '~/components/section_hero_002/section_hero_002'
@@ -30,7 +30,7 @@ export default component$(() => {
 	const fadeAnim3 = useSignal<any>('')
 	const fadeAnim4 = useSignal<any>('')
 	const fadeAnim5 = useSignal<any>('')
-	const fadeAnim6 = useSignal<any>('')
+	// const fadeAnim6 = useSignal<any>('')
 	const fadeAnim7 = useSignal<any>('')
 	const imgAnim = useSignal<any>('')
 	const fadeAnimSecondary = useSignal<any>('')
