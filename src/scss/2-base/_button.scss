@@ -25,14 +25,14 @@
 		mix-blend-mode: difference;
 	}
 
-    &__content-wrapper {
-        span{
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: math.div(vars.$gutter, 2);
-        }
-    }
+	&__content-wrapper {
+		span {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			gap: math.div(vars.$gutter, 2);
+		}
+	}
 }
 
 .button--position {
@@ -73,7 +73,9 @@
 	}
 
 	&:hover > span > span {
-		animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+		animation:
+			MoveUpInitial 0.2s forwards,
+			MoveUpEnd 0.2s forwards 0.2s;
 	}
 
 	&::before {
@@ -84,7 +86,9 @@
 		transform-origin: 50% 100%;
 		-webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
 		clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-		transition: clip-path 0.2s, -webkit-clip-path 0.2s;
+		transition:
+			clip-path 0.2s,
+			-webkit-clip-path 0.2s;
 		transition-timing-function: cubic-bezier(0.7, 0, 0.2, 1);
 	}
 
@@ -115,7 +119,9 @@
 	}
 
 	&:hover > span > span {
-		animation: MoveUpInitial 0.2s forwards, MoveUpEnd 0.2s forwards 0.2s;
+		animation:
+			MoveUpInitial 0.2s forwards,
+			MoveUpEnd 0.2s forwards 0.2s;
 	}
 
 	&::before {

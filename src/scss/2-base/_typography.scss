@@ -106,11 +106,12 @@ blockquote {
 	border-left: 4px solid;
 	font-style: italic;
 	margin: 0px 0px vars.$gutter 0;
-	padding: math.div(vars.$gutter, .6) math.div(vars.$gutter, 2) math.div(vars.$gutter, 2) vars.$gutter;
+	padding: math.div(vars.$gutter, 0.6) math.div(vars.$gutter, 2)
+		math.div(vars.$gutter, 2) vars.$gutter;
 	position: relative;
 
 	&::after {
-		content: " # ";
+		content: ' # ';
 		color: inherit;
 		// add dynamic values
 		font-size: 80px;
@@ -156,7 +157,9 @@ a {
 	text-decoration: none;
 	border-bottom: solid 2px var(--text1);
 	color: var(--text1);
-	transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out,
+	transition:
+		color 0.2s ease-in-out,
+		border-color 0.2s ease-in-out,
 		background-color 0.2s ease-in-out;
 }
 

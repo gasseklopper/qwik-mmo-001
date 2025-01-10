@@ -6,16 +6,16 @@
 		all: unset;
 		display: flex;
 		flex-direction: row;
-        align-items: flex-start;
+		align-items: flex-start;
 		margin: 0;
-        column-gap: vars.$gutter;
+		column-gap: vars.$gutter;
 	}
-    
+
 	li {
-        list-style: none;
-        margin: 0;
-        display: flex;
-        justify-content: center;
+		list-style: none;
+		margin: 0;
+		display: flex;
+		justify-content: center;
 	}
 }
 
@@ -24,7 +24,7 @@
 		all: unset;
 		display: flex;
 		flex-direction: column;
-        row-gap: math.div(vars.$gutter, 1.8);
+		row-gap: math.div(vars.$gutter, 1.8);
 	}
 
 	li {
@@ -35,21 +35,21 @@
 
 .buttonCombo--center {
 	li {
-        display: flex;
-        justify-content: center;
+		display: flex;
+		justify-content: center;
 	}
 }
 
 .buttonCombo--left {
 	li {
-        display: flex;
-        justify-content: left;
+		display: flex;
+		justify-content: left;
 	}
 }
 
 .buttonCombo--right {
 	li {
-        display: flex;
-        justify-content: right;
+		display: flex;
+		justify-content: right;
 	}
 }
