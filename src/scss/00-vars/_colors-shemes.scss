@@ -249,7 +249,8 @@
 .rad-shadow {
 	border: 1px solid hsl(var(--brand-hue) 10% 50% / 15%);
 	box-shadow: 0 1rem 0.5rem -0.5rem;
-	box-shadow: 0 2.8px 2.2px
+	box-shadow:
+		0 2.8px 2.2px
 			hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.03)),
 		0 6.7px 5.3px
 			hsl(var(--surface-shadow) / calc(var(--shadow-strength) + 0.01)),

@@ -72,27 +72,60 @@ $reworkGrid__sizes: (
 //    |____|  / ____||   __/ \____/\___  /|__|  (____  /   __/|___|  / ____|
 //            \/     |__|         /_____/            \/|__|        \/\/
 // Typography Barlow -------------------------------------------------- //
-$fontStackBarlowBold: normal 700 100%/1.4 'Barlow bold', Helvetica, Arial,
+$fontStackBarlowBold:
+	normal 700 100%/1.4 'Barlow bold',
+	Helvetica,
+	Arial,
 	sans-serif;
-$fontStackBarlowMedium: normal 500 100%/1.4 'Barlow medium', Helvetica, Arial,
+$fontStackBarlowMedium:
+	normal 500 100%/1.4 'Barlow medium',
+	Helvetica,
+	Arial,
 	sans-serif;
-$fontStackBarlowLight: normal 300 100%/1.4 'Barlow light', Helvetica, Arial,
+$fontStackBarlowLight:
+	normal 300 100%/1.4 'Barlow light',
+	Helvetica,
+	Arial,
 	sans-serif;
-$fontStackBarlowSemibold: normal 600 100%/1.4 'Barlow semibold', Helvetica,
-	Arial, sans-serif;
+$fontStackBarlowSemibold:
+	normal 600 100%/1.4 'Barlow semibold',
+	Helvetica,
+	Arial,
+	sans-serif;
 // Typography Syne -------------------------------------------------- //
-$fontStackSyneBold: normal 700 100%/1.4 'Syne bold', Helvetica, Arial,
+$fontStackSyneBold:
+	normal 700 100%/1.4 'Syne bold',
+	Helvetica,
+	Arial,
 	sans-serif;
-$fontStackSyneMedium: normal 500 100%/1.4 'Syne medium', Helvetica, Arial,
+$fontStackSyneMedium:
+	normal 500 100%/1.4 'Syne medium',
+	Helvetica,
+	Arial,
 	sans-serif;
-$fontStackSyneExtrabold: normal 800 100%/1.4 'Syne extrabold', Helvetica, Arial,
+$fontStackSyneExtrabold:
+	normal 800 100%/1.4 'Syne extrabold',
+	Helvetica,
+	Arial,
 	sans-serif;
-$fontStackSyneSemibold: normal 600 100%/1.4 'Syne semibold', Helvetica, Arial,
+$fontStackSyneSemibold:
+	normal 600 100%/1.4 'Syne semibold',
+	Helvetica,
+	Arial,
 	sans-serif;
-$fontStackSyneRegular: normal 400 100%/1.4 'Syne regular', Helvetica, Arial,
+$fontStackSyneRegular:
+	normal 400 100%/1.4 'Syne regular',
+	Helvetica,
+	Arial,
 	sans-serif;
 // Typography berlingo -------------------------------------------------- //
-$fontStackBerlingoRegular: normal 500 100%/1.4 'berlingo regular', Helvetica,
-	Arial, sans-serif;
-$fontStackBerlingoBold: normal 600 100%/1.4 'berlingo regular', Helvetica, Arial,
+$fontStackBerlingoRegular:
+	normal 500 100%/1.4 'berlingo regular',
+	Helvetica,
+	Arial,
+	sans-serif;
+$fontStackBerlingoBold:
+	normal 600 100%/1.4 'berlingo regular',
+	Helvetica,
+	Arial,
 	sans-serif;

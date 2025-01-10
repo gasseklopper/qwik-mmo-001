@@ -94,7 +94,7 @@ blockquote {
 	font-family: 'Montserrat';
 	margin: 0 0 math.div(vars.$gutter, 2);
 	font-style: normal;
-	font-size: 1.125rem;
+	font-size: 1rem;
 	font-display: swap;
 }
 
@@ -154,7 +154,7 @@ label {
 a {
 	font: vars.$fontStackBarlowBold;
 	text-decoration: none;
-	border-bottom: dotted 1px var(--text2);
+	border-bottom: solid 2px var(--text1);
 	color: var(--text1);
 	transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out,
 		background-color 0.2s ease-in-out;
@@ -163,5 +163,5 @@ a {
 a:hover {
 	background-color: var(--surface7);
 	color: var(--text4);
-	border-color: var(--text1);
+	border-color: var(--text3);
 }

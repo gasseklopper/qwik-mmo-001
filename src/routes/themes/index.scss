@@ -1,0 +1,36 @@
+@use './../../../src/scss/00-vars/00-vars' as vars;
+
+.hero-mm-001 {
+	background-color: red;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: calc(vars.$gutter * 10);
+
+
+	.content {
+		padding: calc(vars.$gutter * 1);
+		text-align: center;
+		height: fit-content;
+		background-color: darkred;
+	}
+
+	.major {
+		font-size: 1.50rem;
+	}
+}
+
+.spotlight-mm-001 {
+	background-color: blue;
+}
+
+.gallery-mm-001 {
+	background-color: green;
+}
+
+.items-mm-001 {
+	color: black;
+	background-color: yellow;
+}
