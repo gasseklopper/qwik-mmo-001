@@ -34,7 +34,7 @@ export default component$(
 		const cursorRef = useSignal<HTMLDivElement>()
 		const circleInnerRef = useSignal<SVGElement>()
 		const appState = useContext(AppContext)
-		console.log('appState.mode1', appState.mode)
+
 		// eslint-disable-next-line qwik/no-use-visible-task
 		useVisibleTask$(() => {
 			let mouse = { x: 0, y: 0 }
