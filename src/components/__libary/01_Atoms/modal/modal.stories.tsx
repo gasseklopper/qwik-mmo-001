@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from 'storybook-framework-qwik'
 import Modal, { type ExtendedProductCategoryProps } from './modal'
-import { QwikJSX, _Only$, ComponentBaseProps, JSXChildren } from '@builder.io/qwik'
+import type { QwikJSX, _Only$, ComponentBaseProps, JSXChildren } from '@builder.io/qwik'
 
 const modalProps: ExtendedProductCategoryProps = {
 	class: 'testClassName'

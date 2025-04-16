@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from 'storybook-framework-qwik'
 import Button, { type ExtendedButtonProps } from './scrollTop'
-import { QwikJSX, ComponentBaseProps, JSXChildren } from '@builder.io/qwik'
+import type { QwikJSX, ComponentBaseProps, JSXChildren } from '@builder.io/qwik'
 
 const primaryButtonProps: ExtendedButtonProps = {
 	buttonSize: 'default',

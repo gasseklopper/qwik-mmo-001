@@ -281,6 +281,7 @@ export const GalleryStatic = component$(() => {
 })
 
 export const GalleryStaticGPT = component$(() => {
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		const figures = gsap.utils.toArray<HTMLElement>('.image-stack figure')
 
@@ -308,6 +309,7 @@ export const GalleryStaticGPT = component$(() => {
 			})
 		})
 	})
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		const el = document.getElementById('poem-text')
 		if (!el) return
@@ -330,6 +332,7 @@ export const GalleryStaticGPT = component$(() => {
 			ease: 'sine.inOut',
 		})
 	})
+	// eslint-disable-next-line qwik/no-use-visible-task
 	useVisibleTask$(() => {
 		const figures = document.querySelectorAll<HTMLElement>('.brutalist-figure')
 

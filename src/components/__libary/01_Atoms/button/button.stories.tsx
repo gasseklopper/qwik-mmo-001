@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from 'storybook-framework-qwik'
 import Button, { type ExtendedButtonProps } from './button'
 import Icon from '../icon/icon'
 import { type ExtendedIconProps } from '../icon/icon'
-import { QwikJSX, _Only$, ComponentBaseProps, JSXChildren } from '@builder.io/qwik'
+import type { QwikJSX, _Only$, ComponentBaseProps, JSXChildren } from '@builder.io/qwik'
 
 
 const primaryButtonProps: ExtendedButtonProps = {

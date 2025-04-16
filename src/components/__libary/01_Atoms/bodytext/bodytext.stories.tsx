@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from 'storybook-framework-qwik';
 import Bodytext, { type ExtendedBodytextProps } from './bodytext';
-import { QwikJSX, _Only$, ComponentBaseProps, JSXChildren } from '@builder.io/qwik'
+import type { QwikJSX, _Only$, ComponentBaseProps, JSXChildren } from '@builder.io/qwik'
 
 const primaryButtonProps: ExtendedBodytextProps = {
   bodytextSize: 'medium',

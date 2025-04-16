@@ -1,4 +1,5 @@
-import { component$, useVisibleTask$, useSignal, PropFunction, useContext } from '@builder.io/qwik';
+import type { PropFunction} from '@builder.io/qwik';
+import { component$, useVisibleTask$, useSignal, useContext } from '@builder.io/qwik';
 import { AppContext } from '~/globalContext';
 // import Button from '../../01_Atoms/button/button';
 
@@ -115,7 +116,7 @@ export const Switcher = component$<SwitcherProps>(({ dispatch }) => {
     return (
         <>
             {/* <div class="switcher__area">
-                <div class={`switcher__items ${switcherDir === "left" ? "switcher_left" : ""}`} ref={switcherItems}>   
+                <div class={`switcher__items ${switcherDir === "left" ? "switcher_left" : ""}`} ref={switcherItems}>
                     <div class="switcher__item">
                         <div class="switch__title-wrap"><h2 class="switcher__title text-white">Direction</h2></div>
                         <div class="switcher__btn direction-type wc-col-2">

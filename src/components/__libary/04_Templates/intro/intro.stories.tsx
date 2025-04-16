@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from 'storybook-framework-qwik'
 import GridComponent, { type ExtendedGridProps } from './intro'
-import { QwikJSX, _Only$, ComponentBaseProps, JSXChildren } from '@builder.io/qwik'
+import type { QwikJSX, _Only$, ComponentBaseProps, JSXChildren } from '@builder.io/qwik'
 
 const primaryButtonProps: ExtendedGridProps = {
 	class: 'testClassName'
