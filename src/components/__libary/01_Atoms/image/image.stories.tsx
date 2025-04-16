@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from 'storybook-framework-qwik'
 import Image, { type ExtendedImageProps } from './image'
+import { QwikJSX, _Only$, ComponentBaseProps, JSXChildren } from '@builder.io/qwik'
 
 const image = "https://horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app/static/media/avatar1.eeef2af6dfcd3ff23cb8.png"
 
@@ -23,5 +24,8 @@ export default meta
 
 export const defaultImage: Story = {
 	args: imageProps,
-	render: (args) => <Image {...args} />,
+	render: (args: QwikJSX.IntrinsicAttributes & Omit<ExtendedImageProps, `${string}$`> & _Only$<ExtendedImageProps> & ComponentBaseProps & {
+			children?: JSXChildren //horizon-tailwind-react-git-tailwind-components-horizon-ui.vercel.app/static/media/avatar1.eeef2af6dfcd3ff23cb8.png"
+
+		}) => <Image {...args} />,
 }

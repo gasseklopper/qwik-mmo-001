@@ -6,7 +6,7 @@ import type { DocumentHead } from '@builder.io/qwik-city'
 // import Counter from '~/components/counter/counter'
 // import Debounced from '~/components/debounced/debounced'
 // import Yatzee from '~/components/dojo/yatzee'
-import StartNew from '~/components/dojo/yatzee'
+// import StartNew from '~/components/dojo/yatzee'
 
 export default component$(() => {
 	return (
@@ -31,7 +31,7 @@ export default component$(() => {
 						value5: false,
 					}}
 				/> */}
-				<StartNew
+				{/* <StartNew
 					dices={{ '1': 6, '2': 2, '3': 3, '4': 4, '5': 6 }}
 					ruleNumber="5"
 					ruleOptionsChoosed={{
@@ -54,7 +54,7 @@ export default component$(() => {
 						topBonusPoints: 0,
 						bottomPoints: 0,
 					}}
-				></StartNew>
+				></StartNew> */}
 				{/* <UsingContext />
 				<UseStyles />
 				<UseReference />

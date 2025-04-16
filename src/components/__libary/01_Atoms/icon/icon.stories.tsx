@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from 'storybook-framework-qwik'
 import Icon, {type ExtendedIconProps } from './icon'
+import { QwikJSX, _Only$, ComponentBaseProps, JSXChildren } from '@builder.io/qwik'
 
 const iconProps: ExtendedIconProps = {
 	iconName: 'LuActivitySquare',
@@ -21,5 +22,5 @@ export default meta
 
 export const IconDefault: Story = {
 	args: iconProps,
-	render: (args) => <Icon {...args} />,
+	render: (args: QwikJSX.IntrinsicAttributes & Omit<ExtendedIconProps, `${string}$`> & _Only$<ExtendedIconProps> & ComponentBaseProps & { children?: JSXChildren }) => <Icon {...args} />,
 }

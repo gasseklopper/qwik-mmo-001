@@ -43,6 +43,7 @@
 		"@netlify/plugin-lighthouse": "^6.0.1",
 		"@netlify/vite-plugin-netlify-edge": "1.1.3",
 		"@qwik-ui/headless": "^0.6.6",
+		"@qwikest/icons": "^0.0.13",
 		"@supabase/supabase-js": "^2.49.4",
 		"@types/eslint": "8.56.10",
 		"@types/gsap": "^3.0.0",
