@@ -45,7 +45,7 @@
 		"@qwik-ui/headless": "^0.6.6",
 		"@qwikest/icons": "^0.0.13",
 		"@supabase/supabase-js": "^2.49.4",
-		"@types/eslint": "8.56.10",
+		"@types/eslint": "9.6.1",
 		"@types/gsap": "^3.0.0",
 		"@types/locomotive-scroll": "^4.1.4",
 		"@types/node": "20.14.11",
