@@ -1,0 +1,9 @@
+.settingsToggleButton {
+	background: var(--surface4);
+	color: var(--text1);
+	z-index: 1000;
+
+	&__view {
+		background: var(--surface4);
+	}
+}

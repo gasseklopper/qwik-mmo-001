@@ -1,0 +1,38 @@
+.headroom {
+	position: relative;
+	z-index: 10000;
+	.headroom__wrapper {
+		background-color: red;
+	}
+
+	&--default {
+		.headroom__wrapper {
+			background-color: green;
+		}
+	}
+
+	&--pinned {
+		.headroom__wrapper {
+			background-color: blue;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+
+	&--scrollFade {
+		.headroom__wrapper {
+			background-color: purple;
+			position: fixed;
+			top: 0;
+			left: 0;
+			right: 0;
+		}
+	}
+
+	&--unpinned {
+		background-color: yellow;
+	}
+
+}

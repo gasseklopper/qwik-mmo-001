@@ -1,0 +1,89 @@
+.fragment {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  background: black;
+  color: white;
+	opacity: 0;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1rem, 2.2vw, 2.4rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  padding: 0.75rem 1.25rem;
+  line-height: 1.1;
+  max-width: 80%;
+  z-index: 5;
+  mix-blend-mode: difference; /* for high-contrast inversion */
+  box-shadow: 0 0 0 2px white;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+figure:hover .fragment {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-stack figure {
+  filter: brightness(0.95) contrast(1.1);
+  transition: filter 0.3s ease;
+}
+.image-stack figure:hover {
+  filter: brightness(1.05) contrast(0.95);
+}
+.zine {
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: #000; /* Fallback for older browsers */
+}
+.zine-text {
+  position: absolute;
+  bottom: 5vh;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(2rem, 6vw, 5rem);
+  font-family: 'Space Mono', monospace;
+  font-weight: 600;
+  color: white;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 1rem 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+  text-transform: uppercase;
+  pointer-events: none;
+  mix-blend-mode: exclusion; /* for moody overlay effect */
+  border-radius: 6px;
+}
+
+
+.brutalist-figure {
+  position: relative;
+  overflow: hidden;
+}
+
+.fragment {
+  position: absolute;
+  background: black;
+  color: white;
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(1rem, 2vw, 2.4rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  padding: 0.75rem 1.25rem;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  mix-blend-mode: difference;
+  box-shadow: 0 0 0 2px white;
+  transition: opacity 0.3s ease;
+}
+
+.brutalist-figure:hover .fragment {
+  opacity: 1;
+}

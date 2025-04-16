@@ -1,65 +1,33 @@
 .settings {
-    position: fixed;
-    top: 20%;
-    right: 0;
-    background: var(--surface4);
-    // background-color: black;
-    z-index: 99;
-    color: white;
-    // transform: translate3d(400px, 0, 0);
+	&__root {
+		background: var(--surface1);
+		position: fixed;
+		top: 20%;
+		right: 0;
+		z-index: 11199;
+		color: var(--text1);
+		width: 500px;
+		transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1) 100ms;
+		pointer-events: none;
 
-    &__button {
-        background: var(--surface2);
-        // background: red;
-    }
+		&--open {
+			transform: translate3d(0vw, 0px, 0px);
+			pointer-events: auto;
+		}
 
-    &__state-indicator {
-        background: var(--surface2);
-    }
+		&--close {
+			transform: translate3d(100vw, 0px, 0px);
+			pointer-events: none;
+		}
+	}
 
+	&__button {
+		background: var(--surface2);
+	}
 
-    &__view {
-        display: flex;
-        flex-direction: row;
-        background: var(--surface4);
-        // background-color: aqua;
-        align-items: center;
-    }
-}
-
-
-@keyframes slideInBounce {
-    0% {
-        transform: translate3d(400px, 0, 0);
-    }
-
-    60% {
-        transform: translate3d(-20px, 0, 0);
-    }
-
-    80% {
-        transform: translate3d(10px, 0, 0);
-    }
-
-    100% {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-@keyframes slideOutBounce {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-
-    20% {
-        transform: translate3d(-10px, 0, 0);
-    }
-
-    40% {
-        transform: translate3d(20px, 0, 0);
-    }
-
-    100% {
-        transform: translate3d(400px, 0, 0);
-    }
+	&__view {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
 }

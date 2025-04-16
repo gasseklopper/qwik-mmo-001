@@ -1,10 +1,11 @@
-import { $, component$, useSignal, useStyles$ } from '@builder.io/qwik'
+import { $, component$, useSignal, useStyles$, useVisibleTask$ } from '@builder.io/qwik'
 import styles from './venedig.scss?inline'
 import { Carousel } from '~/components/__libary/02_Molecules/carousel/component'
+import gsap from 'gsap'
 
 export default component$(() => {
 	useStyles$(styles)
-	const currentIndexSig = useSignal<number>(0);
+	const currentIndexSig = useSignal<number>(0)
 
 	const slideImageMetadata = [
 		{
@@ -143,7 +144,7 @@ export default component$(() => {
 			url: '../../assets/images/photography/venedig/IMG_2094.jpg',
 			download_url: 'https://picsum.photos/id/19/2500/1667',
 		},
-	];
+	]
 
 	return (
 		<section class={['test', 'venedig']}>
@@ -194,7 +195,7 @@ export default component$(() => {
 										>
 											{i}
 										</div>
-									);
+									)
 								})}
 							/>
 						</div>
@@ -202,7 +203,7 @@ export default component$(() => {
 				</div>
 			</div>
 			<Column3 />
-			<GalleryStatic />
+			<GalleryStaticGPT />
 			<Column4 />
 		</section>
 	)
@@ -279,6 +280,177 @@ export const GalleryStatic = component$(() => {
 	)
 })
 
+export const GalleryStaticGPT = component$(() => {
+	useVisibleTask$(() => {
+		const figures = gsap.utils.toArray<HTMLElement>('.image-stack figure')
+
+		figures.forEach((fig, i) => {
+
+			gsap.fromTo(fig, {
+				y: -10,
+				rotationZ: -0.2,
+			}, {
+				y: 10,
+				rotationZ: 0.2,
+				ease: 'sine.inOut',
+				repeat: -1,
+				yoyo: true,
+				duration: gsap.utils.random(3, 6),
+				delay: i * 0.3,
+			})
+			gsap.to(fig, {
+				scale: gsap.utils.random(0.98, 1.02),
+				transformOrigin: 'center',
+				duration: gsap.utils.random(4, 6),
+				ease: 'sine.inOut',
+				yoyo: true,
+				repeat: -1,
+			})
+		})
+	})
+	useVisibleTask$(() => {
+		const el = document.getElementById('poem-text')
+		if (!el) return
+
+		// Gentle vertical movement
+		gsap.to(el, {
+			y: '+=8',
+			duration: 4,
+			ease: 'sine.inOut',
+			yoyo: true,
+			repeat: -1,
+		})
+
+		// Slight opacity/pulse flicker
+		gsap.to(el, {
+			opacity: 0.9,
+			duration: 2,
+			repeat: -1,
+			yoyo: true,
+			ease: 'sine.inOut',
+		})
+	})
+	useVisibleTask$(() => {
+		const figures = document.querySelectorAll<HTMLElement>('.brutalist-figure')
+
+		figures.forEach((fig) => {
+			const caption = fig.querySelector('.fragment') as HTMLElement | null
+			if (!caption) return
+
+			// Reset position on mouse leave
+			const handleLeave = () => {
+				gsap.to(caption, {
+					opacity: 0,
+					duration: 0.3,
+					ease: 'power1.out',
+				})
+			}
+
+			const handleEnter = () => {
+				gsap.to(caption, {
+					opacity: 1,
+					duration: 0.3,
+					ease: 'power1.out',
+				})
+			}
+
+			// Mouse tracking within figure bounds
+			const handleMove = (e: MouseEvent) => {
+				const rect = fig.getBoundingClientRect()
+				const x = e.clientX - rect.left - 100
+				const y = e.clientY - rect.top - 600
+
+				gsap.to(caption, {
+					x,
+					y,
+					duration: 0.3,
+					ease: 'sine.out',
+				})
+			}
+
+			fig.addEventListener('mousemove', handleMove)
+			fig.addEventListener('mouseenter', handleEnter)
+			fig.addEventListener('mouseleave', handleLeave)
+		})
+	})
+	return (
+		<div class="row">
+			<div class="column large-12">
+				<div class="zine"></div>
+				<div class="zine-text" id="poem-text">
+					between stone and water
+					a body loses edge
+					but not weight
+				</div>
+			</div>
+			<div class="column large-12">
+
+				<section class="venice-gallery">
+					<div class="image-stack">
+						<figure class="brutalist-figure">
+							<img src="../../assets/images/photography/venedig/IMG_2063.jpg" height={800} width={400} />
+							<figcaption class="fragment">
+								die tür bleibt zu
+								das licht wandert weiter
+							</figcaption>
+						</figure>
+						<figure class="brutalist-figure">
+							<img src="../../assets/images/photography/venedig/IMG_1905.jpg" height={800} width={400} />
+							<figcaption class="fragment">
+								die tür bleibt zu
+								das licht wandert weiter
+							</figcaption>
+						</figure>
+						<figure class="brutalist-figure">
+							<img src="../../assets/images/photography/venedig/IMG_1903.jpg" height={800} width={400} />
+							<figcaption class="fragment">
+								die tür bleibt zu
+								das licht wandert weiter
+							</figcaption>
+						</figure>
+						<figure class="brutalist-figure">
+							<img src="../../assets/images/photography/venedig/IMG_1869.jpg" height={800} width={400} />
+							<figcaption class="fragment">
+								die tür bleibt zu
+								das licht wandert weiter
+							</figcaption>
+						</figure>
+						<figure class="brutalist-figure">
+							<img src="../../assets/images/photography/venedig/IMG_2039.jpg" height={800} width={400} />
+							<figcaption class="fragment">
+								die tür bleibt zu
+								das licht wandert weiter
+							</figcaption>
+						</figure>
+						<figure class="brutalist-figure">
+							<img src="../../assets/images/photography/venedig/IMG_1939.jpg" height={800} width={400} />
+							<figcaption class="fragment">
+								die tür bleibt zu
+								das licht wandert weiter
+							</figcaption>
+						</figure>
+						<figure class="brutalist-figure">
+							<img src="../../assets/images/photography/venedig/IMG_1523.jpg" height={800} width={400} />
+							<figcaption class="fragment">
+								die tür bleibt zu
+								das licht wandert weiter
+							</figcaption>
+						</figure>
+						<figure class="brutalist-figure">
+							<img src="../../assets/images/photography/venedig/IMG_2094.jpg" height={800} width={400} />
+							<figcaption class="fragment">
+								die tür bleibt zu
+								das licht wandert weiter
+							</figcaption>
+						</figure>
+
+					</div>
+				</section>
+			</div>
+		</div>
+	)
+})
+
 export const Column3 = component$(() => {
 	return (
 		<div class="row">
@@ -299,6 +471,7 @@ export const Column3 = component$(() => {
 					Finally, the image on the far right presents a moody scene of water meeting stone. The reflection of the murky canal water against the weathered stone structures hints at Venice's intricate relationship with its aquatic environment. The play of light and shadow on the water's surface adds a sense of depth and mystery, symbolizing the city’s hidden depths and the layers of history submerged within its canals.
 					Together, these images form a compelling narrative of Venice's quieter, less glamorous side. They highlight the beauty in decay, the persistence of life amidst hardship, and the profound connection between the city's architecture and its watery foundation. Through these photographs, Venice is portrayed not just as a picturesque tourist destination, but as a living, breathing entity marked by the passage of time and the endurance of its people.
 				</p>
+
 			</div>
 		</div>
 	)

@@ -1,5 +1,5 @@
 import { createContextId } from '@builder.io/qwik'
-import { ThemePreference } from './utils/settingsHandler'
+import type { ThemePreference } from './utils/settingsHandler'
 
  // Gloabl Types (design system?)
  export type Size = 'large' | 'default' | 'small' | undefined

@@ -6,15 +6,15 @@ import {
 	useSignal,
 	useStyles$,
 } from '@builder.io/qwik'
-import { type SettingsContext } from './settings-context.type'
-import SettingsContextId from './settings-context-id'
-import styles from './settings.scss?inline'
+import { type SettingsContext } from './settingsToggleButton-context.type'
+import SettingsContextId from './settingsToggleButton-context-id'
+import styles from './settingsToggleButton.scss?inline'
 
 export type SettingsRootProps = PropsOf<'section'> & SettingsContext
 
 export type ExtendedSettingsRootProps = SettingsRootProps
 
-export const Settings = component$(
+export const SettingsToggleButton = component$(
 	({
 		...props
 	}: ExtendedSettingsRootProps) => {
@@ -32,7 +32,7 @@ export const Settings = component$(
 		useContextProvider(SettingsContextId, context)
 
 		return (
-			<section class='settings' role="region" aria-label="Settings"{...props}>
+			<section class='settingsToggleButton' role="region" aria-label="Settings Toggle Button"{...props}>
 				<Slot />
 			</section>
 		)
