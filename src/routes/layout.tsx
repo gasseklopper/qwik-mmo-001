@@ -128,7 +128,7 @@ export default component$(() => {
 
 	return (
 		<>
-			<Headroom class='headroom2' devMode disable>
+			<Headroom class='headroom2' devMode>
 				<Header />
 			</Headroom>
 

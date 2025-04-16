@@ -1,9 +1,16 @@
 import type { QwikIntrinsicElements } from '@builder.io/qwik'
-import { component$, Slot, $, useStore, useOnWindow, useStyles$, useSignal } from '@builder.io/qwik'
+import { component$, Slot, $, useStore, useSignal, useVisibleTask$, useStyles$ } from '@builder.io/qwik'
 import styles from './headroom.scss?inline'
 
 function useScrollPosition(wrapperRef: { value: Element | undefined }) {
-	const scrollPosition = useStore({ x: 0, y: 0, scrollState: 'headroom--default', isScrollUp: false, isIdle: 'false', lastScrollY: 0 })
+	const scrollPosition = useStore({
+		x: 0,
+		y: 0,
+		scrollState: 'headroom--default',
+		isScrollUp: false,
+		isIdle: 'false',
+		lastScrollY: 0
+	})
 	const scrollTicking = useSignal(false)
 
 	const updateScrollState = $(() => {
@@ -13,10 +20,9 @@ function useScrollPosition(wrapperRef: { value: Element | undefined }) {
 		const scrollDiff = scrollPosition.y - scrollPosition.lastScrollY
 		scrollPosition.isScrollUp = Boolean(scrollDiff < 0.1)
 		const wrapperTop = wrapperRef.value.getBoundingClientRect().top
-
 		scrollPosition.isIdle = 'false'
 
-		if (scrollPosition?.isScrollUp) {
+		if (scrollPosition.isScrollUp) {
 			scrollPosition.scrollState = 'headroom--scrollFade'
 		}
 
@@ -32,25 +38,22 @@ function useScrollPosition(wrapperRef: { value: Element | undefined }) {
 			scrollPosition.lastScrollY = scrollPosition.y
 		}, 200)
 
-
 		setTimeout(() => {
 			scrollPosition.isIdle = 'true'
 		}, 1200)
 	})
 
-	scrollTicking.value = false
-
-
 	const handleScroll = $(() => {
 		if (!scrollTicking.value) {
 			scrollTicking.value = true
-			requestAnimationFrame(updateScrollState)
+			requestAnimationFrame(() => {
+				updateScrollState()
+				scrollTicking.value = false // reset tick so the next scroll can be handled
+			})
 		}
 	})
 
-	useOnWindow('scroll', handleScroll)
-
-	return scrollPosition
+	return { scrollPosition, handleScroll }
 }
 
 export interface HeadroomProps {
@@ -71,38 +74,46 @@ export const Headroom = component$((props: ExtendedHeadroomProps) => {
 	useStyles$(styles)
 	const mainClass = 'headroom'
 	const wrapperRef = useSignal<Element>()
-	const scrollPosition = useScrollPosition(wrapperRef)
 
-	// const componentSize = props.bodytextSize || 'medium'
-	// const componentVariant = props.bodytextVariant || 'bodytext'
+	// Initialize scroll behavior
+	const { scrollPosition, handleScroll } = useScrollPosition(wrapperRef)
 
-	// useVisibleTask$(() => {
-	// 	console.log('wrapperRef')
-	// });
-	return (
-		<div {...props} ref={wrapperRef} class={`${mainClass} ${props.class} ${scrollPosition.scrollState}`}>
-			<div class={`${mainClass}__wrapper`}>
-				{props.devMode &&
-					<div>
-						isScrollUp=({String(scrollPosition.isScrollUp)})
-						<br></br>
-						scrollState={String(scrollPosition.scrollState)}
-						<br></br>
-						ScrollPoisitionY={String(scrollPosition.y)}
-						<br></br>
-						isIdle={String(scrollPosition.isIdle)}
-						<br></br>
-						lastScrollY={String(scrollPosition.lastScrollY)}
-						<br></br>
-						{/* ({String(scrollPosition.isScrollUp)}
+	// Attach the scroll listener only after the component is visible on the client.
+	// eslint-disable-next-line qwik/no-use-visible-task
+	useVisibleTask$(() => {
+		// Now, we're on the client and wrapperRef should be set.
+		window.addEventListener('scroll', handleScroll)
+		// Cleanup on unmount.
+		return () => window.removeEventListener('scroll', handleScroll)
+	})
+
+
+	// Optionally, alter the component's output when in dev mode
+	const devModeBanner = mainClass ? (
+		<div>
+			isScrollUp=({String(scrollPosition.isScrollUp)})
+			<br></br>
+			scrollState={String(scrollPosition.scrollState)}
+			<br></br>
+			ScrollPoisitionY={String(scrollPosition.y)}
+			<br></br>
+			isIdle={String(scrollPosition.isIdle)}
+			<br></br>
+			lastScrollY={String(scrollPosition.lastScrollY)}
+			<br></br>
+			{/* ({String(scrollPosition.isScrollUp)}
 						{scrollPosition.y}
 						{scrollPosition.scrollState}) */}
-					</div>
-				}
+		</div>
+	) : null
+
+	return (
+		<div {...props} ref={wrapperRef} class={`${mainClass} ${props.class ?? ''} ${scrollPosition.scrollState}`}>
+			<div class={`${mainClass}__wrapper`}>
 				<div>
-					<button>burger</button>
+					{devModeBanner}
+					<Slot />
 				</div>
-				<Slot />
 			</div>
 		</div>
 	)
