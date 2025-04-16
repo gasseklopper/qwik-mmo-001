@@ -62,6 +62,7 @@
 		"undici": "*",
 		"vite": "5.3.5",
 		"vite-tsconfig-paths": "^4.2.1",
-		"vitest": "^0.34.6"
+		"vitest": "^0.34.6",
+		"storybook-framework-qwik": "^0.4.2"
 	}
 }
