@@ -39,7 +39,7 @@
 		"@builder.io/qwik": "^1.13.0",
 		"@builder.io/qwik-city": "^1.13.0",
 		"@netlify/edge-functions": "^2.0.0",
-		"@netlify/plugin-lighthouse": "^3.0.0",
+		"@netlify/plugin-lighthouse": "^6.0.1",
 		"@netlify/vite-plugin-netlify-edge": "1.1.3",
 		"@qwik-ui/headless": "^0.6.6",
 		"@supabase/supabase-js": "^2.49.4",
